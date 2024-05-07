@@ -1,13 +1,13 @@
 (ns happygapi.logging.billingAccounts
   "Cloud Logging API: billingAccounts.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getCmekSettings$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/getCmekSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/getCmekSettings
   
   Required parameters: name
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn getSettings$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/getSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/getSettings
   
   Required parameters: name
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/list
   
   Required parameters: name
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/get
   
   Required parameters: name
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/operations/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/operations/list
   
   Required parameters: name
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/operations/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/operations/get
   
   Required parameters: name
   
@@ -181,7 +181,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/operations/cancel
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/operations/cancel
   
   Required parameters: name
   
@@ -214,7 +214,7 @@
      auth))))
 
 (defn locations-buckets-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/list
   
   Required parameters: parent
   
@@ -243,7 +243,7 @@
      auth))))
 
 (defn locations-buckets-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/get
   
   Required parameters: name
   
@@ -272,7 +272,7 @@
      auth))))
 
 (defn locations-buckets-createAsync$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/createAsync
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/createAsync
   
   Required parameters: parent
   
@@ -318,7 +318,7 @@
      auth))))
 
 (defn locations-buckets-updateAsync$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/updateAsync
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/updateAsync
   
   Required parameters: name
   
@@ -364,7 +364,7 @@
      auth))))
 
 (defn locations-buckets-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/create
   
   Required parameters: parent
   
@@ -410,7 +410,7 @@
      auth))))
 
 (defn locations-buckets-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/patch
   
   Required parameters: name
   
@@ -456,7 +456,7 @@
      auth))))
 
 (defn locations-buckets-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/delete
   
   Required parameters: name
   
@@ -483,7 +483,7 @@
      auth))))
 
 (defn locations-buckets-undelete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/undelete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/undelete
   
   Required parameters: name
   
@@ -516,7 +516,7 @@
      auth))))
 
 (defn locations-buckets-views-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/views/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/views/list
   
   Required parameters: parent
   
@@ -545,7 +545,7 @@
      auth))))
 
 (defn locations-buckets-views-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/views/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/views/get
   
   Required parameters: name
   
@@ -574,7 +574,7 @@
      auth))))
 
 (defn locations-buckets-views-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/views/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/views/create
   
   Required parameters: parent
   
@@ -611,7 +611,7 @@
      auth))))
 
 (defn locations-buckets-views-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/views/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/views/patch
   
   Required parameters: name
   
@@ -648,7 +648,7 @@
      auth))))
 
 (defn locations-buckets-views-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/views/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/views/delete
   
   Required parameters: name
   
@@ -675,7 +675,7 @@
      auth))))
 
 (defn locations-buckets-views-logs-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/views/logs/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/views/logs/list
   
   Required parameters: parent
   
@@ -704,7 +704,7 @@
      auth))))
 
 (defn locations-buckets-links-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/links/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/links/list
   
   Required parameters: parent
   
@@ -733,7 +733,7 @@
      auth))))
 
 (defn locations-buckets-links-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/links/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/links/get
   
   Required parameters: name
   
@@ -762,7 +762,7 @@
      auth))))
 
 (defn locations-buckets-links-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/links/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/links/create
   
   Required parameters: parent
   
@@ -799,7 +799,7 @@
      auth))))
 
 (defn locations-buckets-links-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/buckets/links/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/buckets/links/delete
   
   Required parameters: name
   
@@ -826,7 +826,7 @@
      auth))))
 
 (defn locations-savedQueries-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/savedQueries/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/savedQueries/list
   
   Required parameters: parent
   
@@ -855,7 +855,7 @@
      auth))))
 
 (defn locations-savedQueries-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/savedQueries/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/savedQueries/create
   
   Required parameters: parent
   
@@ -898,7 +898,7 @@
      auth))))
 
 (defn locations-savedQueries-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/savedQueries/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/savedQueries/delete
   
   Required parameters: name
   
@@ -925,7 +925,7 @@
      auth))))
 
 (defn locations-recentQueries-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/locations/recentQueries/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/locations/recentQueries/list
   
   Required parameters: parent
   
@@ -954,7 +954,7 @@
      auth))))
 
 (defn exclusions-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/exclusions/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/exclusions/list
   
   Required parameters: parent
   
@@ -983,7 +983,7 @@
      auth))))
 
 (defn exclusions-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/exclusions/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/exclusions/get
   
   Required parameters: name
   
@@ -1012,7 +1012,7 @@
      auth))))
 
 (defn exclusions-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/exclusions/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/exclusions/create
   
   Required parameters: parent
   
@@ -1050,7 +1050,7 @@
      auth))))
 
 (defn exclusions-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/exclusions/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/exclusions/patch
   
   Required parameters: name
   
@@ -1088,7 +1088,7 @@
      auth))))
 
 (defn exclusions-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/exclusions/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/exclusions/delete
   
   Required parameters: name
   
@@ -1115,7 +1115,7 @@
      auth))))
 
 (defn sinks-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/sinks/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/sinks/list
   
   Required parameters: parent
   
@@ -1144,7 +1144,7 @@
      auth))))
 
 (defn sinks-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/sinks/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/sinks/get
   
   Required parameters: sinkName
   
@@ -1173,7 +1173,7 @@
      auth))))
 
 (defn sinks-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/sinks/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/sinks/create
   
   Required parameters: parent
   
@@ -1225,7 +1225,7 @@
      auth))))
 
 (defn sinks-update$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/sinks/update
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/sinks/update
   
   Required parameters: sinkName
   
@@ -1277,7 +1277,7 @@
      auth))))
 
 (defn sinks-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/sinks/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/sinks/patch
   
   Required parameters: sinkName
   
@@ -1329,7 +1329,7 @@
      auth))))
 
 (defn sinks-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/sinks/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/sinks/delete
   
   Required parameters: sinkName
   
@@ -1356,7 +1356,7 @@
      auth))))
 
 (defn logs-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/logs/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/logs/delete
   
   Required parameters: logName
   
@@ -1383,7 +1383,7 @@
      auth))))
 
 (defn logs-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/billingAccounts/logs/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/billingAccounts/logs/list
   
   Required parameters: parent
   

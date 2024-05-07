@@ -1,13 +1,13 @@
 (ns happygapi.groupsmigration.archive
   "Groups Migration API: archive.
   The Groups Migration API allows domain administrators to archive emails into Google groups.
-  See: https://developers.google.com/google-apps/groups-migration/api/reference/rest/v1/archive"
+  See: https://developers.google.com/admin-sdk/groups-migration/v1/guides/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn insert$
-  "https://developers.google.com/google-apps/groups-migration/api/reference/rest/v1/archive/insert
+  "https://developers.google.com/admin-sdk/groups-migration/v1/guides/overview
   
   Required parameters: groupId
   

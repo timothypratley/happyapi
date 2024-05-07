@@ -1,13 +1,13 @@
 (ns happygapi.compute.publicAdvertisedPrefixes
   "Compute Engine API: publicAdvertisedPrefixes.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/publicAdvertisedPrefixes"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicAdvertisedPrefixes/list
+  "https://cloud.google.com/products/compute/v1/docs/publicAdvertisedPrefixes/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicAdvertisedPrefixes/get
+  "https://cloud.google.com/products/compute/v1/docs/publicAdvertisedPrefixes/get
   
   Required parameters: project, publicAdvertisedPrefix
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicAdvertisedPrefixes/insert
+  "https://cloud.google.com/products/compute/v1/docs/publicAdvertisedPrefixes/insert
   
   Required parameters: project
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicAdvertisedPrefixes/delete
+  "https://cloud.google.com/products/compute/v1/docs/publicAdvertisedPrefixes/delete
   
   Required parameters: project, publicAdvertisedPrefix
   
@@ -144,7 +144,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicAdvertisedPrefixes/patch
+  "https://cloud.google.com/products/compute/v1/docs/publicAdvertisedPrefixes/patch
   
   Required parameters: project, publicAdvertisedPrefix
   
@@ -196,7 +196,7 @@
      auth))))
 
 (defn announce$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicAdvertisedPrefixes/announce
+  "https://cloud.google.com/products/compute/v1/docs/publicAdvertisedPrefixes/announce
   
   Required parameters: project, publicAdvertisedPrefix
   
@@ -225,7 +225,7 @@
      auth))))
 
 (defn withdraw$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicAdvertisedPrefixes/withdraw
+  "https://cloud.google.com/products/compute/v1/docs/publicAdvertisedPrefixes/withdraw
   
   Required parameters: project, publicAdvertisedPrefix
   

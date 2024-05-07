@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionDisks
   "Compute Engine API: regionDisks.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionDisks"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/get
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/get
   
   Required parameters: disk, project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn stopAsyncReplication$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/stopAsyncReplication
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/stopAsyncReplication
   
   Required parameters: disk, project, region
   
@@ -62,7 +62,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/setIamPolicy
   
   Required parameters: project, region, resource
   
@@ -104,7 +104,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/insert
   
   Required parameters: project, region
   
@@ -201,7 +201,7 @@
      auth))))
 
 (defn startAsyncReplication$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/startAsyncReplication
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/startAsyncReplication
   
   Required parameters: disk, project, region
   
@@ -234,7 +234,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/testIamPermissions
   
   Required parameters: project, region, resource
   
@@ -268,7 +268,7 @@
      auth))))
 
 (defn createSnapshot$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/createSnapshot
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/createSnapshot
   
   Required parameters: disk, project, region
   
@@ -348,7 +348,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/setLabels
   
   Required parameters: project, region, resource
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn removeResourcePolicies$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/removeResourcePolicies
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/removeResourcePolicies
   
   Required parameters: disk, project, region
   
@@ -414,7 +414,7 @@
      auth))))
 
 (defn stopGroupAsyncReplication$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/stopGroupAsyncReplication
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/stopGroupAsyncReplication
   
   Required parameters: project, region
   
@@ -447,7 +447,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/update
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/update
   
   Required parameters: disk, project, region
   
@@ -544,7 +544,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/delete
   
   Required parameters: disk, project, region
   
@@ -571,7 +571,7 @@
      auth))))
 
 (defn resize$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/resize
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/resize
   
   Required parameters: disk, project, region
   
@@ -604,7 +604,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/getIamPolicy
   
   Required parameters: project, region, resource
   
@@ -632,7 +632,7 @@
      auth))))
 
 (defn addResourcePolicies$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/addResourcePolicies
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/addResourcePolicies
   
   Required parameters: disk, project, region
   
@@ -665,7 +665,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/list
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/list
   
   Required parameters: project, region
   
@@ -693,7 +693,7 @@
      auth))))
 
 (defn bulkInsert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDisks/bulkInsert
+  "https://cloud.google.com/products/compute/v1/docs/regionDisks/bulkInsert
   
   Required parameters: project, region
   

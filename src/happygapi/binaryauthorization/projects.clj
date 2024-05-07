@@ -1,13 +1,13 @@
 (ns happygapi.binaryauthorization.projects
   "Binary Authorization API: projects.
   The management interface for Binary Authorization, a service that provides policy-based deployment validation and control for images deployed to Google Kubernetes Engine (GKE), Anthos Service Mesh, Anthos Clusters, and Cloud Run. 
-  See: https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/binary-authorization/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getPolicy$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/getPolicy
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects/getPolicy
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn updatePolicy$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/updatePolicy
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects/updatePolicy
   
   Required parameters: name
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn platforms-gke-policies-evaluate$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/platforms/gke/policies/evaluate
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.platforms.gke.policies/evaluate
   
   Required parameters: name
   
@@ -109,7 +109,7 @@
      auth))))
 
 (defn platforms-policies-create$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/platforms/policies/create
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.platforms.policies/create
   
   Required parameters: parent
   
@@ -144,7 +144,7 @@
      auth))))
 
 (defn platforms-policies-get$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/platforms/policies/get
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.platforms.policies/get
   
   Required parameters: name
   
@@ -170,7 +170,7 @@
      auth))))
 
 (defn platforms-policies-replacePlatformPolicy$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/platforms/policies/replacePlatformPolicy
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.platforms.policies/replacePlatformPolicy
   
   Required parameters: name
   
@@ -205,7 +205,7 @@
      auth))))
 
 (defn platforms-policies-list$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/platforms/policies/list
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.platforms.policies/list
   
   Required parameters: parent
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn platforms-policies-delete$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/platforms/policies/delete
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.platforms.policies/delete
   
   Required parameters: name
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn attestors-get$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/get
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/get
   
   Required parameters: name
   
@@ -283,7 +283,7 @@
      auth))))
 
 (defn attestors-setIamPolicy$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/setIamPolicy
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/setIamPolicy
   
   Required parameters: resource
   
@@ -315,7 +315,7 @@
      auth))))
 
 (defn attestors-testIamPermissions$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/testIamPermissions
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/testIamPermissions
   
   Required parameters: resource
   
@@ -347,7 +347,7 @@
      auth))))
 
 (defn attestors-create$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/create
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/create
   
   Required parameters: parent
   
@@ -385,7 +385,7 @@
      auth))))
 
 (defn attestors-update$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/update
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/update
   
   Required parameters: name
   
@@ -423,7 +423,7 @@
      auth))))
 
 (defn attestors-delete$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/delete
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/delete
   
   Required parameters: name
   
@@ -449,7 +449,7 @@
      auth))))
 
 (defn attestors-getIamPolicy$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/getIamPolicy
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/getIamPolicy
   
   Required parameters: resource
   
@@ -475,7 +475,7 @@
      auth))))
 
 (defn attestors-list$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/list
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/list
   
   Required parameters: parent
   
@@ -501,7 +501,7 @@
      auth))))
 
 (defn attestors-validateAttestationOccurrence$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/attestors/validateAttestationOccurrence
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.attestors/validateAttestationOccurrence
   
   Required parameters: attestor
   
@@ -537,7 +537,7 @@
      auth))))
 
 (defn policy-setIamPolicy$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/policy/setIamPolicy
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.policy/setIamPolicy
   
   Required parameters: resource
   
@@ -569,7 +569,7 @@
      auth))))
 
 (defn policy-getIamPolicy$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/policy/getIamPolicy
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.policy/getIamPolicy
   
   Required parameters: resource
   
@@ -595,7 +595,7 @@
      auth))))
 
 (defn policy-testIamPermissions$
-  "https://cloud.google.com/binary-authorization/api/reference/rest/v1/projects/policy/testIamPermissions
+  "https://cloud.google.com/binary-authorization/docs/reference/rest/v1/projects.policy/testIamPermissions
   
   Required parameters: resource
   

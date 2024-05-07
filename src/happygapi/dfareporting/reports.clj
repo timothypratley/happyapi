@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.reports
   "Campaign Manager 360 API: reports.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/delete
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, reportId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, reportId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/insert
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -296,7 +296,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -322,7 +322,7 @@
      auth))))
 
 (defn run$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/run
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, reportId
   
@@ -348,7 +348,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/update
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, reportId
   
@@ -585,7 +585,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/patch
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, reportId
   
@@ -822,7 +822,7 @@
      auth))))
 
 (defn files-get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/files/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, reportId, fileId
   
@@ -848,7 +848,7 @@
      auth))))
 
 (defn files-list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/files/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, reportId
   
@@ -874,7 +874,7 @@
      auth))))
 
 (defn compatibleFields-query$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/reports/compatibleFields/query
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.projects
   "Compute Engine API: projects.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn moveDisk$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/moveDisk
+  "https://cloud.google.com/products/compute/v1/docs/projects/moveDisk
   
   Required parameters: project
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn setDefaultNetworkTier$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/setDefaultNetworkTier
+  "https://cloud.google.com/products/compute/v1/docs/projects/setDefaultNetworkTier
   
   Required parameters: project
   
@@ -73,7 +73,7 @@
      auth))))
 
 (defn setUsageExportBucket$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/setUsageExportBucket
+  "https://cloud.google.com/products/compute/v1/docs/projects/setUsageExportBucket
   
   Required parameters: project
   
@@ -109,7 +109,7 @@
      auth))))
 
 (defn disableXpnHost$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/disableXpnHost
+  "https://cloud.google.com/products/compute/v1/docs/projects/disableXpnHost
   
   Required parameters: project
   
@@ -136,7 +136,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/get
+  "https://cloud.google.com/products/compute/v1/docs/projects/get
   
   Required parameters: project
   
@@ -164,7 +164,7 @@
      auth))))
 
 (defn setCloudArmorTier$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/setCloudArmorTier
+  "https://cloud.google.com/products/compute/v1/docs/projects/setCloudArmorTier
   
   Required parameters: project
   
@@ -197,7 +197,7 @@
      auth))))
 
 (defn getXpnResources$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/getXpnResources
+  "https://cloud.google.com/products/compute/v1/docs/projects/getXpnResources
   
   Required parameters: project
   
@@ -224,7 +224,7 @@
      auth))))
 
 (defn setCommonInstanceMetadata$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/setCommonInstanceMetadata
+  "https://cloud.google.com/products/compute/v1/docs/projects/setCommonInstanceMetadata
   
   Required parameters: project
   
@@ -259,7 +259,7 @@
      auth))))
 
 (defn moveInstance$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/moveInstance
+  "https://cloud.google.com/products/compute/v1/docs/projects/moveInstance
   
   Required parameters: project
   
@@ -292,7 +292,7 @@
      auth))))
 
 (defn getXpnHost$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/getXpnHost
+  "https://cloud.google.com/products/compute/v1/docs/projects/getXpnHost
   
   Required parameters: project
   
@@ -319,7 +319,7 @@
      auth))))
 
 (defn disableXpnResource$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/disableXpnResource
+  "https://cloud.google.com/products/compute/v1/docs/projects/disableXpnResource
   
   Required parameters: project
   
@@ -352,7 +352,7 @@
      auth))))
 
 (defn enableXpnHost$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/enableXpnHost
+  "https://cloud.google.com/products/compute/v1/docs/projects/enableXpnHost
   
   Required parameters: project
   
@@ -379,7 +379,7 @@
      auth))))
 
 (defn enableXpnResource$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/enableXpnResource
+  "https://cloud.google.com/products/compute/v1/docs/projects/enableXpnResource
   
   Required parameters: project
   
@@ -412,7 +412,7 @@
      auth))))
 
 (defn listXpnHosts$
-  "https://cloud.google.com/compute/api/reference/rest/v1/projects/listXpnHosts
+  "https://cloud.google.com/products/compute/v1/docs/projects/listXpnHosts
   
   Required parameters: project
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionNetworkEndpointGroups
   "Compute Engine API: regionNetworkEndpointGroups.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkEndpointGroups"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkEndpointGroups/list
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkEndpointGroups/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkEndpointGroups/get
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkEndpointGroups/get
   
   Required parameters: networkEndpointGroup, project, region
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkEndpointGroups/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkEndpointGroups/insert
   
   Required parameters: project, region
   
@@ -118,7 +118,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkEndpointGroups/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkEndpointGroups/delete
   
   Required parameters: networkEndpointGroup, project, region
   
@@ -147,7 +147,7 @@
      auth))))
 
 (defn attachNetworkEndpoints$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkEndpointGroups/attachNetworkEndpoints
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkEndpointGroups/attachNetworkEndpoints
   
   Required parameters: networkEndpointGroup, project, region
   
@@ -186,7 +186,7 @@
      auth))))
 
 (defn detachNetworkEndpoints$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkEndpointGroups/detachNetworkEndpoints
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkEndpointGroups/detachNetworkEndpoints
   
   Required parameters: networkEndpointGroup, project, region
   
@@ -225,7 +225,7 @@
      auth))))
 
 (defn listNetworkEndpoints$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkEndpointGroups/listNetworkEndpoints
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkEndpointGroups/listNetworkEndpoints
   
   Required parameters: networkEndpointGroup, project, region
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.globalForwardingRules
   "Compute Engine API: globalForwardingRules.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/globalForwardingRules"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalForwardingRules/list
+  "https://cloud.google.com/products/compute/v1/docs/globalForwardingRules/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalForwardingRules/get
+  "https://cloud.google.com/products/compute/v1/docs/globalForwardingRules/get
   
   Required parameters: forwardingRule, project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalForwardingRules/insert
+  "https://cloud.google.com/products/compute/v1/docs/globalForwardingRules/insert
   
   Required parameters: project
   
@@ -97,6 +97,7 @@
    :metadataFilters [{:filterMatchCriteria string,
                       :filterLabels [MetadataFilterLabelMatch]}],
    :networkTier string,
+   :ipCollection string,
    :isMirroringCollector boolean,
    :allPorts boolean,
    :pscConnectionStatus string,
@@ -132,7 +133,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalForwardingRules/delete
+  "https://cloud.google.com/products/compute/v1/docs/globalForwardingRules/delete
   
   Required parameters: forwardingRule, project
   
@@ -159,7 +160,7 @@
      auth))))
 
 (defn setTarget$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalForwardingRules/setTarget
+  "https://cloud.google.com/products/compute/v1/docs/globalForwardingRules/setTarget
   
   Required parameters: forwardingRule, project
   
@@ -192,7 +193,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalForwardingRules/patch
+  "https://cloud.google.com/products/compute/v1/docs/globalForwardingRules/patch
   
   Required parameters: forwardingRule, project
   
@@ -226,6 +227,7 @@
    :metadataFilters [{:filterMatchCriteria string,
                       :filterLabels [MetadataFilterLabelMatch]}],
    :networkTier string,
+   :ipCollection string,
    :isMirroringCollector boolean,
    :allPorts boolean,
    :pscConnectionStatus string,
@@ -261,7 +263,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalForwardingRules/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/globalForwardingRules/setLabels
   
   Required parameters: project, resource
   

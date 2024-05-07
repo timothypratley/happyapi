@@ -1,13 +1,13 @@
 (ns happygapi.beyondcorp.organizations
   "BeyondCorp API: organizations.
   Beyondcorp Enterprise provides identity and context aware access controls for enterprise resources and enables zero-trust access. Using the Beyondcorp Enterprise APIs, enterprises can set up multi-cloud and on-prem connectivity solutions.
-  See: https://cloud.google.com/api/reference/rest/v1/organizations"
+  See: https://cloud.google.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/operations/list
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/operations/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/operations/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/operations/cancel
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -153,7 +153,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -179,7 +179,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -211,7 +211,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-proxyConfigs-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/proxyConfigs/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -247,7 +247,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-proxyConfigs-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/proxyConfigs/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -273,7 +273,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-proxyConfigs-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/proxyConfigs/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -305,7 +305,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-browserDlpRules-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/browserDlpRules/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -341,7 +341,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-browserDlpRules-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/browserDlpRules/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -367,7 +367,7 @@
      auth))))
 
 (defn locations-global-partnerTenants-browserDlpRules-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/organizations/locations/global/partnerTenants/browserDlpRules/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   

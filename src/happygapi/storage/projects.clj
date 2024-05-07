@@ -1,13 +1,13 @@
 (ns happygapi.storage.projects
   "Cloud Storage JSON API: projects.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn hmacKeys-create$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/projects/hmacKeys/create
+  "https://cloud.google.com/storage/docs/reference/rest/v1/projects.hmacKeys/create
   
   Required parameters: projectId, serviceAccountEmail
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn hmacKeys-delete$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/projects/hmacKeys/delete
+  "https://cloud.google.com/storage/docs/reference/rest/v1/projects.hmacKeys/delete
   
   Required parameters: accessId, projectId
   
@@ -64,7 +64,7 @@
      auth))))
 
 (defn hmacKeys-get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/projects/hmacKeys/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/projects.hmacKeys/get
   
   Required parameters: accessId, projectId
   
@@ -93,7 +93,7 @@
      auth))))
 
 (defn hmacKeys-list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/projects/hmacKeys/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/projects.hmacKeys/list
   
   Required parameters: projectId
   
@@ -122,7 +122,7 @@
      auth))))
 
 (defn hmacKeys-update$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/projects/hmacKeys/update
+  "https://cloud.google.com/storage/docs/reference/rest/v1/projects.hmacKeys/update
   
   Required parameters: accessId, projectId
   
@@ -164,7 +164,7 @@
      auth))))
 
 (defn serviceAccount-get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/projects/serviceAccount/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/projects.serviceAccount/get
   
   Required parameters: projectId
   

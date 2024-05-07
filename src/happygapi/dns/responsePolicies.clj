@@ -1,13 +1,13 @@
 (ns happygapi.dns.responsePolicies
   "Cloud DNS API: responsePolicies.
   
-  See: https://cloud.google.com/dns/docsapi/reference/rest/v1/responsePolicies"
+  See: https://cloud.google.com/dns/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/responsePolicies/create
+  "https://cloud.google.com/dns/docs/reference/rest/v1/responsePolicies/create
   
   Required parameters: project
   
@@ -46,7 +46,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/responsePolicies/get
+  "https://cloud.google.com/dns/docs/reference/rest/v1/responsePolicies/get
   
   Required parameters: project, responsePolicy
   
@@ -75,7 +75,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/responsePolicies/list
+  "https://cloud.google.com/dns/docs/reference/rest/v1/responsePolicies/list
   
   Required parameters: project
   
@@ -104,7 +104,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/responsePolicies/delete
+  "https://cloud.google.com/dns/docs/reference/rest/v1/responsePolicies/delete
   
   Required parameters: project, responsePolicy
   
@@ -131,7 +131,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/responsePolicies/patch
+  "https://cloud.google.com/dns/docs/reference/rest/v1/responsePolicies/patch
   
   Required parameters: project, responsePolicy
   
@@ -170,7 +170,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/responsePolicies/update
+  "https://cloud.google.com/dns/docs/reference/rest/v1/responsePolicies/update
   
   Required parameters: project, responsePolicy
   

@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.internalappsharingartifacts
   "Google Play Android Developer API: internalappsharingartifacts.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/internalappsharingartifacts"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn uploadapk$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/internalappsharingartifacts/uploadapk
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn uploadbundle$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/internalappsharingartifacts/uploadbundle
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   

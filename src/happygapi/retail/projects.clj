@@ -1,13 +1,13 @@
 (ns happygapi.retail.projects
   "Vertex AI Search for Retail API: projects.
   Vertex AI Search for Retail API is made up of Retail Search, Browse and Recommendations. These discovery AI solutions help you implement personalized search, browse and recommendations, based on machine learning models, across your websites and mobile applications.
-  See: https://cloud.google.com/recommendationsapi/reference/rest/v2/projects"
+  See: https://cloud.google.com/recommendations"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/operations/list
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/operations/get
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-catalogs-patch$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/patch
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn locations-catalogs-getCompletionConfig$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/getCompletionConfig
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -120,7 +120,7 @@
      auth))))
 
 (defn locations-catalogs-updateAttributesConfig$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/updateAttributesConfig
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn locations-catalogs-completeQuery$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/completeQuery
+  "https://cloud.google.com/recommendations
   
   Required parameters: catalog
   
@@ -178,7 +178,7 @@
      auth))))
 
 (defn locations-catalogs-list$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/list
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -204,7 +204,7 @@
      auth))))
 
 (defn locations-catalogs-updateCompletionConfig$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/updateCompletionConfig
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -246,7 +246,7 @@
      auth))))
 
 (defn locations-catalogs-setDefaultBranch$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/setDefaultBranch
+  "https://cloud.google.com/recommendations
   
   Required parameters: catalog
   
@@ -278,7 +278,7 @@
      auth))))
 
 (defn locations-catalogs-getDefaultBranch$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/getDefaultBranch
+  "https://cloud.google.com/recommendations
   
   Required parameters: catalog
   
@@ -304,7 +304,7 @@
      auth))))
 
 (defn locations-catalogs-exportAnalyticsMetrics$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/exportAnalyticsMetrics
+  "https://cloud.google.com/recommendations
   
   Required parameters: catalog
   
@@ -338,7 +338,7 @@
      auth))))
 
 (defn locations-catalogs-getAttributesConfig$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/getAttributesConfig
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -364,7 +364,7 @@
      auth))))
 
 (defn locations-catalogs-userEvents-write$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/userEvents/write
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -426,7 +426,7 @@
      auth))))
 
 (defn locations-catalogs-userEvents-collect$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/userEvents/collect
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -452,7 +452,7 @@
      auth))))
 
 (defn locations-catalogs-userEvents-purge$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/userEvents/purge
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -484,7 +484,7 @@
      auth))))
 
 (defn locations-catalogs-userEvents-import$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/userEvents/import
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -519,7 +519,7 @@
      auth))))
 
 (defn locations-catalogs-userEvents-rejoin$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/userEvents/rejoin
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -551,7 +551,7 @@
      auth))))
 
 (defn locations-catalogs-attributesConfig-addCatalogAttribute$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/attributesConfig/addCatalogAttribute
+  "https://cloud.google.com/recommendations
   
   Required parameters: attributesConfig
   
@@ -591,7 +591,7 @@
      auth))))
 
 (defn locations-catalogs-attributesConfig-removeCatalogAttribute$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/attributesConfig/removeCatalogAttribute
+  "https://cloud.google.com/recommendations
   
   Required parameters: attributesConfig
   
@@ -623,7 +623,7 @@
      auth))))
 
 (defn locations-catalogs-attributesConfig-replaceCatalogAttribute$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/attributesConfig/replaceCatalogAttribute
+  "https://cloud.google.com/recommendations
   
   Required parameters: attributesConfig
   
@@ -664,7 +664,7 @@
      auth))))
 
 (defn locations-catalogs-completionData-import$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/completionData/import
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -697,7 +697,7 @@
      auth))))
 
 (defn locations-catalogs-placements-search$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/placements/search
+  "https://cloud.google.com/recommendations
   
   Required parameters: placement
   
@@ -757,7 +757,7 @@
      auth))))
 
 (defn locations-catalogs-placements-predict$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/placements/predict
+  "https://cloud.google.com/recommendations
   
   Required parameters: placement
   
@@ -815,7 +815,7 @@
      auth))))
 
 (defn locations-catalogs-branches-operations-get$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/operations/get
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -841,7 +841,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-get$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/get
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -867,7 +867,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-setInventory$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/setInventory
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -935,7 +935,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-patch$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/patch
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1044,7 +1044,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-create$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/create
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1153,7 +1153,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-addFulfillmentPlaces$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/addFulfillmentPlaces
+  "https://cloud.google.com/recommendations
   
   Required parameters: product
   
@@ -1188,7 +1188,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-delete$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/delete
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1214,7 +1214,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-removeFulfillmentPlaces$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/removeFulfillmentPlaces
+  "https://cloud.google.com/recommendations
   
   Required parameters: product
   
@@ -1249,7 +1249,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-addLocalInventories$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/addLocalInventories
+  "https://cloud.google.com/recommendations
   
   Required parameters: product
   
@@ -1287,7 +1287,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-removeLocalInventories$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/removeLocalInventories
+  "https://cloud.google.com/recommendations
   
   Required parameters: product
   
@@ -1319,7 +1319,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-list$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/list
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1345,7 +1345,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-purge$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/purge
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1377,7 +1377,7 @@
      auth))))
 
 (defn locations-catalogs-branches-products-import$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/branches/products/import
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1416,7 +1416,7 @@
      auth))))
 
 (defn locations-catalogs-controls-create$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/controls/create
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1463,7 +1463,7 @@
      auth))))
 
 (defn locations-catalogs-controls-delete$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/controls/delete
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1489,7 +1489,7 @@
      auth))))
 
 (defn locations-catalogs-controls-patch$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/controls/patch
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1536,7 +1536,7 @@
      auth))))
 
 (defn locations-catalogs-controls-get$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/controls/get
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1562,7 +1562,7 @@
      auth))))
 
 (defn locations-catalogs-controls-list$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/controls/list
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1588,7 +1588,7 @@
      auth))))
 
 (defn locations-catalogs-models-create$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/models/create
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1634,7 +1634,7 @@
      auth))))
 
 (defn locations-catalogs-models-get$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/models/get
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1660,7 +1660,7 @@
      auth))))
 
 (defn locations-catalogs-models-pause$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/models/pause
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1692,7 +1692,7 @@
      auth))))
 
 (defn locations-catalogs-models-resume$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/models/resume
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1724,7 +1724,7 @@
      auth))))
 
 (defn locations-catalogs-models-delete$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/models/delete
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1750,7 +1750,7 @@
      auth))))
 
 (defn locations-catalogs-models-list$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/models/list
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1776,7 +1776,7 @@
      auth))))
 
 (defn locations-catalogs-models-patch$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/models/patch
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1822,7 +1822,7 @@
      auth))))
 
 (defn locations-catalogs-models-tune$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/models/tune
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1854,7 +1854,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-get$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/get
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1880,7 +1880,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-patch$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/patch
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -1898,6 +1898,7 @@
    :facetControlIds [string],
    :solutionTypes [string],
    :doNotAssociateControlIds [string],
+   :ignoreRecsDenylist boolean,
    :enableCategoryFilterLevel string,
    :priceRerankingLevel string,
    :diversityType string,
@@ -1930,7 +1931,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-create$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/create
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -1948,6 +1949,7 @@
    :facetControlIds [string],
    :solutionTypes [string],
    :doNotAssociateControlIds [string],
+   :ignoreRecsDenylist boolean,
    :enableCategoryFilterLevel string,
    :priceRerankingLevel string,
    :diversityType string,
@@ -1980,7 +1982,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-addControl$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/addControl
+  "https://cloud.google.com/recommendations
   
   Required parameters: servingConfig
   
@@ -2012,7 +2014,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-delete$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/delete
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -2038,7 +2040,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-removeControl$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/removeControl
+  "https://cloud.google.com/recommendations
   
   Required parameters: servingConfig
   
@@ -2070,7 +2072,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-search$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/search
+  "https://cloud.google.com/recommendations
   
   Required parameters: placement
   
@@ -2130,7 +2132,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-list$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/list
+  "https://cloud.google.com/recommendations
   
   Required parameters: parent
   
@@ -2156,7 +2158,7 @@
      auth))))
 
 (defn locations-catalogs-servingConfigs-predict$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/servingConfigs/predict
+  "https://cloud.google.com/recommendations
   
   Required parameters: placement
   
@@ -2214,7 +2216,7 @@
      auth))))
 
 (defn locations-catalogs-operations-list$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/operations/list
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -2240,7 +2242,7 @@
      auth))))
 
 (defn locations-catalogs-operations-get$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/locations/catalogs/operations/get
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -2266,7 +2268,7 @@
      auth))))
 
 (defn operations-list$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/operations/list
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   
@@ -2292,7 +2294,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/recommendationsapi/reference/rest/v2/projects/operations/get
+  "https://cloud.google.com/recommendations
   
   Required parameters: name
   

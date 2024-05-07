@@ -1,13 +1,13 @@
 (ns happygapi.firebase.availableProjects
   "Firebase Management API: availableProjects.
   The Firebase Management API enables programmatic setup and management of Firebase projects, including a project's Firebase resources and Firebase apps.
-  See: https://firebase.google.comapi/reference/rest/v1beta1/availableProjects"
+  See: https://firebase.google.com"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://firebase.google.comapi/reference/rest/v1beta1/availableProjects/list
+  "https://firebase.google.com
   
   Required parameters: none
   

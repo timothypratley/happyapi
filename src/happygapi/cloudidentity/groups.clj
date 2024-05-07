@@ -1,13 +1,13 @@
 (ns happygapi.cloudidentity.groups
   "Cloud Identity API: groups.
   API for provisioning and managing identity resources.
-  See: https://cloud.google.com/identity/api/reference/rest/v1/groups"
+  See: https://cloud.google.com/identity/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/get
   
   Required parameters: name
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/patch
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/patch
   
   Required parameters: name
   
@@ -78,7 +78,7 @@
      auth))))
 
 (defn updateSecuritySettings$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/updateSecuritySettings
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/updateSecuritySettings
   
   Required parameters: name
   
@@ -112,7 +112,7 @@
      auth))))
 
 (defn lookup$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/lookup
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/lookup
   
   Required parameters: none
   
@@ -140,7 +140,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/create
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/create
   
   Required parameters: none
   
@@ -183,7 +183,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/delete
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/delete
   
   Required parameters: name
   
@@ -210,7 +210,7 @@
      auth))))
 
 (defn search$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/search
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/search
   
   Required parameters: none
   
@@ -238,7 +238,7 @@
      auth))))
 
 (defn getSecuritySettings$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/getSecuritySettings
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/getSecuritySettings
   
   Required parameters: name
   
@@ -266,7 +266,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups/list
   
   Required parameters: none
   
@@ -294,7 +294,7 @@
      auth))))
 
 (defn memberships-searchTransitiveMemberships$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/searchTransitiveMemberships
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/searchTransitiveMemberships
   
   Required parameters: parent
   
@@ -322,7 +322,7 @@
      auth))))
 
 (defn memberships-checkTransitiveMembership$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/checkTransitiveMembership
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/checkTransitiveMembership
   
   Required parameters: parent
   
@@ -350,7 +350,7 @@
      auth))))
 
 (defn memberships-get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/get
   
   Required parameters: name
   
@@ -378,7 +378,7 @@
      auth))))
 
 (defn memberships-lookup$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/lookup
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/lookup
   
   Required parameters: parent
   
@@ -406,7 +406,7 @@
      auth))))
 
 (defn memberships-getMembershipGraph$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/getMembershipGraph
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/getMembershipGraph
   
   Required parameters: parent
   
@@ -434,7 +434,7 @@
      auth))))
 
 (defn memberships-create$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/create
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/create
   
   Required parameters: parent
   
@@ -475,7 +475,7 @@
      auth))))
 
 (defn memberships-searchTransitiveGroups$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/searchTransitiveGroups
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/searchTransitiveGroups
   
   Required parameters: parent
   
@@ -503,7 +503,7 @@
      auth))))
 
 (defn memberships-modifyMembershipRoles$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/modifyMembershipRoles
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/modifyMembershipRoles
   
   Required parameters: name
   
@@ -541,7 +541,7 @@
      auth))))
 
 (defn memberships-delete$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/delete
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/delete
   
   Required parameters: name
   
@@ -568,7 +568,7 @@
      auth))))
 
 (defn memberships-list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/list
   
   Required parameters: parent
   
@@ -596,7 +596,7 @@
      auth))))
 
 (defn memberships-searchDirectGroups$
-  "https://cloud.google.com/identity/api/reference/rest/v1/groups/memberships/searchDirectGroups
+  "https://cloud.google.com/identity/docs/reference/rest/v1/groups.memberships/searchDirectGroups
   
   Required parameters: parent
   

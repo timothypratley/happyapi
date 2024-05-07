@@ -1,13 +1,13 @@
 (ns happygapi.classroom.registrations
   "Google Classroom API: registrations.
   Manages classes, rosters, and invitations in Google Classroom.
-  See: https://developers.google.com/classroom/api/reference/rest/v1/registrations"
+  See: https://developers.google.com/classroom/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/registrations/create
+  "https://developers.google.com/classroom/reference/rest/v1/registrations/create
   
   Required parameters: none
   
@@ -44,7 +44,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/registrations/delete
+  "https://developers.google.com/classroom/reference/rest/v1/registrations/delete
   
   Required parameters: registrationId
   

@@ -1,13 +1,13 @@
 (ns happygapi.cloudshell.operations
   "Cloud Shell API: operations.
   Allows users to start, configure, and connect to interactive shell sessions running in the cloud. 
-  See: https://cloud.google.com/shell/docs/api/reference/rest/v1/operations"
+  See: https://cloud.google.com/shell/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/operations/list
+  "https://cloud.google.com/shell/docs/reference/rest/v1/operations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/operations/get
+  "https://cloud.google.com/shell/docs/reference/rest/v1/operations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/operations/delete
+  "https://cloud.google.com/shell/docs/reference/rest/v1/operations/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn cancel$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/operations/cancel
+  "https://cloud.google.com/shell/docs/reference/rest/v1/operations/cancel
   
   Required parameters: name
   

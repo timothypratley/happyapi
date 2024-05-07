@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionNotificationEndpoints
   "Compute Engine API: regionNotificationEndpoints.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionNotificationEndpoints"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNotificationEndpoints/list
+  "https://cloud.google.com/products/compute/v1/docs/regionNotificationEndpoints/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNotificationEndpoints/get
+  "https://cloud.google.com/products/compute/v1/docs/regionNotificationEndpoints/get
   
   Required parameters: notificationEndpoint, project, region
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNotificationEndpoints/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionNotificationEndpoints/insert
   
   Required parameters: project, region
   
@@ -109,7 +109,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNotificationEndpoints/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionNotificationEndpoints/delete
   
   Required parameters: notificationEndpoint, project, region
   

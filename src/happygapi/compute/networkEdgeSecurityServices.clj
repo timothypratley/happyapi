@@ -1,13 +1,13 @@
 (ns happygapi.compute.networkEdgeSecurityServices
   "Compute Engine API: networkEdgeSecurityServices.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/networkEdgeSecurityServices"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEdgeSecurityServices/get
+  "https://cloud.google.com/products/compute/v1/docs/networkEdgeSecurityServices/get
   
   Required parameters: networkEdgeSecurityService, project, region
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEdgeSecurityServices/insert
+  "https://cloud.google.com/products/compute/v1/docs/networkEdgeSecurityServices/insert
   
   Required parameters: project, region
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEdgeSecurityServices/delete
+  "https://cloud.google.com/products/compute/v1/docs/networkEdgeSecurityServices/delete
   
   Required parameters: networkEdgeSecurityService, project, region
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEdgeSecurityServices/patch
+  "https://cloud.google.com/products/compute/v1/docs/networkEdgeSecurityServices/patch
   
   Required parameters: networkEdgeSecurityService, project, region
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEdgeSecurityServices/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/networkEdgeSecurityServices/aggregatedList
   
   Required parameters: project
   

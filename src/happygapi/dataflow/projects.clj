@@ -1,13 +1,13 @@
 (ns happygapi.dataflow.projects
   "Dataflow API: projects.
   Manages Google Cloud Dataflow projects on Google Cloud Platform.
-  See: https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects"
+  See: https://cloud.google.com/dataflow"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn deleteSnapshots$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/deleteSnapshots
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn workerMessages$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/workerMessages
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -80,7 +80,7 @@
      auth))))
 
 (defn snapshots-get$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/snapshots/get
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, snapshotId
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn snapshots-list$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/snapshots/list
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -136,7 +136,7 @@
      auth))))
 
 (defn jobs-create$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/create
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -228,7 +228,7 @@
      auth))))
 
 (defn jobs-get$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/get
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -256,7 +256,7 @@
      auth))))
 
 (defn jobs-update$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/update
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -348,7 +348,7 @@
      auth))))
 
 (defn jobs-list$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/list
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -376,7 +376,7 @@
      auth))))
 
 (defn jobs-aggregated$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/aggregated
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -404,7 +404,7 @@
      auth))))
 
 (defn jobs-snapshot$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/snapshot
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -441,7 +441,7 @@
      auth))))
 
 (defn jobs-getMetrics$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/getMetrics
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -469,7 +469,7 @@
      auth))))
 
 (defn jobs-debug-getConfig$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/debug/getConfig
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -503,7 +503,7 @@
      auth))))
 
 (defn jobs-debug-sendCapture$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/debug/sendCapture
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -541,7 +541,7 @@
      auth))))
 
 (defn jobs-messages-list$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/messages/list
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -569,7 +569,7 @@
      auth))))
 
 (defn jobs-workItems-reportStatus$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/workItems/reportStatus
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -620,7 +620,7 @@
      auth))))
 
 (defn jobs-workItems-lease$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/jobs/workItems/lease
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, jobId
   
@@ -660,7 +660,7 @@
      auth))))
 
 (defn templates-create$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/templates/create
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -715,7 +715,7 @@
      auth))))
 
 (defn templates-launch$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/templates/launch
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -770,7 +770,7 @@
      auth))))
 
 (defn templates-get$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/templates/get
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId
   
@@ -798,7 +798,7 @@
      auth))))
 
 (defn locations-workerMessages$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/workerMessages
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location
   
@@ -843,7 +843,7 @@
      auth))))
 
 (defn locations-snapshots-get$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/snapshots/get
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, snapshotId
   
@@ -873,7 +873,7 @@
      auth))))
 
 (defn locations-snapshots-delete$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/snapshots/delete
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, snapshotId
   
@@ -903,7 +903,7 @@
      auth))))
 
 (defn locations-snapshots-list$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/snapshots/list
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location
   
@@ -931,7 +931,7 @@
      auth))))
 
 (defn locations-jobs-create$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/create
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location
   
@@ -1023,7 +1023,7 @@
      auth))))
 
 (defn locations-jobs-get$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/get
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1051,7 +1051,7 @@
      auth))))
 
 (defn locations-jobs-update$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/update
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1143,7 +1143,7 @@
      auth))))
 
 (defn locations-jobs-list$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/list
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location
   
@@ -1171,7 +1171,7 @@
      auth))))
 
 (defn locations-jobs-snapshot$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/snapshot
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1208,7 +1208,7 @@
      auth))))
 
 (defn locations-jobs-getMetrics$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/getMetrics
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1236,7 +1236,7 @@
      auth))))
 
 (defn locations-jobs-getExecutionDetails$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/getExecutionDetails
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1264,7 +1264,7 @@
      auth))))
 
 (defn locations-jobs-debug-getConfig$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/debug/getConfig
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1298,7 +1298,7 @@
      auth))))
 
 (defn locations-jobs-debug-sendCapture$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/debug/sendCapture
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1336,7 +1336,7 @@
      auth))))
 
 (defn locations-jobs-snapshots-list$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/snapshots/list
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1364,7 +1364,7 @@
      auth))))
 
 (defn locations-jobs-messages-list$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/messages/list
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1392,7 +1392,7 @@
      auth))))
 
 (defn locations-jobs-stages-getExecutionDetails$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/stages/getExecutionDetails
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId, stageId
   
@@ -1422,7 +1422,7 @@
      auth))))
 
 (defn locations-jobs-workItems-reportStatus$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/workItems/reportStatus
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1473,7 +1473,7 @@
      auth))))
 
 (defn locations-jobs-workItems-lease$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/jobs/workItems/lease
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location, jobId
   
@@ -1513,7 +1513,7 @@
      auth))))
 
 (defn locations-templates-create$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/templates/create
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location
   
@@ -1568,7 +1568,7 @@
      auth))))
 
 (defn locations-templates-launch$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/templates/launch
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location
   
@@ -1623,7 +1623,7 @@
      auth))))
 
 (defn locations-templates-get$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/templates/get
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location
   
@@ -1651,7 +1651,7 @@
      auth))))
 
 (defn locations-flexTemplates-launch$
-  "https://cloud.google.com/dataflowapi/reference/rest/v1b3/projects/locations/flexTemplates/launch
+  "https://cloud.google.com/dataflow
   
   Required parameters: projectId, location
   

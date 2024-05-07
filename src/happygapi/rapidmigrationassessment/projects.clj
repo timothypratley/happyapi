@@ -1,13 +1,13 @@
 (ns happygapi.rapidmigrationassessment.projects
   "Rapid Migration Assessment API: projects.
   The Rapid Migration Assessment service is our first-party migration assessment and planning tool.
-  See: https://cloud.google.com/migration-centerapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/migration-center/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-collectors-create$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/collectors/create
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.collectors/create
   
   Required parameters: parent
   
@@ -215,7 +215,7 @@
      auth))))
 
 (defn locations-collectors-list$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/collectors/list
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.collectors/list
   
   Required parameters: parent
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn locations-collectors-get$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/collectors/get
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.collectors/get
   
   Required parameters: name
   
@@ -267,7 +267,7 @@
      auth))))
 
 (defn locations-collectors-patch$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/collectors/patch
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.collectors/patch
   
   Required parameters: name
   
@@ -313,7 +313,7 @@
      auth))))
 
 (defn locations-collectors-delete$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/collectors/delete
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.collectors/delete
   
   Required parameters: name
   
@@ -339,7 +339,7 @@
      auth))))
 
 (defn locations-collectors-resume$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/collectors/resume
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.collectors/resume
   
   Required parameters: name
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn locations-collectors-register$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/collectors/register
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.collectors/register
   
   Required parameters: name
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn locations-collectors-pause$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/collectors/pause
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.collectors/pause
   
   Required parameters: name
   
@@ -435,7 +435,7 @@
      auth))))
 
 (defn locations-annotations-create$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/annotations/create
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.annotations/create
   
   Required parameters: parent
   
@@ -471,7 +471,7 @@
      auth))))
 
 (defn locations-annotations-get$
-  "https://cloud.google.com/migration-centerapi/reference/rest/v1/projects/locations/annotations/get
+  "https://cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.annotations/get
   
   Required parameters: name
   

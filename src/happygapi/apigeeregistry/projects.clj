@@ -1,13 +1,13 @@
 (ns happygapi.apigeeregistry.projects
   "Apigee Registry API: projects.
   
-  See: https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-instances-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/instances/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -207,7 +207,7 @@
      auth))))
 
 (defn locations-instances-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/instances/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -233,7 +233,7 @@
      auth))))
 
 (defn locations-instances-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/instances/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -259,7 +259,7 @@
      auth))))
 
 (defn locations-instances-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/instances/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -291,7 +291,7 @@
      auth))))
 
 (defn locations-instances-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/instances/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn locations-instances-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/instances/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -349,7 +349,7 @@
      auth))))
 
 (defn locations-apis-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -375,7 +375,7 @@
      auth))))
 
 (defn locations-apis-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -401,7 +401,7 @@
      auth))))
 
 (defn locations-apis-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -442,7 +442,7 @@
      auth))))
 
 (defn locations-apis-patch$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/patch
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -483,7 +483,7 @@
      auth))))
 
 (defn locations-apis-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -509,7 +509,7 @@
      auth))))
 
 (defn locations-apis-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -541,7 +541,7 @@
      auth))))
 
 (defn locations-apis-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -567,7 +567,7 @@
      auth))))
 
 (defn locations-apis-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -599,7 +599,7 @@
      auth))))
 
 (defn locations-apis-versions-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -625,7 +625,7 @@
      auth))))
 
 (defn locations-apis-versions-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -651,7 +651,7 @@
      auth))))
 
 (defn locations-apis-versions-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -691,7 +691,7 @@
      auth))))
 
 (defn locations-apis-versions-patch$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/patch
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -731,7 +731,7 @@
      auth))))
 
 (defn locations-apis-versions-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -757,7 +757,7 @@
      auth))))
 
 (defn locations-apis-versions-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -789,7 +789,7 @@
      auth))))
 
 (defn locations-apis-versions-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -815,7 +815,7 @@
      auth))))
 
 (defn locations-apis-versions-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -847,7 +847,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-rollback$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/rollback
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -879,7 +879,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -905,7 +905,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -937,7 +937,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-patch$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/patch
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -982,7 +982,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1014,7 +1014,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -1059,7 +1059,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-getContents$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/getContents
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1085,7 +1085,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1111,7 +1111,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1137,7 +1137,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -1163,7 +1163,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-tagRevision$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/tagRevision
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1195,7 +1195,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-deleteRevision$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/deleteRevision
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1221,7 +1221,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-listRevisions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/listRevisions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1247,7 +1247,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1273,7 +1273,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1305,7 +1305,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1337,7 +1337,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -1377,7 +1377,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-getContents$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/getContents
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1403,7 +1403,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1429,7 +1429,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1455,7 +1455,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-replaceArtifact$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/replaceArtifact
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1495,7 +1495,7 @@
      auth))))
 
 (defn locations-apis-versions-specs-artifacts-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/specs/artifacts/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -1521,7 +1521,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1547,7 +1547,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1579,7 +1579,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1611,7 +1611,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -1651,7 +1651,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-getContents$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/getContents
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1677,7 +1677,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1703,7 +1703,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1729,7 +1729,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-replaceArtifact$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/replaceArtifact
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1769,7 +1769,7 @@
      auth))))
 
 (defn locations-apis-versions-artifacts-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/versions/artifacts/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -1795,7 +1795,7 @@
      auth))))
 
 (defn locations-apis-deployments-rollback$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/rollback
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1827,7 +1827,7 @@
      auth))))
 
 (defn locations-apis-deployments-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1853,7 +1853,7 @@
      auth))))
 
 (defn locations-apis-deployments-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1885,7 +1885,7 @@
      auth))))
 
 (defn locations-apis-deployments-patch$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/patch
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -1930,7 +1930,7 @@
      auth))))
 
 (defn locations-apis-deployments-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -1962,7 +1962,7 @@
      auth))))
 
 (defn locations-apis-deployments-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -2007,7 +2007,7 @@
      auth))))
 
 (defn locations-apis-deployments-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2033,7 +2033,7 @@
      auth))))
 
 (defn locations-apis-deployments-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2059,7 +2059,7 @@
      auth))))
 
 (defn locations-apis-deployments-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -2085,7 +2085,7 @@
      auth))))
 
 (defn locations-apis-deployments-tagRevision$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/tagRevision
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2117,7 +2117,7 @@
      auth))))
 
 (defn locations-apis-deployments-deleteRevision$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/deleteRevision
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2143,7 +2143,7 @@
      auth))))
 
 (defn locations-apis-deployments-listRevisions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/listRevisions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2169,7 +2169,7 @@
      auth))))
 
 (defn locations-apis-deployments-artifacts-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/artifacts/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -2195,7 +2195,7 @@
      auth))))
 
 (defn locations-apis-deployments-artifacts-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/artifacts/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2221,7 +2221,7 @@
      auth))))
 
 (defn locations-apis-deployments-artifacts-getContents$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/artifacts/getContents
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2247,7 +2247,7 @@
      auth))))
 
 (defn locations-apis-deployments-artifacts-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/artifacts/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -2287,7 +2287,7 @@
      auth))))
 
 (defn locations-apis-deployments-artifacts-replaceArtifact$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/artifacts/replaceArtifact
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2327,7 +2327,7 @@
      auth))))
 
 (defn locations-apis-deployments-artifacts-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/deployments/artifacts/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2353,7 +2353,7 @@
      auth))))
 
 (defn locations-apis-artifacts-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2379,7 +2379,7 @@
      auth))))
 
 (defn locations-apis-artifacts-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2411,7 +2411,7 @@
      auth))))
 
 (defn locations-apis-artifacts-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2443,7 +2443,7 @@
      auth))))
 
 (defn locations-apis-artifacts-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -2483,7 +2483,7 @@
      auth))))
 
 (defn locations-apis-artifacts-getContents$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/getContents
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2509,7 +2509,7 @@
      auth))))
 
 (defn locations-apis-artifacts-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2535,7 +2535,7 @@
      auth))))
 
 (defn locations-apis-artifacts-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2561,7 +2561,7 @@
      auth))))
 
 (defn locations-apis-artifacts-replaceArtifact$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/replaceArtifact
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2601,7 +2601,7 @@
      auth))))
 
 (defn locations-apis-artifacts-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/apis/artifacts/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -2627,7 +2627,7 @@
      auth))))
 
 (defn locations-artifacts-get$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/get
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2653,7 +2653,7 @@
      auth))))
 
 (defn locations-artifacts-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2685,7 +2685,7 @@
      auth))))
 
 (defn locations-artifacts-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2717,7 +2717,7 @@
      auth))))
 
 (defn locations-artifacts-create$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/create
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -2757,7 +2757,7 @@
      auth))))
 
 (defn locations-artifacts-getContents$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/getContents
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2783,7 +2783,7 @@
      auth))))
 
 (defn locations-artifacts-delete$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/delete
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2809,7 +2809,7 @@
      auth))))
 
 (defn locations-artifacts-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2835,7 +2835,7 @@
      auth))))
 
 (defn locations-artifacts-replaceArtifact$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/replaceArtifact
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: name
   
@@ -2875,7 +2875,7 @@
      auth))))
 
 (defn locations-artifacts-list$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/artifacts/list
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: parent
   
@@ -2901,7 +2901,7 @@
      auth))))
 
 (defn locations-runtime-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/runtime/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2933,7 +2933,7 @@
      auth))))
 
 (defn locations-runtime-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/runtime/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2959,7 +2959,7 @@
      auth))))
 
 (defn locations-runtime-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/runtime/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -2991,7 +2991,7 @@
      auth))))
 
 (defn locations-documents-setIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/documents/setIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -3023,7 +3023,7 @@
      auth))))
 
 (defn locations-documents-getIamPolicy$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/documents/getIamPolicy
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   
@@ -3049,7 +3049,7 @@
      auth))))
 
 (defn locations-documents-testIamPermissions$
-  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hubapi/reference/rest/v1/projects/locations/documents/testIamPermissions
+  "https://cloud.google.com/apigee/docs/api-hub/what-is-api-hub
   
   Required parameters: resource
   

@@ -1,13 +1,13 @@
 (ns happygapi.prod_tt_sasportal.installer
   "SAS Portal API (Testing): installer.
   
-  See: https://developers.google.com/spectrum-access-system/api/reference/rest/v1alpha1/installer"
+  See: https://developers.google.com/spectrum-access-system/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn validate$
-  "https://developers.google.com/spectrum-access-system/api/reference/rest/v1alpha1/installer/validate
+  "https://developers.google.com/spectrum-access-system/reference/rest/v1alpha1/installer/validate
   
   Required parameters: none
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn generateSecret$
-  "https://developers.google.com/spectrum-access-system/api/reference/rest/v1alpha1/installer/generateSecret
+  "https://developers.google.com/spectrum-access-system/reference/rest/v1alpha1/installer/generateSecret
   
   Required parameters: none
   

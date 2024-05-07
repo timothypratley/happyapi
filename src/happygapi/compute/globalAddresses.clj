@@ -1,13 +1,13 @@
 (ns happygapi.compute.globalAddresses
   "Compute Engine API: globalAddresses.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/globalAddresses"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalAddresses/list
+  "https://cloud.google.com/products/compute/v1/docs/globalAddresses/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalAddresses/get
+  "https://cloud.google.com/products/compute/v1/docs/globalAddresses/get
   
   Required parameters: address, project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalAddresses/insert
+  "https://cloud.google.com/products/compute/v1/docs/globalAddresses/insert
   
   Required parameters: project
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalAddresses/delete
+  "https://cloud.google.com/products/compute/v1/docs/globalAddresses/delete
   
   Required parameters: address, project
   
@@ -142,7 +142,7 @@
      auth))))
 
 (defn move$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalAddresses/move
+  "https://cloud.google.com/products/compute/v1/docs/globalAddresses/move
   
   Required parameters: address, project
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalAddresses/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/globalAddresses/setLabels
   
   Required parameters: project, resource
   

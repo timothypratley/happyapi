@@ -1,13 +1,13 @@
 (ns happygapi.classroom.invitations
   "Google Classroom API: invitations.
   Manages classes, rosters, and invitations in Google Classroom.
-  See: https://developers.google.com/classroom/api/reference/rest/v1/invitations"
+  See: https://developers.google.com/classroom/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/invitations/create
+  "https://developers.google.com/classroom/reference/rest/v1/invitations/create
   
   Required parameters: none
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/invitations/get
+  "https://developers.google.com/classroom/reference/rest/v1/invitations/get
   
   Required parameters: id
   
@@ -66,7 +66,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/invitations/delete
+  "https://developers.google.com/classroom/reference/rest/v1/invitations/delete
   
   Required parameters: id
   
@@ -92,7 +92,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/invitations/list
+  "https://developers.google.com/classroom/reference/rest/v1/invitations/list
   
   Required parameters: none
   
@@ -119,7 +119,7 @@
      auth))))
 
 (defn accept$
-  "https://developers.google.com/classroom/api/reference/rest/v1/invitations/accept
+  "https://developers.google.com/classroom/reference/rest/v1/invitations/accept
   
   Required parameters: id
   

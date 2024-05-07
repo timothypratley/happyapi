@@ -1,13 +1,13 @@
 (ns happygapi.firebaseappcheck.projects
   "Firebase App Check API: projects.
   Firebase App Check works alongside other Firebase services to help protect your backend resources from abuse, such as billing fraud or phishing.
-  See: https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects"
+  See: https://firebase.google.com/docs/app-check"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn apps-generateAppAttestChallenge$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/generateAppAttestChallenge
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn apps-exchangeDeviceCheckToken$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangeDeviceCheckToken
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -48,7 +48,7 @@
   
   Body: 
   
-  {:limitedUse boolean, :deviceToken string}
+  {:deviceToken string, :limitedUse boolean}
   
   Accepts a [`device_token`](https://developer.apple.com/documentation/devicecheck/dcdevice) issued by DeviceCheck, and attempts to validate it with Apple. If valid, returns an AppCheckToken."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -73,7 +73,7 @@
      auth))))
 
 (defn apps-exchangeDebugToken$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangeDebugToken
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn apps-exchangePlayIntegrityToken$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangePlayIntegrityToken
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -114,7 +114,7 @@
   
   Body: 
   
-  {:limitedUse boolean, :playIntegrityToken string}
+  {:playIntegrityToken string, :limitedUse boolean}
   
   Validates an [integrity verdict response token from Play Integrity](https://developer.android.com/google/play/integrity/verdict#decrypt-verify). If valid, returns an AppCheckToken."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -139,7 +139,7 @@
      auth))))
 
 (defn apps-generatePlayIntegrityChallenge$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/generatePlayIntegrityChallenge
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -172,7 +172,7 @@
      auth))))
 
 (defn apps-exchangeRecaptchaV3Token$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangeRecaptchaV3Token
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -180,7 +180,7 @@
   
   Body: 
   
-  {:recaptchaV3Token string, :limitedUse boolean}
+  {:limitedUse boolean, :recaptchaV3Token string}
   
   Validates a [reCAPTCHA v3 response token](https://developers.google.com/recaptcha/docs/v3). If valid, returns an AppCheckToken."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -205,7 +205,7 @@
      auth))))
 
 (defn apps-exchangeSafetyNetToken$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangeSafetyNetToken
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -238,7 +238,7 @@
      auth))))
 
 (defn apps-exchangeCustomToken$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangeCustomToken
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -246,7 +246,7 @@
   
   Body: 
   
-  {:limitedUse boolean, :customToken string}
+  {:customToken string, :limitedUse boolean}
   
   Validates a custom token signed using your project's Admin SDK service account credentials. If valid, returns an AppCheckToken."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -271,7 +271,7 @@
      auth))))
 
 (defn apps-exchangeAppAttestAssertion$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangeAppAttestAssertion
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -279,10 +279,10 @@
   
   Body: 
   
-  {:artifact string,
-   :challenge string,
-   :limitedUse boolean,
-   :assertion string}
+  {:challenge string,
+   :artifact string,
+   :assertion string,
+   :limitedUse boolean}
   
   Accepts an App Attest assertion and an artifact previously obtained from ExchangeAppAttestAttestation and verifies those with Apple. If valid, returns an AppCheckToken."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -307,7 +307,7 @@
      auth))))
 
 (defn apps-exchangeAppAttestAttestation$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangeAppAttestAttestation
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -315,9 +315,9 @@
   
   Body: 
   
-  {:limitedUse boolean,
-   :challenge string,
+  {:challenge string,
    :keyId string,
+   :limitedUse boolean,
    :attestationStatement string}
   
   Accepts an App Attest CBOR attestation and verifies it with Apple using your preconfigured team and bundle IDs. If valid, returns an attestation artifact that can later be exchanged for an AppCheckToken using ExchangeAppAttestAssertion. For convenience and performance, this method's response object will also contain an AppCheckToken (if the verification is successful)."
@@ -343,7 +343,7 @@
      auth))))
 
 (defn apps-exchangeRecaptchaEnterpriseToken$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/exchangeRecaptchaEnterpriseToken
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: app
   
@@ -375,8 +375,95 @@
       :as :json}
      auth))))
 
+(defn apps-recaptchaEnterpriseConfig-patch$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:tokenTtl string, :siteKey string, :name string}
+  
+  Updates the RecaptchaEnterpriseConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange reCAPTCHA Enterprise tokens for App Check tokens."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-recaptchaEnterpriseConfig-get$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the RecaptchaEnterpriseConfig for the specified app."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-recaptchaEnterpriseConfig-batchGet$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: parent
+  
+  Optional parameters: names
+  
+  Atomically gets the RecaptchaEnterpriseConfigs for the specified list of apps."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+parent}/apps/-/recaptchaEnterpriseConfig:batchGet"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn apps-appAttestConfig-batchGet$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/appAttestConfig/batchGet
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: parent
   
@@ -402,8 +489,35 @@
       :as :json}
      auth))))
 
+(defn apps-appAttestConfig-get$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the AppAttestConfig for the specified app."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn apps-appAttestConfig-patch$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/appAttestConfig/patch
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: name
   
@@ -435,474 +549,8 @@
       :as :json}
      auth))))
 
-(defn apps-appAttestConfig-get$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/appAttestConfig/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the AppAttestConfig for the specified app."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-debugTokens-list$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/debugTokens/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize
-  
-  Lists all DebugTokens for the specified app. For security reasons, the `token` field is never populated in the response."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+parent}/debugTokens"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-debugTokens-delete$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/debugTokens/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes the specified DebugToken. A deleted debug token cannot be used to exchange for an App Check token. Use this method when you suspect the secret `token` has been compromised or when you no longer need the debug token."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-debugTokens-patch$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/debugTokens/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:name string, :token string, :displayName string}
-  
-  Updates the specified DebugToken. For security reasons, the `token` field cannot be updated, nor will it be populated in the response, but you can revoke the debug token using DeleteDebugToken."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-debugTokens-create$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/debugTokens/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:name string, :token string, :displayName string}
-  
-  Creates a new DebugToken for the specified app. For security reasons, after the creation operation completes, the `token` field cannot be updated or retrieved, but you can revoke the debug token using DeleteDebugToken. Each app can have a maximum of 20 debug tokens."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+parent}/debugTokens"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-debugTokens-get$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/debugTokens/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the specified DebugToken. For security reasons, the `token` field is never populated in the response."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-deviceCheckConfig-patch$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/deviceCheckConfig/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:privateKey string,
-   :tokenTtl string,
-   :name string,
-   :privateKeySet boolean,
-   :keyId string}
-  
-  Updates the DeviceCheckConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange DeviceCheck tokens for App Check tokens. For security reasons, the `private_key` field is never populated in the response."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-deviceCheckConfig-batchGet$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/deviceCheckConfig/batchGet
-  
-  Required parameters: parent
-  
-  Optional parameters: names
-  
-  Atomically gets the DeviceCheckConfigs for the specified list of apps. For security reasons, the `private_key` field is never populated in the response."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+parent}/apps/-/deviceCheckConfig:batchGet"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-deviceCheckConfig-get$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/deviceCheckConfig/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the DeviceCheckConfig for the specified app. For security reasons, the `private_key` field is never populated in the response."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-safetyNetConfig-patch$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/safetyNetConfig/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:name string, :tokenTtl string}
-  
-  Updates the SafetyNetConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange SafetyNet tokens for App Check tokens."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-safetyNetConfig-get$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/safetyNetConfig/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the SafetyNetConfig for the specified app."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-safetyNetConfig-batchGet$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/safetyNetConfig/batchGet
-  
-  Required parameters: parent
-  
-  Optional parameters: names
-  
-  Atomically gets the SafetyNetConfigs for the specified list of apps."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+parent}/apps/-/safetyNetConfig:batchGet"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-recaptchaEnterpriseConfig-batchGet$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/recaptchaEnterpriseConfig/batchGet
-  
-  Required parameters: parent
-  
-  Optional parameters: names
-  
-  Atomically gets the RecaptchaEnterpriseConfigs for the specified list of apps."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+parent}/apps/-/recaptchaEnterpriseConfig:batchGet"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-recaptchaEnterpriseConfig-patch$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/recaptchaEnterpriseConfig/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:name string, :tokenTtl string, :siteKey string}
-  
-  Updates the RecaptchaEnterpriseConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange reCAPTCHA Enterprise tokens for App Check tokens."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-recaptchaEnterpriseConfig-get$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/recaptchaEnterpriseConfig/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the RecaptchaEnterpriseConfig for the specified app."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-playIntegrityConfig-get$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/playIntegrityConfig/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the PlayIntegrityConfig for the specified app."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn apps-playIntegrityConfig-batchGet$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/playIntegrityConfig/batchGet
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: parent
   
@@ -929,7 +577,7 @@
      auth))))
 
 (defn apps-playIntegrityConfig-patch$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/playIntegrityConfig/patch
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: name
   
@@ -937,7 +585,7 @@
   
   Body: 
   
-  {:name string, :tokenTtl string}
+  {:tokenTtl string, :name string}
   
   Updates the PlayIntegrityConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange Play Integrity tokens for App Check tokens."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -961,8 +609,35 @@
       :as :json}
      auth))))
 
+(defn apps-playIntegrityConfig-get$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the PlayIntegrityConfig for the specified app."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn apps-recaptchaV3Config-batchGet$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/recaptchaV3Config/batchGet
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: parent
   
@@ -989,7 +664,7 @@
      auth))))
 
 (defn apps-recaptchaV3Config-get$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/recaptchaV3Config/get
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: name
   
@@ -1016,7 +691,7 @@
      auth))))
 
 (defn apps-recaptchaV3Config-patch$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/apps/recaptchaV3Config/patch
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: name
   
@@ -1024,10 +699,10 @@
   
   Body: 
   
-  {:siteSecret string,
+  {:name string,
+   :siteSecret string,
    :tokenTtl string,
-   :siteSecretSet boolean,
-   :name string}
+   :siteSecretSet boolean}
   
   Updates the RecaptchaV3Config for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange reCAPTCHA tokens for App Check tokens. For security reasons, the `site_secret` field is never populated in the response."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -1051,8 +726,333 @@
       :as :json}
      auth))))
 
+(defn apps-debugTokens-patch$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:updateTime string, :name string, :token string, :displayName string}
+  
+  Updates the specified DebugToken. For security reasons, the `token` field cannot be updated, nor will it be populated in the response, but you can revoke the debug token using DeleteDebugToken."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-debugTokens-create$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:updateTime string, :name string, :token string, :displayName string}
+  
+  Creates a new DebugToken for the specified app. For security reasons, after the creation operation completes, the `token` field cannot be updated or retrieved, but you can revoke the debug token using DeleteDebugToken. Each app can have a maximum of 20 debug tokens."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+parent}/debugTokens"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-debugTokens-delete$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes the specified DebugToken. A deleted debug token cannot be used to exchange for an App Check token. Use this method when you suspect the secret `token` has been compromised or when you no longer need the debug token."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-debugTokens-list$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize
+  
+  Lists all DebugTokens for the specified app. For security reasons, the `token` field is never populated in the response."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+parent}/debugTokens"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-debugTokens-get$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the specified DebugToken. For security reasons, the `token` field is never populated in the response."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-safetyNetConfig-batchGet$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: parent
+  
+  Optional parameters: names
+  
+  Atomically gets the SafetyNetConfigs for the specified list of apps."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+parent}/apps/-/safetyNetConfig:batchGet"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-safetyNetConfig-get$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the SafetyNetConfig for the specified app."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-safetyNetConfig-patch$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:tokenTtl string, :name string}
+  
+  Updates the SafetyNetConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange SafetyNet tokens for App Check tokens."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-deviceCheckConfig-get$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the DeviceCheckConfig for the specified app. For security reasons, the `private_key` field is never populated in the response."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-deviceCheckConfig-batchGet$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: parent
+  
+  Optional parameters: names
+  
+  Atomically gets the DeviceCheckConfigs for the specified list of apps. For security reasons, the `private_key` field is never populated in the response."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+parent}/apps/-/deviceCheckConfig:batchGet"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-deviceCheckConfig-patch$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:name string,
+   :keyId string,
+   :privateKeySet boolean,
+   :tokenTtl string,
+   :privateKey string}
+  
+  Updates the DeviceCheckConfig for the specified app. While this configuration is incomplete or invalid, the app will be unable to exchange DeviceCheck tokens for App Check tokens. For security reasons, the `private_key` field is never populated in the response."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn services-batchUpdate$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/services/batchUpdate
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: parent
   
@@ -1086,35 +1086,8 @@
       :as :json}
      auth))))
 
-(defn services-list$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/services/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize
-  
-  Lists all Service configurations for the specified project. Only Services which were explicitly configured using UpdateService or BatchUpdateServices will be returned."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/firebase"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappcheck.googleapis.com/"
-     "v1/{+parent}/services"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn services-get$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/services/get
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: name
   
@@ -1141,7 +1114,7 @@
      auth))))
 
 (defn services-patch$
-  "https://firebase.google.com/docs/app-checkapi/reference/rest/v1/projects/services/patch
+  "https://firebase.google.com/docs/app-check
   
   Required parameters: name
   
@@ -1149,7 +1122,7 @@
   
   Body: 
   
-  {:name string, :enforcementMode string}
+  {:enforcementMode string, :name string}
   
   Updates the specified Service configuration."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -1168,6 +1141,33 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn services-list$
+  "https://firebase.google.com/docs/app-check
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Lists all Service configurations for the specified project. Only Services which were explicitly configured using UpdateService or BatchUpdateServices will be returned."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/firebase"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappcheck.googleapis.com/"
+     "v1/{+parent}/services"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

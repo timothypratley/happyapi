@@ -1,13 +1,13 @@
 (ns happygapi.oslogin.users
   "Cloud OS Login API: users.
   You can use OS Login to manage access to your VM instances using IAM roles.
-  See: https://cloud.google.com/compute/docs/oslogin/api/reference/rest/v1/users"
+  See: https://cloud.google.com/compute/docs/oslogin/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getLoginProfile$
-  "https://cloud.google.com/compute/docs/oslogin/api/reference/rest/v1/users/getLoginProfile
+  "https://cloud.google.com/compute/docs/oslogin
   
   Required parameters: name
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn importSshPublicKey$
-  "https://cloud.google.com/compute/docs/oslogin/api/reference/rest/v1/users/importSshPublicKey
+  "https://cloud.google.com/compute/docs/oslogin
   
   Required parameters: parent
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn sshPublicKeys-create$
-  "https://cloud.google.com/compute/docs/oslogin/api/reference/rest/v1/users/sshPublicKeys/create
+  "https://cloud.google.com/compute/docs/oslogin
   
   Required parameters: parent
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn sshPublicKeys-delete$
-  "https://cloud.google.com/compute/docs/oslogin/api/reference/rest/v1/users/sshPublicKeys/delete
+  "https://cloud.google.com/compute/docs/oslogin
   
   Required parameters: name
   
@@ -135,7 +135,7 @@
      auth))))
 
 (defn sshPublicKeys-get$
-  "https://cloud.google.com/compute/docs/oslogin/api/reference/rest/v1/users/sshPublicKeys/get
+  "https://cloud.google.com/compute/docs/oslogin
   
   Required parameters: name
   
@@ -162,7 +162,7 @@
      auth))))
 
 (defn sshPublicKeys-patch$
-  "https://cloud.google.com/compute/docs/oslogin/api/reference/rest/v1/users/sshPublicKeys/patch
+  "https://cloud.google.com/compute/docs/oslogin
   
   Required parameters: name
   
@@ -198,7 +198,7 @@
      auth))))
 
 (defn projects-delete$
-  "https://cloud.google.com/compute/docs/oslogin/api/reference/rest/v1/users/projects/delete
+  "https://cloud.google.com/compute/docs/oslogin
   
   Required parameters: name
   

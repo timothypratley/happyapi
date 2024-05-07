@@ -1,13 +1,13 @@
 (ns happygapi.tagmanager.accounts
   "Tag Manager API: accounts.
   This API allows clients to access and modify container and tag configuration.
-  See: https://developers.google.com/tag-managerapi/reference/rest/v2/accounts"
+  See: https://developers.google.com/tag-platform/tag-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: none
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn user_permissions-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/user_permissions/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -138,7 +138,7 @@
      auth))))
 
 (defn user_permissions-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/user_permissions/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -164,7 +164,7 @@
      auth))))
 
 (defn user_permissions-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/user_permissions/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -190,7 +190,7 @@
      auth))))
 
 (defn user_permissions-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/user_permissions/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -226,7 +226,7 @@
      auth))))
 
 (defn user_permissions-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/user_permissions/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -252,7 +252,7 @@
      auth))))
 
 (defn containers-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -279,7 +279,7 @@
      auth))))
 
 (defn containers-lookup$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/lookup
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: none
   
@@ -306,7 +306,7 @@
      auth))))
 
 (defn containers-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -363,7 +363,7 @@
      auth))))
 
 (defn containers-snippet$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/snippet
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -390,7 +390,7 @@
      auth))))
 
 (defn containers-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -447,7 +447,7 @@
      auth))))
 
 (defn containers-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -473,7 +473,7 @@
      auth))))
 
 (defn containers-combine$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/combine
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -499,7 +499,7 @@
      auth))))
 
 (defn containers-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -526,7 +526,7 @@
      auth))))
 
 (defn containers-move_tag_id$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/move_tag_id
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -552,7 +552,7 @@
      auth))))
 
 (defn containers-destinations-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/destinations/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -579,7 +579,7 @@
      auth))))
 
 (defn containers-destinations-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/destinations/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -606,7 +606,7 @@
      auth))))
 
 (defn containers-destinations-link$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/destinations/link
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -632,7 +632,7 @@
      auth))))
 
 (defn containers-workspaces-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -659,7 +659,7 @@
      auth))))
 
 (defn containers-workspaces-quick_preview$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/quick_preview
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -685,7 +685,7 @@
      auth))))
 
 (defn containers-workspaces-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -724,7 +724,7 @@
      auth))))
 
 (defn containers-workspaces-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -763,7 +763,7 @@
      auth))))
 
 (defn containers-workspaces-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -789,7 +789,7 @@
      auth))))
 
 (defn containers-workspaces-sync$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/sync
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -815,7 +815,7 @@
      auth))))
 
 (defn containers-workspaces-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -842,7 +842,7 @@
      auth))))
 
 (defn containers-workspaces-resolve_conflict$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/resolve_conflict
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1021,7 +1021,7 @@
      auth))))
 
 (defn containers-workspaces-getStatus$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/getStatus
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1048,7 +1048,7 @@
      auth))))
 
 (defn containers-workspaces-create_version$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/create_version
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1080,7 +1080,7 @@
      auth))))
 
 (defn containers-workspaces-tags-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/tags/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -1153,7 +1153,7 @@
      auth))))
 
 (defn containers-workspaces-tags-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/tags/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -1180,7 +1180,7 @@
      auth))))
 
 (defn containers-workspaces-tags-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/tags/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1207,7 +1207,7 @@
      auth))))
 
 (defn containers-workspaces-tags-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/tags/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1280,7 +1280,7 @@
      auth))))
 
 (defn containers-workspaces-tags-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/tags/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1306,7 +1306,7 @@
      auth))))
 
 (defn containers-workspaces-tags-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/tags/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1332,7 +1332,7 @@
      auth))))
 
 (defn containers-workspaces-folders-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/folders/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -1372,7 +1372,7 @@
      auth))))
 
 (defn containers-workspaces-folders-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/folders/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -1399,7 +1399,7 @@
      auth))))
 
 (defn containers-workspaces-folders-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/folders/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1426,7 +1426,7 @@
      auth))))
 
 (defn containers-workspaces-folders-entities$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/folders/entities
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1453,7 +1453,7 @@
      auth))))
 
 (defn containers-workspaces-folders-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/folders/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1493,7 +1493,7 @@
      auth))))
 
 (defn containers-workspaces-folders-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/folders/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1519,7 +1519,7 @@
      auth))))
 
 (defn containers-workspaces-folders-move_entities_to_folder$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/folders/move_entities_to_folder
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1559,7 +1559,7 @@
      auth))))
 
 (defn containers-workspaces-folders-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/folders/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1585,7 +1585,7 @@
      auth))))
 
 (defn containers-workspaces-transformations-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/transformations/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -1633,7 +1633,7 @@
      auth))))
 
 (defn containers-workspaces-transformations-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/transformations/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -1660,7 +1660,7 @@
      auth))))
 
 (defn containers-workspaces-transformations-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/transformations/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1687,7 +1687,7 @@
      auth))))
 
 (defn containers-workspaces-transformations-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/transformations/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1735,7 +1735,7 @@
      auth))))
 
 (defn containers-workspaces-transformations-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/transformations/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1761,7 +1761,7 @@
      auth))))
 
 (defn containers-workspaces-transformations-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/transformations/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1787,7 +1787,7 @@
      auth))))
 
 (defn containers-workspaces-clients-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/clients/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -1836,7 +1836,7 @@
      auth))))
 
 (defn containers-workspaces-clients-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/clients/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -1863,7 +1863,7 @@
      auth))))
 
 (defn containers-workspaces-clients-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/clients/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1890,7 +1890,7 @@
      auth))))
 
 (defn containers-workspaces-clients-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/clients/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1939,7 +1939,7 @@
      auth))))
 
 (defn containers-workspaces-clients-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/clients/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1965,7 +1965,7 @@
      auth))))
 
 (defn containers-workspaces-clients-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/clients/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -1991,7 +1991,7 @@
      auth))))
 
 (defn containers-workspaces-variables-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/variables/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2048,7 +2048,7 @@
      auth))))
 
 (defn containers-workspaces-variables-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/variables/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2075,7 +2075,7 @@
      auth))))
 
 (defn containers-workspaces-variables-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/variables/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2102,7 +2102,7 @@
      auth))))
 
 (defn containers-workspaces-variables-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/variables/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2159,7 +2159,7 @@
      auth))))
 
 (defn containers-workspaces-variables-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/variables/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2185,7 +2185,7 @@
      auth))))
 
 (defn containers-workspaces-variables-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/variables/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2211,7 +2211,7 @@
      auth))))
 
 (defn containers-workspaces-triggers-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/triggers/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2364,7 +2364,7 @@
      auth))))
 
 (defn containers-workspaces-triggers-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/triggers/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2391,7 +2391,7 @@
      auth))))
 
 (defn containers-workspaces-triggers-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/triggers/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2418,7 +2418,7 @@
      auth))))
 
 (defn containers-workspaces-triggers-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/triggers/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2571,7 +2571,7 @@
      auth))))
 
 (defn containers-workspaces-triggers-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/triggers/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2597,7 +2597,7 @@
      auth))))
 
 (defn containers-workspaces-triggers-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/triggers/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2623,7 +2623,7 @@
      auth))))
 
 (defn containers-workspaces-built_in_variables-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/built_in_variables/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2649,7 +2649,7 @@
      auth))))
 
 (defn containers-workspaces-built_in_variables-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/built_in_variables/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2675,7 +2675,7 @@
      auth))))
 
 (defn containers-workspaces-built_in_variables-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/built_in_variables/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2702,7 +2702,7 @@
      auth))))
 
 (defn containers-workspaces-built_in_variables-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/built_in_variables/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2728,7 +2728,7 @@
      auth))))
 
 (defn containers-workspaces-zones-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/zones/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2772,7 +2772,7 @@
      auth))))
 
 (defn containers-workspaces-zones-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/zones/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2799,7 +2799,7 @@
      auth))))
 
 (defn containers-workspaces-zones-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/zones/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2826,7 +2826,7 @@
      auth))))
 
 (defn containers-workspaces-zones-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/zones/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2870,7 +2870,7 @@
      auth))))
 
 (defn containers-workspaces-zones-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/zones/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2896,7 +2896,7 @@
      auth))))
 
 (defn containers-workspaces-zones-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/zones/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -2922,7 +2922,7 @@
      auth))))
 
 (defn containers-workspaces-templates-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/templates/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2968,7 +2968,7 @@
      auth))))
 
 (defn containers-workspaces-templates-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/templates/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -2995,7 +2995,7 @@
      auth))))
 
 (defn containers-workspaces-templates-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/templates/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3022,7 +3022,7 @@
      auth))))
 
 (defn containers-workspaces-templates-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/templates/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3068,7 +3068,7 @@
      auth))))
 
 (defn containers-workspaces-templates-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/templates/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3094,7 +3094,7 @@
      auth))))
 
 (defn containers-workspaces-templates-revert$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/templates/revert
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3120,7 +3120,7 @@
      auth))))
 
 (defn containers-workspaces-gtag_config-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/gtag_config/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -3165,7 +3165,7 @@
      auth))))
 
 (defn containers-workspaces-gtag_config-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/gtag_config/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -3192,7 +3192,7 @@
      auth))))
 
 (defn containers-workspaces-gtag_config-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/gtag_config/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3219,7 +3219,7 @@
      auth))))
 
 (defn containers-workspaces-gtag_config-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/gtag_config/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3264,7 +3264,7 @@
      auth))))
 
 (defn containers-workspaces-gtag_config-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/workspaces/gtag_config/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3290,7 +3290,7 @@
      auth))))
 
 (defn containers-versions-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/versions/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3318,7 +3318,7 @@
      auth))))
 
 (defn containers-versions-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/versions/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3518,7 +3518,7 @@
      auth))))
 
 (defn containers-versions-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/versions/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3544,7 +3544,7 @@
      auth))))
 
 (defn containers-versions-undelete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/versions/undelete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3570,7 +3570,7 @@
      auth))))
 
 (defn containers-versions-publish$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/versions/publish
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3596,7 +3596,7 @@
      auth))))
 
 (defn containers-versions-set_latest$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/versions/set_latest
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3622,7 +3622,7 @@
      auth))))
 
 (defn containers-versions-live$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/versions/live
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -3649,7 +3649,7 @@
      auth))))
 
 (defn containers-version_headers-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/version_headers/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -3677,7 +3677,7 @@
      auth))))
 
 (defn containers-version_headers-latest$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/version_headers/latest
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -3704,7 +3704,7 @@
      auth))))
 
 (defn containers-environments-create$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/environments/create
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -3750,7 +3750,7 @@
      auth))))
 
 (defn containers-environments-list$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/environments/list
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: parent
   
@@ -3777,7 +3777,7 @@
      auth))))
 
 (defn containers-environments-get$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/environments/get
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3804,7 +3804,7 @@
      auth))))
 
 (defn containers-environments-update$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/environments/update
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3850,7 +3850,7 @@
      auth))))
 
 (defn containers-environments-delete$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/environments/delete
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   
@@ -3876,7 +3876,7 @@
      auth))))
 
 (defn containers-environments-reauthorize$
-  "https://developers.google.com/tag-managerapi/reference/rest/v2/accounts/containers/environments/reauthorize
+  "https://developers.google.com/tag-platform/tag-manager
   
   Required parameters: path
   

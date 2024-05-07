@@ -1,13 +1,13 @@
 (ns happygapi.vmwareengine.projects
   "VMware Engine API: projects.
   The Google VMware Engine API lets you programmatically manage VMware environments.
-  See: https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/vmware-engine"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-getDnsBindPermission$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/getDnsBindPermission
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn locations-privateClouds-getDnsForwarding$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/getDnsForwarding
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn locations-privateClouds-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -215,7 +215,7 @@
      auth))))
 
 (defn locations-privateClouds-setIamPolicy$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/setIamPolicy
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -251,7 +251,7 @@
      auth))))
 
 (defn locations-privateClouds-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -311,7 +311,7 @@
      auth))))
 
 (defn locations-privateClouds-testIamPermissions$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/testIamPermissions
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -343,7 +343,7 @@
      auth))))
 
 (defn locations-privateClouds-resetNsxCredentials$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/resetNsxCredentials
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: privateCloud
   
@@ -375,7 +375,7 @@
      auth))))
 
 (defn locations-privateClouds-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -435,7 +435,7 @@
      auth))))
 
 (defn locations-privateClouds-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -461,7 +461,7 @@
      auth))))
 
 (defn locations-privateClouds-getIamPolicy$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/getIamPolicy
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -487,7 +487,7 @@
      auth))))
 
 (defn locations-privateClouds-resetVcenterCredentials$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/resetVcenterCredentials
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: privateCloud
   
@@ -519,7 +519,7 @@
      auth))))
 
 (defn locations-privateClouds-undelete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/undelete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -551,7 +551,7 @@
      auth))))
 
 (defn locations-privateClouds-showVcenterCredentials$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/showVcenterCredentials
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: privateCloud
   
@@ -577,7 +577,7 @@
      auth))))
 
 (defn locations-privateClouds-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -603,7 +603,7 @@
      auth))))
 
 (defn locations-privateClouds-updateDnsForwarding$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/updateDnsForwarding
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -638,7 +638,7 @@
      auth))))
 
 (defn locations-privateClouds-showNsxCredentials$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/showNsxCredentials
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: privateCloud
   
@@ -664,7 +664,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -690,7 +690,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -716,7 +716,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -756,7 +756,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -796,7 +796,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -822,7 +822,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-setIamPolicy$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/setIamPolicy
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -858,7 +858,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-getIamPolicy$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/getIamPolicy
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -884,7 +884,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-testIamPermissions$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/testIamPermissions
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -916,7 +916,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-nodes-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/nodes/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -942,7 +942,7 @@
      auth))))
 
 (defn locations-privateClouds-clusters-nodes-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/clusters/nodes/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -968,7 +968,7 @@
      auth))))
 
 (defn locations-privateClouds-externalAddresses-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/externalAddresses/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -994,7 +994,7 @@
      auth))))
 
 (defn locations-privateClouds-externalAddresses-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/externalAddresses/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1020,7 +1020,7 @@
      auth))))
 
 (defn locations-privateClouds-externalAddresses-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/externalAddresses/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1059,7 +1059,7 @@
      auth))))
 
 (defn locations-privateClouds-externalAddresses-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/externalAddresses/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1098,7 +1098,7 @@
      auth))))
 
 (defn locations-privateClouds-externalAddresses-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/externalAddresses/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1124,7 +1124,7 @@
      auth))))
 
 (defn locations-privateClouds-subnets-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/subnets/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1150,7 +1150,7 @@
      auth))))
 
 (defn locations-privateClouds-subnets-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/subnets/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1176,7 +1176,7 @@
      auth))))
 
 (defn locations-privateClouds-subnets-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/subnets/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1213,7 +1213,7 @@
      auth))))
 
 (defn locations-privateClouds-loggingServers-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/loggingServers/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1239,7 +1239,7 @@
      auth))))
 
 (defn locations-privateClouds-loggingServers-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/loggingServers/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1265,7 +1265,7 @@
      auth))))
 
 (defn locations-privateClouds-loggingServers-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/loggingServers/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1304,7 +1304,7 @@
      auth))))
 
 (defn locations-privateClouds-loggingServers-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/loggingServers/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1343,7 +1343,7 @@
      auth))))
 
 (defn locations-privateClouds-loggingServers-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/loggingServers/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1369,7 +1369,7 @@
      auth))))
 
 (defn locations-privateClouds-hcxActivationKeys-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/hcxActivationKeys/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1405,7 +1405,7 @@
      auth))))
 
 (defn locations-privateClouds-hcxActivationKeys-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/hcxActivationKeys/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1431,7 +1431,7 @@
      auth))))
 
 (defn locations-privateClouds-hcxActivationKeys-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/hcxActivationKeys/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1457,7 +1457,7 @@
      auth))))
 
 (defn locations-privateClouds-hcxActivationKeys-setIamPolicy$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/hcxActivationKeys/setIamPolicy
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -1493,7 +1493,7 @@
      auth))))
 
 (defn locations-privateClouds-hcxActivationKeys-getIamPolicy$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/hcxActivationKeys/getIamPolicy
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -1519,7 +1519,7 @@
      auth))))
 
 (defn locations-privateClouds-hcxActivationKeys-testIamPermissions$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/hcxActivationKeys/testIamPermissions
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: resource
   
@@ -1551,7 +1551,7 @@
      auth))))
 
 (defn locations-privateClouds-managementDnsZoneBindings-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/managementDnsZoneBindings/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1577,7 +1577,7 @@
      auth))))
 
 (defn locations-privateClouds-managementDnsZoneBindings-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/managementDnsZoneBindings/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1603,7 +1603,7 @@
      auth))))
 
 (defn locations-privateClouds-managementDnsZoneBindings-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/managementDnsZoneBindings/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1642,7 +1642,7 @@
      auth))))
 
 (defn locations-privateClouds-managementDnsZoneBindings-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/managementDnsZoneBindings/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1681,7 +1681,7 @@
      auth))))
 
 (defn locations-privateClouds-managementDnsZoneBindings-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/managementDnsZoneBindings/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1707,7 +1707,7 @@
      auth))))
 
 (defn locations-privateClouds-managementDnsZoneBindings-repair$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateClouds/managementDnsZoneBindings/repair
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1739,7 +1739,7 @@
      auth))))
 
 (defn locations-networkPolicies-fetchExternalAddresses$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/fetchExternalAddresses
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: networkPolicy
   
@@ -1765,7 +1765,7 @@
      auth))))
 
 (defn locations-networkPolicies-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1791,7 +1791,7 @@
      auth))))
 
 (defn locations-networkPolicies-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1817,7 +1817,7 @@
      auth))))
 
 (defn locations-networkPolicies-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1858,7 +1858,7 @@
      auth))))
 
 (defn locations-networkPolicies-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1899,7 +1899,7 @@
      auth))))
 
 (defn locations-networkPolicies-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1925,7 +1925,7 @@
      auth))))
 
 (defn locations-networkPolicies-externalAccessRules-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/externalAccessRules/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -1951,7 +1951,7 @@
      auth))))
 
 (defn locations-networkPolicies-externalAccessRules-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/externalAccessRules/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -1977,7 +1977,7 @@
      auth))))
 
 (defn locations-networkPolicies-externalAccessRules-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/externalAccessRules/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2025,7 +2025,7 @@
      auth))))
 
 (defn locations-networkPolicies-externalAccessRules-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/externalAccessRules/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2073,7 +2073,7 @@
      auth))))
 
 (defn locations-networkPolicies-externalAccessRules-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPolicies/externalAccessRules/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2099,7 +2099,7 @@
      auth))))
 
 (defn locations-nodeTypes-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/nodeTypes/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2125,7 +2125,7 @@
      auth))))
 
 (defn locations-nodeTypes-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/nodeTypes/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2151,7 +2151,7 @@
      auth))))
 
 (defn locations-networkPeerings-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPeerings/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2177,7 +2177,7 @@
      auth))))
 
 (defn locations-networkPeerings-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPeerings/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2203,7 +2203,7 @@
      auth))))
 
 (defn locations-networkPeerings-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPeerings/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2250,7 +2250,7 @@
      auth))))
 
 (defn locations-networkPeerings-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPeerings/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2276,7 +2276,7 @@
      auth))))
 
 (defn locations-networkPeerings-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPeerings/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2323,7 +2323,7 @@
      auth))))
 
 (defn locations-networkPeerings-peeringRoutes-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/networkPeerings/peeringRoutes/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2349,7 +2349,7 @@
      auth))))
 
 (defn locations-vmwareEngineNetworks-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/vmwareEngineNetworks/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2389,7 +2389,7 @@
      auth))))
 
 (defn locations-vmwareEngineNetworks-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/vmwareEngineNetworks/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2429,7 +2429,7 @@
      auth))))
 
 (defn locations-vmwareEngineNetworks-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/vmwareEngineNetworks/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2455,7 +2455,7 @@
      auth))))
 
 (defn locations-vmwareEngineNetworks-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/vmwareEngineNetworks/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2481,7 +2481,7 @@
      auth))))
 
 (defn locations-vmwareEngineNetworks-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/vmwareEngineNetworks/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2507,7 +2507,7 @@
      auth))))
 
 (defn locations-privateConnections-create$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateConnections/create
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2551,7 +2551,7 @@
      auth))))
 
 (defn locations-privateConnections-get$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateConnections/get
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2577,7 +2577,7 @@
      auth))))
 
 (defn locations-privateConnections-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateConnections/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2603,7 +2603,7 @@
      auth))))
 
 (defn locations-privateConnections-patch$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateConnections/patch
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2647,7 +2647,7 @@
      auth))))
 
 (defn locations-privateConnections-delete$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateConnections/delete
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2673,7 +2673,7 @@
      auth))))
 
 (defn locations-privateConnections-peeringRoutes-list$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/privateConnections/peeringRoutes/list
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: parent
   
@@ -2699,7 +2699,7 @@
      auth))))
 
 (defn locations-dnsBindPermission-grant$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/dnsBindPermission/grant
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   
@@ -2731,7 +2731,7 @@
      auth))))
 
 (defn locations-dnsBindPermission-revoke$
-  "https://cloud.google.com/solutions/vmware-as-a-serviceapi/reference/rest/v1/projects/locations/dnsBindPermission/revoke
+  "https://cloud.google.com/vmware-engine
   
   Required parameters: name
   

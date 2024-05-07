@@ -1,13 +1,13 @@
 (ns happygapi.datacatalog.entries
   "Google Cloud Data Catalog API: entries.
   A fully managed and highly scalable data discovery and metadata management service. 
-  See: https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/entries"
+  See: https://cloud.google.com/data-catalog/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn lookup$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/entries/lookup
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/entries/lookup
   
   Required parameters: none
   

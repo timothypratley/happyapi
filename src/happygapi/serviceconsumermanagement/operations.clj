@@ -1,65 +1,13 @@
 (ns happygapi.serviceconsumermanagement.operations
   "Service Consumer Management API: operations.
   Manages the service consumers of a Service Infrastructure service.
-  See: https://cloud.google.com/service-consumer-management/docs/overviewapi/reference/rest/v1/operations"
+  See: https://cloud.google.com/service-infrastructure/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
-(defn get$
-  "https://cloud.google.com/service-consumer-management/docs/overviewapi/reference/rest/v1/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://serviceconsumermanagement.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn list$
-  "https://cloud.google.com/service-consumer-management/docs/overviewapi/reference/rest/v1/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageSize, filter, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://serviceconsumermanagement.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn cancel$
-  "https://cloud.google.com/service-consumer-management/docs/overviewapi/reference/rest/v1/operations/cancel
+  "https://cloud.google.com/service-infrastructure/docs/overview
   
   Required parameters: name
   
@@ -90,8 +38,34 @@
       :as :json}
      auth))))
 
+(defn list$
+  "https://cloud.google.com/service-infrastructure/docs/overview
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, filter, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://serviceconsumermanagement.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn delete$
-  "https://cloud.google.com/service-consumer-management/docs/overviewapi/reference/rest/v1/operations/delete
+  "https://cloud.google.com/service-infrastructure/docs/overview
   
   Required parameters: name
   
@@ -103,6 +77,32 @@
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/delete
+    (util/get-url
+     "https://serviceconsumermanagement.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn get$
+  "https://cloud.google.com/service-infrastructure/docs/overview
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
     (util/get-url
      "https://serviceconsumermanagement.googleapis.com/"
      "v1/{+name}"

@@ -1,13 +1,13 @@
 (ns happygapi.gkebackup.projects
   "Backup for GKE API: projects.
   Backup for GKE is a managed Kubernetes workload backup and restore service for GKE clusters.
-  See: https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-backupPlans-create$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/create
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans/create
   
   Required parameters: parent
   
@@ -178,7 +178,11 @@
   Body: 
   
   {:description string,
-   :backupSchedule {:cronSchedule string, :paused boolean},
+   :rpoRiskReason string,
+   :backupSchedule {:cronSchedule string,
+                    :paused boolean,
+                    :rpoConfig RpoConfig,
+                    :nextScheduledBackupTime string},
    :labels {},
    :stateReason string,
    :deactivated boolean,
@@ -198,7 +202,8 @@
                   :encryptionKey EncryptionKey},
    :retentionPolicy {:backupDeleteLockDays integer,
                      :backupRetainDays integer,
-                     :locked boolean}}
+                     :locked boolean},
+   :rpoRiskLevel integer}
   
   Creates a new BackupPlan in a given location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -222,7 +227,7 @@
      auth))))
 
 (defn locations-backupPlans-list$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/list
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans/list
   
   Required parameters: parent
   
@@ -248,7 +253,7 @@
      auth))))
 
 (defn locations-backupPlans-get$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/get
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans/get
   
   Required parameters: name
   
@@ -274,7 +279,7 @@
      auth))))
 
 (defn locations-backupPlans-patch$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/patch
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans/patch
   
   Required parameters: name
   
@@ -283,7 +288,11 @@
   Body: 
   
   {:description string,
-   :backupSchedule {:cronSchedule string, :paused boolean},
+   :rpoRiskReason string,
+   :backupSchedule {:cronSchedule string,
+                    :paused boolean,
+                    :rpoConfig RpoConfig,
+                    :nextScheduledBackupTime string},
    :labels {},
    :stateReason string,
    :deactivated boolean,
@@ -303,7 +312,8 @@
                   :encryptionKey EncryptionKey},
    :retentionPolicy {:backupDeleteLockDays integer,
                      :backupRetainDays integer,
-                     :locked boolean}}
+                     :locked boolean},
+   :rpoRiskLevel integer}
   
   Update a BackupPlan."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -327,7 +337,7 @@
      auth))))
 
 (defn locations-backupPlans-delete$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/delete
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans/delete
   
   Required parameters: name
   
@@ -353,7 +363,7 @@
      auth))))
 
 (defn locations-backupPlans-setIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/setIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans/setIamPolicy
   
   Required parameters: resource
   
@@ -389,7 +399,7 @@
      auth))))
 
 (defn locations-backupPlans-getIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/getIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans/getIamPolicy
   
   Required parameters: resource
   
@@ -415,7 +425,7 @@
      auth))))
 
 (defn locations-backupPlans-testIamPermissions$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/testIamPermissions
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans/testIamPermissions
   
   Required parameters: resource
   
@@ -446,96 +456,8 @@
       :as :json}
      auth))))
 
-(defn locations-backupPlans-backups-create$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/create
-  
-  Required parameters: parent
-  
-  Optional parameters: backupId
-  
-  Body: 
-  
-  {:description string,
-   :labels {},
-   :stateReason string,
-   :retainExpireTime string,
-   :volumeCount integer,
-   :containsVolumeData boolean,
-   :podCount integer,
-   :configBackupSizeBytes string,
-   :uid string,
-   :name string,
-   :encryptionKey {:gcpKmsEncryptionKey string},
-   :sizeBytes string,
-   :clusterMetadata {:cluster string,
-                     :k8sVersion string,
-                     :backupCrdVersions {},
-                     :gkeVersion string,
-                     :anthosVersion string},
-   :createTime string,
-   :etag string,
-   :state string,
-   :resourceCount integer,
-   :retainDays integer,
-   :allNamespaces boolean,
-   :deleteLockDays integer,
-   :updateTime string,
-   :manual boolean,
-   :selectedApplications {:namespacedNames [NamespacedName]},
-   :completeTime string,
-   :selectedNamespaces {:namespaces [string]},
-   :deleteLockExpireTime string,
-   :containsSecrets boolean}
-  
-  Creates a Backup for the given BackupPlan."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://gkebackup.googleapis.com/"
-     "v1/{+parent}/backups"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-backupPlans-backups-list$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken, filter, orderBy
-  
-  Lists the Backups for a given BackupPlan."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://gkebackup.googleapis.com/"
-     "v1/{+parent}/backups"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-backupPlans-backups-get$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/get
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/get
   
   Required parameters: name
   
@@ -560,8 +482,44 @@
       :as :json}
      auth))))
 
+(defn locations-backupPlans-backups-setIamPolicy$
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/setIamPolicy
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:policy {:version integer,
+            :bindings [Binding],
+            :auditConfigs [AuditConfig],
+            :etag string},
+   :updateMask string}
+  
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://gkebackup.googleapis.com/"
+     "v1/{+resource}:setIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-backupPlans-backups-patch$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/patch
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/patch
   
   Required parameters: name
   
@@ -622,96 +580,8 @@
       :as :json}
      auth))))
 
-(defn locations-backupPlans-backups-delete$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/delete
-  
-  Required parameters: name
-  
-  Optional parameters: etag, force
-  
-  Deletes an existing Backup."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://gkebackup.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-backupPlans-backups-setIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/setIamPolicy
-  
-  Required parameters: resource
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:policy {:version integer,
-            :bindings [Binding],
-            :auditConfigs [AuditConfig],
-            :etag string},
-   :updateMask string}
-  
-  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:resource})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://gkebackup.googleapis.com/"
-     "v1/{+resource}:setIamPolicy"
-     #{:resource}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-backupPlans-backups-getIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/getIamPolicy
-  
-  Required parameters: resource
-  
-  Optional parameters: options.requestedPolicyVersion
-  
-  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:resource})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://gkebackup.googleapis.com/"
-     "v1/{+resource}:getIamPolicy"
-     #{:resource}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-backupPlans-backups-testIamPermissions$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/testIamPermissions
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/testIamPermissions
   
   Required parameters: resource
   
@@ -742,8 +612,174 @@
       :as :json}
      auth))))
 
+(defn locations-backupPlans-backups-create$
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/create
+  
+  Required parameters: parent
+  
+  Optional parameters: backupId
+  
+  Body: 
+  
+  {:description string,
+   :labels {},
+   :stateReason string,
+   :retainExpireTime string,
+   :volumeCount integer,
+   :containsVolumeData boolean,
+   :podCount integer,
+   :configBackupSizeBytes string,
+   :uid string,
+   :name string,
+   :encryptionKey {:gcpKmsEncryptionKey string},
+   :sizeBytes string,
+   :clusterMetadata {:cluster string,
+                     :k8sVersion string,
+                     :backupCrdVersions {},
+                     :gkeVersion string,
+                     :anthosVersion string},
+   :createTime string,
+   :etag string,
+   :state string,
+   :resourceCount integer,
+   :retainDays integer,
+   :allNamespaces boolean,
+   :deleteLockDays integer,
+   :updateTime string,
+   :manual boolean,
+   :selectedApplications {:namespacedNames [NamespacedName]},
+   :completeTime string,
+   :selectedNamespaces {:namespaces [string]},
+   :deleteLockExpireTime string,
+   :containsSecrets boolean}
+  
+  Creates a Backup for the given BackupPlan."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://gkebackup.googleapis.com/"
+     "v1/{+parent}/backups"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-backupPlans-backups-delete$
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/delete
+  
+  Required parameters: name
+  
+  Optional parameters: etag, force
+  
+  Deletes an existing Backup."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://gkebackup.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-backupPlans-backups-getIamPolicy$
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/getIamPolicy
+  
+  Required parameters: resource
+  
+  Optional parameters: options.requestedPolicyVersion
+  
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://gkebackup.googleapis.com/"
+     "v1/{+resource}:getIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-backupPlans-backups-list$
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/list
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken, filter, orderBy
+  
+  Lists the Backups for a given BackupPlan."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://gkebackup.googleapis.com/"
+     "v1/{+parent}/backups"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-backupPlans-backups-getBackupIndexDownloadUrl$
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups/getBackupIndexDownloadUrl
+  
+  Required parameters: backup
+  
+  Optional parameters: none
+  
+  Retrieve the link to the backupIndex."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:backup})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://gkebackup.googleapis.com/"
+     "v1/{+backup}:getBackupIndexDownloadUrl"
+     #{:backup}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-backupPlans-backups-volumeBackups-list$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/volumeBackups/list
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups.volumeBackups/list
   
   Required parameters: parent
   
@@ -769,7 +805,7 @@
      auth))))
 
 (defn locations-backupPlans-backups-volumeBackups-get$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/volumeBackups/get
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups.volumeBackups/get
   
   Required parameters: name
   
@@ -795,7 +831,7 @@
      auth))))
 
 (defn locations-backupPlans-backups-volumeBackups-setIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/volumeBackups/setIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups.volumeBackups/setIamPolicy
   
   Required parameters: resource
   
@@ -831,7 +867,7 @@
      auth))))
 
 (defn locations-backupPlans-backups-volumeBackups-getIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/volumeBackups/getIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups.volumeBackups/getIamPolicy
   
   Required parameters: resource
   
@@ -857,7 +893,7 @@
      auth))))
 
 (defn locations-backupPlans-backups-volumeBackups-testIamPermissions$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/backupPlans/backups/volumeBackups/testIamPermissions
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.backupPlans.backups.volumeBackups/testIamPermissions
   
   Required parameters: resource
   
@@ -889,7 +925,7 @@
      auth))))
 
 (defn locations-restorePlans-create$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/create
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans/create
   
   Required parameters: parent
   
@@ -942,7 +978,7 @@
      auth))))
 
 (defn locations-restorePlans-list$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/list
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans/list
   
   Required parameters: parent
   
@@ -968,7 +1004,7 @@
      auth))))
 
 (defn locations-restorePlans-get$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/get
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans/get
   
   Required parameters: name
   
@@ -994,7 +1030,7 @@
      auth))))
 
 (defn locations-restorePlans-patch$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/patch
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans/patch
   
   Required parameters: name
   
@@ -1047,7 +1083,7 @@
      auth))))
 
 (defn locations-restorePlans-delete$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/delete
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans/delete
   
   Required parameters: name
   
@@ -1073,7 +1109,7 @@
      auth))))
 
 (defn locations-restorePlans-setIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/setIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans/setIamPolicy
   
   Required parameters: resource
   
@@ -1109,7 +1145,7 @@
      auth))))
 
 (defn locations-restorePlans-getIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/getIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans/getIamPolicy
   
   Required parameters: resource
   
@@ -1135,7 +1171,7 @@
      auth))))
 
 (defn locations-restorePlans-testIamPermissions$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/testIamPermissions
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans/testIamPermissions
   
   Required parameters: resource
   
@@ -1167,7 +1203,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-create$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/create
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores/create
   
   Required parameters: parent
   
@@ -1225,7 +1261,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-list$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/list
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores/list
   
   Required parameters: parent
   
@@ -1251,7 +1287,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-get$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/get
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores/get
   
   Required parameters: name
   
@@ -1277,7 +1313,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-patch$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/patch
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores/patch
   
   Required parameters: name
   
@@ -1335,7 +1371,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-delete$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/delete
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores/delete
   
   Required parameters: name
   
@@ -1361,7 +1397,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-setIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/setIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores/setIamPolicy
   
   Required parameters: resource
   
@@ -1397,7 +1433,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-getIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/getIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores/getIamPolicy
   
   Required parameters: resource
   
@@ -1423,7 +1459,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-testIamPermissions$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/testIamPermissions
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores/testIamPermissions
   
   Required parameters: resource
   
@@ -1455,7 +1491,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-volumeRestores-list$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/volumeRestores/list
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores.volumeRestores/list
   
   Required parameters: parent
   
@@ -1481,7 +1517,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-volumeRestores-get$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/volumeRestores/get
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores.volumeRestores/get
   
   Required parameters: name
   
@@ -1507,7 +1543,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-volumeRestores-setIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/volumeRestores/setIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores.volumeRestores/setIamPolicy
   
   Required parameters: resource
   
@@ -1543,7 +1579,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-volumeRestores-getIamPolicy$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/volumeRestores/getIamPolicy
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores.volumeRestores/getIamPolicy
   
   Required parameters: resource
   
@@ -1569,7 +1605,7 @@
      auth))))
 
 (defn locations-restorePlans-restores-volumeRestores-testIamPermissions$
-  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gkeapi/reference/rest/v1/projects/locations/restorePlans/restores/volumeRestores/testIamPermissions
+  "https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/projects.locations.restorePlans.restores.volumeRestores/testIamPermissions
   
   Required parameters: resource
   

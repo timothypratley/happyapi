@@ -1,13 +1,13 @@
 (ns happygapi.mybusinessnotifications.accounts
   "My Business Notifications API: accounts.
   The My Business Notification Settings API enables managing notification settings for business accounts. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
-  See: https://developers.google.com/my-business/api/reference/rest/v1/accounts"
+  See: https://developers.google.com/my-business/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getNotificationSetting$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/getNotificationSetting
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn updateNotificationSetting$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/updateNotificationSetting
+  "https://developers.google.com/my-business
   
   Required parameters: name
   

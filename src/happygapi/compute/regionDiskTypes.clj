@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionDiskTypes
   "Compute Engine API: regionDiskTypes.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionDiskTypes"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDiskTypes/list
+  "https://cloud.google.com/products/compute/v1/docs/regionDiskTypes/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionDiskTypes/get
+  "https://cloud.google.com/products/compute/v1/docs/regionDiskTypes/get
   
   Required parameters: diskType, project, region
   

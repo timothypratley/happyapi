@@ -1,13 +1,13 @@
 (ns happygapi.storage.folders
   "Cloud Storage JSON API: folders.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/folders"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/folders/delete
+  "https://cloud.google.com/storage/docs/reference/rest/v1/folders/delete
   
   Required parameters: bucket, folder
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/folders/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/folders/get
   
   Required parameters: bucket, folder
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/folders/insert
+  "https://cloud.google.com/storage/docs/reference/rest/v1/folders/insert
   
   Required parameters: bucket
   
@@ -107,7 +107,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/folders/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/folders/list
   
   Required parameters: bucket
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn rename$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/folders/rename
+  "https://cloud.google.com/storage/docs/reference/rest/v1/folders/rename
   
   Required parameters: bucket, destinationFolder, sourceFolder
   

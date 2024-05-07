@@ -1,13 +1,13 @@
 (ns happygapi.cloudsearch.media
   "Cloud Search API: media.
   Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.
-  See: https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/media"
+  See: https://developers.google.com/cloud-search/docs/guides/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn upload$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/media/upload
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/media/upload
   
   Required parameters: resourceName
   

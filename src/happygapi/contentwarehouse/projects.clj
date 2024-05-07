@@ -1,13 +1,13 @@
 (ns happygapi.contentwarehouse.projects
   "Document AI Warehouse API: projects.
   
-  See: https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/document-warehouse/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn fetchAcl$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/fetchAcl
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects/fetchAcl
   
   Required parameters: resource
   
@@ -15,8 +15,8 @@
   
   Body: 
   
-  {:requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
-   :projectOwner boolean}
+  {:projectOwner boolean,
+   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
   
   Gets the access control policy for a resource. Returns NOT_FOUND error if the resource does not exist. Returns an empty policy if the resource exists but does not have a policy set."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -40,7 +40,7 @@
      auth))))
 
 (defn setAcl$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/setAcl
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects/setAcl
   
   Required parameters: resource
   
@@ -49,11 +49,11 @@
   Body: 
   
   {:projectOwner boolean,
-   :policy {:auditConfigs [GoogleIamV1AuditConfig],
+   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
+   :policy {:bindings [GoogleIamV1Binding],
+            :auditConfigs [GoogleIamV1AuditConfig],
             :etag string,
-            :bindings [GoogleIamV1Binding],
-            :version integer},
-   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
+            :version integer}}
   
   Sets the access control policy for a resource. Replaces any existing policy."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -77,7 +77,7 @@
      auth))))
 
 (defn locations-getStatus$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/getStatus
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations/getStatus
   
   Required parameters: location
   
@@ -103,7 +103,7 @@
      auth))))
 
 (defn locations-initialize$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/initialize
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations/initialize
   
   Required parameters: location
   
@@ -111,11 +111,11 @@
   
   Body: 
   
-  {:documentCreatorDefaultRole string,
-   :kmsKey string,
+  {:enableCalUserEmailLogging boolean,
+   :documentCreatorDefaultRole string,
+   :databaseType string,
    :accessControlMode string,
-   :enableCalUserEmailLogging boolean,
-   :databaseType string}
+   :kmsKey string}
   
   Provisions resources for given tenant project. Returns a long running operation."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -139,7 +139,7 @@
      auth))))
 
 (defn locations-runPipeline$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/runPipeline
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations/runPipeline
   
   Required parameters: name
   
@@ -147,26 +147,26 @@
   
   Body: 
   
-  {:processWithDocAiPipeline {:exportFolderPath string,
-                              :documents [string],
-                              :processorInfo GoogleCloudContentwarehouseV1ProcessorInfo,
-                              :processorResultsFolderPath string},
-   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
-   :gcsIngestPipeline {:pipelineConfig GoogleCloudContentwarehouseV1IngestPipelineConfig,
+  {:requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
+   :gcsIngestPipeline {:processorType string,
+                       :pipelineConfig GoogleCloudContentwarehouseV1IngestPipelineConfig,
+                       :inputPath string,
                        :schemaName string,
-                       :skipIngestedDocuments boolean,
-                       :processorType string,
-                       :inputPath string},
-   :exportCdwPipeline {:docAiDataset string,
-                       :trainingSplitRatio number,
-                       :documents [string],
-                       :exportFolderPath string},
-   :gcsIngestWithDocAiProcessorsPipeline {:pipelineConfig GoogleCloudContentwarehouseV1IngestPipelineConfig,
-                                          :inputPath string,
-                                          :skipIngestedDocuments boolean,
+                       :skipIngestedDocuments boolean},
+   :gcsIngestWithDocAiProcessorsPipeline {:skipIngestedDocuments boolean,
+                                          :splitClassifyProcessorInfo GoogleCloudContentwarehouseV1ProcessorInfo,
                                           :extractProcessorInfos [GoogleCloudContentwarehouseV1ProcessorInfo],
-                                          :processorResultsFolderPath string,
-                                          :splitClassifyProcessorInfo GoogleCloudContentwarehouseV1ProcessorInfo}}
+                                          :inputPath string,
+                                          :pipelineConfig GoogleCloudContentwarehouseV1IngestPipelineConfig,
+                                          :processorResultsFolderPath string},
+   :exportCdwPipeline {:trainingSplitRatio number,
+                       :documents [string],
+                       :docAiDataset string,
+                       :exportFolderPath string},
+   :processWithDocAiPipeline {:processorResultsFolderPath string,
+                              :processorInfo GoogleCloudContentwarehouseV1ProcessorInfo,
+                              :documents [string],
+                              :exportFolderPath string}}
   
   Run a predefined pipeline."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -190,7 +190,7 @@
      auth))))
 
 (defn locations-documentSchemas-list$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documentSchemas/list
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documentSchemas/list
   
   Required parameters: parent
   
@@ -215,72 +215,8 @@
       :as :json}
      auth))))
 
-(defn locations-documentSchemas-get$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documentSchemas/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a document schema. Returns NOT_FOUND if the document schema does not exist."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-documentSchemas-patch$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documentSchemas/patch
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:documentSchema {:name string,
-                    :updateTime string,
-                    :propertyDefinitions [GoogleCloudContentwarehouseV1PropertyDefinition],
-                    :description string,
-                    :displayName string,
-                    :documentIsFolder boolean,
-                    :createTime string}}
-  
-  Updates a Document Schema. Returns INVALID_ARGUMENT if the name of the Document Schema is non-empty and does not equal the existing name. Supports only appending new properties, adding new ENUM possible values, and updating the EnumTypeOptions.validation_check_disabled flag for ENUM possible values. Updating existing properties will result into INVALID_ARGUMENT."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-documentSchemas-delete$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documentSchemas/delete
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documentSchemas/delete
   
   Required parameters: name
   
@@ -305,8 +241,34 @@
       :as :json}
      auth))))
 
+(defn locations-documentSchemas-get$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documentSchemas/get
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a document schema. Returns NOT_FOUND if the document schema does not exist."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-documentSchemas-create$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documentSchemas/create
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documentSchemas/create
   
   Required parameters: parent
   
@@ -314,8 +276,8 @@
   
   Body: 
   
-  {:name string,
-   :updateTime string,
+  {:description string,
+   :createTime string,
    :propertyDefinitions [{:propertyTypeOptions GoogleCloudContentwarehouseV1PropertyTypeOptions,
                           :enumTypeOptions GoogleCloudContentwarehouseV1EnumTypeOptions,
                           :displayName string,
@@ -333,10 +295,10 @@
                           :dateTimeTypeOptions GoogleCloudContentwarehouseV1DateTimeTypeOptions,
                           :mapTypeOptions GoogleCloudContentwarehouseV1MapTypeOptions,
                           :isRepeatable boolean}],
-   :description string,
+   :name string,
    :displayName string,
    :documentIsFolder boolean,
-   :createTime string}
+   :updateTime string}
   
   Creates a document schema."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -359,8 +321,8 @@
       :as :json}
      auth))))
 
-(defn locations-synonymSets-patch$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/synonymSets/patch
+(defn locations-documentSchemas-patch$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documentSchemas/patch
   
   Required parameters: name
   
@@ -368,9 +330,15 @@
   
   Body: 
   
-  {:context string, :name string, :synonyms [{:words [string]}]}
+  {:documentSchema {:description string,
+                    :createTime string,
+                    :propertyDefinitions [GoogleCloudContentwarehouseV1PropertyDefinition],
+                    :name string,
+                    :displayName string,
+                    :documentIsFolder boolean,
+                    :updateTime string}}
   
-  Remove the existing SynonymSet for the context and replaces it with a new one. Throws a NOT_FOUND exception if the SynonymSet is not found."
+  Updates a Document Schema. Returns INVALID_ARGUMENT if the name of the Document Schema is non-empty and does not equal the existing name. Supports only appending new properties, adding new ENUM possible values, and updating the EnumTypeOptions.validation_check_disabled flag for ENUM possible values. Updating existing properties will result into INVALID_ARGUMENT."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -391,118 +359,8 @@
       :as :json}
      auth))))
 
-(defn locations-synonymSets-delete$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/synonymSets/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a SynonymSet for a given context. Throws a NOT_FOUND exception if the SynonymSet is not found."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-synonymSets-create$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/synonymSets/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:context string, :name string, :synonyms [{:words [string]}]}
-  
-  Creates a SynonymSet for a single context. Throws an ALREADY_EXISTS exception if a synonymset already exists for the context."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+parent}/synonymSets"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-synonymSets-get$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/synonymSets/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a SynonymSet for a particular context. Throws a NOT_FOUND exception if the Synonymset does not exist"
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-synonymSets-list$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/synonymSets/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken
-  
-  Returns all SynonymSets (for all contexts) for the specified location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+parent}/synonymSets"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-operations-get$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -527,134 +385,8 @@
       :as :json}
      auth))))
 
-(defn locations-ruleSets-create$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/ruleSets/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:source string,
-   :rules [{:description string,
-            :actions [GoogleCloudContentwarehouseV1Action],
-            :condition string,
-            :triggerType string,
-            :ruleId string}],
-   :description string,
-   :name string}
-  
-  Creates a ruleset."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+parent}/ruleSets"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-ruleSets-patch$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/ruleSets/patch
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:ruleSet {:source string,
-             :rules [GoogleCloudContentwarehouseV1Rule],
-             :description string,
-             :name string}}
-  
-  Updates a ruleset. Returns INVALID_ARGUMENT if the name of the ruleset is non-empty and does not equal the existing name."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-ruleSets-list$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/ruleSets/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken
-  
-  Lists rulesets."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+parent}/ruleSets"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-ruleSets-delete$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/ruleSets/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a ruleset. Returns NOT_FOUND if the document does not exist."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-ruleSets-get$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/ruleSets/get
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.ruleSets/get
   
   Required parameters: name
   
@@ -679,8 +411,276 @@
       :as :json}
      auth))))
 
+(defn locations-ruleSets-delete$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.ruleSets/delete
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a ruleset. Returns NOT_FOUND if the document does not exist."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-ruleSets-create$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.ruleSets/create
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:description string,
+   :source string,
+   :rules [{:condition string,
+            :ruleId string,
+            :actions [GoogleCloudContentwarehouseV1Action],
+            :triggerType string,
+            :description string}],
+   :name string}
+  
+  Creates a ruleset."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+parent}/ruleSets"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-ruleSets-patch$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.ruleSets/patch
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:ruleSet {:description string,
+             :source string,
+             :rules [GoogleCloudContentwarehouseV1Rule],
+             :name string}}
+  
+  Updates a ruleset. Returns INVALID_ARGUMENT if the name of the ruleset is non-empty and does not equal the existing name."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-ruleSets-list$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.ruleSets/list
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize
+  
+  Lists rulesets."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+parent}/ruleSets"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-synonymSets-list$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.synonymSets/list
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Returns all SynonymSets (for all contexts) for the specified location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+parent}/synonymSets"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-synonymSets-patch$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.synonymSets/patch
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :context string, :synonyms [{:words [string]}]}
+  
+  Remove the existing SynonymSet for the context and replaces it with a new one. Throws a NOT_FOUND exception if the SynonymSet is not found."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-synonymSets-get$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.synonymSets/get
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a SynonymSet for a particular context. Throws a NOT_FOUND exception if the Synonymset does not exist"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-synonymSets-create$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.synonymSets/create
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :context string, :synonyms [{:words [string]}]}
+  
+  Creates a SynonymSet for a single context. Throws an ALREADY_EXISTS exception if a synonymset already exists for the context."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+parent}/synonymSets"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-synonymSets-delete$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.synonymSets/delete
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a SynonymSet for a given context. Throws a NOT_FOUND exception if the SynonymSet is not found."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-documents-linkedTargets$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/linkedTargets
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/linkedTargets
   
   Required parameters: parent
   
@@ -712,7 +712,7 @@
      auth))))
 
 (defn locations-documents-get$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/get
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/get
   
   Required parameters: name
   
@@ -744,7 +744,7 @@
      auth))))
 
 (defn locations-documents-patch$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/patch
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/patch
   
   Required parameters: name
   
@@ -752,11 +752,7 @@
   
   Body: 
   
-  {:updateOptions {:mergeFieldsOptions GoogleCloudContentwarehouseV1MergeFieldsOptions,
-                   :updateMask string,
-                   :updateType string},
-   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
-   :document {:properties [GoogleCloudContentwarehouseV1Property],
+  {:document {:properties [GoogleCloudContentwarehouseV1Property],
               :creator string,
               :rawDocumentPath string,
               :textExtractionDisabled boolean,
@@ -777,8 +773,12 @@
               :plainText string,
               :legalHold boolean,
               :inlineRawDocument string},
-   :cloudAiDocumentOption {:enableEntitiesConversions boolean,
-                           :customizedEntitiesPropertiesConversions {}}}
+   :updateOptions {:updateType string,
+                   :updateMask string,
+                   :mergeFieldsOptions GoogleCloudContentwarehouseV1MergeFieldsOptions},
+   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
+   :cloudAiDocumentOption {:customizedEntitiesPropertiesConversions {},
+                           :enableEntitiesConversions boolean}}
   
   Updates a document. Returns INVALID_ARGUMENT if the name of the document is non-empty and does not equal the existing name."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -802,7 +802,7 @@
      auth))))
 
 (defn locations-documents-fetchAcl$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/fetchAcl
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/fetchAcl
   
   Required parameters: resource
   
@@ -810,8 +810,8 @@
   
   Body: 
   
-  {:requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
-   :projectOwner boolean}
+  {:projectOwner boolean,
+   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
   
   Gets the access control policy for a resource. Returns NOT_FOUND error if the resource does not exist. Returns an empty policy if the resource exists but does not have a policy set."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -835,7 +835,7 @@
      auth))))
 
 (defn locations-documents-create$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/create
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/create
   
   Required parameters: parent
   
@@ -843,9 +843,10 @@
   
   Body: 
   
-  {:cloudAiDocumentOption {:enableEntitiesConversions boolean,
-                           :customizedEntitiesPropertiesConversions {}},
-   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
+  {:policy {:bindings [GoogleIamV1Binding],
+            :auditConfigs [GoogleIamV1AuditConfig],
+            :etag string,
+            :version integer},
    :document {:properties [GoogleCloudContentwarehouseV1Property],
               :creator string,
               :rawDocumentPath string,
@@ -868,10 +869,9 @@
               :legalHold boolean,
               :inlineRawDocument string},
    :createMask string,
-   :policy {:auditConfigs [GoogleIamV1AuditConfig],
-            :etag string,
-            :bindings [GoogleIamV1Binding],
-            :version integer}}
+   :cloudAiDocumentOption {:customizedEntitiesPropertiesConversions {},
+                           :enableEntitiesConversions boolean},
+   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
   
   Creates a document."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -895,7 +895,7 @@
      auth))))
 
 (defn locations-documents-linkedSources$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/linkedSources
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/linkedSources
   
   Required parameters: parent
   
@@ -929,7 +929,7 @@
      auth))))
 
 (defn locations-documents-delete$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/delete
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/delete
   
   Required parameters: name
   
@@ -961,7 +961,7 @@
      auth))))
 
 (defn locations-documents-search$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/search
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/search
   
   Required parameters: parent
   
@@ -1015,7 +1015,7 @@
      auth))))
 
 (defn locations-documents-setAcl$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/setAcl
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/setAcl
   
   Required parameters: resource
   
@@ -1024,11 +1024,11 @@
   Body: 
   
   {:projectOwner boolean,
-   :policy {:auditConfigs [GoogleIamV1AuditConfig],
+   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
+   :policy {:bindings [GoogleIamV1Binding],
+            :auditConfigs [GoogleIamV1AuditConfig],
             :etag string,
-            :bindings [GoogleIamV1Binding],
-            :version integer},
-   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
+            :version integer}}
   
   Sets the access control policy for a resource. Replaces any existing policy."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1052,7 +1052,7 @@
      auth))))
 
 (defn locations-documents-lock$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/lock
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents/lock
   
   Required parameters: name
   
@@ -1083,8 +1083,8 @@
       :as :json}
      auth))))
 
-(defn locations-documents-referenceId-patch$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/referenceId/patch
+(defn locations-documents-documentLinks-delete$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents.documentLinks/delete
   
   Required parameters: name
   
@@ -1092,11 +1092,78 @@
   
   Body: 
   
-  {:updateOptions {:mergeFieldsOptions GoogleCloudContentwarehouseV1MergeFieldsOptions,
-                   :updateMask string,
-                   :updateType string},
-   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
-   :document {:properties [GoogleCloudContentwarehouseV1Property],
+  {:requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
+  
+  Remove the link between the source and target documents."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+name}:delete"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-documents-documentLinks-create$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents.documentLinks/create
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
+   :documentLink {:targetDocumentReference GoogleCloudContentwarehouseV1DocumentReference,
+                  :updateTime string,
+                  :createTime string,
+                  :description string,
+                  :name string,
+                  :state string,
+                  :sourceDocumentReference GoogleCloudContentwarehouseV1DocumentReference}}
+  
+  Create a link between a source document and a target document."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://contentwarehouse.googleapis.com/"
+     "v1/{+parent}/documentLinks"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-documents-referenceId-patch$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents.referenceId/patch
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:document {:properties [GoogleCloudContentwarehouseV1Property],
               :creator string,
               :rawDocumentPath string,
               :textExtractionDisabled boolean,
@@ -1117,8 +1184,12 @@
               :plainText string,
               :legalHold boolean,
               :inlineRawDocument string},
-   :cloudAiDocumentOption {:enableEntitiesConversions boolean,
-                           :customizedEntitiesPropertiesConversions {}}}
+   :updateOptions {:updateType string,
+                   :updateMask string,
+                   :mergeFieldsOptions GoogleCloudContentwarehouseV1MergeFieldsOptions},
+   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo},
+   :cloudAiDocumentOption {:customizedEntitiesPropertiesConversions {},
+                           :enableEntitiesConversions boolean}}
   
   Updates a document. Returns INVALID_ARGUMENT if the name of the document is non-empty and does not equal the existing name."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1141,40 +1212,8 @@
       :as :json}
      auth))))
 
-(defn locations-documents-referenceId-get$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/referenceId/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
-  
-  Gets a document. Returns NOT_FOUND if the document does not exist."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+name}:get"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-documents-referenceId-delete$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/referenceId/delete
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents.referenceId/delete
   
   Required parameters: name
   
@@ -1205,47 +1244,8 @@
       :as :json}
      auth))))
 
-(defn locations-documents-documentLinks-create$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/documentLinks/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:documentLink {:createTime string,
-                  :sourceDocumentReference GoogleCloudContentwarehouseV1DocumentReference,
-                  :targetDocumentReference GoogleCloudContentwarehouseV1DocumentReference,
-                  :name string,
-                  :description string,
-                  :updateTime string,
-                  :state string},
-   :requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
-  
-  Create a link between a source document and a target document."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://contentwarehouse.googleapis.com/"
-     "v1/{+parent}/documentLinks"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-documents-documentLinks-delete$
-  "https://cloud.google.com/document-warehouseapi/reference/rest/v1/projects/locations/documents/documentLinks/delete
+(defn locations-documents-referenceId-get$
+  "https://cloud.google.com/document-warehouse/docs/reference/rest/v1/projects.locations.documents.referenceId/get
   
   Required parameters: name
   
@@ -1255,7 +1255,7 @@
   
   {:requestMetadata {:userInfo GoogleCloudContentwarehouseV1UserInfo}}
   
-  Remove the link between the source and target documents."
+  Gets a document. Returns NOT_FOUND if the document does not exist."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1263,7 +1263,7 @@
    (http/post
     (util/get-url
      "https://contentwarehouse.googleapis.com/"
-     "v1/{+name}:delete"
+     "v1/{+name}:get"
      #{:name}
      parameters)
     (merge-with

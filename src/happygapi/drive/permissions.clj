@@ -1,7 +1,7 @@
 (ns happygapi.drive.permissions
   "Google Drive API: permissions.
   The Google Drive API allows clients to access resources from Google Drive.
-  See: https://developers.google.com/drive/api/reference/rest/v3/permissions"
+  See: https://developers.google.com/drive/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))

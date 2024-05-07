@@ -1,13 +1,13 @@
 (ns happygapi.doubleclicksearch.savedColumns
   "Search Ads 360 API: savedColumns.
   The Search Ads 360 API allows developers to automate uploading conversions and downloading reports from Search Ads 360.
-  See: https://developers.google.com/search-adsapi/reference/rest/v2/savedColumns"
+  See: https://developers.google.com/search-ads"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/savedColumns/list
+  "https://developers.google.com/search-ads
   
   Required parameters: agencyId, advertiserId
   

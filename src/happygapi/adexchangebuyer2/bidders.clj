@@ -1,13 +1,13 @@
 (ns happygapi.adexchangebuyer2.bidders
   "Ad Exchange Buyer API II: bidders.
   Accesses the latest features for managing Authorized Buyers accounts, Real-Time Bidding configurations and auction metrics, and Marketplace programmatic deals.
-  See: https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders"
+  See: https://developers.google.com/authorized-buyers/apis/reference/rest/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn accounts-filterSets-create$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/create
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets/create
   
   Required parameters: ownerName
   
@@ -52,7 +52,7 @@
      auth))))
 
 (defn accounts-filterSets-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets/get
   
   Required parameters: name
   
@@ -78,7 +78,7 @@
      auth))))
 
 (defn accounts-filterSets-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets/list
   
   Required parameters: ownerName
   
@@ -104,7 +104,7 @@
      auth))))
 
 (defn accounts-filterSets-delete$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/delete
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets/delete
   
   Required parameters: name
   
@@ -130,7 +130,7 @@
      auth))))
 
 (defn accounts-filterSets-impressionMetrics-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/impressionMetrics/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.impressionMetrics/list
   
   Required parameters: filterSetName
   
@@ -156,7 +156,7 @@
      auth))))
 
 (defn accounts-filterSets-bidMetrics-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/bidMetrics/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.bidMetrics/list
   
   Required parameters: filterSetName
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn accounts-filterSets-filteredBidRequests-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/filteredBidRequests/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.filteredBidRequests/list
   
   Required parameters: filterSetName
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn accounts-filterSets-bidResponseErrors-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/bidResponseErrors/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.bidResponseErrors/list
   
   Required parameters: filterSetName
   
@@ -234,7 +234,7 @@
      auth))))
 
 (defn accounts-filterSets-bidResponsesWithoutBids-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/bidResponsesWithoutBids/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.bidResponsesWithoutBids/list
   
   Required parameters: filterSetName
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn accounts-filterSets-filteredBids-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/filteredBids/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.filteredBids/list
   
   Required parameters: filterSetName
   
@@ -286,7 +286,7 @@
      auth))))
 
 (defn accounts-filterSets-filteredBids-details-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/filteredBids/details/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.filteredBids.details/list
   
   Required parameters: filterSetName, creativeStatusId
   
@@ -314,7 +314,7 @@
      auth))))
 
 (defn accounts-filterSets-filteredBids-creatives-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/filteredBids/creatives/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.filteredBids.creatives/list
   
   Required parameters: filterSetName, creativeStatusId
   
@@ -342,7 +342,7 @@
      auth))))
 
 (defn accounts-filterSets-losingBids-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/losingBids/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.losingBids/list
   
   Required parameters: filterSetName
   
@@ -368,7 +368,7 @@
      auth))))
 
 (defn accounts-filterSets-nonBillableWinningBids-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/accounts/filterSets/nonBillableWinningBids/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.accounts.filterSets.nonBillableWinningBids/list
   
   Required parameters: filterSetName
   
@@ -394,7 +394,7 @@
      auth))))
 
 (defn filterSets-create$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/create
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets/create
   
   Required parameters: ownerName
   
@@ -439,7 +439,7 @@
      auth))))
 
 (defn filterSets-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets/get
   
   Required parameters: name
   
@@ -465,7 +465,7 @@
      auth))))
 
 (defn filterSets-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets/list
   
   Required parameters: ownerName
   
@@ -491,7 +491,7 @@
      auth))))
 
 (defn filterSets-delete$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/delete
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets/delete
   
   Required parameters: name
   
@@ -517,7 +517,7 @@
      auth))))
 
 (defn filterSets-impressionMetrics-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/impressionMetrics/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.impressionMetrics/list
   
   Required parameters: filterSetName
   
@@ -543,7 +543,7 @@
      auth))))
 
 (defn filterSets-bidMetrics-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/bidMetrics/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.bidMetrics/list
   
   Required parameters: filterSetName
   
@@ -569,7 +569,7 @@
      auth))))
 
 (defn filterSets-filteredBidRequests-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/filteredBidRequests/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.filteredBidRequests/list
   
   Required parameters: filterSetName
   
@@ -595,7 +595,7 @@
      auth))))
 
 (defn filterSets-bidResponseErrors-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/bidResponseErrors/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.bidResponseErrors/list
   
   Required parameters: filterSetName
   
@@ -621,7 +621,7 @@
      auth))))
 
 (defn filterSets-bidResponsesWithoutBids-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/bidResponsesWithoutBids/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.bidResponsesWithoutBids/list
   
   Required parameters: filterSetName
   
@@ -647,7 +647,7 @@
      auth))))
 
 (defn filterSets-filteredBids-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/filteredBids/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.filteredBids/list
   
   Required parameters: filterSetName
   
@@ -673,7 +673,7 @@
      auth))))
 
 (defn filterSets-filteredBids-details-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/filteredBids/details/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.filteredBids.details/list
   
   Required parameters: filterSetName, creativeStatusId
   
@@ -701,7 +701,7 @@
      auth))))
 
 (defn filterSets-filteredBids-creatives-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/filteredBids/creatives/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.filteredBids.creatives/list
   
   Required parameters: filterSetName, creativeStatusId
   
@@ -729,7 +729,7 @@
      auth))))
 
 (defn filterSets-losingBids-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/losingBids/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.losingBids/list
   
   Required parameters: filterSetName
   
@@ -755,7 +755,7 @@
      auth))))
 
 (defn filterSets-nonBillableWinningBids-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/bidders/filterSets/nonBillableWinningBids/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/bidders.filterSets.nonBillableWinningBids/list
   
   Required parameters: filterSetName
   

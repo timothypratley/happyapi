@@ -1,13 +1,13 @@
 (ns happygapi.content.returnpolicyonline
   "Content API for Shopping: returnpolicyonline.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnpolicyonline"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnpolicyonline/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnPolicyId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnpolicyonline/create
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -76,7 +76,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnpolicyonline/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnPolicyId
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnpolicyonline/patch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnPolicyId
   
@@ -145,7 +145,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnpolicyonline/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

@@ -1,13 +1,13 @@
 (ns happygapi.siteVerification.webResource
   "Google Site Verification API: webResource.
   Verifies ownership of websites or domains with Google.
-  See: https://developers.google.com/site-verification/api/reference/rest/v1/webResource"
+  See: https://developers.google.com/site-verification/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/site-verification/api/reference/rest/v1/webResource/delete
+  "https://developers.google.com/site-verification/v1/webResource/delete
   
   Required parameters: id
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/site-verification/api/reference/rest/v1/webResource/get
+  "https://developers.google.com/site-verification/v1/webResource/get
   
   Required parameters: id
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn getToken$
-  "https://developers.google.com/site-verification/api/reference/rest/v1/webResource/getToken
+  "https://developers.google.com/site-verification/v1/webResource/getToken
   
   Required parameters: none
   
@@ -92,7 +92,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/site-verification/api/reference/rest/v1/webResource/insert
+  "https://developers.google.com/site-verification/v1/webResource/insert
   
   Required parameters: verificationMethod
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/site-verification/api/reference/rest/v1/webResource/list
+  "https://developers.google.com/site-verification/v1/webResource/list
   
   Required parameters: none
   
@@ -153,7 +153,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/site-verification/api/reference/rest/v1/webResource/patch
+  "https://developers.google.com/site-verification/v1/webResource/patch
   
   Required parameters: id
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/site-verification/api/reference/rest/v1/webResource/update
+  "https://developers.google.com/site-verification/v1/webResource/update
   
   Required parameters: id
   

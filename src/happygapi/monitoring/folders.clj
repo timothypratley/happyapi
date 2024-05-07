@@ -1,13 +1,13 @@
 (ns happygapi.monitoring.folders
   "Cloud Monitoring API: folders.
   Manages your Cloud Monitoring data and configurations.
-  See: https://cloud.google.com/monitoring/api/api/reference/rest/v3/folders"
+  See: https://cloud.google.com/monitoring/api/v3"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn timeSeries-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/folders/timeSeries/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   

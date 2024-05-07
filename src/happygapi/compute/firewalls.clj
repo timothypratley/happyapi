@@ -1,13 +1,13 @@
 (ns happygapi.compute.firewalls
   "Compute Engine API: firewalls.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/firewalls"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewalls/list
+  "https://cloud.google.com/products/compute/v1/docs/firewalls/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewalls/get
+  "https://cloud.google.com/products/compute/v1/docs/firewalls/get
   
   Required parameters: firewall, project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewalls/insert
+  "https://cloud.google.com/products/compute/v1/docs/firewalls/insert
   
   Required parameters: project
   
@@ -114,7 +114,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewalls/delete
+  "https://cloud.google.com/products/compute/v1/docs/firewalls/delete
   
   Required parameters: firewall, project
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewalls/update
+  "https://cloud.google.com/products/compute/v1/docs/firewalls/update
   
   Required parameters: firewall, project
   
@@ -192,7 +192,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewalls/patch
+  "https://cloud.google.com/products/compute/v1/docs/firewalls/patch
   
   Required parameters: firewall, project
   

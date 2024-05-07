@@ -1,17 +1,17 @@
 (ns happygapi.blogger.blogs
   "Blogger API: blogs.
   The Blogger API provides access to posts, comments and pages of a Blogger blog.
-  See: https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/blogs"
+  See: https://developers.google.com/blogger/docs/3.0/getting_started"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn listByUser$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/blogs/listByUser
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: userId
   
-  Optional parameters: view, fetchUserInfo, role, status
+  Optional parameters: role, fetchUserInfo, status, view
   
   Lists blogs by user."
   {:scopes ["https://www.googleapis.com/auth/blogger"
@@ -34,7 +34,7 @@
      auth))))
 
 (defn getByUrl$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/blogs/getByUrl
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: url
   
@@ -61,11 +61,11 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/blogs/get
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: blogId
   
-  Optional parameters: view, maxPosts
+  Optional parameters: maxPosts, view
   
   Gets a blog by id."
   {:scopes ["https://www.googleapis.com/auth/blogger"

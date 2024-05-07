@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.managedconfigurationsforuser
   "Google Play EMM API: managedconfigurationsforuser.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/managedconfigurationsforuser"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/managedconfigurationsforuser/list
+  "https://developers.google.com/android/work/play/emm-api/v1/managedconfigurationsforuser/list
   
   Required parameters: enterpriseId, userId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/managedconfigurationsforuser/get
+  "https://developers.google.com/android/work/play/emm-api/v1/managedconfigurationsforuser/get
   
   Required parameters: enterpriseId, userId, managedConfigurationForUserId
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/managedconfigurationsforuser/update
+  "https://developers.google.com/android/work/play/emm-api/v1/managedconfigurationsforuser/update
   
   Required parameters: enterpriseId, userId, managedConfigurationForUserId
   
@@ -104,7 +104,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/managedconfigurationsforuser/delete
+  "https://developers.google.com/android/work/play/emm-api/v1/managedconfigurationsforuser/delete
   
   Required parameters: enterpriseId, userId, managedConfigurationForUserId
   

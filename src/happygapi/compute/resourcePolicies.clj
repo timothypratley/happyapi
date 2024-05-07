@@ -1,13 +1,13 @@
 (ns happygapi.compute.resourcePolicies
   "Compute Engine API: resourcePolicies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/get
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/get
   
   Required parameters: project, region, resourcePolicy
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/setIamPolicy
   
   Required parameters: project, region, resource
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/insert
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/insert
   
   Required parameters: project, region
   
@@ -132,7 +132,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/patch
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/patch
   
   Required parameters: project, region, resourcePolicy
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/testIamPermissions
   
   Required parameters: project, region, resource
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/aggregatedList
   
   Required parameters: project
   
@@ -249,7 +249,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/delete
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/delete
   
   Required parameters: project, region, resourcePolicy
   
@@ -278,7 +278,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/getIamPolicy
   
   Required parameters: project, region, resource
   
@@ -306,7 +306,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/resourcePolicies/list
+  "https://cloud.google.com/products/compute/v1/docs/resourcePolicies/list
   
   Required parameters: project, region
   

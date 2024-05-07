@@ -1,13 +1,13 @@
 (ns happygapi.androidmanagement.enterprises
   "Android Management API: enterprises.
   The Android Management API provides remote enterprise management of Android devices and apps.
-  See: https://developers.google.com/android/managementapi/reference/rest/v1/enterprises"
+  See: https://developers.google.com/android/management"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/create
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/create
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/delete
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/get
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/patch
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/patch
   
   Required parameters: name
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/list
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/list
   
   Required parameters: none
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn enrollmentTokens-create$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/enrollmentTokens/create
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/enrollmentTokens/create
   
   Required parameters: parent
   
@@ -230,7 +230,7 @@
      auth))))
 
 (defn enrollmentTokens-delete$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/enrollmentTokens/delete
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/enrollmentTokens/delete
   
   Required parameters: name
   
@@ -256,7 +256,7 @@
      auth))))
 
 (defn enrollmentTokens-get$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/enrollmentTokens/get
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/enrollmentTokens/get
   
   Required parameters: name
   
@@ -282,7 +282,7 @@
      auth))))
 
 (defn enrollmentTokens-list$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/enrollmentTokens/list
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/enrollmentTokens/list
   
   Required parameters: parent
   
@@ -308,7 +308,7 @@
      auth))))
 
 (defn webTokens-create$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/webTokens/create
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/webTokens/create
   
   Required parameters: parent
   
@@ -344,7 +344,7 @@
      auth))))
 
 (defn devices-get$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/devices/get
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/devices/get
   
   Required parameters: name
   
@@ -370,7 +370,7 @@
      auth))))
 
 (defn devices-list$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/devices/list
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/devices/list
   
   Required parameters: parent
   
@@ -396,7 +396,7 @@
      auth))))
 
 (defn devices-patch$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/devices/patch
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/devices/patch
   
   Required parameters: name
   
@@ -545,7 +545,7 @@
      auth))))
 
 (defn devices-delete$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/devices/delete
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/devices/delete
   
   Required parameters: name
   
@@ -571,7 +571,7 @@
      auth))))
 
 (defn devices-issueCommand$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/devices/issueCommand
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/devices/issueCommand
   
   Required parameters: name
   
@@ -619,7 +619,7 @@
      auth))))
 
 (defn devices-operations-list$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/devices/operations/list
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/devices/operations/list
   
   Required parameters: name
   
@@ -645,7 +645,7 @@
      auth))))
 
 (defn devices-operations-get$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/devices/operations/get
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/devices/operations/get
   
   Required parameters: name
   
@@ -671,7 +671,7 @@
      auth))))
 
 (defn devices-operations-cancel$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/devices/operations/cancel
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/devices/operations/cancel
   
   Required parameters: name
   
@@ -697,7 +697,7 @@
      auth))))
 
 (defn policies-get$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/policies/get
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/policies/get
   
   Required parameters: name
   
@@ -723,7 +723,7 @@
      auth))))
 
 (defn policies-list$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/policies/list
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/policies/list
   
   Required parameters: parent
   
@@ -749,7 +749,7 @@
      auth))))
 
 (defn policies-patch$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/policies/patch
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/policies/patch
   
   Required parameters: name
   
@@ -808,7 +808,8 @@
    :deviceConnectivityManagement {:usbDataAccess string,
                                   :configureWifi string,
                                   :wifiDirectSettings string,
-                                  :tetheringSettings string},
+                                  :tetheringSettings string,
+                                  :wifiSsidPolicy WifiSsidPolicy},
    :name string,
    :passwordRequirements {:requirePasswordUnlock string,
                           :unifiedLockSettings string,
@@ -971,7 +972,7 @@
      auth))))
 
 (defn policies-delete$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/policies/delete
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/policies/delete
   
   Required parameters: name
   
@@ -997,7 +998,7 @@
      auth))))
 
 (defn applications-get$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/applications/get
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/applications/get
   
   Required parameters: name
   
@@ -1023,7 +1024,7 @@
      auth))))
 
 (defn webApps-create$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/webApps/create
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/webApps/create
   
   Required parameters: parent
   
@@ -1060,7 +1061,7 @@
      auth))))
 
 (defn webApps-get$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/webApps/get
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/webApps/get
   
   Required parameters: name
   
@@ -1086,7 +1087,7 @@
      auth))))
 
 (defn webApps-list$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/webApps/list
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/webApps/list
   
   Required parameters: parent
   
@@ -1112,7 +1113,7 @@
      auth))))
 
 (defn webApps-patch$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/webApps/patch
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/webApps/patch
   
   Required parameters: name
   
@@ -1149,7 +1150,7 @@
      auth))))
 
 (defn webApps-delete$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/webApps/delete
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/webApps/delete
   
   Required parameters: name
   
@@ -1175,7 +1176,7 @@
      auth))))
 
 (defn migrationTokens-create$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/migrationTokens/create
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/migrationTokens/create
   
   Required parameters: parent
   
@@ -1195,7 +1196,7 @@
    :expireTime string,
    :device string}
   
-  Creates a migration token, to migrate an existing device from being managed by the EMM's Device Policy Controller (DPC) to being managed by the Android Management API."
+  Creates a migration token, to migrate an existing device from being managed by the EMM's Device Policy Controller (DPC) to being managed by the Android Management API. See the guide (https://developers.google.com/android/management/dpc-migration) for more details."
   {:scopes ["https://www.googleapis.com/auth/androidmanagement"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -1217,7 +1218,7 @@
      auth))))
 
 (defn migrationTokens-get$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/migrationTokens/get
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/migrationTokens/get
   
   Required parameters: name
   
@@ -1243,7 +1244,7 @@
      auth))))
 
 (defn migrationTokens-list$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/enterprises/migrationTokens/list
+  "https://developers.google.com/android/management/reference/rest/v1/enterprises/migrationTokens/list
   
   Required parameters: parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.apprecovery
   "Google Play Android Developer API: apprecovery.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/apprecovery"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/apprecovery/create
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -44,7 +44,7 @@
      auth))))
 
 (defn deploy$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/apprecovery/deploy
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, appRecoveryId
   
@@ -76,7 +76,7 @@
      auth))))
 
 (defn appRecoveries$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/apprecovery/appRecoveries
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn addTargeting$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/apprecovery/addTargeting
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, appRecoveryId
   
@@ -136,7 +136,7 @@
      auth))))
 
 (defn cancel$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/apprecovery/cancel
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, appRecoveryId
   

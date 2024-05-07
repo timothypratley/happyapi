@@ -1,13 +1,13 @@
 (ns happygapi.doubleclicksearch.reports
   "Search Ads 360 API: reports.
   The Search Ads 360 API allows developers to automate uploading conversions and downloading reports from Search Ads 360.
-  See: https://developers.google.com/search-adsapi/reference/rest/v2/reports"
+  See: https://developers.google.com/search-ads"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn generate$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/reports/generate
+  "https://developers.google.com/search-ads
   
   Required parameters: none
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/reports/get
+  "https://developers.google.com/search-ads
   
   Required parameters: reportId
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn getFile$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/reports/getFile
+  "https://developers.google.com/search-ads
   
   Required parameters: reportId, reportFragment
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn getIdMappingFile$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/reports/getIdMappingFile
+  "https://developers.google.com/search-ads
   
   Required parameters: agencyId, advertiserId
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn request$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/reports/request
+  "https://developers.google.com/search-ads
   
   Required parameters: none
   

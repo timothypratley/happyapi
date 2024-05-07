@@ -1,13 +1,13 @@
 (ns happygapi.speech.projects
   "Cloud Speech-to-Text API: projects.
   Converts audio to text by applying powerful neural network models.
-  See: https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/speech-to-text/docs/transcribe-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-phraseSets-create$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/phraseSets/create
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.phraseSets/create
   
   Required parameters: parent
   
@@ -52,7 +52,7 @@
      auth))))
 
 (defn locations-phraseSets-get$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/phraseSets/get
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.phraseSets/get
   
   Required parameters: name
   
@@ -78,7 +78,7 @@
      auth))))
 
 (defn locations-phraseSets-list$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/phraseSets/list
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.phraseSets/list
   
   Required parameters: parent
   
@@ -104,7 +104,7 @@
      auth))))
 
 (defn locations-phraseSets-patch$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/phraseSets/patch
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.phraseSets/patch
   
   Required parameters: name
   
@@ -148,7 +148,7 @@
      auth))))
 
 (defn locations-phraseSets-delete$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/phraseSets/delete
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.phraseSets/delete
   
   Required parameters: name
   
@@ -174,7 +174,7 @@
      auth))))
 
 (defn locations-customClasses-create$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/customClasses/create
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.customClasses/create
   
   Required parameters: parent
   
@@ -219,7 +219,7 @@
      auth))))
 
 (defn locations-customClasses-get$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/customClasses/get
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.customClasses/get
   
   Required parameters: name
   
@@ -245,7 +245,7 @@
      auth))))
 
 (defn locations-customClasses-list$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/customClasses/list
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.customClasses/list
   
   Required parameters: parent
   
@@ -271,7 +271,7 @@
      auth))))
 
 (defn locations-customClasses-patch$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/customClasses/patch
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.customClasses/patch
   
   Required parameters: name
   
@@ -315,7 +315,7 @@
      auth))))
 
 (defn locations-customClasses-delete$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/projects/locations/customClasses/delete
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/projects.locations.customClasses/delete
   
   Required parameters: name
   

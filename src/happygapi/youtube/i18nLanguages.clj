@@ -1,13 +1,13 @@
 (ns happygapi.youtube.i18nLanguages
   "YouTube Data API v3: i18nLanguages.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/i18nLanguages"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/youtube/api/reference/rest/v3/i18nLanguages/list
+  "https://developers.google.com/youtube/v3/docs/i18nLanguages/list
   
   Required parameters: part
   

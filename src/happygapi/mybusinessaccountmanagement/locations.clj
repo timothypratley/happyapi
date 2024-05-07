@@ -1,13 +1,13 @@
 (ns happygapi.mybusinessaccountmanagement.locations
   "My Business Account Management API: locations.
   The My Business Account Management API provides an interface for managing access to a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
-  See: https://developers.google.com/my-business/api/reference/rest/v1/locations"
+  See: https://developers.google.com/my-business/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn transfer$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/transfer
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn admins-list$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/admins/list
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn admins-create$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/admins/create
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   
@@ -101,7 +101,7 @@
      auth))))
 
 (defn admins-delete$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/admins/delete
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn admins-patch$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/admins/patch
+  "https://developers.google.com/my-business
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.file.projects
   "Cloud Filestore API: projects.
   The Cloud Filestore API is used for creating and managing cloud file servers.
-  See: https://cloud.google.com/filestore/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/filestore/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-instances-list$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/list
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/list
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-instances-get$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/get
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/get
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-instances-create$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/create
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/create
   
   Required parameters: parent
   
@@ -273,7 +273,7 @@
      auth))))
 
 (defn locations-instances-patch$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/patch
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/patch
   
   Required parameters: name
   
@@ -325,7 +325,7 @@
      auth))))
 
 (defn locations-instances-restore$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/restore
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/restore
   
   Required parameters: name
   
@@ -357,7 +357,7 @@
      auth))))
 
 (defn locations-instances-revert$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/revert
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/revert
   
   Required parameters: name
   
@@ -389,7 +389,7 @@
      auth))))
 
 (defn locations-instances-delete$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/delete
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances/delete
   
   Required parameters: name
   
@@ -415,7 +415,7 @@
      auth))))
 
 (defn locations-instances-snapshots-list$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/snapshots/list
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances.snapshots/list
   
   Required parameters: parent
   
@@ -441,7 +441,7 @@
      auth))))
 
 (defn locations-instances-snapshots-get$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/snapshots/get
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances.snapshots/get
   
   Required parameters: name
   
@@ -467,7 +467,7 @@
      auth))))
 
 (defn locations-instances-snapshots-create$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/snapshots/create
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances.snapshots/create
   
   Required parameters: parent
   
@@ -504,7 +504,7 @@
      auth))))
 
 (defn locations-instances-snapshots-delete$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/snapshots/delete
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances.snapshots/delete
   
   Required parameters: name
   
@@ -530,7 +530,7 @@
      auth))))
 
 (defn locations-instances-snapshots-patch$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/instances/snapshots/patch
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.instances.snapshots/patch
   
   Required parameters: name
   
@@ -567,7 +567,7 @@
      auth))))
 
 (defn locations-backups-list$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/backups/list
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.backups/list
   
   Required parameters: parent
   
@@ -593,7 +593,7 @@
      auth))))
 
 (defn locations-backups-get$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/backups/get
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.backups/get
   
   Required parameters: name
   
@@ -619,7 +619,7 @@
      auth))))
 
 (defn locations-backups-create$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/backups/create
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.backups/create
   
   Required parameters: parent
   
@@ -664,7 +664,7 @@
      auth))))
 
 (defn locations-backups-delete$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/backups/delete
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.backups/delete
   
   Required parameters: name
   
@@ -690,7 +690,7 @@
      auth))))
 
 (defn locations-backups-patch$
-  "https://cloud.google.com/filestore/api/reference/rest/v1/projects/locations/backups/patch
+  "https://cloud.google.com/filestore/docs/reference/rest/v1/projects.locations.backups/patch
   
   Required parameters: name
   

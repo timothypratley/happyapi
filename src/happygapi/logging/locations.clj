@@ -1,13 +1,13 @@
 (ns happygapi.logging.locations
   "Cloud Logging API: locations.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/locations"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/list
   
   Required parameters: name
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/get
   
   Required parameters: name
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn operations-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/operations/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/operations/list
   
   Required parameters: name
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/operations/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/operations/get
   
   Required parameters: name
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn operations-cancel$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/operations/cancel
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/operations/cancel
   
   Required parameters: name
   
@@ -156,7 +156,7 @@
      auth))))
 
 (defn buckets-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/list
   
   Required parameters: parent
   
@@ -185,7 +185,7 @@
      auth))))
 
 (defn buckets-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/get
   
   Required parameters: name
   
@@ -214,7 +214,7 @@
      auth))))
 
 (defn buckets-createAsync$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/createAsync
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/createAsync
   
   Required parameters: parent
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn buckets-updateAsync$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/updateAsync
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/updateAsync
   
   Required parameters: name
   
@@ -306,7 +306,7 @@
      auth))))
 
 (defn buckets-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/create
   
   Required parameters: parent
   
@@ -352,7 +352,7 @@
      auth))))
 
 (defn buckets-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/patch
   
   Required parameters: name
   
@@ -398,7 +398,7 @@
      auth))))
 
 (defn buckets-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/delete
   
   Required parameters: name
   
@@ -425,7 +425,7 @@
      auth))))
 
 (defn buckets-undelete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/undelete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/undelete
   
   Required parameters: name
   
@@ -457,8 +457,115 @@
       :as :json}
      auth))))
 
+(defn buckets-views-setIamPolicy$
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/views/setIamPolicy
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:policy {:version integer,
+            :bindings [Binding],
+            :auditConfigs [AuditConfig],
+            :etag string},
+   :updateMask string}
+  
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/logging.admin"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://logging.googleapis.com/"
+     "v2/{+resource}:setIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn buckets-views-getIamPolicy$
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/views/getIamPolicy
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:options {:requestedPolicyVersion integer}}
+  
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"
+            "https://www.googleapis.com/auth/logging.admin"
+            "https://www.googleapis.com/auth/logging.read"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://logging.googleapis.com/"
+     "v2/{+resource}:getIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn buckets-views-testIamPermissions$
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/views/testIamPermissions
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:permissions [string]}
+  
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"
+            "https://www.googleapis.com/auth/logging.admin"
+            "https://www.googleapis.com/auth/logging.read"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://logging.googleapis.com/"
+     "v2/{+resource}:testIamPermissions"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn buckets-views-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/views/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/views/list
   
   Required parameters: parent
   
@@ -487,7 +594,7 @@
      auth))))
 
 (defn buckets-views-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/views/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/views/get
   
   Required parameters: name
   
@@ -516,7 +623,7 @@
      auth))))
 
 (defn buckets-views-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/views/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/views/create
   
   Required parameters: parent
   
@@ -553,7 +660,7 @@
      auth))))
 
 (defn buckets-views-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/views/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/views/patch
   
   Required parameters: name
   
@@ -590,7 +697,7 @@
      auth))))
 
 (defn buckets-views-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/views/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/views/delete
   
   Required parameters: name
   
@@ -617,7 +724,7 @@
      auth))))
 
 (defn buckets-links-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/links/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/links/list
   
   Required parameters: parent
   
@@ -646,7 +753,7 @@
      auth))))
 
 (defn buckets-links-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/links/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/links/get
   
   Required parameters: name
   
@@ -675,7 +782,7 @@
      auth))))
 
 (defn buckets-links-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/links/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/links/create
   
   Required parameters: parent
   
@@ -712,7 +819,7 @@
      auth))))
 
 (defn buckets-links-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/locations/buckets/links/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/locations/buckets/links/delete
   
   Required parameters: name
   

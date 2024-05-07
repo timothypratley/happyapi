@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.placements
   "Campaign Manager 360 API: placements.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placements"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn patch$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placements/patch
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -142,7 +142,7 @@
      auth))))
 
 (defn generatetags$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placements/generatetags
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -168,7 +168,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placements/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -194,7 +194,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placements/insert
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -329,7 +329,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placements/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -355,7 +355,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placements/update
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   

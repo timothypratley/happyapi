@@ -1,13 +1,13 @@
 (ns happygapi.gamesConfiguration.achievementConfigurations
   "Google Play Game Services Publishing API: achievementConfigurations.
   The Google Play Game Services Publishing API allows developers to configure their games in Game Services.
-  See: https://developers.google.com/games/api/reference/rest/v1configuration/achievementConfigurations"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/achievementConfigurations/delete
+  "https://games.withgoogle.com
   
   Required parameters: achievementId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/achievementConfigurations/get
+  "https://games.withgoogle.com
   
   Required parameters: achievementId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/achievementConfigurations/insert
+  "https://games.withgoogle.com
   
   Required parameters: applicationId
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/achievementConfigurations/list
+  "https://games.withgoogle.com
   
   Required parameters: applicationId
   
@@ -134,7 +134,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/achievementConfigurations/update
+  "https://games.withgoogle.com
   
   Required parameters: achievementId
   

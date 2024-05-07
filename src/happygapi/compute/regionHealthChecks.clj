@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionHealthChecks
   "Compute Engine API: regionHealthChecks.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionHealthChecks"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionHealthChecks/list
+  "https://cloud.google.com/products/compute/v1/docs/regionHealthChecks/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionHealthChecks/get
+  "https://cloud.google.com/products/compute/v1/docs/regionHealthChecks/get
   
   Required parameters: healthCheck, project, region
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionHealthChecks/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionHealthChecks/insert
   
   Required parameters: project, region
   
@@ -145,7 +145,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionHealthChecks/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionHealthChecks/delete
   
   Required parameters: healthCheck, project, region
   
@@ -172,7 +172,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionHealthChecks/update
+  "https://cloud.google.com/products/compute/v1/docs/regionHealthChecks/update
   
   Required parameters: healthCheck, project, region
   
@@ -254,7 +254,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionHealthChecks/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionHealthChecks/patch
   
   Required parameters: healthCheck, project, region
   

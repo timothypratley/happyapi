@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.guaranteedOrders
   "Display & Video 360 API: guaranteedOrders.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/guaranteedOrders"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/guaranteedOrders/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -54,7 +54,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/guaranteedOrders/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: guaranteedOrderId
   
@@ -80,7 +80,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/guaranteedOrders/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/guaranteedOrders/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: guaranteedOrderId
   
@@ -153,7 +153,7 @@
      auth))))
 
 (defn editGuaranteedOrderReadAccessors$
-  "https://developers.google.com/display-video/api/reference/rest/v3/guaranteedOrders/editGuaranteedOrderReadAccessors
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: guaranteedOrderId
   

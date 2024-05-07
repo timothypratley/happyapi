@@ -1,13 +1,13 @@
 (ns happygapi.servicedirectory.projects
   "Service Directory API: projects.
   Service Directory is a platform for discovering, publishing, and connecting services. 
-  See: https://cloud.google.com/service-directoryapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/service-directory"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-namespaces-create$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/create
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces/create
   
   Required parameters: parent
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn locations-namespaces-list$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/list
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces/list
   
   Required parameters: parent
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn locations-namespaces-get$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/get
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces/get
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-namespaces-patch$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/patch
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces/patch
   
   Required parameters: name
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn locations-namespaces-delete$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/delete
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces/delete
   
   Required parameters: name
   
@@ -201,7 +201,7 @@
      auth))))
 
 (defn locations-namespaces-getIamPolicy$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/getIamPolicy
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces/getIamPolicy
   
   Required parameters: resource
   
@@ -233,7 +233,7 @@
      auth))))
 
 (defn locations-namespaces-setIamPolicy$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/setIamPolicy
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces/setIamPolicy
   
   Required parameters: resource
   
@@ -265,7 +265,7 @@
      auth))))
 
 (defn locations-namespaces-testIamPermissions$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/testIamPermissions
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces/testIamPermissions
   
   Required parameters: resource
   
@@ -297,7 +297,7 @@
      auth))))
 
 (defn locations-namespaces-services-get$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/get
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/get
   
   Required parameters: name
   
@@ -323,7 +323,7 @@
      auth))))
 
 (defn locations-namespaces-services-setIamPolicy$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/setIamPolicy
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/setIamPolicy
   
   Required parameters: resource
   
@@ -355,7 +355,7 @@
      auth))))
 
 (defn locations-namespaces-services-patch$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/patch
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/patch
   
   Required parameters: name
   
@@ -395,7 +395,7 @@
      auth))))
 
 (defn locations-namespaces-services-testIamPermissions$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/testIamPermissions
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/testIamPermissions
   
   Required parameters: resource
   
@@ -427,7 +427,7 @@
      auth))))
 
 (defn locations-namespaces-services-create$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/create
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/create
   
   Required parameters: parent
   
@@ -467,7 +467,7 @@
      auth))))
 
 (defn locations-namespaces-services-delete$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/delete
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/delete
   
   Required parameters: name
   
@@ -493,7 +493,7 @@
      auth))))
 
 (defn locations-namespaces-services-getIamPolicy$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/getIamPolicy
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/getIamPolicy
   
   Required parameters: resource
   
@@ -525,7 +525,7 @@
      auth))))
 
 (defn locations-namespaces-services-list$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/list
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/list
   
   Required parameters: parent
   
@@ -551,7 +551,7 @@
      auth))))
 
 (defn locations-namespaces-services-resolve$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/resolve
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services/resolve
   
   Required parameters: name
   
@@ -583,7 +583,7 @@
      auth))))
 
 (defn locations-namespaces-services-endpoints-create$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/endpoints/create
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services.endpoints/create
   
   Required parameters: parent
   
@@ -620,7 +620,7 @@
      auth))))
 
 (defn locations-namespaces-services-endpoints-list$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/endpoints/list
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services.endpoints/list
   
   Required parameters: parent
   
@@ -646,7 +646,7 @@
      auth))))
 
 (defn locations-namespaces-services-endpoints-get$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/endpoints/get
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services.endpoints/get
   
   Required parameters: name
   
@@ -672,7 +672,7 @@
      auth))))
 
 (defn locations-namespaces-services-endpoints-patch$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/endpoints/patch
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services.endpoints/patch
   
   Required parameters: name
   
@@ -709,7 +709,7 @@
      auth))))
 
 (defn locations-namespaces-services-endpoints-delete$
-  "https://cloud.google.com/service-directoryapi/reference/rest/v1/projects/locations/namespaces/services/endpoints/delete
+  "https://cloud.google.com/service-directory/docs/reference/rest/v1/projects.locations.namespaces.services.endpoints/delete
   
   Required parameters: name
   

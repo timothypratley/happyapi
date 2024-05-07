@@ -1,13 +1,13 @@
 (ns happygapi.policytroubleshooter.iam
   "Policy Troubleshooter API: iam.
   
-  See: https://cloud.google.com/iam/api/reference/rest/v1/iam"
+  See: https://cloud.google.com/security/products/iam"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn troubleshoot$
-  "https://cloud.google.com/iam/api/reference/rest/v1/iam/troubleshoot
+  "https://cloud.google.com/security/products/iam/v1/docs/iam/troubleshoot
   
   Required parameters: none
   
@@ -15,9 +15,9 @@
   
   Body: 
   
-  {:accessTuple {:principal string,
-                 :fullResourceName string,
-                 :permission string}}
+  {:accessTuple {:permission string,
+                 :principal string,
+                 :fullResourceName string}}
   
   Checks whether a principal has a specific permission for a specific resource, and explains why the principal does or does not have that permission."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}

@@ -1,13 +1,13 @@
 (ns happygapi.mybusinessaccountmanagement.accounts
   "My Business Account Management API: accounts.
   The My Business Account Management API provides an interface for managing access to a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
-  See: https://developers.google.com/my-business/api/reference/rest/v1/accounts"
+  See: https://developers.google.com/my-business/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/list
+  "https://developers.google.com/my-business
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/get
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/create
+  "https://developers.google.com/my-business
   
   Required parameters: none
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/patch
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -145,7 +145,7 @@
      auth))))
 
 (defn invitations-accept$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/invitations/accept
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -177,7 +177,7 @@
      auth))))
 
 (defn invitations-decline$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/invitations/decline
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -209,7 +209,7 @@
      auth))))
 
 (defn invitations-list$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/invitations/list
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   
@@ -235,7 +235,7 @@
      auth))))
 
 (defn admins-list$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/admins/list
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   
@@ -261,7 +261,7 @@
      auth))))
 
 (defn admins-create$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/admins/create
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   
@@ -297,7 +297,7 @@
      auth))))
 
 (defn admins-delete$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/admins/delete
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -323,7 +323,7 @@
      auth))))
 
 (defn admins-patch$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/admins/patch
+  "https://developers.google.com/my-business
   
   Required parameters: name
   

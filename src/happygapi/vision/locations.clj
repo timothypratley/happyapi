@@ -1,13 +1,13 @@
 (ns happygapi.vision.locations
   "Cloud Vision API: locations.
   Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.
-  See: https://cloud.google.com/vision/api/reference/rest/v1/locations"
+  See: https://cloud.google.com/vision/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn operations-get$
-  "https://cloud.google.com/vision/api/reference/rest/v1/locations/operations/get
+  "https://cloud.google.com/vision/reference/rest/v1/locations/operations/get
   
   Required parameters: name
   

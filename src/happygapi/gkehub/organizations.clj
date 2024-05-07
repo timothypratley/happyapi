@@ -1,13 +1,13 @@
 (ns happygapi.gkehub.organizations
   "GKE Hub API: organizations.
   
-  See: https://cloud.google.com/anthos/multicluster-management/connect/registering-a-clusterapi/reference/rest/v1/organizations"
+  See: https://cloud.google.com/kubernetes-engine/fleet-management/docs/fleet-creation"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-fleets-list$
-  "https://cloud.google.com/anthos/multicluster-management/connect/registering-a-clusterapi/reference/rest/v1/organizations/locations/fleets/list
+  "https://cloud.google.com/kubernetes-engine/fleet-management/docs/reference/rest/v1/organizations.locations.fleets/list
   
   Required parameters: parent
   

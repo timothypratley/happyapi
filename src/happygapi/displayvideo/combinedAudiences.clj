@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.combinedAudiences
   "Display & Video 360 API: combinedAudiences.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/combinedAudiences"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/combinedAudiences/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: combinedAudienceId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/combinedAudiences/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   

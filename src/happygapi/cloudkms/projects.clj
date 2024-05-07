@@ -1,13 +1,13 @@
 (ns happygapi.cloudkms.projects
   "Cloud Key Management Service (KMS) API: projects.
   Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications. 
-  See: https://cloud.google.com/kms/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/security/products/security-key-management"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-getEkmConfig$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/getEkmConfig
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/getEkmConfig
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn locations-updateEkmConfig$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/updateEkmConfig
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/updateEkmConfig
   
   Required parameters: name
   
@@ -67,7 +67,7 @@
      auth))))
 
 (defn locations-generateRandomBytes$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/generateRandomBytes
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/generateRandomBytes
   
   Required parameters: location
   
@@ -100,7 +100,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/list
   
   Required parameters: name
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/get
   
   Required parameters: name
   
@@ -154,7 +154,7 @@
      auth))))
 
 (defn locations-ekmConnections-list$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConnections/list
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConnections/list
   
   Required parameters: parent
   
@@ -181,7 +181,7 @@
      auth))))
 
 (defn locations-ekmConnections-get$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConnections/get
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConnections/get
   
   Required parameters: name
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn locations-ekmConnections-create$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConnections/create
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConnections/create
   
   Required parameters: parent
   
@@ -249,7 +249,7 @@
      auth))))
 
 (defn locations-ekmConnections-patch$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConnections/patch
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConnections/patch
   
   Required parameters: name
   
@@ -290,7 +290,7 @@
      auth))))
 
 (defn locations-ekmConnections-verifyConnectivity$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConnections/verifyConnectivity
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConnections/verifyConnectivity
   
   Required parameters: name
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn locations-ekmConnections-setIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConnections/setIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConnections/setIamPolicy
   
   Required parameters: resource
   
@@ -354,7 +354,7 @@
      auth))))
 
 (defn locations-ekmConnections-getIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConnections/getIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConnections/getIamPolicy
   
   Required parameters: resource
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn locations-ekmConnections-testIamPermissions$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConnections/testIamPermissions
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConnections/testIamPermissions
   
   Required parameters: resource
   
@@ -414,7 +414,7 @@
      auth))))
 
 (defn locations-keyRings-list$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/list
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/list
   
   Required parameters: parent
   
@@ -441,7 +441,7 @@
      auth))))
 
 (defn locations-keyRings-get$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/get
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/get
   
   Required parameters: name
   
@@ -468,7 +468,7 @@
      auth))))
 
 (defn locations-keyRings-create$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/create
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/create
   
   Required parameters: parent
   
@@ -501,7 +501,7 @@
      auth))))
 
 (defn locations-keyRings-setIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/setIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/setIamPolicy
   
   Required parameters: resource
   
@@ -538,7 +538,7 @@
      auth))))
 
 (defn locations-keyRings-getIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/getIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/getIamPolicy
   
   Required parameters: resource
   
@@ -565,7 +565,7 @@
      auth))))
 
 (defn locations-keyRings-testIamPermissions$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/testIamPermissions
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/testIamPermissions
   
   Required parameters: resource
   
@@ -598,7 +598,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-get$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/get
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/get
   
   Required parameters: name
   
@@ -625,7 +625,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-setIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/setIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/setIamPolicy
   
   Required parameters: resource
   
@@ -662,7 +662,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-patch$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/patch
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/patch
   
   Required parameters: name
   
@@ -720,7 +720,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-testIamPermissions$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/testIamPermissions
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/testIamPermissions
   
   Required parameters: resource
   
@@ -753,7 +753,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-create$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/create
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/create
   
   Required parameters: parent
   
@@ -811,7 +811,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-encrypt$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/encrypt
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/encrypt
   
   Required parameters: name
   
@@ -847,7 +847,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-getIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/getIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/getIamPolicy
   
   Required parameters: resource
   
@@ -874,7 +874,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-list$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/list
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/list
   
   Required parameters: parent
   
@@ -901,7 +901,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-updatePrimaryVersion$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/updatePrimaryVersion
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/updatePrimaryVersion
   
   Required parameters: name
   
@@ -934,7 +934,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-decrypt$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/decrypt
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/decrypt
   
   Required parameters: name
   
@@ -970,7 +970,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-get$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/get
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/get
   
   Required parameters: name
   
@@ -997,7 +997,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-patch$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/patch
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/patch
   
   Required parameters: name
   
@@ -1048,7 +1048,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-restore$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/restore
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/restore
   
   Required parameters: name
   
@@ -1081,7 +1081,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-create$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/create
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/create
   
   Required parameters: parent
   
@@ -1132,7 +1132,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-destroy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/destroy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/destroy
   
   Required parameters: name
   
@@ -1165,7 +1165,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-getPublicKey$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/getPublicKey
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/getPublicKey
   
   Required parameters: name
   
@@ -1192,7 +1192,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-asymmetricSign$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/asymmetricSign
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/asymmetricSign
   
   Required parameters: name
   
@@ -1228,7 +1228,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-macSign$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/macSign
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/macSign
   
   Required parameters: name
   
@@ -1261,7 +1261,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-list$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/list
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/list
   
   Required parameters: parent
   
@@ -1288,7 +1288,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-rawDecrypt$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/rawDecrypt
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/rawDecrypt
   
   Required parameters: name
   
@@ -1327,7 +1327,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-macVerify$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/macVerify
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/macVerify
   
   Required parameters: name
   
@@ -1360,7 +1360,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-rawEncrypt$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/rawEncrypt
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/rawEncrypt
   
   Required parameters: name
   
@@ -1398,7 +1398,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-import$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/import
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/import
   
   Required parameters: parent
   
@@ -1435,7 +1435,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-cryptoKeyVersions-asymmetricDecrypt$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/asymmetricDecrypt
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/cryptoKeyVersions/asymmetricDecrypt
   
   Required parameters: name
   
@@ -1468,7 +1468,7 @@
      auth))))
 
 (defn locations-keyRings-importJobs-list$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/importJobs/list
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/importJobs/list
   
   Required parameters: parent
   
@@ -1495,7 +1495,7 @@
      auth))))
 
 (defn locations-keyRings-importJobs-get$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/importJobs/get
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/importJobs/get
   
   Required parameters: name
   
@@ -1522,7 +1522,7 @@
      auth))))
 
 (defn locations-keyRings-importJobs-create$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/importJobs/create
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/importJobs/create
   
   Required parameters: parent
   
@@ -1566,7 +1566,7 @@
      auth))))
 
 (defn locations-keyRings-importJobs-setIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/importJobs/setIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/importJobs/setIamPolicy
   
   Required parameters: resource
   
@@ -1603,7 +1603,7 @@
      auth))))
 
 (defn locations-keyRings-importJobs-getIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/importJobs/getIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/importJobs/getIamPolicy
   
   Required parameters: resource
   
@@ -1630,7 +1630,7 @@
      auth))))
 
 (defn locations-keyRings-importJobs-testIamPermissions$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/importJobs/testIamPermissions
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/importJobs/testIamPermissions
   
   Required parameters: resource
   
@@ -1663,7 +1663,7 @@
      auth))))
 
 (defn locations-ekmConfig-setIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConfig/setIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConfig/setIamPolicy
   
   Required parameters: resource
   
@@ -1700,7 +1700,7 @@
      auth))))
 
 (defn locations-ekmConfig-getIamPolicy$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConfig/getIamPolicy
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConfig/getIamPolicy
   
   Required parameters: resource
   
@@ -1727,7 +1727,7 @@
      auth))))
 
 (defn locations-ekmConfig-testIamPermissions$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/ekmConfig/testIamPermissions
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/ekmConfig/testIamPermissions
   
   Required parameters: resource
   

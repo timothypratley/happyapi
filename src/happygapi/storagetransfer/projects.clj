@@ -1,13 +1,13 @@
 (ns happygapi.storagetransfer.projects
   "Storage Transfer API: projects.
   Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. 
-  See: https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/storage-transfer/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn agentPools-create$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/projects/agentPools/create
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools/create
   
   Required parameters: projectId
   
@@ -42,7 +42,7 @@
      auth))))
 
 (defn agentPools-patch$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/projects/agentPools/patch
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools/patch
   
   Required parameters: name
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn agentPools-get$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/projects/agentPools/get
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools/get
   
   Required parameters: name
   
@@ -103,7 +103,7 @@
      auth))))
 
 (defn agentPools-list$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/projects/agentPools/list
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools/list
   
   Required parameters: projectId
   
@@ -129,7 +129,7 @@
      auth))))
 
 (defn agentPools-delete$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/projects/agentPools/delete
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/projects.agentPools/delete
   
   Required parameters: name
   

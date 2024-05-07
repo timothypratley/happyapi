@@ -1,13 +1,13 @@
 (ns happygapi.doubleclicksearch.conversion
   "Search Ads 360 API: conversion.
   The Search Ads 360 API allows developers to automate uploading conversions and downloading reports from Search Ads 360.
-  See: https://developers.google.com/search-adsapi/reference/rest/v2/conversion"
+  See: https://developers.google.com/search-ads"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/conversion/get
+  "https://developers.google.com/search-ads
   
   Required parameters: startDate, endDate, engineAccountId, advertiserId, startRow, agencyId, rowCount
   
@@ -47,7 +47,7 @@
      auth))))
 
 (defn getByCustomerId$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/conversion/getByCustomerId
+  "https://developers.google.com/search-ads
   
   Required parameters: startDate, customerId, endDate, startRow, rowCount
   
@@ -75,7 +75,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/conversion/insert
+  "https://developers.google.com/search-ads
   
   Required parameters: none
   
@@ -142,7 +142,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/conversion/update
+  "https://developers.google.com/search-ads
   
   Required parameters: none
   
@@ -209,7 +209,7 @@
      auth))))
 
 (defn updateAvailability$
-  "https://developers.google.com/search-adsapi/reference/rest/v2/conversion/updateAvailability
+  "https://developers.google.com/search-ads
   
   Required parameters: none
   

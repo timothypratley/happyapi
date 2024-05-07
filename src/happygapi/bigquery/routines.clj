@@ -1,13 +1,13 @@
 (ns happygapi.bigquery.routines
   "BigQuery API: routines.
   A data platform for customers to create, manage, share and query data.
-  See: https://cloud.google.com/bigquery/api/reference/rest/v2/routines"
+  See: https://cloud.google.com/bigquery/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/routines/delete
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/routines/delete
   
   Required parameters: datasetId, projectId, routineId
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/routines/get
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/routines/get
   
   Required parameters: datasetId, projectId, routineId
   
@@ -65,8 +65,42 @@
       :as :json}
      auth))))
 
+(defn getIamPolicy$
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/routines/getIamPolicy
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:options {:requestedPolicyVersion integer}}
+  
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
+  {:scopes ["https://www.googleapis.com/auth/bigquery"
+            "https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://bigquery.googleapis.com/bigquery/v2/"
+     "{+resource}:getIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn insert$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/routines/insert
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/routines/insert
   
   Required parameters: datasetId, projectId
   
@@ -137,7 +171,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/routines/list
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/routines/list
   
   Required parameters: datasetId, projectId
   
@@ -164,8 +198,45 @@
       :as :json}
      auth))))
 
+(defn setIamPolicy$
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/routines/setIamPolicy
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:policy {:auditConfigs [AuditConfig],
+            :bindings [Binding],
+            :etag string,
+            :version integer},
+   :updateMask string}
+  
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
+  {:scopes ["https://www.googleapis.com/auth/bigquery"
+            "https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://bigquery.googleapis.com/bigquery/v2/"
+     "{+resource}:setIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn update$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/routines/update
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/routines/update
   
   Required parameters: datasetId, projectId, routineId
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.nodeGroups
   "Compute Engine API: nodeGroups.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/get
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/get
   
   Required parameters: nodeGroup, project, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/setIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/insert
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/insert
   
   Required parameters: initialNodeCount, project, zone
   
@@ -102,6 +102,7 @@
    :autoscalingPolicy {:mode string,
                        :minNodes integer,
                        :maxNodes integer},
+   :maintenanceInterval string,
    :fingerprint string}
   
   Creates a NodeGroup resource in the specified project using the data included in the request."
@@ -129,7 +130,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/patch
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/patch
   
   Required parameters: nodeGroup, project, zone
   
@@ -154,6 +155,7 @@
    :autoscalingPolicy {:mode string,
                        :minNodes integer,
                        :maxNodes integer},
+   :maintenanceInterval string,
    :fingerprint string}
   
   Updates the specified node group."
@@ -179,7 +181,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/testIamPermissions
   
   Required parameters: project, resource, zone
   
@@ -213,7 +215,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/aggregatedList
   
   Required parameters: project
   
@@ -241,7 +243,7 @@
      auth))))
 
 (defn addNodes$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/addNodes
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/addNodes
   
   Required parameters: nodeGroup, project, zone
   
@@ -273,8 +275,41 @@
       :as :json}
      auth))))
 
+(defn performMaintenance$
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/performMaintenance
+  
+  Required parameters: nodeGroup, project, zone
+  
+  Optional parameters: requestId
+  
+  Body: 
+  
+  {:nodes [string], :startTime string}
+  
+  Perform maintenance on a subset of nodes in the node group."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/compute"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:zone :nodeGroup :project})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://compute.googleapis.com/compute/v1/"
+     "projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}/performMaintenance"
+     #{:zone :nodeGroup :project}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/delete
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/delete
   
   Required parameters: nodeGroup, project, zone
   
@@ -301,7 +336,7 @@
      auth))))
 
 (defn deleteNodes$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/deleteNodes
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/deleteNodes
   
   Required parameters: nodeGroup, project, zone
   
@@ -334,7 +369,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/getIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -362,7 +397,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/list
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/list
   
   Required parameters: project, zone
   
@@ -390,7 +425,7 @@
      auth))))
 
 (defn setNodeTemplate$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/setNodeTemplate
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/setNodeTemplate
   
   Required parameters: nodeGroup, project, zone
   
@@ -423,7 +458,7 @@
      auth))))
 
 (defn simulateMaintenanceEvent$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/simulateMaintenanceEvent
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/simulateMaintenanceEvent
   
   Required parameters: nodeGroup, project, zone
   
@@ -456,7 +491,7 @@
      auth))))
 
 (defn listNodes$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeGroups/listNodes
+  "https://cloud.google.com/products/compute/v1/docs/nodeGroups/listNodes
   
   Required parameters: nodeGroup, project, zone
   

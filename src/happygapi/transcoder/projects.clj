@@ -1,13 +1,13 @@
 (ns happygapi.transcoder.projects
   "Transcoder API: projects.
   This API converts video files into formats suitable for consumer distribution. For more information, see the Transcoder API overview. 
-  See: https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/transcoder/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-jobs-create$
-  "https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects/locations/jobs/create
+  "https://cloud.google.com/transcoder/docs/reference/rest/v1/projects.locations.jobs/create
   
   Required parameters: parent
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn locations-jobs-list$
-  "https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects/locations/jobs/list
+  "https://cloud.google.com/transcoder/docs/reference/rest/v1/projects.locations.jobs/list
   
   Required parameters: parent
   
@@ -89,7 +89,7 @@
      auth))))
 
 (defn locations-jobs-get$
-  "https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects/locations/jobs/get
+  "https://cloud.google.com/transcoder/docs/reference/rest/v1/projects.locations.jobs/get
   
   Required parameters: name
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn locations-jobs-delete$
-  "https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects/locations/jobs/delete
+  "https://cloud.google.com/transcoder/docs/reference/rest/v1/projects.locations.jobs/delete
   
   Required parameters: name
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn locations-jobTemplates-create$
-  "https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects/locations/jobTemplates/create
+  "https://cloud.google.com/transcoder/docs/reference/rest/v1/projects.locations.jobTemplates/create
   
   Required parameters: parent
   
@@ -185,7 +185,7 @@
      auth))))
 
 (defn locations-jobTemplates-list$
-  "https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects/locations/jobTemplates/list
+  "https://cloud.google.com/transcoder/docs/reference/rest/v1/projects.locations.jobTemplates/list
   
   Required parameters: parent
   
@@ -211,7 +211,7 @@
      auth))))
 
 (defn locations-jobTemplates-get$
-  "https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects/locations/jobTemplates/get
+  "https://cloud.google.com/transcoder/docs/reference/rest/v1/projects.locations.jobTemplates/get
   
   Required parameters: name
   
@@ -237,7 +237,7 @@
      auth))))
 
 (defn locations-jobTemplates-delete$
-  "https://cloud.google.com/transcoder/docs/api/reference/rest/v1/projects/locations/jobTemplates/delete
+  "https://cloud.google.com/transcoder/docs/reference/rest/v1/projects.locations.jobTemplates/delete
   
   Required parameters: name
   

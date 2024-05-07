@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.generatedapks
   "Google Play Android Developer API: generatedapks.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/generatedapks"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/generatedapks/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, versionCode
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn download$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/generatedapks/download
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, versionCode, downloadId
   

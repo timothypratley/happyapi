@@ -1,13 +1,13 @@
 (ns happygapi.content.accounts
   "Content API for Shopping: accounts.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/insert
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -100,7 +100,7 @@
      auth))))
 
 (defn authinfo$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/authinfo
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -126,7 +126,7 @@
      auth))))
 
 (defn claimwebsite$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/claimwebsite
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn updatelabels$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/updatelabels
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -184,7 +184,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/update
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -251,7 +251,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -277,7 +277,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -303,7 +303,7 @@
      auth))))
 
 (defn link$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/link
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -341,7 +341,7 @@
      auth))))
 
 (defn verifyphonenumber$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/verifyphonenumber
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -375,7 +375,7 @@
      auth))))
 
 (defn requestphoneverification$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/requestphoneverification
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -410,7 +410,7 @@
      auth))))
 
 (defn listlinks$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/listlinks
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -436,7 +436,7 @@
      auth))))
 
 (defn custombatch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/custombatch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -477,7 +477,7 @@
      auth))))
 
 (defn credentials-create$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/credentials/create
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId
   
@@ -509,7 +509,7 @@
      auth))))
 
 (defn labels-list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/labels/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId
   
@@ -535,7 +535,7 @@
      auth))))
 
 (defn labels-create$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/labels/create
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId
   
@@ -571,7 +571,7 @@
      auth))))
 
 (defn labels-patch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/labels/patch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId, labelId
   
@@ -607,7 +607,7 @@
      auth))))
 
 (defn labels-delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/labels/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId, labelId
   
@@ -633,7 +633,7 @@
      auth))))
 
 (defn returncarrier-create$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/returncarrier/create
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId
   
@@ -668,7 +668,7 @@
      auth))))
 
 (defn returncarrier-patch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/returncarrier/patch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId, carrierAccountId
   
@@ -703,7 +703,7 @@
      auth))))
 
 (defn returncarrier-delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/returncarrier/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId, carrierAccountId
   
@@ -729,7 +729,7 @@
      auth))))
 
 (defn returncarrier-list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounts/returncarrier/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: accountId
   

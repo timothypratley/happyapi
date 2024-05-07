@@ -1,13 +1,13 @@
 (ns happygapi.games.recall
   "Google Play Game Services: recall.
   The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
-  See: https://developers.google.com/games/api/reference/rest/v1/recall"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn linkPersona$
-  "https://developers.google.com/games/api/reference/rest/v1/recall/linkPersona
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -45,7 +45,7 @@
      auth))))
 
 (defn retrieveTokens$
-  "https://developers.google.com/games/api/reference/rest/v1/recall/retrieveTokens
+  "https://games.withgoogle.com
   
   Required parameters: sessionId
   
@@ -70,8 +70,34 @@
       :as :json}
      auth))))
 
+(defn lastTokenFromAllDeveloperGames$
+  "https://games.withgoogle.com
+  
+  Required parameters: sessionId
+  
+  Optional parameters: none
+  
+  Retrieve the last Recall token from all developer games that is associated with the PGS Player principal encoded in the provided recall session id. The API is only available for users that have active PGS Player profile."
+  {:scopes ["https://www.googleapis.com/auth/androidpublisher"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:sessionId})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://games.googleapis.com/"
+     "games/v1/recall/developerGamesLastPlayerToken/{sessionId}"
+     #{:sessionId}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn unlinkPersona$
-  "https://developers.google.com/games/api/reference/rest/v1/recall/unlinkPersona
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -103,7 +129,7 @@
      auth))))
 
 (defn resetPersona$
-  "https://developers.google.com/games/api/reference/rest/v1/recall/resetPersona
+  "https://games.withgoogle.com
   
   Required parameters: none
   

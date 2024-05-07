@@ -1,17 +1,17 @@
 (ns happygapi.youtube.videoCategories
   "YouTube Data API v3: videoCategories.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/videoCategories"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/youtube/api/reference/rest/v3/videoCategories/list
+  "https://developers.google.com/youtube/v3/docs/videoCategories/list
   
   Required parameters: part
   
-  Optional parameters: regionCode, id, hl
+  Optional parameters: id, hl, regionCode
   
   Retrieves a list of resources, possibly filtered."
   {:scopes ["https://www.googleapis.com/auth/youtube"

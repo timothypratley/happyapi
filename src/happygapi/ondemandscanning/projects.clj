@@ -1,13 +1,13 @@
 (ns happygapi.ondemandscanning.projects
   "On-Demand Scanning API: projects.
   A service to scan container images for vulnerabilities.
-  See: https://cloud.google.com/container-analysis/docs/on-demand-scanning/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/artifact-analysis/docs/container-scanning-overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/container-analysis/docs/on-demand-scanning/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/artifact-analysis/docs/container-scanning-overview
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/container-analysis/docs/on-demand-scanning/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/artifact-analysis/docs/container-scanning-overview
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/container-analysis/docs/on-demand-scanning/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/artifact-analysis/docs/container-scanning-overview
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/container-analysis/docs/on-demand-scanning/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/artifact-analysis/docs/container-scanning-overview
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-wait$
-  "https://cloud.google.com/container-analysis/docs/on-demand-scanning/api/reference/rest/v1/projects/locations/operations/wait
+  "https://cloud.google.com/artifact-analysis/docs/container-scanning-overview
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-scans-analyzePackages$
-  "https://cloud.google.com/container-analysis/docs/on-demand-scanning/api/reference/rest/v1/projects/locations/scans/analyzePackages
+  "https://cloud.google.com/artifact-analysis/docs/container-scanning-overview
   
   Required parameters: parent
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn locations-scans-vulnerabilities-list$
-  "https://cloud.google.com/container-analysis/docs/on-demand-scanning/api/reference/rest/v1/projects/locations/scans/vulnerabilities/list
+  "https://cloud.google.com/artifact-analysis/docs/container-scanning-overview
   
   Required parameters: parent
   

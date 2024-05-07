@@ -1,13 +1,13 @@
 (ns happygapi.compute.publicDelegatedPrefixes
   "Compute Engine API: publicDelegatedPrefixes.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes/list
+  "https://cloud.google.com/products/compute/v1/docs/publicDelegatedPrefixes/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes/get
+  "https://cloud.google.com/products/compute/v1/docs/publicDelegatedPrefixes/get
   
   Required parameters: project, publicDelegatedPrefix, region
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes/insert
+  "https://cloud.google.com/products/compute/v1/docs/publicDelegatedPrefixes/insert
   
   Required parameters: project, region
   
@@ -74,10 +74,12 @@
   Body: 
   
   {:description string,
+   :allocatablePrefixLength integer,
    :creationTimestamp string,
    :isLiveMigration boolean,
    :name string,
    :ipCidrRange string,
+   :mode string,
    :selfLink string,
    :byoipApiVersion string,
    :region string,
@@ -85,12 +87,14 @@
    :id string,
    :kind string,
    :parentPrefix string,
-   :publicDelegatedSubPrefixs [{:name string,
-                                :description string,
+   :publicDelegatedSubPrefixs [{:description string,
+                                :allocatablePrefixLength integer,
+                                :delegateeProject string,
+                                :name string,
+                                :ipCidrRange string,
+                                :mode string,
                                 :region string,
                                 :status string,
-                                :ipCidrRange string,
-                                :delegateeProject string,
                                 :isAddress boolean}],
    :fingerprint string}
   
@@ -117,7 +121,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes/delete
+  "https://cloud.google.com/products/compute/v1/docs/publicDelegatedPrefixes/delete
   
   Required parameters: project, publicDelegatedPrefix, region
   
@@ -146,7 +150,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes/patch
+  "https://cloud.google.com/products/compute/v1/docs/publicDelegatedPrefixes/patch
   
   Required parameters: project, publicDelegatedPrefix, region
   
@@ -155,10 +159,12 @@
   Body: 
   
   {:description string,
+   :allocatablePrefixLength integer,
    :creationTimestamp string,
    :isLiveMigration boolean,
    :name string,
    :ipCidrRange string,
+   :mode string,
    :selfLink string,
    :byoipApiVersion string,
    :region string,
@@ -166,12 +172,14 @@
    :id string,
    :kind string,
    :parentPrefix string,
-   :publicDelegatedSubPrefixs [{:name string,
-                                :description string,
+   :publicDelegatedSubPrefixs [{:description string,
+                                :allocatablePrefixLength integer,
+                                :delegateeProject string,
+                                :name string,
+                                :ipCidrRange string,
+                                :mode string,
                                 :region string,
                                 :status string,
-                                :ipCidrRange string,
-                                :delegateeProject string,
                                 :isAddress boolean}],
    :fingerprint string}
   
@@ -200,7 +208,7 @@
      auth))))
 
 (defn announce$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes/announce
+  "https://cloud.google.com/products/compute/v1/docs/publicDelegatedPrefixes/announce
   
   Required parameters: project, publicDelegatedPrefix, region
   
@@ -229,7 +237,7 @@
      auth))))
 
 (defn withdraw$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes/withdraw
+  "https://cloud.google.com/products/compute/v1/docs/publicDelegatedPrefixes/withdraw
   
   Required parameters: project, publicDelegatedPrefix, region
   
@@ -258,7 +266,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/publicDelegatedPrefixes/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/publicDelegatedPrefixes/aggregatedList
   
   Required parameters: project
   

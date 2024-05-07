@@ -1,13 +1,13 @@
 (ns happygapi.firebaserules.projects
   "Firebase Rules API: projects.
   Creates and manages rules that determine when a Firebase Rules-enabled service should permit a request. 
-  See: https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects"
+  See: https://firebase.google.com/docs/storage/security"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn test$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/test
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -41,7 +41,7 @@
      auth))))
 
 (defn rulesets-create$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/rulesets/create
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -78,7 +78,7 @@
      auth))))
 
 (defn rulesets-get$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/rulesets/get
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn rulesets-list$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/rulesets/list
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -134,7 +134,7 @@
      auth))))
 
 (defn rulesets-delete$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/rulesets/delete
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -161,7 +161,7 @@
      auth))))
 
 (defn releases-create$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/releases/create
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -197,7 +197,7 @@
      auth))))
 
 (defn releases-patch$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/releases/patch
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -234,7 +234,7 @@
      auth))))
 
 (defn releases-get$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/releases/get
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -262,7 +262,7 @@
      auth))))
 
 (defn releases-list$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/releases/list
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -290,7 +290,7 @@
      auth))))
 
 (defn releases-delete$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/releases/delete
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn releases-getExecutable$
-  "https://firebase.google.com/docs/storage/securityapi/reference/rest/v1/projects/releases/getExecutable
+  "https://firebase.google.com/docs/storage/security
   
   Required parameters: name
   

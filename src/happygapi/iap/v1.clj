@@ -1,13 +1,13 @@
 (ns happygapi.iap.v1
   "Cloud Identity-Aware Proxy API: v1.
   Controls access to cloud applications running on Google Cloud Platform.
-  See: https://cloud.google.com/iapapi/reference/rest/v1/v1"
+  See: https://cloud.google.com/security/products/iap"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn $
-  "https://cloud.google.com/iapapi/reference/rest/v1/setIamPolicy
+  "https://cloud.google.com/security/products/iap/v1/docs/setIamPolicy
   
   Required parameters: resource
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/iapapi/reference/rest/v1/getIamPolicy
+  "https://cloud.google.com/security/products/iap/v1/docs/getIamPolicy
   
   Required parameters: resource
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/iapapi/reference/rest/v1/testIamPermissions
+  "https://cloud.google.com/security/products/iap/v1/docs/testIamPermissions
   
   Required parameters: resource
   
@@ -103,7 +103,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/iapapi/reference/rest/v1/getIapSettings
+  "https://cloud.google.com/security/products/iap/v1/docs/getIapSettings
   
   Required parameters: name
   
@@ -129,7 +129,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/iapapi/reference/rest/v1/updateIapSettings
+  "https://cloud.google.com/security/products/iap/v1/docs/updateIapSettings
   
   Required parameters: name
   
@@ -143,7 +143,9 @@
                     :oauthSettings OAuthSettings,
                     :policyDelegationSettings PolicyDelegationSettings,
                     :reauthSettings ReauthSettings,
-                    :allowedDomainsSettings AllowedDomainsSettings},
+                    :allowedDomainsSettings AllowedDomainsSettings,
+                    :workforceIdentitySettings WorkforceIdentitySettings,
+                    :identitySources [string]},
    :applicationSettings {:csmSettings CsmSettings,
                          :accessDeniedPageSettings AccessDeniedPageSettings,
                          :cookieDomain string,
@@ -171,7 +173,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/iapapi/reference/rest/v1/validateAttributeExpression
+  "https://cloud.google.com/security/products/iap/v1/docs/validateAttributeExpression
   
   Required parameters: name
   

@@ -2,9 +2,10 @@
   (:require [clojure.test :refer [deftest testing is]]
             [happy.beaver :as beaver]
             [happy.monkey :as monkey]
+            [happy.raven :as raven]
             [meander.epsilon :as m]))
 
-(def sheets-api (monkey/fetch "https://sheets.googleapis.com/$discovery/rest?version=v4"))
+(def sheets-api (raven/get-json "https://sheets.googleapis.com/$discovery/rest?version=v4"))
 (def spreadsheets-resource (-> sheets-api :resources :spreadsheets))
 
 (defmacro is-match? [x pattern]
@@ -34,5 +35,3 @@
 
 (deftest build-nss-test
   (is (seq (beaver/build-nss sheets-api))))
-
-

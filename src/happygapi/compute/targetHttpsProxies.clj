@@ -1,13 +1,13 @@
 (ns happygapi.compute.targetHttpsProxies
   "Compute Engine API: targetHttpsProxies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/get
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/get
   
   Required parameters: project, targetHttpsProxy
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/insert
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/insert
   
   Required parameters: project
   
@@ -84,7 +84,7 @@
      auth))))
 
 (defn setQuicOverride$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/setQuicOverride
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/setQuicOverride
   
   Required parameters: project, targetHttpsProxy
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn setSslPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/setSslPolicy
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/setSslPolicy
   
   Required parameters: project, targetHttpsProxy
   
@@ -150,7 +150,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/patch
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/patch
   
   Required parameters: project, targetHttpsProxy
   
@@ -199,7 +199,7 @@
      auth))))
 
 (defn setUrlMap$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/setUrlMap
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/setUrlMap
   
   Required parameters: project, targetHttpsProxy
   
@@ -232,7 +232,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/aggregatedList
   
   Required parameters: project
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn setSslCertificates$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/setSslCertificates
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/setSslCertificates
   
   Required parameters: project, targetHttpsProxy
   
@@ -293,7 +293,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/delete
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/delete
   
   Required parameters: project, targetHttpsProxy
   
@@ -320,7 +320,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/list
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/list
   
   Required parameters: project
   
@@ -348,7 +348,7 @@
      auth))))
 
 (defn setCertificateMap$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpsProxies/setCertificateMap
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpsProxies/setCertificateMap
   
   Required parameters: project, targetHttpsProxy
   

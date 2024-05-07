@@ -1,13 +1,13 @@
 (ns happygapi.dns.dnsKeys
   "Cloud DNS API: dnsKeys.
   
-  See: https://cloud.google.com/dns/docsapi/reference/rest/v1/dnsKeys"
+  See: https://cloud.google.com/dns/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/dnsKeys/get
+  "https://cloud.google.com/dns/docs/reference/rest/v1/dnsKeys/get
   
   Required parameters: project, managedZone, dnsKeyId
   
@@ -38,7 +38,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/dnsKeys/list
+  "https://cloud.google.com/dns/docs/reference/rest/v1/dnsKeys/list
   
   Required parameters: project, managedZone
   

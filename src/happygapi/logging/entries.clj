@@ -1,13 +1,13 @@
 (ns happygapi.logging.entries
   "Cloud Logging API: entries.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/entries"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn copy$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/entries/copy
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/entries/copy
   
   Required parameters: none
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn write$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/entries/write
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/entries/write
   
   Required parameters: none
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/entries/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/entries/list
   
   Required parameters: none
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn tail$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/entries/tail
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/entries/tail
   
   Required parameters: none
   

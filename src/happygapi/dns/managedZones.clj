@@ -1,13 +1,13 @@
 (ns happygapi.dns.managedZones
   "Cloud DNS API: managedZones.
   
-  See: https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones"
+  See: https://cloud.google.com/dns/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/get
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/get
   
   Required parameters: project, managedZone
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/setIamPolicy
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/setIamPolicy
   
   Required parameters: resource
   
@@ -73,7 +73,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/patch
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/patch
   
   Required parameters: project, managedZone
   
@@ -130,7 +130,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/testIamPermissions
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/testIamPermissions
   
   Required parameters: resource
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/create
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/create
   
   Required parameters: project
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/update
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/update
   
   Required parameters: project, managedZone
   
@@ -279,7 +279,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/delete
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/delete
   
   Required parameters: project, managedZone
   
@@ -306,7 +306,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/getIamPolicy
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/getIamPolicy
   
   Required parameters: resource
   
@@ -341,7 +341,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZones/list
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZones/list
   
   Required parameters: project
   

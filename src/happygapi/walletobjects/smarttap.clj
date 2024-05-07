@@ -1,13 +1,13 @@
 (ns happygapi.walletobjects.smarttap
   "Google Wallet API: smarttap.
   API for issuers to save and manage Google Wallet Objects.
-  See: https://developers.google.com/pay/passesapi/reference/rest/v1/smarttap"
+  See: https://developers.google.com/wallet"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn insert$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/smarttap/insert
+  "https://developers.google.com/wallet/reference/rest/v1/smarttap/insert
   
   Required parameters: none
   
@@ -15,13 +15,13 @@
   
   Body: 
   
-  {:id string,
+  {:kind string,
+   :id string,
+   :merchantId string,
    :infos [{:signUpInfo SignUpInfo,
             :action string,
             :url string,
-            :value string}],
-   :kind string,
-   :merchantId string}
+            :value string}]}
   
   Inserts the smart tap."
   {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}

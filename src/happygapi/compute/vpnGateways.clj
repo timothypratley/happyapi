@@ -1,13 +1,13 @@
 (ns happygapi.compute.vpnGateways
   "Compute Engine API: vpnGateways.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways/list
+  "https://cloud.google.com/products/compute/v1/docs/vpnGateways/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/vpnGateways/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways/get
+  "https://cloud.google.com/products/compute/v1/docs/vpnGateways/get
   
   Required parameters: project, region, vpnGateway
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn getStatus$
-  "https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways/getStatus
+  "https://cloud.google.com/products/compute/v1/docs/vpnGateways/getStatus
   
   Required parameters: project, region, vpnGateway
   
@@ -119,7 +119,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways/insert
+  "https://cloud.google.com/products/compute/v1/docs/vpnGateways/insert
   
   Required parameters: project, region
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways/delete
+  "https://cloud.google.com/products/compute/v1/docs/vpnGateways/delete
   
   Required parameters: project, region, vpnGateway
   
@@ -194,7 +194,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/vpnGateways/testIamPermissions
   
   Required parameters: project, region, resource
   
@@ -228,7 +228,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/vpnGateways/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/vpnGateways/setLabels
   
   Required parameters: project, region, resource
   

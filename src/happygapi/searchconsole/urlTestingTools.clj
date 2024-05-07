@@ -1,13 +1,13 @@
 (ns happygapi.searchconsole.urlTestingTools
   "Google Search Console API: urlTestingTools.
   The Search Console API provides access to both Search Console data (verified users only) and to public information on an URL basis (anyone)
-  See: https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/urlTestingTools"
+  See: https://developer.chrome.com/docs/lighthouse/overview/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn mobileFriendlyTest-run$
-  "https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/urlTestingTools/mobileFriendlyTest/run
+  "https://developer.chrome.com/docs/lighthouse/overview
   
   Required parameters: none
   
@@ -15,7 +15,7 @@
   
   Body: 
   
-  {:url string, :requestScreenshot boolean}
+  {:requestScreenshot boolean, :url string}
   
   Runs Mobile-Friendly Test for a given URL."
   {:scopes nil}

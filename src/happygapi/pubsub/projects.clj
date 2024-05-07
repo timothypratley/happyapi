@@ -1,13 +1,13 @@
 (ns happygapi.pubsub.projects
   "Cloud Pub/Sub API: projects.
   Provides reliable, many-to-many, asynchronous messaging between applications. 
-  See: https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/pubsub/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn topics-get$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/get
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/get
   
   Required parameters: topic
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn topics-setIamPolicy$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/setIamPolicy
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/setIamPolicy
   
   Required parameters: resource
   
@@ -67,7 +67,7 @@
      auth))))
 
 (defn topics-patch$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/patch
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/patch
   
   Required parameters: name
   
@@ -109,7 +109,7 @@
      auth))))
 
 (defn topics-testIamPermissions$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/testIamPermissions
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/testIamPermissions
   
   Required parameters: resource
   
@@ -142,7 +142,7 @@
      auth))))
 
 (defn topics-create$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/create
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/create
   
   Required parameters: name
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn topics-delete$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/delete
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/delete
   
   Required parameters: topic
   
@@ -214,7 +214,7 @@
      auth))))
 
 (defn topics-getIamPolicy$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/getIamPolicy
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/getIamPolicy
   
   Required parameters: resource
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn topics-list$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/list
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/list
   
   Required parameters: project
   
@@ -268,7 +268,7 @@
      auth))))
 
 (defn topics-publish$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/publish
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics/publish
   
   Required parameters: topic
   
@@ -305,7 +305,7 @@
      auth))))
 
 (defn topics-subscriptions-list$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/subscriptions/list
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics.subscriptions/list
   
   Required parameters: topic
   
@@ -332,7 +332,7 @@
      auth))))
 
 (defn topics-snapshots-list$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/topics/snapshots/list
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics.snapshots/list
   
   Required parameters: topic
   
@@ -359,7 +359,7 @@
      auth))))
 
 (defn subscriptions-get$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/get
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/get
   
   Required parameters: subscription
   
@@ -386,7 +386,7 @@
      auth))))
 
 (defn subscriptions-setIamPolicy$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/setIamPolicy
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/setIamPolicy
   
   Required parameters: resource
   
@@ -419,7 +419,7 @@
      auth))))
 
 (defn subscriptions-detach$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/detach
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/detach
   
   Required parameters: subscription
   
@@ -446,7 +446,7 @@
      auth))))
 
 (defn subscriptions-acknowledge$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/acknowledge
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/acknowledge
   
   Required parameters: subscription
   
@@ -479,7 +479,7 @@
      auth))))
 
 (defn subscriptions-patch$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/patch
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/patch
   
   Required parameters: name
   
@@ -530,7 +530,7 @@
      auth))))
 
 (defn subscriptions-testIamPermissions$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/testIamPermissions
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/testIamPermissions
   
   Required parameters: resource
   
@@ -563,7 +563,7 @@
      auth))))
 
 (defn subscriptions-create$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/create
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/create
   
   Required parameters: name
   
@@ -583,6 +583,7 @@
                       :maxDeliveryAttempts integer},
    :cloudStorageConfig {:maxDuration string,
                         :filenameSuffix string,
+                        :filenameDatetimeFormat string,
                         :maxBytes string,
                         :state string,
                         :serviceAccountEmail string,
@@ -632,7 +633,7 @@
      auth))))
 
 (defn subscriptions-modifyAckDeadline$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/modifyAckDeadline
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/modifyAckDeadline
   
   Required parameters: subscription
   
@@ -665,7 +666,7 @@
      auth))))
 
 (defn subscriptions-delete$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/delete
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/delete
   
   Required parameters: subscription
   
@@ -692,7 +693,7 @@
      auth))))
 
 (defn subscriptions-getIamPolicy$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/getIamPolicy
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/getIamPolicy
   
   Required parameters: resource
   
@@ -719,7 +720,7 @@
      auth))))
 
 (defn subscriptions-modifyPushConfig$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/modifyPushConfig
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/modifyPushConfig
   
   Required parameters: subscription
   
@@ -756,7 +757,7 @@
      auth))))
 
 (defn subscriptions-list$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/list
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/list
   
   Required parameters: project
   
@@ -783,7 +784,7 @@
      auth))))
 
 (defn subscriptions-seek$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/seek
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/seek
   
   Required parameters: subscription
   
@@ -816,7 +817,7 @@
      auth))))
 
 (defn subscriptions-pull$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/subscriptions/pull
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions/pull
   
   Required parameters: subscription
   
@@ -849,7 +850,7 @@
      auth))))
 
 (defn snapshots-setIamPolicy$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/snapshots/setIamPolicy
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.snapshots/setIamPolicy
   
   Required parameters: resource
   
@@ -882,7 +883,7 @@
      auth))))
 
 (defn snapshots-getIamPolicy$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/snapshots/getIamPolicy
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.snapshots/getIamPolicy
   
   Required parameters: resource
   
@@ -909,7 +910,7 @@
      auth))))
 
 (defn snapshots-testIamPermissions$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/snapshots/testIamPermissions
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.snapshots/testIamPermissions
   
   Required parameters: resource
   
@@ -942,7 +943,7 @@
      auth))))
 
 (defn snapshots-get$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/snapshots/get
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.snapshots/get
   
   Required parameters: snapshot
   
@@ -969,7 +970,7 @@
      auth))))
 
 (defn snapshots-list$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/snapshots/list
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.snapshots/list
   
   Required parameters: project
   
@@ -996,7 +997,7 @@
      auth))))
 
 (defn snapshots-create$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/snapshots/create
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.snapshots/create
   
   Required parameters: name
   
@@ -1029,7 +1030,7 @@
      auth))))
 
 (defn snapshots-patch$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/snapshots/patch
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.snapshots/patch
   
   Required parameters: name
   
@@ -1066,7 +1067,7 @@
      auth))))
 
 (defn snapshots-delete$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/snapshots/delete
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.snapshots/delete
   
   Required parameters: snapshot
   
@@ -1093,7 +1094,7 @@
      auth))))
 
 (defn schemas-rollback$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/rollback
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/rollback
   
   Required parameters: name
   
@@ -1126,7 +1127,7 @@
      auth))))
 
 (defn schemas-get$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/get
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/get
   
   Required parameters: name
   
@@ -1153,7 +1154,7 @@
      auth))))
 
 (defn schemas-setIamPolicy$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/setIamPolicy
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/setIamPolicy
   
   Required parameters: resource
   
@@ -1186,7 +1187,7 @@
      auth))))
 
 (defn schemas-validate$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/validate
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/validate
   
   Required parameters: parent
   
@@ -1223,7 +1224,7 @@
      auth))))
 
 (defn schemas-testIamPermissions$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/testIamPermissions
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/testIamPermissions
   
   Required parameters: resource
   
@@ -1256,7 +1257,7 @@
      auth))))
 
 (defn schemas-create$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/create
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/create
   
   Required parameters: parent
   
@@ -1293,7 +1294,7 @@
      auth))))
 
 (defn schemas-delete$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/delete
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/delete
   
   Required parameters: name
   
@@ -1320,7 +1321,7 @@
      auth))))
 
 (defn schemas-getIamPolicy$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/getIamPolicy
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/getIamPolicy
   
   Required parameters: resource
   
@@ -1347,7 +1348,7 @@
      auth))))
 
 (defn schemas-list$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/list
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/list
   
   Required parameters: parent
   
@@ -1374,7 +1375,7 @@
      auth))))
 
 (defn schemas-commit$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/commit
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/commit
   
   Required parameters: name
   
@@ -1411,7 +1412,7 @@
      auth))))
 
 (defn schemas-deleteRevision$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/deleteRevision
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/deleteRevision
   
   Required parameters: name
   
@@ -1438,7 +1439,7 @@
      auth))))
 
 (defn schemas-listRevisions$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/listRevisions
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/listRevisions
   
   Required parameters: name
   
@@ -1465,7 +1466,7 @@
      auth))))
 
 (defn schemas-validateMessage$
-  "https://cloud.google.com/pubsub/docsapi/reference/rest/v1/projects/schemas/validateMessage
+  "https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.schemas/validateMessage
   
   Required parameters: parent
   

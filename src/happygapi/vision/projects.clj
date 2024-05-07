@@ -1,13 +1,13 @@
 (ns happygapi.vision.projects
   "Cloud Vision API: projects.
   Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.
-  See: https://cloud.google.com/vision/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/vision/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn operations-get$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/operations/get
+  "https://cloud.google.com/vision/reference/rest/v1/projects/operations/get
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/operations/get
   
   Required parameters: name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn locations-productSets-create$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/create
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/create
   
   Required parameters: parent
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn locations-productSets-list$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/list
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/list
   
   Required parameters: parent
   
@@ -124,7 +124,7 @@
      auth))))
 
 (defn locations-productSets-get$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/get
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/get
   
   Required parameters: name
   
@@ -151,7 +151,7 @@
      auth))))
 
 (defn locations-productSets-patch$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/patch
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/patch
   
   Required parameters: name
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn locations-productSets-delete$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/delete
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/delete
   
   Required parameters: name
   
@@ -214,7 +214,7 @@
      auth))))
 
 (defn locations-productSets-addProduct$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/addProduct
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/addProduct
   
   Required parameters: name
   
@@ -247,7 +247,7 @@
      auth))))
 
 (defn locations-productSets-removeProduct$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/removeProduct
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/removeProduct
   
   Required parameters: name
   
@@ -280,7 +280,7 @@
      auth))))
 
 (defn locations-productSets-import$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/import
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/import
   
   Required parameters: parent
   
@@ -313,7 +313,7 @@
      auth))))
 
 (defn locations-productSets-products-list$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/productSets/products/list
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/productSets/products/list
   
   Required parameters: name
   
@@ -340,7 +340,7 @@
      auth))))
 
 (defn locations-products-create$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/create
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/create
   
   Required parameters: parent
   
@@ -377,7 +377,7 @@
      auth))))
 
 (defn locations-products-list$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/list
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/list
   
   Required parameters: parent
   
@@ -404,7 +404,7 @@
      auth))))
 
 (defn locations-products-get$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/get
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/get
   
   Required parameters: name
   
@@ -431,7 +431,7 @@
      auth))))
 
 (defn locations-products-patch$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/patch
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/patch
   
   Required parameters: name
   
@@ -468,7 +468,7 @@
      auth))))
 
 (defn locations-products-delete$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/delete
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/delete
   
   Required parameters: name
   
@@ -495,7 +495,7 @@
      auth))))
 
 (defn locations-products-purge$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/purge
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/purge
   
   Required parameters: parent
   
@@ -530,7 +530,7 @@
      auth))))
 
 (defn locations-products-referenceImages-create$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/referenceImages/create
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/referenceImages/create
   
   Required parameters: parent
   
@@ -566,7 +566,7 @@
      auth))))
 
 (defn locations-products-referenceImages-delete$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/referenceImages/delete
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/referenceImages/delete
   
   Required parameters: name
   
@@ -593,7 +593,7 @@
      auth))))
 
 (defn locations-products-referenceImages-list$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/referenceImages/list
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/referenceImages/list
   
   Required parameters: parent
   
@@ -620,7 +620,7 @@
      auth))))
 
 (defn locations-products-referenceImages-get$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/products/referenceImages/get
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/products/referenceImages/get
   
   Required parameters: name
   
@@ -647,7 +647,7 @@
      auth))))
 
 (defn locations-images-annotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/images/annotate
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/images/annotate
   
   Required parameters: parent
   
@@ -684,7 +684,7 @@
      auth))))
 
 (defn locations-images-asyncBatchAnnotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/images/asyncBatchAnnotate
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/images/asyncBatchAnnotate
   
   Required parameters: parent
   
@@ -722,7 +722,7 @@
      auth))))
 
 (defn locations-files-annotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/files/annotate
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/files/annotate
   
   Required parameters: parent
   
@@ -760,7 +760,7 @@
      auth))))
 
 (defn locations-files-asyncBatchAnnotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/locations/files/asyncBatchAnnotate
+  "https://cloud.google.com/vision/reference/rest/v1/projects/locations/files/asyncBatchAnnotate
   
   Required parameters: parent
   
@@ -798,7 +798,7 @@
      auth))))
 
 (defn images-annotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/images/annotate
+  "https://cloud.google.com/vision/reference/rest/v1/projects/images/annotate
   
   Required parameters: parent
   
@@ -835,7 +835,7 @@
      auth))))
 
 (defn images-asyncBatchAnnotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/images/asyncBatchAnnotate
+  "https://cloud.google.com/vision/reference/rest/v1/projects/images/asyncBatchAnnotate
   
   Required parameters: parent
   
@@ -873,7 +873,7 @@
      auth))))
 
 (defn files-annotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/files/annotate
+  "https://cloud.google.com/vision/reference/rest/v1/projects/files/annotate
   
   Required parameters: parent
   
@@ -911,7 +911,7 @@
      auth))))
 
 (defn files-asyncBatchAnnotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/projects/files/asyncBatchAnnotate
+  "https://cloud.google.com/vision/reference/rest/v1/projects/files/asyncBatchAnnotate
   
   Required parameters: parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.memcache.projects
   "Cloud Memorystore for Memcached API: projects.
   Google Cloud Memorystore for Memcached API is used for creating and managing Memcached instances in GCP.
-  See: https://cloud.google.com/memorystore/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/memorystore/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-instances-get$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/get
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-instances-applyParameters$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/applyParameters
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-instances-patch$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/patch
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -289,7 +289,7 @@
      auth))))
 
 (defn locations-instances-rescheduleMaintenance$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/rescheduleMaintenance
+  "https://cloud.google.com/memorystore
   
   Required parameters: instance
   
@@ -321,7 +321,7 @@
      auth))))
 
 (defn locations-instances-create$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/create
+  "https://cloud.google.com/memorystore
   
   Required parameters: parent
   
@@ -383,7 +383,7 @@
      auth))))
 
 (defn locations-instances-updateParameters$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/updateParameters
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -415,7 +415,7 @@
      auth))))
 
 (defn locations-instances-delete$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/delete
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -441,7 +441,7 @@
      auth))))
 
 (defn locations-instances-upgrade$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/upgrade
+  "https://cloud.google.com/memorystore
   
   Required parameters: name
   
@@ -473,7 +473,7 @@
      auth))))
 
 (defn locations-instances-list$
-  "https://cloud.google.com/memorystore/api/reference/rest/v1/projects/locations/instances/list
+  "https://cloud.google.com/memorystore
   
   Required parameters: parent
   

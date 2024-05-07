@@ -1,13 +1,13 @@
 (ns happygapi.domainsrdap.ip
   "Domains RDAP API: ip.
   Read-only public API that lets users search for information about domain names.
-  See: https://developers.google.com/domains/rdap/api/reference/rest/v1/ip"
+  See: https://developers.google.com/domains/rdap/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/domains/rdap/api/reference/rest/v1/ip/get
+  "https://developers.google.com/domains/rdap/reference/rest/v1/ip/get
   
   Required parameters: ipId, ipId1
   

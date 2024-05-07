@@ -1,13 +1,13 @@
 (ns happygapi.accessapproval.organizations
   "Access Approval API: organizations.
   An API for controlling access to data by Google personnel.
-  See: https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations"
+  See: https://cloud.google.com/assured-workloads/access-approval/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getAccessApprovalSettings$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/getAccessApprovalSettings
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/getAccessApprovalSettings
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn updateAccessApprovalSettings$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/updateAccessApprovalSettings
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/updateAccessApprovalSettings
   
   Required parameters: name
   
@@ -50,7 +50,8 @@
    :preferredRequestExpirationDays integer,
    :invalidKeyVersion boolean,
    :activeKeyVersion string,
-   :enrolledServices [{:cloudProduct string, :enrollmentLevel string}]}
+   :enrolledServices [{:cloudProduct string, :enrollmentLevel string}],
+   :requireCustomerVisibleJustification boolean}
   
   Updates the settings associated with a project, folder, or organization. Settings to update are determined by the value of field_mask."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -74,7 +75,7 @@
      auth))))
 
 (defn deleteAccessApprovalSettings$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/deleteAccessApprovalSettings
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/deleteAccessApprovalSettings
   
   Required parameters: name
   
@@ -100,7 +101,7 @@
      auth))))
 
 (defn getServiceAccount$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/getServiceAccount
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/getServiceAccount
   
   Required parameters: name
   
@@ -126,7 +127,7 @@
      auth))))
 
 (defn approvalRequests-list$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/approvalRequests/list
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/approvalRequests/list
   
   Required parameters: parent
   
@@ -152,7 +153,7 @@
      auth))))
 
 (defn approvalRequests-get$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/approvalRequests/get
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/approvalRequests/get
   
   Required parameters: name
   
@@ -178,7 +179,7 @@
      auth))))
 
 (defn approvalRequests-approve$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/approvalRequests/approve
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/approvalRequests/approve
   
   Required parameters: name
   
@@ -210,7 +211,7 @@
      auth))))
 
 (defn approvalRequests-dismiss$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/approvalRequests/dismiss
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/approvalRequests/dismiss
   
   Required parameters: name
   
@@ -242,7 +243,7 @@
      auth))))
 
 (defn approvalRequests-invalidate$
-  "https://cloud.google.com/assured-workloads/access-approval/docsapi/reference/rest/v1/organizations/approvalRequests/invalidate
+  "https://cloud.google.com/assured-workloads/access-approval/docs/reference/rest/v1/organizations/approvalRequests/invalidate
   
   Required parameters: name
   

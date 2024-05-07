@@ -1,13 +1,13 @@
 (ns happygapi.cloudsearch.query
   "Cloud Search API: query.
   Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.
-  See: https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/query"
+  See: https://developers.google.com/cloud-search/docs/guides/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn suggest$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/query/suggest
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/query/suggest
   
   Required parameters: none
   
@@ -46,7 +46,7 @@
      auth))))
 
 (defn search$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/query/search
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/query/search
   
   Required parameters: none
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn removeActivity$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/query/removeActivity
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/query/removeActivity
   
   Required parameters: none
   
@@ -134,7 +134,7 @@
      auth))))
 
 (defn sources-list$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/query/sources/list
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/query.sources/list
   
   Required parameters: none
   

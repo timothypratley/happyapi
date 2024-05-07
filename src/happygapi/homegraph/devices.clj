@@ -1,13 +1,13 @@
 (ns happygapi.homegraph.devices
   "HomeGraph API: devices.
   
-  See: https://developers.home.google.com/cloud-to-cloud/get-startedapi/reference/rest/v1/devices"
+  See: https://developers.home.google.com/cloud-to-cloud/get-started"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
-(defn reportStateAndNotification$
-  "https://developers.home.google.com/cloud-to-cloud/get-startedapi/reference/rest/v1/devices/reportStateAndNotification
+(defn query$
+  "https://developers.home.google.com/cloud-to-cloud/get-started
   
   Required parameters: none
   
@@ -15,13 +15,11 @@
   
   Body: 
   
-  {:payload {:devices ReportStateAndNotificationDevice},
-   :eventId string,
-   :followUpToken string,
+  {:requestId string,
    :agentUserId string,
-   :requestId string}
+   :inputs [{:payload QueryRequestPayload}]}
   
-  Reports device state and optionally sends device notifications. Called by your smart home Action when the state of a third-party device changes or you need to send a notification about the device. See [Implement Report State](https://developers.home.google.com/cloud-to-cloud/integration/report-state) for more information. This method updates the device state according to its declared [traits](https://developers.home.google.com/cloud-to-cloud/primer/device-types-and-traits). Publishing a new state value outside of these traits will result in an `INVALID_ARGUMENT` error response. The third-party user's identity is passed in via the `agent_user_id` (see ReportStateAndNotificationRequest). This request must be authorized using service account credentials from your Actions console project."
+  Gets the current states in Home Graph for the given set of the third-party user's devices. The third-party user's identity is passed in via the `agent_user_id` (see QueryRequest). This request must be authorized using service account credentials from your Actions console project."
   {:scopes ["https://www.googleapis.com/auth/homegraph"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{})]}
@@ -29,7 +27,7 @@
    (http/post
     (util/get-url
      "https://homegraph.googleapis.com/"
-     "v1/devices:reportStateAndNotification"
+     "v1/devices:query"
      #{}
      parameters)
     (merge-with
@@ -43,7 +41,7 @@
      auth))))
 
 (defn requestSync$
-  "https://developers.home.google.com/cloud-to-cloud/get-startedapi/reference/rest/v1/devices/requestSync
+  "https://developers.home.google.com/cloud-to-cloud/get-started
   
   Required parameters: none
   
@@ -74,8 +72,8 @@
       :as :json}
      auth))))
 
-(defn query$
-  "https://developers.home.google.com/cloud-to-cloud/get-startedapi/reference/rest/v1/devices/query
+(defn sync$
+  "https://developers.home.google.com/cloud-to-cloud/get-started
   
   Required parameters: none
   
@@ -83,11 +81,9 @@
   
   Body: 
   
-  {:inputs [{:payload QueryRequestPayload}],
-   :requestId string,
-   :agentUserId string}
+  {:agentUserId string, :requestId string}
   
-  Gets the current states in Home Graph for the given set of the third-party user's devices. The third-party user's identity is passed in via the `agent_user_id` (see QueryRequest). This request must be authorized using service account credentials from your Actions console project."
+  Gets all the devices associated with the given third-party user. The third-party user's identity is passed in via the `agent_user_id` (see SyncRequest). This request must be authorized using service account credentials from your Actions console project."
   {:scopes ["https://www.googleapis.com/auth/homegraph"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{})]}
@@ -95,7 +91,7 @@
    (http/post
     (util/get-url
      "https://homegraph.googleapis.com/"
-     "v1/devices:query"
+     "v1/devices:sync"
      #{}
      parameters)
     (merge-with
@@ -108,8 +104,8 @@
       :as :json}
      auth))))
 
-(defn sync$
-  "https://developers.home.google.com/cloud-to-cloud/get-startedapi/reference/rest/v1/devices/sync
+(defn reportStateAndNotification$
+  "https://developers.home.google.com/cloud-to-cloud/get-started
   
   Required parameters: none
   
@@ -117,9 +113,13 @@
   
   Body: 
   
-  {:requestId string, :agentUserId string}
+  {:agentUserId string,
+   :payload {:devices ReportStateAndNotificationDevice},
+   :eventId string,
+   :requestId string,
+   :followUpToken string}
   
-  Gets all the devices associated with the given third-party user. The third-party user's identity is passed in via the `agent_user_id` (see SyncRequest). This request must be authorized using service account credentials from your Actions console project."
+  Reports device state and optionally sends device notifications. Called by your smart home Action when the state of a third-party device changes or you need to send a notification about the device. See [Implement Report State](https://developers.home.google.com/cloud-to-cloud/integration/report-state) for more information. This method updates the device state according to its declared [traits](https://developers.home.google.com/cloud-to-cloud/primer/device-types-and-traits). Publishing a new state value outside of these traits will result in an `INVALID_ARGUMENT` error response. The third-party user's identity is passed in via the `agent_user_id` (see ReportStateAndNotificationRequest). This request must be authorized using service account credentials from your Actions console project."
   {:scopes ["https://www.googleapis.com/auth/homegraph"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{})]}
@@ -127,7 +127,7 @@
    (http/post
     (util/get-url
      "https://homegraph.googleapis.com/"
-     "v1/devices:sync"
+     "v1/devices:reportStateAndNotification"
      #{}
      parameters)
     (merge-with

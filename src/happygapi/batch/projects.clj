@@ -1,13 +1,13 @@
 (ns happygapi.batch.projects
   "Batch API: projects.
   An API to manage the running of Batch resources on Google Cloud Platform.
-  See: https://cloud.google.com/batch/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/batch/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-jobs-create$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/jobs/create
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs/create
   
   Required parameters: parent
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn locations-jobs-get$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/jobs/get
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs/get
   
   Required parameters: name
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn locations-jobs-delete$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/jobs/delete
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs/delete
   
   Required parameters: name
   
@@ -283,7 +283,7 @@
      auth))))
 
 (defn locations-jobs-list$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/jobs/list
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs/list
   
   Required parameters: parent
   
@@ -309,7 +309,7 @@
      auth))))
 
 (defn locations-jobs-taskGroups-tasks-get$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/jobs/taskGroups/tasks/get
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/get
   
   Required parameters: name
   
@@ -335,7 +335,7 @@
      auth))))
 
 (defn locations-jobs-taskGroups-tasks-list$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/jobs/taskGroups/tasks/list
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.jobs.taskGroups.tasks/list
   
   Required parameters: parent
   
@@ -361,7 +361,7 @@
      auth))))
 
 (defn locations-state-report$
-  "https://cloud.google.com/batch/api/reference/rest/v1/projects/locations/state/report
+  "https://cloud.google.com/batch/docs/reference/rest/v1/projects.locations.state/report
   
   Required parameters: parent
   

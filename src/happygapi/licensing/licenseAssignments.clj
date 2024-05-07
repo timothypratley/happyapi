@@ -1,13 +1,13 @@
 (ns happygapi.licensing.licenseAssignments
   "Enterprise License Manager API: licenseAssignments.
   The Google Enterprise License Manager API lets you manage Google Workspace and related licenses for all users of a customer that you manage.
-  See: https://developers.google.com/admin-sdk/licensing/api/reference/rest/v1/licenseAssignments"
+  See: https://developers.google.com/admin-sdk/licensing/v1/how-tos/concepts"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/admin-sdk/licensing/api/reference/rest/v1/licenseAssignments/delete
+  "https://developers.google.com/admin-sdk/licensing/v1/how-tos/concepts
   
   Required parameters: productId, skuId, userId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/admin-sdk/licensing/api/reference/rest/v1/licenseAssignments/get
+  "https://developers.google.com/admin-sdk/licensing/v1/how-tos/concepts
   
   Required parameters: productId, skuId, userId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/admin-sdk/licensing/api/reference/rest/v1/licenseAssignments/insert
+  "https://developers.google.com/admin-sdk/licensing/v1/how-tos/concepts
   
   Required parameters: productId, skuId
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn listForProduct$
-  "https://developers.google.com/admin-sdk/licensing/api/reference/rest/v1/licenseAssignments/listForProduct
+  "https://developers.google.com/admin-sdk/licensing/v1/how-tos/concepts
   
   Required parameters: productId, customerId
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn listForProductAndSku$
-  "https://developers.google.com/admin-sdk/licensing/api/reference/rest/v1/licenseAssignments/listForProductAndSku
+  "https://developers.google.com/admin-sdk/licensing/v1/how-tos/concepts
   
   Required parameters: productId, skuId, customerId
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/admin-sdk/licensing/api/reference/rest/v1/licenseAssignments/update
+  "https://developers.google.com/admin-sdk/licensing/v1/how-tos/concepts
   
   Required parameters: productId, skuId, userId
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/admin-sdk/licensing/api/reference/rest/v1/licenseAssignments/patch
+  "https://developers.google.com/admin-sdk/licensing/v1/how-tos/concepts
   
   Required parameters: productId, skuId, userId
   

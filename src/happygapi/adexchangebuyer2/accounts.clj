@@ -1,13 +1,13 @@
 (ns happygapi.adexchangebuyer2.accounts
   "Ad Exchange Buyer API II: accounts.
   Accesses the latest features for managing Authorized Buyers accounts, Real-Time Bidding configurations and auction metrics, and Marketplace programmatic deals.
-  See: https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts"
+  See: https://developers.google.com/authorized-buyers/apis/reference/rest/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn creatives-create$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/create
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives/create
   
   Required parameters: accountId
   
@@ -82,7 +82,7 @@
      auth))))
 
 (defn creatives-update$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/update
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives/update
   
   Required parameters: accountId, creativeId
   
@@ -157,7 +157,7 @@
      auth))))
 
 (defn creatives-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives/get
   
   Required parameters: accountId, creativeId
   
@@ -183,7 +183,7 @@
      auth))))
 
 (defn creatives-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives/list
   
   Required parameters: accountId
   
@@ -209,7 +209,7 @@
      auth))))
 
 (defn creatives-watch$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/watch
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives/watch
   
   Required parameters: accountId, creativeId
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn creatives-stopWatching$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/stopWatching
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives/stopWatching
   
   Required parameters: accountId, creativeId
   
@@ -273,7 +273,7 @@
      auth))))
 
 (defn creatives-dealAssociations-add$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/dealAssociations/add
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives.dealAssociations/add
   
   Required parameters: accountId, creativeId
   
@@ -305,7 +305,7 @@
      auth))))
 
 (defn creatives-dealAssociations-remove$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/dealAssociations/remove
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives.dealAssociations/remove
   
   Required parameters: accountId, creativeId
   
@@ -337,7 +337,7 @@
      auth))))
 
 (defn creatives-dealAssociations-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/creatives/dealAssociations/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.creatives.dealAssociations/list
   
   Required parameters: accountId, creativeId
   
@@ -363,7 +363,7 @@
      auth))))
 
 (defn clients-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients/get
   
   Required parameters: accountId, clientAccountId
   
@@ -389,7 +389,7 @@
      auth))))
 
 (defn clients-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients/list
   
   Required parameters: accountId
   
@@ -415,7 +415,7 @@
      auth))))
 
 (defn clients-create$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/create
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients/create
   
   Required parameters: accountId
   
@@ -455,7 +455,7 @@
      auth))))
 
 (defn clients-update$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/update
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients/update
   
   Required parameters: accountId, clientAccountId
   
@@ -495,7 +495,7 @@
      auth))))
 
 (defn clients-users-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/users/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients.users/list
   
   Required parameters: accountId, clientAccountId
   
@@ -521,7 +521,7 @@
      auth))))
 
 (defn clients-users-update$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/users/update
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients.users/update
   
   Required parameters: accountId, clientAccountId, userId
   
@@ -558,7 +558,7 @@
      auth))))
 
 (defn clients-users-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/users/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients.users/get
   
   Required parameters: accountId, clientAccountId, userId
   
@@ -586,7 +586,7 @@
      auth))))
 
 (defn clients-invitations-create$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/invitations/create
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients.invitations/create
   
   Required parameters: accountId, clientAccountId
   
@@ -618,7 +618,7 @@
      auth))))
 
 (defn clients-invitations-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/invitations/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients.invitations/get
   
   Required parameters: accountId, clientAccountId, invitationId
   
@@ -646,7 +646,7 @@
      auth))))
 
 (defn clients-invitations-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/clients/invitations/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.clients.invitations/list
   
   Required parameters: accountId, clientAccountId
   
@@ -672,7 +672,7 @@
      auth))))
 
 (defn proposals-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/get
   
   Required parameters: accountId, proposalId
   
@@ -698,7 +698,7 @@
      auth))))
 
 (defn proposals-create$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/create
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/create
   
   Required parameters: accountId
   
@@ -776,7 +776,7 @@
      auth))))
 
 (defn proposals-update$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/update
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/update
   
   Required parameters: accountId, proposalId
   
@@ -854,7 +854,7 @@
      auth))))
 
 (defn proposals-completeSetup$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/completeSetup
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/completeSetup
   
   Required parameters: accountId, proposalId
   
@@ -886,7 +886,7 @@
      auth))))
 
 (defn proposals-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/list
   
   Required parameters: accountId
   
@@ -912,7 +912,7 @@
      auth))))
 
 (defn proposals-addNote$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/addNote
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/addNote
   
   Required parameters: accountId, proposalId
   
@@ -948,7 +948,7 @@
      auth))))
 
 (defn proposals-cancelNegotiation$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/cancelNegotiation
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/cancelNegotiation
   
   Required parameters: accountId, proposalId
   
@@ -980,7 +980,7 @@
      auth))))
 
 (defn proposals-pause$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/pause
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/pause
   
   Required parameters: accountId, proposalId
   
@@ -1012,7 +1012,7 @@
      auth))))
 
 (defn proposals-resume$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/resume
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/resume
   
   Required parameters: accountId, proposalId
   
@@ -1044,7 +1044,7 @@
      auth))))
 
 (defn proposals-accept$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/proposals/accept
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.proposals/accept
   
   Required parameters: accountId, proposalId
   
@@ -1076,7 +1076,7 @@
      auth))))
 
 (defn finalizedProposals-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/finalizedProposals/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.finalizedProposals/list
   
   Required parameters: accountId
   
@@ -1102,7 +1102,7 @@
      auth))))
 
 (defn finalizedProposals-pause$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/finalizedProposals/pause
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.finalizedProposals/pause
   
   Required parameters: accountId, proposalId
   
@@ -1134,7 +1134,7 @@
      auth))))
 
 (defn finalizedProposals-resume$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/finalizedProposals/resume
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.finalizedProposals/resume
   
   Required parameters: accountId, proposalId
   
@@ -1166,7 +1166,7 @@
      auth))))
 
 (defn products-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/products/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.products/get
   
   Required parameters: accountId, productId
   
@@ -1192,7 +1192,7 @@
      auth))))
 
 (defn products-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/products/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.products/list
   
   Required parameters: accountId
   
@@ -1218,7 +1218,7 @@
      auth))))
 
 (defn publisherProfiles-get$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/publisherProfiles/get
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.publisherProfiles/get
   
   Required parameters: accountId, publisherProfileId
   
@@ -1244,7 +1244,7 @@
      auth))))
 
 (defn publisherProfiles-list$
-  "https://developers.google.com/authorized-buyers/apis/reference/rest/api/reference/rest/v2beta1/accounts/publisherProfiles/list
+  "https://developers.google.com/authorized-buyers/apis/reference/rest/v2beta1/accounts.publisherProfiles/list
   
   Required parameters: accountId
   

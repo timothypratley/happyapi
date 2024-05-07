@@ -1,13 +1,13 @@
 (ns happygapi.datastream.projects
   "Datastream API: projects.
   
-  See: https://cloud.google.com/datastream/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/datastream/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-fetchStaticIps$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/fetchStaticIps
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations/fetchStaticIps
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-connectionProfiles-list$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/connectionProfiles/list
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/list
   
   Required parameters: parent
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-connectionProfiles-get$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/connectionProfiles/get
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/get
   
   Required parameters: name
   
@@ -247,7 +247,7 @@
      auth))))
 
 (defn locations-connectionProfiles-create$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/connectionProfiles/create
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/create
   
   Required parameters: parent
   
@@ -314,7 +314,7 @@
      auth))))
 
 (defn locations-connectionProfiles-patch$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/connectionProfiles/patch
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/patch
   
   Required parameters: name
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn locations-connectionProfiles-delete$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/connectionProfiles/delete
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/delete
   
   Required parameters: name
   
@@ -407,7 +407,7 @@
      auth))))
 
 (defn locations-connectionProfiles-discover$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/connectionProfiles/discover
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.connectionProfiles/discover
   
   Required parameters: parent
   
@@ -458,7 +458,7 @@
      auth))))
 
 (defn locations-streams-list$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/list
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams/list
   
   Required parameters: parent
   
@@ -484,7 +484,7 @@
      auth))))
 
 (defn locations-streams-get$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/get
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams/get
   
   Required parameters: name
   
@@ -510,7 +510,7 @@
      auth))))
 
 (defn locations-streams-create$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/create
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams/create
   
   Required parameters: parent
   
@@ -567,7 +567,7 @@
      auth))))
 
 (defn locations-streams-patch$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/patch
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams/patch
   
   Required parameters: name
   
@@ -624,7 +624,7 @@
      auth))))
 
 (defn locations-streams-delete$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/delete
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams/delete
   
   Required parameters: name
   
@@ -650,7 +650,7 @@
      auth))))
 
 (defn locations-streams-run$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/run
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams/run
   
   Required parameters: name
   
@@ -684,7 +684,7 @@
      auth))))
 
 (defn locations-streams-objects-get$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/objects/get
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams.objects/get
   
   Required parameters: name
   
@@ -710,7 +710,7 @@
      auth))))
 
 (defn locations-streams-objects-lookup$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/objects/lookup
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams.objects/lookup
   
   Required parameters: parent
   
@@ -745,7 +745,7 @@
      auth))))
 
 (defn locations-streams-objects-list$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/objects/list
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams.objects/list
   
   Required parameters: parent
   
@@ -771,7 +771,7 @@
      auth))))
 
 (defn locations-streams-objects-startBackfillJob$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/objects/startBackfillJob
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams.objects/startBackfillJob
   
   Required parameters: object
   
@@ -803,7 +803,7 @@
      auth))))
 
 (defn locations-streams-objects-stopBackfillJob$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/streams/objects/stopBackfillJob
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.streams.objects/stopBackfillJob
   
   Required parameters: object
   
@@ -835,7 +835,7 @@
      auth))))
 
 (defn locations-privateConnections-create$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/privateConnections/create
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections/create
   
   Required parameters: parent
   
@@ -878,7 +878,7 @@
      auth))))
 
 (defn locations-privateConnections-get$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/privateConnections/get
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections/get
   
   Required parameters: name
   
@@ -904,7 +904,7 @@
      auth))))
 
 (defn locations-privateConnections-list$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/privateConnections/list
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections/list
   
   Required parameters: parent
   
@@ -930,7 +930,7 @@
      auth))))
 
 (defn locations-privateConnections-delete$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/privateConnections/delete
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections/delete
   
   Required parameters: name
   
@@ -956,7 +956,7 @@
      auth))))
 
 (defn locations-privateConnections-routes-create$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/privateConnections/routes/create
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections.routes/create
   
   Required parameters: parent
   
@@ -994,7 +994,7 @@
      auth))))
 
 (defn locations-privateConnections-routes-get$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/privateConnections/routes/get
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections.routes/get
   
   Required parameters: name
   
@@ -1020,7 +1020,7 @@
      auth))))
 
 (defn locations-privateConnections-routes-list$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/privateConnections/routes/list
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections.routes/list
   
   Required parameters: parent
   
@@ -1046,7 +1046,7 @@
      auth))))
 
 (defn locations-privateConnections-routes-delete$
-  "https://cloud.google.com/datastream/api/reference/rest/v1/projects/locations/privateConnections/routes/delete
+  "https://cloud.google.com/datastream/docs/reference/rest/v1/projects.locations.privateConnections.routes/delete
   
   Required parameters: name
   

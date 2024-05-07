@@ -1,9 +1,10 @@
 (ns happy.monkey-test
   (:require [clojure.test :refer [deftest testing is]]
-            [happy.monkey :as monkey]))
+            [happy.monkey :as monkey]
+            [happy.raven :as raven]))
 
 (deftest fetch-test
-  (let [api (monkey/fetch "https://sheets.googleapis.com/$discovery/rest?version=v4")]
+  (let [api (raven/get-json "https://sheets.googleapis.com/$discovery/rest?version=v4")]
     (is (map? api) "should deserialize")
     (is (seq api) "should contain definition")))
 

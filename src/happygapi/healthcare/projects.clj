@@ -1,13 +1,13 @@
 (ns happygapi.healthcare.projects
   "Cloud Healthcare API: projects.
   Manage, store, and access healthcare data in Google Cloud Platform.
-  See: https://cloud.google.com/healthcareapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/healthcare"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn locations-datasets-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/get
   
   Required parameters: name
   
@@ -88,7 +88,7 @@
      auth))))
 
 (defn locations-datasets-setIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/setIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/setIamPolicy
   
   Required parameters: resource
   
@@ -125,7 +125,7 @@
      auth))))
 
 (defn locations-datasets-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/patch
   
   Required parameters: name
   
@@ -158,7 +158,7 @@
      auth))))
 
 (defn locations-datasets-testIamPermissions$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/testIamPermissions
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/testIamPermissions
   
   Required parameters: resource
   
@@ -191,7 +191,7 @@
      auth))))
 
 (defn locations-datasets-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/create
   
   Required parameters: parent
   
@@ -224,7 +224,7 @@
      auth))))
 
 (defn locations-datasets-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/delete
   
   Required parameters: name
   
@@ -251,7 +251,7 @@
      auth))))
 
 (defn locations-datasets-getIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/getIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/getIamPolicy
   
   Required parameters: resource
   
@@ -278,7 +278,7 @@
      auth))))
 
 (defn locations-datasets-deidentify$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/deidentify
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/deidentify
   
   Required parameters: sourceDataset
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn locations-datasets-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets/list
   
   Required parameters: parent
   
@@ -344,7 +344,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/get
   
   Required parameters: name
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-setIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/setIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/setIamPolicy
   
   Required parameters: resource
   
@@ -408,7 +408,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/patch
   
   Required parameters: name
   
@@ -444,7 +444,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-queryAccessibleData$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/queryAccessibleData
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/queryAccessibleData
   
   Required parameters: consentStore
   
@@ -479,7 +479,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-testIamPermissions$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/testIamPermissions
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/testIamPermissions
   
   Required parameters: resource
   
@@ -512,7 +512,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-evaluateUserConsents$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/evaluateUserConsents
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/evaluateUserConsents
   
   Required parameters: consentStore
   
@@ -551,7 +551,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/create
   
   Required parameters: parent
   
@@ -587,7 +587,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/delete
   
   Required parameters: name
   
@@ -614,7 +614,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-getIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/getIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/getIamPolicy
   
   Required parameters: resource
   
@@ -641,7 +641,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/list
   
   Required parameters: parent
   
@@ -668,7 +668,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-checkDataAccess$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/checkDataAccess
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores/checkDataAccess
   
   Required parameters: consentStore
   
@@ -704,7 +704,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-attributeDefinitions-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/attributeDefinitions/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.attributeDefinitions/create
   
   Required parameters: parent
   
@@ -742,7 +742,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-attributeDefinitions-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/attributeDefinitions/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.attributeDefinitions/get
   
   Required parameters: name
   
@@ -769,7 +769,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-attributeDefinitions-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/attributeDefinitions/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.attributeDefinitions/delete
   
   Required parameters: name
   
@@ -796,7 +796,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-attributeDefinitions-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/attributeDefinitions/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.attributeDefinitions/patch
   
   Required parameters: name
   
@@ -834,7 +834,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-attributeDefinitions-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/attributeDefinitions/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.attributeDefinitions/list
   
   Required parameters: parent
   
@@ -861,7 +861,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consentArtifacts-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consentArtifacts/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consentArtifacts/create
   
   Required parameters: parent
   
@@ -910,7 +910,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consentArtifacts-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consentArtifacts/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consentArtifacts/get
   
   Required parameters: name
   
@@ -937,7 +937,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consentArtifacts-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consentArtifacts/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consentArtifacts/delete
   
   Required parameters: name
   
@@ -964,7 +964,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consentArtifacts-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consentArtifacts/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consentArtifacts/list
   
   Required parameters: parent
   
@@ -991,7 +991,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/get
   
   Required parameters: name
   
@@ -1018,7 +1018,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/patch
   
   Required parameters: name
   
@@ -1060,7 +1060,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/create
   
   Required parameters: parent
   
@@ -1102,7 +1102,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/delete
   
   Required parameters: name
   
@@ -1129,7 +1129,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/list
   
   Required parameters: parent
   
@@ -1156,7 +1156,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-reject$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/reject
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/reject
   
   Required parameters: name
   
@@ -1189,7 +1189,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-deleteRevision$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/deleteRevision
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/deleteRevision
   
   Required parameters: name
   
@@ -1216,7 +1216,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-listRevisions$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/listRevisions
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/listRevisions
   
   Required parameters: name
   
@@ -1243,7 +1243,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-activate$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/activate
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/activate
   
   Required parameters: name
   
@@ -1276,7 +1276,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-consents-revoke$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/consents/revoke
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.consents/revoke
   
   Required parameters: name
   
@@ -1309,7 +1309,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-userDataMappings-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/userDataMappings/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.userDataMappings/create
   
   Required parameters: parent
   
@@ -1348,7 +1348,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-userDataMappings-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/userDataMappings/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.userDataMappings/get
   
   Required parameters: name
   
@@ -1375,7 +1375,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-userDataMappings-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/userDataMappings/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.userDataMappings/delete
   
   Required parameters: name
   
@@ -1402,7 +1402,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-userDataMappings-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/userDataMappings/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.userDataMappings/patch
   
   Required parameters: name
   
@@ -1441,7 +1441,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-userDataMappings-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/userDataMappings/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.userDataMappings/list
   
   Required parameters: parent
   
@@ -1468,7 +1468,7 @@
      auth))))
 
 (defn locations-datasets-consentStores-userDataMappings-archive$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/consentStores/userDataMappings/archive
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.consentStores.userDataMappings/archive
   
   Required parameters: name
   
@@ -1501,7 +1501,7 @@
      auth))))
 
 (defn locations-datasets-dataMapperWorkspaces-setIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dataMapperWorkspaces/setIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dataMapperWorkspaces/setIamPolicy
   
   Required parameters: resource
   
@@ -1538,7 +1538,7 @@
      auth))))
 
 (defn locations-datasets-dataMapperWorkspaces-getIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dataMapperWorkspaces/getIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dataMapperWorkspaces/getIamPolicy
   
   Required parameters: resource
   
@@ -1565,7 +1565,7 @@
      auth))))
 
 (defn locations-datasets-dataMapperWorkspaces-testIamPermissions$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dataMapperWorkspaces/testIamPermissions
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dataMapperWorkspaces/testIamPermissions
   
   Required parameters: resource
   
@@ -1598,7 +1598,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/get
   
   Required parameters: name
   
@@ -1625,7 +1625,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-searchForSeries$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/searchForSeries
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/searchForSeries
   
   Required parameters: parent, dicomWebPath
   
@@ -1652,7 +1652,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-setIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/setIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/setIamPolicy
   
   Required parameters: resource
   
@@ -1689,7 +1689,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/patch
   
   Required parameters: name
   
@@ -1725,7 +1725,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-testIamPermissions$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/testIamPermissions
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/testIamPermissions
   
   Required parameters: resource
   
@@ -1758,7 +1758,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-getDICOMStoreMetrics$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/getDICOMStoreMetrics
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/getDICOMStoreMetrics
   
   Required parameters: name
   
@@ -1785,7 +1785,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/create
   
   Required parameters: parent
   
@@ -1821,7 +1821,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/delete
   
   Required parameters: name
   
@@ -1848,7 +1848,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-searchForStudies$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/searchForStudies
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/searchForStudies
   
   Required parameters: parent, dicomWebPath
   
@@ -1875,7 +1875,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-export$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/export
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/export
   
   Required parameters: name
   
@@ -1911,7 +1911,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-getIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/getIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/getIamPolicy
   
   Required parameters: resource
   
@@ -1938,7 +1938,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-searchForInstances$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/searchForInstances
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/searchForInstances
   
   Required parameters: parent, dicomWebPath
   
@@ -1965,7 +1965,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-deidentify$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/deidentify
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/deidentify
   
   Required parameters: sourceStore
   
@@ -2005,7 +2005,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/list
   
   Required parameters: parent
   
@@ -2032,7 +2032,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-import$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/import
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/import
   
   Required parameters: name
   
@@ -2065,7 +2065,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-storeInstances$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/storeInstances
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores/storeInstances
   
   Required parameters: parent, dicomWebPath
   
@@ -2098,7 +2098,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-retrieveStudy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/retrieveStudy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies/retrieveStudy
   
   Required parameters: parent, dicomWebPath
   
@@ -2125,7 +2125,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-retrieveMetadata$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/retrieveMetadata
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies/retrieveMetadata
   
   Required parameters: parent, dicomWebPath
   
@@ -2152,7 +2152,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-searchForSeries$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/searchForSeries
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies/searchForSeries
   
   Required parameters: parent, dicomWebPath
   
@@ -2179,7 +2179,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-searchForInstances$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/searchForInstances
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies/searchForInstances
   
   Required parameters: parent, dicomWebPath
   
@@ -2206,7 +2206,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies/delete
   
   Required parameters: parent, dicomWebPath
   
@@ -2233,7 +2233,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-storeInstances$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/storeInstances
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies/storeInstances
   
   Required parameters: parent, dicomWebPath
   
@@ -2266,7 +2266,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-retrieveSeries$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/retrieveSeries
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series/retrieveSeries
   
   Required parameters: parent, dicomWebPath
   
@@ -2293,7 +2293,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-retrieveMetadata$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/retrieveMetadata
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series/retrieveMetadata
   
   Required parameters: parent, dicomWebPath
   
@@ -2320,7 +2320,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-searchForInstances$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/searchForInstances
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series/searchForInstances
   
   Required parameters: parent, dicomWebPath
   
@@ -2347,7 +2347,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series/delete
   
   Required parameters: parent, dicomWebPath
   
@@ -2374,7 +2374,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-instances-retrieveInstance$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/instances/retrieveInstance
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series.instances/retrieveInstance
   
   Required parameters: parent, dicomWebPath
   
@@ -2401,7 +2401,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-instances-retrieveRendered$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/instances/retrieveRendered
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series.instances/retrieveRendered
   
   Required parameters: parent, dicomWebPath
   
@@ -2428,7 +2428,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-instances-retrieveMetadata$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/instances/retrieveMetadata
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series.instances/retrieveMetadata
   
   Required parameters: parent, dicomWebPath
   
@@ -2455,7 +2455,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-instances-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/instances/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series.instances/delete
   
   Required parameters: parent, dicomWebPath
   
@@ -2482,7 +2482,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-instances-frames-retrieveFrames$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/instances/frames/retrieveFrames
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series.instances.frames/retrieveFrames
   
   Required parameters: parent, dicomWebPath
   
@@ -2509,7 +2509,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-studies-series-instances-frames-retrieveRendered$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/studies/series/instances/frames/retrieveRendered
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.studies.series.instances.frames/retrieveRendered
   
   Required parameters: parent, dicomWebPath
   
@@ -2536,7 +2536,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-dicomWeb-studies-getStudyMetrics$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/dicomWeb/studies/getStudyMetrics
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.dicomWeb.studies/getStudyMetrics
   
   Required parameters: study
   
@@ -2563,7 +2563,7 @@
      auth))))
 
 (defn locations-datasets-dicomStores-dicomWeb-studies-series-getSeriesMetrics$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/dicomStores/dicomWeb/studies/series/getSeriesMetrics
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.dicomStores.dicomWeb.studies.series/getSeriesMetrics
   
   Required parameters: series
   
@@ -2590,7 +2590,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/get
   
   Required parameters: name
   
@@ -2617,7 +2617,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-setIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/setIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/setIamPolicy
   
   Required parameters: resource
   
@@ -2654,7 +2654,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/patch
   
   Required parameters: name
   
@@ -2694,7 +2694,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-testIamPermissions$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/testIamPermissions
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/testIamPermissions
   
   Required parameters: resource
   
@@ -2727,7 +2727,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/create
   
   Required parameters: parent
   
@@ -2767,7 +2767,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/delete
   
   Required parameters: name
   
@@ -2794,7 +2794,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-export$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/export
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/export
   
   Required parameters: name
   
@@ -2833,7 +2833,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-getIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/getIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/getIamPolicy
   
   Required parameters: resource
   
@@ -2860,7 +2860,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-getHL7v2StoreMetrics$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/getHL7v2StoreMetrics
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/getHL7v2StoreMetrics
   
   Required parameters: name
   
@@ -2887,7 +2887,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/list
   
   Required parameters: parent
   
@@ -2914,7 +2914,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-import$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/import
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores/import
   
   Required parameters: name
   
@@ -2947,7 +2947,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-messages-ingest$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/messages/ingest
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores.messages/ingest
   
   Required parameters: parent
   
@@ -2989,7 +2989,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-messages-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/messages/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores.messages/create
   
   Required parameters: parent
   
@@ -3031,7 +3031,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-messages-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/messages/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores.messages/get
   
   Required parameters: name
   
@@ -3058,7 +3058,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-messages-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/messages/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores.messages/delete
   
   Required parameters: name
   
@@ -3085,7 +3085,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-messages-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/messages/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores.messages/list
   
   Required parameters: parent
   
@@ -3112,7 +3112,7 @@
      auth))))
 
 (defn locations-datasets-hl7V2Stores-messages-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/hl7V2Stores/messages/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores.messages/patch
   
   Required parameters: name
   
@@ -3154,7 +3154,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-rollback$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/rollback
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/rollback
   
   Required parameters: name
   
@@ -3194,7 +3194,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/get
   
   Required parameters: name
   
@@ -3221,7 +3221,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-setIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/setIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/setIamPolicy
   
   Required parameters: resource
   
@@ -3258,7 +3258,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/patch
   
   Required parameters: name
   
@@ -3310,7 +3310,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-testIamPermissions$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/testIamPermissions
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/testIamPermissions
   
   Required parameters: resource
   
@@ -3343,7 +3343,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/create
   
   Required parameters: parent
   
@@ -3395,7 +3395,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/delete
   
   Required parameters: name
   
@@ -3422,7 +3422,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-export$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/export
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/export
   
   Required parameters: name
   
@@ -3461,7 +3461,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-getFHIRStoreMetrics$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/getFHIRStoreMetrics
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/getFHIRStoreMetrics
   
   Required parameters: name
   
@@ -3488,7 +3488,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-getIamPolicy$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/getIamPolicy
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/getIamPolicy
   
   Required parameters: resource
   
@@ -3515,7 +3515,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-deidentify$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/deidentify
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/deidentify
   
   Required parameters: sourceStore
   
@@ -3556,7 +3556,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/list
   
   Required parameters: parent
   
@@ -3583,7 +3583,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-import$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/import
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores/import
   
   Required parameters: name
   
@@ -3616,7 +3616,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-capabilities$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/capabilities
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/capabilities
   
   Required parameters: name
   
@@ -3643,7 +3643,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-Resource-purge$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/Resource-purge
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/Resource-purge
   
   Required parameters: name
   
@@ -3670,7 +3670,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-conditionalUpdate$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/conditionalUpdate
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/conditionalUpdate
   
   Required parameters: parent, type
   
@@ -3703,7 +3703,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-read$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/read
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/read
   
   Required parameters: name
   
@@ -3730,7 +3730,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-patch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/patch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/patch
   
   Required parameters: name
   
@@ -3763,7 +3763,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-create$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/create
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/create
   
   Required parameters: parent, type
   
@@ -3796,7 +3796,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-history$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/history
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/history
   
   Required parameters: name
   
@@ -3823,7 +3823,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-update$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/update
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/update
   
   Required parameters: name
   
@@ -3856,7 +3856,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-delete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/delete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/delete
   
   Required parameters: name
   
@@ -3883,7 +3883,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-Resource-validate$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/Resource-validate
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/Resource-validate
   
   Required parameters: parent, type
   
@@ -3916,7 +3916,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-Patient-everything$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/Patient-everything
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/Patient-everything
   
   Required parameters: name
   
@@ -3943,7 +3943,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-search$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/search
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/search
   
   Required parameters: parent
   
@@ -3976,7 +3976,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-executeBundle$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/executeBundle
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/executeBundle
   
   Required parameters: parent
   
@@ -4009,7 +4009,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-vread$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/vread
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/vread
   
   Required parameters: name
   
@@ -4036,7 +4036,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-search-type$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/search-type
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/search-type
   
   Required parameters: parent, resourceType
   
@@ -4069,7 +4069,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-conditionalPatch$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/conditionalPatch
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/conditionalPatch
   
   Required parameters: parent, type
   
@@ -4102,7 +4102,7 @@
      auth))))
 
 (defn locations-datasets-fhirStores-fhir-conditionalDelete$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/fhirStores/fhir/conditionalDelete
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.fhirStores.fhir/conditionalDelete
   
   Required parameters: parent, type
   
@@ -4129,7 +4129,7 @@
      auth))))
 
 (defn locations-datasets-operations-list$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/operations/list
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.operations/list
   
   Required parameters: name
   
@@ -4156,7 +4156,7 @@
      auth))))
 
 (defn locations-datasets-operations-get$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/operations/get
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.operations/get
   
   Required parameters: name
   
@@ -4183,7 +4183,7 @@
      auth))))
 
 (defn locations-datasets-operations-cancel$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/datasets/operations/cancel
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.datasets.operations/cancel
   
   Required parameters: name
   
@@ -4216,7 +4216,7 @@
      auth))))
 
 (defn locations-services-nlp-analyzeEntities$
-  "https://cloud.google.com/healthcareapi/reference/rest/v1/projects/locations/services/nlp/analyzeEntities
+  "https://cloud.google.com/healthcare/docs/reference/rest/v1/projects.locations.services.nlp/analyzeEntities
   
   Required parameters: nlpService
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.instances
   "Compute Engine API: instances.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/instances"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn setSecurityPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setSecurityPolicy
+  "https://cloud.google.com/products/compute/v1/docs/instances/setSecurityPolicy
   
   Required parameters: instance, project, zone
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn deleteAccessConfig$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/deleteAccessConfig
+  "https://cloud.google.com/products/compute/v1/docs/instances/deleteAccessConfig
   
   Required parameters: accessConfig, instance, networkInterface, project, zone
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn getScreenshot$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/getScreenshot
+  "https://cloud.google.com/products/compute/v1/docs/instances/getScreenshot
   
   Required parameters: instance, project, zone
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/get
+  "https://cloud.google.com/products/compute/v1/docs/instances/get
   
   Required parameters: instance, project, zone
   
@@ -125,7 +125,7 @@
      auth))))
 
 (defn startWithEncryptionKey$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/startWithEncryptionKey
+  "https://cloud.google.com/products/compute/v1/docs/instances/startWithEncryptionKey
   
   Required parameters: instance, project, zone
   
@@ -158,7 +158,7 @@
      auth))))
 
 (defn updateAccessConfig$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/updateAccessConfig
+  "https://cloud.google.com/products/compute/v1/docs/instances/updateAccessConfig
   
   Required parameters: instance, networkInterface, project, zone
   
@@ -202,7 +202,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/instances/setIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -244,7 +244,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/insert
+  "https://cloud.google.com/products/compute/v1/docs/instances/insert
   
   Required parameters: project, zone
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn setMachineResources$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setMachineResources
+  "https://cloud.google.com/products/compute/v1/docs/instances/setMachineResources
   
   Required parameters: instance, project, zone
   
@@ -415,7 +415,7 @@
      auth))))
 
 (defn getEffectiveFirewalls$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/getEffectiveFirewalls
+  "https://cloud.google.com/products/compute/v1/docs/instances/getEffectiveFirewalls
   
   Required parameters: instance, networkInterface, project, zone
   
@@ -445,7 +445,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/instances/testIamPermissions
   
   Required parameters: project, resource, zone
   
@@ -479,7 +479,7 @@
      auth))))
 
 (defn reset$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/reset
+  "https://cloud.google.com/products/compute/v1/docs/instances/reset
   
   Required parameters: instance, project, zone
   
@@ -506,7 +506,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/instances/setLabels
   
   Required parameters: instance, project, zone
   
@@ -539,7 +539,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/instances/aggregatedList
   
   Required parameters: project
   
@@ -567,7 +567,7 @@
      auth))))
 
 (defn updateNetworkInterface$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/updateNetworkInterface
+  "https://cloud.google.com/products/compute/v1/docs/instances/updateNetworkInterface
   
   Required parameters: instance, networkInterface, project, zone
   
@@ -635,7 +635,7 @@
      auth))))
 
 (defn removeResourcePolicies$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/removeResourcePolicies
+  "https://cloud.google.com/products/compute/v1/docs/instances/removeResourcePolicies
   
   Required parameters: instance, project, zone
   
@@ -668,7 +668,7 @@
      auth))))
 
 (defn updateShieldedInstanceConfig$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/updateShieldedInstanceConfig
+  "https://cloud.google.com/products/compute/v1/docs/instances/updateShieldedInstanceConfig
   
   Required parameters: instance, project, zone
   
@@ -703,7 +703,7 @@
      auth))))
 
 (defn performMaintenance$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/performMaintenance
+  "https://cloud.google.com/products/compute/v1/docs/instances/performMaintenance
   
   Required parameters: instance, project, zone
   
@@ -730,7 +730,7 @@
      auth))))
 
 (defn start$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/start
+  "https://cloud.google.com/products/compute/v1/docs/instances/start
   
   Required parameters: instance, project, zone
   
@@ -757,7 +757,7 @@
      auth))))
 
 (defn addAccessConfig$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/addAccessConfig
+  "https://cloud.google.com/products/compute/v1/docs/instances/addAccessConfig
   
   Required parameters: instance, networkInterface, project, zone
   
@@ -801,7 +801,7 @@
      auth))))
 
 (defn setDeletionProtection$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setDeletionProtection
+  "https://cloud.google.com/products/compute/v1/docs/instances/setDeletionProtection
   
   Required parameters: project, resource, zone
   
@@ -828,7 +828,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/update
+  "https://cloud.google.com/products/compute/v1/docs/instances/update
   
   Required parameters: instance, project, zone
   
@@ -965,7 +965,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/delete
+  "https://cloud.google.com/products/compute/v1/docs/instances/delete
   
   Required parameters: instance, project, zone
   
@@ -992,7 +992,7 @@
      auth))))
 
 (defn setDiskAutoDelete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setDiskAutoDelete
+  "https://cloud.google.com/products/compute/v1/docs/instances/setDiskAutoDelete
   
   Required parameters: autoDelete, deviceName, instance, project, zone
   
@@ -1021,7 +1021,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/instances/getIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -1049,7 +1049,7 @@
      auth))))
 
 (defn getShieldedInstanceIdentity$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/getShieldedInstanceIdentity
+  "https://cloud.google.com/products/compute/v1/docs/instances/getShieldedInstanceIdentity
   
   Required parameters: instance, project, zone
   
@@ -1077,7 +1077,7 @@
      auth))))
 
 (defn suspend$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/suspend
+  "https://cloud.google.com/products/compute/v1/docs/instances/suspend
   
   Required parameters: instance, project, zone
   
@@ -1104,7 +1104,7 @@
      auth))))
 
 (defn listReferrers$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/listReferrers
+  "https://cloud.google.com/products/compute/v1/docs/instances/listReferrers
   
   Required parameters: instance, project, zone
   
@@ -1132,7 +1132,7 @@
      auth))))
 
 (defn detachDisk$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/detachDisk
+  "https://cloud.google.com/products/compute/v1/docs/instances/detachDisk
   
   Required parameters: deviceName, instance, project, zone
   
@@ -1161,7 +1161,7 @@
      auth))))
 
 (defn setServiceAccount$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setServiceAccount
+  "https://cloud.google.com/products/compute/v1/docs/instances/setServiceAccount
   
   Required parameters: instance, project, zone
   
@@ -1194,7 +1194,7 @@
      auth))))
 
 (defn getSerialPortOutput$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/getSerialPortOutput
+  "https://cloud.google.com/products/compute/v1/docs/instances/getSerialPortOutput
   
   Required parameters: instance, project, zone
   
@@ -1222,7 +1222,7 @@
      auth))))
 
 (defn stop$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/stop
+  "https://cloud.google.com/products/compute/v1/docs/instances/stop
   
   Required parameters: instance, project, zone
   
@@ -1249,7 +1249,7 @@
      auth))))
 
 (defn setMinCpuPlatform$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setMinCpuPlatform
+  "https://cloud.google.com/products/compute/v1/docs/instances/setMinCpuPlatform
   
   Required parameters: instance, project, zone
   
@@ -1282,7 +1282,7 @@
      auth))))
 
 (defn addResourcePolicies$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/addResourcePolicies
+  "https://cloud.google.com/products/compute/v1/docs/instances/addResourcePolicies
   
   Required parameters: instance, project, zone
   
@@ -1315,7 +1315,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/list
+  "https://cloud.google.com/products/compute/v1/docs/instances/list
   
   Required parameters: project, zone
   
@@ -1343,7 +1343,7 @@
      auth))))
 
 (defn getGuestAttributes$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/getGuestAttributes
+  "https://cloud.google.com/products/compute/v1/docs/instances/getGuestAttributes
   
   Required parameters: instance, project, zone
   
@@ -1371,7 +1371,7 @@
      auth))))
 
 (defn setName$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setName
+  "https://cloud.google.com/products/compute/v1/docs/instances/setName
   
   Required parameters: instance, project, zone
   
@@ -1404,7 +1404,7 @@
      auth))))
 
 (defn sendDiagnosticInterrupt$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/sendDiagnosticInterrupt
+  "https://cloud.google.com/products/compute/v1/docs/instances/sendDiagnosticInterrupt
   
   Required parameters: instance, project, zone
   
@@ -1431,7 +1431,7 @@
      auth))))
 
 (defn updateDisplayDevice$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/updateDisplayDevice
+  "https://cloud.google.com/products/compute/v1/docs/instances/updateDisplayDevice
   
   Required parameters: instance, project, zone
   
@@ -1464,7 +1464,7 @@
      auth))))
 
 (defn setScheduling$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setScheduling
+  "https://cloud.google.com/products/compute/v1/docs/instances/setScheduling
   
   Required parameters: instance, project, zone
   
@@ -1505,7 +1505,7 @@
      auth))))
 
 (defn simulateMaintenanceEvent$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/simulateMaintenanceEvent
+  "https://cloud.google.com/products/compute/v1/docs/instances/simulateMaintenanceEvent
   
   Required parameters: instance, project, zone
   
@@ -1532,7 +1532,7 @@
      auth))))
 
 (defn attachDisk$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/attachDisk
+  "https://cloud.google.com/products/compute/v1/docs/instances/attachDisk
   
   Required parameters: instance, project, zone
   
@@ -1607,7 +1607,7 @@
      auth))))
 
 (defn resume$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/resume
+  "https://cloud.google.com/products/compute/v1/docs/instances/resume
   
   Required parameters: instance, project, zone
   
@@ -1634,7 +1634,7 @@
      auth))))
 
 (defn setMetadata$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setMetadata
+  "https://cloud.google.com/products/compute/v1/docs/instances/setMetadata
   
   Required parameters: instance, project, zone
   
@@ -1669,7 +1669,7 @@
      auth))))
 
 (defn setShieldedInstanceIntegrityPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setShieldedInstanceIntegrityPolicy
+  "https://cloud.google.com/products/compute/v1/docs/instances/setShieldedInstanceIntegrityPolicy
   
   Required parameters: instance, project, zone
   
@@ -1702,7 +1702,7 @@
      auth))))
 
 (defn setMachineType$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setMachineType
+  "https://cloud.google.com/products/compute/v1/docs/instances/setMachineType
   
   Required parameters: instance, project, zone
   
@@ -1735,7 +1735,7 @@
      auth))))
 
 (defn bulkInsert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/bulkInsert
+  "https://cloud.google.com/products/compute/v1/docs/instances/bulkInsert
   
   Required parameters: project, zone
   
@@ -1794,7 +1794,7 @@
      auth))))
 
 (defn setTags$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instances/setTags
+  "https://cloud.google.com/products/compute/v1/docs/instances/setTags
   
   Required parameters: instance, project, zone
   

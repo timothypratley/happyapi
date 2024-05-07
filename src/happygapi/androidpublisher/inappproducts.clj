@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.inappproducts
   "Google Play Android Developer API: inappproducts.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, sku
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/insert
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -81,7 +81,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, sku
   
@@ -129,7 +129,7 @@
      auth))))
 
 (defn batchUpdate$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/batchUpdate
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -166,7 +166,7 @@
      auth))))
 
 (defn batchGet$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/batchGet
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -192,7 +192,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/update
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, sku
   
@@ -240,7 +240,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, sku
   
@@ -266,7 +266,7 @@
      auth))))
 
 (defn batchDelete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/batchDelete
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -300,7 +300,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/inappproducts/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   

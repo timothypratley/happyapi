@@ -1,13 +1,13 @@
 (ns happygapi.realtimebidding.bidders
   "Real-time Bidding API: bidders.
   Allows external bidders to manage their RTB integration with Google. This includes managing bidder endpoints, QPS quotas, configuring what ad inventory to receive via pretargeting, submitting creatives for verification, and accessing creative metadata such as approval status.
-  See: https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders"
+  See: https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/get
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders/get
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/list
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders/list
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn endpoints-get$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/endpoints/get
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.endpoints/get
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn endpoints-list$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/endpoints/list
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.endpoints/list
   
   Required parameters: parent
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn endpoints-patch$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/endpoints/patch
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.endpoints/patch
   
   Required parameters: name
   
@@ -147,7 +147,7 @@
      auth))))
 
 (defn creatives-list$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/creatives/list
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.creatives/list
   
   Required parameters: parent
   
@@ -173,7 +173,7 @@
      auth))))
 
 (defn creatives-watch$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/creatives/watch
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.creatives/watch
   
   Required parameters: parent
   
@@ -205,7 +205,7 @@
      auth))))
 
 (defn pretargetingConfigs-get$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/get
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/get
   
   Required parameters: name
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn pretargetingConfigs-addTargetedSites$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/addTargetedSites
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/addTargetedSites
   
   Required parameters: pretargetingConfig
   
@@ -263,7 +263,7 @@
      auth))))
 
 (defn pretargetingConfigs-patch$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/patch
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/patch
   
   Required parameters: name
   
@@ -318,7 +318,7 @@
      auth))))
 
 (defn pretargetingConfigs-removeTargetedApps$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/removeTargetedApps
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/removeTargetedApps
   
   Required parameters: pretargetingConfig
   
@@ -350,7 +350,7 @@
      auth))))
 
 (defn pretargetingConfigs-removeTargetedPublishers$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/removeTargetedPublishers
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/removeTargetedPublishers
   
   Required parameters: pretargetingConfig
   
@@ -382,7 +382,7 @@
      auth))))
 
 (defn pretargetingConfigs-create$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/create
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/create
   
   Required parameters: parent
   
@@ -437,7 +437,7 @@
      auth))))
 
 (defn pretargetingConfigs-delete$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/delete
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/delete
   
   Required parameters: name
   
@@ -463,7 +463,7 @@
      auth))))
 
 (defn pretargetingConfigs-suspend$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/suspend
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/suspend
   
   Required parameters: name
   
@@ -495,7 +495,7 @@
      auth))))
 
 (defn pretargetingConfigs-list$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/list
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/list
   
   Required parameters: parent
   
@@ -521,7 +521,7 @@
      auth))))
 
 (defn pretargetingConfigs-removeTargetedSites$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/removeTargetedSites
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/removeTargetedSites
   
   Required parameters: pretargetingConfig
   
@@ -553,7 +553,7 @@
      auth))))
 
 (defn pretargetingConfigs-addTargetedApps$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/addTargetedApps
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/addTargetedApps
   
   Required parameters: pretargetingConfig
   
@@ -585,7 +585,7 @@
      auth))))
 
 (defn pretargetingConfigs-activate$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/activate
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/activate
   
   Required parameters: name
   
@@ -617,7 +617,7 @@
      auth))))
 
 (defn pretargetingConfigs-addTargetedPublishers$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/pretargetingConfigs/addTargetedPublishers
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.pretargetingConfigs/addTargetedPublishers
   
   Required parameters: pretargetingConfig
   
@@ -649,7 +649,7 @@
      auth))))
 
 (defn publisherConnections-list$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/publisherConnections/list
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.publisherConnections/list
   
   Required parameters: parent
   
@@ -675,7 +675,7 @@
      auth))))
 
 (defn publisherConnections-get$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/publisherConnections/get
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.publisherConnections/get
   
   Required parameters: name
   
@@ -701,7 +701,7 @@
      auth))))
 
 (defn publisherConnections-batchApprove$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/publisherConnections/batchApprove
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.publisherConnections/batchApprove
   
   Required parameters: parent
   
@@ -733,7 +733,7 @@
      auth))))
 
 (defn publisherConnections-batchReject$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/bidders/publisherConnections/batchReject
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/bidders.publisherConnections/batchReject
   
   Required parameters: parent
   

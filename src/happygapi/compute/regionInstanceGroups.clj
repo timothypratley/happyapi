@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionInstanceGroups
   "Compute Engine API: regionInstanceGroups.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroups"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroups/list
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroups/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroups/get
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroups/get
   
   Required parameters: instanceGroup, project, region
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn listInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroups/listInstances
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroups/listInstances
   
   Required parameters: instanceGroup, project, region
   
@@ -101,7 +101,7 @@
      auth))))
 
 (defn setNamedPorts$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroups/setNamedPorts
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroups/setNamedPorts
   
   Required parameters: instanceGroup, project, region
   

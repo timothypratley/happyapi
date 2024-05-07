@@ -1,13 +1,13 @@
 (ns happygapi.manufacturers.accounts
   "Manufacturer Center API: accounts.
   Public API for managing Manufacturer Center related data.
-  See: https://developers.google.com/manufacturers/api/reference/rest/v1/accounts"
+  See: https://developers.google.com/manufacturers/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn products-list$
-  "https://developers.google.com/manufacturers/api/reference/rest/v1/accounts/products/list
+  "https://developers.google.com/manufacturers/reference/rest/v1/accounts.products/list
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn products-get$
-  "https://developers.google.com/manufacturers/api/reference/rest/v1/accounts/products/get
+  "https://developers.google.com/manufacturers/reference/rest/v1/accounts.products/get
   
   Required parameters: parent, name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn products-update$
-  "https://developers.google.com/manufacturers/api/reference/rest/v1/accounts/products/update
+  "https://developers.google.com/manufacturers/reference/rest/v1/accounts.products/update
   
   Required parameters: parent, name
   
@@ -185,7 +185,7 @@
      auth))))
 
 (defn products-delete$
-  "https://developers.google.com/manufacturers/api/reference/rest/v1/accounts/products/delete
+  "https://developers.google.com/manufacturers/reference/rest/v1/accounts.products/delete
   
   Required parameters: parent, name
   
@@ -211,7 +211,7 @@
      auth))))
 
 (defn languages-productCertifications-patch$
-  "https://developers.google.com/manufacturers/api/reference/rest/v1/accounts/languages/productCertifications/patch
+  "https://developers.google.com/manufacturers/reference/rest/v1/accounts.languages.productCertifications/patch
   
   Required parameters: name
   
@@ -265,7 +265,7 @@
      auth))))
 
 (defn languages-productCertifications-list$
-  "https://developers.google.com/manufacturers/api/reference/rest/v1/accounts/languages/productCertifications/list
+  "https://developers.google.com/manufacturers/reference/rest/v1/accounts.languages.productCertifications/list
   
   Required parameters: parent
   
@@ -291,7 +291,7 @@
      auth))))
 
 (defn languages-productCertifications-get$
-  "https://developers.google.com/manufacturers/api/reference/rest/v1/accounts/languages/productCertifications/get
+  "https://developers.google.com/manufacturers/reference/rest/v1/accounts.languages.productCertifications/get
   
   Required parameters: name
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn languages-productCertifications-delete$
-  "https://developers.google.com/manufacturers/api/reference/rest/v1/accounts/languages/productCertifications/delete
+  "https://developers.google.com/manufacturers/reference/rest/v1/accounts.languages.productCertifications/delete
   
   Required parameters: name
   

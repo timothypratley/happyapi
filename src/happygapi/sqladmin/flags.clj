@@ -1,13 +1,13 @@
 (ns happygapi.sqladmin.flags
   "Cloud SQL Admin API: flags.
   API for Cloud SQL database instance management
-  See: https://developers.google.com/cloud-sql/api/reference/rest/v1/flags"
+  See: https://cloud.google.com/sql/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/flags/list
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/flags/list
   
   Required parameters: none
   

@@ -1,13 +1,13 @@
 (ns happygapi.sqladmin.users
   "Cloud SQL Admin API: users.
   API for Cloud SQL database instance management
-  See: https://developers.google.com/cloud-sql/api/reference/rest/v1/users"
+  See: https://cloud.google.com/sql/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/users/delete
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/users/delete
   
   Required parameters: project, instance
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/users/get
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/users/get
   
   Required parameters: project, instance, name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/users/insert
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/users/insert
   
   Required parameters: project, instance
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/users/list
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/users/list
   
   Required parameters: project, instance
   
@@ -135,7 +135,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/users/update
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/users/update
   
   Required parameters: project, instance
   

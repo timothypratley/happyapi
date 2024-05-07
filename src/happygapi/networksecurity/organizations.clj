@@ -1,13 +1,13 @@
 (ns happygapi.networksecurity.organizations
   "Network Security API: organizations.
   
-  See: https://cloud.google.com/networkingapi/reference/rest/v1/organizations"
+  See: https://cloud.google.com/products/networking"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/operations/list
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/operations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/operations/get
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/operations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/operations/delete
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/operations/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/operations/cancel
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/operations/cancel
   
   Required parameters: name
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn locations-addressGroups-get$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/get
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/get
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-addressGroups-patch$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/patch
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/patch
   
   Required parameters: name
   
@@ -183,7 +183,7 @@
      auth))))
 
 (defn locations-addressGroups-create$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/create
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/create
   
   Required parameters: parent
   
@@ -223,7 +223,7 @@
      auth))))
 
 (defn locations-addressGroups-addItems$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/addItems
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/addItems
   
   Required parameters: addressGroup
   
@@ -255,7 +255,7 @@
      auth))))
 
 (defn locations-addressGroups-delete$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/delete
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/delete
   
   Required parameters: name
   
@@ -281,7 +281,7 @@
      auth))))
 
 (defn locations-addressGroups-listReferences$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/listReferences
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/listReferences
   
   Required parameters: addressGroup
   
@@ -307,7 +307,7 @@
      auth))))
 
 (defn locations-addressGroups-list$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/list
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/list
   
   Required parameters: parent
   
@@ -333,7 +333,7 @@
      auth))))
 
 (defn locations-addressGroups-cloneItems$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/cloneItems
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/cloneItems
   
   Required parameters: addressGroup
   
@@ -365,7 +365,7 @@
      auth))))
 
 (defn locations-addressGroups-removeItems$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/addressGroups/removeItems
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/addressGroups/removeItems
   
   Required parameters: addressGroup
   
@@ -397,7 +397,7 @@
      auth))))
 
 (defn locations-firewallEndpoints-list$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/firewallEndpoints/list
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/firewallEndpoints/list
   
   Required parameters: parent
   
@@ -423,7 +423,7 @@
      auth))))
 
 (defn locations-firewallEndpoints-get$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/firewallEndpoints/get
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/firewallEndpoints/get
   
   Required parameters: name
   
@@ -449,7 +449,7 @@
      auth))))
 
 (defn locations-firewallEndpoints-create$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/firewallEndpoints/create
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/firewallEndpoints/create
   
   Required parameters: parent
   
@@ -490,7 +490,7 @@
      auth))))
 
 (defn locations-firewallEndpoints-delete$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/firewallEndpoints/delete
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/firewallEndpoints/delete
   
   Required parameters: name
   
@@ -516,7 +516,7 @@
      auth))))
 
 (defn locations-firewallEndpoints-patch$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/firewallEndpoints/patch
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/firewallEndpoints/patch
   
   Required parameters: name
   
@@ -557,7 +557,7 @@
      auth))))
 
 (defn locations-securityProfileGroups-list$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfileGroups/list
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfileGroups/list
   
   Required parameters: parent
   
@@ -583,7 +583,7 @@
      auth))))
 
 (defn locations-securityProfileGroups-get$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfileGroups/get
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfileGroups/get
   
   Required parameters: name
   
@@ -609,7 +609,7 @@
      auth))))
 
 (defn locations-securityProfileGroups-create$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfileGroups/create
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfileGroups/create
   
   Required parameters: parent
   
@@ -647,7 +647,7 @@
      auth))))
 
 (defn locations-securityProfileGroups-patch$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfileGroups/patch
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfileGroups/patch
   
   Required parameters: name
   
@@ -685,7 +685,7 @@
      auth))))
 
 (defn locations-securityProfileGroups-delete$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfileGroups/delete
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfileGroups/delete
   
   Required parameters: name
   
@@ -711,7 +711,7 @@
      auth))))
 
 (defn locations-securityProfiles-list$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfiles/list
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfiles/list
   
   Required parameters: parent
   
@@ -737,7 +737,7 @@
      auth))))
 
 (defn locations-securityProfiles-get$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfiles/get
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfiles/get
   
   Required parameters: name
   
@@ -763,7 +763,7 @@
      auth))))
 
 (defn locations-securityProfiles-create$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfiles/create
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfiles/create
   
   Required parameters: parent
   
@@ -803,7 +803,7 @@
      auth))))
 
 (defn locations-securityProfiles-patch$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfiles/patch
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfiles/patch
   
   Required parameters: name
   
@@ -843,7 +843,7 @@
      auth))))
 
 (defn locations-securityProfiles-delete$
-  "https://cloud.google.com/networkingapi/reference/rest/v1/organizations/locations/securityProfiles/delete
+  "https://cloud.google.com/products/networking/v1/docs/organizations/locations/securityProfiles/delete
   
   Required parameters: name
   

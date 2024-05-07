@@ -1,13 +1,13 @@
 (ns happygapi.games.scores
   "Google Play Game Services: scores.
   The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
-  See: https://developers.google.com/games/api/reference/rest/v1/scores"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/games/api/reference/rest/v1/scores/get
+  "https://games.withgoogle.com
   
   Required parameters: playerId, leaderboardId, timeSpan
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/games/api/reference/rest/v1/scores/list
+  "https://games.withgoogle.com
   
   Required parameters: leaderboardId, collection, timeSpan
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn listWindow$
-  "https://developers.google.com/games/api/reference/rest/v1/scores/listWindow
+  "https://games.withgoogle.com
   
   Required parameters: leaderboardId, collection, timeSpan
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn submit$
-  "https://developers.google.com/games/api/reference/rest/v1/scores/submit
+  "https://games.withgoogle.com
   
   Required parameters: leaderboardId, score
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn submitMultiple$
-  "https://developers.google.com/games/api/reference/rest/v1/scores/submitMultiple
+  "https://games.withgoogle.com
   
   Required parameters: none
   

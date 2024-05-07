@@ -1,13 +1,13 @@
 (ns happygapi.sqladmin.projects
   "Cloud SQL Admin API: projects.
   API for Cloud SQL database instance management
-  See: https://developers.google.com/cloud-sql/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/sql/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn instances-rescheduleMaintenance$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/projects/instances/rescheduleMaintenance
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/projects.instances/rescheduleMaintenance
   
   Required parameters: project, instance
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn instances-verifyExternalSyncSettings$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/projects/instances/verifyExternalSyncSettings
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/projects.instances/verifyExternalSyncSettings
   
   Required parameters: project, instance
   
@@ -78,7 +78,7 @@
      auth))))
 
 (defn instances-startExternalSync$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/projects/instances/startExternalSync
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/projects.instances/startExternalSync
   
   Required parameters: project, instance
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn instances-performDiskShrink$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/projects/instances/performDiskShrink
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/projects.instances/performDiskShrink
   
   Required parameters: project, instance
   
@@ -148,7 +148,7 @@
      auth))))
 
 (defn instances-getDiskShrinkConfig$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/projects/instances/getDiskShrinkConfig
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/projects.instances/getDiskShrinkConfig
   
   Required parameters: project, instance
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn instances-resetReplicaSize$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/projects/instances/resetReplicaSize
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/projects.instances/resetReplicaSize
   
   Required parameters: project, instance
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn instances-getLatestRecoveryTime$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/projects/instances/getLatestRecoveryTime
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/projects.instances/getLatestRecoveryTime
   
   Required parameters: project, instance
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.targetVpnGateways
   "Compute Engine API: targetVpnGateways.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/targetVpnGateways"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetVpnGateways/list
+  "https://cloud.google.com/products/compute/v1/docs/targetVpnGateways/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetVpnGateways/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/targetVpnGateways/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetVpnGateways/get
+  "https://cloud.google.com/products/compute/v1/docs/targetVpnGateways/get
   
   Required parameters: project, region, targetVpnGateway
   
@@ -93,7 +93,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetVpnGateways/insert
+  "https://cloud.google.com/products/compute/v1/docs/targetVpnGateways/insert
   
   Required parameters: project, region
   
@@ -138,7 +138,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetVpnGateways/delete
+  "https://cloud.google.com/products/compute/v1/docs/targetVpnGateways/delete
   
   Required parameters: project, region, targetVpnGateway
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetVpnGateways/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/targetVpnGateways/setLabels
   
   Required parameters: project, region, resource
   

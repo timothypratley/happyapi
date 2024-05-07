@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.applications
   "Google Play Android Developer API: applications.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/applications"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn dataSafety$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/applications/dataSafety
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn deviceTierConfigs-create$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/applications/deviceTierConfigs/create
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -74,7 +74,7 @@
      auth))))
 
 (defn deviceTierConfigs-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/applications/deviceTierConfigs/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, deviceTierConfigId
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn deviceTierConfigs-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/applications/deviceTierConfigs/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   

@@ -1,13 +1,13 @@
 (ns happygapi.calendar.freebusy
   "Calendar API: freebusy.
   Manipulates events and other calendar data.
-  See: https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/freebusy"
+  See: https://developers.google.com/calendar"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn query$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/freebusy/query
+  "https://developers.google.com/calendar
   
   Required parameters: none
   

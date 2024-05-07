@@ -526,7 +526,7 @@
                                                     "Packet is sent to a wrong (unintended) network. Example: you trace a packet from VM1:Network1 to VM2:Network2, however, the route configured in Network1 sends the packet destined for VM2's IP address to Network3."
                                                     "Route's next hop IP address cannot be resolved to a GCP resource."
                                                     "Route's next hop resource is not found."
-                                                    "Route's next hop instance doesn't hace a NIC in the route's network."
+                                                    "Route's next hop instance doesn't have a NIC in the route's network."
                                                     "Route's next hop IP address is not a primary IP address of the next hop instance."
                                                     "Route's next hop forwarding rule doesn't match next hop IP address."
                                                     "Route's next hop VPN tunnel is down (does not have valid IKE SAs)."
@@ -670,6 +670,7 @@
                                                      "Aborted because the destination endpoint could not be found. Deprecated, not used in the new tests."
                                                      "Aborted because the destination network does not match the destination endpoint. Deprecated, not used in the new tests."
                                                      "Aborted because no endpoint with the packet's destination IP address is found."
+                                                     "Aborted because no endpoint with the packet's destination IP is found in the Google-managed project."
                                                      "Aborted because the source IP address doesn't belong to any of the subnets of the source VPC network."
                                                      "Aborted because user lacks permission to access all or part of the network configurations required to run the test."
                                                      "Aborted because user lacks permission to access Cloud NAT configs required to run the test."
@@ -723,6 +724,7 @@
                                                    false
                                                    false
                                                    false
+                                                   false
                                                    false],
                                   :enum ["CAUSE_UNSPECIFIED"
                                          "UNKNOWN_NETWORK"
@@ -734,6 +736,7 @@
                                          "DESTINATION_ENDPOINT_NOT_FOUND"
                                          "MISMATCHED_DESTINATION_NETWORK"
                                          "UNKNOWN_IP"
+                                         "GOOGLE_MANAGED_SERVICE_UNKNOWN_IP"
                                          "SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK"
                                          "PERMISSION_DENIED"
                                          "PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS"
@@ -904,7 +907,7 @@
                                  :displayName {:description "Output only. The display name of a Connectivity Test.",
                                                :readOnly true,
                                                :type "string"},
-                                 :name {:description "Required. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test_id}`",
+                                 :name {:description "Identifier. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test_id}`",
                                         :type "string"},
                                  :createTime {:description "Output only. The time the test was created.",
                                               :readOnly true,

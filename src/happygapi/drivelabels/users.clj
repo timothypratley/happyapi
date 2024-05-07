@@ -1,13 +1,13 @@
 (ns happygapi.drivelabels.users
   "Drive Labels API: users.
   An API for managing Drive Labels
-  See: https://developers.google.com/drive/labelsapi/reference/rest/v2/users"
+  See: https://developers.google.com/drive/labels/guides/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getCapabilities$
-  "https://developers.google.com/drive/labelsapi/reference/rest/v2/users/getCapabilities
+  "https://developers.google.com/drive/labels/guides/overview
   
   Required parameters: name
   

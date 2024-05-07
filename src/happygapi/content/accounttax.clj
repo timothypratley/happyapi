@@ -1,13 +1,13 @@
 (ns happygapi.content.accounttax
   "Content API for Shopping: accounttax.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounttax"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn custombatch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounttax/custombatch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -43,7 +43,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounttax/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounttax/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/accounttax/update
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   

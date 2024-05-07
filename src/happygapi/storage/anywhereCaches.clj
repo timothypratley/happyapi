@@ -1,13 +1,13 @@
 (ns happygapi.storage.anywhereCaches
   "Cloud Storage JSON API: anywhereCaches.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/anywhereCaches"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn insert$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/anywhereCaches/insert
+  "https://cloud.google.com/storage/docs/reference/rest/v1/anywhereCaches/insert
   
   Required parameters: bucket
   
@@ -52,7 +52,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/anywhereCaches/update
+  "https://cloud.google.com/storage/docs/reference/rest/v1/anywhereCaches/update
   
   Required parameters: bucket, anywhereCacheId
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/anywhereCaches/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/anywhereCaches/get
   
   Required parameters: bucket, anywhereCacheId
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/anywhereCaches/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/anywhereCaches/list
   
   Required parameters: bucket
   
@@ -157,7 +157,7 @@
      auth))))
 
 (defn pause$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/anywhereCaches/pause
+  "https://cloud.google.com/storage/docs/reference/rest/v1/anywhereCaches/pause
   
   Required parameters: bucket, anywhereCacheId
   
@@ -185,7 +185,7 @@
      auth))))
 
 (defn resume$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/anywhereCaches/resume
+  "https://cloud.google.com/storage/docs/reference/rest/v1/anywhereCaches/resume
   
   Required parameters: bucket, anywhereCacheId
   
@@ -213,7 +213,7 @@
      auth))))
 
 (defn disable$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/anywhereCaches/disable
+  "https://cloud.google.com/storage/docs/reference/rest/v1/anywhereCaches/disable
   
   Required parameters: bucket, anywhereCacheId
   

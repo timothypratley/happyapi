@@ -1,13 +1,13 @@
 (ns happygapi.androiddeviceprovisioning.operations
   "Android Device Provisioning Partner API: operations.
   Automates Android zero-touch enrollment for device resellers, customers, and EMMs.
-  See: https://developers.google.com/zero-touch/api/reference/rest/v1/operations"
+  See: https://developers.google.com/zero-touch/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/zero-touch/api/reference/rest/v1/operations/get
+  "https://developers.google.com/zero-touch
   
   Required parameters: name
   

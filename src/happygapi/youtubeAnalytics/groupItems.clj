@@ -1,28 +1,37 @@
 (ns happygapi.youtubeAnalytics.groupItems
   "YouTube Analytics API: groupItems.
   Retrieves your YouTube Analytics data.
-  See: https://developers.google.com/youtube/analyticsapi/reference/rest/v2/groupItems"
+  See: https://developers.google.com/youtube/analytics"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
-(defn delete$
-  "https://developers.google.com/youtube/analyticsapi/reference/rest/v2/groupItems/delete
+(defn insert$
+  "https://developers.google.com/youtube/analytics/v2/docs/groupItems/insert
   
   Required parameters: none
   
-  Optional parameters: id, onBehalfOfContentOwner
+  Optional parameters: onBehalfOfContentOwner
   
-  Removes an item from a group."
+  Body: 
+  
+  {:groupId string,
+   :kind string,
+   :resource {:kind string, :id string},
+   :id string,
+   :errors {:requestId string, :error [ErrorProto], :code string},
+   :etag string}
+  
+  Creates a group item."
   {:scopes ["https://www.googleapis.com/auth/youtube"
             "https://www.googleapis.com/auth/youtube.readonly"
             "https://www.googleapis.com/auth/youtubepartner"
             "https://www.googleapis.com/auth/yt-analytics-monetary.readonly"
             "https://www.googleapis.com/auth/yt-analytics.readonly"]}
-  [auth parameters]
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{})]}
   (util/get-response
-   (http/delete
+   (http/post
     (util/get-url
      "https://youtubeanalytics.googleapis.com/"
      "v2/groupItems"
@@ -30,14 +39,16 @@
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn list$
-  "https://developers.google.com/youtube/analyticsapi/reference/rest/v2/groupItems/list
+  "https://developers.google.com/youtube/analytics/v2/docs/groupItems/list
   
   Required parameters: none
   
@@ -66,32 +77,23 @@
       :as :json}
      auth))))
 
-(defn insert$
-  "https://developers.google.com/youtube/analyticsapi/reference/rest/v2/groupItems/insert
+(defn delete$
+  "https://developers.google.com/youtube/analytics/v2/docs/groupItems/delete
   
   Required parameters: none
   
-  Optional parameters: onBehalfOfContentOwner
+  Optional parameters: id, onBehalfOfContentOwner
   
-  Body: 
-  
-  {:resource {:id string, :kind string},
-   :kind string,
-   :groupId string,
-   :errors {:requestId string, :code string, :error [ErrorProto]},
-   :etag string,
-   :id string}
-  
-  Creates a group item."
+  Removes an item from a group."
   {:scopes ["https://www.googleapis.com/auth/youtube"
             "https://www.googleapis.com/auth/youtube.readonly"
             "https://www.googleapis.com/auth/youtubepartner"
             "https://www.googleapis.com/auth/yt-analytics-monetary.readonly"
             "https://www.googleapis.com/auth/yt-analytics.readonly"]}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{})]}
   (util/get-response
-   (http/post
+   (http/delete
     (util/get-url
      "https://youtubeanalytics.googleapis.com/"
      "v2/groupItems"
@@ -99,9 +101,7 @@
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

@@ -1,13 +1,13 @@
 (ns happygapi.compute.securityPolicies
   "Compute Engine API: securityPolicies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn removeRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/removeRule
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/removeRule
   
   Required parameters: project, securityPolicy
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/get
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/get
   
   Required parameters: project, securityPolicy
   
@@ -62,7 +62,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/insert
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/insert
   
   Required parameters: project
   
@@ -128,7 +128,7 @@
      auth))))
 
 (defn listPreconfiguredExpressionSets$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/listPreconfiguredExpressionSets
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/listPreconfiguredExpressionSets
   
   Required parameters: project
   
@@ -156,7 +156,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/patch
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/patch
   
   Required parameters: project, securityPolicy
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/setLabels
   
   Required parameters: project, resource
   
@@ -255,7 +255,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/aggregatedList
   
   Required parameters: project
   
@@ -283,7 +283,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/delete
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/delete
   
   Required parameters: project, securityPolicy
   
@@ -310,7 +310,7 @@
      auth))))
 
 (defn patchRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/patchRule
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/patchRule
   
   Required parameters: project, securityPolicy
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn addRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/addRule
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/addRule
   
   Required parameters: project, securityPolicy
   
@@ -432,7 +432,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/list
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/list
   
   Required parameters: project
   
@@ -460,7 +460,7 @@
      auth))))
 
 (defn getRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/securityPolicies/getRule
+  "https://cloud.google.com/products/compute/v1/docs/securityPolicies/getRule
   
   Required parameters: project, securityPolicy
   

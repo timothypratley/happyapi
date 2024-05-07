@@ -1,13 +1,13 @@
 (ns happygapi.firestore.projects
   "Cloud Firestore API: projects.
   Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. 
-  See: https://cloud.google.com/firestoreapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/firestore"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn locations-backups-get$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/locations/backups/get
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.locations.backups/get
   
   Required parameters: name
   
@@ -88,7 +88,7 @@
      auth))))
 
 (defn locations-backups-list$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/locations/backups/list
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.locations.backups/list
   
   Required parameters: parent
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn locations-backups-delete$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/locations/backups/delete
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.locations.backups/delete
   
   Required parameters: name
   
@@ -142,7 +142,7 @@
      auth))))
 
 (defn databases-exportDocuments$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/exportDocuments
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases/exportDocuments
   
   Required parameters: name
   
@@ -178,7 +178,7 @@
      auth))))
 
 (defn databases-importDocuments$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/importDocuments
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases/importDocuments
   
   Required parameters: name
   
@@ -213,7 +213,7 @@
      auth))))
 
 (defn databases-create$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/create
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases/create
   
   Required parameters: parent
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn databases-get$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/get
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases/get
   
   Required parameters: name
   
@@ -287,7 +287,7 @@
      auth))))
 
 (defn databases-list$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/list
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases/list
   
   Required parameters: parent
   
@@ -314,7 +314,7 @@
      auth))))
 
 (defn databases-patch$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/patch
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases/patch
   
   Required parameters: name
   
@@ -361,7 +361,7 @@
      auth))))
 
 (defn databases-delete$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/delete
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases/delete
   
   Required parameters: name
   
@@ -388,7 +388,7 @@
      auth))))
 
 (defn databases-restore$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/restore
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases/restore
   
   Required parameters: parent
   
@@ -423,7 +423,7 @@
      auth))))
 
 (defn databases-operations-list$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/operations/list
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.operations/list
   
   Required parameters: name
   
@@ -450,7 +450,7 @@
      auth))))
 
 (defn databases-operations-get$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/operations/get
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.operations/get
   
   Required parameters: name
   
@@ -477,7 +477,7 @@
      auth))))
 
 (defn databases-operations-delete$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/operations/delete
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.operations/delete
   
   Required parameters: name
   
@@ -504,7 +504,7 @@
      auth))))
 
 (defn databases-operations-cancel$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/operations/cancel
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.operations/cancel
   
   Required parameters: name
   
@@ -537,7 +537,7 @@
      auth))))
 
 (defn databases-collectionGroups-indexes-create$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/collectionGroups/indexes/create
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.collectionGroups.indexes/create
   
   Required parameters: parent
   
@@ -577,7 +577,7 @@
      auth))))
 
 (defn databases-collectionGroups-indexes-list$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/collectionGroups/indexes/list
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.collectionGroups.indexes/list
   
   Required parameters: parent
   
@@ -604,7 +604,7 @@
      auth))))
 
 (defn databases-collectionGroups-indexes-get$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/collectionGroups/indexes/get
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.collectionGroups.indexes/get
   
   Required parameters: name
   
@@ -631,7 +631,7 @@
      auth))))
 
 (defn databases-collectionGroups-indexes-delete$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/collectionGroups/indexes/delete
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.collectionGroups.indexes/delete
   
   Required parameters: name
   
@@ -658,7 +658,7 @@
      auth))))
 
 (defn databases-collectionGroups-fields-get$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/collectionGroups/fields/get
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.collectionGroups.fields/get
   
   Required parameters: name
   
@@ -685,7 +685,7 @@
      auth))))
 
 (defn databases-collectionGroups-fields-patch$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/collectionGroups/fields/patch
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.collectionGroups.fields/patch
   
   Required parameters: name
   
@@ -723,7 +723,7 @@
      auth))))
 
 (defn databases-collectionGroups-fields-list$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/collectionGroups/fields/list
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.collectionGroups.fields/list
   
   Required parameters: parent
   
@@ -750,7 +750,7 @@
      auth))))
 
 (defn databases-backupSchedules-create$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/backupSchedules/create
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.backupSchedules/create
   
   Required parameters: parent
   
@@ -765,7 +765,7 @@
    :dailyRecurrence {},
    :weeklyRecurrence {:day string}}
   
-  Creates a backup schedule on a database. At most two backup schedules can be configured on a database, one daily backup schedule with retention up to 7 days and one weekly backup schedule with retention up to 14 weeks."
+  Creates a backup schedule on a database. At most two backup schedules can be configured on a database, one daily backup schedule and one weekly backup schedule."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
             "https://www.googleapis.com/auth/datastore"]}
   [auth parameters body]
@@ -788,7 +788,7 @@
      auth))))
 
 (defn databases-backupSchedules-get$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/backupSchedules/get
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.backupSchedules/get
   
   Required parameters: name
   
@@ -815,7 +815,7 @@
      auth))))
 
 (defn databases-backupSchedules-list$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/backupSchedules/list
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.backupSchedules/list
   
   Required parameters: parent
   
@@ -842,7 +842,7 @@
      auth))))
 
 (defn databases-backupSchedules-patch$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/backupSchedules/patch
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.backupSchedules/patch
   
   Required parameters: name
   
@@ -880,7 +880,7 @@
      auth))))
 
 (defn databases-backupSchedules-delete$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/backupSchedules/delete
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.backupSchedules/delete
   
   Required parameters: name
   
@@ -907,7 +907,7 @@
      auth))))
 
 (defn databases-documents-rollback$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/rollback
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/rollback
   
   Required parameters: database
   
@@ -940,7 +940,7 @@
      auth))))
 
 (defn databases-documents-get$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/get
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/get
   
   Required parameters: name
   
@@ -967,7 +967,7 @@
      auth))))
 
 (defn databases-documents-batchWrite$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/batchWrite
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/batchWrite
   
   Required parameters: database
   
@@ -1006,7 +1006,7 @@
      auth))))
 
 (defn databases-documents-patch$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/patch
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/patch
   
   Required parameters: name
   
@@ -1039,7 +1039,7 @@
      auth))))
 
 (defn databases-documents-batchGet$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/batchGet
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/batchGet
   
   Required parameters: database
   
@@ -1076,7 +1076,7 @@
      auth))))
 
 (defn databases-documents-delete$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/delete
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/delete
   
   Required parameters: name
   
@@ -1103,7 +1103,7 @@
      auth))))
 
 (defn databases-documents-runQuery$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/runQuery
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/runQuery
   
   Required parameters: parent
   
@@ -1111,14 +1111,15 @@
   
   Body: 
   
-  {:structuredQuery {:select Projection,
-                     :from [CollectionSelector],
-                     :where Filter,
-                     :orderBy [Order],
-                     :startAt Cursor,
-                     :endAt Cursor,
+  {:structuredQuery {:where Filter,
+                     :limit integer,
                      :offset integer,
-                     :limit integer},
+                     :endAt Cursor,
+                     :from [CollectionSelector],
+                     :findNearest FindNearest,
+                     :startAt Cursor,
+                     :select Projection,
+                     :orderBy [Order]},
    :transaction string,
    :newTransaction {:readOnly ReadOnly, :readWrite ReadWrite},
    :readTime string,
@@ -1147,7 +1148,7 @@
      auth))))
 
 (defn databases-documents-partitionQuery$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/partitionQuery
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/partitionQuery
   
   Required parameters: parent
   
@@ -1155,14 +1156,15 @@
   
   Body: 
   
-  {:structuredQuery {:select Projection,
-                     :from [CollectionSelector],
-                     :where Filter,
-                     :orderBy [Order],
-                     :startAt Cursor,
-                     :endAt Cursor,
+  {:structuredQuery {:where Filter,
+                     :limit integer,
                      :offset integer,
-                     :limit integer},
+                     :endAt Cursor,
+                     :from [CollectionSelector],
+                     :findNearest FindNearest,
+                     :startAt Cursor,
+                     :select Projection,
+                     :orderBy [Order]},
    :partitionCount string,
    :pageToken string,
    :pageSize integer,
@@ -1191,7 +1193,7 @@
      auth))))
 
 (defn databases-documents-write$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/write
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/write
   
   Required parameters: database
   
@@ -1232,7 +1234,7 @@
      auth))))
 
 (defn databases-documents-beginTransaction$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/beginTransaction
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/beginTransaction
   
   Required parameters: database
   
@@ -1265,7 +1267,7 @@
      auth))))
 
 (defn databases-documents-listen$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/listen
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/listen
   
   Required parameters: database
   
@@ -1306,7 +1308,7 @@
      auth))))
 
 (defn databases-documents-list$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/list
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/list
   
   Required parameters: collectionId, parent
   
@@ -1333,7 +1335,7 @@
      auth))))
 
 (defn databases-documents-commit$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/commit
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/commit
   
   Required parameters: database
   
@@ -1372,7 +1374,7 @@
      auth))))
 
 (defn databases-documents-runAggregationQuery$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/runAggregationQuery
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/runAggregationQuery
   
   Required parameters: parent
   
@@ -1410,7 +1412,7 @@
      auth))))
 
 (defn databases-documents-listCollectionIds$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/listCollectionIds
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/listCollectionIds
   
   Required parameters: parent
   
@@ -1443,7 +1445,7 @@
      auth))))
 
 (defn databases-documents-createDocument$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/createDocument
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/createDocument
   
   Required parameters: parent, collectionId
   
@@ -1476,7 +1478,7 @@
      auth))))
 
 (defn databases-documents-listDocuments$
-  "https://cloud.google.com/firestoreapi/reference/rest/v1/projects/databases/documents/listDocuments
+  "https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/listDocuments
   
   Required parameters: collectionId, parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.books.series
   "Books API: series.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/series"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/series/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/series/get
   
   Required parameters: series_id
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn membership-get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/series/membership/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/series/membership/get
   
   Required parameters: series_id
   

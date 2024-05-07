@@ -1,13 +1,13 @@
 (ns happygapi.compute.interconnects
   "Compute Engine API: interconnects.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/interconnects"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnects/insert
+  "https://cloud.google.com/products/compute/v1/docs/interconnects/insert
   
   Required parameters: project
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnects/list
+  "https://cloud.google.com/products/compute/v1/docs/interconnects/list
   
   Required parameters: project
   
@@ -107,7 +107,7 @@
      auth))))
 
 (defn getDiagnostics$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnects/getDiagnostics
+  "https://cloud.google.com/products/compute/v1/docs/interconnects/getDiagnostics
   
   Required parameters: interconnect, project
   
@@ -135,7 +135,7 @@
      auth))))
 
 (defn getMacsecConfig$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnects/getMacsecConfig
+  "https://cloud.google.com/products/compute/v1/docs/interconnects/getMacsecConfig
   
   Required parameters: interconnect, project
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnects/get
+  "https://cloud.google.com/products/compute/v1/docs/interconnects/get
   
   Required parameters: interconnect, project
   
@@ -191,7 +191,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnects/delete
+  "https://cloud.google.com/products/compute/v1/docs/interconnects/delete
   
   Required parameters: interconnect, project
   
@@ -218,7 +218,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnects/patch
+  "https://cloud.google.com/products/compute/v1/docs/interconnects/patch
   
   Required parameters: interconnect, project
   
@@ -290,7 +290,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnects/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/interconnects/setLabels
   
   Required parameters: project, resource
   

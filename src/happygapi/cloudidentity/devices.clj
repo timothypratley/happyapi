@@ -1,13 +1,13 @@
 (ns happygapi.cloudidentity.devices
   "Cloud Identity API: devices.
   API for provisioning and managing identity resources.
-  See: https://cloud.google.com/identity/api/reference/rest/v1/devices"
+  See: https://cloud.google.com/identity/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/create
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices/create
   
   Required parameters: none
   
@@ -78,7 +78,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices/get
   
   Required parameters: name
   
@@ -105,7 +105,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices/list
   
   Required parameters: none
   
@@ -132,7 +132,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/delete
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices/delete
   
   Required parameters: name
   
@@ -158,7 +158,7 @@
      auth))))
 
 (defn wipe$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/wipe
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices/wipe
   
   Required parameters: name
   
@@ -190,7 +190,7 @@
      auth))))
 
 (defn cancelWipe$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/cancelWipe
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices/cancelWipe
   
   Required parameters: name
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn deviceUsers-get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers/get
   
   Required parameters: name
   
@@ -249,7 +249,7 @@
      auth))))
 
 (defn deviceUsers-list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers/list
   
   Required parameters: parent
   
@@ -276,7 +276,7 @@
      auth))))
 
 (defn deviceUsers-delete$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/delete
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers/delete
   
   Required parameters: name
   
@@ -302,7 +302,7 @@
      auth))))
 
 (defn deviceUsers-lookup$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/lookup
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers/lookup
   
   Required parameters: parent
   
@@ -328,7 +328,7 @@
      auth))))
 
 (defn deviceUsers-approve$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/approve
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers/approve
   
   Required parameters: name
   
@@ -360,7 +360,7 @@
      auth))))
 
 (defn deviceUsers-block$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/block
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers/block
   
   Required parameters: name
   
@@ -392,7 +392,7 @@
      auth))))
 
 (defn deviceUsers-wipe$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/wipe
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers/wipe
   
   Required parameters: name
   
@@ -424,7 +424,7 @@
      auth))))
 
 (defn deviceUsers-cancelWipe$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/cancelWipe
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers/cancelWipe
   
   Required parameters: name
   
@@ -456,7 +456,7 @@
      auth))))
 
 (defn deviceUsers-clientStates-get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/clientStates/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers.clientStates/get
   
   Required parameters: name
   
@@ -483,7 +483,7 @@
      auth))))
 
 (defn deviceUsers-clientStates-list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/clientStates/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers.clientStates/list
   
   Required parameters: parent
   
@@ -510,7 +510,7 @@
      auth))))
 
 (defn deviceUsers-clientStates-patch$
-  "https://cloud.google.com/identity/api/reference/rest/v1/devices/deviceUsers/clientStates/patch
+  "https://cloud.google.com/identity/docs/reference/rest/v1/devices.deviceUsers.clientStates/patch
   
   Required parameters: name
   

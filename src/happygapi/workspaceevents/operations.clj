@@ -1,13 +1,13 @@
 (ns happygapi.workspaceevents.operations
   "Google Workspace Events API: operations.
   The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.
-  See: https://developers.google.com/workspace/eventsapi/reference/rest/v1/operations"
+  See: https://developers.google.com/workspace/events"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/workspace/eventsapi/reference/rest/v1/operations/get
+  "https://developers.google.com/workspace/events/reference/rest/v1/operations/get
   
   Required parameters: name
   

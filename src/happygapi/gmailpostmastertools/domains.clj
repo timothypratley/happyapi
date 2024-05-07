@@ -1,13 +1,13 @@
 (ns happygapi.gmailpostmastertools.domains
   "Gmail Postmaster Tools API: domains.
   The Postmaster Tools API is a RESTful API that provides programmatic access to email traffic metrics (like spam reports, delivery errors etc) otherwise available through the Gmail Postmaster Tools UI currently.
-  See: https://developers.google.com/gmail/postmasterapi/reference/rest/v1/domains"
+  See: https://developers.google.com/gmail/postmaster"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/gmail/postmasterapi/reference/rest/v1/domains/list
+  "https://developers.google.com/gmail/postmaster/reference/rest/v1/domains/list
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/gmail/postmasterapi/reference/rest/v1/domains/get
+  "https://developers.google.com/gmail/postmaster/reference/rest/v1/domains/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn trafficStats-list$
-  "https://developers.google.com/gmail/postmasterapi/reference/rest/v1/domains/trafficStats/list
+  "https://developers.google.com/gmail/postmaster/reference/rest/v1/domains/trafficStats/list
   
   Required parameters: parent
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn trafficStats-get$
-  "https://developers.google.com/gmail/postmasterapi/reference/rest/v1/domains/trafficStats/get
+  "https://developers.google.com/gmail/postmaster/reference/rest/v1/domains/trafficStats/get
   
   Required parameters: name
   

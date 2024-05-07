@@ -113,11 +113,13 @@
                                             :enumDescriptions ["Default value, do not use."
                                                                "The data execution has not started."
                                                                "The data execution has started and is running."
+                                                               "The data execution is currently being cancelled."
                                                                "The data execution has completed successfully."
                                                                "The data execution has completed with errors."],
                                             :enum ["DATA_EXECUTION_STATE_UNSPECIFIED"
                                                    "NOT_STARTED"
                                                    "RUNNING"
+                                                   "CANCELLING"
                                                    "SUCCEEDED"
                                                    "FAILED"]},
                                     :errorCode {:description "The error code.",
@@ -140,7 +142,8 @@
                                                                    "The data execution returns columns with missing aliases."
                                                                    "The data source object does not exist."
                                                                    "The data source object is currently in error state. To force refresh, set force in RefreshDataSourceRequest."
-                                                                   "The data source object specification is invalid."],
+                                                                   "The data source object specification is invalid."
+                                                                   "The data execution has been cancelled."],
                                                 :enum ["DATA_EXECUTION_ERROR_CODE_UNSPECIFIED"
                                                        "TIMED_OUT"
                                                        "TOO_MANY_ROWS"
@@ -159,7 +162,8 @@
                                                        "MISSING_COLUMN_ALIAS"
                                                        "OBJECT_NOT_FOUND"
                                                        "OBJECT_IN_ERROR_STATE"
-                                                       "OBJECT_SPEC_INVALID"]},
+                                                       "OBJECT_SPEC_INVALID"
+                                                       "DATA_EXECUTION_CANCELLED"]},
                                     :errorMessage {:description "The error message, which may be empty.",
                                                    :type "string"},
                                     :lastRefreshTime {:description "Gets the time the data last successfully refreshed.",
@@ -1422,7 +1426,8 @@
                                                                   "Corresponds to the `STDEVP` function."
                                                                   "Corresponds to the `VAR` function."
                                                                   "Corresponds to the `VARP` function."
-                                                                  "Indicates the formula should be used as-is. Only valid if PivotValue.formula was set."],
+                                                                  "Indicates the formula should be used as-is. Only valid if PivotValue.formula was set."
+                                                                  "Indicates that the value is already summarized, and the summarization function is not explicitly specified. Used for Looker data source pivot tables where the value is already summarized."],
                                                :enum ["PIVOT_STANDARD_VALUE_FUNCTION_UNSPECIFIED"
                                                       "SUM"
                                                       "COUNTA"
@@ -1437,7 +1442,8 @@
                                                       "STDEVP"
                                                       "VAR"
                                                       "VARP"
-                                                      "CUSTOM"]},
+                                                      "CUSTOM"
+                                                      "NONE"]},
                            :name {:description "A name to use for the value.",
                                   :type "string"},
                            :calculatedDisplayType {:description "If specified, indicates that pivot values should be displayed as the result of a calculation with another pivot value. For example, if calculated_display_type is specified as PERCENT_OF_GRAND_TOTAL, all the pivot values are displayed as the percentage of the grand total. In the Sheets editor, this is referred to as \"Show As\" in the value section of a pivot table.",
@@ -1739,7 +1745,7 @@
                                                                      :$ref "IterativeCalculationSettings"},
                                       :spreadsheetTheme {:description "Theme applied to the spreadsheet.",
                                                          :$ref "SpreadsheetTheme"},
-                                      :importFunctionsExternalUrlAccessAllowed {:description "Whether to allow external url access for image and import functions. Read only when true. When false, you can set to true.",
+                                      :importFunctionsExternalUrlAccessAllowed {:description "Whether to allow external URL access for image and import functions. Read only when true. When false, you can set to true.",
                                                                                 :type "boolean"}}},
  :BatchClearValuesRequest {:id "BatchClearValuesRequest",
                            :description "The request for clearing more than one range of values in a spreadsheet.",

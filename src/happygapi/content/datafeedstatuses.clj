@@ -1,13 +1,13 @@
 (ns happygapi.content.datafeedstatuses
   "Content API for Shopping: datafeedstatuses.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/datafeedstatuses"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn custombatch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/datafeedstatuses/custombatch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -45,7 +45,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/datafeedstatuses/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, datafeedId
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/datafeedstatuses/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

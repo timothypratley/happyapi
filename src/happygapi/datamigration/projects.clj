@@ -1,13 +1,13 @@
 (ns happygapi.datamigration.projects
   "Database Migration API: projects.
   Manage Cloud Database Migration Service resources on Google Cloud Platform.
-  See: https://cloud.google.com/database-migration/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/database-migration/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-fetchStaticIps$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/fetchStaticIps
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations/fetchStaticIps
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-migrationJobs-demoteDestination$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/demoteDestination
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/demoteDestination
   
   Required parameters: name
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-migrationJobs-get$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/get
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/get
   
   Required parameters: name
   
@@ -253,7 +253,7 @@
      auth))))
 
 (defn locations-migrationJobs-setIamPolicy$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/setIamPolicy
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/setIamPolicy
   
   Required parameters: resource
   
@@ -289,7 +289,7 @@
      auth))))
 
 (defn locations-migrationJobs-restart$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/restart
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/restart
   
   Required parameters: name
   
@@ -321,7 +321,7 @@
      auth))))
 
 (defn locations-migrationJobs-patch$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/patch
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/patch
   
   Required parameters: name
   
@@ -330,6 +330,7 @@
   Body: 
   
   {:labels {},
+   :dumpType string,
    :reverseSshConnectivity {:vmIp string,
                             :vmPort integer,
                             :vm string,
@@ -381,7 +382,7 @@
      auth))))
 
 (defn locations-migrationJobs-testIamPermissions$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/testIamPermissions
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/testIamPermissions
   
   Required parameters: resource
   
@@ -413,7 +414,7 @@
      auth))))
 
 (defn locations-migrationJobs-generateSshScript$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/generateSshScript
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/generateSshScript
   
   Required parameters: migrationJob
   
@@ -450,7 +451,7 @@
      auth))))
 
 (defn locations-migrationJobs-create$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/create
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/create
   
   Required parameters: parent
   
@@ -459,6 +460,7 @@
   Body: 
   
   {:labels {},
+   :dumpType string,
    :reverseSshConnectivity {:vmIp string,
                             :vmPort integer,
                             :vm string,
@@ -510,7 +512,7 @@
      auth))))
 
 (defn locations-migrationJobs-start$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/start
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/start
   
   Required parameters: name
   
@@ -542,7 +544,7 @@
      auth))))
 
 (defn locations-migrationJobs-delete$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/delete
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/delete
   
   Required parameters: name
   
@@ -568,7 +570,7 @@
      auth))))
 
 (defn locations-migrationJobs-getIamPolicy$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/getIamPolicy
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/getIamPolicy
   
   Required parameters: resource
   
@@ -594,7 +596,7 @@
      auth))))
 
 (defn locations-migrationJobs-stop$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/stop
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/stop
   
   Required parameters: name
   
@@ -626,7 +628,7 @@
      auth))))
 
 (defn locations-migrationJobs-list$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/list
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/list
   
   Required parameters: parent
   
@@ -652,7 +654,7 @@
      auth))))
 
 (defn locations-migrationJobs-verify$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/verify
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/verify
   
   Required parameters: name
   
@@ -662,6 +664,7 @@
   
   {:updateMask string,
    :migrationJob {:labels {},
+                  :dumpType string,
                   :reverseSshConnectivity ReverseSshConnectivity,
                   :destinationDatabase DatabaseType,
                   :dumpPath string,
@@ -709,7 +712,7 @@
      auth))))
 
 (defn locations-migrationJobs-resume$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/resume
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/resume
   
   Required parameters: name
   
@@ -717,7 +720,7 @@
   
   Body: 
   
-  {}
+  {:skipValidation boolean}
   
   Resume a migration job that is currently stopped and is resumable (was stopped during CDC phase)."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -741,7 +744,7 @@
      auth))))
 
 (defn locations-migrationJobs-generateTcpProxyScript$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/generateTcpProxyScript
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/generateTcpProxyScript
   
   Required parameters: migrationJob
   
@@ -776,7 +779,7 @@
      auth))))
 
 (defn locations-migrationJobs-promote$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/migrationJobs/promote
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/promote
   
   Required parameters: name
   
@@ -808,7 +811,7 @@
      auth))))
 
 (defn locations-connectionProfiles-list$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/connectionProfiles/list
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles/list
   
   Required parameters: parent
   
@@ -834,7 +837,7 @@
      auth))))
 
 (defn locations-connectionProfiles-get$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/connectionProfiles/get
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles/get
   
   Required parameters: name
   
@@ -860,7 +863,7 @@
      auth))))
 
 (defn locations-connectionProfiles-create$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/connectionProfiles/create
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles/create
   
   Required parameters: parent
   
@@ -945,7 +948,7 @@
      auth))))
 
 (defn locations-connectionProfiles-patch$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/connectionProfiles/patch
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles/patch
   
   Required parameters: name
   
@@ -1030,7 +1033,7 @@
      auth))))
 
 (defn locations-connectionProfiles-delete$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/connectionProfiles/delete
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles/delete
   
   Required parameters: name
   
@@ -1056,7 +1059,7 @@
      auth))))
 
 (defn locations-connectionProfiles-setIamPolicy$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/connectionProfiles/setIamPolicy
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles/setIamPolicy
   
   Required parameters: resource
   
@@ -1092,7 +1095,7 @@
      auth))))
 
 (defn locations-connectionProfiles-getIamPolicy$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/connectionProfiles/getIamPolicy
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles/getIamPolicy
   
   Required parameters: resource
   
@@ -1118,7 +1121,7 @@
      auth))))
 
 (defn locations-connectionProfiles-testIamPermissions$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/connectionProfiles/testIamPermissions
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.connectionProfiles/testIamPermissions
   
   Required parameters: resource
   
@@ -1150,7 +1153,7 @@
      auth))))
 
 (defn locations-privateConnections-create$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/privateConnections/create
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections/create
   
   Required parameters: parent
   
@@ -1189,7 +1192,7 @@
      auth))))
 
 (defn locations-privateConnections-get$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/privateConnections/get
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections/get
   
   Required parameters: name
   
@@ -1215,7 +1218,7 @@
      auth))))
 
 (defn locations-privateConnections-list$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/privateConnections/list
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections/list
   
   Required parameters: parent
   
@@ -1241,7 +1244,7 @@
      auth))))
 
 (defn locations-privateConnections-delete$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/privateConnections/delete
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections/delete
   
   Required parameters: name
   
@@ -1267,7 +1270,7 @@
      auth))))
 
 (defn locations-privateConnections-setIamPolicy$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/privateConnections/setIamPolicy
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections/setIamPolicy
   
   Required parameters: resource
   
@@ -1303,7 +1306,7 @@
      auth))))
 
 (defn locations-privateConnections-getIamPolicy$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/privateConnections/getIamPolicy
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections/getIamPolicy
   
   Required parameters: resource
   
@@ -1329,7 +1332,7 @@
      auth))))
 
 (defn locations-privateConnections-testIamPermissions$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/privateConnections/testIamPermissions
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections/testIamPermissions
   
   Required parameters: resource
   
@@ -1361,7 +1364,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-rollback$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/rollback
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/rollback
   
   Required parameters: name
   
@@ -1393,7 +1396,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-describeConversionWorkspaceRevisions$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/describeConversionWorkspaceRevisions
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/describeConversionWorkspaceRevisions
   
   Required parameters: conversionWorkspace
   
@@ -1419,7 +1422,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-convert$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/convert
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/convert
   
   Required parameters: name
   
@@ -1451,7 +1454,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-get$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/get
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/get
   
   Required parameters: name
   
@@ -1477,7 +1480,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-setIamPolicy$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/setIamPolicy
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/setIamPolicy
   
   Required parameters: resource
   
@@ -1513,7 +1516,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-patch$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/patch
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/patch
   
   Required parameters: name
   
@@ -1554,7 +1557,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-testIamPermissions$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/testIamPermissions
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/testIamPermissions
   
   Required parameters: resource
   
@@ -1586,7 +1589,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-searchBackgroundJobs$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/searchBackgroundJobs
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/searchBackgroundJobs
   
   Required parameters: conversionWorkspace
   
@@ -1612,7 +1615,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-create$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/create
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/create
   
   Required parameters: parent
   
@@ -1653,7 +1656,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-delete$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/delete
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/delete
   
   Required parameters: name
   
@@ -1679,7 +1682,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-getIamPolicy$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/getIamPolicy
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/getIamPolicy
   
   Required parameters: resource
   
@@ -1705,7 +1708,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-seed$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/seed
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/seed
   
   Required parameters: name
   
@@ -1739,7 +1742,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-list$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/list
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/list
   
   Required parameters: parent
   
@@ -1765,7 +1768,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-commit$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/commit
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/commit
   
   Required parameters: name
   
@@ -1797,7 +1800,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-apply$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/apply
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/apply
   
   Required parameters: name
   
@@ -1832,7 +1835,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-describeDatabaseEntities$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/describeDatabaseEntities
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces/describeDatabaseEntities
   
   Required parameters: conversionWorkspace
   
@@ -1858,7 +1861,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-mappingRules-create$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/mappingRules/create
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces.mappingRules/create
   
   Required parameters: parent
   
@@ -1940,7 +1943,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-mappingRules-delete$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/mappingRules/delete
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces.mappingRules/delete
   
   Required parameters: name
   
@@ -1966,7 +1969,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-mappingRules-list$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/mappingRules/list
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces.mappingRules/list
   
   Required parameters: parent
   
@@ -1992,7 +1995,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-mappingRules-get$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/mappingRules/get
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces.mappingRules/get
   
   Required parameters: name
   
@@ -2018,7 +2021,7 @@
      auth))))
 
 (defn locations-conversionWorkspaces-mappingRules-import$
-  "https://cloud.google.com/database-migration/api/reference/rest/v1/projects/locations/conversionWorkspaces/mappingRules/import
+  "https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.conversionWorkspaces.mappingRules/import
   
   Required parameters: parent
   

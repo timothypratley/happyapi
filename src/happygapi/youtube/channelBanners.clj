@@ -1,13 +1,13 @@
 (ns happygapi.youtube.channelBanners
   "YouTube Data API v3: channelBanners.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/channelBanners"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn insert$
-  "https://developers.google.com/youtube/api/reference/rest/v3/channelBanners/insert
+  "https://developers.google.com/youtube/v3/docs/channelBanners/insert
   
   Required parameters: none
   

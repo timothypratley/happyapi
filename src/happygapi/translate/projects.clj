@@ -1,13 +1,13 @@
 (ns happygapi.translate.projects
   "Cloud Translation API: projects.
   Integrates text translation into your website or application.
-  See: https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects"
+  See: https://cloud.google.com/translate/docs/setup"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn translateText$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/translateText
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects/translateText
   
   Required parameters: parent
   
@@ -47,7 +47,7 @@
      auth))))
 
 (defn romanizeText$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/romanizeText
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects/romanizeText
   
   Required parameters: parent
   
@@ -80,7 +80,7 @@
      auth))))
 
 (defn detectLanguage$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/detectLanguage
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects/detectLanguage
   
   Required parameters: parent
   
@@ -113,7 +113,7 @@
      auth))))
 
 (defn getSupportedLanguages$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/getSupportedLanguages
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects/getSupportedLanguages
   
   Required parameters: parent
   
@@ -140,7 +140,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/get
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/get
   
   Required parameters: name
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn locations-translateDocument$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/translateDocument
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/translateDocument
   
   Required parameters: parent
   
@@ -213,7 +213,7 @@
      auth))))
 
 (defn locations-getSupportedLanguages$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/getSupportedLanguages
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/getSupportedLanguages
   
   Required parameters: parent
   
@@ -240,7 +240,7 @@
      auth))))
 
 (defn locations-translateText$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/translateText
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/translateText
   
   Required parameters: parent
   
@@ -280,7 +280,7 @@
      auth))))
 
 (defn locations-batchTranslateDocument$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/batchTranslateDocument
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/batchTranslateDocument
   
   Required parameters: parent
   
@@ -321,7 +321,7 @@
      auth))))
 
 (defn locations-detectLanguage$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/detectLanguage
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/detectLanguage
   
   Required parameters: parent
   
@@ -354,7 +354,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/list
   
   Required parameters: name
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn locations-romanizeText$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/romanizeText
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/romanizeText
   
   Required parameters: parent
   
@@ -414,7 +414,7 @@
      auth))))
 
 (defn locations-batchTranslateText$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/batchTranslateText
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/batchTranslateText
   
   Required parameters: parent
   
@@ -452,7 +452,7 @@
      auth))))
 
 (defn locations-adaptiveMtTranslate$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtTranslate
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations/adaptiveMtTranslate
   
   Required parameters: parent
   
@@ -485,7 +485,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/operations/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.operations/list
   
   Required parameters: name
   
@@ -512,7 +512,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/operations/get
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.operations/get
   
   Required parameters: name
   
@@ -539,7 +539,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/operations/delete
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -566,7 +566,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/operations/cancel
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -599,7 +599,7 @@
      auth))))
 
 (defn locations-operations-wait$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/operations/wait
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.operations/wait
   
   Required parameters: name
   
@@ -632,7 +632,7 @@
      auth))))
 
 (defn locations-glossaries-create$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/create
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries/create
   
   Required parameters: parent
   
@@ -672,7 +672,7 @@
      auth))))
 
 (defn locations-glossaries-patch$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/patch
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries/patch
   
   Required parameters: name
   
@@ -712,7 +712,7 @@
      auth))))
 
 (defn locations-glossaries-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries/list
   
   Required parameters: parent
   
@@ -739,7 +739,7 @@
      auth))))
 
 (defn locations-glossaries-get$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/get
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries/get
   
   Required parameters: name
   
@@ -766,7 +766,7 @@
      auth))))
 
 (defn locations-glossaries-delete$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/delete
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries/delete
   
   Required parameters: name
   
@@ -793,7 +793,7 @@
      auth))))
 
 (defn locations-glossaries-glossaryEntries-get$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/glossaryEntries/get
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries.glossaryEntries/get
   
   Required parameters: name
   
@@ -820,7 +820,7 @@
      auth))))
 
 (defn locations-glossaries-glossaryEntries-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/glossaryEntries/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries.glossaryEntries/list
   
   Required parameters: parent
   
@@ -847,7 +847,7 @@
      auth))))
 
 (defn locations-glossaries-glossaryEntries-create$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/glossaryEntries/create
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries.glossaryEntries/create
   
   Required parameters: parent
   
@@ -883,7 +883,7 @@
      auth))))
 
 (defn locations-glossaries-glossaryEntries-patch$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/glossaryEntries/patch
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries.glossaryEntries/patch
   
   Required parameters: name
   
@@ -919,7 +919,7 @@
      auth))))
 
 (defn locations-glossaries-glossaryEntries-delete$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/glossaries/glossaryEntries/delete
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.glossaries.glossaryEntries/delete
   
   Required parameters: name
   
@@ -946,7 +946,7 @@
      auth))))
 
 (defn locations-datasets-create$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/datasets/create
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.datasets/create
   
   Required parameters: parent
   
@@ -988,7 +988,7 @@
      auth))))
 
 (defn locations-datasets-get$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/datasets/get
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.datasets/get
   
   Required parameters: name
   
@@ -1015,7 +1015,7 @@
      auth))))
 
 (defn locations-datasets-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/datasets/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.datasets/list
   
   Required parameters: parent
   
@@ -1042,7 +1042,7 @@
      auth))))
 
 (defn locations-datasets-delete$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/datasets/delete
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.datasets/delete
   
   Required parameters: name
   
@@ -1069,7 +1069,7 @@
      auth))))
 
 (defn locations-datasets-importData$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/datasets/importData
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.datasets/importData
   
   Required parameters: dataset
   
@@ -1102,7 +1102,7 @@
      auth))))
 
 (defn locations-datasets-exportData$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/datasets/exportData
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.datasets/exportData
   
   Required parameters: dataset
   
@@ -1135,7 +1135,7 @@
      auth))))
 
 (defn locations-datasets-examples-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/datasets/examples/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.datasets.examples/list
   
   Required parameters: parent
   
@@ -1162,7 +1162,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-create$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/create
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets/create
   
   Required parameters: parent
   
@@ -1201,7 +1201,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-delete$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/delete
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets/delete
   
   Required parameters: name
   
@@ -1228,7 +1228,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-get$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/get
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets/get
   
   Required parameters: name
   
@@ -1255,7 +1255,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets/list
   
   Required parameters: parent
   
@@ -1282,7 +1282,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-importAdaptiveMtFile$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/importAdaptiveMtFile
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets/importAdaptiveMtFile
   
   Required parameters: parent
   
@@ -1318,7 +1318,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-adaptiveMtFiles-get$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/adaptiveMtFiles/get
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets.adaptiveMtFiles/get
   
   Required parameters: name
   
@@ -1345,7 +1345,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-adaptiveMtFiles-delete$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/adaptiveMtFiles/delete
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets.adaptiveMtFiles/delete
   
   Required parameters: name
   
@@ -1372,7 +1372,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-adaptiveMtFiles-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/adaptiveMtFiles/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets.adaptiveMtFiles/list
   
   Required parameters: parent
   
@@ -1399,7 +1399,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-adaptiveMtFiles-adaptiveMtSentences-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/adaptiveMtFiles/adaptiveMtSentences/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets.adaptiveMtFiles.adaptiveMtSentences/list
   
   Required parameters: parent
   
@@ -1426,7 +1426,7 @@
      auth))))
 
 (defn locations-adaptiveMtDatasets-adaptiveMtSentences-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/adaptiveMtDatasets/adaptiveMtSentences/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.adaptiveMtDatasets.adaptiveMtSentences/list
   
   Required parameters: parent
   
@@ -1453,7 +1453,7 @@
      auth))))
 
 (defn locations-models-create$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/models/create
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.models/create
   
   Required parameters: parent
   
@@ -1495,7 +1495,7 @@
      auth))))
 
 (defn locations-models-list$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/models/list
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.models/list
   
   Required parameters: parent
   
@@ -1522,7 +1522,7 @@
      auth))))
 
 (defn locations-models-get$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/models/get
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.models/get
   
   Required parameters: name
   
@@ -1549,7 +1549,7 @@
      auth))))
 
 (defn locations-models-delete$
-  "https://cloud.google.com/translate/docs/quickstartsapi/reference/rest/v3/projects/locations/models/delete
+  "https://cloud.google.com/translate/docs/reference/rest/v3/projects.locations.models/delete
   
   Required parameters: name
   

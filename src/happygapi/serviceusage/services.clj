@@ -1,13 +1,67 @@
 (ns happygapi.serviceusage.services
   "Service Usage API: services.
   Enables services that service consumers want to use on Google Cloud Platform, lists the available or enabled services, or disables services that service consumers no longer use.
-  See: https://cloud.google.com/service-usage/api/reference/rest/v1/services"
+  See: https://cloud.google.com/service-usage/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
+(defn batchGet$
+  "https://cloud.google.com/service-usage/docs/reference/rest/v1/services/batchGet
+  
+  Required parameters: parent
+  
+  Optional parameters: names
+  
+  Returns the service configurations and enabled states for a given list of services."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://serviceusage.googleapis.com/"
+     "v1/{+parent}/services:batchGet"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn list$
+  "https://cloud.google.com/service-usage/docs/reference/rest/v1/services/list
+  
+  Required parameters: parent
+  
+  Optional parameters: filter, pageSize, pageToken
+  
+  List all services available to the specified project, and the current state of those services with respect to the project. The list includes all public services, all services for which the calling user has the `servicemanagement.services.bind` permission, and all services that have already been enabled on the project. The list can be filtered to only include services in a specific state, for example to only include services enabled on the project. WARNING: If you need to query enabled services frequently or across an organization, you should use [Cloud Asset Inventory API](https://cloud.google.com/asset-inventory/docs/apis), which provides higher throughput and richer filtering capability."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://serviceusage.googleapis.com/"
+     "v1/{+parent}/services"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn enable$
-  "https://cloud.google.com/service-usage/api/reference/rest/v1/services/enable
+  "https://cloud.google.com/service-usage/docs/reference/rest/v1/services/enable
   
   Required parameters: name
   
@@ -39,35 +93,8 @@
       :as :json}
      auth))))
 
-(defn list$
-  "https://cloud.google.com/service-usage/api/reference/rest/v1/services/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize, filter
-  
-  List all services available to the specified project, and the current state of those services with respect to the project. The list includes all public services, all services for which the calling user has the `servicemanagement.services.bind` permission, and all services that have already been enabled on the project. The list can be filtered to only include services in a specific state, for example to only include services enabled on the project. WARNING: If you need to query enabled services frequently or across an organization, you should use [Cloud Asset Inventory API](https://cloud.google.com/asset-inventory/docs/apis), which provides higher throughput and richer filtering capability."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://serviceusage.googleapis.com/"
-     "v1/{+parent}/services"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn batchEnable$
-  "https://cloud.google.com/service-usage/api/reference/rest/v1/services/batchEnable
+  "https://cloud.google.com/service-usage/docs/reference/rest/v1/services/batchEnable
   
   Required parameters: parent
   
@@ -99,62 +126,8 @@
       :as :json}
      auth))))
 
-(defn get$
-  "https://cloud.google.com/service-usage/api/reference/rest/v1/services/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Returns the service configuration and enabled state for a given service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://serviceusage.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn batchGet$
-  "https://cloud.google.com/service-usage/api/reference/rest/v1/services/batchGet
-  
-  Required parameters: parent
-  
-  Optional parameters: names
-  
-  Returns the service configurations and enabled states for a given list of services."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://serviceusage.googleapis.com/"
-     "v1/{+parent}/services:batchGet"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn disable$
-  "https://cloud.google.com/service-usage/api/reference/rest/v1/services/disable
+  "https://cloud.google.com/service-usage/docs/reference/rest/v1/services/disable
   
   Required parameters: name
   
@@ -181,6 +154,33 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn get$
+  "https://cloud.google.com/service-usage/docs/reference/rest/v1/services/get
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Returns the service configuration and enabled state for a given service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://serviceusage.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

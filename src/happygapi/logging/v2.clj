@@ -1,13 +1,13 @@
 (ns happygapi.logging.v2
   "Cloud Logging API: v2.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/v2"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn $
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/getCmekSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/getCmekSettings
   
   Required parameters: name
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/updateCmekSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/updateCmekSettings
   
   Required parameters: name
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/getSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/getSettings
   
   Required parameters: name
   
@@ -101,7 +101,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/updateSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/updateSettings
   
   Required parameters: name
   

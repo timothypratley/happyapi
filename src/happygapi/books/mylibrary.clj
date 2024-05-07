@@ -1,13 +1,13 @@
 (ns happygapi.books.mylibrary
   "Books API: mylibrary.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn annotations-delete$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/annotations/delete
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/annotations/delete
   
   Required parameters: annotationId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn annotations-insert$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/annotations/insert
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/annotations/insert
   
   Required parameters: none
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn annotations-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/annotations/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/annotations/list
   
   Required parameters: none
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn annotations-summary$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/annotations/summary
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/annotations/summary
   
   Required parameters: layerIds, volumeId
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn annotations-update$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/annotations/update
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/annotations/update
   
   Required parameters: annotationId
   
@@ -249,7 +249,7 @@
      auth))))
 
 (defn bookshelves-addVolume$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/bookshelves/addVolume
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/bookshelves/addVolume
   
   Required parameters: shelf, volumeId
   
@@ -275,7 +275,7 @@
      auth))))
 
 (defn bookshelves-clearVolumes$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/bookshelves/clearVolumes
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/bookshelves/clearVolumes
   
   Required parameters: shelf
   
@@ -301,7 +301,7 @@
      auth))))
 
 (defn bookshelves-get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/bookshelves/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/bookshelves/get
   
   Required parameters: shelf
   
@@ -327,7 +327,7 @@
      auth))))
 
 (defn bookshelves-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/bookshelves/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/bookshelves/list
   
   Required parameters: none
   
@@ -353,7 +353,7 @@
      auth))))
 
 (defn bookshelves-moveVolume$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/bookshelves/moveVolume
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/bookshelves/moveVolume
   
   Required parameters: shelf, volumeId, volumePosition
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn bookshelves-removeVolume$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/bookshelves/removeVolume
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/bookshelves/removeVolume
   
   Required parameters: shelf, volumeId
   
@@ -407,7 +407,7 @@
      auth))))
 
 (defn bookshelves-volumes-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/bookshelves/volumes/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/bookshelves/volumes/list
   
   Required parameters: shelf
   
@@ -433,7 +433,7 @@
      auth))))
 
 (defn readingpositions-get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/readingpositions/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/readingpositions/get
   
   Required parameters: volumeId
   
@@ -459,7 +459,7 @@
      auth))))
 
 (defn readingpositions-setPosition$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/mylibrary/readingpositions/setPosition
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/mylibrary/readingpositions/setPosition
   
   Required parameters: volumeId, position, timestamp
   

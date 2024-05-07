@@ -1,13 +1,13 @@
 (ns happygapi.firebasestorage.projects
   "Cloud Storage for Firebase API: projects.
   The Cloud Storage for Firebase API enables programmatic management of Cloud Storage buckets for use in Firebase projects
-  See: https://firebase.google.com/docs/storageapi/reference/rest/v1beta/projects"
+  See: https://firebase.google.com/docs/storage"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn buckets-get$
-  "https://firebase.google.com/docs/storageapi/reference/rest/v1beta/projects/buckets/get
+  "https://firebase.google.com/docs/storage
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn buckets-list$
-  "https://firebase.google.com/docs/storageapi/reference/rest/v1beta/projects/buckets/list
+  "https://firebase.google.com/docs/storage
   
   Required parameters: parent
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn buckets-addFirebase$
-  "https://firebase.google.com/docs/storageapi/reference/rest/v1beta/projects/buckets/addFirebase
+  "https://firebase.google.com/docs/storage
   
   Required parameters: bucket
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn buckets-removeFirebase$
-  "https://firebase.google.com/docs/storageapi/reference/rest/v1beta/projects/buckets/removeFirebase
+  "https://firebase.google.com/docs/storage
   
   Required parameters: bucket
   

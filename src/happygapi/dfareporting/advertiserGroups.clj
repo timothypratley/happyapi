@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.advertiserGroups
   "Campaign Manager 360 API: advertiserGroups.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/advertiserGroups"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/advertiserGroups/delete
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/advertiserGroups/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/advertiserGroups/insert
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/advertiserGroups/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/advertiserGroups/update
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -149,7 +149,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/advertiserGroups/patch
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   

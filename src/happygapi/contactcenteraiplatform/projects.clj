@@ -1,13 +1,13 @@
 (ns happygapi.contactcenteraiplatform.projects
   "Contact Center AI Platform API: projects.
   
-  See: https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects"
+  See: https://cloud.google.com/solutions/contact-center-ai-platform"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-queryContactCenterQuota$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/queryContactCenterQuota
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/queryContactCenterQuota
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/list
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/list
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/get
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/get
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/operations/list
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/operations/list
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/operations/get
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/operations/get
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/operations/delete
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/operations/delete
   
   Required parameters: name
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/operations/cancel
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/operations/cancel
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-contactCenters-list$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/contactCenters/list
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/contactCenters/list
   
   Required parameters: parent
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-contactCenters-get$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/contactCenters/get
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/contactCenters/get
   
   Required parameters: name
   
@@ -247,7 +247,7 @@
      auth))))
 
 (defn locations-contactCenters-create$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/contactCenters/create
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/contactCenters/create
   
   Required parameters: parent
   
@@ -267,6 +267,8 @@
                 :emailMapping string},
    :privateComponents [string],
    :state string,
+   :normal {},
+   :early {},
    :updateTime string,
    :adminUser {:givenName string, :familyName string},
    :ccaipManagedUsers boolean,
@@ -300,7 +302,7 @@
      auth))))
 
 (defn locations-contactCenters-patch$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/contactCenters/patch
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/contactCenters/patch
   
   Required parameters: name
   
@@ -320,6 +322,8 @@
                 :emailMapping string},
    :privateComponents [string],
    :state string,
+   :normal {},
+   :early {},
    :updateTime string,
    :adminUser {:givenName string, :familyName string},
    :ccaipManagedUsers boolean,
@@ -353,7 +357,7 @@
      auth))))
 
 (defn locations-contactCenters-delete$
-  "https://cloud.google.com/solutions/contact-center-ai-platformapi/reference/rest/v1alpha1/projects/locations/contactCenters/delete
+  "https://cloud.google.com/solutions/contact-center-ai-platform/v1alpha1/docs/projects/locations/contactCenters/delete
   
   Required parameters: name
   

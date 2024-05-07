@@ -1,13 +1,13 @@
 (ns happygapi.analyticshub.projects
   "Analytics Hub API: projects.
   Exchange data and analytics assets securely and efficiently.
-  See: https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/bigquery/docs/analytics-hub-introduction"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-dataExchanges-get$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/get
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn locations-dataExchanges-setIamPolicy$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/setIamPolicy
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn locations-dataExchanges-patch$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/patch
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -112,7 +112,7 @@
      auth))))
 
 (defn locations-dataExchanges-testIamPermissions$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/testIamPermissions
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -145,7 +145,7 @@
      auth))))
 
 (defn locations-dataExchanges-create$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/create
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: parent
   
@@ -186,7 +186,7 @@
      auth))))
 
 (defn locations-dataExchanges-listSubscriptions$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listSubscriptions
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -213,7 +213,7 @@
      auth))))
 
 (defn locations-dataExchanges-delete$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/delete
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -240,7 +240,7 @@
      auth))))
 
 (defn locations-dataExchanges-getIamPolicy$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/getIamPolicy
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -273,7 +273,7 @@
      auth))))
 
 (defn locations-dataExchanges-list$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/list
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: parent
   
@@ -300,7 +300,7 @@
      auth))))
 
 (defn locations-dataExchanges-subscribe$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/subscribe
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -333,7 +333,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-get$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/get
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -360,7 +360,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-setIamPolicy$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/setIamPolicy
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -397,7 +397,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-patch$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/patch
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -420,7 +420,8 @@
    :categories [string],
    :primaryContact string,
    :bigqueryDataset {:dataset string,
-                     :selectedResources [SelectedResource]}}
+                     :selectedResources [SelectedResource],
+                     :restrictedExportPolicy RestrictedExportPolicy}}
   
   Updates an existing listing."
   {:scopes ["https://www.googleapis.com/auth/bigquery"
@@ -445,7 +446,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-testIamPermissions$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/testIamPermissions
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -478,7 +479,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-create$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/create
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: parent
   
@@ -501,7 +502,8 @@
    :categories [string],
    :primaryContact string,
    :bigqueryDataset {:dataset string,
-                     :selectedResources [SelectedResource]}}
+                     :selectedResources [SelectedResource],
+                     :restrictedExportPolicy RestrictedExportPolicy}}
   
   Creates a new listing."
   {:scopes ["https://www.googleapis.com/auth/bigquery"
@@ -526,7 +528,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-listSubscriptions$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/listSubscriptions
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -553,7 +555,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-delete$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/delete
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -580,7 +582,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-getIamPolicy$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/getIamPolicy
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -613,7 +615,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-list$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/list
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: parent
   
@@ -640,7 +642,7 @@
      auth))))
 
 (defn locations-dataExchanges-listings-subscribe$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/dataExchanges/listings/subscribe
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -677,7 +679,7 @@
      auth))))
 
 (defn locations-subscriptions-refresh$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/subscriptions/refresh
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -710,7 +712,7 @@
      auth))))
 
 (defn locations-subscriptions-get$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/subscriptions/get
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -737,7 +739,7 @@
      auth))))
 
 (defn locations-subscriptions-list$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/subscriptions/list
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: parent
   
@@ -764,7 +766,7 @@
      auth))))
 
 (defn locations-subscriptions-revoke$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/subscriptions/revoke
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -797,7 +799,7 @@
      auth))))
 
 (defn locations-subscriptions-delete$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/subscriptions/delete
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: name
   
@@ -824,7 +826,7 @@
      auth))))
 
 (defn locations-subscriptions-getIamPolicy$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/subscriptions/getIamPolicy
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   
@@ -857,7 +859,7 @@
      auth))))
 
 (defn locations-subscriptions-setIamPolicy$
-  "https://cloud.google.com/bigquery/docs/analytics-hub-introductionapi/reference/rest/v1/projects/locations/subscriptions/setIamPolicy
+  "https://cloud.google.com/bigquery/docs/analytics-hub-introduction
   
   Required parameters: resource
   

@@ -1,13 +1,13 @@
 (ns happygapi.content.pos
   "Content API for Shopping: pos.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pos"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn custombatch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pos/custombatch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -46,7 +46,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pos/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, targetMerchantId, storeCode
   
@@ -74,7 +74,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pos/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, targetMerchantId, storeCode
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pos/insert
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, targetMerchantId
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn inventory$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pos/inventory
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, targetMerchantId
   
@@ -184,7 +184,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pos/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, targetMerchantId
   
@@ -210,7 +210,7 @@
      auth))))
 
 (defn sale$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pos/sale
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, targetMerchantId
   

@@ -1,13 +1,13 @@
 (ns happygapi.calendar.events
   "Calendar API: events.
   Manipulates events and other calendar data.
-  See: https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events"
+  See: https://developers.google.com/calendar"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/get
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId, eventId
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/insert
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId
   
@@ -153,7 +153,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/patch
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId, eventId
   
@@ -270,7 +270,7 @@
      auth))))
 
 (defn move$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/move
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId, destination, eventId
   
@@ -299,7 +299,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/update
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId, eventId
   
@@ -416,7 +416,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/delete
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId, eventId
   
@@ -443,7 +443,7 @@
      auth))))
 
 (defn instances$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/instances
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId, eventId
   
@@ -472,7 +472,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/list
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId
   
@@ -501,7 +501,7 @@
      auth))))
 
 (defn watch$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/watch
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId
   
@@ -545,7 +545,7 @@
      auth))))
 
 (defn quickAdd$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/quickAdd
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId, text
   
@@ -572,7 +572,7 @@
      auth))))
 
 (defn import$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/events/import
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId
   
@@ -666,7 +666,8 @@
                :self boolean},
    :transparency string}
   
-  Imports an event. This operation is used to add a private copy of an existing event to a calendar."
+  Imports an event. This operation is used to add a private copy of an existing event to a calendar. Only events with an eventType of default may be imported.
+  Deprecated behavior: If a non-default event is imported, its type will be changed to default and any event-type-specific properties it may have will be dropped."
   {:scopes ["https://www.googleapis.com/auth/calendar"
             "https://www.googleapis.com/auth/calendar.events"]}
   [auth parameters body]

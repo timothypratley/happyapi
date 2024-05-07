@@ -1,13 +1,13 @@
 (ns happygapi.artifactregistry.media
   "Artifact Registry API: media.
   Store and manage build artifacts in a scalable and integrated service built on Google infrastructure.
-  See: https://cloud.google.com/artifacts/docs/api/reference/rest/v1/media"
+  See: https://cloud.google.com/artifact-registry/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn download$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/media/download
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   

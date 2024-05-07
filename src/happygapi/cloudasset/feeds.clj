@@ -1,13 +1,13 @@
 (ns happygapi.cloudasset.feeds
   "Cloud Asset API: feeds.
   The Cloud Asset API manages the history and inventory of Google Cloud resources.
-  See: https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/feeds"
+  See: https://cloud.google.com/asset-inventory/docs/export-asset-metadata"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/feeds/create
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1/feeds/create
   
   Required parameters: parent
   
@@ -46,7 +46,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/feeds/get
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1/feeds/get
   
   Required parameters: name
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/feeds/list
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1/feeds/list
   
   Required parameters: parent
   
@@ -98,7 +98,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/feeds/patch
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1/feeds/patch
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/feeds/delete
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1/feeds/delete
   
   Required parameters: name
   

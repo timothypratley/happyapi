@@ -1,13 +1,13 @@
 (ns happygapi.cloudresourcemanager.effectiveTags
   "Cloud Resource Manager API: effectiveTags.
   Creates, reads, and updates metadata for Google Cloud Platform resource containers.
-  See: https://cloud.google.com/resource-managerapi/reference/rest/v3/effectiveTags"
+  See: https://cloud.google.com/resource-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/effectiveTags/list
+  "https://cloud.google.com/resource-manager/reference/rest/v3/effectiveTags/list
   
   Required parameters: none
   

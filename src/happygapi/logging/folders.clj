@@ -1,13 +1,13 @@
 (ns happygapi.logging.folders
   "Cloud Logging API: folders.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/folders"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getCmekSettings$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/getCmekSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/getCmekSettings
   
   Required parameters: name
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn getSettings$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/getSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/getSettings
   
   Required parameters: name
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn updateSettings$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/updateSettings
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/updateSettings
   
   Required parameters: name
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/list
   
   Required parameters: name
   
@@ -135,7 +135,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/get
   
   Required parameters: name
   
@@ -164,7 +164,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/operations/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/operations/list
   
   Required parameters: name
   
@@ -193,7 +193,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/operations/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/operations/get
   
   Required parameters: name
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/operations/cancel
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/operations/cancel
   
   Required parameters: name
   
@@ -255,7 +255,7 @@
      auth))))
 
 (defn locations-buckets-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/list
   
   Required parameters: parent
   
@@ -284,7 +284,7 @@
      auth))))
 
 (defn locations-buckets-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/get
   
   Required parameters: name
   
@@ -313,7 +313,7 @@
      auth))))
 
 (defn locations-buckets-createAsync$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/createAsync
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/createAsync
   
   Required parameters: parent
   
@@ -359,7 +359,7 @@
      auth))))
 
 (defn locations-buckets-updateAsync$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/updateAsync
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/updateAsync
   
   Required parameters: name
   
@@ -405,7 +405,7 @@
      auth))))
 
 (defn locations-buckets-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/create
   
   Required parameters: parent
   
@@ -451,7 +451,7 @@
      auth))))
 
 (defn locations-buckets-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/patch
   
   Required parameters: name
   
@@ -497,7 +497,7 @@
      auth))))
 
 (defn locations-buckets-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/delete
   
   Required parameters: name
   
@@ -524,7 +524,7 @@
      auth))))
 
 (defn locations-buckets-undelete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/undelete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/undelete
   
   Required parameters: name
   
@@ -556,8 +556,115 @@
       :as :json}
      auth))))
 
+(defn locations-buckets-views-setIamPolicy$
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/setIamPolicy
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:policy {:version integer,
+            :bindings [Binding],
+            :auditConfigs [AuditConfig],
+            :etag string},
+   :updateMask string}
+  
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/logging.admin"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://logging.googleapis.com/"
+     "v2/{+resource}:setIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-buckets-views-getIamPolicy$
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/getIamPolicy
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:options {:requestedPolicyVersion integer}}
+  
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"
+            "https://www.googleapis.com/auth/logging.admin"
+            "https://www.googleapis.com/auth/logging.read"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://logging.googleapis.com/"
+     "v2/{+resource}:getIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-buckets-views-testIamPermissions$
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/testIamPermissions
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:permissions [string]}
+  
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"
+            "https://www.googleapis.com/auth/logging.admin"
+            "https://www.googleapis.com/auth/logging.read"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://logging.googleapis.com/"
+     "v2/{+resource}:testIamPermissions"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-buckets-views-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/views/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/list
   
   Required parameters: parent
   
@@ -586,7 +693,7 @@
      auth))))
 
 (defn locations-buckets-views-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/views/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/get
   
   Required parameters: name
   
@@ -615,7 +722,7 @@
      auth))))
 
 (defn locations-buckets-views-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/views/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/create
   
   Required parameters: parent
   
@@ -652,7 +759,7 @@
      auth))))
 
 (defn locations-buckets-views-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/views/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/patch
   
   Required parameters: name
   
@@ -689,7 +796,7 @@
      auth))))
 
 (defn locations-buckets-views-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/views/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/delete
   
   Required parameters: name
   
@@ -716,7 +823,7 @@
      auth))))
 
 (defn locations-buckets-views-logs-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/views/logs/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/views/logs/list
   
   Required parameters: parent
   
@@ -745,7 +852,7 @@
      auth))))
 
 (defn locations-buckets-links-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/links/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/links/list
   
   Required parameters: parent
   
@@ -774,7 +881,7 @@
      auth))))
 
 (defn locations-buckets-links-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/links/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/links/get
   
   Required parameters: name
   
@@ -803,7 +910,7 @@
      auth))))
 
 (defn locations-buckets-links-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/links/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/links/create
   
   Required parameters: parent
   
@@ -840,7 +947,7 @@
      auth))))
 
 (defn locations-buckets-links-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/buckets/links/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/buckets/links/delete
   
   Required parameters: name
   
@@ -867,7 +974,7 @@
      auth))))
 
 (defn locations-savedQueries-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/savedQueries/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/savedQueries/list
   
   Required parameters: parent
   
@@ -896,7 +1003,7 @@
      auth))))
 
 (defn locations-savedQueries-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/savedQueries/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/savedQueries/create
   
   Required parameters: parent
   
@@ -939,7 +1046,7 @@
      auth))))
 
 (defn locations-savedQueries-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/savedQueries/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/savedQueries/delete
   
   Required parameters: name
   
@@ -966,7 +1073,7 @@
      auth))))
 
 (defn locations-recentQueries-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/locations/recentQueries/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/locations/recentQueries/list
   
   Required parameters: parent
   
@@ -995,7 +1102,7 @@
      auth))))
 
 (defn exclusions-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/exclusions/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/exclusions/list
   
   Required parameters: parent
   
@@ -1024,7 +1131,7 @@
      auth))))
 
 (defn exclusions-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/exclusions/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/exclusions/get
   
   Required parameters: name
   
@@ -1053,7 +1160,7 @@
      auth))))
 
 (defn exclusions-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/exclusions/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/exclusions/create
   
   Required parameters: parent
   
@@ -1091,7 +1198,7 @@
      auth))))
 
 (defn exclusions-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/exclusions/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/exclusions/patch
   
   Required parameters: name
   
@@ -1129,7 +1236,7 @@
      auth))))
 
 (defn exclusions-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/exclusions/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/exclusions/delete
   
   Required parameters: name
   
@@ -1156,7 +1263,7 @@
      auth))))
 
 (defn sinks-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/sinks/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/sinks/list
   
   Required parameters: parent
   
@@ -1185,7 +1292,7 @@
      auth))))
 
 (defn sinks-get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/sinks/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/sinks/get
   
   Required parameters: sinkName
   
@@ -1214,7 +1321,7 @@
      auth))))
 
 (defn sinks-create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/sinks/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/sinks/create
   
   Required parameters: parent
   
@@ -1266,7 +1373,7 @@
      auth))))
 
 (defn sinks-update$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/sinks/update
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/sinks/update
   
   Required parameters: sinkName
   
@@ -1318,7 +1425,7 @@
      auth))))
 
 (defn sinks-patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/sinks/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/sinks/patch
   
   Required parameters: sinkName
   
@@ -1370,7 +1477,7 @@
      auth))))
 
 (defn sinks-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/sinks/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/sinks/delete
   
   Required parameters: sinkName
   
@@ -1397,7 +1504,7 @@
      auth))))
 
 (defn logs-delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/logs/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/logs/delete
   
   Required parameters: logName
   
@@ -1424,7 +1531,7 @@
      auth))))
 
 (defn logs-list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/folders/logs/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/folders/logs/list
   
   Required parameters: parent
   

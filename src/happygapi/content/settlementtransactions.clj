@@ -1,13 +1,13 @@
 (ns happygapi.content.settlementtransactions
   "Content API for Shopping: settlementtransactions.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/settlementtransactions"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/settlementtransactions/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, settlementId
   

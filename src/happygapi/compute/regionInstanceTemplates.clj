@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionInstanceTemplates
   "Compute Engine API: regionInstanceTemplates.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceTemplates"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceTemplates/list
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceTemplates/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceTemplates/get
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceTemplates/get
   
   Required parameters: instanceTemplate, project, region
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceTemplates/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceTemplates/insert
   
   Required parameters: project, region
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceTemplates/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceTemplates/delete
   
   Required parameters: instanceTemplate, project, region
   

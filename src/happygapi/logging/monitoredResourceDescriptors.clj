@@ -1,13 +1,13 @@
 (ns happygapi.logging.monitoredResourceDescriptors
   "Cloud Logging API: monitoredResourceDescriptors.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/monitoredResourceDescriptors"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/monitoredResourceDescriptors/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/monitoredResourceDescriptors/list
   
   Required parameters: none
   

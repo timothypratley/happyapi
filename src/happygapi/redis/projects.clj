@@ -1,13 +1,13 @@
 (ns happygapi.redis.projects
   "Google Cloud Memorystore for Redis API: projects.
   Creates and manages Redis instances on the Google Cloud Platform.
-  See: https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/memorystore/docs/redis/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn locations-clusters-list$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/clusters/list
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.clusters/list
   
   Required parameters: parent
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn locations-clusters-get$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/clusters/get
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.clusters/get
   
   Required parameters: name
   
@@ -215,7 +215,7 @@
      auth))))
 
 (defn locations-clusters-patch$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/clusters/patch
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.clusters/patch
   
   Required parameters: name
   
@@ -223,7 +223,8 @@
   
   Body: 
   
-  {:uid string,
+  {:nodeType string,
+   :uid string,
    :name string,
    :stateInfo {:updateInfo UpdateInfo},
    :sizeGb integer,
@@ -233,13 +234,19 @@
                          :pscConfig PscConfig}],
    :authorizationMode string,
    :state string,
+   :deletionProtectionEnabled boolean,
    :shardCount integer,
+   :redisConfigs {},
    :pscConfigs [{:network string}],
+   :persistenceConfig {:mode string,
+                       :rdbConfig RDBConfig,
+                       :aofConfig AOFConfig},
    :pscConnections [{:pscConnectionId string,
                      :address string,
                      :forwardingRule string,
                      :projectId string,
                      :network string}],
+   :preciseSizeGb number,
    :replicaCount integer,
    :transitEncryptionMode string}
   
@@ -265,7 +272,7 @@
      auth))))
 
 (defn locations-clusters-delete$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/clusters/delete
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.clusters/delete
   
   Required parameters: name
   
@@ -291,7 +298,7 @@
      auth))))
 
 (defn locations-clusters-create$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/clusters/create
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.clusters/create
   
   Required parameters: parent
   
@@ -299,7 +306,8 @@
   
   Body: 
   
-  {:uid string,
+  {:nodeType string,
+   :uid string,
    :name string,
    :stateInfo {:updateInfo UpdateInfo},
    :sizeGb integer,
@@ -309,13 +317,19 @@
                          :pscConfig PscConfig}],
    :authorizationMode string,
    :state string,
+   :deletionProtectionEnabled boolean,
    :shardCount integer,
+   :redisConfigs {},
    :pscConfigs [{:network string}],
+   :persistenceConfig {:mode string,
+                       :rdbConfig RDBConfig,
+                       :aofConfig AOFConfig},
    :pscConnections [{:pscConnectionId string,
                      :address string,
                      :forwardingRule string,
                      :projectId string,
                      :network string}],
+   :preciseSizeGb number,
    :replicaCount integer,
    :transitEncryptionMode string}
   
@@ -341,7 +355,7 @@
      auth))))
 
 (defn locations-clusters-getCertificateAuthority$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/clusters/getCertificateAuthority
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.clusters/getCertificateAuthority
   
   Required parameters: name
   
@@ -367,7 +381,7 @@
      auth))))
 
 (defn locations-instances-failover$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/failover
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/failover
   
   Required parameters: name
   
@@ -399,7 +413,7 @@
      auth))))
 
 (defn locations-instances-get$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/get
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/get
   
   Required parameters: name
   
@@ -425,7 +439,7 @@
      auth))))
 
 (defn locations-instances-patch$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/patch
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/patch
   
   Required parameters: name
   
@@ -506,7 +520,7 @@
      auth))))
 
 (defn locations-instances-getAuthString$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/getAuthString
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/getAuthString
   
   Required parameters: name
   
@@ -532,7 +546,7 @@
      auth))))
 
 (defn locations-instances-rescheduleMaintenance$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/rescheduleMaintenance
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/rescheduleMaintenance
   
   Required parameters: name
   
@@ -564,7 +578,7 @@
      auth))))
 
 (defn locations-instances-create$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/create
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/create
   
   Required parameters: parent
   
@@ -645,7 +659,7 @@
      auth))))
 
 (defn locations-instances-delete$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/delete
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/delete
   
   Required parameters: name
   
@@ -671,7 +685,7 @@
      auth))))
 
 (defn locations-instances-export$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/export
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/export
   
   Required parameters: name
   
@@ -703,7 +717,7 @@
      auth))))
 
 (defn locations-instances-upgrade$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/upgrade
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/upgrade
   
   Required parameters: name
   
@@ -735,7 +749,7 @@
      auth))))
 
 (defn locations-instances-list$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/list
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/list
   
   Required parameters: parent
   
@@ -761,7 +775,7 @@
      auth))))
 
 (defn locations-instances-import$
-  "https://cloud.google.com/memorystore/docs/redis/api/reference/rest/v1/projects/locations/instances/import
+  "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/projects.locations.instances/import
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.disks
   "Compute Engine API: disks.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/disks"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/get
+  "https://cloud.google.com/products/compute/v1/docs/disks/get
   
   Required parameters: disk, project, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn stopAsyncReplication$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/stopAsyncReplication
+  "https://cloud.google.com/products/compute/v1/docs/disks/stopAsyncReplication
   
   Required parameters: disk, project, zone
   
@@ -62,7 +62,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/disks/setIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -104,7 +104,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/insert
+  "https://cloud.google.com/products/compute/v1/docs/disks/insert
   
   Required parameters: project, zone
   
@@ -201,7 +201,7 @@
      auth))))
 
 (defn startAsyncReplication$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/startAsyncReplication
+  "https://cloud.google.com/products/compute/v1/docs/disks/startAsyncReplication
   
   Required parameters: disk, project, zone
   
@@ -234,7 +234,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/disks/testIamPermissions
   
   Required parameters: project, resource, zone
   
@@ -268,7 +268,7 @@
      auth))))
 
 (defn createSnapshot$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/createSnapshot
+  "https://cloud.google.com/products/compute/v1/docs/disks/createSnapshot
   
   Required parameters: disk, project, zone
   
@@ -348,7 +348,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/disks/setLabels
   
   Required parameters: project, resource, zone
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/disks/aggregatedList
   
   Required parameters: project
   
@@ -409,7 +409,7 @@
      auth))))
 
 (defn removeResourcePolicies$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/removeResourcePolicies
+  "https://cloud.google.com/products/compute/v1/docs/disks/removeResourcePolicies
   
   Required parameters: disk, project, zone
   
@@ -442,7 +442,7 @@
      auth))))
 
 (defn stopGroupAsyncReplication$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/stopGroupAsyncReplication
+  "https://cloud.google.com/products/compute/v1/docs/disks/stopGroupAsyncReplication
   
   Required parameters: project, zone
   
@@ -475,7 +475,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/update
+  "https://cloud.google.com/products/compute/v1/docs/disks/update
   
   Required parameters: disk, project, zone
   
@@ -572,7 +572,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/delete
+  "https://cloud.google.com/products/compute/v1/docs/disks/delete
   
   Required parameters: disk, project, zone
   
@@ -599,7 +599,7 @@
      auth))))
 
 (defn resize$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/resize
+  "https://cloud.google.com/products/compute/v1/docs/disks/resize
   
   Required parameters: disk, project, zone
   
@@ -632,7 +632,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/disks/getIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -660,7 +660,7 @@
      auth))))
 
 (defn addResourcePolicies$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/addResourcePolicies
+  "https://cloud.google.com/products/compute/v1/docs/disks/addResourcePolicies
   
   Required parameters: disk, project, zone
   
@@ -693,7 +693,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/list
+  "https://cloud.google.com/products/compute/v1/docs/disks/list
   
   Required parameters: project, zone
   
@@ -721,7 +721,7 @@
      auth))))
 
 (defn bulkInsert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/disks/bulkInsert
+  "https://cloud.google.com/products/compute/v1/docs/disks/bulkInsert
   
   Required parameters: project, zone
   

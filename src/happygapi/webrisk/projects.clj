@@ -1,13 +1,13 @@
 (ns happygapi.webrisk.projects
   "Web Risk API: projects.
   
-  See: https://cloud.google.com/web-risk/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/security/products/web-risk"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn submissions-create$
-  "https://cloud.google.com/web-risk/api/reference/rest/v1/projects/submissions/create
+  "https://cloud.google.com/security/products/web-risk/v1/docs/projects/submissions/create
   
   Required parameters: parent
   
@@ -38,40 +38,34 @@
       :as :json}
      auth))))
 
-(defn operations-cancel$
-  "https://cloud.google.com/web-risk/api/reference/rest/v1/projects/operations/cancel
+(defn operations-list$
+  "https://cloud.google.com/security/products/web-risk/v1/docs/projects/operations/list
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: pageSize, filter, pageToken
   
-  Body: 
-  
-  {}
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes nil}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://webrisk.googleapis.com/"
-     "v1/{+name}:cancel"
+     "v1/{+name}/operations"
      #{:name}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn operations-delete$
-  "https://cloud.google.com/web-risk/api/reference/rest/v1/projects/operations/delete
+  "https://cloud.google.com/security/products/web-risk/v1/docs/projects/operations/delete
   
   Required parameters: name
   
@@ -97,7 +91,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/web-risk/api/reference/rest/v1/projects/operations/get
+  "https://cloud.google.com/security/products/web-risk/v1/docs/projects/operations/get
   
   Required parameters: name
   
@@ -122,27 +116,33 @@
       :as :json}
      auth))))
 
-(defn operations-list$
-  "https://cloud.google.com/web-risk/api/reference/rest/v1/projects/operations/list
+(defn operations-cancel$
+  "https://cloud.google.com/security/products/web-risk/v1/docs/projects/operations/cancel
   
   Required parameters: name
   
-  Optional parameters: filter, pageSize, pageToken
+  Optional parameters: none
   
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  Body: 
+  
+  {}
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
   {:scopes nil}
-  [auth parameters]
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/post
     (util/get-url
      "https://webrisk.googleapis.com/"
-     "v1/{+name}/operations"
+     "v1/{+name}:cancel"
      #{:name}
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

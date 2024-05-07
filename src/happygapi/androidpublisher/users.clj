@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.users
   "Google Play Android Developer API: users.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/users"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/users/create
+  "https://developers.google.com/android-publisher
   
   Required parameters: parent
   
@@ -47,7 +47,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/users/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: parent
   
@@ -73,7 +73,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/users/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: name
   
@@ -113,7 +113,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/users/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionSslPolicies
   "Compute Engine API: regionSslPolicies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionSslPolicies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslPolicies/list
+  "https://cloud.google.com/products/compute/v1/docs/regionSslPolicies/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslPolicies/get
+  "https://cloud.google.com/products/compute/v1/docs/regionSslPolicies/get
   
   Required parameters: project, region, sslPolicy
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslPolicies/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionSslPolicies/insert
   
   Required parameters: project, region
   
@@ -110,7 +110,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslPolicies/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionSslPolicies/delete
   
   Required parameters: project, region, sslPolicy
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslPolicies/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionSslPolicies/patch
   
   Required parameters: project, region, sslPolicy
   
@@ -184,7 +184,7 @@
      auth))))
 
 (defn listAvailableFeatures$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslPolicies/listAvailableFeatures
+  "https://cloud.google.com/products/compute/v1/docs/regionSslPolicies/listAvailableFeatures
   
   Required parameters: project, region
   

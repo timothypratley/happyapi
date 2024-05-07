@@ -1,13 +1,40 @@
 (ns happygapi.youtube.liveChatModerators
   "YouTube Data API v3: liveChatModerators.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/liveChatModerators"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
+(defn delete$
+  "https://developers.google.com/youtube/v3/docs/liveChatModerators/delete
+  
+  Required parameters: id
+  
+  Optional parameters: none
+  
+  Deletes a chat moderator."
+  {:scopes ["https://www.googleapis.com/auth/youtube"
+            "https://www.googleapis.com/auth/youtube.force-ssl"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:id})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://youtube.googleapis.com/"
+     "youtube/v3/liveChat/moderators"
+     #{:id}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn list$
-  "https://developers.google.com/youtube/api/reference/rest/v3/liveChatModerators/list
+  "https://developers.google.com/youtube/v3/docs/liveChatModerators/list
   
   Required parameters: liveChatId, part
   
@@ -35,7 +62,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/youtube/api/reference/rest/v3/liveChatModerators/insert
+  "https://developers.google.com/youtube/v3/docs/liveChatModerators/insert
   
   Required parameters: part
   
@@ -43,11 +70,11 @@
   
   Body: 
   
-  {:kind string,
-   :id string,
+  {:etag string,
    :snippet {:liveChatId string,
              :moderatorDetails ChannelProfileDetails},
-   :etag string}
+   :kind string,
+   :id string}
   
   Inserts a new resource into this collection."
   {:scopes ["https://www.googleapis.com/auth/youtube"
@@ -66,33 +93,6 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn delete$
-  "https://developers.google.com/youtube/api/reference/rest/v3/liveChatModerators/delete
-  
-  Required parameters: id
-  
-  Optional parameters: none
-  
-  Deletes a chat moderator."
-  {:scopes ["https://www.googleapis.com/auth/youtube"
-            "https://www.googleapis.com/auth/youtube.force-ssl"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:id})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://youtube.googleapis.com/"
-     "youtube/v3/liveChat/moderators"
-     #{:id}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

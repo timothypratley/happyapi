@@ -1,13 +1,13 @@
 (ns happygapi.workloadmanager.projects
   "Workload Manager API: projects.
   Workload Manager is a service that provides tooling for enterprise workloads to automate the deployment and validation of your workloads against best practices and recommendations.
-  See: https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/workload-manager/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-insights-writeInsight$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/insights/writeInsight
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.insights/writeInsight
   
   Required parameters: location
   
@@ -72,7 +72,8 @@
              :sapDiscovery SapDiscovery,
              :sqlserverValidation SqlserverValidation,
              :instanceId string},
-   :requestId string}
+   :requestId string,
+   :agentVersion string}
   
   Write the data insights to workload manager data warehouse."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -96,7 +97,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -122,7 +123,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -148,7 +149,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -174,7 +175,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -206,7 +207,7 @@
      auth))))
 
 (defn locations-evaluations-list$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/list
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations/list
   
   Required parameters: parent
   
@@ -232,7 +233,7 @@
      auth))))
 
 (defn locations-evaluations-get$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/get
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations/get
   
   Required parameters: name
   
@@ -258,7 +259,7 @@
      auth))))
 
 (defn locations-evaluations-create$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/create
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations/create
   
   Required parameters: parent
   
@@ -305,11 +306,11 @@
      auth))))
 
 (defn locations-evaluations-delete$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/delete
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations/delete
   
   Required parameters: name
   
-  Optional parameters: requestId
+  Optional parameters: requestId, force
   
   Deletes a single Evaluation."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -331,7 +332,7 @@
      auth))))
 
 (defn locations-evaluations-executions-list$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/executions/list
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations.executions/list
   
   Required parameters: parent
   
@@ -357,7 +358,7 @@
      auth))))
 
 (defn locations-evaluations-executions-get$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/executions/get
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations.executions/get
   
   Required parameters: name
   
@@ -383,7 +384,7 @@
      auth))))
 
 (defn locations-evaluations-executions-run$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/executions/run
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations.executions/run
   
   Required parameters: name
   
@@ -424,7 +425,7 @@
      auth))))
 
 (defn locations-evaluations-executions-delete$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/executions/delete
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations.executions/delete
   
   Required parameters: name
   
@@ -450,7 +451,7 @@
      auth))))
 
 (defn locations-evaluations-executions-results-list$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/executions/results/list
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations.executions.results/list
   
   Required parameters: parent
   
@@ -476,7 +477,7 @@
      auth))))
 
 (defn locations-evaluations-executions-scannedResources-list$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/evaluations/executions/scannedResources/list
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.evaluations.executions.scannedResources/list
   
   Required parameters: parent
   
@@ -502,7 +503,7 @@
      auth))))
 
 (defn locations-rules-list$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/rules/list
+  "https://cloud.google.com/workload-manager/docs/reference/rest/v1/projects.locations.rules/list
   
   Required parameters: parent
   
@@ -518,58 +519,6 @@
      "https://workloadmanager.googleapis.com/"
      "v1/{+parent}/rules"
      #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-workloadProfiles-list$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/workloadProfiles/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken, filter
-  
-  List workloads"
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://workloadmanager.googleapis.com/"
-     "v1/{+parent}/workloadProfiles"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-workloadProfiles-get$
-  "https://cloud.google.com/workload-manager/docsapi/reference/rest/v1/projects/locations/workloadProfiles/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets details of a single workload."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://workloadmanager.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
      parameters)
     (merge-with
      merge

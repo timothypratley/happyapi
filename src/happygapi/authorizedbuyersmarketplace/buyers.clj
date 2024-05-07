@@ -1,13 +1,13 @@
 (ns happygapi.authorizedbuyersmarketplace.buyers
   "Authorized Buyers Marketplace API: buyers.
   The Authorized Buyers Marketplace API lets buyers programmatically discover inventory; propose, retrieve and negotiate deals with publishers.
-  See: https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers"
+  See: https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn auctionPackages-get$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/auctionPackages/get
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.auctionPackages/get
   
   Required parameters: name
   
@@ -33,13 +33,13 @@
      auth))))
 
 (defn auctionPackages-list$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/auctionPackages/list
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.auctionPackages/list
   
   Required parameters: parent
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: pageSize, pageToken, filter
   
-  List the auction packages subscribed by a buyer and its clients."
+  List the auction packages. Buyers can use the URL path \"/v1/buyers/{accountId}/auctionPackages\" to list auction packages for the current buyer and its clients. Bidders can use the URL path \"/v1/bidders/{accountId}/auctionPackages\" to list auction packages for the bidder, its media planners, its buyers, and all their clients."
   {:scopes ["https://www.googleapis.com/auth/authorized-buyers-marketplace"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -59,7 +59,7 @@
      auth))))
 
 (defn auctionPackages-subscribe$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/auctionPackages/subscribe
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.auctionPackages/subscribe
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn auctionPackages-unsubscribe$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/auctionPackages/unsubscribe
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.auctionPackages/unsubscribe
   
   Required parameters: name
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn auctionPackages-subscribeClients$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/auctionPackages/subscribeClients
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.auctionPackages/subscribeClients
   
   Required parameters: auctionPackage
   
@@ -155,7 +155,7 @@
      auth))))
 
 (defn auctionPackages-unsubscribeClients$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/auctionPackages/unsubscribeClients
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.auctionPackages/unsubscribeClients
   
   Required parameters: auctionPackage
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn clients-get$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/get
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients/get
   
   Required parameters: name
   
@@ -213,7 +213,7 @@
      auth))))
 
 (defn clients-list$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/list
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients/list
   
   Required parameters: parent
   
@@ -239,7 +239,7 @@
      auth))))
 
 (defn clients-create$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/create
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients/create
   
   Required parameters: parent
   
@@ -276,7 +276,7 @@
      auth))))
 
 (defn clients-patch$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/patch
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients/patch
   
   Required parameters: name
   
@@ -313,7 +313,7 @@
      auth))))
 
 (defn clients-activate$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/activate
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients/activate
   
   Required parameters: name
   
@@ -345,7 +345,7 @@
      auth))))
 
 (defn clients-deactivate$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/deactivate
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients/deactivate
   
   Required parameters: name
   
@@ -377,7 +377,7 @@
      auth))))
 
 (defn clients-users-get$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/users/get
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients.users/get
   
   Required parameters: name
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn clients-users-list$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/users/list
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients.users/list
   
   Required parameters: parent
   
@@ -429,7 +429,7 @@
      auth))))
 
 (defn clients-users-create$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/users/create
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients.users/create
   
   Required parameters: parent
   
@@ -461,7 +461,7 @@
      auth))))
 
 (defn clients-users-delete$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/users/delete
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients.users/delete
   
   Required parameters: name
   
@@ -487,7 +487,7 @@
      auth))))
 
 (defn clients-users-activate$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/users/activate
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients.users/activate
   
   Required parameters: name
   
@@ -519,7 +519,7 @@
      auth))))
 
 (defn clients-users-deactivate$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/clients/users/deactivate
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.clients.users/deactivate
   
   Required parameters: name
   
@@ -551,7 +551,7 @@
      auth))))
 
 (defn finalizedDeals-get$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/finalizedDeals/get
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.finalizedDeals/get
   
   Required parameters: name
   
@@ -577,7 +577,7 @@
      auth))))
 
 (defn finalizedDeals-list$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/finalizedDeals/list
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.finalizedDeals/list
   
   Required parameters: parent
   
@@ -603,7 +603,7 @@
      auth))))
 
 (defn finalizedDeals-pause$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/finalizedDeals/pause
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.finalizedDeals/pause
   
   Required parameters: name
   
@@ -635,7 +635,7 @@
      auth))))
 
 (defn finalizedDeals-resume$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/finalizedDeals/resume
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.finalizedDeals/resume
   
   Required parameters: name
   
@@ -667,7 +667,7 @@
      auth))))
 
 (defn finalizedDeals-addCreative$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/finalizedDeals/addCreative
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.finalizedDeals/addCreative
   
   Required parameters: deal
   
@@ -699,7 +699,7 @@
      auth))))
 
 (defn finalizedDeals-setReadyToServe$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/finalizedDeals/setReadyToServe
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.finalizedDeals/setReadyToServe
   
   Required parameters: deal
   
@@ -731,7 +731,7 @@
      auth))))
 
 (defn proposals-get$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/get
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals/get
   
   Required parameters: name
   
@@ -757,7 +757,7 @@
      auth))))
 
 (defn proposals-patch$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/patch
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals/patch
   
   Required parameters: name
   
@@ -807,7 +807,7 @@
      auth))))
 
 (defn proposals-list$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/list
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals/list
   
   Required parameters: parent
   
@@ -833,7 +833,7 @@
      auth))))
 
 (defn proposals-cancelNegotiation$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/cancelNegotiation
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals/cancelNegotiation
   
   Required parameters: proposal
   
@@ -865,7 +865,7 @@
      auth))))
 
 (defn proposals-accept$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/accept
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals/accept
   
   Required parameters: name
   
@@ -897,7 +897,7 @@
      auth))))
 
 (defn proposals-addNote$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/addNote
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals/addNote
   
   Required parameters: proposal
   
@@ -929,7 +929,7 @@
      auth))))
 
 (defn proposals-sendRfp$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/sendRfp
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals/sendRfp
   
   Required parameters: buyer
   
@@ -981,7 +981,7 @@
      auth))))
 
 (defn proposals-deals-get$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/deals/get
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals.deals/get
   
   Required parameters: name
   
@@ -1007,7 +1007,7 @@
      auth))))
 
 (defn proposals-deals-patch$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/deals/patch
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals.deals/patch
   
   Required parameters: name
   
@@ -1084,7 +1084,7 @@
      auth))))
 
 (defn proposals-deals-batchUpdate$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/deals/batchUpdate
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals.deals/batchUpdate
   
   Required parameters: parent
   
@@ -1116,7 +1116,7 @@
      auth))))
 
 (defn proposals-deals-list$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/proposals/deals/list
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.proposals.deals/list
   
   Required parameters: parent
   
@@ -1142,7 +1142,7 @@
      auth))))
 
 (defn publisherProfiles-get$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/publisherProfiles/get
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.publisherProfiles/get
   
   Required parameters: name
   
@@ -1168,7 +1168,7 @@
      auth))))
 
 (defn publisherProfiles-list$
-  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/api/reference/rest/v1/buyers/publisherProfiles/list
+  "https://developers.google.com/authorized-buyers/apis/marketplace/reference/rest/v1/buyers.publisherProfiles/list
   
   Required parameters: parent
   

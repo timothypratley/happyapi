@@ -1,13 +1,13 @@
 (ns happygapi.toolresults.projects
   "Cloud Tool Results API: projects.
   API to publish and access results from developer tools.
-  See: https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects"
+  See: https://firebase.google.com/docs/test-lab/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getSettings$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/getSettings
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/getSettings
   
   Required parameters: projectId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn initializeSettings$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/initializeSettings
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/initializeSettings
   
   Required parameters: projectId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn histories-create$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/create
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/create
   
   Required parameters: projectId
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn histories-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/get
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/get
   
   Required parameters: projectId, historyId
   
@@ -120,7 +120,7 @@
      auth))))
 
 (defn histories-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/list
   
   Required parameters: projectId
   
@@ -146,7 +146,7 @@
      auth))))
 
 (defn histories-executions-create$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/create
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/create
   
   Required parameters: projectId, historyId
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn histories-executions-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/list
   
   Required parameters: projectId, historyId
   
@@ -215,7 +215,7 @@
      auth))))
 
 (defn histories-executions-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/get
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/get
   
   Required parameters: projectId, historyId, executionId
   
@@ -243,7 +243,7 @@
      auth))))
 
 (defn histories-executions-patch$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/patch
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/patch
   
   Required parameters: projectId, historyId, executionId
   
@@ -288,7 +288,7 @@
      auth))))
 
 (defn histories-executions-steps-accessibilityClusters$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/accessibilityClusters
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/accessibilityClusters
   
   Required parameters: name
   
@@ -314,7 +314,7 @@
      auth))))
 
 (defn histories-executions-steps-create$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/create
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/create
   
   Required parameters: projectId, historyId, executionId
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn histories-executions-steps-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/get
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/get
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -399,7 +399,7 @@
      auth))))
 
 (defn histories-executions-steps-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/list
   
   Required parameters: projectId, historyId, executionId
   
@@ -427,7 +427,7 @@
      auth))))
 
 (defn histories-executions-steps-patch$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/patch
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/patch
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -484,7 +484,7 @@
      auth))))
 
 (defn histories-executions-steps-publishXunitXmlFiles$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/publishXunitXmlFiles
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/publishXunitXmlFiles
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -518,7 +518,7 @@
      auth))))
 
 (defn histories-executions-steps-getPerfMetricsSummary$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/getPerfMetricsSummary
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/getPerfMetricsSummary
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -546,7 +546,7 @@
      auth))))
 
 (defn histories-executions-steps-testCases-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/testCases/get
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/testCases/get
   
   Required parameters: projectId, historyId, executionId, stepId, testCaseId
   
@@ -574,7 +574,7 @@
      auth))))
 
 (defn histories-executions-steps-testCases-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/testCases/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/testCases/list
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -602,7 +602,7 @@
      auth))))
 
 (defn histories-executions-steps-thumbnails-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/thumbnails/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/thumbnails/list
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -630,7 +630,7 @@
      auth))))
 
 (defn histories-executions-steps-perfMetricsSummary-create$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/perfMetricsSummary/create
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/perfMetricsSummary/create
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -683,7 +683,7 @@
      auth))))
 
 (defn histories-executions-steps-perfSampleSeries-create$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/create
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/create
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -724,7 +724,7 @@
      auth))))
 
 (defn histories-executions-steps-perfSampleSeries-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/get
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/get
   
   Required parameters: projectId, historyId, executionId, stepId, sampleSeriesId
   
@@ -756,7 +756,7 @@
      auth))))
 
 (defn histories-executions-steps-perfSampleSeries-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/list
   
   Required parameters: projectId, historyId, executionId, stepId
   
@@ -784,7 +784,7 @@
      auth))))
 
 (defn histories-executions-steps-perfSampleSeries-samples-batchCreate$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/samples/batchCreate
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/samples/batchCreate
   
   Required parameters: projectId, historyId, executionId, stepId, sampleSeriesId
   
@@ -822,7 +822,7 @@
      auth))))
 
 (defn histories-executions-steps-perfSampleSeries-samples-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/samples/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/steps/perfSampleSeries/samples/list
   
   Required parameters: projectId, historyId, executionId, stepId, sampleSeriesId
   
@@ -854,7 +854,7 @@
      auth))))
 
 (defn histories-executions-clusters-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/clusters/get
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/clusters/get
   
   Required parameters: projectId, historyId, executionId, clusterId
   
@@ -882,7 +882,7 @@
      auth))))
 
 (defn histories-executions-clusters-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/clusters/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/clusters/list
   
   Required parameters: projectId, historyId, executionId
   
@@ -910,7 +910,7 @@
      auth))))
 
 (defn histories-executions-environments-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/environments/get
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/environments/get
   
   Required parameters: projectId, historyId, executionId, environmentId
   
@@ -938,7 +938,7 @@
      auth))))
 
 (defn histories-executions-environments-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1beta3/projects/histories/executions/environments/list
+  "https://firebase.google.com/docs/test-lab/reference/toolresults/rest/v1beta3/projects/histories/executions/environments/list
   
   Required parameters: projectId, historyId, executionId
   

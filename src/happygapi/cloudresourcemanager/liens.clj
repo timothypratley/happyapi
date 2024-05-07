@@ -1,13 +1,13 @@
 (ns happygapi.cloudresourcemanager.liens
   "Cloud Resource Manager API: liens.
   Creates, reads, and updates metadata for Google Cloud Platform resource containers.
-  See: https://cloud.google.com/resource-managerapi/reference/rest/v3/liens"
+  See: https://cloud.google.com/resource-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/liens/list
+  "https://cloud.google.com/resource-manager/reference/rest/v3/liens/list
   
   Required parameters: none
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/liens/get
+  "https://cloud.google.com/resource-manager/reference/rest/v3/liens/get
   
   Required parameters: name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/liens/create
+  "https://cloud.google.com/resource-manager/reference/rest/v3/liens/create
   
   Required parameters: none
   
@@ -99,7 +99,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/liens/delete
+  "https://cloud.google.com/resource-manager/reference/rest/v3/liens/delete
   
   Required parameters: name
   

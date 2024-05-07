@@ -1,13 +1,13 @@
 (ns happygapi.people.contactGroups
   "People API: contactGroups.
   Provides access to information about profiles and contacts.
-  See: https://developers.google.com/people/api/reference/rest/v1/contactGroups"
+  See: https://developers.google.com/people/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn batchGet$
-  "https://developers.google.com/people/api/reference/rest/v1/contactGroups/batchGet
+  "https://developers.google.com/people/api/rest/v1/contactGroups/batchGet
   
   Required parameters: none
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/people/api/reference/rest/v1/contactGroups/create
+  "https://developers.google.com/people/api/rest/v1/contactGroups/create
   
   Required parameters: none
   
@@ -75,7 +75,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/people/api/reference/rest/v1/contactGroups/delete
+  "https://developers.google.com/people/api/rest/v1/contactGroups/delete
   
   Required parameters: resourceName
   
@@ -101,7 +101,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/people/api/reference/rest/v1/contactGroups/get
+  "https://developers.google.com/people/api/rest/v1/contactGroups/get
   
   Required parameters: resourceName
   
@@ -128,7 +128,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/people/api/reference/rest/v1/contactGroups/list
+  "https://developers.google.com/people/api/rest/v1/contactGroups/list
   
   Required parameters: none
   
@@ -155,7 +155,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/people/api/reference/rest/v1/contactGroups/update
+  "https://developers.google.com/people/api/rest/v1/contactGroups/update
   
   Required parameters: resourceName
   
@@ -197,7 +197,7 @@
      auth))))
 
 (defn members-modify$
-  "https://developers.google.com/people/api/reference/rest/v1/contactGroups/members/modify
+  "https://developers.google.com/people/api/rest/v1/contactGroups.members/modify
   
   Required parameters: resourceName
   

@@ -1,13 +1,13 @@
 (ns happygapi.reseller.subscriptions
   "Google Workspace Reseller API: subscriptions.
   Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information
-  See: https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions"
+  See: https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/get
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId, subscriptionId
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/insert
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId
   
@@ -90,7 +90,7 @@
      auth))))
 
 (defn changeRenewalSettings$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/changeRenewalSettings
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId, subscriptionId
   
@@ -122,7 +122,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/delete
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId, subscriptionId, deletionType
   
@@ -150,7 +150,7 @@
      auth))))
 
 (defn suspend$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/suspend
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId, subscriptionId
   
@@ -176,7 +176,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/list
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: none
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn changePlan$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/changePlan
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId, subscriptionId
   
@@ -242,7 +242,7 @@
      auth))))
 
 (defn changeSeats$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/changeSeats
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId, subscriptionId
   
@@ -277,7 +277,7 @@
      auth))))
 
 (defn activate$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/activate
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId, subscriptionId
   
@@ -303,7 +303,7 @@
      auth))))
 
 (defn startPaidService$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/subscriptions/startPaidService
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId, subscriptionId
   

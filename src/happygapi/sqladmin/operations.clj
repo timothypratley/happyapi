@@ -1,13 +1,13 @@
 (ns happygapi.sqladmin.operations
   "Cloud SQL Admin API: operations.
   API for Cloud SQL database instance management
-  See: https://developers.google.com/cloud-sql/api/reference/rest/v1/operations"
+  See: https://cloud.google.com/sql/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/operations/get
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/operations/get
   
   Required parameters: project, operation
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/operations/list
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/operations/list
   
   Required parameters: project
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn cancel$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/operations/cancel
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/operations/cancel
   
   Required parameters: project, operation
   

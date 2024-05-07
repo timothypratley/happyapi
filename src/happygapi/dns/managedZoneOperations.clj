@@ -1,13 +1,13 @@
 (ns happygapi.dns.managedZoneOperations
   "Cloud DNS API: managedZoneOperations.
   
-  See: https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZoneOperations"
+  See: https://cloud.google.com/dns/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZoneOperations/get
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZoneOperations/get
   
   Required parameters: project, managedZone, operation
   
@@ -38,7 +38,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/managedZoneOperations/list
+  "https://cloud.google.com/dns/docs/reference/rest/v1/managedZoneOperations/list
   
   Required parameters: project, managedZone
   

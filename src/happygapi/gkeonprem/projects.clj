@@ -1,13 +1,13 @@
 (ns happygapi.gkeonprem.projects
   "Anthos On-Prem API: projects.
   
-  See: https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/anthos/clusters/docs/on-prem/latest"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-setIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/setIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-patch$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/patch
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -301,7 +301,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-testIamPermissions$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/testIamPermissions
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -333,7 +333,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-create$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/create
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -407,7 +407,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-delete$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/delete
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -433,7 +433,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-unenroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/unenroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -459,7 +459,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-getIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/getIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -485,7 +485,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -511,7 +511,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-queryVersionConfig$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/queryVersionConfig
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -537,7 +537,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-enroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/enroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -571,7 +571,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-operations-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/operations/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -597,7 +597,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-operations-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/operations/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -623,7 +623,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -649,7 +649,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-setIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/setIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -681,7 +681,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-patch$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/patch
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -729,7 +729,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-testIamPermissions$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/testIamPermissions
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -761,7 +761,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-create$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/create
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -809,7 +809,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-delete$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/delete
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -835,7 +835,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-unenroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/unenroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -861,7 +861,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-getIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/getIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -887,7 +887,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -913,7 +913,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-enroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/enroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -945,7 +945,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-operations-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/operations/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -971,7 +971,7 @@
      auth))))
 
 (defn locations-bareMetalClusters-bareMetalNodePools-operations-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalClusters/bareMetalNodePools/operations/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -997,7 +997,7 @@
      auth))))
 
 (defn locations-vmwareClusters-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1023,7 +1023,7 @@
      auth))))
 
 (defn locations-vmwareClusters-setIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/setIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -1055,7 +1055,7 @@
      auth))))
 
 (defn locations-vmwareClusters-patch$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/patch
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1144,7 +1144,7 @@
      auth))))
 
 (defn locations-vmwareClusters-testIamPermissions$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/testIamPermissions
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -1176,7 +1176,7 @@
      auth))))
 
 (defn locations-vmwareClusters-create$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/create
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1265,7 +1265,7 @@
      auth))))
 
 (defn locations-vmwareClusters-delete$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/delete
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1291,7 +1291,7 @@
      auth))))
 
 (defn locations-vmwareClusters-unenroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/unenroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1317,7 +1317,7 @@
      auth))))
 
 (defn locations-vmwareClusters-getIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/getIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -1343,7 +1343,7 @@
      auth))))
 
 (defn locations-vmwareClusters-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1369,7 +1369,7 @@
      auth))))
 
 (defn locations-vmwareClusters-queryVersionConfig$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/queryVersionConfig
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1395,7 +1395,7 @@
      auth))))
 
 (defn locations-vmwareClusters-enroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/enroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1430,7 +1430,7 @@
      auth))))
 
 (defn locations-vmwareClusters-operations-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/operations/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1456,7 +1456,7 @@
      auth))))
 
 (defn locations-vmwareClusters-operations-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/operations/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1482,7 +1482,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1508,7 +1508,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-setIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/setIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -1540,7 +1540,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-patch$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/patch
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1594,7 +1594,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-testIamPermissions$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/testIamPermissions
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -1626,7 +1626,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-create$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/create
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1680,7 +1680,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-delete$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/delete
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1706,7 +1706,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-unenroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/unenroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1732,7 +1732,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-getIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/getIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -1758,7 +1758,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1784,7 +1784,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-enroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/enroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1816,7 +1816,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-operations-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/operations/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1842,7 +1842,7 @@
      auth))))
 
 (defn locations-vmwareClusters-vmwareNodePools-operations-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareClusters/vmwareNodePools/operations/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1868,7 +1868,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1894,7 +1894,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1920,7 +1920,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-enroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/enroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -1952,7 +1952,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-unenroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/unenroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -1978,7 +1978,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-patch$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/patch
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -2056,7 +2056,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-setIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/setIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -2088,7 +2088,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-getIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/getIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -2114,7 +2114,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-testIamPermissions$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/testIamPermissions
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -2146,7 +2146,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-operations-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/operations/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -2172,7 +2172,7 @@
      auth))))
 
 (defn locations-vmwareAdminClusters-operations-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/vmwareAdminClusters/operations/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -2198,7 +2198,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -2224,7 +2224,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-setIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/setIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -2256,7 +2256,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-patch$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/patch
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -2322,7 +2322,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-testIamPermissions$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/testIamPermissions
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -2354,7 +2354,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-create$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/create
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -2420,7 +2420,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-unenroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/unenroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -2446,7 +2446,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-getIamPolicy$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/getIamPolicy
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: resource
   
@@ -2472,7 +2472,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -2498,7 +2498,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-queryVersionConfig$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/queryVersionConfig
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -2524,7 +2524,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-enroll$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/enroll
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: parent
   
@@ -2556,7 +2556,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-operations-list$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/operations/list
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   
@@ -2582,7 +2582,7 @@
      auth))))
 
 (defn locations-bareMetalAdminClusters-operations-get$
-  "https://cloud.google.com/anthos/clusters/docs/on-prem/api/reference/rest/v1/projects/locations/bareMetalAdminClusters/operations/get
+  "https://cloud.google.com/anthos/clusters/docs/on-prem/latest
   
   Required parameters: name
   

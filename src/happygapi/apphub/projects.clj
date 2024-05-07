@@ -1,13 +1,13 @@
 (ns happygapi.apphub.projects
   "App Hub API: projects.
   
-  See: https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/app-hub/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-lookupServiceProjectAttachment$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/lookupServiceProjectAttachment
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations/lookupServiceProjectAttachment
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-detachServiceProjectAttachment$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/detachServiceProjectAttachment
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations/detachServiceProjectAttachment
   
   Required parameters: name
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-serviceProjectAttachments-list$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/serviceProjectAttachments/list
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.serviceProjectAttachments/list
   
   Required parameters: parent
   
@@ -253,7 +253,7 @@
      auth))))
 
 (defn locations-serviceProjectAttachments-create$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/serviceProjectAttachments/create
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.serviceProjectAttachments/create
   
   Required parameters: parent
   
@@ -289,7 +289,7 @@
      auth))))
 
 (defn locations-serviceProjectAttachments-get$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/serviceProjectAttachments/get
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.serviceProjectAttachments/get
   
   Required parameters: name
   
@@ -315,7 +315,7 @@
      auth))))
 
 (defn locations-serviceProjectAttachments-delete$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/serviceProjectAttachments/delete
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.serviceProjectAttachments/delete
   
   Required parameters: name
   
@@ -341,7 +341,7 @@
      auth))))
 
 (defn locations-discoveredServices-list$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/discoveredServices/list
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.discoveredServices/list
   
   Required parameters: parent
   
@@ -367,7 +367,7 @@
      auth))))
 
 (defn locations-discoveredServices-get$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/discoveredServices/get
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.discoveredServices/get
   
   Required parameters: name
   
@@ -393,7 +393,7 @@
      auth))))
 
 (defn locations-discoveredServices-lookup$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/discoveredServices/lookup
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.discoveredServices/lookup
   
   Required parameters: parent
   
@@ -419,7 +419,7 @@
      auth))))
 
 (defn locations-discoveredWorkloads-list$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/discoveredWorkloads/list
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.discoveredWorkloads/list
   
   Required parameters: parent
   
@@ -445,7 +445,7 @@
      auth))))
 
 (defn locations-discoveredWorkloads-get$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/discoveredWorkloads/get
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.discoveredWorkloads/get
   
   Required parameters: name
   
@@ -471,7 +471,7 @@
      auth))))
 
 (defn locations-discoveredWorkloads-lookup$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/discoveredWorkloads/lookup
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.discoveredWorkloads/lookup
   
   Required parameters: parent
   
@@ -497,7 +497,7 @@
      auth))))
 
 (defn locations-applications-list$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/list
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications/list
   
   Required parameters: parent
   
@@ -523,7 +523,7 @@
      auth))))
 
 (defn locations-applications-create$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/create
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications/create
   
   Required parameters: parent
   
@@ -567,7 +567,7 @@
      auth))))
 
 (defn locations-applications-get$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/get
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications/get
   
   Required parameters: name
   
@@ -593,7 +593,7 @@
      auth))))
 
 (defn locations-applications-patch$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/patch
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications/patch
   
   Required parameters: name
   
@@ -637,7 +637,7 @@
      auth))))
 
 (defn locations-applications-delete$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/delete
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications/delete
   
   Required parameters: name
   
@@ -663,7 +663,7 @@
      auth))))
 
 (defn locations-applications-setIamPolicy$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/setIamPolicy
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications/setIamPolicy
   
   Required parameters: resource
   
@@ -699,7 +699,7 @@
      auth))))
 
 (defn locations-applications-getIamPolicy$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/getIamPolicy
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications/getIamPolicy
   
   Required parameters: resource
   
@@ -725,7 +725,7 @@
      auth))))
 
 (defn locations-applications-testIamPermissions$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/testIamPermissions
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications/testIamPermissions
   
   Required parameters: resource
   
@@ -757,7 +757,7 @@
      auth))))
 
 (defn locations-applications-services-list$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/services/list
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.services/list
   
   Required parameters: parent
   
@@ -783,7 +783,7 @@
      auth))))
 
 (defn locations-applications-services-create$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/services/create
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.services/create
   
   Required parameters: parent
   
@@ -831,7 +831,7 @@
      auth))))
 
 (defn locations-applications-services-get$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/services/get
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.services/get
   
   Required parameters: name
   
@@ -857,7 +857,7 @@
      auth))))
 
 (defn locations-applications-services-patch$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/services/patch
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.services/patch
   
   Required parameters: name
   
@@ -905,7 +905,7 @@
      auth))))
 
 (defn locations-applications-services-delete$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/services/delete
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.services/delete
   
   Required parameters: name
   
@@ -931,7 +931,7 @@
      auth))))
 
 (defn locations-applications-workloads-list$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/workloads/list
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.workloads/list
   
   Required parameters: parent
   
@@ -957,7 +957,7 @@
      auth))))
 
 (defn locations-applications-workloads-create$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/workloads/create
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.workloads/create
   
   Required parameters: parent
   
@@ -1005,7 +1005,7 @@
      auth))))
 
 (defn locations-applications-workloads-get$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/workloads/get
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.workloads/get
   
   Required parameters: name
   
@@ -1031,7 +1031,7 @@
      auth))))
 
 (defn locations-applications-workloads-patch$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/workloads/patch
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.workloads/patch
   
   Required parameters: name
   
@@ -1079,7 +1079,7 @@
      auth))))
 
 (defn locations-applications-workloads-delete$
-  "https://cloud.google.com/app-hub/docs/api/reference/rest/v1/projects/locations/applications/workloads/delete
+  "https://cloud.google.com/app-hub/docs/reference/rest/v1/projects.locations.applications.workloads/delete
   
   Required parameters: name
   

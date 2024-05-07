@@ -1,13 +1,13 @@
 (ns happygapi.compute.routes
   "Compute Engine API: routes.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/routes"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routes/list
+  "https://cloud.google.com/products/compute/v1/docs/routes/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routes/get
+  "https://cloud.google.com/products/compute/v1/docs/routes/get
   
   Required parameters: project, route
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routes/insert
+  "https://cloud.google.com/products/compute/v1/docs/routes/insert
   
   Required parameters: project
   
@@ -119,7 +119,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routes/delete
+  "https://cloud.google.com/products/compute/v1/docs/routes/delete
   
   Required parameters: project, route
   

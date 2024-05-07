@@ -1,13 +1,13 @@
 (ns happygapi.compute.urlMaps
   "Compute Engine API: urlMaps.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/urlMaps"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn invalidateCache$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/invalidateCache
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/invalidateCache
   
   Required parameters: project, urlMap
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/get
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/get
   
   Required parameters: project, urlMap
   
@@ -68,7 +68,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/insert
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/insert
   
   Required parameters: project
   
@@ -145,7 +145,7 @@
      auth))))
 
 (defn validate$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/validate
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/validate
   
   Required parameters: project, urlMap
   
@@ -193,7 +193,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/patch
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/patch
   
   Required parameters: project, urlMap
   
@@ -270,7 +270,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/aggregatedList
   
   Required parameters: project
   
@@ -298,7 +298,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/update
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/update
   
   Required parameters: project, urlMap
   
@@ -375,7 +375,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/delete
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/delete
   
   Required parameters: project, urlMap
   
@@ -402,7 +402,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/urlMaps/list
+  "https://cloud.google.com/products/compute/v1/docs/urlMaps/list
   
   Required parameters: project
   

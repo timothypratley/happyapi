@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.sites
   "Campaign Manager 360 API: sites.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/sites"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn patch$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/sites/patch
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -80,7 +80,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/sites/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/sites/insert
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -179,7 +179,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/sites/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -205,7 +205,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/sites/update
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   

@@ -1,13 +1,13 @@
 (ns happygapi.cloudsearch.indexing
   "Cloud Search API: indexing.
   Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.
-  See: https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing"
+  See: https://developers.google.com/cloud-search/docs/guides/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn datasources-updateSchema$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/updateSchema
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources/updateSchema
   
   Required parameters: name
   
@@ -44,7 +44,7 @@
      auth))))
 
 (defn datasources-getSchema$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/getSchema
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources/getSchema
   
   Required parameters: name
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn datasources-deleteSchema$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/deleteSchema
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources/deleteSchema
   
   Required parameters: name
   
@@ -100,7 +100,7 @@
      auth))))
 
 (defn datasources-items-get$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/get
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/get
   
   Required parameters: name
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn datasources-items-push$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/push
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/push
   
   Required parameters: name
   
@@ -168,7 +168,7 @@
      auth))))
 
 (defn datasources-items-index$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/index
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/index
   
   Required parameters: name
   
@@ -214,7 +214,7 @@
      auth))))
 
 (defn datasources-items-delete$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/delete
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/delete
   
   Required parameters: name
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn datasources-items-deleteQueueItems$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/deleteQueueItems
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/deleteQueueItems
   
   Required parameters: name
   
@@ -276,7 +276,7 @@
      auth))))
 
 (defn datasources-items-poll$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/poll
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/poll
   
   Required parameters: name
   
@@ -313,7 +313,7 @@
      auth))))
 
 (defn datasources-items-list$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/list
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/list
   
   Required parameters: name
   
@@ -340,7 +340,7 @@
      auth))))
 
 (defn datasources-items-unreserve$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/unreserve
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/unreserve
   
   Required parameters: name
   
@@ -375,7 +375,7 @@
      auth))))
 
 (defn datasources-items-upload$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/indexing/datasources/items/upload
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items/upload
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.managedidentities.projects
   "Managed Service for Microsoft Active Directory API: projects.
   The Managed Service for Microsoft Active Directory API is used for managing a highly available, hardened service running Microsoft Active Directory (AD).
-  See: https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-global-operations-list$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/operations/list
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-global-operations-get$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/operations/get
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-global-operations-delete$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/operations/delete
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-global-operations-cancel$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/operations/cancel
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-global-domains-get$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/get
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/get
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-global-domains-disableMigration$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/disableMigration
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/disableMigration
   
   Required parameters: domain
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-global-domains-setIamPolicy$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/setIamPolicy
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/setIamPolicy
   
   Required parameters: resource
   
@@ -259,7 +259,7 @@
      auth))))
 
 (defn locations-global-domains-patch$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/patch
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/patch
   
   Required parameters: name
   
@@ -313,7 +313,7 @@
      auth))))
 
 (defn locations-global-domains-testIamPermissions$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/testIamPermissions
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/testIamPermissions
   
   Required parameters: resource
   
@@ -345,7 +345,7 @@
      auth))))
 
 (defn locations-global-domains-updateLdapssettings$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/updateLdapssettings
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/updateLdapssettings
   
   Required parameters: name
   
@@ -386,7 +386,7 @@
      auth))))
 
 (defn locations-global-domains-restore$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/restore
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/restore
   
   Required parameters: name
   
@@ -418,7 +418,7 @@
      auth))))
 
 (defn locations-global-domains-create$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/create
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/create
   
   Required parameters: parent
   
@@ -472,7 +472,7 @@
      auth))))
 
 (defn locations-global-domains-validateTrust$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/validateTrust
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/validateTrust
   
   Required parameters: name
   
@@ -514,7 +514,7 @@
      auth))))
 
 (defn locations-global-domains-getLdapssettings$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/getLdapssettings
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/getLdapssettings
   
   Required parameters: name
   
@@ -540,7 +540,7 @@
      auth))))
 
 (defn locations-global-domains-checkMigrationPermission$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/checkMigrationPermission
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/checkMigrationPermission
   
   Required parameters: domain
   
@@ -572,7 +572,7 @@
      auth))))
 
 (defn locations-global-domains-delete$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/delete
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/delete
   
   Required parameters: name
   
@@ -598,7 +598,7 @@
      auth))))
 
 (defn locations-global-domains-detachTrust$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/detachTrust
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/detachTrust
   
   Required parameters: name
   
@@ -640,7 +640,7 @@
      auth))))
 
 (defn locations-global-domains-extendSchema$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/extendSchema
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/extendSchema
   
   Required parameters: domain
   
@@ -672,7 +672,7 @@
      auth))))
 
 (defn locations-global-domains-getIamPolicy$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/getIamPolicy
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/getIamPolicy
   
   Required parameters: resource
   
@@ -698,7 +698,7 @@
      auth))))
 
 (defn locations-global-domains-list$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/list
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/list
   
   Required parameters: parent
   
@@ -724,7 +724,7 @@
      auth))))
 
 (defn locations-global-domains-domainJoinMachine$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/domainJoinMachine
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/domainJoinMachine
   
   Required parameters: domain
   
@@ -756,7 +756,7 @@
      auth))))
 
 (defn locations-global-domains-resetAdminPassword$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/resetAdminPassword
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/resetAdminPassword
   
   Required parameters: name
   
@@ -788,7 +788,7 @@
      auth))))
 
 (defn locations-global-domains-enableMigration$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/enableMigration
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/enableMigration
   
   Required parameters: domain
   
@@ -820,7 +820,7 @@
      auth))))
 
 (defn locations-global-domains-attachTrust$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/attachTrust
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/attachTrust
   
   Required parameters: name
   
@@ -862,7 +862,7 @@
      auth))))
 
 (defn locations-global-domains-reconfigureTrust$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/reconfigureTrust
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/reconfigureTrust
   
   Required parameters: name
   
@@ -894,7 +894,7 @@
      auth))))
 
 (defn locations-global-domains-backups-create$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/backups/create
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/backups/create
   
   Required parameters: parent
   
@@ -932,7 +932,7 @@
      auth))))
 
 (defn locations-global-domains-backups-list$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/backups/list
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/backups/list
   
   Required parameters: parent
   
@@ -958,7 +958,7 @@
      auth))))
 
 (defn locations-global-domains-backups-get$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/backups/get
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/backups/get
   
   Required parameters: name
   
@@ -984,7 +984,7 @@
      auth))))
 
 (defn locations-global-domains-backups-patch$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/backups/patch
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/backups/patch
   
   Required parameters: name
   
@@ -1022,7 +1022,7 @@
      auth))))
 
 (defn locations-global-domains-backups-delete$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/backups/delete
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/backups/delete
   
   Required parameters: name
   
@@ -1048,7 +1048,7 @@
      auth))))
 
 (defn locations-global-domains-backups-setIamPolicy$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/backups/setIamPolicy
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/backups/setIamPolicy
   
   Required parameters: resource
   
@@ -1080,7 +1080,7 @@
      auth))))
 
 (defn locations-global-domains-backups-getIamPolicy$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/backups/getIamPolicy
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/backups/getIamPolicy
   
   Required parameters: resource
   
@@ -1106,7 +1106,7 @@
      auth))))
 
 (defn locations-global-domains-backups-testIamPermissions$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/backups/testIamPermissions
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/backups/testIamPermissions
   
   Required parameters: resource
   
@@ -1138,7 +1138,7 @@
      auth))))
 
 (defn locations-global-domains-sqlIntegrations-list$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/sqlIntegrations/list
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/sqlIntegrations/list
   
   Required parameters: parent
   
@@ -1164,7 +1164,7 @@
      auth))))
 
 (defn locations-global-domains-sqlIntegrations-get$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/domains/sqlIntegrations/get
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/domains/sqlIntegrations/get
   
   Required parameters: name
   
@@ -1190,7 +1190,7 @@
      auth))))
 
 (defn locations-global-peerings-create$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/peerings/create
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/peerings/create
   
   Required parameters: parent
   
@@ -1229,7 +1229,7 @@
      auth))))
 
 (defn locations-global-peerings-list$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/peerings/list
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/peerings/list
   
   Required parameters: parent
   
@@ -1255,7 +1255,7 @@
      auth))))
 
 (defn locations-global-peerings-get$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/peerings/get
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/peerings/get
   
   Required parameters: name
   
@@ -1281,7 +1281,7 @@
      auth))))
 
 (defn locations-global-peerings-patch$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/peerings/patch
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/peerings/patch
   
   Required parameters: name
   
@@ -1320,7 +1320,7 @@
      auth))))
 
 (defn locations-global-peerings-delete$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/peerings/delete
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/peerings/delete
   
   Required parameters: name
   
@@ -1346,7 +1346,7 @@
      auth))))
 
 (defn locations-global-peerings-setIamPolicy$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/peerings/setIamPolicy
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/peerings/setIamPolicy
   
   Required parameters: resource
   
@@ -1378,7 +1378,7 @@
      auth))))
 
 (defn locations-global-peerings-getIamPolicy$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/peerings/getIamPolicy
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/peerings/getIamPolicy
   
   Required parameters: resource
   
@@ -1404,7 +1404,7 @@
      auth))))
 
 (defn locations-global-peerings-testIamPermissions$
-  "https://cloud.google.com/managed-microsoft-ad/api/reference/rest/v1/projects/locations/global/peerings/testIamPermissions
+  "https://cloud.google.com/security/products/managed-microsoft-ad/docs/overview/v1/docs/projects/locations/global/peerings/testIamPermissions
   
   Required parameters: resource
   

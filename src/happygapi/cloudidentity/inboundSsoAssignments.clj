@@ -1,13 +1,13 @@
 (ns happygapi.cloudidentity.inboundSsoAssignments
   "Cloud Identity API: inboundSsoAssignments.
   API for provisioning and managing identity resources.
-  See: https://cloud.google.com/identity/api/reference/rest/v1/inboundSsoAssignments"
+  See: https://cloud.google.com/identity/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSsoAssignments/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSsoAssignments/get
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSsoAssignments/create
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSsoAssignments/create
   
   Required parameters: none
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSsoAssignments/patch
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSsoAssignments/patch
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSsoAssignments/delete
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSsoAssignments/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSsoAssignments/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSsoAssignments/list
   
   Required parameters: none
   

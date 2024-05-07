@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.inventorySourceGroups
   "Display & Video 360 API: inventorySourceGroups.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: inventorySourceGroupId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: inventorySourceGroupId
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: inventorySourceGroupId
   
@@ -149,7 +149,7 @@
      auth))))
 
 (defn assignedInventorySources-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/assignedInventorySources/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: inventorySourceGroupId
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn assignedInventorySources-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/assignedInventorySources/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: inventorySourceGroupId
   
@@ -209,7 +209,7 @@
      auth))))
 
 (defn assignedInventorySources-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/assignedInventorySources/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: inventorySourceGroupId, assignedInventorySourceId
   
@@ -237,7 +237,7 @@
      auth))))
 
 (defn assignedInventorySources-bulkEdit$
-  "https://developers.google.com/display-video/api/reference/rest/v3/inventorySourceGroups/assignedInventorySources/bulkEdit
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: inventorySourceGroupId
   

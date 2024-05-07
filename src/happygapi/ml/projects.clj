@@ -1,13 +1,13 @@
 (ns happygapi.ml.projects
   "AI Platform Training & Prediction API: projects.
   An API to enable creating and using machine learning models.
-  See: https://cloud.google.com/ml/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/vertex-ai"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn predict$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/predict
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn explain$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/explain
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn getConfig$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/getConfig
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn jobs-create$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/jobs/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn jobs-list$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/jobs/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -214,7 +214,7 @@
      auth))))
 
 (defn jobs-get$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/jobs/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn jobs-cancel$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/jobs/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -273,7 +273,7 @@
      auth))))
 
 (defn jobs-patch$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/jobs/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -363,7 +363,7 @@
      auth))))
 
 (defn jobs-setIamPolicy$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/jobs/setIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -399,7 +399,7 @@
      auth))))
 
 (defn jobs-getIamPolicy$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/jobs/getIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -425,7 +425,7 @@
      auth))))
 
 (defn jobs-testIamPermissions$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/jobs/testIamPermissions
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -457,7 +457,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -484,7 +484,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -511,7 +511,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -537,7 +537,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -563,7 +563,7 @@
      auth))))
 
 (defn locations-studies-create$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -602,7 +602,7 @@
      auth))))
 
 (defn locations-studies-get$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -628,7 +628,7 @@
      auth))))
 
 (defn locations-studies-list$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -654,7 +654,7 @@
      auth))))
 
 (defn locations-studies-delete$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -680,7 +680,7 @@
      auth))))
 
 (defn locations-studies-trials-get$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -706,7 +706,7 @@
      auth))))
 
 (defn locations-studies-trials-create$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -754,7 +754,7 @@
      auth))))
 
 (defn locations-studies-trials-addMeasurement$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/addMeasurement
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -788,7 +788,7 @@
      auth))))
 
 (defn locations-studies-trials-delete$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -814,7 +814,7 @@
      auth))))
 
 (defn locations-studies-trials-checkEarlyStoppingState$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/checkEarlyStoppingState
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -846,7 +846,7 @@
      auth))))
 
 (defn locations-studies-trials-listOptimalTrials$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/listOptimalTrials
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -878,7 +878,7 @@
      auth))))
 
 (defn locations-studies-trials-stop$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/stop
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -910,7 +910,7 @@
      auth))))
 
 (defn locations-studies-trials-suggest$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/suggest
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -942,7 +942,7 @@
      auth))))
 
 (defn locations-studies-trials-list$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -968,7 +968,7 @@
      auth))))
 
 (defn locations-studies-trials-complete$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/locations/studies/trials/complete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1004,7 +1004,7 @@
      auth))))
 
 (defn operations-list$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1030,7 +1030,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1056,7 +1056,7 @@
      auth))))
 
 (defn operations-cancel$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1082,7 +1082,7 @@
      auth))))
 
 (defn models-create$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -1146,7 +1146,7 @@
      auth))))
 
 (defn models-list$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -1173,7 +1173,7 @@
      auth))))
 
 (defn models-get$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1200,7 +1200,7 @@
      auth))))
 
 (defn models-delete$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1226,7 +1226,7 @@
      auth))))
 
 (defn models-patch$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1290,7 +1290,7 @@
      auth))))
 
 (defn models-setIamPolicy$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/setIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -1326,7 +1326,7 @@
      auth))))
 
 (defn models-getIamPolicy$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/getIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -1352,7 +1352,7 @@
      auth))))
 
 (defn models-testIamPermissions$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/testIamPermissions
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -1384,7 +1384,7 @@
      auth))))
 
 (defn models-versions-create$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/versions/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -1450,7 +1450,7 @@
      auth))))
 
 (defn models-versions-patch$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/versions/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1516,7 +1516,7 @@
      auth))))
 
 (defn models-versions-list$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/versions/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -1543,7 +1543,7 @@
      auth))))
 
 (defn models-versions-get$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/versions/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1569,7 +1569,7 @@
      auth))))
 
 (defn models-versions-delete$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/versions/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1595,7 +1595,7 @@
      auth))))
 
 (defn models-versions-setDefault$
-  "https://cloud.google.com/ml/api/reference/rest/v1/projects/models/versions/setDefault
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   

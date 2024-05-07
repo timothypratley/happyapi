@@ -1,13 +1,13 @@
 (ns happygapi.cloudresourcemanager.organizations
   "Cloud Resource Manager API: organizations.
   Creates, reads, and updates metadata for Google Cloud Platform resource containers.
-  See: https://cloud.google.com/resource-managerapi/reference/rest/v3/organizations"
+  See: https://cloud.google.com/resource-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/organizations/get
+  "https://cloud.google.com/resource-manager/reference/rest/v3/organizations/get
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn search$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/organizations/search
+  "https://cloud.google.com/resource-manager/reference/rest/v3/organizations/search
   
   Required parameters: none
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/organizations/getIamPolicy
+  "https://cloud.google.com/resource-manager/reference/rest/v3/organizations/getIamPolicy
   
   Required parameters: resource
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/organizations/setIamPolicy
+  "https://cloud.google.com/resource-manager/reference/rest/v3/organizations/setIamPolicy
   
   Required parameters: resource
   
@@ -130,7 +130,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/organizations/testIamPermissions
+  "https://cloud.google.com/resource-manager/reference/rest/v3/organizations/testIamPermissions
   
   Required parameters: resource
   

@@ -1,13 +1,13 @@
 (ns happygapi.bigquerydatatransfer.projects
   "BigQuery Data Transfer API: projects.
   Schedule queries or transfer external data from SaaS applications to Google BigQuery on a regular basis.
-  See: https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/bigquery/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn enrollDataSources$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/enrollDataSources
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn dataSources-get$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/dataSources/get
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -68,7 +68,7 @@
      auth))))
 
 (defn dataSources-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/dataSources/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -96,7 +96,7 @@
      auth))))
 
 (defn dataSources-checkValidCreds$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/dataSources/checkValidCreds
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -130,7 +130,7 @@
      auth))))
 
 (defn transferConfigs-create$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/create
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -181,7 +181,7 @@
      auth))))
 
 (defn transferConfigs-patch$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/patch
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -232,7 +232,7 @@
      auth))))
 
 (defn transferConfigs-delete$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/delete
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -259,7 +259,7 @@
      auth))))
 
 (defn transferConfigs-get$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/get
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -287,7 +287,7 @@
      auth))))
 
 (defn transferConfigs-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -315,7 +315,7 @@
      auth))))
 
 (defn transferConfigs-scheduleRuns$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/scheduleRuns
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -348,7 +348,7 @@
      auth))))
 
 (defn transferConfigs-startManualRuns$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/startManualRuns
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -382,7 +382,7 @@
      auth))))
 
 (defn transferConfigs-runs-get$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/runs/get
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -410,7 +410,7 @@
      auth))))
 
 (defn transferConfigs-runs-delete$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/runs/delete
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -437,7 +437,7 @@
      auth))))
 
 (defn transferConfigs-runs-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/runs/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -465,7 +465,7 @@
      auth))))
 
 (defn transferConfigs-runs-transferLogs-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/transferConfigs/runs/transferLogs/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -493,7 +493,7 @@
      auth))))
 
 (defn locations-enrollDataSources$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/enrollDataSources
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -526,7 +526,7 @@
      auth))))
 
 (defn locations-unenrollDataSources$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/unenrollDataSources
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -559,7 +559,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -587,7 +587,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -615,7 +615,7 @@
      auth))))
 
 (defn locations-dataSources-get$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/dataSources/get
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -643,7 +643,7 @@
      auth))))
 
 (defn locations-dataSources-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/dataSources/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -671,7 +671,7 @@
      auth))))
 
 (defn locations-dataSources-checkValidCreds$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/dataSources/checkValidCreds
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -705,7 +705,7 @@
      auth))))
 
 (defn locations-transferConfigs-create$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/create
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -756,7 +756,7 @@
      auth))))
 
 (defn locations-transferConfigs-patch$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/patch
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -807,7 +807,7 @@
      auth))))
 
 (defn locations-transferConfigs-delete$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/delete
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -834,7 +834,7 @@
      auth))))
 
 (defn locations-transferConfigs-get$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/get
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -862,7 +862,7 @@
      auth))))
 
 (defn locations-transferConfigs-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -890,7 +890,7 @@
      auth))))
 
 (defn locations-transferConfigs-scheduleRuns$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/scheduleRuns
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -923,7 +923,7 @@
      auth))))
 
 (defn locations-transferConfigs-startManualRuns$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/startManualRuns
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -957,7 +957,7 @@
      auth))))
 
 (defn locations-transferConfigs-runs-get$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/runs/get
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -985,7 +985,7 @@
      auth))))
 
 (defn locations-transferConfigs-runs-delete$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/runs/delete
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: name
   
@@ -1012,7 +1012,7 @@
      auth))))
 
 (defn locations-transferConfigs-runs-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/runs/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   
@@ -1040,7 +1040,7 @@
      auth))))
 
 (defn locations-transferConfigs-runs-transferLogs-list$
-  "https://cloud.google.com/bigquery-transfer/api/reference/rest/v1/projects/locations/transferConfigs/runs/transferLogs/list
+  "https://cloud.google.com/bigquery/docs
   
   Required parameters: parent
   

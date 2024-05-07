@@ -1,13 +1,13 @@
 (ns happygapi.customsearch.cse
   "Custom Search API: cse.
   Searches over a website or collection of websites
-  See: https://developers.google.com/custom-search/v1/introductionapi/reference/rest/v1/cse"
+  See: https://developers.google.com/custom-search/v1/introduction"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/custom-search/v1/introductionapi/reference/rest/v1/cse/list
+  "https://developers.google.com/custom-search/v1/reference/rest/v1/cse/list
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn siterestrict-list$
-  "https://developers.google.com/custom-search/v1/introductionapi/reference/rest/v1/cse/siterestrict/list
+  "https://developers.google.com/custom-search/v1/reference/rest/v1/cse.siterestrict/list
   
   Required parameters: none
   

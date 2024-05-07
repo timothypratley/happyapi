@@ -1,13 +1,13 @@
 (ns happygapi.tpu.projects
   "Cloud TPU API: projects.
   TPU API provides customers with access to Google TPU technology.
-  See: https://cloud.google.com/tpu/api/reference/rest/v2/projects"
+  See: https://cloud.google.com/tpu/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/list
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/get
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-generateServiceIdentity$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/generateServiceIdentity
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations/generateServiceIdentity
   
   Required parameters: parent
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/operations/list
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.operations/list
   
   Required parameters: name
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/operations/get
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.operations/get
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/operations/delete
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/operations/cancel
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-nodes-list$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/nodes/list
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.nodes/list
   
   Required parameters: parent
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-nodes-get$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/nodes/get
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.nodes/get
   
   Required parameters: name
   
@@ -247,7 +247,7 @@
      auth))))
 
 (defn locations-nodes-create$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/nodes/create
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.nodes/create
   
   Required parameters: parent
   
@@ -313,7 +313,7 @@
      auth))))
 
 (defn locations-nodes-delete$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/nodes/delete
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.nodes/delete
   
   Required parameters: name
   
@@ -339,7 +339,7 @@
      auth))))
 
 (defn locations-nodes-stop$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/nodes/stop
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.nodes/stop
   
   Required parameters: name
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn locations-nodes-start$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/nodes/start
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.nodes/start
   
   Required parameters: name
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn locations-nodes-patch$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/nodes/patch
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.nodes/patch
   
   Required parameters: name
   
@@ -469,7 +469,7 @@
      auth))))
 
 (defn locations-nodes-getGuestAttributes$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/nodes/getGuestAttributes
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.nodes/getGuestAttributes
   
   Required parameters: name
   
@@ -501,7 +501,7 @@
      auth))))
 
 (defn locations-queuedResources-list$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/queuedResources/list
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.queuedResources/list
   
   Required parameters: parent
   
@@ -527,7 +527,7 @@
      auth))))
 
 (defn locations-queuedResources-get$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/queuedResources/get
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.queuedResources/get
   
   Required parameters: name
   
@@ -553,7 +553,7 @@
      auth))))
 
 (defn locations-queuedResources-create$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/queuedResources/create
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.queuedResources/create
   
   Required parameters: parent
   
@@ -605,7 +605,7 @@
      auth))))
 
 (defn locations-queuedResources-delete$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/queuedResources/delete
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.queuedResources/delete
   
   Required parameters: name
   
@@ -631,7 +631,7 @@
      auth))))
 
 (defn locations-queuedResources-reset$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/queuedResources/reset
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.queuedResources/reset
   
   Required parameters: name
   
@@ -663,7 +663,7 @@
      auth))))
 
 (defn locations-acceleratorTypes-list$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/acceleratorTypes/list
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.acceleratorTypes/list
   
   Required parameters: parent
   
@@ -689,7 +689,7 @@
      auth))))
 
 (defn locations-acceleratorTypes-get$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/acceleratorTypes/get
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.acceleratorTypes/get
   
   Required parameters: name
   
@@ -715,7 +715,7 @@
      auth))))
 
 (defn locations-runtimeVersions-list$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/runtimeVersions/list
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.runtimeVersions/list
   
   Required parameters: parent
   
@@ -741,7 +741,7 @@
      auth))))
 
 (defn locations-runtimeVersions-get$
-  "https://cloud.google.com/tpu/api/reference/rest/v2/projects/locations/runtimeVersions/get
+  "https://cloud.google.com/tpu/docs/reference/rest/v2/projects.locations.runtimeVersions/get
   
   Required parameters: name
   

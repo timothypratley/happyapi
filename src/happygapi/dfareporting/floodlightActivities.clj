@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.floodlightActivities
   "Campaign Manager 360 API: floodlightActivities.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/floodlightActivities"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/floodlightActivities/delete
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn generatetag$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/floodlightActivities/generatetag
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/floodlightActivities/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/floodlightActivities/insert
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/floodlightActivities/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -191,7 +191,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/floodlightActivities/update
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -271,7 +271,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/floodlightActivities/patch
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   

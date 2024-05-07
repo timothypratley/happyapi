@@ -1,13 +1,40 @@
 (ns happygapi.searchconsole.sitemaps
   "Google Search Console API: sitemaps.
   The Search Console API provides access to both Search Console data (verified users only) and to public information on an URL basis (anyone)
-  See: https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/sitemaps"
+  See: https://developer.chrome.com/docs/lighthouse/overview/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
+(defn get$
+  "https://developer.chrome.com/docs/lighthouse/overview
+  
+  Required parameters: feedpath, siteUrl
+  
+  Optional parameters: none
+  
+  Retrieves information about a specific sitemap."
+  {:scopes ["https://www.googleapis.com/auth/webmasters"
+            "https://www.googleapis.com/auth/webmasters.readonly"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:feedpath :siteUrl})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://searchconsole.googleapis.com/"
+     "webmasters/v3/sites/{siteUrl}/sitemaps/{feedpath}"
+     #{:feedpath :siteUrl}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn submit$
-  "https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/sitemaps/submit
+  "https://developer.chrome.com/docs/lighthouse/overview
   
   Required parameters: feedpath, siteUrl
   
@@ -33,7 +60,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/sitemaps/list
+  "https://developer.chrome.com/docs/lighthouse/overview
   
   Required parameters: siteUrl
   
@@ -60,9 +87,9 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/sitemaps/delete
+  "https://developer.chrome.com/docs/lighthouse/overview
   
-  Required parameters: feedpath, siteUrl
+  Required parameters: siteUrl, feedpath
   
   Optional parameters: none
   
@@ -72,33 +99,6 @@
   {:pre [(util/has-keys? parameters #{:feedpath :siteUrl})]}
   (util/get-response
    (http/delete
-    (util/get-url
-     "https://searchconsole.googleapis.com/"
-     "webmasters/v3/sites/{siteUrl}/sitemaps/{feedpath}"
-     #{:feedpath :siteUrl}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn get$
-  "https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/sitemaps/get
-  
-  Required parameters: feedpath, siteUrl
-  
-  Optional parameters: none
-  
-  Retrieves information about a specific sitemap."
-  {:scopes ["https://www.googleapis.com/auth/webmasters"
-            "https://www.googleapis.com/auth/webmasters.readonly"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:feedpath :siteUrl})]}
-  (util/get-response
-   (http/get
     (util/get-url
      "https://searchconsole.googleapis.com/"
      "webmasters/v3/sites/{siteUrl}/sitemaps/{feedpath}"

@@ -1,13 +1,13 @@
 (ns happygapi.dialogflow.projects
   "Dialogflow API: projects.
   Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices).
-  See: https://cloud.google.com/dialogflow/api/reference/rest/v3/projects"
+  See: https://cloud.google.com/dialogflow/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn operations-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/operations/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/operations/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn operations-cancel$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/operations/cancel
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -88,7 +88,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -142,7 +142,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/operations/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/operations/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -196,7 +196,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/operations/cancel
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -223,7 +223,7 @@
      auth))))
 
 (defn locations-securitySettings-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/securitySettings/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -269,7 +269,7 @@
      auth))))
 
 (defn locations-securitySettings-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/securitySettings/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -296,7 +296,7 @@
      auth))))
 
 (defn locations-securitySettings-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/securitySettings/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -342,7 +342,7 @@
      auth))))
 
 (defn locations-securitySettings-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/securitySettings/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -369,7 +369,7 @@
      auth))))
 
 (defn locations-securitySettings-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/securitySettings/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -396,7 +396,7 @@
      auth))))
 
 (defn locations-agents-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -423,7 +423,7 @@
      auth))))
 
 (defn locations-agents-validate$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/validate
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -456,7 +456,7 @@
      auth))))
 
 (defn locations-agents-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -485,7 +485,8 @@
    :locked boolean,
    :personalizationSettings {:defaultEndUserMetadata {}},
    :enableStackdriverLogging boolean,
-   :avatarUri string}
+   :avatarUri string,
+   :enableMultiLanguageTraining boolean}
   
   Updates the specified agent. Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -510,7 +511,7 @@
      auth))))
 
 (defn locations-agents-getGenerativeSettings$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/getGenerativeSettings
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -537,7 +538,7 @@
      auth))))
 
 (defn locations-agents-restore$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/restore
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -573,7 +574,7 @@
      auth))))
 
 (defn locations-agents-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -602,7 +603,8 @@
    :locked boolean,
    :personalizationSettings {:defaultEndUserMetadata {}},
    :enableStackdriverLogging boolean,
-   :avatarUri string}
+   :avatarUri string,
+   :enableMultiLanguageTraining boolean}
   
   Creates an agent in the specified location. Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training)."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -627,7 +629,7 @@
      auth))))
 
 (defn locations-agents-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -654,7 +656,7 @@
      auth))))
 
 (defn locations-agents-export$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/export
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -691,7 +693,7 @@
      auth))))
 
 (defn locations-agents-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -718,7 +720,7 @@
      auth))))
 
 (defn locations-agents-getValidationResult$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/getValidationResult
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -745,7 +747,7 @@
      auth))))
 
 (defn locations-agents-updateGenerativeSettings$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/updateGenerativeSettings
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -788,7 +790,7 @@
      auth))))
 
 (defn locations-agents-transitionRouteGroups-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/transitionRouteGroups/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -815,7 +817,7 @@
      auth))))
 
 (defn locations-agents-transitionRouteGroups-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/transitionRouteGroups/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -842,7 +844,7 @@
      auth))))
 
 (defn locations-agents-transitionRouteGroups-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/transitionRouteGroups/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -883,7 +885,7 @@
      auth))))
 
 (defn locations-agents-transitionRouteGroups-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/transitionRouteGroups/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -924,7 +926,7 @@
      auth))))
 
 (defn locations-agents-transitionRouteGroups-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/transitionRouteGroups/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -951,7 +953,7 @@
      auth))))
 
 (defn locations-agents-intents-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/intents/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -978,7 +980,7 @@
      auth))))
 
 (defn locations-agents-intents-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/intents/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1005,7 +1007,7 @@
      auth))))
 
 (defn locations-agents-intents-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/intents/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1050,7 +1052,7 @@
      auth))))
 
 (defn locations-agents-intents-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/intents/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1095,7 +1097,7 @@
      auth))))
 
 (defn locations-agents-intents-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/intents/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1122,7 +1124,7 @@
      auth))))
 
 (defn locations-agents-intents-import$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/intents/import
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1157,7 +1159,7 @@
      auth))))
 
 (defn locations-agents-intents-export$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/intents/export
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1193,7 +1195,7 @@
      auth))))
 
 (defn locations-agents-testCases-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1220,7 +1222,7 @@
      auth))))
 
 (defn locations-agents-testCases-run$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/run
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1253,7 +1255,7 @@
      auth))))
 
 (defn locations-agents-testCases-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1300,7 +1302,7 @@
      auth))))
 
 (defn locations-agents-testCases-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1347,7 +1349,7 @@
      auth))))
 
 (defn locations-agents-testCases-export$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/export
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1380,7 +1382,7 @@
      auth))))
 
 (defn locations-agents-testCases-batchDelete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/batchDelete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1413,7 +1415,7 @@
      auth))))
 
 (defn locations-agents-testCases-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1440,7 +1442,7 @@
      auth))))
 
 (defn locations-agents-testCases-calculateCoverage$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/calculateCoverage
+  "https://cloud.google.com/dialogflow
   
   Required parameters: agent
   
@@ -1467,7 +1469,7 @@
      auth))))
 
 (defn locations-agents-testCases-import$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/import
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1500,7 +1502,7 @@
      auth))))
 
 (defn locations-agents-testCases-batchRun$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/batchRun
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1533,7 +1535,7 @@
      auth))))
 
 (defn locations-agents-testCases-results-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/results/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1560,7 +1562,7 @@
      auth))))
 
 (defn locations-agents-testCases-results-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/testCases/results/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1587,7 +1589,7 @@
      auth))))
 
 (defn locations-agents-flows-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1614,7 +1616,7 @@
      auth))))
 
 (defn locations-agents-flows-validate$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/validate
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1647,7 +1649,7 @@
      auth))))
 
 (defn locations-agents-flows-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1660,6 +1662,8 @@
                       :dtmfSettings GoogleCloudDialogflowCxV3AdvancedSettingsDtmfSettings,
                       :loggingSettings GoogleCloudDialogflowCxV3AdvancedSettingsLoggingSettings},
    :description string,
+   :multiLanguageSettings {:enableMultiLanguageDetection boolean,
+                           :supportedResponseLanguageCodes [string]},
    :transitionRouteGroups [string],
    :transitionRoutes [{:name string,
                        :description string,
@@ -1707,7 +1711,7 @@
      auth))))
 
 (defn locations-agents-flows-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1720,6 +1724,8 @@
                       :dtmfSettings GoogleCloudDialogflowCxV3AdvancedSettingsDtmfSettings,
                       :loggingSettings GoogleCloudDialogflowCxV3AdvancedSettingsLoggingSettings},
    :description string,
+   :multiLanguageSettings {:enableMultiLanguageDetection boolean,
+                           :supportedResponseLanguageCodes [string]},
    :transitionRouteGroups [string],
    :transitionRoutes [{:name string,
                        :description string,
@@ -1767,7 +1773,7 @@
      auth))))
 
 (defn locations-agents-flows-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1794,7 +1800,7 @@
      auth))))
 
 (defn locations-agents-flows-export$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/export
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1827,7 +1833,7 @@
      auth))))
 
 (defn locations-agents-flows-train$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/train
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1860,7 +1866,7 @@
      auth))))
 
 (defn locations-agents-flows-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1887,7 +1893,7 @@
      auth))))
 
 (defn locations-agents-flows-getValidationResult$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/getValidationResult
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -1914,7 +1920,7 @@
      auth))))
 
 (defn locations-agents-flows-import$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/import
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1950,7 +1956,7 @@
      auth))))
 
 (defn locations-agents-flows-pages-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/pages/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -1977,7 +1983,7 @@
      auth))))
 
 (defn locations-agents-flows-pages-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/pages/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2004,7 +2010,7 @@
      auth))))
 
 (defn locations-agents-flows-pages-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/pages/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2070,7 +2076,7 @@
      auth))))
 
 (defn locations-agents-flows-pages-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/pages/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2136,7 +2142,7 @@
      auth))))
 
 (defn locations-agents-flows-pages-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/pages/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2163,7 +2169,7 @@
      auth))))
 
 (defn locations-agents-flows-transitionRouteGroups-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/transitionRouteGroups/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2190,7 +2196,7 @@
      auth))))
 
 (defn locations-agents-flows-transitionRouteGroups-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/transitionRouteGroups/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2217,7 +2223,7 @@
      auth))))
 
 (defn locations-agents-flows-transitionRouteGroups-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/transitionRouteGroups/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2258,7 +2264,7 @@
      auth))))
 
 (defn locations-agents-flows-transitionRouteGroups-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/transitionRouteGroups/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2299,7 +2305,7 @@
      auth))))
 
 (defn locations-agents-flows-transitionRouteGroups-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/transitionRouteGroups/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2326,7 +2332,7 @@
      auth))))
 
 (defn locations-agents-flows-versions-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/versions/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2353,7 +2359,7 @@
      auth))))
 
 (defn locations-agents-flows-versions-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/versions/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2380,7 +2386,7 @@
      auth))))
 
 (defn locations-agents-flows-versions-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/versions/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2420,7 +2426,7 @@
      auth))))
 
 (defn locations-agents-flows-versions-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/versions/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2460,7 +2466,7 @@
      auth))))
 
 (defn locations-agents-flows-versions-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/versions/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2487,7 +2493,7 @@
      auth))))
 
 (defn locations-agents-flows-versions-load$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/versions/load
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2520,7 +2526,7 @@
      auth))))
 
 (defn locations-agents-flows-versions-compareVersions$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/flows/versions/compareVersions
+  "https://cloud.google.com/dialogflow
   
   Required parameters: baseVersion
   
@@ -2553,7 +2559,7 @@
      auth))))
 
 (defn locations-agents-webhooks-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/webhooks/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2580,7 +2586,7 @@
      auth))))
 
 (defn locations-agents-webhooks-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/webhooks/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2607,7 +2613,7 @@
      auth))))
 
 (defn locations-agents-webhooks-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/webhooks/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2656,7 +2662,7 @@
      auth))))
 
 (defn locations-agents-webhooks-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/webhooks/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2705,7 +2711,7 @@
      auth))))
 
 (defn locations-agents-webhooks-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/webhooks/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2732,7 +2738,7 @@
      auth))))
 
 (defn locations-agents-entityTypes-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/entityTypes/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2759,7 +2765,7 @@
      auth))))
 
 (defn locations-agents-entityTypes-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/entityTypes/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2799,7 +2805,7 @@
      auth))))
 
 (defn locations-agents-entityTypes-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/entityTypes/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2839,7 +2845,7 @@
      auth))))
 
 (defn locations-agents-entityTypes-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/entityTypes/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -2866,7 +2872,7 @@
      auth))))
 
 (defn locations-agents-entityTypes-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/entityTypes/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2893,7 +2899,7 @@
      auth))))
 
 (defn locations-agents-entityTypes-export$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/entityTypes/export
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2930,7 +2936,7 @@
      auth))))
 
 (defn locations-agents-entityTypes-import$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/entityTypes/import
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2966,7 +2972,7 @@
      auth))))
 
 (defn locations-agents-environments-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -2993,7 +2999,7 @@
      auth))))
 
 (defn locations-agents-environments-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3020,7 +3026,7 @@
      auth))))
 
 (defn locations-agents-environments-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -3061,7 +3067,7 @@
      auth))))
 
 (defn locations-agents-environments-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3102,7 +3108,7 @@
      auth))))
 
 (defn locations-agents-environments-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3129,7 +3135,7 @@
      auth))))
 
 (defn locations-agents-environments-lookupEnvironmentHistory$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/lookupEnvironmentHistory
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3156,7 +3162,7 @@
      auth))))
 
 (defn locations-agents-environments-runContinuousTest$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/runContinuousTest
+  "https://cloud.google.com/dialogflow
   
   Required parameters: environment
   
@@ -3189,7 +3195,7 @@
      auth))))
 
 (defn locations-agents-environments-deployFlow$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/deployFlow
+  "https://cloud.google.com/dialogflow
   
   Required parameters: environment
   
@@ -3222,7 +3228,7 @@
      auth))))
 
 (defn locations-agents-environments-deployments-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/deployments/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -3249,7 +3255,7 @@
      auth))))
 
 (defn locations-agents-environments-deployments-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/deployments/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3276,7 +3282,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-detectIntent$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/detectIntent
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -3332,7 +3338,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-serverStreamingDetectIntent$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/serverStreamingDetectIntent
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -3388,7 +3394,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-matchIntent$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/matchIntent
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -3442,7 +3448,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-fulfillIntent$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/fulfillIntent
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -3486,7 +3492,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-entityTypes-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/entityTypes/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -3513,7 +3519,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-entityTypes-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/entityTypes/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3540,7 +3546,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-entityTypes-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/entityTypes/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -3575,7 +3581,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-entityTypes-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/entityTypes/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3610,7 +3616,7 @@
      auth))))
 
 (defn locations-agents-environments-sessions-entityTypes-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/sessions/entityTypes/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3637,7 +3643,7 @@
      auth))))
 
 (defn locations-agents-environments-continuousTestResults-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/continuousTestResults/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -3664,7 +3670,7 @@
      auth))))
 
 (defn locations-agents-environments-experiments-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/experiments/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -3691,7 +3697,7 @@
      auth))))
 
 (defn locations-agents-environments-experiments-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/experiments/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3718,7 +3724,7 @@
      auth))))
 
 (defn locations-agents-environments-experiments-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/experiments/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -3770,7 +3776,7 @@
      auth))))
 
 (defn locations-agents-environments-experiments-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/experiments/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3822,7 +3828,7 @@
      auth))))
 
 (defn locations-agents-environments-experiments-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/experiments/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3849,7 +3855,7 @@
      auth))))
 
 (defn locations-agents-environments-experiments-start$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/experiments/start
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3882,7 +3888,7 @@
      auth))))
 
 (defn locations-agents-environments-experiments-stop$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/environments/experiments/stop
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3915,7 +3921,7 @@
      auth))))
 
 (defn locations-agents-changelogs-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/changelogs/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -3942,7 +3948,7 @@
      auth))))
 
 (defn locations-agents-changelogs-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/changelogs/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -3969,7 +3975,7 @@
      auth))))
 
 (defn locations-agents-sessions-detectIntent$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/detectIntent
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -4025,7 +4031,7 @@
      auth))))
 
 (defn locations-agents-sessions-serverStreamingDetectIntent$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/serverStreamingDetectIntent
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -4081,7 +4087,7 @@
      auth))))
 
 (defn locations-agents-sessions-matchIntent$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/matchIntent
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -4135,7 +4141,7 @@
      auth))))
 
 (defn locations-agents-sessions-fulfillIntent$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/fulfillIntent
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -4179,7 +4185,7 @@
      auth))))
 
 (defn locations-agents-sessions-submitAnswerFeedback$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/submitAnswerFeedback
+  "https://cloud.google.com/dialogflow
   
   Required parameters: session
   
@@ -4216,7 +4222,7 @@
      auth))))
 
 (defn locations-agents-sessions-entityTypes-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/entityTypes/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -4243,7 +4249,7 @@
      auth))))
 
 (defn locations-agents-sessions-entityTypes-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/entityTypes/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -4270,7 +4276,7 @@
      auth))))
 
 (defn locations-agents-sessions-entityTypes-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/entityTypes/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -4305,7 +4311,7 @@
      auth))))
 
 (defn locations-agents-sessions-entityTypes-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/entityTypes/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -4340,7 +4346,7 @@
      auth))))
 
 (defn locations-agents-sessions-entityTypes-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/sessions/entityTypes/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -4367,7 +4373,7 @@
      auth))))
 
 (defn locations-agents-generators-list$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/generators/list
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -4394,7 +4400,7 @@
      auth))))
 
 (defn locations-agents-generators-get$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/generators/get
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -4421,7 +4427,7 @@
      auth))))
 
 (defn locations-agents-generators-create$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/generators/create
+  "https://cloud.google.com/dialogflow
   
   Required parameters: parent
   
@@ -4457,7 +4463,7 @@
      auth))))
 
 (defn locations-agents-generators-patch$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/generators/patch
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   
@@ -4493,7 +4499,7 @@
      auth))))
 
 (defn locations-agents-generators-delete$
-  "https://cloud.google.com/dialogflow/api/reference/rest/v3/projects/locations/agents/generators/delete
+  "https://cloud.google.com/dialogflow
   
   Required parameters: name
   

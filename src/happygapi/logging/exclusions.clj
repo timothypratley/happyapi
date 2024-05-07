@@ -1,13 +1,13 @@
 (ns happygapi.logging.exclusions
   "Cloud Logging API: exclusions.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/exclusions"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/exclusions/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/exclusions/list
   
   Required parameters: parent
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/exclusions/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/exclusions/get
   
   Required parameters: name
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/exclusions/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/exclusions/create
   
   Required parameters: parent
   
@@ -103,7 +103,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/exclusions/patch
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/exclusions/patch
   
   Required parameters: name
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/exclusions/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/exclusions/delete
   
   Required parameters: name
   

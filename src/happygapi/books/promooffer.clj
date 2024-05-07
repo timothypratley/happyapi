@@ -1,13 +1,13 @@
 (ns happygapi.books.promooffer
   "Books API: promooffer.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/promooffer"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn accept$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/promooffer/accept
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/promooffer/accept
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn dismiss$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/promooffer/dismiss
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/promooffer/dismiss
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/promooffer/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/promooffer/get
   
   Required parameters: none
   

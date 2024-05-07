@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.orders
   "Google Play Android Developer API: orders.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/orders"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn refund$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/orders/refund
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, orderId
   

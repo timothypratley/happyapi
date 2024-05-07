@@ -1,13 +1,13 @@
 (ns happygapi.domains.projects
   "Cloud Domains API: projects.
   Enables management and configuration of domain names.
-  See: https://cloud.google.com/domains/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/domains/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-registrations-retrieveRegisterParameters$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/retrieveRegisterParameters
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/retrieveRegisterParameters
   
   Required parameters: location
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-registrations-retrieveTransferParameters$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/retrieveTransferParameters
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/retrieveTransferParameters
   
   Required parameters: location
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn locations-registrations-get$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/get
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/get
   
   Required parameters: name
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn locations-registrations-setIamPolicy$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/setIamPolicy
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/setIamPolicy
   
   Required parameters: resource
   
@@ -225,7 +225,7 @@
      auth))))
 
 (defn locations-registrations-configureManagementSettings$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/configureManagementSettings
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/configureManagementSettings
   
   Required parameters: registration
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn locations-registrations-patch$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/patch
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/patch
   
   Required parameters: name
   
@@ -315,7 +315,7 @@
      auth))))
 
 (defn locations-registrations-testIamPermissions$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/testIamPermissions
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/testIamPermissions
   
   Required parameters: resource
   
@@ -347,7 +347,7 @@
      auth))))
 
 (defn locations-registrations-transfer$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/transfer
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/transfer
   
   Required parameters: parent
   
@@ -396,7 +396,7 @@
      auth))))
 
 (defn locations-registrations-resetAuthorizationCode$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/resetAuthorizationCode
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/resetAuthorizationCode
   
   Required parameters: registration
   
@@ -428,7 +428,7 @@
      auth))))
 
 (defn locations-registrations-configureContactSettings$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/configureContactSettings
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/configureContactSettings
   
   Required parameters: registration
   
@@ -444,7 +444,7 @@
    :contactNotices [string],
    :validateOnly boolean}
   
-  Updates a `Registration`'s contact settings. Some changes require confirmation by the domain's registrant contact ."
+  Updates a `Registration`'s contact settings. Some changes require confirmation by the domain's registrant contact . Caution: Please consider carefully any changes to contact privacy settings when changing from `REDACTED_CONTACT_DATA` to `PUBLIC_CONTACT_DATA.` There may be a delay in reflecting updates you make to registrant contact information such that any changes you make to contact privacy (including from `REDACTED_CONTACT_DATA` to `PUBLIC_CONTACT_DATA`) will be applied without delay but changes to registrant contact information may take a limited time to be publicized. This means that changes to contact privacy from `REDACTED_CONTACT_DATA` to `PUBLIC_CONTACT_DATA` may make the previous registrant contact data public until the modified registrant contact details are published."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:registration})]}
@@ -466,7 +466,7 @@
      auth))))
 
 (defn locations-registrations-configureDnsSettings$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/configureDnsSettings
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/configureDnsSettings
   
   Required parameters: registration
   
@@ -502,7 +502,7 @@
      auth))))
 
 (defn locations-registrations-delete$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/delete
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/delete
   
   Required parameters: name
   
@@ -528,7 +528,7 @@
      auth))))
 
 (defn locations-registrations-export$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/export
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/export
   
   Required parameters: name
   
@@ -560,7 +560,7 @@
      auth))))
 
 (defn locations-registrations-getIamPolicy$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/getIamPolicy
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/getIamPolicy
   
   Required parameters: resource
   
@@ -586,7 +586,7 @@
      auth))))
 
 (defn locations-registrations-retrieveImportableDomains$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/retrieveImportableDomains
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/retrieveImportableDomains
   
   Required parameters: location
   
@@ -612,7 +612,7 @@
      auth))))
 
 (defn locations-registrations-list$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/list
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/list
   
   Required parameters: parent
   
@@ -638,7 +638,7 @@
      auth))))
 
 (defn locations-registrations-register$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/register
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/register
   
   Required parameters: parent
   
@@ -687,7 +687,7 @@
      auth))))
 
 (defn locations-registrations-retrieveAuthorizationCode$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/retrieveAuthorizationCode
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/retrieveAuthorizationCode
   
   Required parameters: registration
   
@@ -713,7 +713,7 @@
      auth))))
 
 (defn locations-registrations-searchDomains$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/searchDomains
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/searchDomains
   
   Required parameters: location
   
@@ -739,7 +739,7 @@
      auth))))
 
 (defn locations-registrations-import$
-  "https://cloud.google.com/domains/api/reference/rest/v1/projects/locations/registrations/import
+  "https://cloud.google.com/domains/docs/reference/rest/v1/projects.locations.registrations/import
   
   Required parameters: parent
   

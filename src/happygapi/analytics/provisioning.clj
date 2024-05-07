@@ -1,13 +1,13 @@
 (ns happygapi.analytics.provisioning
   "Google Analytics API: provisioning.
   Views and manages your Google Analytics data.
-  See: https://developers.google.com/analytics/api/reference/rest/v3/provisioning"
+  See: https://developers.google.com/analytics/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn createAccountTicket$
-  "https://developers.google.com/analytics/api/reference/rest/v3/provisioning/createAccountTicket
+  "https://developers.google.com/analytics
   
   Required parameters: none
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn createAccountTree$
-  "https://developers.google.com/analytics/api/reference/rest/v3/provisioning/createAccountTree
+  "https://developers.google.com/analytics
   
   Required parameters: none
   

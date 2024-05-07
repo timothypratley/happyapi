@@ -1,13 +1,13 @@
 (ns happygapi.servicecontrol.services
   "Service Control API: services.
   Provides admission control and telemetry reporting for services integrated with Service Infrastructure. 
-  See: https://cloud.google.com/service-control/api/reference/rest/v2/services"
+  See: https://cloud.google.com/service-infrastructure/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn check$
-  "https://cloud.google.com/service-control/api/reference/rest/v2/services/check
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -54,7 +54,7 @@
      auth))))
 
 (defn report$
-  "https://cloud.google.com/service-control/api/reference/rest/v2/services/report
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   

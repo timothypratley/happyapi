@@ -1,13 +1,13 @@
 (ns happygapi.firebaseml.operations
   "Firebase ML API: operations.
   Access custom machine learning models hosted via Firebase ML.
-  See: https://firebase.google.comapi/reference/rest/v1/operations"
+  See: https://firebase.google.com"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://firebase.google.comapi/reference/rest/v1/operations/list
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn delete$
-  "https://firebase.google.comapi/reference/rest/v1/operations/delete
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn cancel$
-  "https://firebase.google.comapi/reference/rest/v1/operations/cancel
+  "https://firebase.google.com
   
   Required parameters: name
   

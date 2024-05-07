@@ -1,13 +1,13 @@
 (ns happygapi.kmsinventory.projects
   "KMS Inventory API: projects.
   
-  See: https://cloud.google.com/kms/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/security/products/security-key-management"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn cryptoKeys-list$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/cryptoKeys/list
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/cryptoKeys/list
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-keyRings-cryptoKeys-getProtectedResourcesSummary$
-  "https://cloud.google.com/kms/api/reference/rest/v1/projects/locations/keyRings/cryptoKeys/getProtectedResourcesSummary
+  "https://cloud.google.com/security/products/security-key-management/v1/docs/projects/locations/keyRings/cryptoKeys/getProtectedResourcesSummary
   
   Required parameters: name
   

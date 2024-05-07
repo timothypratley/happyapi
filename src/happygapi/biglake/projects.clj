@@ -1,13 +1,13 @@
 (ns happygapi.biglake.projects
   "BigLake API: projects.
   The BigLake API provides access to BigLake Metastore, a serverless, fully managed, and highly available metastore for open-source data that can be used for querying Apache Iceberg tables in BigQuery.
-  See: https://cloud.google.com/bigquery/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/bigquery/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-catalogs-create$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/create
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs/create
   
   Required parameters: parent
   
@@ -44,7 +44,7 @@
      auth))))
 
 (defn locations-catalogs-delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/delete
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs/delete
   
   Required parameters: name
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn locations-catalogs-get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/get
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs/get
   
   Required parameters: name
   
@@ -98,7 +98,7 @@
      auth))))
 
 (defn locations-catalogs-list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/list
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs/list
   
   Required parameters: parent
   
@@ -125,7 +125,7 @@
      auth))))
 
 (defn locations-catalogs-databases-create$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/create
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases/create
   
   Required parameters: parent
   
@@ -164,7 +164,7 @@
      auth))))
 
 (defn locations-catalogs-databases-delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/delete
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases/delete
   
   Required parameters: name
   
@@ -191,7 +191,7 @@
      auth))))
 
 (defn locations-catalogs-databases-patch$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/patch
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases/patch
   
   Required parameters: name
   
@@ -230,7 +230,7 @@
      auth))))
 
 (defn locations-catalogs-databases-get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/get
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases/get
   
   Required parameters: name
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn locations-catalogs-databases-list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/list
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases/list
   
   Required parameters: parent
   
@@ -284,7 +284,7 @@
      auth))))
 
 (defn locations-catalogs-databases-tables-create$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/tables/create
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases.tables/create
   
   Required parameters: parent
   
@@ -326,7 +326,7 @@
      auth))))
 
 (defn locations-catalogs-databases-tables-delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/tables/delete
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases.tables/delete
   
   Required parameters: name
   
@@ -353,7 +353,7 @@
      auth))))
 
 (defn locations-catalogs-databases-tables-patch$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/tables/patch
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases.tables/patch
   
   Required parameters: name
   
@@ -395,7 +395,7 @@
      auth))))
 
 (defn locations-catalogs-databases-tables-rename$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/tables/rename
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases.tables/rename
   
   Required parameters: name
   
@@ -428,7 +428,7 @@
      auth))))
 
 (defn locations-catalogs-databases-tables-get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/tables/get
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases.tables/get
   
   Required parameters: name
   
@@ -455,7 +455,7 @@
      auth))))
 
 (defn locations-catalogs-databases-tables-list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/catalogs/databases/tables/list
+  "https://cloud.google.com/bigquery/docs/reference/biglake/rest/v1/projects.locations.catalogs.databases.tables/list
   
   Required parameters: parent
   

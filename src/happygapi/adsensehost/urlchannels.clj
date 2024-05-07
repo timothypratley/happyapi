@@ -1,13 +1,13 @@
 (ns happygapi.adsensehost.urlchannels
   "AdSense Host API: urlchannels.
   Generates performance reports, generates ad codes, and provides publisher management capabilities for AdSense Hosts.
-  See: https://developers.google.com/adsense/host/api/reference/rest/v4.1/urlchannels"
+  See: https://developers.google.com/adsense/host/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/urlchannels/delete
+  "https://developers.google.com/adsense/host/v4.1/docs/urlchannels/delete
   
   Required parameters: adClientId, urlChannelId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/urlchannels/insert
+  "https://developers.google.com/adsense/host/v4.1/docs/urlchannels/insert
   
   Required parameters: adClientId
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/urlchannels/list
+  "https://developers.google.com/adsense/host/v4.1/docs/urlchannels/list
   
   Required parameters: adClientId
   

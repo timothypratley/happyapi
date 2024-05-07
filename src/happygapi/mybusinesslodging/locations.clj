@@ -1,13 +1,13 @@
 (ns happygapi.mybusinesslodging.locations
   "My Business Lodging API: locations.
   The My Business Lodging API enables managing lodging business information on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
-  See: https://developers.google.com/my-business/api/reference/rest/v1/locations"
+  See: https://developers.google.com/my-business/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getLodging$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/getLodging
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn updateLodging$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/updateLodging
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -354,7 +354,7 @@
      auth))))
 
 (defn lodging-getGoogleUpdated$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/lodging/getGoogleUpdated
+  "https://developers.google.com/my-business
   
   Required parameters: name
   

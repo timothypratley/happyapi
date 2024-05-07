@@ -1,13 +1,13 @@
 (ns happygapi.content.reports
   "Content API for Shopping: reports.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/reports"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn search$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/reports/search
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

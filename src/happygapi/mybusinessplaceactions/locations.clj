@@ -1,13 +1,13 @@
 (ns happygapi.mybusinessplaceactions.locations
   "My Business Place Actions API: locations.
   The My Business Place Actions API provides an interface for managing place action links of a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
-  See: https://developers.google.com/my-business/api/reference/rest/v1/locations"
+  See: https://developers.google.com/my-business/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn placeActionLinks-list$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/placeActionLinks/list
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn placeActionLinks-get$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/placeActionLinks/get
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn placeActionLinks-create$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/placeActionLinks/create
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   
@@ -98,7 +98,7 @@
      auth))))
 
 (defn placeActionLinks-patch$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/placeActionLinks/patch
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn placeActionLinks-delete$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/placeActionLinks/delete
+  "https://developers.google.com/my-business
   
   Required parameters: name
   

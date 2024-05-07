@@ -1,13 +1,13 @@
 (ns happygapi.monitoring.projects
   "Cloud Monitoring API: projects.
   Manages your Cloud Monitoring data and configurations.
-  See: https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects"
+  See: https://cloud.google.com/monitoring/api/v3"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn notificationChannelDescriptors-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannelDescriptors/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn notificationChannelDescriptors-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannelDescriptors/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn timeSeries-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/timeSeries/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn timeSeries-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/timeSeries/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -131,7 +131,7 @@
      auth))))
 
 (defn timeSeries-createService$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/timeSeries/createService
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -171,7 +171,7 @@
      auth))))
 
 (defn timeSeries-query$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/timeSeries/query
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -205,7 +205,7 @@
      auth))))
 
 (defn monitoredResourceDescriptors-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/monitoredResourceDescriptors/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -234,7 +234,7 @@
      auth))))
 
 (defn monitoredResourceDescriptors-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/monitoredResourceDescriptors/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -263,7 +263,7 @@
      auth))))
 
 (defn alertPolicies-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/alertPolicies/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -291,7 +291,7 @@
      auth))))
 
 (defn alertPolicies-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/alertPolicies/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -319,7 +319,7 @@
      auth))))
 
 (defn alertPolicies-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/alertPolicies/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -372,7 +372,7 @@
      auth))))
 
 (defn alertPolicies-delete$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/alertPolicies/delete
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -399,7 +399,7 @@
      auth))))
 
 (defn alertPolicies-patch$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/alertPolicies/patch
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -452,7 +452,7 @@
      auth))))
 
 (defn uptimeCheckConfigs-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/uptimeCheckConfigs/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: parent
   
@@ -480,7 +480,7 @@
      auth))))
 
 (defn uptimeCheckConfigs-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/uptimeCheckConfigs/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -508,7 +508,7 @@
      auth))))
 
 (defn uptimeCheckConfigs-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/uptimeCheckConfigs/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: parent
   
@@ -517,6 +517,7 @@
   Body: 
   
   {:httpCheck {:path string,
+               :serviceAgentAuthentication ServiceAgentAuthentication,
                :useSsl boolean,
                :port integer,
                :headers {},
@@ -574,7 +575,7 @@
      auth))))
 
 (defn uptimeCheckConfigs-patch$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/uptimeCheckConfigs/patch
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -583,6 +584,7 @@
   Body: 
   
   {:httpCheck {:path string,
+               :serviceAgentAuthentication ServiceAgentAuthentication,
                :useSsl boolean,
                :port integer,
                :headers {},
@@ -640,7 +642,7 @@
      auth))))
 
 (defn uptimeCheckConfigs-delete$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/uptimeCheckConfigs/delete
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -667,7 +669,7 @@
      auth))))
 
 (defn metricDescriptors-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/metricDescriptors/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -696,7 +698,7 @@
      auth))))
 
 (defn metricDescriptors-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/metricDescriptors/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -725,7 +727,7 @@
      auth))))
 
 (defn metricDescriptors-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/metricDescriptors/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -771,7 +773,7 @@
      auth))))
 
 (defn metricDescriptors-delete$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/metricDescriptors/delete
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -798,7 +800,7 @@
      auth))))
 
 (defn snoozes-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/snoozes/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: parent
   
@@ -834,7 +836,7 @@
      auth))))
 
 (defn snoozes-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/snoozes/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: parent
   
@@ -862,7 +864,7 @@
      auth))))
 
 (defn snoozes-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/snoozes/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -890,7 +892,7 @@
      auth))))
 
 (defn snoozes-patch$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/snoozes/patch
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -926,7 +928,7 @@
      auth))))
 
 (defn collectdTimeSeries-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/collectdTimeSeries/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -969,7 +971,7 @@
      auth))))
 
 (defn groups-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/groups/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -997,7 +999,7 @@
      auth))))
 
 (defn groups-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/groups/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1025,7 +1027,7 @@
      auth))))
 
 (defn groups-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/groups/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1062,7 +1064,7 @@
      auth))))
 
 (defn groups-update$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/groups/update
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1099,7 +1101,7 @@
      auth))))
 
 (defn groups-delete$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/groups/delete
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1126,7 +1128,7 @@
      auth))))
 
 (defn groups-members-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/groups/members/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1154,7 +1156,7 @@
      auth))))
 
 (defn notificationChannels-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannels/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1182,7 +1184,7 @@
      auth))))
 
 (defn notificationChannels-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannels/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1210,7 +1212,7 @@
      auth))))
 
 (defn notificationChannels-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannels/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1252,7 +1254,7 @@
      auth))))
 
 (defn notificationChannels-patch$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannels/patch
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1294,7 +1296,7 @@
      auth))))
 
 (defn notificationChannels-delete$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannels/delete
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1321,7 +1323,7 @@
      auth))))
 
 (defn notificationChannels-sendVerificationCode$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannels/sendVerificationCode
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1354,7 +1356,7 @@
      auth))))
 
 (defn notificationChannels-getVerificationCode$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannels/getVerificationCode
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -1387,7 +1389,7 @@
      auth))))
 
 (defn notificationChannels-verify$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/projects/notificationChannels/verify
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   

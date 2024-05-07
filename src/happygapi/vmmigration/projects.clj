@@ -1,13 +1,13 @@
 (ns happygapi.vmmigration.projects
   "VM Migration API: projects.
   Use the Migrate to Virtual Machines API to programmatically migrate workloads. 
-  See: https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/migrate/virtual-machines"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-sources-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources/list
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-sources-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources/get
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-sources-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources/create
   
   Required parameters: parent
   
@@ -278,7 +278,7 @@
      auth))))
 
 (defn locations-sources-patch$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/patch
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources/patch
   
   Required parameters: name
   
@@ -335,7 +335,7 @@
      auth))))
 
 (defn locations-sources-delete$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/delete
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources/delete
   
   Required parameters: name
   
@@ -361,7 +361,7 @@
      auth))))
 
 (defn locations-sources-fetchInventory$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/fetchInventory
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources/fetchInventory
   
   Required parameters: source
   
@@ -387,7 +387,7 @@
      auth))))
 
 (defn locations-sources-utilizationReports-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/utilizationReports/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.utilizationReports/list
   
   Required parameters: parent
   
@@ -413,7 +413,7 @@
      auth))))
 
 (defn locations-sources-utilizationReports-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/utilizationReports/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.utilizationReports/get
   
   Required parameters: name
   
@@ -439,7 +439,7 @@
      auth))))
 
 (defn locations-sources-utilizationReports-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/utilizationReports/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.utilizationReports/create
   
   Required parameters: parent
   
@@ -482,7 +482,7 @@
      auth))))
 
 (defn locations-sources-utilizationReports-delete$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/utilizationReports/delete
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.utilizationReports/delete
   
   Required parameters: name
   
@@ -508,7 +508,7 @@
      auth))))
 
 (defn locations-sources-datacenterConnectors-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/datacenterConnectors/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.datacenterConnectors/list
   
   Required parameters: parent
   
@@ -534,7 +534,7 @@
      auth))))
 
 (defn locations-sources-datacenterConnectors-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/datacenterConnectors/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.datacenterConnectors/get
   
   Required parameters: name
   
@@ -560,7 +560,7 @@
      auth))))
 
 (defn locations-sources-datacenterConnectors-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/datacenterConnectors/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.datacenterConnectors/create
   
   Required parameters: parent
   
@@ -610,7 +610,7 @@
      auth))))
 
 (defn locations-sources-datacenterConnectors-delete$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/datacenterConnectors/delete
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.datacenterConnectors/delete
   
   Required parameters: name
   
@@ -636,7 +636,7 @@
      auth))))
 
 (defn locations-sources-datacenterConnectors-upgradeAppliance$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/datacenterConnectors/upgradeAppliance
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.datacenterConnectors/upgradeAppliance
   
   Required parameters: datacenterConnector
   
@@ -668,7 +668,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/get
   
   Required parameters: name
   
@@ -694,7 +694,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-patch$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/patch
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/patch
   
   Required parameters: name
   
@@ -815,7 +815,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/create
   
   Required parameters: parent
   
@@ -936,7 +936,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-startMigration$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/startMigration
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/startMigration
   
   Required parameters: migratingVm
   
@@ -968,7 +968,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-finalizeMigration$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/finalizeMigration
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/finalizeMigration
   
   Required parameters: migratingVm
   
@@ -1000,7 +1000,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-delete$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/delete
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/delete
   
   Required parameters: name
   
@@ -1026,7 +1026,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/list
   
   Required parameters: parent
   
@@ -1052,7 +1052,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-pauseMigration$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/pauseMigration
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/pauseMigration
   
   Required parameters: migratingVm
   
@@ -1084,7 +1084,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-resumeMigration$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/resumeMigration
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms/resumeMigration
   
   Required parameters: migratingVm
   
@@ -1116,7 +1116,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-cloneJobs-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/cloneJobs/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.cloneJobs/create
   
   Required parameters: parent
   
@@ -1180,7 +1180,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-cloneJobs-cancel$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/cloneJobs/cancel
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.cloneJobs/cancel
   
   Required parameters: name
   
@@ -1212,7 +1212,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-cloneJobs-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/cloneJobs/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.cloneJobs/list
   
   Required parameters: parent
   
@@ -1238,7 +1238,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-cloneJobs-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/cloneJobs/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.cloneJobs/get
   
   Required parameters: name
   
@@ -1264,7 +1264,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-cutoverJobs-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/cutoverJobs/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.cutoverJobs/create
   
   Required parameters: parent
   
@@ -1332,7 +1332,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-cutoverJobs-cancel$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/cutoverJobs/cancel
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.cutoverJobs/cancel
   
   Required parameters: name
   
@@ -1364,7 +1364,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-cutoverJobs-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/cutoverJobs/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.cutoverJobs/list
   
   Required parameters: parent
   
@@ -1390,7 +1390,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-cutoverJobs-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/cutoverJobs/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.cutoverJobs/get
   
   Required parameters: name
   
@@ -1416,7 +1416,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-replicationCycles-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/replicationCycles/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.replicationCycles/list
   
   Required parameters: parent
   
@@ -1442,7 +1442,7 @@
      auth))))
 
 (defn locations-sources-migratingVms-replicationCycles-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/sources/migratingVms/replicationCycles/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.sources.migratingVms.replicationCycles/get
   
   Required parameters: name
   
@@ -1468,7 +1468,7 @@
      auth))))
 
 (defn locations-groups-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/groups/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.groups/list
   
   Required parameters: parent
   
@@ -1494,7 +1494,7 @@
      auth))))
 
 (defn locations-groups-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/groups/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.groups/get
   
   Required parameters: name
   
@@ -1520,7 +1520,7 @@
      auth))))
 
 (defn locations-groups-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/groups/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.groups/create
   
   Required parameters: parent
   
@@ -1557,7 +1557,7 @@
      auth))))
 
 (defn locations-groups-patch$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/groups/patch
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.groups/patch
   
   Required parameters: name
   
@@ -1594,7 +1594,7 @@
      auth))))
 
 (defn locations-groups-delete$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/groups/delete
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.groups/delete
   
   Required parameters: name
   
@@ -1620,7 +1620,7 @@
      auth))))
 
 (defn locations-groups-addGroupMigration$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/groups/addGroupMigration
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.groups/addGroupMigration
   
   Required parameters: group
   
@@ -1652,7 +1652,7 @@
      auth))))
 
 (defn locations-groups-removeGroupMigration$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/groups/removeGroupMigration
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.groups/removeGroupMigration
   
   Required parameters: group
   
@@ -1684,7 +1684,7 @@
      auth))))
 
 (defn locations-targetProjects-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/targetProjects/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.targetProjects/list
   
   Required parameters: parent
   
@@ -1710,7 +1710,7 @@
      auth))))
 
 (defn locations-targetProjects-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/targetProjects/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.targetProjects/get
   
   Required parameters: name
   
@@ -1736,7 +1736,7 @@
      auth))))
 
 (defn locations-targetProjects-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/targetProjects/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.targetProjects/create
   
   Required parameters: parent
   
@@ -1772,7 +1772,7 @@
      auth))))
 
 (defn locations-targetProjects-patch$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/targetProjects/patch
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.targetProjects/patch
   
   Required parameters: name
   
@@ -1808,7 +1808,7 @@
      auth))))
 
 (defn locations-targetProjects-delete$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/targetProjects/delete
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.targetProjects/delete
   
   Required parameters: name
   
@@ -1834,7 +1834,7 @@
      auth))))
 
 (defn locations-imageImports-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/imageImports/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.imageImports/list
   
   Required parameters: parent
   
@@ -1860,7 +1860,7 @@
      auth))))
 
 (defn locations-imageImports-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/imageImports/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.imageImports/get
   
   Required parameters: name
   
@@ -1886,7 +1886,7 @@
      auth))))
 
 (defn locations-imageImports-create$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/imageImports/create
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.imageImports/create
   
   Required parameters: parent
   
@@ -1941,7 +1941,7 @@
      auth))))
 
 (defn locations-imageImports-delete$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/imageImports/delete
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.imageImports/delete
   
   Required parameters: name
   
@@ -1967,7 +1967,7 @@
      auth))))
 
 (defn locations-imageImports-imageImportJobs-list$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/imageImports/imageImportJobs/list
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.imageImports.imageImportJobs/list
   
   Required parameters: parent
   
@@ -1993,7 +1993,7 @@
      auth))))
 
 (defn locations-imageImports-imageImportJobs-get$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/imageImports/imageImportJobs/get
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.imageImports.imageImportJobs/get
   
   Required parameters: name
   
@@ -2019,7 +2019,7 @@
      auth))))
 
 (defn locations-imageImports-imageImportJobs-cancel$
-  "https://cloud.google.com/migrate/virtual-machinesapi/reference/rest/v1/projects/locations/imageImports/imageImportJobs/cancel
+  "https://cloud.google.com/migrate/virtual-machines/docs/reference/rest/v1/projects.locations.imageImports.imageImportJobs/cancel
   
   Required parameters: name
   

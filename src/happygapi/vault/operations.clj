@@ -1,13 +1,13 @@
 (ns happygapi.vault.operations
   "Google Vault API: operations.
   Retention and eDiscovery for Google Workspace. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege. For example, to download an export, an account needs the **Manage Exports** privilege and the matter shared with them. 
-  See: https://developers.google.com/vaultapi/reference/rest/v1/operations"
+  See: https://developers.google.com/vault"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/vaultapi/reference/rest/v1/operations/list
+  "https://developers.google.com/vault/reference/rest/v1/operations/list
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/vaultapi/reference/rest/v1/operations/get
+  "https://developers.google.com/vault/reference/rest/v1/operations/get
   
   Required parameters: name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/vaultapi/reference/rest/v1/operations/delete
+  "https://developers.google.com/vault/reference/rest/v1/operations/delete
   
   Required parameters: name
   
@@ -87,7 +87,7 @@
      auth))))
 
 (defn cancel$
-  "https://developers.google.com/vaultapi/reference/rest/v1/operations/cancel
+  "https://developers.google.com/vault/reference/rest/v1/operations/cancel
   
   Required parameters: name
   

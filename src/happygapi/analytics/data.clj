@@ -1,13 +1,13 @@
 (ns happygapi.analytics.data
   "Google Analytics API: data.
   Views and manages your Google Analytics data.
-  See: https://developers.google.com/analytics/api/reference/rest/v3/data"
+  See: https://developers.google.com/analytics/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn ga-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/data/ga/get
+  "https://developers.google.com/analytics
   
   Required parameters: end-date, ids, start-date, metrics
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn mcf-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/data/mcf/get
+  "https://developers.google.com/analytics
   
   Required parameters: end-date, ids, start-date, metrics
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn realtime-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/data/realtime/get
+  "https://developers.google.com/analytics
   
   Required parameters: ids, metrics
   

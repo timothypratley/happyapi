@@ -1,13 +1,13 @@
 (ns happygapi.domainsrdap.domain
   "Domains RDAP API: domain.
   Read-only public API that lets users search for information about domain names.
-  See: https://developers.google.com/domains/rdap/api/reference/rest/v1/domain"
+  See: https://developers.google.com/domains/rdap/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/domains/rdap/api/reference/rest/v1/domain/get
+  "https://developers.google.com/domains/rdap/reference/rest/v1/domain/get
   
   Required parameters: domainName
   

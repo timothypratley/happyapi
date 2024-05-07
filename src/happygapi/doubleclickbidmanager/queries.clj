@@ -1,13 +1,13 @@
 (ns happygapi.doubleclickbidmanager.queries
   "DoubleClick Bid Manager API: queries.
   DoubleClick Bid Manager API allows users to manage and create campaigns and reports.
-  See: https://developers.google.com/bid-manager/api/reference/rest/v2/queries"
+  See: https://developers.google.com/bid-manager/guides/getting-started-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/bid-manager/api/reference/rest/v2/queries/create
+  "https://developers.google.com/bid-manager/guides/getting-started-api
   
   Required parameters: none
   
@@ -53,7 +53,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/bid-manager/api/reference/rest/v2/queries/delete
+  "https://developers.google.com/bid-manager/guides/getting-started-api
   
   Required parameters: queryId
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/bid-manager/api/reference/rest/v2/queries/get
+  "https://developers.google.com/bid-manager/guides/getting-started-api
   
   Required parameters: queryId
   
@@ -105,7 +105,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/bid-manager/api/reference/rest/v2/queries/list
+  "https://developers.google.com/bid-manager/guides/getting-started-api
   
   Required parameters: none
   
@@ -131,7 +131,7 @@
      auth))))
 
 (defn run$
-  "https://developers.google.com/bid-manager/api/reference/rest/v2/queries/run
+  "https://developers.google.com/bid-manager/guides/getting-started-api
   
   Required parameters: queryId
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn reports-list$
-  "https://developers.google.com/bid-manager/api/reference/rest/v2/queries/reports/list
+  "https://developers.google.com/bid-manager/guides/getting-started-api
   
   Required parameters: queryId
   
@@ -191,7 +191,7 @@
      auth))))
 
 (defn reports-get$
-  "https://developers.google.com/bid-manager/api/reference/rest/v2/queries/reports/get
+  "https://developers.google.com/bid-manager/guides/getting-started-api
   
   Required parameters: queryId, reportId
   

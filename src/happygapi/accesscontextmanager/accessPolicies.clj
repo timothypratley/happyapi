@@ -1,13 +1,13 @@
 (ns happygapi.accesscontextmanager.accessPolicies
   "Access Context Manager API: accessPolicies.
   An API for setting attribute based access control to requests to Google Cloud services. *Warning:* Do not mix *v1alpha* and *v1* API usage in the same access policy. The v1alpha API supports new Access Context Manager features, which may have different attributes or behaviors that are not supported by v1. The practice of mixed API usage within a policy may result in the inability to update that policy, including any access levels or service perimeters belonging to it. It is not recommended to use both v1 and v1alpha for modifying policies with critical service perimeters. Modifications using v1alpha should be limited to policies with non-production/non-critical service perimeters.
-  See: https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies"
+  See: https://cloud.google.com/access-context-manager/docs/reference/rest/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/list
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies/list
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/get
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/create
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies/create
   
   Required parameters: none
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/patch
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies/patch
   
   Required parameters: name
   
@@ -131,7 +131,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/delete
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies/delete
   
   Required parameters: name
   
@@ -157,7 +157,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/setIamPolicy
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies/setIamPolicy
   
   Required parameters: resource
   
@@ -193,7 +193,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/getIamPolicy
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies/getIamPolicy
   
   Required parameters: resource
   
@@ -225,7 +225,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/testIamPermissions
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies/testIamPermissions
   
   Required parameters: resource
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn accessLevels-list$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/accessLevels/list
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.accessLevels/list
   
   Required parameters: parent
   
@@ -283,7 +283,7 @@
      auth))))
 
 (defn accessLevels-get$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/accessLevels/get
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.accessLevels/get
   
   Required parameters: name
   
@@ -309,7 +309,7 @@
      auth))))
 
 (defn accessLevels-create$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/accessLevels/create
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.accessLevels/create
   
   Required parameters: parent
   
@@ -345,7 +345,7 @@
      auth))))
 
 (defn accessLevels-patch$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/accessLevels/patch
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.accessLevels/patch
   
   Required parameters: name
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn accessLevels-delete$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/accessLevels/delete
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.accessLevels/delete
   
   Required parameters: name
   
@@ -407,7 +407,7 @@
      auth))))
 
 (defn accessLevels-replaceAll$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/accessLevels/replaceAll
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.accessLevels/replaceAll
   
   Required parameters: parent
   
@@ -444,7 +444,7 @@
      auth))))
 
 (defn accessLevels-testIamPermissions$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/accessLevels/testIamPermissions
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.accessLevels/testIamPermissions
   
   Required parameters: resource
   
@@ -476,7 +476,7 @@
      auth))))
 
 (defn servicePerimeters-list$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/servicePerimeters/list
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters/list
   
   Required parameters: parent
   
@@ -502,7 +502,7 @@
      auth))))
 
 (defn servicePerimeters-get$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/servicePerimeters/get
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters/get
   
   Required parameters: name
   
@@ -528,7 +528,7 @@
      auth))))
 
 (defn servicePerimeters-create$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/servicePerimeters/create
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters/create
   
   Required parameters: parent
   
@@ -576,7 +576,7 @@
      auth))))
 
 (defn servicePerimeters-patch$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/servicePerimeters/patch
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters/patch
   
   Required parameters: name
   
@@ -624,7 +624,7 @@
      auth))))
 
 (defn servicePerimeters-delete$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/servicePerimeters/delete
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters/delete
   
   Required parameters: name
   
@@ -650,7 +650,7 @@
      auth))))
 
 (defn servicePerimeters-replaceAll$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/servicePerimeters/replaceAll
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters/replaceAll
   
   Required parameters: parent
   
@@ -689,7 +689,7 @@
      auth))))
 
 (defn servicePerimeters-commit$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/servicePerimeters/commit
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters/commit
   
   Required parameters: parent
   
@@ -721,7 +721,7 @@
      auth))))
 
 (defn servicePerimeters-testIamPermissions$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/servicePerimeters/testIamPermissions
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters/testIamPermissions
   
   Required parameters: resource
   
@@ -753,7 +753,7 @@
      auth))))
 
 (defn authorizedOrgsDescs-list$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/authorizedOrgsDescs/list
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.authorizedOrgsDescs/list
   
   Required parameters: parent
   
@@ -779,7 +779,7 @@
      auth))))
 
 (defn authorizedOrgsDescs-get$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/authorizedOrgsDescs/get
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.authorizedOrgsDescs/get
   
   Required parameters: name
   
@@ -805,7 +805,7 @@
      auth))))
 
 (defn authorizedOrgsDescs-create$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/authorizedOrgsDescs/create
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.authorizedOrgsDescs/create
   
   Required parameters: parent
   
@@ -841,7 +841,7 @@
      auth))))
 
 (defn authorizedOrgsDescs-patch$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/authorizedOrgsDescs/patch
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.authorizedOrgsDescs/patch
   
   Required parameters: name
   
@@ -877,7 +877,7 @@
      auth))))
 
 (defn authorizedOrgsDescs-delete$
-  "https://cloud.google.com/access-context-manager/docs/reference/rest/api/reference/rest/v1/accessPolicies/authorizedOrgsDescs/delete
+  "https://cloud.google.com/access-context-manager/docs/reference/rest/v1/accessPolicies.authorizedOrgsDescs/delete
   
   Required parameters: name
   

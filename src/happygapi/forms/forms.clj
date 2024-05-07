@@ -1,13 +1,13 @@
 (ns happygapi.forms.forms
   "Google Forms API: forms.
   Reads and writes Google Forms and responses.
-  See: https://developers.google.com/forms/apiapi/reference/rest/v1/forms"
+  See: https://developers.google.com/forms/api/guides"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/create
+  "https://developers.google.com/forms/api/reference/rest/v1/forms/create
   
   Required parameters: none
   
@@ -55,7 +55,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/get
+  "https://developers.google.com/forms/api/reference/rest/v1/forms/get
   
   Required parameters: formId
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn batchUpdate$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/batchUpdate
+  "https://developers.google.com/forms/api/reference/rest/v1/forms/batchUpdate
   
   Required parameters: formId
   
@@ -126,7 +126,7 @@
      auth))))
 
 (defn responses-get$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/responses/get
+  "https://developers.google.com/forms/api/reference/rest/v1/forms.responses/get
   
   Required parameters: formId, responseId
   
@@ -154,7 +154,7 @@
      auth))))
 
 (defn responses-list$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/responses/list
+  "https://developers.google.com/forms/api/reference/rest/v1/forms.responses/list
   
   Required parameters: formId
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn watches-create$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/watches/create
+  "https://developers.google.com/forms/api/reference/rest/v1/forms.watches/create
   
   Required parameters: formId
   
@@ -226,7 +226,7 @@
      auth))))
 
 (defn watches-list$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/watches/list
+  "https://developers.google.com/forms/api/reference/rest/v1/forms.watches/list
   
   Required parameters: formId
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn watches-renew$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/watches/renew
+  "https://developers.google.com/forms/api/reference/rest/v1/forms.watches/renew
   
   Required parameters: formId, watchId
   
@@ -294,7 +294,7 @@
      auth))))
 
 (defn watches-delete$
-  "https://developers.google.com/forms/apiapi/reference/rest/v1/forms/watches/delete
+  "https://developers.google.com/forms/api/reference/rest/v1/forms.watches/delete
   
   Required parameters: formId, watchId
   

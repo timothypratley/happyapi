@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.entitlements
   "Google Play EMM API: entitlements.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/entitlements"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/entitlements/list
+  "https://developers.google.com/android/work/play/emm-api/v1/entitlements/list
   
   Required parameters: enterpriseId, userId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/entitlements/get
+  "https://developers.google.com/android/work/play/emm-api/v1/entitlements/get
   
   Required parameters: enterpriseId, userId, entitlementId
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/entitlements/update
+  "https://developers.google.com/android/work/play/emm-api/v1/entitlements/update
   
   Required parameters: enterpriseId, userId, entitlementId
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/entitlements/delete
+  "https://developers.google.com/android/work/play/emm-api/v1/entitlements/delete
   
   Required parameters: enterpriseId, userId, entitlementId
   

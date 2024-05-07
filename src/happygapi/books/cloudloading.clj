@@ -1,13 +1,13 @@
 (ns happygapi.books.cloudloading
   "Books API: cloudloading.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/cloudloading"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn addBook$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/cloudloading/addBook
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/cloudloading/addBook
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn deleteBook$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/cloudloading/deleteBook
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/cloudloading/deleteBook
   
   Required parameters: volumeId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn updateBook$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/cloudloading/updateBook
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/cloudloading/updateBook
   
   Required parameters: none
   

@@ -1,19 +1,19 @@
 (ns happygapi.osconfig.projects
   "OS Config API: projects.
   OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.
-  See: https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/compute/docs/osconfig/rest"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-global-getProjectFeatureSettings$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/global/getProjectFeatureSettings
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.global/getProjectFeatureSettings
   
   Required parameters: name
   
   Optional parameters: none
   
-  GetProjectFeatureSettings returns the feature settings for a project"
+  GetProjectFeatureSettings returns the VM Manager feature settings for a project."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-global-updateProjectFeatureSettings$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/global/updateProjectFeatureSettings
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.global/updateProjectFeatureSettings
   
   Required parameters: name
   
@@ -43,7 +43,7 @@
   
   {:name string, :patchAndConfigFeatureSet string}
   
-  UpdateProjectFeatureSettings sets the feature settings for a project."
+  UpdateProjectFeatureSettings sets the VM Manager features for a project."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -65,7 +65,7 @@
      auth))))
 
 (defn locations-osPolicyAssignments-create$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/osPolicyAssignments/create
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments/create
   
   Required parameters: parent
   
@@ -116,7 +116,7 @@
      auth))))
 
 (defn locations-osPolicyAssignments-patch$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/osPolicyAssignments/patch
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments/patch
   
   Required parameters: name
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn locations-osPolicyAssignments-get$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/osPolicyAssignments/get
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments/get
   
   Required parameters: name
   
@@ -193,7 +193,7 @@
      auth))))
 
 (defn locations-osPolicyAssignments-list$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/osPolicyAssignments/list
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments/list
   
   Required parameters: parent
   
@@ -219,7 +219,7 @@
      auth))))
 
 (defn locations-osPolicyAssignments-listRevisions$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/osPolicyAssignments/listRevisions
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments/listRevisions
   
   Required parameters: name
   
@@ -245,7 +245,7 @@
      auth))))
 
 (defn locations-osPolicyAssignments-delete$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/osPolicyAssignments/delete
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments/delete
   
   Required parameters: name
   
@@ -271,7 +271,7 @@
      auth))))
 
 (defn locations-osPolicyAssignments-operations-get$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/osPolicyAssignments/operations/get
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/get
   
   Required parameters: name
   
@@ -297,7 +297,7 @@
      auth))))
 
 (defn locations-osPolicyAssignments-operations-cancel$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/osPolicyAssignments/operations/cancel
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel
   
   Required parameters: name
   
@@ -329,7 +329,7 @@
      auth))))
 
 (defn locations-instances-osPolicyAssignments-reports-get$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/instances/osPolicyAssignments/reports/get
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.instances.osPolicyAssignments.reports/get
   
   Required parameters: name
   
@@ -355,7 +355,7 @@
      auth))))
 
 (defn locations-instances-osPolicyAssignments-reports-list$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/instances/osPolicyAssignments/reports/list
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.instances.osPolicyAssignments.reports/list
   
   Required parameters: parent
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn locations-instances-inventories-get$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/instances/inventories/get
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.instances.inventories/get
   
   Required parameters: name
   
@@ -407,7 +407,7 @@
      auth))))
 
 (defn locations-instances-inventories-list$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/instances/inventories/list
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.instances.inventories/list
   
   Required parameters: parent
   
@@ -433,7 +433,7 @@
      auth))))
 
 (defn locations-instances-vulnerabilityReports-get$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/instances/vulnerabilityReports/get
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.instances.vulnerabilityReports/get
   
   Required parameters: name
   
@@ -459,7 +459,7 @@
      auth))))
 
 (defn locations-instances-vulnerabilityReports-list$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/locations/instances/vulnerabilityReports/list
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.instances.vulnerabilityReports/list
   
   Required parameters: parent
   
@@ -485,7 +485,7 @@
      auth))))
 
 (defn patchJobs-execute$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchJobs/execute
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchJobs/execute
   
   Required parameters: parent
   
@@ -535,7 +535,7 @@
      auth))))
 
 (defn patchJobs-get$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchJobs/get
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchJobs/get
   
   Required parameters: name
   
@@ -561,7 +561,7 @@
      auth))))
 
 (defn patchJobs-cancel$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchJobs/cancel
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchJobs/cancel
   
   Required parameters: name
   
@@ -593,7 +593,7 @@
      auth))))
 
 (defn patchJobs-list$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchJobs/list
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchJobs/list
   
   Required parameters: parent
   
@@ -619,7 +619,7 @@
      auth))))
 
 (defn patchJobs-instanceDetails-list$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchJobs/instanceDetails/list
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchJobs.instanceDetails/list
   
   Required parameters: parent
   
@@ -645,7 +645,7 @@
      auth))))
 
 (defn patchDeployments-create$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchDeployments/create
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchDeployments/create
   
   Required parameters: parent
   
@@ -708,7 +708,7 @@
      auth))))
 
 (defn patchDeployments-get$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchDeployments/get
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchDeployments/get
   
   Required parameters: name
   
@@ -734,7 +734,7 @@
      auth))))
 
 (defn patchDeployments-list$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchDeployments/list
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchDeployments/list
   
   Required parameters: parent
   
@@ -760,7 +760,7 @@
      auth))))
 
 (defn patchDeployments-delete$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchDeployments/delete
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchDeployments/delete
   
   Required parameters: name
   
@@ -786,7 +786,7 @@
      auth))))
 
 (defn patchDeployments-patch$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchDeployments/patch
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchDeployments/patch
   
   Required parameters: name
   
@@ -849,7 +849,7 @@
      auth))))
 
 (defn patchDeployments-pause$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchDeployments/pause
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchDeployments/pause
   
   Required parameters: name
   
@@ -881,7 +881,7 @@
      auth))))
 
 (defn patchDeployments-resume$
-  "https://cloud.google.com/compute/docs/osconfig/restapi/reference/rest/v1/projects/patchDeployments/resume
+  "https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.patchDeployments/resume
   
   Required parameters: name
   

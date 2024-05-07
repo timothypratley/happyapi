@@ -1,13 +1,13 @@
 (ns happygapi.sqladmin.backupRuns
   "Cloud SQL Admin API: backupRuns.
   API for Cloud SQL database instance management
-  See: https://developers.google.com/cloud-sql/api/reference/rest/v1/backupRuns"
+  See: https://cloud.google.com/sql/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/backupRuns/delete
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/backupRuns/delete
   
   Required parameters: project, instance, id
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/backupRuns/get
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/backupRuns/get
   
   Required parameters: project, instance, id
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/backupRuns/insert
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/backupRuns/insert
   
   Required parameters: project, instance
   
@@ -110,7 +110,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/backupRuns/list
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/backupRuns/list
   
   Required parameters: project, instance
   

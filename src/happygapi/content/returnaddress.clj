@@ -1,13 +1,13 @@
 (ns happygapi.content.returnaddress
   "Content API for Shopping: returnaddress.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnaddress"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn custombatch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnaddress/custombatch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -43,7 +43,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnaddress/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnAddressId
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnaddress/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnAddressId
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnaddress/insert
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/returnaddress/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

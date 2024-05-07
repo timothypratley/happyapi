@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.externaltransactions
   "Google Play Android Developer API: externaltransactions.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/externaltransactions"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn createexternaltransaction$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/externaltransactions/createexternaltransaction
+  "https://developers.google.com/android-publisher
   
   Required parameters: parent
   
@@ -30,7 +30,8 @@
    :recurringTransaction {:initialExternalTransactionId string,
                           :externalTransactionToken string,
                           :migratedTransactionProgram string,
-                          :externalSubscription ExternalSubscription}}
+                          :externalSubscription ExternalSubscription,
+                          :otherRecurringProduct OtherRecurringProduct}}
   
   Creates a new external transaction."
   {:scopes ["https://www.googleapis.com/auth/androidpublisher"]}
@@ -54,7 +55,7 @@
      auth))))
 
 (defn refundexternaltransaction$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/externaltransactions/refundexternaltransaction
+  "https://developers.google.com/android-publisher
   
   Required parameters: name
   
@@ -88,7 +89,7 @@
      auth))))
 
 (defn getexternaltransaction$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/externaltransactions/getexternaltransaction
+  "https://developers.google.com/android-publisher
   
   Required parameters: name
   

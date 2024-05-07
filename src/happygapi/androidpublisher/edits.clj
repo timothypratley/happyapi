@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.edits
   "Google Play Android Developer API: edits.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/edits"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn insert$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/insert
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn commit$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/commit
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn validate$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/validate
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn countryavailability-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/countryavailability/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, track
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn bundles-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/bundles/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn bundles-upload$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/bundles/upload
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn images-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/images/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, language, imageType
   
@@ -249,7 +249,7 @@
      auth))))
 
 (defn images-delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/images/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, language, imageType, imageId
   
@@ -277,7 +277,7 @@
      auth))))
 
 (defn images-deleteall$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/images/deleteall
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, language, imageType
   
@@ -305,7 +305,7 @@
      auth))))
 
 (defn images-upload$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/images/upload
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, language, imageType
   
@@ -333,7 +333,7 @@
      auth))))
 
 (defn tracks-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/tracks/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, track
   
@@ -359,7 +359,7 @@
      auth))))
 
 (defn tracks-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/tracks/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -385,7 +385,7 @@
      auth))))
 
 (defn tracks-update$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/tracks/update
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, track
   
@@ -424,7 +424,7 @@
      auth))))
 
 (defn tracks-patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/tracks/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, track
   
@@ -463,7 +463,7 @@
      auth))))
 
 (defn tracks-create$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/tracks/create
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -495,7 +495,7 @@
      auth))))
 
 (defn deobfuscationfiles-upload$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/deobfuscationfiles/upload
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, apkVersionCode, deobfuscationFileType
   
@@ -526,7 +526,7 @@
      auth))))
 
 (defn apks-upload$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/apks/upload
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -552,7 +552,7 @@
      auth))))
 
 (defn apks-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/apks/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -578,7 +578,7 @@
      auth))))
 
 (defn apks-addexternallyhosted$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/apks/addexternallyhosted
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -624,7 +624,7 @@
      auth))))
 
 (defn details-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/details/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -650,7 +650,7 @@
      auth))))
 
 (defn details-update$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/details/update
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -685,7 +685,7 @@
      auth))))
 
 (defn details-patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/details/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -720,7 +720,7 @@
      auth))))
 
 (defn testers-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/testers/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, track
   
@@ -746,7 +746,7 @@
      auth))))
 
 (defn testers-update$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/testers/update
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, track
   
@@ -778,7 +778,7 @@
      auth))))
 
 (defn testers-patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/testers/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, track
   
@@ -810,7 +810,7 @@
      auth))))
 
 (defn listings-update$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/listings/update
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, language
   
@@ -846,7 +846,7 @@
      auth))))
 
 (defn listings-patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/listings/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, language
   
@@ -882,7 +882,7 @@
      auth))))
 
 (defn listings-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/listings/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, language
   
@@ -908,7 +908,7 @@
      auth))))
 
 (defn listings-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/listings/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -934,7 +934,7 @@
      auth))))
 
 (defn listings-delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/listings/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, language
   
@@ -960,7 +960,7 @@
      auth))))
 
 (defn listings-deleteall$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/listings/deleteall
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId
   
@@ -986,7 +986,7 @@
      auth))))
 
 (defn expansionfiles-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/expansionfiles/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, apkVersionCode, expansionFileType
   
@@ -1014,7 +1014,7 @@
      auth))))
 
 (defn expansionfiles-update$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/expansionfiles/update
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, apkVersionCode, expansionFileType
   
@@ -1048,7 +1048,7 @@
      auth))))
 
 (defn expansionfiles-patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/expansionfiles/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, apkVersionCode, expansionFileType
   
@@ -1082,7 +1082,7 @@
      auth))))
 
 (defn expansionfiles-upload$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/edits/expansionfiles/upload
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, editId, apkVersionCode, expansionFileType
   

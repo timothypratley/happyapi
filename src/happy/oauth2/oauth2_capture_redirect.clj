@@ -8,12 +8,15 @@
             [happy.oauth2 :as oauth2]
             [ring.adapter.jetty :as jetty]))
 
+;; TODO: don't depend on jetty directly
+
 (defn maybe-parse-int [s]
   (try
     (Integer/parseInt s)
     (catch Exception _
       nil)))
 
+;; TODO: this little bit should be optional (jetty)
 (defn wait-for-redirect [{:as config :keys [redirect_uri redirect_uris]}]
   (let [code (promise)
         port (or (some-> (or redirect_uri (last redirect_uris))
@@ -27,13 +30,8 @@
                    {:status 200
                     :body   "ok"})
                  (merge {:port port :join? false} config))]
-    (-> (fn []
-          (Thread/sleep 20000)
-          (deliver code nil))
-        (Thread. "wait for user timeout")
-        (.start))
     (try
-      @code
+      (deref code 20000 :timeout)
       (finally
         (.stop server)))))
 
@@ -42,7 +40,7 @@
       (browse/browse-url))
   (wait-for-redirect config))
 
-(defn update-credentials [config credentials scopes optional]
+(defn maybe-update-credentials [http config credentials scopes optional]
   ;; scopes can grow
   (let [scopes (set/union (set (oauth2/credential-scopes credentials)) (set scopes))]
     ;; merge to retain refresh token
@@ -54,7 +52,25 @@
 
              (and (oauth2/refreshable? config credentials)
                   (oauth2/has-scopes? credentials scopes))
-             (oauth2/refresh-credentials config scopes credentials)
+             (oauth2/refresh-credentials http config scopes credentials)
 
              :else
-             (oauth2/exchange-code config (request-code config scopes optional))))))
+             (when-let [code (request-code config scopes optional)]
+               (oauth2/exchange-code http config))))))
+
+(defn maybe-update-credentials-async [http config credentials scopes optional respond raise]
+  ;; scopes can grow
+  (let [scopes (set/union (set (oauth2/credential-scopes credentials)) (set scopes))]
+    ;; merge to retain refresh token
+    (merge credentials
+           (cond
+             (and (oauth2/valid? credentials)
+                  (oauth2/has-scopes? credentials scopes))
+             credentials
+
+             (and (oauth2/refreshable? config credentials)
+                  (oauth2/has-scopes? credentials scopes))
+             (oauth2/refresh-credentials http config scopes credentials)
+
+             :else
+             (oauth2/exchange-code http config (request-code config scopes optional))))))

@@ -1,13 +1,13 @@
 (ns happygapi.compute.instanceTemplates
   "Compute Engine API: instanceTemplates.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates/list
+  "https://cloud.google.com/products/compute/v1/docs/instanceTemplates/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates/get
+  "https://cloud.google.com/products/compute/v1/docs/instanceTemplates/get
   
   Required parameters: instanceTemplate, project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates/insert
+  "https://cloud.google.com/products/compute/v1/docs/instanceTemplates/insert
   
   Required parameters: project
   
@@ -125,7 +125,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates/delete
+  "https://cloud.google.com/products/compute/v1/docs/instanceTemplates/delete
   
   Required parameters: instanceTemplate, project
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/instanceTemplates/aggregatedList
   
   Required parameters: project
   
@@ -180,7 +180,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/instanceTemplates/getIamPolicy
   
   Required parameters: project, resource
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/instanceTemplates/setIamPolicy
   
   Required parameters: project, resource
   
@@ -250,7 +250,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceTemplates/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/instanceTemplates/testIamPermissions
   
   Required parameters: project, resource
   

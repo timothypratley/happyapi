@@ -1,13 +1,13 @@
 (ns happygapi.keep.media
   "Google Keep API: media.
   The Google Keep API is used in an enterprise environment to manage Google Keep content and resolve issues identified by cloud security software.
-  See: https://developers.google.com/keep/apiapi/reference/rest/v1/media"
+  See: https://developers.google.com/keep"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn download$
-  "https://developers.google.com/keep/apiapi/reference/rest/v1/media/download
+  "https://developers.google.com/keep/reference/rest/v1/media/download
   
   Required parameters: name
   

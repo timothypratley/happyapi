@@ -1,13 +1,13 @@
 (ns happygapi.logging.sinks
   "Cloud Logging API: sinks.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/sinks"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/sinks/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/sinks/list
   
   Required parameters: parent
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/sinks/get
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/sinks/get
   
   Required parameters: sinkName
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/sinks/create
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/sinks/create
   
   Required parameters: parent
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/sinks/update
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/sinks/update
   
   Required parameters: sinkName
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/sinks/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/sinks/delete
   
   Required parameters: sinkName
   

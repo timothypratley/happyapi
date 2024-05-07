@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.serviceaccountkeys
   "Google Play EMM API: serviceaccountkeys.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/serviceaccountkeys"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn insert$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/serviceaccountkeys/insert
+  "https://developers.google.com/android/work/play/emm-api/v1/serviceaccountkeys/insert
   
   Required parameters: enterpriseId
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/serviceaccountkeys/list
+  "https://developers.google.com/android/work/play/emm-api/v1/serviceaccountkeys/list
   
   Required parameters: enterpriseId
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/serviceaccountkeys/delete
+  "https://developers.google.com/android/work/play/emm-api/v1/serviceaccountkeys/delete
   
   Required parameters: enterpriseId, keyId
   

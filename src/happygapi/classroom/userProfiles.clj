@@ -1,13 +1,13 @@
 (ns happygapi.classroom.userProfiles
   "Google Classroom API: userProfiles.
   Manages classes, rosters, and invitations in Google Classroom.
-  See: https://developers.google.com/classroom/api/reference/rest/v1/userProfiles"
+  See: https://developers.google.com/classroom/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/userProfiles/get
+  "https://developers.google.com/classroom/reference/rest/v1/userProfiles/get
   
   Required parameters: userId
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn guardianInvitations-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/userProfiles/guardianInvitations/list
+  "https://developers.google.com/classroom/reference/rest/v1/userProfiles/guardianInvitations/list
   
   Required parameters: studentId
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn guardianInvitations-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/userProfiles/guardianInvitations/get
+  "https://developers.google.com/classroom/reference/rest/v1/userProfiles/guardianInvitations/get
   
   Required parameters: studentId, invitationId
   
@@ -90,7 +90,7 @@
      auth))))
 
 (defn guardianInvitations-create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/userProfiles/guardianInvitations/create
+  "https://developers.google.com/classroom/reference/rest/v1/userProfiles/guardianInvitations/create
   
   Required parameters: studentId
   
@@ -126,7 +126,7 @@
      auth))))
 
 (defn guardianInvitations-patch$
-  "https://developers.google.com/classroom/api/reference/rest/v1/userProfiles/guardianInvitations/patch
+  "https://developers.google.com/classroom/reference/rest/v1/userProfiles/guardianInvitations/patch
   
   Required parameters: studentId, invitationId
   
@@ -162,7 +162,7 @@
      auth))))
 
 (defn guardians-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/userProfiles/guardians/list
+  "https://developers.google.com/classroom/reference/rest/v1/userProfiles/guardians/list
   
   Required parameters: studentId
   
@@ -190,7 +190,7 @@
      auth))))
 
 (defn guardians-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/userProfiles/guardians/get
+  "https://developers.google.com/classroom/reference/rest/v1/userProfiles/guardians/get
   
   Required parameters: studentId, guardianId
   
@@ -218,7 +218,7 @@
      auth))))
 
 (defn guardians-delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/userProfiles/guardians/delete
+  "https://developers.google.com/classroom/reference/rest/v1/userProfiles/guardians/delete
   
   Required parameters: studentId, guardianId
   

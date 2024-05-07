@@ -1,13 +1,13 @@
 (ns happygapi.apigateway.projects
   "API Gateway API: projects.
   
-  See: https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/api-gateway/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-gateways-list$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/gateways/list
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.gateways/list
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-gateways-get$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/gateways/get
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.gateways/get
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-gateways-create$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/gateways/create
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.gateways/create
   
   Required parameters: parent
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn locations-gateways-patch$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/gateways/patch
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.gateways/patch
   
   Required parameters: name
   
@@ -299,7 +299,7 @@
      auth))))
 
 (defn locations-gateways-delete$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/gateways/delete
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.gateways/delete
   
   Required parameters: name
   
@@ -325,7 +325,7 @@
      auth))))
 
 (defn locations-gateways-setIamPolicy$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/gateways/setIamPolicy
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.gateways/setIamPolicy
   
   Required parameters: resource
   
@@ -361,7 +361,7 @@
      auth))))
 
 (defn locations-gateways-getIamPolicy$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/gateways/getIamPolicy
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.gateways/getIamPolicy
   
   Required parameters: resource
   
@@ -387,7 +387,7 @@
      auth))))
 
 (defn locations-gateways-testIamPermissions$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/gateways/testIamPermissions
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.gateways/testIamPermissions
   
   Required parameters: resource
   
@@ -419,7 +419,7 @@
      auth))))
 
 (defn locations-apis-list$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/list
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis/list
   
   Required parameters: parent
   
@@ -445,7 +445,7 @@
      auth))))
 
 (defn locations-apis-get$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/get
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis/get
   
   Required parameters: name
   
@@ -471,7 +471,7 @@
      auth))))
 
 (defn locations-apis-create$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/create
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis/create
   
   Required parameters: parent
   
@@ -509,7 +509,7 @@
      auth))))
 
 (defn locations-apis-patch$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/patch
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis/patch
   
   Required parameters: name
   
@@ -547,7 +547,7 @@
      auth))))
 
 (defn locations-apis-delete$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/delete
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis/delete
   
   Required parameters: name
   
@@ -573,7 +573,7 @@
      auth))))
 
 (defn locations-apis-setIamPolicy$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/setIamPolicy
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis/setIamPolicy
   
   Required parameters: resource
   
@@ -609,7 +609,7 @@
      auth))))
 
 (defn locations-apis-getIamPolicy$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/getIamPolicy
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis/getIamPolicy
   
   Required parameters: resource
   
@@ -635,7 +635,7 @@
      auth))))
 
 (defn locations-apis-testIamPermissions$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/testIamPermissions
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis/testIamPermissions
   
   Required parameters: resource
   
@@ -667,7 +667,7 @@
      auth))))
 
 (defn locations-apis-configs-list$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/configs/list
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis.configs/list
   
   Required parameters: parent
   
@@ -693,7 +693,7 @@
      auth))))
 
 (defn locations-apis-configs-get$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/configs/get
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis.configs/get
   
   Required parameters: name
   
@@ -719,7 +719,7 @@
      auth))))
 
 (defn locations-apis-configs-create$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/configs/create
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis.configs/create
   
   Required parameters: parent
   
@@ -762,7 +762,7 @@
      auth))))
 
 (defn locations-apis-configs-patch$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/configs/patch
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis.configs/patch
   
   Required parameters: name
   
@@ -805,7 +805,7 @@
      auth))))
 
 (defn locations-apis-configs-delete$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/configs/delete
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis.configs/delete
   
   Required parameters: name
   
@@ -831,7 +831,7 @@
      auth))))
 
 (defn locations-apis-configs-setIamPolicy$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/configs/setIamPolicy
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis.configs/setIamPolicy
   
   Required parameters: resource
   
@@ -867,7 +867,7 @@
      auth))))
 
 (defn locations-apis-configs-getIamPolicy$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/configs/getIamPolicy
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis.configs/getIamPolicy
   
   Required parameters: resource
   
@@ -893,7 +893,7 @@
      auth))))
 
 (defn locations-apis-configs-testIamPermissions$
-  "https://cloud.google.com/api-gateway/docsapi/reference/rest/v1/projects/locations/apis/configs/testIamPermissions
+  "https://cloud.google.com/api-gateway/docs/reference/rest/v1/projects.locations.apis.configs/testIamPermissions
   
   Required parameters: resource
   

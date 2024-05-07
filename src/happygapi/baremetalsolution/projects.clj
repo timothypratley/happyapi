@@ -1,13 +1,13 @@
 (ns happygapi.baremetalsolution.projects
   "Bare Metal Solution API: projects.
   Provides ways to manage Bare Metal Solution hardware installed in a regional extension located near a Google Cloud data center.
-  See: https://cloud.google.com/bare-metalapi/reference/rest/v2/projects"
+  See: https://cloud.google.com/bare-metal"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-sshKeys-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/sshKeys/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.sshKeys/list
   
   Required parameters: parent
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-sshKeys-create$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/sshKeys/create
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.sshKeys/create
   
   Required parameters: parent
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn locations-sshKeys-delete$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/sshKeys/delete
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.sshKeys/delete
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-volumes-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes/list
   
   Required parameters: parent
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-volumes-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes/get
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-volumes-patch$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/patch
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes/patch
   
   Required parameters: name
   
@@ -253,7 +253,7 @@
      auth))))
 
 (defn locations-volumes-rename$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/rename
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes/rename
   
   Required parameters: name
   
@@ -285,7 +285,7 @@
      auth))))
 
 (defn locations-volumes-evict$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/evict
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes/evict
   
   Required parameters: name
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn locations-volumes-resize$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/resize
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes/resize
   
   Required parameters: volume
   
@@ -349,7 +349,7 @@
      auth))))
 
 (defn locations-volumes-snapshots-create$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/snapshots/create
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes.snapshots/create
   
   Required parameters: parent
   
@@ -386,7 +386,7 @@
      auth))))
 
 (defn locations-volumes-snapshots-restoreVolumeSnapshot$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/snapshots/restoreVolumeSnapshot
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes.snapshots/restoreVolumeSnapshot
   
   Required parameters: volumeSnapshot
   
@@ -418,7 +418,7 @@
      auth))))
 
 (defn locations-volumes-snapshots-delete$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/snapshots/delete
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes.snapshots/delete
   
   Required parameters: name
   
@@ -444,7 +444,7 @@
      auth))))
 
 (defn locations-volumes-snapshots-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/snapshots/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes.snapshots/get
   
   Required parameters: name
   
@@ -470,7 +470,7 @@
      auth))))
 
 (defn locations-volumes-snapshots-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/snapshots/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes.snapshots/list
   
   Required parameters: parent
   
@@ -496,7 +496,7 @@
      auth))))
 
 (defn locations-volumes-luns-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/luns/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes.luns/get
   
   Required parameters: name
   
@@ -522,7 +522,7 @@
      auth))))
 
 (defn locations-volumes-luns-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/luns/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes.luns/list
   
   Required parameters: parent
   
@@ -548,7 +548,7 @@
      auth))))
 
 (defn locations-volumes-luns-evict$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/volumes/luns/evict
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.volumes.luns/evict
   
   Required parameters: name
   
@@ -580,7 +580,7 @@
      auth))))
 
 (defn locations-networks-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/networks/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.networks/list
   
   Required parameters: parent
   
@@ -606,7 +606,7 @@
      auth))))
 
 (defn locations-networks-listNetworkUsage$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/networks/listNetworkUsage
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.networks/listNetworkUsage
   
   Required parameters: location
   
@@ -632,7 +632,7 @@
      auth))))
 
 (defn locations-networks-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/networks/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.networks/get
   
   Required parameters: name
   
@@ -658,7 +658,7 @@
      auth))))
 
 (defn locations-networks-patch$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/networks/patch
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.networks/patch
   
   Required parameters: name
   
@@ -714,7 +714,7 @@
      auth))))
 
 (defn locations-networks-rename$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/networks/rename
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.networks/rename
   
   Required parameters: name
   
@@ -746,7 +746,7 @@
      auth))))
 
 (defn locations-instances-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/get
   
   Required parameters: name
   
@@ -772,7 +772,7 @@
      auth))))
 
 (defn locations-instances-patch$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/patch
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/patch
   
   Required parameters: name
   
@@ -876,7 +876,7 @@
      auth))))
 
 (defn locations-instances-reset$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/reset
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/reset
   
   Required parameters: name
   
@@ -908,7 +908,7 @@
      auth))))
 
 (defn locations-instances-loadAuthInfo$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/loadAuthInfo
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/loadAuthInfo
   
   Required parameters: name
   
@@ -934,7 +934,7 @@
      auth))))
 
 (defn locations-instances-start$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/start
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/start
   
   Required parameters: name
   
@@ -966,7 +966,7 @@
      auth))))
 
 (defn locations-instances-enableInteractiveSerialConsole$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/enableInteractiveSerialConsole
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/enableInteractiveSerialConsole
   
   Required parameters: name
   
@@ -997,8 +997,40 @@
       :as :json}
      auth))))
 
+(defn locations-instances-disableHyperthreading$
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/disableHyperthreading
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Perform disable hyperthreading operation on a single server."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://baremetalsolution.googleapis.com/"
+     "v2/{+name}:disableHyperthreading"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-instances-detachLun$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/detachLun
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/detachLun
   
   Required parameters: instance
   
@@ -1030,7 +1062,7 @@
      auth))))
 
 (defn locations-instances-rename$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/rename
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/rename
   
   Required parameters: name
   
@@ -1061,8 +1093,40 @@
       :as :json}
      auth))))
 
+(defn locations-instances-reimage$
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/reimage
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:osImage string, :kmsKeyVersion string, :sshKeys [string]}
+  
+  Perform reimage operation on a single server."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://baremetalsolution.googleapis.com/"
+     "v2/{+name}:reimage"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-instances-stop$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/stop
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/stop
   
   Required parameters: name
   
@@ -1094,7 +1158,7 @@
      auth))))
 
 (defn locations-instances-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/list
   
   Required parameters: parent
   
@@ -1120,7 +1184,7 @@
      auth))))
 
 (defn locations-instances-disableInteractiveSerialConsole$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/instances/disableInteractiveSerialConsole
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/disableInteractiveSerialConsole
   
   Required parameters: name
   
@@ -1151,8 +1215,40 @@
       :as :json}
      auth))))
 
+(defn locations-instances-enableHyperthreading$
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.instances/enableHyperthreading
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Perform enable hyperthreading operation on a single server."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://baremetalsolution.googleapis.com/"
+     "v2/{+name}:enableHyperthreading"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-operations-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/operations/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.operations/get
   
   Required parameters: name
   
@@ -1178,7 +1274,7 @@
      auth))))
 
 (defn locations-provisioningConfigs-submit$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/provisioningConfigs/submit
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.provisioningConfigs/submit
   
   Required parameters: parent
   
@@ -1225,7 +1321,7 @@
      auth))))
 
 (defn locations-provisioningConfigs-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/provisioningConfigs/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.provisioningConfigs/get
   
   Required parameters: name
   
@@ -1251,7 +1347,7 @@
      auth))))
 
 (defn locations-provisioningConfigs-create$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/provisioningConfigs/create
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.provisioningConfigs/create
   
   Required parameters: parent
   
@@ -1331,7 +1427,7 @@
      auth))))
 
 (defn locations-provisioningConfigs-patch$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/provisioningConfigs/patch
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.provisioningConfigs/patch
   
   Required parameters: name
   
@@ -1411,7 +1507,7 @@
      auth))))
 
 (defn locations-osImages-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/osImages/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.osImages/list
   
   Required parameters: parent
   
@@ -1437,7 +1533,7 @@
      auth))))
 
 (defn locations-osImages-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/osImages/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.osImages/get
   
   Required parameters: name
   
@@ -1463,7 +1559,7 @@
      auth))))
 
 (defn locations-provisioningQuotas-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/provisioningQuotas/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.provisioningQuotas/list
   
   Required parameters: parent
   
@@ -1489,7 +1585,7 @@
      auth))))
 
 (defn locations-nfsShares-get$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/nfsShares/get
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/get
   
   Required parameters: name
   
@@ -1515,7 +1611,7 @@
      auth))))
 
 (defn locations-nfsShares-list$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/nfsShares/list
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/list
   
   Required parameters: parent
   
@@ -1541,7 +1637,7 @@
      auth))))
 
 (defn locations-nfsShares-patch$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/nfsShares/patch
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/patch
   
   Required parameters: name
   
@@ -1589,7 +1685,7 @@
      auth))))
 
 (defn locations-nfsShares-create$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/nfsShares/create
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/create
   
   Required parameters: parent
   
@@ -1637,7 +1733,7 @@
      auth))))
 
 (defn locations-nfsShares-rename$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/nfsShares/rename
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/rename
   
   Required parameters: name
   
@@ -1669,7 +1765,7 @@
      auth))))
 
 (defn locations-nfsShares-delete$
-  "https://cloud.google.com/bare-metalapi/reference/rest/v2/projects/locations/nfsShares/delete
+  "https://cloud.google.com/bare-metal/docs/reference/rest/v2/projects.locations.nfsShares/delete
   
   Required parameters: name
   

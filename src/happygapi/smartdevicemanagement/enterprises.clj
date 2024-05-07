@@ -1,13 +1,13 @@
 (ns happygapi.smartdevicemanagement.enterprises
   "Smart Device Management API: enterprises.
   Allow select enterprise partners to access, control, and manage Google and Nest devices programmatically.
-  See: https://developers.google.com/nest/device-accessapi/reference/rest/v1/enterprises"
+  See: https://developers.google.com/nest/device-access"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn structures-list$
-  "https://developers.google.com/nest/device-accessapi/reference/rest/v1/enterprises/structures/list
+  "https://developers.google.com/nest/device-access/reference/rest/v1/enterprises.structures/list
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn structures-get$
-  "https://developers.google.com/nest/device-accessapi/reference/rest/v1/enterprises/structures/get
+  "https://developers.google.com/nest/device-access/reference/rest/v1/enterprises.structures/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn structures-rooms-get$
-  "https://developers.google.com/nest/device-accessapi/reference/rest/v1/enterprises/structures/rooms/get
+  "https://developers.google.com/nest/device-access/reference/rest/v1/enterprises.structures.rooms/get
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn structures-rooms-list$
-  "https://developers.google.com/nest/device-accessapi/reference/rest/v1/enterprises/structures/rooms/list
+  "https://developers.google.com/nest/device-access/reference/rest/v1/enterprises.structures.rooms/list
   
   Required parameters: parent
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn devices-get$
-  "https://developers.google.com/nest/device-accessapi/reference/rest/v1/enterprises/devices/get
+  "https://developers.google.com/nest/device-access/reference/rest/v1/enterprises.devices/get
   
   Required parameters: name
   
@@ -136,40 +136,8 @@
       :as :json}
      auth))))
 
-(defn devices-executeCommand$
-  "https://developers.google.com/nest/device-accessapi/reference/rest/v1/enterprises/devices/executeCommand
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:command string, :params {}}
-  
-  Executes a command to device managed by the enterprise."
-  {:scopes ["https://www.googleapis.com/auth/sdm.service"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://smartdevicemanagement.googleapis.com/"
-     "v1/{+name}:executeCommand"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn devices-list$
-  "https://developers.google.com/nest/device-accessapi/reference/rest/v1/enterprises/devices/list
+  "https://developers.google.com/nest/device-access/reference/rest/v1/enterprises.devices/list
   
   Required parameters: parent
   
@@ -189,6 +157,38 @@
     (merge-with
      merge
      {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn devices-executeCommand$
+  "https://developers.google.com/nest/device-access/reference/rest/v1/enterprises.devices/executeCommand
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:params {}, :command string}
+  
+  Executes a command to device managed by the enterprise."
+  {:scopes ["https://www.googleapis.com/auth/sdm.service"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://smartdevicemanagement.googleapis.com/"
+     "v1/{+name}:executeCommand"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

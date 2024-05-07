@@ -1,13 +1,13 @@
 (ns happygapi.publicca.projects
   "Public Certificate Authority API: projects.
   The Public Certificate Authority API may be used to create and manage ACME external account binding keys associated with Google Trust Services' publicly trusted certificate authority. 
-  See: https://cloud.google.com/public-certificate-authority/docsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/certificate-manager/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-externalAccountKeys-create$
-  "https://cloud.google.com/public-certificate-authority/docsapi/reference/rest/v1/projects/locations/externalAccountKeys/create
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   

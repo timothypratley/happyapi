@@ -1,13 +1,13 @@
 (ns happygapi.walletobjects.genericobject
   "Google Wallet API: genericobject.
   API for issuers to save and manage Google Wallet Objects.
-  See: https://developers.google.com/pay/passesapi/reference/rest/v1/genericobject"
+  See: https://developers.google.com/wallet"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/genericobject/get
+  "https://developers.google.com/wallet/reference/rest/v1/genericobject/get
   
   Required parameters: resourceId
   
@@ -32,8 +32,47 @@
       :as :json}
      auth))))
 
+(defn addmessage$
+  "https://developers.google.com/wallet/reference/rest/v1/genericobject/addmessage
+  
+  Required parameters: resourceId
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:message {:header string,
+             :id string,
+             :kind string,
+             :messageType string,
+             :body string,
+             :localizedHeader LocalizedString,
+             :localizedBody LocalizedString,
+             :displayInterval TimeInterval}}
+  
+  Adds a message to the generic object referenced by the given object ID."
+  {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resourceId})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://walletobjects.googleapis.com/"
+     "walletobjects/v1/genericObject/{resourceId}/addMessage"
+     #{:resourceId}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn insert$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/genericobject/insert
+  "https://developers.google.com/wallet/reference/rest/v1/genericobject/insert
   
   Required parameters: none
   
@@ -41,60 +80,60 @@
   
   Body: 
   
-  {:cardTitle {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
+  {:cardTitle {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
    :hasUsers boolean,
    :smartTapRedemptionValue string,
    :rotatingBarcode {:totpDetails RotatingBarcodeTotpDetails,
-                     :initialRotatingBarcodeValues RotatingBarcodeValues,
-                     :showCodeText LocalizedString,
-                     :type string,
-                     :valuePattern string,
+                     :renderEncoding string,
                      :alternateText string,
-                     :renderEncoding string},
-   :textModulesData [{:id string,
-                      :localizedBody LocalizedString,
-                      :localizedHeader LocalizedString,
+                     :type string,
+                     :showCodeText LocalizedString,
+                     :valuePattern string,
+                     :initialRotatingBarcodeValues RotatingBarcodeValues},
+   :textModulesData [{:localizedBody LocalizedString,
                       :body string,
-                      :header string}],
-   :barcode {:alternateText string,
-             :showCodeText LocalizedString,
-             :type string,
+                      :localizedHeader LocalizedString,
+                      :header string,
+                      :id string}],
+   :barcode {:type string,
+             :alternateText string,
              :renderEncoding string,
              :value string,
+             :showCodeText LocalizedString,
              :kind string},
-   :logo {:contentDescription LocalizedString,
-          :kind string,
-          :sourceUri ImageUri},
-   :wideLogo {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
+   :logo {:kind string,
+          :sourceUri ImageUri,
+          :contentDescription LocalizedString},
+   :wideLogo {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
    :groupingInfo {:groupingId string, :sortIndex integer},
    :state string,
-   :header {:defaultValue TranslatedString,
-            :translatedValues [TranslatedString],
-            :kind string},
+   :header {:translatedValues [TranslatedString],
+            :kind string,
+            :defaultValue TranslatedString},
    :linksModuleData {:uris [Uri]},
-   :imageModulesData [{:mainImage Image, :id string}],
-   :validTimeInterval {:start DateTime, :kind string, :end DateTime},
-   :notifications {:upcomingNotification UpcomingNotification,
-                   :expiryNotification ExpiryNotification},
+   :imageModulesData [{:id string, :mainImage Image}],
+   :validTimeInterval {:kind string, :start DateTime, :end DateTime},
+   :notifications {:expiryNotification ExpiryNotification,
+                   :upcomingNotification UpcomingNotification},
    :hexBackgroundColor string,
    :id string,
    :classId string,
    :passConstraints {:nfcConstraint [string],
                      :screenshotEligibility string},
-   :appLinkData {:iosAppLinkInfo AppLinkDataAppLinkInfo,
-                 :webAppLinkInfo AppLinkDataAppLinkInfo,
+   :appLinkData {:webAppLinkInfo AppLinkDataAppLinkInfo,
+                 :iosAppLinkInfo AppLinkDataAppLinkInfo,
                  :androidAppLinkInfo AppLinkDataAppLinkInfo},
    :genericType string,
-   :heroImage {:contentDescription LocalizedString,
+   :heroImage {:kind string,
+               :sourceUri ImageUri,
+               :contentDescription LocalizedString},
+   :subheader {:translatedValues [TranslatedString],
                :kind string,
-               :sourceUri ImageUri},
-   :subheader {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string}}
+               :defaultValue TranslatedString}}
   
   Inserts a generic object with the given ID and properties."
   {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
@@ -118,7 +157,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/genericobject/patch
+  "https://developers.google.com/wallet/reference/rest/v1/genericobject/patch
   
   Required parameters: resourceId
   
@@ -126,60 +165,60 @@
   
   Body: 
   
-  {:cardTitle {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
+  {:cardTitle {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
    :hasUsers boolean,
    :smartTapRedemptionValue string,
    :rotatingBarcode {:totpDetails RotatingBarcodeTotpDetails,
-                     :initialRotatingBarcodeValues RotatingBarcodeValues,
-                     :showCodeText LocalizedString,
-                     :type string,
-                     :valuePattern string,
+                     :renderEncoding string,
                      :alternateText string,
-                     :renderEncoding string},
-   :textModulesData [{:id string,
-                      :localizedBody LocalizedString,
-                      :localizedHeader LocalizedString,
+                     :type string,
+                     :showCodeText LocalizedString,
+                     :valuePattern string,
+                     :initialRotatingBarcodeValues RotatingBarcodeValues},
+   :textModulesData [{:localizedBody LocalizedString,
                       :body string,
-                      :header string}],
-   :barcode {:alternateText string,
-             :showCodeText LocalizedString,
-             :type string,
+                      :localizedHeader LocalizedString,
+                      :header string,
+                      :id string}],
+   :barcode {:type string,
+             :alternateText string,
              :renderEncoding string,
              :value string,
+             :showCodeText LocalizedString,
              :kind string},
-   :logo {:contentDescription LocalizedString,
-          :kind string,
-          :sourceUri ImageUri},
-   :wideLogo {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
+   :logo {:kind string,
+          :sourceUri ImageUri,
+          :contentDescription LocalizedString},
+   :wideLogo {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
    :groupingInfo {:groupingId string, :sortIndex integer},
    :state string,
-   :header {:defaultValue TranslatedString,
-            :translatedValues [TranslatedString],
-            :kind string},
+   :header {:translatedValues [TranslatedString],
+            :kind string,
+            :defaultValue TranslatedString},
    :linksModuleData {:uris [Uri]},
-   :imageModulesData [{:mainImage Image, :id string}],
-   :validTimeInterval {:start DateTime, :kind string, :end DateTime},
-   :notifications {:upcomingNotification UpcomingNotification,
-                   :expiryNotification ExpiryNotification},
+   :imageModulesData [{:id string, :mainImage Image}],
+   :validTimeInterval {:kind string, :start DateTime, :end DateTime},
+   :notifications {:expiryNotification ExpiryNotification,
+                   :upcomingNotification UpcomingNotification},
    :hexBackgroundColor string,
    :id string,
    :classId string,
    :passConstraints {:nfcConstraint [string],
                      :screenshotEligibility string},
-   :appLinkData {:iosAppLinkInfo AppLinkDataAppLinkInfo,
-                 :webAppLinkInfo AppLinkDataAppLinkInfo,
+   :appLinkData {:webAppLinkInfo AppLinkDataAppLinkInfo,
+                 :iosAppLinkInfo AppLinkDataAppLinkInfo,
                  :androidAppLinkInfo AppLinkDataAppLinkInfo},
    :genericType string,
-   :heroImage {:contentDescription LocalizedString,
+   :heroImage {:kind string,
+               :sourceUri ImageUri,
+               :contentDescription LocalizedString},
+   :subheader {:translatedValues [TranslatedString],
                :kind string,
-               :sourceUri ImageUri},
-   :subheader {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string}}
+               :defaultValue TranslatedString}}
   
   Updates the generic object referenced by the given object ID. This method supports patch semantics."
   {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
@@ -202,51 +241,12 @@
       :as :json}
      auth))))
 
-(defn addmessage$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/genericobject/addmessage
-  
-  Required parameters: resourceId
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:message {:body string,
-             :messageType string,
-             :header string,
-             :id string,
-             :kind string,
-             :displayInterval TimeInterval,
-             :localizedHeader LocalizedString,
-             :localizedBody LocalizedString}}
-  
-  Adds a message to the generic object referenced by the given object ID."
-  {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:resourceId})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://walletobjects.googleapis.com/"
-     "walletobjects/v1/genericObject/{resourceId}/addMessage"
-     #{:resourceId}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn list$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/genericobject/list
+  "https://developers.google.com/wallet/reference/rest/v1/genericobject/list
   
   Required parameters: none
   
-  Optional parameters: classId, token, maxResults
+  Optional parameters: token, classId, maxResults
   
   Returns a list of all generic objects for a given issuer ID."
   {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
@@ -268,7 +268,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/genericobject/update
+  "https://developers.google.com/wallet/reference/rest/v1/genericobject/update
   
   Required parameters: resourceId
   
@@ -276,60 +276,60 @@
   
   Body: 
   
-  {:cardTitle {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
+  {:cardTitle {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
    :hasUsers boolean,
    :smartTapRedemptionValue string,
    :rotatingBarcode {:totpDetails RotatingBarcodeTotpDetails,
-                     :initialRotatingBarcodeValues RotatingBarcodeValues,
-                     :showCodeText LocalizedString,
-                     :type string,
-                     :valuePattern string,
+                     :renderEncoding string,
                      :alternateText string,
-                     :renderEncoding string},
-   :textModulesData [{:id string,
-                      :localizedBody LocalizedString,
-                      :localizedHeader LocalizedString,
+                     :type string,
+                     :showCodeText LocalizedString,
+                     :valuePattern string,
+                     :initialRotatingBarcodeValues RotatingBarcodeValues},
+   :textModulesData [{:localizedBody LocalizedString,
                       :body string,
-                      :header string}],
-   :barcode {:alternateText string,
-             :showCodeText LocalizedString,
-             :type string,
+                      :localizedHeader LocalizedString,
+                      :header string,
+                      :id string}],
+   :barcode {:type string,
+             :alternateText string,
              :renderEncoding string,
              :value string,
+             :showCodeText LocalizedString,
              :kind string},
-   :logo {:contentDescription LocalizedString,
-          :kind string,
-          :sourceUri ImageUri},
-   :wideLogo {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
+   :logo {:kind string,
+          :sourceUri ImageUri,
+          :contentDescription LocalizedString},
+   :wideLogo {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
    :groupingInfo {:groupingId string, :sortIndex integer},
    :state string,
-   :header {:defaultValue TranslatedString,
-            :translatedValues [TranslatedString],
-            :kind string},
+   :header {:translatedValues [TranslatedString],
+            :kind string,
+            :defaultValue TranslatedString},
    :linksModuleData {:uris [Uri]},
-   :imageModulesData [{:mainImage Image, :id string}],
-   :validTimeInterval {:start DateTime, :kind string, :end DateTime},
-   :notifications {:upcomingNotification UpcomingNotification,
-                   :expiryNotification ExpiryNotification},
+   :imageModulesData [{:id string, :mainImage Image}],
+   :validTimeInterval {:kind string, :start DateTime, :end DateTime},
+   :notifications {:expiryNotification ExpiryNotification,
+                   :upcomingNotification UpcomingNotification},
    :hexBackgroundColor string,
    :id string,
    :classId string,
    :passConstraints {:nfcConstraint [string],
                      :screenshotEligibility string},
-   :appLinkData {:iosAppLinkInfo AppLinkDataAppLinkInfo,
-                 :webAppLinkInfo AppLinkDataAppLinkInfo,
+   :appLinkData {:webAppLinkInfo AppLinkDataAppLinkInfo,
+                 :iosAppLinkInfo AppLinkDataAppLinkInfo,
                  :androidAppLinkInfo AppLinkDataAppLinkInfo},
    :genericType string,
-   :heroImage {:contentDescription LocalizedString,
+   :heroImage {:kind string,
+               :sourceUri ImageUri,
+               :contentDescription LocalizedString},
+   :subheader {:translatedValues [TranslatedString],
                :kind string,
-               :sourceUri ImageUri},
-   :subheader {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string}}
+               :defaultValue TranslatedString}}
   
   Updates the generic object referenced by the given object ID."
   {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}

@@ -1,13 +1,13 @@
 (ns happygapi.monitoring.services
   "Cloud Monitoring API: services.
   Manages your Cloud Monitoring data and configurations.
-  See: https://cloud.google.com/monitoring/api/api/reference/rest/v3/services"
+  See: https://cloud.google.com/monitoring/api/v3"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: parent
   
@@ -73,7 +73,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -101,7 +101,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: parent
   
@@ -129,7 +129,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/patch
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/delete
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn serviceLevelObjectives-create$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/serviceLevelObjectives/create
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: parent
   
@@ -263,7 +263,7 @@
      auth))))
 
 (defn serviceLevelObjectives-get$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/serviceLevelObjectives/get
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -291,7 +291,7 @@
      auth))))
 
 (defn serviceLevelObjectives-list$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/serviceLevelObjectives/list
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: parent
   
@@ -319,7 +319,7 @@
      auth))))
 
 (defn serviceLevelObjectives-patch$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/serviceLevelObjectives/patch
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   
@@ -360,7 +360,7 @@
      auth))))
 
 (defn serviceLevelObjectives-delete$
-  "https://cloud.google.com/monitoring/api/api/reference/rest/v3/services/serviceLevelObjectives/delete
+  "https://cloud.google.com/monitoring/api/v3
   
   Required parameters: name
   

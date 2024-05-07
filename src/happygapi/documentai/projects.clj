@@ -1,13 +1,13 @@
 (ns happygapi.documentai.projects
   "Cloud Document AI API: projects.
   Service to parse structured information from unstructured or semi-structured documents using state-of-the-art Google AI such as natural language, computer vision, translation, and AutoML.
-  See: https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/document-ai/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn operations-get$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/operations/get
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -32,38 +32,12 @@
       :as :json}
      auth))))
 
-(defn locations-get$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets information about a location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://documentai.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-list$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
-  Optional parameters: pageToken, pageSize, filter
+  Optional parameters: filter, pageSize, pageToken
   
   Lists information about the supported locations for this service."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -85,7 +59,7 @@
      auth))))
 
 (defn locations-fetchProcessorTypes$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/fetchProcessorTypes
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: parent
   
@@ -110,8 +84,34 @@
       :as :json}
      auth))))
 
+(defn locations-get$
+  "https://cloud.google.com/document-ai/docs
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets information about a location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://documentai.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-operations-cancel$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -163,11 +163,11 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
-  Optional parameters: pageToken, pageSize, filter
+  Optional parameters: filter, pageToken, pageSize
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -188,60 +188,8 @@
       :as :json}
      auth))))
 
-(defn locations-processorTypes-list$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processorTypes/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize
-  
-  Lists the processor types that exist."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://documentai.googleapis.com/"
-     "v1/{+parent}/processorTypes"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-processorTypes-get$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processorTypes/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a processor type detail."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://documentai.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-processors-disable$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/disable
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -273,7 +221,7 @@
      auth))))
 
 (defn locations-processors-setDefaultProcessorVersion$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/setDefaultProcessorVersion
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: processor
   
@@ -305,7 +253,7 @@
      auth))))
 
 (defn locations-processors-get$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/get
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -331,7 +279,7 @@
      auth))))
 
 (defn locations-processors-enable$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/enable
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -363,7 +311,7 @@
      auth))))
 
 (defn locations-processors-create$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/create
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: parent
   
@@ -377,7 +325,7 @@
    :type string,
    :state string,
    :kmsKeyName string,
-   :processorVersionAliases [{:alias string, :processorVersion string}],
+   :processorVersionAliases [{:processorVersion string, :alias string}],
    :processEndpoint string,
    :defaultProcessorVersion string}
   
@@ -403,7 +351,7 @@
      auth))))
 
 (defn locations-processors-process$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/process
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -411,7 +359,16 @@
   
   Body: 
   
-  {:inlineDocument {:textChanges [GoogleCloudDocumentaiV1DocumentTextChange],
+  {:labels {},
+   :rawDocument {:content string, :mimeType string, :displayName string},
+   :processOptions {:ocrConfig GoogleCloudDocumentaiV1OcrConfig,
+                    :individualPageSelector GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector,
+                    :fromEnd integer,
+                    :fromStart integer,
+                    :schemaOverride GoogleCloudDocumentaiV1DocumentSchema},
+   :fieldMask string,
+   :skipHumanReview boolean,
+   :inlineDocument {:textChanges [GoogleCloudDocumentaiV1DocumentTextChange],
                     :content string,
                     :textStyles [GoogleCloudDocumentaiV1DocumentStyle],
                     :shardInfo GoogleCloudDocumentaiV1DocumentShardInfo,
@@ -423,15 +380,6 @@
                     :error GoogleRpcStatus,
                     :uri string,
                     :text string},
-   :fieldMask string,
-   :labels {},
-   :skipHumanReview boolean,
-   :rawDocument {:displayName string, :mimeType string, :content string},
-   :processOptions {:ocrConfig GoogleCloudDocumentaiV1OcrConfig,
-                    :fromEnd integer,
-                    :individualPageSelector GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector,
-                    :fromStart integer,
-                    :schemaOverride GoogleCloudDocumentaiV1DocumentSchema},
    :gcsDocument {:gcsUri string, :mimeType string}}
   
   Processes a single document."
@@ -456,7 +404,7 @@
      auth))))
 
 (defn locations-processors-delete$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/delete
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -482,11 +430,11 @@
      auth))))
 
 (defn locations-processors-list$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/list
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: parent
   
-  Optional parameters: pageToken, pageSize
+  Optional parameters: pageSize, pageToken
   
   Lists all processors which belong to this project."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -508,7 +456,7 @@
      auth))))
 
 (defn locations-processors-batchProcess$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/batchProcess
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -516,16 +464,16 @@
   
   Body: 
   
-  {:inputDocuments {:gcsDocuments GoogleCloudDocumentaiV1GcsDocuments,
-                    :gcsPrefix GoogleCloudDocumentaiV1GcsPrefix},
+  {:inputDocuments {:gcsPrefix GoogleCloudDocumentaiV1GcsPrefix,
+                    :gcsDocuments GoogleCloudDocumentaiV1GcsDocuments},
    :processOptions {:ocrConfig GoogleCloudDocumentaiV1OcrConfig,
-                    :fromEnd integer,
                     :individualPageSelector GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector,
+                    :fromEnd integer,
                     :fromStart integer,
                     :schemaOverride GoogleCloudDocumentaiV1DocumentSchema},
-   :documentOutputConfig {:gcsOutputConfig GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig},
    :labels {},
-   :skipHumanReview boolean}
+   :skipHumanReview boolean,
+   :documentOutputConfig {:gcsOutputConfig GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig}}
   
   LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -548,57 +496,8 @@
       :as :json}
      auth))))
 
-(defn locations-processors-humanReviewConfig-reviewDocument$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/humanReviewConfig/reviewDocument
-  
-  Required parameters: humanReviewConfig
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:inlineDocument {:textChanges [GoogleCloudDocumentaiV1DocumentTextChange],
-                    :content string,
-                    :textStyles [GoogleCloudDocumentaiV1DocumentStyle],
-                    :shardInfo GoogleCloudDocumentaiV1DocumentShardInfo,
-                    :entities [GoogleCloudDocumentaiV1DocumentEntity],
-                    :entityRelations [GoogleCloudDocumentaiV1DocumentEntityRelation],
-                    :pages [GoogleCloudDocumentaiV1DocumentPage],
-                    :mimeType string,
-                    :revisions [GoogleCloudDocumentaiV1DocumentRevision],
-                    :error GoogleRpcStatus,
-                    :uri string,
-                    :text string},
-   :documentSchema {:metadata GoogleCloudDocumentaiV1DocumentSchemaMetadata,
-                    :displayName string,
-                    :description string,
-                    :entityTypes [GoogleCloudDocumentaiV1DocumentSchemaEntityType]},
-   :enableSchemaValidation boolean,
-   :priority string}
-  
-  Send a document for Human Review. The input document should be processed by the specified processor."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:humanReviewConfig})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://documentai.googleapis.com/"
-     "v1/{+humanReviewConfig}:reviewDocument"
-     #{:humanReviewConfig}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-processors-processorVersions-undeploy$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/undeploy
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -630,7 +529,7 @@
      auth))))
 
 (defn locations-processors-processorVersions-get$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/get
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -656,7 +555,7 @@
      auth))))
 
 (defn locations-processors-processorVersions-process$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/process
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -664,7 +563,16 @@
   
   Body: 
   
-  {:inlineDocument {:textChanges [GoogleCloudDocumentaiV1DocumentTextChange],
+  {:labels {},
+   :rawDocument {:content string, :mimeType string, :displayName string},
+   :processOptions {:ocrConfig GoogleCloudDocumentaiV1OcrConfig,
+                    :individualPageSelector GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector,
+                    :fromEnd integer,
+                    :fromStart integer,
+                    :schemaOverride GoogleCloudDocumentaiV1DocumentSchema},
+   :fieldMask string,
+   :skipHumanReview boolean,
+   :inlineDocument {:textChanges [GoogleCloudDocumentaiV1DocumentTextChange],
                     :content string,
                     :textStyles [GoogleCloudDocumentaiV1DocumentStyle],
                     :shardInfo GoogleCloudDocumentaiV1DocumentShardInfo,
@@ -676,15 +584,6 @@
                     :error GoogleRpcStatus,
                     :uri string,
                     :text string},
-   :fieldMask string,
-   :labels {},
-   :skipHumanReview boolean,
-   :rawDocument {:displayName string, :mimeType string, :content string},
-   :processOptions {:ocrConfig GoogleCloudDocumentaiV1OcrConfig,
-                    :fromEnd integer,
-                    :individualPageSelector GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector,
-                    :fromStart integer,
-                    :schemaOverride GoogleCloudDocumentaiV1DocumentSchema},
    :gcsDocument {:gcsUri string, :mimeType string}}
   
   Processes a single document."
@@ -709,7 +608,7 @@
      auth))))
 
 (defn locations-processors-processorVersions-delete$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/delete
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -735,7 +634,7 @@
      auth))))
 
 (defn locations-processors-processorVersions-train$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/train
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: parent
   
@@ -743,11 +642,16 @@
   
   Body: 
   
-  {:baseProcessorVersion string,
-   :documentSchema {:metadata GoogleCloudDocumentaiV1DocumentSchemaMetadata,
-                    :displayName string,
+  {:customDocumentExtractionOptions {:trainingMethod string},
+   :documentSchema {:displayName string,
                     :description string,
+                    :metadata GoogleCloudDocumentaiV1DocumentSchemaMetadata,
                     :entityTypes [GoogleCloudDocumentaiV1DocumentSchemaEntityType]},
+   :foundationModelTuningOptions {:learningRateMultiplier number,
+                                  :trainSteps integer},
+   :baseProcessorVersion string,
+   :inputData {:trainingDocuments GoogleCloudDocumentaiV1BatchDocumentsInputConfig,
+               :testDocuments GoogleCloudDocumentaiV1BatchDocumentsInputConfig},
    :processorVersion {:modelType string,
                       :deprecationInfo GoogleCloudDocumentaiV1ProcessorVersionDeprecationInfo,
                       :kmsKeyVersionName string,
@@ -758,12 +662,7 @@
                       :googleManaged boolean,
                       :latestEvaluation GoogleCloudDocumentaiV1EvaluationReference,
                       :kmsKeyName string,
-                      :documentSchema GoogleCloudDocumentaiV1DocumentSchema},
-   :foundationModelTuningOptions {:trainSteps integer,
-                                  :learningRateMultiplier number},
-   :inputData {:testDocuments GoogleCloudDocumentaiV1BatchDocumentsInputConfig,
-               :trainingDocuments GoogleCloudDocumentaiV1BatchDocumentsInputConfig},
-   :customDocumentExtractionOptions {:trainingMethod string}}
+                      :documentSchema GoogleCloudDocumentaiV1DocumentSchema}}
   
   Trains a new processor version. Operation metadata is returned as TrainProcessorVersionMetadata."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -787,7 +686,7 @@
      auth))))
 
 (defn locations-processors-processorVersions-list$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/list
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: parent
   
@@ -813,7 +712,7 @@
      auth))))
 
 (defn locations-processors-processorVersions-batchProcess$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/batchProcess
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -821,16 +720,16 @@
   
   Body: 
   
-  {:inputDocuments {:gcsDocuments GoogleCloudDocumentaiV1GcsDocuments,
-                    :gcsPrefix GoogleCloudDocumentaiV1GcsPrefix},
+  {:inputDocuments {:gcsPrefix GoogleCloudDocumentaiV1GcsPrefix,
+                    :gcsDocuments GoogleCloudDocumentaiV1GcsDocuments},
    :processOptions {:ocrConfig GoogleCloudDocumentaiV1OcrConfig,
-                    :fromEnd integer,
                     :individualPageSelector GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector,
+                    :fromEnd integer,
                     :fromStart integer,
                     :schemaOverride GoogleCloudDocumentaiV1DocumentSchema},
-   :documentOutputConfig {:gcsOutputConfig GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig},
    :labels {},
-   :skipHumanReview boolean}
+   :skipHumanReview boolean,
+   :documentOutputConfig {:gcsOutputConfig GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfig}}
   
   LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -854,7 +753,7 @@
      auth))))
 
 (defn locations-processors-processorVersions-evaluateProcessorVersion$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/evaluateProcessorVersion
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: processorVersion
   
@@ -862,8 +761,8 @@
   
   Body: 
   
-  {:evaluationDocuments {:gcsDocuments GoogleCloudDocumentaiV1GcsDocuments,
-                         :gcsPrefix GoogleCloudDocumentaiV1GcsPrefix}}
+  {:evaluationDocuments {:gcsPrefix GoogleCloudDocumentaiV1GcsPrefix,
+                         :gcsDocuments GoogleCloudDocumentaiV1GcsDocuments}}
   
   Evaluates a ProcessorVersion against annotated documents, producing an Evaluation."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -887,7 +786,7 @@
      auth))))
 
 (defn locations-processors-processorVersions-deploy$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/deploy
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -918,8 +817,34 @@
       :as :json}
      auth))))
 
+(defn locations-processors-processorVersions-evaluations-list$
+  "https://cloud.google.com/document-ai/docs
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Retrieves a set of evaluations for a given processor version."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://documentai.googleapis.com/"
+     "v1/{+parent}/evaluations"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-processors-processorVersions-evaluations-get$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/evaluations/get
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   
@@ -944,14 +869,63 @@
       :as :json}
      auth))))
 
-(defn locations-processors-processorVersions-evaluations-list$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/projects/locations/processors/processorVersions/evaluations/list
+(defn locations-processors-humanReviewConfig-reviewDocument$
+  "https://cloud.google.com/document-ai/docs
+  
+  Required parameters: humanReviewConfig
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:priority string,
+   :inlineDocument {:textChanges [GoogleCloudDocumentaiV1DocumentTextChange],
+                    :content string,
+                    :textStyles [GoogleCloudDocumentaiV1DocumentStyle],
+                    :shardInfo GoogleCloudDocumentaiV1DocumentShardInfo,
+                    :entities [GoogleCloudDocumentaiV1DocumentEntity],
+                    :entityRelations [GoogleCloudDocumentaiV1DocumentEntityRelation],
+                    :pages [GoogleCloudDocumentaiV1DocumentPage],
+                    :mimeType string,
+                    :revisions [GoogleCloudDocumentaiV1DocumentRevision],
+                    :error GoogleRpcStatus,
+                    :uri string,
+                    :text string},
+   :enableSchemaValidation boolean,
+   :documentSchema {:displayName string,
+                    :description string,
+                    :metadata GoogleCloudDocumentaiV1DocumentSchemaMetadata,
+                    :entityTypes [GoogleCloudDocumentaiV1DocumentSchemaEntityType]}}
+  
+  Send a document for Human Review. The input document should be processed by the specified processor."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:humanReviewConfig})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://documentai.googleapis.com/"
+     "v1/{+humanReviewConfig}:reviewDocument"
+     #{:humanReviewConfig}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-processorTypes-list$
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: parent
   
   Optional parameters: pageSize, pageToken
   
-  Retrieves a set of evaluations for a given processor version."
+  Lists the processor types that exist."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -959,8 +933,34 @@
    (http/get
     (util/get-url
      "https://documentai.googleapis.com/"
-     "v1/{+parent}/evaluations"
+     "v1/{+parent}/processorTypes"
      #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-processorTypes-get$
+  "https://cloud.google.com/document-ai/docs
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a processor type detail."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://documentai.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge

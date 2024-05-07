@@ -1,13 +1,13 @@
 (ns happygapi.pubsublite.topicStats
   "Pub/Sub Lite API: topicStats.
   
-  See: https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/topicStats"
+  See: https://cloud.google.com/pubsub/lite/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn projects-locations-topics-computeMessageStats$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/topicStats/projects/locations/topics/computeMessageStats
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/topicStats.projects.locations.topics/computeMessageStats
   
   Required parameters: topic
   
@@ -41,7 +41,7 @@
      auth))))
 
 (defn projects-locations-topics-computeHeadCursor$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/topicStats/projects/locations/topics/computeHeadCursor
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/topicStats.projects.locations.topics/computeHeadCursor
   
   Required parameters: topic
   
@@ -73,7 +73,7 @@
      auth))))
 
 (defn projects-locations-topics-computeTimeCursor$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/topicStats/projects/locations/topics/computeTimeCursor
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/topicStats.projects.locations.topics/computeTimeCursor
   
   Required parameters: topic
   

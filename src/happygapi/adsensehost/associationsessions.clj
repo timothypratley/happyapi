@@ -1,13 +1,13 @@
 (ns happygapi.adsensehost.associationsessions
   "AdSense Host API: associationsessions.
   Generates performance reports, generates ad codes, and provides publisher management capabilities for AdSense Hosts.
-  See: https://developers.google.com/adsense/host/api/reference/rest/v4.1/associationsessions"
+  See: https://developers.google.com/adsense/host/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn start$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/associationsessions/start
+  "https://developers.google.com/adsense/host/v4.1/docs/associationsessions/start
   
   Required parameters: productCode, websiteUrl
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn verify$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/associationsessions/verify
+  "https://developers.google.com/adsense/host/v4.1/docs/associationsessions/verify
   
   Required parameters: token
   

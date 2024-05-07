@@ -1,13 +1,13 @@
 (ns happygapi.firebasehosting.projects
   "Firebase Hosting API: projects.
   The Firebase Hosting REST API enables programmatic and customizable management and deployments to your Firebase-hosted sites. Use this REST API to create and manage channels and sites as well as to deploy new or updated hosting configurations and content files.
-  See: https://firebase.google.com/docs/hosting/api/reference/rest/v1/projects"
+  See: https://firebase.google.com/docs/hosting/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn sites-customDomains-operations-delete$
-  "https://firebase.google.com/docs/hosting/api/reference/rest/v1/projects/sites/customDomains/operations/delete
+  "https://firebase.google.com/docs/hosting
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn sites-customDomains-operations-cancel$
-  "https://firebase.google.com/docs/hosting/api/reference/rest/v1/projects/sites/customDomains/operations/cancel
+  "https://firebase.google.com/docs/hosting
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.admob.accounts
   "AdMob API: accounts.
   The AdMob API allows publishers to programmatically get information about their AdMob account. 
-  See: https://developers.google.com/admob/api/api/reference/rest/v1/accounts"
+  See: https://developers.google.com/admob/api/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/admob/api/api/reference/rest/v1/accounts/get
+  "https://developers.google.com/admob/api/v1/reference/rest/v1/accounts/get
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/admob/api/api/reference/rest/v1/accounts/list
+  "https://developers.google.com/admob/api/v1/reference/rest/v1/accounts/list
   
   Required parameters: none
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn networkReport-generate$
-  "https://developers.google.com/admob/api/api/reference/rest/v1/accounts/networkReport/generate
+  "https://developers.google.com/admob/api/v1/reference/rest/v1/accounts/networkReport/generate
   
   Required parameters: parent
   
@@ -101,7 +101,7 @@
      auth))))
 
 (defn mediationReport-generate$
-  "https://developers.google.com/admob/api/api/reference/rest/v1/accounts/mediationReport/generate
+  "https://developers.google.com/admob/api/v1/reference/rest/v1/accounts/mediationReport/generate
   
   Required parameters: parent
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn apps-list$
-  "https://developers.google.com/admob/api/api/reference/rest/v1/accounts/apps/list
+  "https://developers.google.com/admob/api/v1/reference/rest/v1/accounts/apps/list
   
   Required parameters: parent
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn adUnits-list$
-  "https://developers.google.com/admob/api/api/reference/rest/v1/accounts/adUnits/list
+  "https://developers.google.com/admob/api/v1/reference/rest/v1/accounts/adUnits/list
   
   Required parameters: parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.interconnectAttachments
   "Compute Engine API: interconnectAttachments.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/interconnectAttachments"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectAttachments/list
+  "https://cloud.google.com/products/compute/v1/docs/interconnectAttachments/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectAttachments/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/interconnectAttachments/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectAttachments/get
+  "https://cloud.google.com/products/compute/v1/docs/interconnectAttachments/get
   
   Required parameters: interconnectAttachment, project, region
   
@@ -93,7 +93,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectAttachments/insert
+  "https://cloud.google.com/products/compute/v1/docs/interconnectAttachments/insert
   
   Required parameters: project, region
   
@@ -168,7 +168,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectAttachments/patch
+  "https://cloud.google.com/products/compute/v1/docs/interconnectAttachments/patch
   
   Required parameters: interconnectAttachment, project, region
   
@@ -245,7 +245,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectAttachments/delete
+  "https://cloud.google.com/products/compute/v1/docs/interconnectAttachments/delete
   
   Required parameters: interconnectAttachment, project, region
   
@@ -274,7 +274,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectAttachments/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/interconnectAttachments/setLabels
   
   Required parameters: project, region, resource
   

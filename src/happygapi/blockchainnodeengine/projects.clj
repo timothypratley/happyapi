@@ -1,13 +1,13 @@
 (ns happygapi.blockchainnodeengine.projects
   "Blockchain Node Engine API: projects.
   
-  See: https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/blockchain-node-engine"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-blockchainNodes-list$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/blockchainNodes/list
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/list
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-blockchainNodes-get$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/blockchainNodes/get
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/get
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-blockchainNodes-create$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/blockchainNodes/create
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/create
   
   Required parameters: parent
   
@@ -270,7 +270,7 @@
      auth))))
 
 (defn locations-blockchainNodes-patch$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/blockchainNodes/patch
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/patch
   
   Required parameters: name
   
@@ -319,7 +319,7 @@
      auth))))
 
 (defn locations-blockchainNodes-delete$
-  "https://cloud.google.com/blockchain-node-engineapi/reference/rest/v1/projects/locations/blockchainNodes/delete
+  "https://cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/delete
   
   Required parameters: name
   

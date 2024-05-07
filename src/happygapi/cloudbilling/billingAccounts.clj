@@ -1,13 +1,13 @@
 (ns happygapi.cloudbilling.billingAccounts
   "Cloud Billing API: billingAccounts.
   Allows developers to manage billing for their Google Cloud Platform projects programmatically.
-  See: https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts"
+  See: https://cloud.google.com/billing/docs/apis"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/get
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts/get
   
   Required parameters: name
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/list
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts/list
   
   Required parameters: none
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/patch
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts/patch
   
   Required parameters: name
   
@@ -100,7 +100,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/create
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts/create
   
   Required parameters: none
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/getIamPolicy
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts/getIamPolicy
   
   Required parameters: resource
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/setIamPolicy
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts/setIamPolicy
   
   Required parameters: resource
   
@@ -202,7 +202,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/testIamPermissions
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts/testIamPermissions
   
   Required parameters: resource
   
@@ -236,7 +236,7 @@
      auth))))
 
 (defn move$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/move
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts/move
   
   Required parameters: name
   
@@ -269,7 +269,7 @@
      auth))))
 
 (defn subAccounts-list$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/subAccounts/list
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts.subAccounts/list
   
   Required parameters: parent
   
@@ -297,7 +297,7 @@
      auth))))
 
 (defn subAccounts-create$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/subAccounts/create
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts.subAccounts/create
   
   Required parameters: parent
   
@@ -334,7 +334,7 @@
      auth))))
 
 (defn projects-list$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/billingAccounts/projects/list
+  "https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts.projects/list
   
   Required parameters: name
   

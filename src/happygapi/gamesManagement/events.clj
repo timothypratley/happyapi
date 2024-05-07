@@ -1,13 +1,13 @@
 (ns happygapi.gamesManagement.events
   "Google Play Game Management: events.
   The Google Play Game Management API allows developers to manage resources from the Google Play Game service.
-  See: https://developers.google.com/games/api/reference/rest/v1management/events"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn reset$
-  "https://developers.google.com/games/api/reference/rest/v1management/events/reset
+  "https://games.withgoogle.com
   
   Required parameters: eventId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn resetAll$
-  "https://developers.google.com/games/api/reference/rest/v1management/events/resetAll
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn resetAllForAllPlayers$
-  "https://developers.google.com/games/api/reference/rest/v1management/events/resetAllForAllPlayers
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn resetForAllPlayers$
-  "https://developers.google.com/games/api/reference/rest/v1management/events/resetForAllPlayers
+  "https://games.withgoogle.com
   
   Required parameters: eventId
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn resetMultipleForAllPlayers$
-  "https://developers.google.com/games/api/reference/rest/v1management/events/resetMultipleForAllPlayers
+  "https://games.withgoogle.com
   
   Required parameters: none
   

@@ -1,13 +1,13 @@
 (ns happygapi.youtube.watermarks
   "YouTube Data API v3: watermarks.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/watermarks"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn unset$
-  "https://developers.google.com/youtube/api/reference/rest/v3/watermarks/unset
+  "https://developers.google.com/youtube/v3/docs/watermarks/unset
   
   Required parameters: channelId
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn set$
-  "https://developers.google.com/youtube/api/reference/rest/v3/watermarks/set
+  "https://developers.google.com/youtube/v3/docs/watermarks/set
   
   Required parameters: channelId
   
@@ -43,11 +43,11 @@
   
   Body: 
   
-  {:targetChannelId string,
-   :position {:type string, :cornerPosition string},
-   :imageBytes string,
+  {:position {:type string, :cornerPosition string},
    :imageUrl string,
-   :timing {:type string, :durationMs string, :offsetMs string}}
+   :imageBytes string,
+   :timing {:durationMs string, :offsetMs string, :type string},
+   :targetChannelId string}
   
   Allows upload of watermark image and setting it for a channel."
   {:scopes ["https://www.googleapis.com/auth/youtube"

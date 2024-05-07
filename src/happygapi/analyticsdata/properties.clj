@@ -1,13 +1,13 @@
 (ns happygapi.analyticsdata.properties
   "Google Analytics Data API: properties.
   Accesses report data in Google Analytics. Warning: Creating multiple Customer Applications, Accounts, or Projects to simulate or act as a single Customer Application, Account, or Project (respectively) or to circumvent Service-specific usage limits or quotas is a direct violation of Google Cloud Platform Terms of Service as well as Google APIs Terms of Service. These actions can result in immediate termination of your GCP project(s) without any warning. 
-  See: https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties"
+  See: https://developers.google.com/analytics/devguides/reporting/data/v1/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn runReport$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/runReport
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: property
   
@@ -64,7 +64,7 @@
      auth))))
 
 (defn runPivotReport$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/runPivotReport
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: property
   
@@ -119,7 +119,7 @@
      auth))))
 
 (defn batchRunReports$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/batchRunReports
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: property
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn batchRunPivotReports$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/batchRunPivotReports
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: property
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn getMetadata$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/getMetadata
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: name
   
@@ -235,7 +235,7 @@
      auth))))
 
 (defn runRealtimeReport$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/runRealtimeReport
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: property
   
@@ -287,7 +287,7 @@
      auth))))
 
 (defn checkCompatibility$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/checkCompatibility
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: property
   
@@ -330,7 +330,7 @@
      auth))))
 
 (defn audienceExports-create$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/audienceExports/create
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: parent
   
@@ -372,7 +372,7 @@
      auth))))
 
 (defn audienceExports-query$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/audienceExports/query
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: name
   
@@ -405,7 +405,7 @@
      auth))))
 
 (defn audienceExports-get$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/audienceExports/get
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: name
   
@@ -432,7 +432,7 @@
      auth))))
 
 (defn audienceExports-list$
-  "https://developers.google.com/analytics/devguides/reporting/data/v1/api/reference/rest/v1beta/properties/audienceExports/list
+  "https://developers.google.com/analytics/devguides/reporting/data/v1
   
   Required parameters: parent
   

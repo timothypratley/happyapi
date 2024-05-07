@@ -1,13 +1,13 @@
 (ns happygapi.datastore.projects
   "Cloud Datastore API: projects.
   Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application. 
-  See: https://cloud.google.com/datastore/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/datastore/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn rollback$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/rollback
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/rollback
   
   Required parameters: projectId
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn reserveIds$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/reserveIds
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/reserveIds
   
   Required parameters: projectId
   
@@ -74,7 +74,7 @@
      auth))))
 
 (defn lookup$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/lookup
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/lookup
   
   Required parameters: projectId
   
@@ -113,7 +113,7 @@
      auth))))
 
 (defn runQuery$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/runQuery
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/runQuery
   
   Required parameters: projectId
   
@@ -168,7 +168,7 @@
      auth))))
 
 (defn export$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/export
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/export
   
   Required parameters: projectId
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn beginTransaction$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/beginTransaction
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/beginTransaction
   
   Required parameters: projectId
   
@@ -237,7 +237,7 @@
      auth))))
 
 (defn commit$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/commit
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/commit
   
   Required parameters: projectId
   
@@ -280,7 +280,7 @@
      auth))))
 
 (defn runAggregationQuery$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/runAggregationQuery
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/runAggregationQuery
   
   Required parameters: projectId
   
@@ -326,7 +326,7 @@
      auth))))
 
 (defn allocateIds$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/allocateIds
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/allocateIds
   
   Required parameters: projectId
   
@@ -360,7 +360,7 @@
      auth))))
 
 (defn import$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/import
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/import
   
   Required parameters: projectId
   
@@ -395,7 +395,7 @@
      auth))))
 
 (defn operations-list$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/operations/list
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/operations/list
   
   Required parameters: name
   
@@ -422,7 +422,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/operations/get
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/operations/get
   
   Required parameters: name
   
@@ -449,7 +449,7 @@
      auth))))
 
 (defn operations-delete$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/operations/delete
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/operations/delete
   
   Required parameters: name
   
@@ -476,7 +476,7 @@
      auth))))
 
 (defn operations-cancel$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/operations/cancel
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/operations/cancel
   
   Required parameters: name
   
@@ -503,7 +503,7 @@
      auth))))
 
 (defn indexes-create$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/indexes/create
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/indexes/create
   
   Required parameters: projectId
   
@@ -541,7 +541,7 @@
      auth))))
 
 (defn indexes-delete$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/indexes/delete
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/indexes/delete
   
   Required parameters: projectId, indexId
   
@@ -568,7 +568,7 @@
      auth))))
 
 (defn indexes-get$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/indexes/get
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/indexes/get
   
   Required parameters: projectId, indexId
   
@@ -595,7 +595,7 @@
      auth))))
 
 (defn indexes-list$
-  "https://cloud.google.com/datastore/api/reference/rest/v1/projects/indexes/list
+  "https://cloud.google.com/datastore/reference/rest/v1/projects/indexes/list
   
   Required parameters: projectId
   

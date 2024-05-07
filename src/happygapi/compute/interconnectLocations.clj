@@ -1,13 +1,13 @@
 (ns happygapi.compute.interconnectLocations
   "Compute Engine API: interconnectLocations.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/interconnectLocations"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectLocations/list
+  "https://cloud.google.com/products/compute/v1/docs/interconnectLocations/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/interconnectLocations/get
+  "https://cloud.google.com/products/compute/v1/docs/interconnectLocations/get
   
   Required parameters: interconnectLocation, project
   

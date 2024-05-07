@@ -1,13 +1,13 @@
 (ns happygapi.composer.projects
   "Cloud Composer API: projects.
   Manages Apache Airflow environments on Google Cloud Platform.
-  See: https://cloud.google.com/composer/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/composer/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-environments-get$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/get
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-environments-patch$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/patch
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/patch
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-environments-saveSnapshot$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/saveSnapshot
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/saveSnapshot
   
   Required parameters: environment
   
@@ -201,7 +201,7 @@
      auth))))
 
 (defn locations-environments-create$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/create
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/create
   
   Required parameters: parent
   
@@ -259,7 +259,7 @@
      auth))))
 
 (defn locations-environments-delete$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/delete
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/delete
   
   Required parameters: name
   
@@ -285,7 +285,7 @@
      auth))))
 
 (defn locations-environments-pollAirflowCommand$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/pollAirflowCommand
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/pollAirflowCommand
   
   Required parameters: environment
   
@@ -320,7 +320,7 @@
      auth))))
 
 (defn locations-environments-databaseFailover$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/databaseFailover
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/databaseFailover
   
   Required parameters: environment
   
@@ -352,7 +352,7 @@
      auth))))
 
 (defn locations-environments-fetchDatabaseProperties$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/fetchDatabaseProperties
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/fetchDatabaseProperties
   
   Required parameters: environment
   
@@ -378,7 +378,7 @@
      auth))))
 
 (defn locations-environments-stopAirflowCommand$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/stopAirflowCommand
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/stopAirflowCommand
   
   Required parameters: environment
   
@@ -413,7 +413,7 @@
      auth))))
 
 (defn locations-environments-list$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/list
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/list
   
   Required parameters: parent
   
@@ -439,7 +439,7 @@
      auth))))
 
 (defn locations-environments-executeAirflowCommand$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/executeAirflowCommand
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/executeAirflowCommand
   
   Required parameters: environment
   
@@ -471,7 +471,7 @@
      auth))))
 
 (defn locations-environments-loadSnapshot$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/loadSnapshot
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments/loadSnapshot
   
   Required parameters: environment
   
@@ -507,7 +507,7 @@
      auth))))
 
 (defn locations-environments-workloads-list$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/workloads/list
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.workloads/list
   
   Required parameters: parent
   
@@ -533,7 +533,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsSecrets-create$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsSecrets/create
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsSecrets/create
   
   Required parameters: parent
   
@@ -565,7 +565,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsSecrets-get$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsSecrets/get
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsSecrets/get
   
   Required parameters: name
   
@@ -591,7 +591,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsSecrets-list$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsSecrets/list
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsSecrets/list
   
   Required parameters: parent
   
@@ -617,7 +617,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsSecrets-update$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsSecrets/update
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsSecrets/update
   
   Required parameters: name
   
@@ -649,7 +649,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsSecrets-delete$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsSecrets/delete
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsSecrets/delete
   
   Required parameters: name
   
@@ -675,7 +675,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsConfigMaps-create$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsConfigMaps/create
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsConfigMaps/create
   
   Required parameters: parent
   
@@ -707,7 +707,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsConfigMaps-get$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsConfigMaps/get
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsConfigMaps/get
   
   Required parameters: name
   
@@ -733,7 +733,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsConfigMaps-list$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsConfigMaps/list
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsConfigMaps/list
   
   Required parameters: parent
   
@@ -759,7 +759,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsConfigMaps-update$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsConfigMaps/update
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsConfigMaps/update
   
   Required parameters: name
   
@@ -791,7 +791,7 @@
      auth))))
 
 (defn locations-environments-userWorkloadsConfigMaps-delete$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/environments/userWorkloadsConfigMaps/delete
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsConfigMaps/delete
   
   Required parameters: name
   
@@ -817,7 +817,7 @@
      auth))))
 
 (defn locations-imageVersions-list$
-  "https://cloud.google.com/composer/api/reference/rest/v1/projects/locations/imageVersions/list
+  "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.imageVersions/list
   
   Required parameters: parent
   

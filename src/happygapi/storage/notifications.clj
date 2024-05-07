@@ -1,13 +1,13 @@
 (ns happygapi.storage.notifications
   "Cloud Storage JSON API: notifications.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/notifications"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/notifications/delete
+  "https://cloud.google.com/storage/docs/reference/rest/v1/notifications/delete
   
   Required parameters: bucket, notification
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/notifications/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/notifications/get
   
   Required parameters: bucket, notification
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/notifications/insert
+  "https://cloud.google.com/storage/docs/reference/rest/v1/notifications/insert
   
   Required parameters: bucket
   
@@ -107,7 +107,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/notifications/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/notifications/list
   
   Required parameters: bucket
   

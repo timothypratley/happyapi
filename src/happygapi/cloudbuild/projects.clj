@@ -1,17 +1,17 @@
 (ns happygapi.cloudbuild.projects
   "Cloud Build API: projects.
   Creates and manages builds on Google Cloud Platform.
-  See: https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects"
+  See: https://cloud.google.com/build/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/list
+  "https://cloud.google.com/build/docs
   
   Required parameters: name
   
-  Optional parameters: pageSize, filter, pageToken
+  Optional parameters: filter, pageSize, pageToken
   
   Lists information about the supported locations for this service."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/get
+  "https://cloud.google.com/build/docs
   
   Required parameters: name
   
@@ -58,8 +58,34 @@
       :as :json}
      auth))))
 
+(defn locations-operations-get$
+  "https://cloud.google.com/build/docs
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://cloudbuild.googleapis.com/"
+     "v2/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-operations-cancel$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/operations/cancel
+  "https://cloud.google.com/build/docs
   
   Required parameters: name
   
@@ -90,34 +116,8 @@
       :as :json}
      auth))))
 
-(defn locations-operations-get$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://cloudbuild.googleapis.com/"
-     "v2/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-connections-get$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/get
+  "https://cloud.google.com/build/docs
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-connections-setIamPolicy$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/setIamPolicy
+  "https://cloud.google.com/build/docs
   
   Required parameters: resource
   
@@ -151,11 +151,11 @@
   
   Body: 
   
-  {:updateMask string,
-   :policy {:version integer,
+  {:policy {:bindings [Binding],
+            :version integer,
             :etag string,
-            :bindings [Binding],
-            :auditConfigs [AuditConfig]}}
+            :auditConfigs [AuditConfig]},
+   :updateMask string}
   
   Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -179,7 +179,7 @@
      auth))))
 
 (defn locations-connections-patch$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/patch
+  "https://cloud.google.com/build/docs
   
   Required parameters: name
   
@@ -202,31 +202,31 @@
    :createTime string,
    :etag string,
    :updateTime string,
-   :bitbucketDataCenterConfig {:serviceDirectoryConfig GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig,
-                               :hostUri string,
-                               :readAuthorizerCredential UserCredential,
+   :bitbucketDataCenterConfig {:hostUri string,
+                               :serviceDirectoryConfig GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig,
+                               :authorizerCredential UserCredential,
                                :sslCa string,
                                :serverVersion string,
-                               :authorizerCredential UserCredential,
+                               :readAuthorizerCredential UserCredential,
                                :webhookSecretSecretVersion string},
    :reconciling boolean,
    :installationState {:stage string,
-                       :message string,
-                       :actionUri string},
-   :githubConfig {:authorizerCredential OAuthCredential,
-                  :appInstallationId string},
-   :bitbucketCloudConfig {:webhookSecretSecretVersion string,
-                          :authorizerCredential UserCredential,
-                          :workspace string,
-                          :readAuthorizerCredential UserCredential},
+                       :actionUri string,
+                       :message string},
+   :githubConfig {:appInstallationId string,
+                  :authorizerCredential OAuthCredential},
+   :bitbucketCloudConfig {:authorizerCredential UserCredential,
+                          :readAuthorizerCredential UserCredential,
+                          :webhookSecretSecretVersion string,
+                          :workspace string},
    :annotations {},
-   :gitlabConfig {:readAuthorizerCredential UserCredential,
-                  :sslCa string,
-                  :webhookSecretSecretVersion string,
-                  :hostUri string,
-                  :authorizerCredential UserCredential,
+   :gitlabConfig {:sslCa string,
+                  :readAuthorizerCredential UserCredential,
                   :serviceDirectoryConfig GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig,
-                  :serverVersion string}}
+                  :serverVersion string,
+                  :authorizerCredential UserCredential,
+                  :webhookSecretSecretVersion string,
+                  :hostUri string}}
   
   Updates a single connection."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -250,7 +250,7 @@
      auth))))
 
 (defn locations-connections-testIamPermissions$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/testIamPermissions
+  "https://cloud.google.com/build/docs
   
   Required parameters: resource
   
@@ -282,7 +282,7 @@
      auth))))
 
 (defn locations-connections-create$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/create
+  "https://cloud.google.com/build/docs
   
   Required parameters: parent
   
@@ -305,31 +305,31 @@
    :createTime string,
    :etag string,
    :updateTime string,
-   :bitbucketDataCenterConfig {:serviceDirectoryConfig GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig,
-                               :hostUri string,
-                               :readAuthorizerCredential UserCredential,
+   :bitbucketDataCenterConfig {:hostUri string,
+                               :serviceDirectoryConfig GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig,
+                               :authorizerCredential UserCredential,
                                :sslCa string,
                                :serverVersion string,
-                               :authorizerCredential UserCredential,
+                               :readAuthorizerCredential UserCredential,
                                :webhookSecretSecretVersion string},
    :reconciling boolean,
    :installationState {:stage string,
-                       :message string,
-                       :actionUri string},
-   :githubConfig {:authorizerCredential OAuthCredential,
-                  :appInstallationId string},
-   :bitbucketCloudConfig {:webhookSecretSecretVersion string,
-                          :authorizerCredential UserCredential,
-                          :workspace string,
-                          :readAuthorizerCredential UserCredential},
+                       :actionUri string,
+                       :message string},
+   :githubConfig {:appInstallationId string,
+                  :authorizerCredential OAuthCredential},
+   :bitbucketCloudConfig {:authorizerCredential UserCredential,
+                          :readAuthorizerCredential UserCredential,
+                          :webhookSecretSecretVersion string,
+                          :workspace string},
    :annotations {},
-   :gitlabConfig {:readAuthorizerCredential UserCredential,
-                  :sslCa string,
-                  :webhookSecretSecretVersion string,
-                  :hostUri string,
-                  :authorizerCredential UserCredential,
+   :gitlabConfig {:sslCa string,
+                  :readAuthorizerCredential UserCredential,
                   :serviceDirectoryConfig GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig,
-                  :serverVersion string}}
+                  :serverVersion string,
+                  :authorizerCredential UserCredential,
+                  :webhookSecretSecretVersion string,
+                  :hostUri string}}
   
   Creates a Connection."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -353,7 +353,7 @@
      auth))))
 
 (defn locations-connections-delete$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/delete
+  "https://cloud.google.com/build/docs
   
   Required parameters: name
   
@@ -379,7 +379,7 @@
      auth))))
 
 (defn locations-connections-getIamPolicy$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/getIamPolicy
+  "https://cloud.google.com/build/docs
   
   Required parameters: resource
   
@@ -405,7 +405,7 @@
      auth))))
 
 (defn locations-connections-list$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/list
+  "https://cloud.google.com/build/docs
   
   Required parameters: parent
   
@@ -431,11 +431,11 @@
      auth))))
 
 (defn locations-connections-fetchLinkableRepositories$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/fetchLinkableRepositories
+  "https://cloud.google.com/build/docs
   
   Required parameters: connection
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: pageToken, pageSize
   
   FetchLinkableRepositories get repositories from SCM that are accessible and could be added to the connection."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -457,7 +457,7 @@
      auth))))
 
 (defn locations-connections-processWebhook$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/processWebhook
+  "https://cloud.google.com/build/docs
   
   Required parameters: parent
   
@@ -465,7 +465,7 @@
   
   Body: 
   
-  {:data string, :extensions [{}], :contentType string}
+  {:extensions [{}], :contentType string, :data string}
   
   ProcessWebhook is called by the external SCM for notifying of events."
   {:scopes nil}
@@ -488,80 +488,8 @@
       :as :json}
      auth))))
 
-(defn locations-connections-repositories-batchCreate$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/repositories/batchCreate
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:requests [{:repository Repository,
-               :repositoryId string,
-               :parent string}]}
-  
-  Creates multiple repositories inside a connection."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://cloudbuild.googleapis.com/"
-     "v2/{+parent}/repositories:batchCreate"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-connections-repositories-create$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/repositories/create
-  
-  Required parameters: parent
-  
-  Optional parameters: repositoryId
-  
-  Body: 
-  
-  {:remoteUri string,
-   :createTime string,
-   :updateTime string,
-   :annotations {},
-   :webhookId string,
-   :name string,
-   :etag string}
-  
-  Creates a Repository."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://cloudbuild.googleapis.com/"
-     "v2/{+parent}/repositories"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-connections-repositories-delete$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/repositories/delete
+  "https://cloud.google.com/build/docs
   
   Required parameters: name
   
@@ -586,12 +514,70 @@
       :as :json}
      auth))))
 
+(defn locations-connections-repositories-accessReadToken$
+  "https://cloud.google.com/build/docs
+  
+  Required parameters: repository
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Fetches read token of a given repository."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:repository})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://cloudbuild.googleapis.com/"
+     "v2/{+repository}:accessReadToken"
+     #{:repository}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-connections-repositories-get$
+  "https://cloud.google.com/build/docs
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets details of a single repository."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://cloudbuild.googleapis.com/"
+     "v2/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-connections-repositories-list$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/repositories/list
+  "https://cloud.google.com/build/docs
   
   Required parameters: parent
   
-  Optional parameters: pageSize, filter, pageToken
+  Optional parameters: filter, pageSize, pageToken
   
   Lists Repositories in a given connection."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -612,8 +598,80 @@
       :as :json}
      auth))))
 
+(defn locations-connections-repositories-batchCreate$
+  "https://cloud.google.com/build/docs
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:requests [{:parent string,
+               :repository Repository,
+               :repositoryId string}]}
+  
+  Creates multiple repositories inside a connection."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://cloudbuild.googleapis.com/"
+     "v2/{+parent}/repositories:batchCreate"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-connections-repositories-create$
+  "https://cloud.google.com/build/docs
+  
+  Required parameters: parent
+  
+  Optional parameters: repositoryId
+  
+  Body: 
+  
+  {:annotations {},
+   :etag string,
+   :webhookId string,
+   :createTime string,
+   :updateTime string,
+   :name string,
+   :remoteUri string}
+  
+  Creates a Repository."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://cloudbuild.googleapis.com/"
+     "v2/{+parent}/repositories"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-connections-repositories-accessReadWriteToken$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/repositories/accessReadWriteToken
+  "https://cloud.google.com/build/docs
   
   Required parameters: repository
   
@@ -645,11 +703,11 @@
      auth))))
 
 (defn locations-connections-repositories-fetchGitRefs$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/repositories/fetchGitRefs
+  "https://cloud.google.com/build/docs
   
   Required parameters: repository
   
-  Optional parameters: refType, pageToken, pageSize
+  Optional parameters: refType, pageSize, pageToken
   
   Fetch the list of branches or tags for a given repository."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -665,64 +723,6 @@
     (merge-with
      merge
      {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-connections-repositories-get$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/repositories/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets details of a single repository."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://cloudbuild.googleapis.com/"
-     "v2/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-connections-repositories-accessReadToken$
-  "https://cloud.google.com/cloud-build/docs/api/reference/rest/v2/projects/locations/connections/repositories/accessReadToken
-  
-  Required parameters: repository
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {}
-  
-  Fetches read token of a given repository."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:repository})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://cloudbuild.googleapis.com/"
-     "v2/{+repository}:accessReadToken"
-     #{:repository}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

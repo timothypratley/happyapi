@@ -1,13 +1,13 @@
 (ns happygapi.servicemanagement.services
   "Service Management API: services.
   Google Service Management allows service producers to publish their services on Google Cloud Platform so that they can be discovered and used by service consumers.
-  See: https://cloud.google.com/service-management/api/reference/rest/v1/services"
+  See: https://cloud.google.com/service-infrastructure/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/get
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/setIamPolicy
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: resource
   
@@ -73,7 +73,7 @@
      auth))))
 
 (defn generateConfigReport$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/generateConfigReport
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: none
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/testIamPermissions
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: resource
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/create
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: none
   
@@ -174,7 +174,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/delete
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -201,7 +201,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/getIamPolicy
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: resource
   
@@ -236,7 +236,7 @@
      auth))))
 
 (defn undelete$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/undelete
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -263,7 +263,7 @@
      auth))))
 
 (defn getConfig$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/getConfig
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -292,7 +292,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/list
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: none
   
@@ -321,7 +321,7 @@
      auth))))
 
 (defn configs-list$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/configs/list
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -350,7 +350,7 @@
      auth))))
 
 (defn configs-get$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/configs/get
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName, configId
   
@@ -379,7 +379,7 @@
      auth))))
 
 (defn configs-create$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/configs/create
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -504,7 +504,7 @@
      auth))))
 
 (defn configs-submit$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/configs/submit
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -538,7 +538,7 @@
      auth))))
 
 (defn rollouts-list$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/rollouts/list
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -567,7 +567,7 @@
      auth))))
 
 (defn rollouts-get$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/rollouts/get
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName, rolloutId
   
@@ -596,7 +596,7 @@
      auth))))
 
 (defn rollouts-create$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/rollouts/create
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: serviceName
   
@@ -635,7 +635,7 @@
      auth))))
 
 (defn consumers-setIamPolicy$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/consumers/setIamPolicy
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: resource
   
@@ -672,7 +672,7 @@
      auth))))
 
 (defn consumers-getIamPolicy$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/consumers/getIamPolicy
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: resource
   
@@ -707,7 +707,7 @@
      auth))))
 
 (defn consumers-testIamPermissions$
-  "https://cloud.google.com/service-management/api/reference/rest/v1/services/consumers/testIamPermissions
+  "https://cloud.google.com/service-infrastructure/docs
   
   Required parameters: resource
   

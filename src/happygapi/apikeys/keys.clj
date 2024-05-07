@@ -1,13 +1,13 @@
 (ns happygapi.apikeys.keys
   "API Keys API: keys.
   Manages the API keys associated with developer projects.
-  See: https://cloud.google.com/api-keys/docsapi/reference/rest/v2/keys"
+  See: https://cloud.google.com/api-keys/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn lookupKey$
-  "https://cloud.google.com/api-keys/docsapi/reference/rest/v2/keys/lookupKey
+  "https://cloud.google.com/api-keys/docs/reference/rest/v2/keys/lookupKey
   
   Required parameters: none
   

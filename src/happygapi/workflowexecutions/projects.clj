@@ -1,13 +1,13 @@
 (ns happygapi.workflowexecutions.projects
   "Workflow Executions API: projects.
   Execute workflows created with Workflows API.
-  See: https://cloud.google.com/workflowsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/workflows"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-workflows-triggerPubsubExecution$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/triggerPubsubExecution
+  "https://cloud.google.com/workflows
   
   Required parameters: workflow
   
@@ -46,7 +46,7 @@
      auth))))
 
 (defn locations-workflows-executions-list$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/executions/list
+  "https://cloud.google.com/workflows
   
   Required parameters: parent
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn locations-workflows-executions-create$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/executions/create
+  "https://cloud.google.com/workflows
   
   Required parameters: parent
   
@@ -118,7 +118,7 @@
      auth))))
 
 (defn locations-workflows-executions-get$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/executions/get
+  "https://cloud.google.com/workflows
   
   Required parameters: name
   
@@ -144,7 +144,7 @@
      auth))))
 
 (defn locations-workflows-executions-cancel$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/executions/cancel
+  "https://cloud.google.com/workflows
   
   Required parameters: name
   
@@ -176,7 +176,7 @@
      auth))))
 
 (defn locations-workflows-executions-exportData$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/executions/exportData
+  "https://cloud.google.com/workflows
   
   Required parameters: name
   
@@ -202,7 +202,7 @@
      auth))))
 
 (defn locations-workflows-executions-callbacks-list$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/executions/callbacks/list
+  "https://cloud.google.com/workflows
   
   Required parameters: parent
   
@@ -228,7 +228,7 @@
      auth))))
 
 (defn locations-workflows-executions-stepEntries-list$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/executions/stepEntries/list
+  "https://cloud.google.com/workflows
   
   Required parameters: parent
   
@@ -254,7 +254,7 @@
      auth))))
 
 (defn locations-workflows-executions-stepEntries-get$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/executions/stepEntries/get
+  "https://cloud.google.com/workflows
   
   Required parameters: name
   

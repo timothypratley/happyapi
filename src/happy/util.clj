@@ -27,6 +27,8 @@
   (if (= status 200)
     body
     ;; TODO: probably don't need to parse if using :as :json ???
-    (let [{{:keys [code status message]} :error :as body} (json/parse-string body true)]
+    (let [{{:keys [code message]} :error :as body} (json/parse-string body true)]
       (throw (ex-info (str "HappyGAPI " code ": " status " " message)
-                      (or body {}))))))
+                      {:id     ::http-fail
+                       :status status
+                       :body   body})))))

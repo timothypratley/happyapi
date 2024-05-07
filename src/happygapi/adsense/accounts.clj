@@ -1,13 +1,13 @@
 (ns happygapi.adsense.accounts
   "AdSense Management API: accounts.
   The AdSense Management API allows publishers to access their inventory and run earnings and performance reports.
-  See: https://developers.google.com/adsense/management/api/reference/rest/v2/accounts"
+  See: https://developers.google.com/adsense/management/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/get
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/get
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/list
   
   Required parameters: none
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn listChildAccounts$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/listChildAccounts
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/listChildAccounts
   
   Required parameters: parent
   
@@ -88,7 +88,7 @@
      auth))))
 
 (defn getAdBlockingRecoveryTag$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/getAdBlockingRecoveryTag
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/getAdBlockingRecoveryTag
   
   Required parameters: name
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn adclients-list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/list
   
   Required parameters: parent
   
@@ -142,7 +142,7 @@
      auth))))
 
 (defn adclients-get$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/get
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/get
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn adclients-getAdcode$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/getAdcode
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/getAdcode
   
   Required parameters: name
   
@@ -196,7 +196,7 @@
      auth))))
 
 (defn adclients-adunits-get$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/adunits/get
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/adunits/get
   
   Required parameters: name
   
@@ -223,7 +223,7 @@
      auth))))
 
 (defn adclients-adunits-list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/adunits/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/adunits/list
   
   Required parameters: parent
   
@@ -250,7 +250,7 @@
      auth))))
 
 (defn adclients-adunits-getAdcode$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/adunits/getAdcode
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/adunits/getAdcode
   
   Required parameters: name
   
@@ -277,7 +277,7 @@
      auth))))
 
 (defn adclients-adunits-create$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/adunits/create
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/adunits/create
   
   Required parameters: parent
   
@@ -313,7 +313,7 @@
      auth))))
 
 (defn adclients-adunits-patch$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/adunits/patch
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/adunits/patch
   
   Required parameters: name
   
@@ -349,7 +349,7 @@
      auth))))
 
 (defn adclients-adunits-listLinkedCustomChannels$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/adunits/listLinkedCustomChannels
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/adunits/listLinkedCustomChannels
   
   Required parameters: parent
   
@@ -376,7 +376,7 @@
      auth))))
 
 (defn adclients-customchannels-listLinkedAdUnits$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/customchannels/listLinkedAdUnits
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/customchannels/listLinkedAdUnits
   
   Required parameters: parent
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn adclients-customchannels-get$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/customchannels/get
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/customchannels/get
   
   Required parameters: name
   
@@ -430,7 +430,7 @@
      auth))))
 
 (defn adclients-customchannels-list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/customchannels/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/customchannels/list
   
   Required parameters: parent
   
@@ -457,7 +457,7 @@
      auth))))
 
 (defn adclients-customchannels-create$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/customchannels/create
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/customchannels/create
   
   Required parameters: parent
   
@@ -492,7 +492,7 @@
      auth))))
 
 (defn adclients-customchannels-patch$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/customchannels/patch
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/customchannels/patch
   
   Required parameters: name
   
@@ -527,7 +527,7 @@
      auth))))
 
 (defn adclients-customchannels-delete$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/customchannels/delete
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/customchannels/delete
   
   Required parameters: name
   
@@ -553,7 +553,7 @@
      auth))))
 
 (defn adclients-urlchannels-get$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/urlchannels/get
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/urlchannels/get
   
   Required parameters: name
   
@@ -580,7 +580,7 @@
      auth))))
 
 (defn adclients-urlchannels-list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/adclients/urlchannels/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/adclients/urlchannels/list
   
   Required parameters: parent
   
@@ -607,7 +607,7 @@
      auth))))
 
 (defn alerts-list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/alerts/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/alerts/list
   
   Required parameters: parent
   
@@ -634,7 +634,7 @@
      auth))))
 
 (defn payments-list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/payments/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/payments/list
   
   Required parameters: parent
   
@@ -660,8 +660,62 @@
       :as :json}
      auth))))
 
+(defn policyIssues-get$
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/policyIssues/get
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets information about the selected policy issue."
+  {:scopes ["https://www.googleapis.com/auth/adsense"
+            "https://www.googleapis.com/auth/adsense.readonly"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://adsense.googleapis.com/"
+     "v2/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn policyIssues-list$
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/policyIssues/list
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Lists all the policy issues for the specified account."
+  {:scopes ["https://www.googleapis.com/auth/adsense"
+            "https://www.googleapis.com/auth/adsense.readonly"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://adsense.googleapis.com/"
+     "v2/{+parent}/policyIssues"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn reports-getSaved$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/reports/getSaved
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/reports/getSaved
   
   Required parameters: name
   
@@ -688,7 +742,7 @@
      auth))))
 
 (defn reports-generate$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/reports/generate
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/reports/generate
   
   Required parameters: account
   
@@ -715,7 +769,7 @@
      auth))))
 
 (defn reports-generateCsv$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/reports/generateCsv
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/reports/generateCsv
   
   Required parameters: account
   
@@ -742,7 +796,7 @@
      auth))))
 
 (defn reports-saved-generate$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/reports/saved/generate
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/reports/saved/generate
   
   Required parameters: name
   
@@ -769,7 +823,7 @@
      auth))))
 
 (defn reports-saved-generateCsv$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/reports/saved/generateCsv
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/reports/saved/generateCsv
   
   Required parameters: name
   
@@ -796,7 +850,7 @@
      auth))))
 
 (defn reports-saved-list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/reports/saved/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/reports/saved/list
   
   Required parameters: parent
   
@@ -823,7 +877,7 @@
      auth))))
 
 (defn sites-get$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/sites/get
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/sites/get
   
   Required parameters: name
   
@@ -850,7 +904,7 @@
      auth))))
 
 (defn sites-list$
-  "https://developers.google.com/adsense/management/api/reference/rest/v2/accounts/sites/list
+  "https://developers.google.com/adsense/management/reference/rest/v2/accounts/sites/list
   
   Required parameters: parent
   

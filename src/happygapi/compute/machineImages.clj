@@ -1,13 +1,13 @@
 (ns happygapi.compute.machineImages
   "Compute Engine API: machineImages.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/machineImages"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineImages/list
+  "https://cloud.google.com/products/compute/v1/docs/machineImages/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineImages/get
+  "https://cloud.google.com/products/compute/v1/docs/machineImages/get
   
   Required parameters: machineImage, project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineImages/insert
+  "https://cloud.google.com/products/compute/v1/docs/machineImages/insert
   
   Required parameters: project
   
@@ -155,7 +155,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineImages/delete
+  "https://cloud.google.com/products/compute/v1/docs/machineImages/delete
   
   Required parameters: machineImage, project
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineImages/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/machineImages/getIamPolicy
   
   Required parameters: project, resource
   
@@ -210,7 +210,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineImages/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/machineImages/setIamPolicy
   
   Required parameters: project, resource
   
@@ -252,7 +252,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineImages/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/machineImages/testIamPermissions
   
   Required parameters: project, resource
   

@@ -1,13 +1,13 @@
 (ns happygapi.alertcenter.v1beta1
   "Google Workspace Alert Center API: v1beta1.
   Manages alerts on issues affecting your domain. Note: The current version of this API (v1beta1) is available to all Google Workspace customers. 
-  See: https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/v1beta1"
+  See: https://developers.google.com/admin-sdk/alertcenter/guides"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn $
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/getSettings
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1//getSettings
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn $
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/updateSettings
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1//updateSettings
   
   Required parameters: none
   

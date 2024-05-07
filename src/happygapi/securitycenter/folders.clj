@@ -1,13 +1,13 @@
 (ns happygapi.securitycenter.folders
   "Security Command Center API: folders.
   Security Command Center API provides access to temporal views of assets and findings within an organization.
-  See: https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders"
+  See: https://cloud.google.com/security/products/security-command-center"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn findings-bulkMute$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/findings/bulkMute
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/findings/bulkMute
   
   Required parameters: parent
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-validateCustomModule$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/validateCustomModule
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/validateCustomModule
   
   Required parameters: parent
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-customModules-create$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/customModules/create
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/customModules/create
   
   Required parameters: parent
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-customModules-delete$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/customModules/delete
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/customModules/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-customModules-get$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/customModules/get
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/customModules/get
   
   Required parameters: name
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-customModules-listDescendant$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/customModules/listDescendant
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/customModules/listDescendant
   
   Required parameters: parent
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-customModules-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/customModules/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/customModules/list
   
   Required parameters: parent
   
@@ -215,7 +215,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-customModules-patch$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/customModules/patch
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/customModules/patch
   
   Required parameters: name
   
@@ -255,7 +255,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-effectiveCustomModules-get$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/effectiveCustomModules/get
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/effectiveCustomModules/get
   
   Required parameters: name
   
@@ -281,7 +281,7 @@
      auth))))
 
 (defn eventThreatDetectionSettings-effectiveCustomModules-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/eventThreatDetectionSettings/effectiveCustomModules/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/eventThreatDetectionSettings/effectiveCustomModules/list
   
   Required parameters: parent
   
@@ -307,7 +307,7 @@
      auth))))
 
 (defn assets-group$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/assets/group
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/assets/group
   
   Required parameters: parent
   
@@ -344,7 +344,7 @@
      auth))))
 
 (defn assets-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/assets/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/assets/list
   
   Required parameters: parent
   
@@ -370,7 +370,7 @@
      auth))))
 
 (defn assets-updateSecurityMarks$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/assets/updateSecurityMarks
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/assets/updateSecurityMarks
   
   Required parameters: name
   
@@ -402,7 +402,7 @@
      auth))))
 
 (defn sources-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/sources/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/sources/list
   
   Required parameters: parent
   
@@ -428,7 +428,7 @@
      auth))))
 
 (defn sources-findings-group$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/sources/findings/group
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/sources/findings/group
   
   Required parameters: parent
   
@@ -465,7 +465,7 @@
      auth))))
 
 (defn sources-findings-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/sources/findings/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/sources/findings/list
   
   Required parameters: parent
   
@@ -491,7 +491,7 @@
      auth))))
 
 (defn sources-findings-setState$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/sources/findings/setState
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/sources/findings/setState
   
   Required parameters: name
   
@@ -523,7 +523,7 @@
      auth))))
 
 (defn sources-findings-setMute$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/sources/findings/setMute
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/sources/findings/setMute
   
   Required parameters: name
   
@@ -555,7 +555,7 @@
      auth))))
 
 (defn sources-findings-patch$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/sources/findings/patch
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/sources/findings/patch
   
   Required parameters: name
   
@@ -587,6 +587,12 @@
                 :accessReviews [AccessReview],
                 :objects [Object]},
    :parent string,
+   :cloudArmor {:securityPolicy SecurityPolicy,
+                :requests Requests,
+                :adaptiveProtection AdaptiveProtection,
+                :attack Attack,
+                :threatVector string,
+                :duration string},
    :contacts {},
    :application {:baseUri string, :fullUri string},
    :backupDisasterRecovery {:applications [string],
@@ -634,6 +640,10 @@
                         :infoType string,
                         :infoTypeCount string,
                         :fullScan boolean},
+   :notebook {:name string,
+              :service string,
+              :lastAuthor string,
+              :notebookUpdateTime string},
    :parentDisplayName string,
    :indicator {:ipAddresses [string],
                :domains [string],
@@ -720,7 +730,7 @@
      auth))))
 
 (defn sources-findings-updateSecurityMarks$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/sources/findings/updateSecurityMarks
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/sources/findings/updateSecurityMarks
   
   Required parameters: name
   
@@ -752,7 +762,7 @@
      auth))))
 
 (defn sources-findings-externalSystems-patch$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/sources/findings/externalSystems/patch
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/sources/findings/externalSystems/patch
   
   Required parameters: name
   
@@ -799,7 +809,7 @@
      auth))))
 
 (defn notificationConfigs-create$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/notificationConfigs/create
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/notificationConfigs/create
   
   Required parameters: parent
   
@@ -835,7 +845,7 @@
      auth))))
 
 (defn notificationConfigs-delete$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/notificationConfigs/delete
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/notificationConfigs/delete
   
   Required parameters: name
   
@@ -861,7 +871,7 @@
      auth))))
 
 (defn notificationConfigs-get$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/notificationConfigs/get
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/notificationConfigs/get
   
   Required parameters: name
   
@@ -887,7 +897,7 @@
      auth))))
 
 (defn notificationConfigs-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/notificationConfigs/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/notificationConfigs/list
   
   Required parameters: parent
   
@@ -913,7 +923,7 @@
      auth))))
 
 (defn notificationConfigs-patch$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/notificationConfigs/patch
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/notificationConfigs/patch
   
   Required parameters: name
   
@@ -949,7 +959,7 @@
      auth))))
 
 (defn bigQueryExports-get$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/bigQueryExports/get
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/bigQueryExports/get
   
   Required parameters: name
   
@@ -975,7 +985,7 @@
      auth))))
 
 (defn bigQueryExports-create$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/bigQueryExports/create
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/bigQueryExports/create
   
   Required parameters: parent
   
@@ -1014,7 +1024,7 @@
      auth))))
 
 (defn bigQueryExports-delete$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/bigQueryExports/delete
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/bigQueryExports/delete
   
   Required parameters: name
   
@@ -1040,7 +1050,7 @@
      auth))))
 
 (defn bigQueryExports-patch$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/bigQueryExports/patch
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/bigQueryExports/patch
   
   Required parameters: name
   
@@ -1079,7 +1089,7 @@
      auth))))
 
 (defn bigQueryExports-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/bigQueryExports/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/bigQueryExports/list
   
   Required parameters: parent
   
@@ -1105,7 +1115,7 @@
      auth))))
 
 (defn locations-muteConfigs-delete$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/locations/muteConfigs/delete
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/locations/muteConfigs/delete
   
   Required parameters: name
   
@@ -1131,7 +1141,7 @@
      auth))))
 
 (defn locations-muteConfigs-get$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/locations/muteConfigs/get
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/locations/muteConfigs/get
   
   Required parameters: name
   
@@ -1157,7 +1167,7 @@
      auth))))
 
 (defn locations-muteConfigs-patch$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/locations/muteConfigs/patch
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/locations/muteConfigs/patch
   
   Required parameters: name
   
@@ -1195,7 +1205,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-customModules-create$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/customModules/create
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/customModules/create
   
   Required parameters: parent
   
@@ -1238,7 +1248,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-customModules-delete$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/customModules/delete
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/customModules/delete
   
   Required parameters: name
   
@@ -1264,7 +1274,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-customModules-get$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/customModules/get
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/customModules/get
   
   Required parameters: name
   
@@ -1290,7 +1300,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-customModules-listDescendant$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/customModules/listDescendant
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/customModules/listDescendant
   
   Required parameters: parent
   
@@ -1316,7 +1326,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-customModules-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/customModules/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/customModules/list
   
   Required parameters: parent
   
@@ -1342,7 +1352,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-customModules-simulate$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/customModules/simulate
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/customModules/simulate
   
   Required parameters: parent
   
@@ -1382,7 +1392,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-customModules-patch$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/customModules/patch
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/customModules/patch
   
   Required parameters: name
   
@@ -1425,7 +1435,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-effectiveCustomModules-get$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/effectiveCustomModules/get
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/effectiveCustomModules/get
   
   Required parameters: name
   
@@ -1451,7 +1461,7 @@
      auth))))
 
 (defn securityHealthAnalyticsSettings-effectiveCustomModules-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/securityHealthAnalyticsSettings/effectiveCustomModules/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/securityHealthAnalyticsSettings/effectiveCustomModules/list
   
   Required parameters: parent
   
@@ -1477,7 +1487,7 @@
      auth))))
 
 (defn muteConfigs-create$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/muteConfigs/create
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/muteConfigs/create
   
   Required parameters: parent
   
@@ -1515,7 +1525,7 @@
      auth))))
 
 (defn muteConfigs-delete$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/muteConfigs/delete
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/muteConfigs/delete
   
   Required parameters: name
   
@@ -1541,7 +1551,7 @@
      auth))))
 
 (defn muteConfigs-get$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/muteConfigs/get
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/muteConfigs/get
   
   Required parameters: name
   
@@ -1567,7 +1577,7 @@
      auth))))
 
 (defn muteConfigs-list$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/muteConfigs/list
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/muteConfigs/list
   
   Required parameters: parent
   
@@ -1593,7 +1603,7 @@
      auth))))
 
 (defn muteConfigs-patch$
-  "https://cloud.google.com/security-command-centerapi/reference/rest/v1/folders/muteConfigs/patch
+  "https://cloud.google.com/security/products/security-command-center/v1/docs/folders/muteConfigs/patch
   
   Required parameters: name
   

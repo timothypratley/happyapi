@@ -1,13 +1,13 @@
 (ns happygapi.cloudresourcemanager.projects
   "Cloud Resource Manager API: projects.
   Creates, reads, and updates metadata for Google Cloud Platform resource containers.
-  See: https://cloud.google.com/resource-managerapi/reference/rest/v3/projects"
+  See: https://cloud.google.com/resource-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/get
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/get
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/setIamPolicy
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/setIamPolicy
   
   Required parameters: resource
   
@@ -70,7 +70,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/patch
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/patch
   
   Required parameters: name
   
@@ -112,7 +112,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/testIamPermissions
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/testIamPermissions
   
   Required parameters: resource
   
@@ -145,7 +145,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/create
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/create
   
   Required parameters: none
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn move$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/move
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/move
   
   Required parameters: name
   
@@ -219,7 +219,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/delete
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/delete
   
   Required parameters: name
   
@@ -245,7 +245,7 @@
      auth))))
 
 (defn search$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/search
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/search
   
   Required parameters: none
   
@@ -272,7 +272,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/getIamPolicy
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/getIamPolicy
   
   Required parameters: resource
   
@@ -305,7 +305,7 @@
      auth))))
 
 (defn undelete$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/undelete
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/undelete
   
   Required parameters: name
   
@@ -337,7 +337,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/projects/list
+  "https://cloud.google.com/resource-manager/reference/rest/v3/projects/list
   
   Required parameters: none
   

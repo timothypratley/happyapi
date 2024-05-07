@@ -1,13 +1,13 @@
 (ns happygapi.analytics.metadata
   "Google Analytics API: metadata.
   Views and manages your Google Analytics data.
-  See: https://developers.google.com/analytics/api/reference/rest/v3/metadata"
+  See: https://developers.google.com/analytics/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn columns-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/metadata/columns/list
+  "https://developers.google.com/analytics
   
   Required parameters: reportType
   

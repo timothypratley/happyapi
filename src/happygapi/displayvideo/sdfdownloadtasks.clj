@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.sdfdownloadtasks
   "Display & Video 360 API: sdfdownloadtasks.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/sdfdownloadtasks"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/sdfdownloadtasks/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -51,7 +51,7 @@
      auth))))
 
 (defn operations-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/sdfdownloadtasks/operations/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: name
   

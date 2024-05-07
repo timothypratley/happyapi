@@ -1,13 +1,13 @@
 (ns happygapi.datalineage.projects
   "Data Lineage API: projects.
   
-  See: https://cloud.google.com/data-catalogapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/dataplex"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-processOpenLineageRunEvent$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processOpenLineageRunEvent
+  "https://cloud.google.com/dataplex
   
   Required parameters: parent
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn locations-batchSearchLinkProcesses$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/batchSearchLinkProcesses
+  "https://cloud.google.com/dataplex
   
   Required parameters: parent
   
@@ -47,7 +47,7 @@
   
   Body: 
   
-  {:pageToken string, :links [string], :pageSize integer}
+  {:pageToken string, :pageSize integer, :links [string]}
   
   Retrieve information about LineageProcesses associated with specific links. LineageProcesses are transformation pipelines that result in data flowing from **source** to **target** assets. Links between assets represent this operation. If you have specific link names, you can use this method to verify which LineageProcesses contribute to creating those links. See the SearchLinks method for more information on how to retrieve link name. You can retrieve the LineageProcess information in every project where you have the `datalineage.events.get` permission. The project provided in the URL is used for Billing and Quota."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -71,7 +71,7 @@
      auth))))
 
 (defn locations-searchLinks$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/searchLinks
+  "https://cloud.google.com/dataplex
   
   Required parameters: parent
   
@@ -81,8 +81,8 @@
   
   {:pageToken string,
    :pageSize integer,
-   :source {:fullyQualifiedName string},
-   :target {:fullyQualifiedName string}}
+   :target {:fullyQualifiedName string},
+   :source {:fullyQualifiedName string}}
   
   Retrieve a list of links connected to a specific asset. Links represent the data flow between **source** (upstream) and **target** (downstream) assets in transformation pipelines. Links are stored in the same project as the Lineage Events that create them. You can retrieve links in every project where you have the `datalineage.events.get` permission. The project provided in the URL is used for Billing and Quota."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -105,34 +105,8 @@
       :as :json}
      auth))))
 
-(defn locations-operations-list$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageToken, pageSize
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://datalineage.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-operations-delete$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/dataplex
   
   Required parameters: name
   
@@ -157,8 +131,34 @@
       :as :json}
      auth))))
 
+(defn locations-operations-list$
+  "https://cloud.google.com/dataplex
+  
+  Required parameters: name
+  
+  Optional parameters: pageSize, pageToken, filter
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://datalineage.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-operations-cancel$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/dataplex
   
   Required parameters: name
   
@@ -190,7 +190,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/dataplex
   
   Required parameters: name
   
@@ -216,7 +216,7 @@
      auth))))
 
 (defn locations-processes-delete$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/delete
+  "https://cloud.google.com/dataplex
   
   Required parameters: name
   
@@ -241,8 +241,43 @@
       :as :json}
      auth))))
 
+(defn locations-processes-create$
+  "https://cloud.google.com/dataplex
+  
+  Required parameters: parent
+  
+  Optional parameters: requestId
+  
+  Body: 
+  
+  {:attributes {},
+   :displayName string,
+   :name string,
+   :origin {:sourceType string, :name string}}
+  
+  Creates a new process."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://datalineage.googleapis.com/"
+     "v1/{+parent}/processes"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-processes-list$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/list
+  "https://cloud.google.com/dataplex
   
   Required parameters: parent
   
@@ -267,78 +302,8 @@
       :as :json}
      auth))))
 
-(defn locations-processes-patch$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/patch
-  
-  Required parameters: name
-  
-  Optional parameters: allowMissing, updateMask
-  
-  Body: 
-  
-  {:attributes {},
-   :displayName string,
-   :origin {:sourceType string, :name string},
-   :name string}
-  
-  Updates a process."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://datalineage.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-processes-create$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/create
-  
-  Required parameters: parent
-  
-  Optional parameters: requestId
-  
-  Body: 
-  
-  {:attributes {},
-   :displayName string,
-   :origin {:sourceType string, :name string},
-   :name string}
-  
-  Creates a new process."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://datalineage.googleapis.com/"
-     "v1/{+parent}/processes"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-processes-get$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/get
+  "https://cloud.google.com/dataplex
   
   Required parameters: name
   
@@ -363,8 +328,69 @@
       :as :json}
      auth))))
 
+(defn locations-processes-patch$
+  "https://cloud.google.com/dataplex
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask, allowMissing
+  
+  Body: 
+  
+  {:attributes {},
+   :displayName string,
+   :name string,
+   :origin {:sourceType string, :name string}}
+  
+  Updates a process."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://datalineage.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-processes-runs-get$
+  "https://cloud.google.com/dataplex
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the details of the specified run."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://datalineage.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-processes-runs-list$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/list
+  "https://cloud.google.com/dataplex
   
   Required parameters: parent
   
@@ -390,7 +416,7 @@
      auth))))
 
 (defn locations-processes-runs-delete$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/delete
+  "https://cloud.google.com/dataplex
   
   Required parameters: name
   
@@ -415,71 +441,8 @@
       :as :json}
      auth))))
 
-(defn locations-processes-runs-get$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the details of the specified run."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://datalineage.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-processes-runs-patch$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask, allowMissing
-  
-  Body: 
-  
-  {:attributes {},
-   :endTime string,
-   :state string,
-   :name string,
-   :startTime string,
-   :displayName string}
-  
-  Updates a run."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://datalineage.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-processes-runs-create$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/create
+  "https://cloud.google.com/dataplex
   
   Required parameters: parent
   
@@ -487,12 +450,12 @@
   
   Body: 
   
-  {:attributes {},
-   :endTime string,
-   :state string,
-   :name string,
+  {:endTime string,
+   :displayName string,
+   :attributes {},
    :startTime string,
-   :displayName string}
+   :name string,
+   :state string}
   
   Creates a new run."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -515,19 +478,56 @@
       :as :json}
      auth))))
 
-(defn locations-processes-runs-lineageEvents-get$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/lineageEvents/get
+(defn locations-processes-runs-patch$
+  "https://cloud.google.com/dataplex
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: updateMask, allowMissing
   
-  Gets details of a specified lineage event."
+  Body: 
+  
+  {:endTime string,
+   :displayName string,
+   :attributes {},
+   :startTime string,
+   :name string,
+   :state string}
+  
+  Updates a run."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://datalineage.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-processes-runs-lineageEvents-delete$
+  "https://cloud.google.com/dataplex
+  
+  Required parameters: name
+  
+  Optional parameters: allowMissing
+  
+  Deletes the lineage event with the specified name."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/delete
     (util/get-url
      "https://datalineage.googleapis.com/"
      "v1/{+name}"
@@ -542,7 +542,7 @@
      auth))))
 
 (defn locations-processes-runs-lineageEvents-list$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/lineageEvents/list
+  "https://cloud.google.com/dataplex
   
   Required parameters: parent
   
@@ -567,8 +567,34 @@
       :as :json}
      auth))))
 
+(defn locations-processes-runs-lineageEvents-get$
+  "https://cloud.google.com/dataplex
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets details of a specified lineage event."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://datalineage.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-processes-runs-lineageEvents-create$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/lineageEvents/create
+  "https://cloud.google.com/dataplex
   
   Required parameters: parent
   
@@ -576,11 +602,11 @@
   
   Body: 
   
-  {:name string,
-   :endTime string,
+  {:endTime string,
    :startTime string,
-   :links [{:source GoogleCloudDatacatalogLineageV1EntityReference,
-            :target GoogleCloudDatacatalogLineageV1EntityReference}]}
+   :links [{:target GoogleCloudDatacatalogLineageV1EntityReference,
+            :source GoogleCloudDatacatalogLineageV1EntityReference}],
+   :name string}
   
   Creates a new lineage event."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -598,32 +624,6 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-processes-runs-lineageEvents-delete$
-  "https://cloud.google.com/data-catalogapi/reference/rest/v1/projects/locations/processes/runs/lineageEvents/delete
-  
-  Required parameters: name
-  
-  Optional parameters: allowMissing
-  
-  Deletes the lineage event with the specified name."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://datalineage.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

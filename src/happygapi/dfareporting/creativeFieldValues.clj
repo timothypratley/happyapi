@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.creativeFieldValues
   "Campaign Manager 360 API: creativeFieldValues.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/creativeFieldValues"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/creativeFieldValues/delete
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, creativeFieldId, id
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/creativeFieldValues/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, creativeFieldId, id
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/creativeFieldValues/insert
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, creativeFieldId
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/creativeFieldValues/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, creativeFieldId
   
@@ -121,7 +121,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/creativeFieldValues/update
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, creativeFieldId
   
@@ -153,7 +153,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/creativeFieldValues/patch
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, creativeFieldId, id
   

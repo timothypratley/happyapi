@@ -1,13 +1,13 @@
 (ns happygapi.testing.projects
   "Cloud Testing API: projects.
   Allows developers to run automated tests for their mobile applications on Google infrastructure.
-  See: https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects"
+  See: https://firebase.google.com/docs/test-lab/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn testMatrices-create$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects/testMatrices/create
+  "https://firebase.google.com/docs/test-lab
   
   Required parameters: projectId
   
@@ -76,7 +76,7 @@
      auth))))
 
 (defn testMatrices-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects/testMatrices/get
+  "https://firebase.google.com/docs/test-lab
   
   Required parameters: projectId, testMatrixId
   
@@ -103,7 +103,7 @@
      auth))))
 
 (defn testMatrices-cancel$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects/testMatrices/cancel
+  "https://firebase.google.com/docs/test-lab
   
   Required parameters: projectId, testMatrixId
   
@@ -129,7 +129,7 @@
      auth))))
 
 (defn deviceSessions-create$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects/deviceSessions/create
+  "https://firebase.google.com/docs/test-lab
   
   Required parameters: parent
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn deviceSessions-list$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects/deviceSessions/list
+  "https://firebase.google.com/docs/test-lab
   
   Required parameters: parent
   
@@ -201,7 +201,7 @@
      auth))))
 
 (defn deviceSessions-get$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects/deviceSessions/get
+  "https://firebase.google.com/docs/test-lab
   
   Required parameters: name
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn deviceSessions-cancel$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects/deviceSessions/cancel
+  "https://firebase.google.com/docs/test-lab
   
   Required parameters: name
   
@@ -259,7 +259,7 @@
      auth))))
 
 (defn deviceSessions-patch$
-  "https://firebase.google.com/docs/test-lab/api/reference/rest/v1/projects/deviceSessions/patch
+  "https://firebase.google.com/docs/test-lab
   
   Required parameters: name
   

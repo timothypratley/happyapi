@@ -1,13 +1,13 @@
 (ns happygapi.keep.notes
   "Google Keep API: notes.
   The Google Keep API is used in an enterprise environment to manage Google Keep content and resolve issues identified by cloud security software.
-  See: https://developers.google.com/keep/apiapi/reference/rest/v1/notes"
+  See: https://developers.google.com/keep"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/keep/apiapi/reference/rest/v1/notes/create
+  "https://developers.google.com/keep/reference/rest/v1/notes/create
   
   Required parameters: none
   
@@ -53,7 +53,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/keep/apiapi/reference/rest/v1/notes/get
+  "https://developers.google.com/keep/reference/rest/v1/notes/get
   
   Required parameters: name
   
@@ -80,7 +80,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/keep/apiapi/reference/rest/v1/notes/list
+  "https://developers.google.com/keep/reference/rest/v1/notes/list
   
   Required parameters: none
   
@@ -107,7 +107,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/keep/apiapi/reference/rest/v1/notes/delete
+  "https://developers.google.com/keep/reference/rest/v1/notes/delete
   
   Required parameters: name
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn permissions-batchCreate$
-  "https://developers.google.com/keep/apiapi/reference/rest/v1/notes/permissions/batchCreate
+  "https://developers.google.com/keep/reference/rest/v1/notes/permissions/batchCreate
   
   Required parameters: parent
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn permissions-batchDelete$
-  "https://developers.google.com/keep/apiapi/reference/rest/v1/notes/permissions/batchDelete
+  "https://developers.google.com/keep/reference/rest/v1/notes/permissions/batchDelete
   
   Required parameters: parent
   

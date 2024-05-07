@@ -1,13 +1,13 @@
 (ns happygapi.youtube.search
   "YouTube Data API v3: search.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/search"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/youtube/api/reference/rest/v3/search/list
+  "https://developers.google.com/youtube/v3/docs/search/list
   
   Required parameters: part
   

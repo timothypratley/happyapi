@@ -1,13 +1,13 @@
 (ns happygapi.container.projects
   "Kubernetes Engine API: projects.
   Builds and manages container-based applications, powered by the open source Kubernetes technology.
-  See: https://cloud.google.com/container-engine/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/kubernetes-engine"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-getServerConfig$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/getServerConfig
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations/getServerConfig
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-clusters-getJwks$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/getJwks
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/getJwks
   
   Required parameters: parent
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-clusters-updateMaster$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/updateMaster
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/updateMaster
   
   Required parameters: name
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn locations-clusters-get$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/get
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/get
   
   Required parameters: name
   
@@ -121,7 +121,7 @@
      auth))))
 
 (defn locations-clusters-setResourceLabels$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setResourceLabels
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setResourceLabels
   
   Required parameters: name
   
@@ -158,7 +158,7 @@
      auth))))
 
 (defn locations-clusters-create$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/create
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/create
   
   Required parameters: parent
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn locations-clusters-setAddons$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setAddons
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setAddons
   
   Required parameters: name
   
@@ -307,7 +307,7 @@
      auth))))
 
 (defn locations-clusters-update$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/update
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/update
   
   Required parameters: name
   
@@ -353,6 +353,7 @@
             :desiredNodePoolAutoConfigNetworkTags NetworkTags,
             :desiredReleaseChannel ReleaseChannel,
             :desiredSecurityPostureConfig SecurityPostureConfig,
+            :desiredContainerdConfig ContainerdConfig,
             :desiredEnableFqdnNetworkPolicy boolean,
             :removedAdditionalPodRangesConfig AdditionalPodRangesConfig,
             :desiredCostManagementConfig CostManagementConfig,
@@ -396,7 +397,7 @@
      auth))))
 
 (defn locations-clusters-delete$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/delete
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/delete
   
   Required parameters: name
   
@@ -422,7 +423,7 @@
      auth))))
 
 (defn locations-clusters-setLogging$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setLogging
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setLogging
   
   Required parameters: name
   
@@ -458,7 +459,7 @@
      auth))))
 
 (defn locations-clusters-setMasterAuth$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setMasterAuth
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setMasterAuth
   
   Required parameters: name
   
@@ -500,7 +501,7 @@
      auth))))
 
 (defn locations-clusters-list$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/list
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/list
   
   Required parameters: parent
   
@@ -526,7 +527,7 @@
      auth))))
 
 (defn locations-clusters-checkAutopilotCompatibility$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/checkAutopilotCompatibility
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/checkAutopilotCompatibility
   
   Required parameters: name
   
@@ -552,7 +553,7 @@
      auth))))
 
 (defn locations-clusters-setNetworkPolicy$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setNetworkPolicy
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setNetworkPolicy
   
   Required parameters: name
   
@@ -588,7 +589,7 @@
      auth))))
 
 (defn locations-clusters-setMonitoring$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setMonitoring
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setMonitoring
   
   Required parameters: name
   
@@ -624,7 +625,7 @@
      auth))))
 
 (defn locations-clusters-startIpRotation$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/startIpRotation
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/startIpRotation
   
   Required parameters: name
   
@@ -660,7 +661,7 @@
      auth))))
 
 (defn locations-clusters-completeIpRotation$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/completeIpRotation
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/completeIpRotation
   
   Required parameters: name
   
@@ -692,7 +693,7 @@
      auth))))
 
 (defn locations-clusters-setLocations$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setLocations
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setLocations
   
   Required parameters: name
   
@@ -728,7 +729,7 @@
      auth))))
 
 (defn locations-clusters-setLegacyAbac$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setLegacyAbac
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setLegacyAbac
   
   Required parameters: name
   
@@ -764,7 +765,7 @@
      auth))))
 
 (defn locations-clusters-setMaintenancePolicy$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/setMaintenancePolicy
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters/setMaintenancePolicy
   
   Required parameters: name
   
@@ -801,7 +802,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-rollback$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/rollback
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/rollback
   
   Required parameters: name
   
@@ -838,7 +839,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-get$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/get
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/get
   
   Required parameters: name
   
@@ -864,7 +865,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-create$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/create
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/create
   
   Required parameters: parent
   
@@ -920,7 +921,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-setAutoscaling$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/setAutoscaling
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/setAutoscaling
   
   Required parameters: name
   
@@ -963,7 +964,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-setManagement$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/setManagement
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/setManagement
   
   Required parameters: name
   
@@ -1002,7 +1003,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-completeUpgrade$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/completeUpgrade
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/completeUpgrade
   
   Required parameters: name
   
@@ -1034,7 +1035,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-update$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/update
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/update
   
   Required parameters: name
   
@@ -1054,7 +1055,9 @@
    :etag string,
    :imageType string,
    :machineType string,
-   :linuxNodeConfig {:sysctls {}, :cgroupMode string},
+   :linuxNodeConfig {:sysctls {},
+                     :cgroupMode string,
+                     :hugepages HugepagesConfig},
    :kubeletConfig {:cpuManagerPolicy string,
                    :cpuCfsQuota boolean,
                    :cpuCfsQuotaPeriod string,
@@ -1078,9 +1081,15 @@
    :diskSizeGb string,
    :gcfsConfig {:enabled boolean},
    :workloadMetadataConfig {:mode string},
+   :containerdConfig {:privateRegistryAccessConfig PrivateRegistryAccessConfig},
    :fastSocket {:enabled boolean},
    :windowsNodeConfig {:osVersion string},
    :nodeVersion string,
+   :accelerators [{:acceleratorCount string,
+                   :acceleratorType string,
+                   :gpuPartitionSize string,
+                   :gpuSharingConfig GPUSharingConfig,
+                   :gpuDriverInstallationConfig GPUDriverInstallationConfig}],
    :gvnic {:enabled boolean},
    :upgradeSettings {:maxSurge integer,
                      :maxUnavailable integer,
@@ -1109,7 +1118,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-delete$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/delete
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/delete
   
   Required parameters: name
   
@@ -1135,7 +1144,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-setSize$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/setSize
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/setSize
   
   Required parameters: name
   
@@ -1172,7 +1181,7 @@
      auth))))
 
 (defn locations-clusters-nodePools-list$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/nodePools/list
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.nodePools/list
   
   Required parameters: parent
   
@@ -1198,7 +1207,7 @@
      auth))))
 
 (defn locations-clusters-well-known-getOpenid-configuration$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/clusters/well-known/getOpenid-configuration
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.clusters.well-known/getOpenid-configuration
   
   Required parameters: parent
   
@@ -1224,7 +1233,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: parent
   
@@ -1250,7 +1259,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -1276,7 +1285,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -1308,7 +1317,7 @@
      auth))))
 
 (defn zones-getServerconfig$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/getServerconfig
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones/getServerconfig
   
   Required parameters: projectId, zone
   
@@ -1334,7 +1343,7 @@
      auth))))
 
 (defn zones-clusters-monitoring$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/monitoring
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/monitoring
   
   Required parameters: projectId, zone, clusterId
   
@@ -1370,7 +1379,7 @@
      auth))))
 
 (defn zones-clusters-get$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/get
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/get
   
   Required parameters: projectId, zone, clusterId
   
@@ -1396,7 +1405,7 @@
      auth))))
 
 (defn zones-clusters-create$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/create
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/create
   
   Required parameters: projectId, zone
   
@@ -1498,7 +1507,7 @@
      auth))))
 
 (defn zones-clusters-update$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/update
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/update
   
   Required parameters: projectId, zone, clusterId
   
@@ -1544,6 +1553,7 @@
             :desiredNodePoolAutoConfigNetworkTags NetworkTags,
             :desiredReleaseChannel ReleaseChannel,
             :desiredSecurityPostureConfig SecurityPostureConfig,
+            :desiredContainerdConfig ContainerdConfig,
             :desiredEnableFqdnNetworkPolicy boolean,
             :removedAdditionalPodRangesConfig AdditionalPodRangesConfig,
             :desiredCostManagementConfig CostManagementConfig,
@@ -1587,7 +1597,7 @@
      auth))))
 
 (defn zones-clusters-delete$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/delete
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/delete
   
   Required parameters: projectId, zone, clusterId
   
@@ -1613,7 +1623,7 @@
      auth))))
 
 (defn zones-clusters-legacyAbac$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/legacyAbac
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/legacyAbac
   
   Required parameters: projectId, zone, clusterId
   
@@ -1649,7 +1659,7 @@
      auth))))
 
 (defn zones-clusters-locations$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/locations
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/locations
   
   Required parameters: projectId, zone, clusterId
   
@@ -1685,7 +1695,7 @@
      auth))))
 
 (defn zones-clusters-logging$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/logging
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/logging
   
   Required parameters: projectId, zone, clusterId
   
@@ -1721,7 +1731,7 @@
      auth))))
 
 (defn zones-clusters-resourceLabels$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/resourceLabels
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/resourceLabels
   
   Required parameters: projectId, zone, clusterId
   
@@ -1758,7 +1768,7 @@
      auth))))
 
 (defn zones-clusters-setMasterAuth$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/setMasterAuth
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/setMasterAuth
   
   Required parameters: projectId, zone, clusterId
   
@@ -1800,7 +1810,7 @@
      auth))))
 
 (defn zones-clusters-list$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/list
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/list
   
   Required parameters: projectId, zone
   
@@ -1826,7 +1836,7 @@
      auth))))
 
 (defn zones-clusters-setNetworkPolicy$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/setNetworkPolicy
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/setNetworkPolicy
   
   Required parameters: projectId, zone, clusterId
   
@@ -1862,7 +1872,7 @@
      auth))))
 
 (defn zones-clusters-addons$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/addons
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/addons
   
   Required parameters: projectId, zone, clusterId
   
@@ -1909,7 +1919,7 @@
      auth))))
 
 (defn zones-clusters-startIpRotation$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/startIpRotation
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/startIpRotation
   
   Required parameters: projectId, zone, clusterId
   
@@ -1945,7 +1955,7 @@
      auth))))
 
 (defn zones-clusters-completeIpRotation$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/completeIpRotation
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/completeIpRotation
   
   Required parameters: projectId, zone, clusterId
   
@@ -1977,7 +1987,7 @@
      auth))))
 
 (defn zones-clusters-master$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/master
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/master
   
   Required parameters: projectId, zone, clusterId
   
@@ -2013,7 +2023,7 @@
      auth))))
 
 (defn zones-clusters-setMaintenancePolicy$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/setMaintenancePolicy
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters/setMaintenancePolicy
   
   Required parameters: projectId, zone, clusterId
   
@@ -2050,7 +2060,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-rollback$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/rollback
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/rollback
   
   Required parameters: projectId, zone, clusterId, nodePoolId
   
@@ -2089,7 +2099,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-get$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/get
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/get
   
   Required parameters: projectId, zone, clusterId, nodePoolId
   
@@ -2117,7 +2127,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-autoscaling$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/autoscaling
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/autoscaling
   
   Required parameters: projectId, zone, clusterId, nodePoolId
   
@@ -2162,7 +2172,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-create$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/create
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/create
   
   Required parameters: projectId, zone, clusterId
   
@@ -2218,7 +2228,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-setManagement$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/setManagement
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/setManagement
   
   Required parameters: projectId, zone, clusterId, nodePoolId
   
@@ -2259,7 +2269,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-update$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/update
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/update
   
   Required parameters: projectId, zone, clusterId, nodePoolId
   
@@ -2279,7 +2289,9 @@
    :etag string,
    :imageType string,
    :machineType string,
-   :linuxNodeConfig {:sysctls {}, :cgroupMode string},
+   :linuxNodeConfig {:sysctls {},
+                     :cgroupMode string,
+                     :hugepages HugepagesConfig},
    :kubeletConfig {:cpuManagerPolicy string,
                    :cpuCfsQuota boolean,
                    :cpuCfsQuotaPeriod string,
@@ -2303,9 +2315,15 @@
    :diskSizeGb string,
    :gcfsConfig {:enabled boolean},
    :workloadMetadataConfig {:mode string},
+   :containerdConfig {:privateRegistryAccessConfig PrivateRegistryAccessConfig},
    :fastSocket {:enabled boolean},
    :windowsNodeConfig {:osVersion string},
    :nodeVersion string,
+   :accelerators [{:acceleratorCount string,
+                   :acceleratorType string,
+                   :gpuPartitionSize string,
+                   :gpuSharingConfig GPUSharingConfig,
+                   :gpuDriverInstallationConfig GPUDriverInstallationConfig}],
    :gvnic {:enabled boolean},
    :upgradeSettings {:maxSurge integer,
                      :maxUnavailable integer,
@@ -2336,7 +2354,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-delete$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/delete
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/delete
   
   Required parameters: projectId, zone, clusterId, nodePoolId
   
@@ -2364,7 +2382,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-setSize$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/setSize
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/setSize
   
   Required parameters: projectId, zone, clusterId, nodePoolId
   
@@ -2403,7 +2421,7 @@
      auth))))
 
 (defn zones-clusters-nodePools-list$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/clusters/nodePools/list
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.clusters.nodePools/list
   
   Required parameters: projectId, zone, clusterId
   
@@ -2429,7 +2447,7 @@
      auth))))
 
 (defn zones-operations-list$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/operations/list
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.operations/list
   
   Required parameters: projectId, zone
   
@@ -2455,7 +2473,7 @@
      auth))))
 
 (defn zones-operations-get$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/operations/get
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.operations/get
   
   Required parameters: projectId, zone, operationId
   
@@ -2481,7 +2499,7 @@
      auth))))
 
 (defn zones-operations-cancel$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/zones/operations/cancel
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.zones.operations/cancel
   
   Required parameters: projectId, zone, operationId
   
@@ -2513,7 +2531,7 @@
      auth))))
 
 (defn aggregated-usableSubnetworks-list$
-  "https://cloud.google.com/container-engine/api/reference/rest/v1/projects/aggregated/usableSubnetworks/list
+  "https://cloud.google.com/kubernetes-engine/reference/rest/v1/projects.aggregated.usableSubnetworks/list
   
   Required parameters: parent
   

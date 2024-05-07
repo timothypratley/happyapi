@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionSslCertificates
   "Compute Engine API: regionSslCertificates.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionSslCertificates"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslCertificates/list
+  "https://cloud.google.com/products/compute/v1/docs/regionSslCertificates/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslCertificates/get
+  "https://cloud.google.com/products/compute/v1/docs/regionSslCertificates/get
   
   Required parameters: project, region, sslCertificate
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslCertificates/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionSslCertificates/insert
   
   Required parameters: project, region
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSslCertificates/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionSslCertificates/delete
   
   Required parameters: project, region, sslCertificate
   

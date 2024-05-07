@@ -1,13 +1,13 @@
 (ns happygapi.content.shippingsettings
   "Content API for Shopping: shippingsettings.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/shippingsettings"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn custombatch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/shippingsettings/custombatch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -43,7 +43,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/shippingsettings/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn getsupportedcarriers$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/shippingsettings/getsupportedcarriers
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn getsupportedholidays$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/shippingsettings/getsupportedholidays
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -121,7 +121,7 @@
      auth))))
 
 (defn getsupportedpickupservices$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/shippingsettings/getsupportedpickupservices
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -147,7 +147,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/shippingsettings/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -173,7 +173,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/shippingsettings/update
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   

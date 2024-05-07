@@ -1,13 +1,13 @@
 (ns happygapi.games.revisions
   "Google Play Game Services: revisions.
   The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
-  See: https://developers.google.com/games/api/reference/rest/v1/revisions"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn check$
-  "https://developers.google.com/games/api/reference/rest/v1/revisions/check
+  "https://games.withgoogle.com
   
   Required parameters: clientRevision
   

@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.devices
   "Google Play EMM API: devices.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/devices"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/devices/list
+  "https://developers.google.com/android/work/play/emm-api/v1/devices/list
   
   Required parameters: enterpriseId, userId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/devices/get
+  "https://developers.google.com/android/work/play/emm-api/v1/devices/get
   
   Required parameters: enterpriseId, userId, deviceId
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/devices/update
+  "https://developers.google.com/android/work/play/emm-api/v1/devices/update
   
   Required parameters: enterpriseId, userId, deviceId
   
@@ -109,7 +109,7 @@
      auth))))
 
 (defn getState$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/devices/getState
+  "https://developers.google.com/android/work/play/emm-api/v1/devices/getState
   
   Required parameters: enterpriseId, userId, deviceId
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn setState$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/devices/setState
+  "https://developers.google.com/android/work/play/emm-api/v1/devices/setState
   
   Required parameters: enterpriseId, userId, deviceId
   
@@ -171,7 +171,7 @@
      auth))))
 
 (defn forceReportUpload$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/devices/forceReportUpload
+  "https://developers.google.com/android/work/play/emm-api/v1/devices/forceReportUpload
   
   Required parameters: enterpriseId, userId, deviceId
   

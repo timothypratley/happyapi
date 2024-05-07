@@ -1,13 +1,13 @@
 (ns happygapi.content.orderreturns
   "Content API for Shopping: orderreturns.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreturns"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn acknowledge$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreturns/acknowledge
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnId
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn createorderreturn$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreturns/createorderreturn
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -76,7 +76,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreturns/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnId
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreturns/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -128,7 +128,7 @@
      auth))))
 
 (defn process$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreturns/process
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnId
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn labels-create$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreturns/labels/create
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, returnId
   

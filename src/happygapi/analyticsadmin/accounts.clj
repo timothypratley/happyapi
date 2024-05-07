@@ -1,93 +1,17 @@
 (ns happygapi.analyticsadmin.accounts
   "Google Analytics Admin API: accounts.
   Manage properties in Google Analytics. Warning: Creating multiple Customer Applications, Accounts, or Projects to simulate or act as a single Customer Application, Account, or Project (respectively) or to circumvent Service-specific usage limits or quotas is a direct violation of Google Cloud Platform Terms of Service as well as Google APIs Terms of Service. These actions can result in immediate termination of your GCP project(s) without any warning.
-  See: http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts"
+  See: https://developers.google.com/analytics/devguides/config/?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
-(defn patch$
-  "http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:createTime string,
-   :regionCode string,
-   :updateTime string,
-   :deleted boolean,
-   :name string,
-   :displayName string}
-  
-  Updates an account."
-  {:scopes ["https://www.googleapis.com/auth/analytics.edit"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://analyticsadmin.googleapis.com/"
-     "v1beta/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn searchChangeHistoryEvents$
-  "http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts/searchChangeHistoryEvents
-  
-  Required parameters: account
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:latestChangeTime string,
-   :resourceType [string],
-   :property string,
-   :pageToken string,
-   :pageSize integer,
-   :action [string],
-   :actorEmail [string],
-   :earliestChangeTime string}
-  
-  Searches through all changes to an account or its children given the specified set of filters."
-  {:scopes ["https://www.googleapis.com/auth/analytics.edit"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:account})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://analyticsadmin.googleapis.com/"
-     "v1beta/{+account}:searchChangeHistoryEvents"
-     #{:account}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn list$
-  "http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts/list
+  "https://developers.google.com/analytics/devguides/config/?csw=1/v1beta/docs/accounts/list
   
   Required parameters: none
   
-  Optional parameters: pageSize, pageToken, showDeleted
+  Optional parameters: showDeleted, pageSize, pageToken
   
   Returns all accounts accessible by the caller. Note that these accounts might not currently have GA4 properties. Soft-deleted (ie: \"trashed\") accounts are excluded by default. Returns an empty list if no relevant accounts are found."
   {:scopes ["https://www.googleapis.com/auth/analytics.edit"
@@ -110,7 +34,7 @@
      auth))))
 
 (defn getDataSharingSettings$
-  "http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts/getDataSharingSettings
+  "https://developers.google.com/analytics/devguides/config/?csw=1/v1beta/docs/accounts/getDataSharingSettings
   
   Required parameters: name
   
@@ -137,7 +61,7 @@
      auth))))
 
 (defn delete$
-  "http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts/delete
+  "https://developers.google.com/analytics/devguides/config/?csw=1/v1beta/docs/accounts/delete
   
   Required parameters: name
   
@@ -163,7 +87,7 @@
      auth))))
 
 (defn runAccessReport$
-  "http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts/runAccessReport
+  "https://developers.google.com/analytics/devguides/config/?csw=1/v1beta/docs/accounts/runAccessReport
   
   Required parameters: entity
   
@@ -175,19 +99,19 @@
    :limit string,
    :offset string,
    :dimensionFilter {:accessFilter GoogleAnalyticsAdminV1betaAccessFilter,
-                     :andGroup GoogleAnalyticsAdminV1betaAccessFilterExpressionList,
                      :orGroup GoogleAnalyticsAdminV1betaAccessFilterExpressionList,
-                     :notExpression GoogleAnalyticsAdminV1betaAccessFilterExpression},
+                     :notExpression GoogleAnalyticsAdminV1betaAccessFilterExpression,
+                     :andGroup GoogleAnalyticsAdminV1betaAccessFilterExpressionList},
    :dimensions [{:dimensionName string}],
    :metricFilter {:accessFilter GoogleAnalyticsAdminV1betaAccessFilter,
-                  :andGroup GoogleAnalyticsAdminV1betaAccessFilterExpressionList,
                   :orGroup GoogleAnalyticsAdminV1betaAccessFilterExpressionList,
-                  :notExpression GoogleAnalyticsAdminV1betaAccessFilterExpression},
+                  :notExpression GoogleAnalyticsAdminV1betaAccessFilterExpression,
+                  :andGroup GoogleAnalyticsAdminV1betaAccessFilterExpressionList},
    :dateRanges [{:endDate string, :startDate string}],
    :expandGroups boolean,
-   :orderBys [{:dimension GoogleAnalyticsAdminV1betaAccessOrderByDimensionOrderBy,
-               :metric GoogleAnalyticsAdminV1betaAccessOrderByMetricOrderBy,
-               :desc boolean}],
+   :orderBys [{:metric GoogleAnalyticsAdminV1betaAccessOrderByMetricOrderBy,
+               :desc boolean,
+               :dimension GoogleAnalyticsAdminV1betaAccessOrderByDimensionOrderBy}],
    :metrics [{:metricName string}],
    :includeAllUsers boolean,
    :returnEntityQuota boolean}
@@ -215,7 +139,7 @@
      auth))))
 
 (defn get$
-  "http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts/get
+  "https://developers.google.com/analytics/devguides/config/?csw=1/v1beta/docs/accounts/get
   
   Required parameters: name
   
@@ -241,8 +165,46 @@
       :as :json}
      auth))))
 
+(defn patch$
+  "https://developers.google.com/analytics/devguides/config/?csw=1/v1beta/docs/accounts/patch
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:gmpOrganization string,
+   :deleted boolean,
+   :name string,
+   :regionCode string,
+   :updateTime string,
+   :displayName string,
+   :createTime string}
+  
+  Updates an account."
+  {:scopes ["https://www.googleapis.com/auth/analytics.edit"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://analyticsadmin.googleapis.com/"
+     "v1beta/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn provisionAccountTicket$
-  "http://code.google.com/apis/analytics/docs/mgmt/home.htmlapi/reference/rest/v1beta/accounts/provisionAccountTicket
+  "https://developers.google.com/analytics/devguides/config/?csw=1/v1beta/docs/accounts/provisionAccountTicket
   
   Required parameters: none
   
@@ -251,12 +213,13 @@
   Body: 
   
   {:redirectUri string,
-   :account {:createTime string,
-             :regionCode string,
-             :updateTime string,
+   :account {:gmpOrganization string,
              :deleted boolean,
              :name string,
-             :displayName string}}
+             :regionCode string,
+             :updateTime string,
+             :displayName string,
+             :createTime string}}
   
   Requests a ticket for creating an account."
   {:scopes ["https://www.googleapis.com/auth/analytics.edit"]}
@@ -268,6 +231,45 @@
      "https://analyticsadmin.googleapis.com/"
      "v1beta/accounts:provisionAccountTicket"
      #{}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn searchChangeHistoryEvents$
+  "https://developers.google.com/analytics/devguides/config/?csw=1/v1beta/docs/accounts/searchChangeHistoryEvents
+  
+  Required parameters: account
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:pageSize integer,
+   :earliestChangeTime string,
+   :pageToken string,
+   :latestChangeTime string,
+   :resourceType [string],
+   :action [string],
+   :property string,
+   :actorEmail [string]}
+  
+  Searches through all changes to an account or its children given the specified set of filters."
+  {:scopes ["https://www.googleapis.com/auth/analytics.edit"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:account})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://analyticsadmin.googleapis.com/"
+     "v1beta/{+account}:searchChangeHistoryEvents"
+     #{:account}
      parameters)
     (merge-with
      merge

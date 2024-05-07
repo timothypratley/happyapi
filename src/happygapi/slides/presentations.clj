@@ -1,13 +1,13 @@
 (ns happygapi.slides.presentations
   "Google Slides API: presentations.
   Reads and writes Google Slides presentations.
-  See: https://developers.google.com/slides/api/reference/rest/v1/presentations"
+  See: https://developers.google.com/slides/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/slides/api/reference/rest/v1/presentations/get
+  "https://developers.google.com/slides/reference/rest/v1/presentations/get
   
   Required parameters: presentationId
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/slides/api/reference/rest/v1/presentations/create
+  "https://developers.google.com/slides/reference/rest/v1/presentations/create
   
   Required parameters: none
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn batchUpdate$
-  "https://developers.google.com/slides/api/reference/rest/v1/presentations/batchUpdate
+  "https://developers.google.com/slides/reference/rest/v1/presentations/batchUpdate
   
   Required parameters: presentationId
   
@@ -192,7 +192,7 @@
      auth))))
 
 (defn pages-get$
-  "https://developers.google.com/slides/api/reference/rest/v1/presentations/pages/get
+  "https://developers.google.com/slides/reference/rest/v1/presentations/pages/get
   
   Required parameters: presentationId, pageObjectId
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn pages-getThumbnail$
-  "https://developers.google.com/slides/api/reference/rest/v1/presentations/pages/getThumbnail
+  "https://developers.google.com/slides/reference/rest/v1/presentations/pages/getThumbnail
   
   Required parameters: presentationId, pageObjectId
   

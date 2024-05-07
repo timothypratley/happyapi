@@ -1,13 +1,13 @@
 (ns happygapi.pubsublite.admin
   "Pub/Sub Lite API: admin.
   
-  See: https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin"
+  See: https://cloud.google.com/pubsub/lite/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn projects-locations-operations-list$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/operations/list
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.operations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn projects-locations-operations-get$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/operations/get
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.operations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn projects-locations-operations-delete$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/operations/delete
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.operations/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn projects-locations-operations-cancel$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/operations/cancel
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn projects-locations-topics-create$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/topics/create
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.topics/create
   
   Required parameters: parent
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn projects-locations-topics-get$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/topics/get
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.topics/get
   
   Required parameters: name
   
@@ -178,7 +178,7 @@
      auth))))
 
 (defn projects-locations-topics-getPartitions$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/topics/getPartitions
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.topics/getPartitions
   
   Required parameters: name
   
@@ -204,7 +204,7 @@
      auth))))
 
 (defn projects-locations-topics-list$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/topics/list
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.topics/list
   
   Required parameters: parent
   
@@ -230,7 +230,7 @@
      auth))))
 
 (defn projects-locations-topics-patch$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/topics/patch
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.topics/patch
   
   Required parameters: name
   
@@ -265,7 +265,7 @@
      auth))))
 
 (defn projects-locations-topics-delete$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/topics/delete
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.topics/delete
   
   Required parameters: name
   
@@ -291,7 +291,7 @@
      auth))))
 
 (defn projects-locations-topics-subscriptions-list$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/topics/subscriptions/list
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.topics.subscriptions/list
   
   Required parameters: name
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn projects-locations-subscriptions-create$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/subscriptions/create
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions/create
   
   Required parameters: parent
   
@@ -355,7 +355,7 @@
      auth))))
 
 (defn projects-locations-subscriptions-get$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/subscriptions/get
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions/get
   
   Required parameters: name
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn projects-locations-subscriptions-list$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/subscriptions/list
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions/list
   
   Required parameters: parent
   
@@ -407,7 +407,7 @@
      auth))))
 
 (defn projects-locations-subscriptions-patch$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/subscriptions/patch
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions/patch
   
   Required parameters: name
   
@@ -445,7 +445,7 @@
      auth))))
 
 (defn projects-locations-subscriptions-delete$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/subscriptions/delete
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions/delete
   
   Required parameters: name
   
@@ -471,7 +471,7 @@
      auth))))
 
 (defn projects-locations-subscriptions-seek$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/subscriptions/seek
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.subscriptions/seek
   
   Required parameters: name
   
@@ -504,7 +504,7 @@
      auth))))
 
 (defn projects-locations-reservations-create$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/reservations/create
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.reservations/create
   
   Required parameters: parent
   
@@ -536,7 +536,7 @@
      auth))))
 
 (defn projects-locations-reservations-get$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/reservations/get
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.reservations/get
   
   Required parameters: name
   
@@ -562,7 +562,7 @@
      auth))))
 
 (defn projects-locations-reservations-list$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/reservations/list
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.reservations/list
   
   Required parameters: parent
   
@@ -588,7 +588,7 @@
      auth))))
 
 (defn projects-locations-reservations-patch$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/reservations/patch
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.reservations/patch
   
   Required parameters: name
   
@@ -620,7 +620,7 @@
      auth))))
 
 (defn projects-locations-reservations-delete$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/reservations/delete
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.reservations/delete
   
   Required parameters: name
   
@@ -646,7 +646,7 @@
      auth))))
 
 (defn projects-locations-reservations-topics-list$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/admin/projects/locations/reservations/topics/list
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/admin.projects.locations.reservations.topics/list
   
   Required parameters: name
   

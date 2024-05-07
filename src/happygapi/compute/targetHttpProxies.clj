@@ -1,13 +1,13 @@
 (ns happygapi.compute.targetHttpProxies
   "Compute Engine API: targetHttpProxies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/targetHttpProxies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpProxies/list
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpProxies/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpProxies/get
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpProxies/get
   
   Required parameters: project, targetHttpProxy
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpProxies/insert
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpProxies/insert
   
   Required parameters: project
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpProxies/delete
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpProxies/delete
   
   Required parameters: project, targetHttpProxy
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpProxies/patch
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpProxies/patch
   
   Required parameters: project, targetHttpProxy
   
@@ -176,7 +176,7 @@
      auth))))
 
 (defn setUrlMap$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpProxies/setUrlMap
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpProxies/setUrlMap
   
   Required parameters: project, targetHttpProxy
   
@@ -209,7 +209,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetHttpProxies/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/targetHttpProxies/aggregatedList
   
   Required parameters: project
   

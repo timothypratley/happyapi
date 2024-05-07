@@ -1,39 +1,13 @@
 (ns happygapi.walletobjects.media
   "Google Wallet API: media.
   API for issuers to save and manage Google Wallet Objects.
-  See: https://developers.google.com/pay/passesapi/reference/rest/v1/media"
+  See: https://developers.google.com/wallet"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
-(defn download$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/media/download
-  
-  Required parameters: resourceId
-  
-  Optional parameters: none
-  
-  Downloads rotating barcode values for the transit object referenced by the given object ID."
-  {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:resourceId})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://walletobjects.googleapis.com/"
-     "walletobjects/v1/transitObject/{resourceId}/downloadRotatingBarcodeValues"
-     #{:resourceId}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn upload$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/media/upload
+  "https://developers.google.com/wallet/reference/rest/v1/media/upload
   
   Required parameters: resourceId
   
@@ -97,6 +71,32 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn download$
+  "https://developers.google.com/wallet/reference/rest/v1/media/download
+  
+  Required parameters: resourceId
+  
+  Optional parameters: none
+  
+  Downloads rotating barcode values for the transit object referenced by the given object ID."
+  {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:resourceId})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://walletobjects.googleapis.com/"
+     "walletobjects/v1/transitObject/{resourceId}/downloadRotatingBarcodeValues"
+     #{:resourceId}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

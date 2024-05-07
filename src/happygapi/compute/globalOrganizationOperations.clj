@@ -1,13 +1,13 @@
 (ns happygapi.compute.globalOrganizationOperations
   "Compute Engine API: globalOrganizationOperations.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/globalOrganizationOperations"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalOrganizationOperations/list
+  "https://cloud.google.com/products/compute/v1/docs/globalOrganizationOperations/list
   
   Required parameters: none
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalOrganizationOperations/get
+  "https://cloud.google.com/products/compute/v1/docs/globalOrganizationOperations/get
   
   Required parameters: operation
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/globalOrganizationOperations/delete
+  "https://cloud.google.com/products/compute/v1/docs/globalOrganizationOperations/delete
   
   Required parameters: operation
   

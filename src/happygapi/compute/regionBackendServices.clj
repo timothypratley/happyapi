@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionBackendServices
   "Compute Engine API: regionBackendServices.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn setSecurityPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/setSecurityPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/setSecurityPolicy
   
   Required parameters: backendService, project, region
   
@@ -42,7 +42,7 @@
      auth))))
 
 (defn getHealth$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/getHealth
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/getHealth
   
   Required parameters: backendService, project, region
   
@@ -78,7 +78,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/get
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/get
   
   Required parameters: backendService, project, region
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/setIamPolicy
   
   Required parameters: project, region, resource
   
@@ -150,7 +150,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/insert
   
   Required parameters: project, region
   
@@ -277,7 +277,7 @@
      auth))))
 
 (defn listUsable$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/listUsable
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/listUsable
   
   Required parameters: project, region
   
@@ -305,7 +305,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/patch
   
   Required parameters: backendService, project, region
   
@@ -434,7 +434,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/testIamPermissions
   
   Required parameters: project, region, resource
   
@@ -468,7 +468,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/update
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/update
   
   Required parameters: backendService, project, region
   
@@ -597,7 +597,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/delete
   
   Required parameters: backendService, project, region
   
@@ -626,7 +626,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/getIamPolicy
   
   Required parameters: project, region, resource
   
@@ -654,7 +654,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionBackendServices/list
+  "https://cloud.google.com/products/compute/v1/docs/regionBackendServices/list
   
   Required parameters: project, region
   

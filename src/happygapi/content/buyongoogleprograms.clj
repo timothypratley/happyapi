@@ -1,13 +1,13 @@
 (ns happygapi.content.buyongoogleprograms
   "Content API for Shopping: buyongoogleprograms.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/buyongoogleprograms"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/buyongoogleprograms/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionCode
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/buyongoogleprograms/patch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionCode
   
@@ -73,7 +73,7 @@
      auth))))
 
 (defn onboard$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/buyongoogleprograms/onboard
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionCode
   
@@ -105,7 +105,7 @@
      auth))))
 
 (defn requestreview$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/buyongoogleprograms/requestreview
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionCode
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn activate$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/buyongoogleprograms/activate
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionCode
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn pause$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/buyongoogleprograms/pause
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionCode
   

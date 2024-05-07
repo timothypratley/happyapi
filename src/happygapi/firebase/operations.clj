@@ -1,13 +1,13 @@
 (ns happygapi.firebase.operations
   "Firebase Management API: operations.
   The Firebase Management API enables programmatic setup and management of Firebase projects, including a project's Firebase resources and Firebase apps.
-  See: https://firebase.google.comapi/reference/rest/v1beta1/operations"
+  See: https://firebase.google.com"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://firebase.google.comapi/reference/rest/v1beta1/operations/get
+  "https://firebase.google.com
   
   Required parameters: name
   

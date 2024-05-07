@@ -1,13 +1,13 @@
 (ns happygapi.adsensehost.accounts
   "AdSense Host API: accounts.
   Generates performance reports, generates ad codes, and provides publisher management capabilities for AdSense Hosts.
-  See: https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts"
+  See: https://developers.google.com/adsense/host/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/get
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/get
   
   Required parameters: accountId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/list
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/list
   
   Required parameters: filterAdClientId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn adclients-get$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adclients/get
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adclients/get
   
   Required parameters: accountId, adClientId
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn adclients-list$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adclients/list
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adclients/list
   
   Required parameters: accountId
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn adunits-delete$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adunits/delete
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adunits/delete
   
   Required parameters: accountId, adClientId, adUnitId
   
@@ -139,7 +139,7 @@
      auth))))
 
 (defn adunits-get$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adunits/get
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adunits/get
   
   Required parameters: accountId, adClientId, adUnitId
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn adunits-getAdCode$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adunits/getAdCode
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adunits/getAdCode
   
   Required parameters: accountId, adClientId, adUnitId
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn adunits-insert$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adunits/insert
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adunits/insert
   
   Required parameters: accountId, adClientId
   
@@ -248,7 +248,7 @@
      auth))))
 
 (defn adunits-list$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adunits/list
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adunits/list
   
   Required parameters: accountId, adClientId
   
@@ -274,7 +274,7 @@
      auth))))
 
 (defn adunits-patch$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adunits/patch
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adunits/patch
   
   Required parameters: accountId, adClientId, adUnitId
   
@@ -329,7 +329,7 @@
      auth))))
 
 (defn adunits-update$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/adunits/update
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/adunits/update
   
   Required parameters: accountId, adClientId
   
@@ -382,7 +382,7 @@
      auth))))
 
 (defn reports-generate$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/accounts/reports/generate
+  "https://developers.google.com/adsense/host/v4.1/docs/accounts/reports/generate
   
   Required parameters: startDate, endDate, accountId
   

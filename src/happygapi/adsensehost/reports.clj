@@ -1,13 +1,13 @@
 (ns happygapi.adsensehost.reports
   "AdSense Host API: reports.
   Generates performance reports, generates ad codes, and provides publisher management capabilities for AdSense Hosts.
-  See: https://developers.google.com/adsense/host/api/reference/rest/v4.1/reports"
+  See: https://developers.google.com/adsense/host/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn generate$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/reports/generate
+  "https://developers.google.com/adsense/host/v4.1/docs/reports/generate
   
   Required parameters: startDate, endDate
   

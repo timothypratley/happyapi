@@ -1,13 +1,13 @@
 (ns happygapi.cloudscheduler.projects
   "Cloud Scheduler API: projects.
   Creates and manages jobs run on a regular recurring schedule.
-  See: https://cloud.google.com/scheduler/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/scheduler/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-jobs-list$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/jobs/list
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations.jobs/list
   
   Required parameters: parent
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-jobs-get$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/jobs/get
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations.jobs/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-jobs-create$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/jobs/create
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations.jobs/create
   
   Required parameters: parent
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-jobs-patch$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/jobs/patch
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations.jobs/patch
   
   Required parameters: name
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-jobs-delete$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/jobs/delete
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations.jobs/delete
   
   Required parameters: name
   
@@ -253,7 +253,7 @@
      auth))))
 
 (defn locations-jobs-pause$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/jobs/pause
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations.jobs/pause
   
   Required parameters: name
   
@@ -285,7 +285,7 @@
      auth))))
 
 (defn locations-jobs-resume$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/jobs/resume
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations.jobs/resume
   
   Required parameters: name
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn locations-jobs-run$
-  "https://cloud.google.com/scheduler/api/reference/rest/v1/projects/locations/jobs/run
+  "https://cloud.google.com/scheduler/docs/reference/rest/v1/projects.locations.jobs/run
   
   Required parameters: name
   

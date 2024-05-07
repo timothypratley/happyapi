@@ -1,13 +1,13 @@
 (ns happygapi.compute.routers
   "Compute Engine API: routers.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/routers"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/get
+  "https://cloud.google.com/products/compute/v1/docs/routers/get
   
   Required parameters: project, region, router
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/insert
+  "https://cloud.google.com/products/compute/v1/docs/routers/insert
   
   Required parameters: project, region
   
@@ -44,13 +44,14 @@
   Body: 
   
   {:description string,
-   :interfaces [{:name string,
-                 :linkedVpnTunnel string,
-                 :linkedInterconnectAttachment string,
-                 :ipRange string,
-                 :managementType string,
-                 :privateIpAddress string,
+   :interfaces [{:linkedVpnTunnel string,
                  :redundantInterface string,
+                 :name string,
+                 :managementType string,
+                 :ipVersion string,
+                 :ipRange string,
+                 :privateIpAddress string,
+                 :linkedInterconnectAttachment string,
                  :subnetwork string}],
    :creationTimestamp string,
    :nats [{:minPortsPerVm integer,
@@ -85,20 +86,26 @@
                :routerApplianceInstance string,
                :managementType string,
                :ipv6NexthopAddress string,
+               :exportPolicies [string],
                :advertiseMode string,
                :peerAsn integer,
                :customLearnedRoutePriority integer,
                :interfaceName string,
+               :importPolicies [string],
                :enableIpv6 boolean,
                :ipAddress string,
+               :peerIpv4NexthopAddress string,
+               :enableIpv4 boolean,
                :advertisedRoutePriority integer,
+               :ipv4NexthopAddress string,
                :customLearnedIpRanges [RouterBgpPeerCustomLearnedIpRange]}],
    :selfLink string,
    :bgp {:asn integer,
          :advertiseMode string,
          :advertisedGroups [string],
          :advertisedIpRanges [RouterAdvertisedIpRange],
-         :keepaliveInterval integer},
+         :keepaliveInterval integer,
+         :identifierRange string},
    :md5AuthenticationKeys [{:name string, :key string}],
    :region string,
    :id string,
@@ -129,7 +136,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/patch
+  "https://cloud.google.com/products/compute/v1/docs/routers/patch
   
   Required parameters: project, region, router
   
@@ -138,13 +145,14 @@
   Body: 
   
   {:description string,
-   :interfaces [{:name string,
-                 :linkedVpnTunnel string,
-                 :linkedInterconnectAttachment string,
-                 :ipRange string,
-                 :managementType string,
-                 :privateIpAddress string,
+   :interfaces [{:linkedVpnTunnel string,
                  :redundantInterface string,
+                 :name string,
+                 :managementType string,
+                 :ipVersion string,
+                 :ipRange string,
+                 :privateIpAddress string,
+                 :linkedInterconnectAttachment string,
                  :subnetwork string}],
    :creationTimestamp string,
    :nats [{:minPortsPerVm integer,
@@ -179,20 +187,26 @@
                :routerApplianceInstance string,
                :managementType string,
                :ipv6NexthopAddress string,
+               :exportPolicies [string],
                :advertiseMode string,
                :peerAsn integer,
                :customLearnedRoutePriority integer,
                :interfaceName string,
+               :importPolicies [string],
                :enableIpv6 boolean,
                :ipAddress string,
+               :peerIpv4NexthopAddress string,
+               :enableIpv4 boolean,
                :advertisedRoutePriority integer,
+               :ipv4NexthopAddress string,
                :customLearnedIpRanges [RouterBgpPeerCustomLearnedIpRange]}],
    :selfLink string,
    :bgp {:asn integer,
          :advertiseMode string,
          :advertisedGroups [string],
          :advertisedIpRanges [RouterAdvertisedIpRange],
-         :keepaliveInterval integer},
+         :keepaliveInterval integer,
+         :identifierRange string},
    :md5AuthenticationKeys [{:name string, :key string}],
    :region string,
    :id string,
@@ -223,7 +237,7 @@
      auth))))
 
 (defn getRouterStatus$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/getRouterStatus
+  "https://cloud.google.com/products/compute/v1/docs/routers/getRouterStatus
   
   Required parameters: project, region, router
   
@@ -251,7 +265,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/routers/aggregatedList
   
   Required parameters: project
   
@@ -279,7 +293,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/update
+  "https://cloud.google.com/products/compute/v1/docs/routers/update
   
   Required parameters: project, region, router
   
@@ -288,13 +302,14 @@
   Body: 
   
   {:description string,
-   :interfaces [{:name string,
-                 :linkedVpnTunnel string,
-                 :linkedInterconnectAttachment string,
-                 :ipRange string,
-                 :managementType string,
-                 :privateIpAddress string,
+   :interfaces [{:linkedVpnTunnel string,
                  :redundantInterface string,
+                 :name string,
+                 :managementType string,
+                 :ipVersion string,
+                 :ipRange string,
+                 :privateIpAddress string,
+                 :linkedInterconnectAttachment string,
                  :subnetwork string}],
    :creationTimestamp string,
    :nats [{:minPortsPerVm integer,
@@ -329,20 +344,26 @@
                :routerApplianceInstance string,
                :managementType string,
                :ipv6NexthopAddress string,
+               :exportPolicies [string],
                :advertiseMode string,
                :peerAsn integer,
                :customLearnedRoutePriority integer,
                :interfaceName string,
+               :importPolicies [string],
                :enableIpv6 boolean,
                :ipAddress string,
+               :peerIpv4NexthopAddress string,
+               :enableIpv4 boolean,
                :advertisedRoutePriority integer,
+               :ipv4NexthopAddress string,
                :customLearnedIpRanges [RouterBgpPeerCustomLearnedIpRange]}],
    :selfLink string,
    :bgp {:asn integer,
          :advertiseMode string,
          :advertisedGroups [string],
          :advertisedIpRanges [RouterAdvertisedIpRange],
-         :keepaliveInterval integer},
+         :keepaliveInterval integer,
+         :identifierRange string},
    :md5AuthenticationKeys [{:name string, :key string}],
    :region string,
    :id string,
@@ -373,7 +394,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/delete
+  "https://cloud.google.com/products/compute/v1/docs/routers/delete
   
   Required parameters: project, region, router
   
@@ -400,7 +421,7 @@
      auth))))
 
 (defn preview$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/preview
+  "https://cloud.google.com/products/compute/v1/docs/routers/preview
   
   Required parameters: project, region, router
   
@@ -409,13 +430,14 @@
   Body: 
   
   {:description string,
-   :interfaces [{:name string,
-                 :linkedVpnTunnel string,
-                 :linkedInterconnectAttachment string,
-                 :ipRange string,
-                 :managementType string,
-                 :privateIpAddress string,
+   :interfaces [{:linkedVpnTunnel string,
                  :redundantInterface string,
+                 :name string,
+                 :managementType string,
+                 :ipVersion string,
+                 :ipRange string,
+                 :privateIpAddress string,
+                 :linkedInterconnectAttachment string,
                  :subnetwork string}],
    :creationTimestamp string,
    :nats [{:minPortsPerVm integer,
@@ -450,20 +472,26 @@
                :routerApplianceInstance string,
                :managementType string,
                :ipv6NexthopAddress string,
+               :exportPolicies [string],
                :advertiseMode string,
                :peerAsn integer,
                :customLearnedRoutePriority integer,
                :interfaceName string,
+               :importPolicies [string],
                :enableIpv6 boolean,
                :ipAddress string,
+               :peerIpv4NexthopAddress string,
+               :enableIpv4 boolean,
                :advertisedRoutePriority integer,
+               :ipv4NexthopAddress string,
                :customLearnedIpRanges [RouterBgpPeerCustomLearnedIpRange]}],
    :selfLink string,
    :bgp {:asn integer,
          :advertiseMode string,
          :advertisedGroups [string],
          :advertisedIpRanges [RouterAdvertisedIpRange],
-         :keepaliveInterval integer},
+         :keepaliveInterval integer,
+         :identifierRange string},
    :md5AuthenticationKeys [{:name string, :key string}],
    :region string,
    :id string,
@@ -495,7 +523,7 @@
      auth))))
 
 (defn getNatMappingInfo$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/getNatMappingInfo
+  "https://cloud.google.com/products/compute/v1/docs/routers/getNatMappingInfo
   
   Required parameters: router, region, project
   
@@ -523,7 +551,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/list
+  "https://cloud.google.com/products/compute/v1/docs/routers/list
   
   Required parameters: project, region
   
@@ -551,7 +579,7 @@
      auth))))
 
 (defn getNatIpInfo$
-  "https://cloud.google.com/compute/api/reference/rest/v1/routers/getNatIpInfo
+  "https://cloud.google.com/products/compute/v1/docs/routers/getNatIpInfo
   
   Required parameters: project, region, router
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.targetInstances
   "Compute Engine API: targetInstances.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/targetInstances"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetInstances/list
+  "https://cloud.google.com/products/compute/v1/docs/targetInstances/list
   
   Required parameters: project, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetInstances/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/targetInstances/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetInstances/get
+  "https://cloud.google.com/products/compute/v1/docs/targetInstances/get
   
   Required parameters: project, targetInstance, zone
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetInstances/insert
+  "https://cloud.google.com/products/compute/v1/docs/targetInstances/insert
   
   Required parameters: project, zone
   
@@ -134,7 +134,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetInstances/delete
+  "https://cloud.google.com/products/compute/v1/docs/targetInstances/delete
   
   Required parameters: project, targetInstance, zone
   
@@ -161,7 +161,7 @@
      auth))))
 
 (defn setSecurityPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetInstances/setSecurityPolicy
+  "https://cloud.google.com/products/compute/v1/docs/targetInstances/setSecurityPolicy
   
   Required parameters: project, targetInstance, zone
   

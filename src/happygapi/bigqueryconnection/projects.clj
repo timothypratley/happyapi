@@ -1,13 +1,13 @@
 (ns happygapi.bigqueryconnection.projects
   "BigQuery Connection API: projects.
   Allows users to manage BigQuery connections to external data sources.
-  See: https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/bigquery/docs/connections-api-intro"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-connections-create$
-  "https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects/locations/connections/create
+  "https://cloud.google.com/bigquery/docs/connections-api-intro
   
   Required parameters: parent
   
@@ -39,7 +39,9 @@
            :identity string},
    :configuration {:connectorId string,
                    :endpoint ConnectorConfigurationEndpoint,
-                   :authentication ConnectorConfigurationAuthentication},
+                   :authentication ConnectorConfigurationAuthentication,
+                   :network ConnectorConfigurationNetwork,
+                   :asset ConnectorConfigurationAsset},
    :salesforceDataCloud {:instanceUri string,
                          :identity string,
                          :tenantId string},
@@ -75,7 +77,7 @@
      auth))))
 
 (defn locations-connections-get$
-  "https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects/locations/connections/get
+  "https://cloud.google.com/bigquery/docs/connections-api-intro
   
   Required parameters: name
   
@@ -102,7 +104,7 @@
      auth))))
 
 (defn locations-connections-list$
-  "https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects/locations/connections/list
+  "https://cloud.google.com/bigquery/docs/connections-api-intro
   
   Required parameters: parent
   
@@ -129,7 +131,7 @@
      auth))))
 
 (defn locations-connections-patch$
-  "https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects/locations/connections/patch
+  "https://cloud.google.com/bigquery/docs/connections-api-intro
   
   Required parameters: name
   
@@ -161,7 +163,9 @@
            :identity string},
    :configuration {:connectorId string,
                    :endpoint ConnectorConfigurationEndpoint,
-                   :authentication ConnectorConfigurationAuthentication},
+                   :authentication ConnectorConfigurationAuthentication,
+                   :network ConnectorConfigurationNetwork,
+                   :asset ConnectorConfigurationAsset},
    :salesforceDataCloud {:instanceUri string,
                          :identity string,
                          :tenantId string},
@@ -197,7 +201,7 @@
      auth))))
 
 (defn locations-connections-delete$
-  "https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects/locations/connections/delete
+  "https://cloud.google.com/bigquery/docs/connections-api-intro
   
   Required parameters: name
   
@@ -224,7 +228,7 @@
      auth))))
 
 (defn locations-connections-getIamPolicy$
-  "https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects/locations/connections/getIamPolicy
+  "https://cloud.google.com/bigquery/docs/connections-api-intro
   
   Required parameters: resource
   
@@ -257,7 +261,7 @@
      auth))))
 
 (defn locations-connections-setIamPolicy$
-  "https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects/locations/connections/setIamPolicy
+  "https://cloud.google.com/bigquery/docs/connections-api-intro
   
   Required parameters: resource
   
@@ -294,7 +298,7 @@
      auth))))
 
 (defn locations-connections-testIamPermissions$
-  "https://cloud.google.com/bigquery/docs/connections-api-introapi/reference/rest/v1/projects/locations/connections/testIamPermissions
+  "https://cloud.google.com/bigquery/docs/connections-api-intro
   
   Required parameters: resource
   

@@ -1,13 +1,13 @@
 (ns happygapi.content.regions
   "Content API for Shopping: regions.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/regions"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/regions/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/regions/create
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/regions/patch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionId
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/regions/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, regionId
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/regions/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

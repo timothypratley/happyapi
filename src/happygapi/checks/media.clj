@@ -1,13 +1,13 @@
 (ns happygapi.checks.media
   "Checks API: media.
   The Checks API contains powerful and easy-to-use privacy and compliance APIs that interact with the Checks product and its underlying technology.
-  See: https://developers.google.com/checksapi/reference/rest/v1alpha/media"
+  See: https://developers.google.com/checks"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn upload$
-  "https://developers.google.com/checksapi/reference/rest/v1alpha/media/upload
+  "https://developers.google.com/checks/reference/rest/v1alpha/media/upload
   
   Required parameters: parent
   

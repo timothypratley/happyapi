@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.users
   "Google Play EMM API: users.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/get
+  "https://developers.google.com/android/work/play/emm-api/v1/users/get
   
   Required parameters: enterpriseId, userId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/insert
+  "https://developers.google.com/android/work/play/emm-api/v1/users/insert
   
   Required parameters: enterpriseId
   
@@ -70,7 +70,7 @@
      auth))))
 
 (defn generateAuthenticationToken$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/generateAuthenticationToken
+  "https://developers.google.com/android/work/play/emm-api/v1/users/generateAuthenticationToken
   
   Required parameters: enterpriseId, userId
   
@@ -96,7 +96,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/update
+  "https://developers.google.com/android/work/play/emm-api/v1/users/update
   
   Required parameters: enterpriseId, userId
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/delete
+  "https://developers.google.com/android/work/play/emm-api/v1/users/delete
   
   Required parameters: enterpriseId, userId
   
@@ -159,7 +159,7 @@
      auth))))
 
 (defn revokeDeviceAccess$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/revokeDeviceAccess
+  "https://developers.google.com/android/work/play/emm-api/v1/users/revokeDeviceAccess
   
   Required parameters: enterpriseId, userId
   
@@ -185,7 +185,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/list
+  "https://developers.google.com/android/work/play/emm-api/v1/users/list
   
   Required parameters: enterpriseId, email
   
@@ -211,7 +211,7 @@
      auth))))
 
 (defn getAvailableProductSet$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/getAvailableProductSet
+  "https://developers.google.com/android/work/play/emm-api/v1/users/getAvailableProductSet
   
   Required parameters: enterpriseId, userId
   
@@ -237,7 +237,7 @@
      auth))))
 
 (defn setAvailableProductSet$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/users/setAvailableProductSet
+  "https://developers.google.com/android/work/play/emm-api/v1/users/setAvailableProductSet
   
   Required parameters: enterpriseId, userId
   

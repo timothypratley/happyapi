@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.files
   "Campaign Manager 360 API: files.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/files"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/files/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: reportId, fileId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/files/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   

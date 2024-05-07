@@ -1,13 +1,13 @@
 (ns happygapi.storage.buckets
   "Cloud Storage JSON API: buckets.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/get
   
   Required parameters: bucket
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/setIamPolicy
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/setIamPolicy
   
   Required parameters: bucket
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/insert
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/insert
   
   Required parameters: project
   
@@ -193,7 +193,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/patch
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/patch
   
   Required parameters: bucket
   
@@ -306,7 +306,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/testIamPermissions
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/testIamPermissions
   
   Required parameters: bucket, permissions
   
@@ -336,7 +336,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/update
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/update
   
   Required parameters: bucket
   
@@ -449,7 +449,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/delete
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/delete
   
   Required parameters: bucket
   
@@ -477,7 +477,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/getIamPolicy
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/getIamPolicy
   
   Required parameters: bucket
   
@@ -504,7 +504,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/list
   
   Required parameters: project
   
@@ -534,7 +534,7 @@
      auth))))
 
 (defn lockRetentionPolicy$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/lockRetentionPolicy
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets/lockRetentionPolicy
   
   Required parameters: bucket, ifMetagenerationMatch
   

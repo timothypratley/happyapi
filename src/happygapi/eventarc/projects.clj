@@ -1,13 +1,13 @@
 (ns happygapi.eventarc.projects
   "Eventarc API: projects.
   Build event-driven applications on Google Cloud Platform.
-  See: https://cloud.google.com/eventarcapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/eventarc/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-getGoogleChannelConfig$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/getGoogleChannelConfig
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations/getGoogleChannelConfig
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-updateGoogleChannelConfig$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/updateGoogleChannelConfig
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations/updateGoogleChannelConfig
   
   Required parameters: name
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-triggers-get$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/triggers/get
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers/get
   
   Required parameters: name
   
@@ -253,7 +253,7 @@
      auth))))
 
 (defn locations-triggers-list$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/triggers/list
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers/list
   
   Required parameters: parent
   
@@ -279,7 +279,7 @@
      auth))))
 
 (defn locations-triggers-create$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/triggers/create
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers/create
   
   Required parameters: parent
   
@@ -299,6 +299,7 @@
    :updateTime string,
    :eventFilters [{:attribute string, :value string, :operator string}],
    :conditions {},
+   :satisfiesPzs boolean,
    :destination {:cloudRun CloudRun,
                  :cloudFunction string,
                  :gke GKE,
@@ -328,7 +329,7 @@
      auth))))
 
 (defn locations-triggers-patch$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/triggers/patch
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers/patch
   
   Required parameters: name
   
@@ -348,6 +349,7 @@
    :updateTime string,
    :eventFilters [{:attribute string, :value string, :operator string}],
    :conditions {},
+   :satisfiesPzs boolean,
    :destination {:cloudRun CloudRun,
                  :cloudFunction string,
                  :gke GKE,
@@ -377,7 +379,7 @@
      auth))))
 
 (defn locations-triggers-delete$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/triggers/delete
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers/delete
   
   Required parameters: name
   
@@ -403,7 +405,7 @@
      auth))))
 
 (defn locations-triggers-setIamPolicy$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/triggers/setIamPolicy
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers/setIamPolicy
   
   Required parameters: resource
   
@@ -439,7 +441,7 @@
      auth))))
 
 (defn locations-triggers-getIamPolicy$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/triggers/getIamPolicy
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers/getIamPolicy
   
   Required parameters: resource
   
@@ -465,7 +467,7 @@
      auth))))
 
 (defn locations-triggers-testIamPermissions$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/triggers/testIamPermissions
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.triggers/testIamPermissions
   
   Required parameters: resource
   
@@ -497,7 +499,7 @@
      auth))))
 
 (defn locations-channels-get$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channels/get
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channels/get
   
   Required parameters: name
   
@@ -523,7 +525,7 @@
      auth))))
 
 (defn locations-channels-list$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channels/list
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channels/list
   
   Required parameters: parent
   
@@ -549,7 +551,7 @@
      auth))))
 
 (defn locations-channels-create$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channels/create
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channels/create
   
   Required parameters: parent
   
@@ -565,6 +567,7 @@
    :state string,
    :pubsubTopic string,
    :updateTime string,
+   :satisfiesPzs boolean,
    :provider string}
   
   Create a new channel in a particular project and location."
@@ -589,7 +592,7 @@
      auth))))
 
 (defn locations-channels-patch$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channels/patch
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channels/patch
   
   Required parameters: name
   
@@ -605,6 +608,7 @@
    :state string,
    :pubsubTopic string,
    :updateTime string,
+   :satisfiesPzs boolean,
    :provider string}
   
   Update a single channel."
@@ -629,7 +633,7 @@
      auth))))
 
 (defn locations-channels-delete$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channels/delete
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channels/delete
   
   Required parameters: name
   
@@ -655,7 +659,7 @@
      auth))))
 
 (defn locations-channels-setIamPolicy$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channels/setIamPolicy
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channels/setIamPolicy
   
   Required parameters: resource
   
@@ -691,7 +695,7 @@
      auth))))
 
 (defn locations-channels-getIamPolicy$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channels/getIamPolicy
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channels/getIamPolicy
   
   Required parameters: resource
   
@@ -717,7 +721,7 @@
      auth))))
 
 (defn locations-channels-testIamPermissions$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channels/testIamPermissions
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channels/testIamPermissions
   
   Required parameters: resource
   
@@ -749,7 +753,7 @@
      auth))))
 
 (defn locations-providers-get$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/providers/get
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.providers/get
   
   Required parameters: name
   
@@ -775,7 +779,7 @@
      auth))))
 
 (defn locations-providers-list$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/providers/list
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.providers/list
   
   Required parameters: parent
   
@@ -801,7 +805,7 @@
      auth))))
 
 (defn locations-channelConnections-get$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channelConnections/get
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channelConnections/get
   
   Required parameters: name
   
@@ -827,7 +831,7 @@
      auth))))
 
 (defn locations-channelConnections-list$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channelConnections/list
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channelConnections/list
   
   Required parameters: parent
   
@@ -853,7 +857,7 @@
      auth))))
 
 (defn locations-channelConnections-create$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channelConnections/create
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channelConnections/create
   
   Required parameters: parent
   
@@ -890,7 +894,7 @@
      auth))))
 
 (defn locations-channelConnections-delete$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channelConnections/delete
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channelConnections/delete
   
   Required parameters: name
   
@@ -916,7 +920,7 @@
      auth))))
 
 (defn locations-channelConnections-setIamPolicy$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channelConnections/setIamPolicy
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channelConnections/setIamPolicy
   
   Required parameters: resource
   
@@ -952,7 +956,7 @@
      auth))))
 
 (defn locations-channelConnections-getIamPolicy$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channelConnections/getIamPolicy
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channelConnections/getIamPolicy
   
   Required parameters: resource
   
@@ -978,7 +982,7 @@
      auth))))
 
 (defn locations-channelConnections-testIamPermissions$
-  "https://cloud.google.com/eventarcapi/reference/rest/v1/projects/locations/channelConnections/testIamPermissions
+  "https://cloud.google.com/eventarc/docs/reference/rest/v1/projects.locations.channelConnections/testIamPermissions
   
   Required parameters: resource
   

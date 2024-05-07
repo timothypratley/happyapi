@@ -1,13 +1,13 @@
 (ns happygapi.gamesConfiguration.leaderboardConfigurations
   "Google Play Game Services Publishing API: leaderboardConfigurations.
   The Google Play Game Services Publishing API allows developers to configure their games in Game Services.
-  See: https://developers.google.com/games/api/reference/rest/v1configuration/leaderboardConfigurations"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/leaderboardConfigurations/delete
+  "https://games.withgoogle.com
   
   Required parameters: leaderboardId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/leaderboardConfigurations/get
+  "https://games.withgoogle.com
   
   Required parameters: leaderboardId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/leaderboardConfigurations/insert
+  "https://games.withgoogle.com
   
   Required parameters: applicationId
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/leaderboardConfigurations/list
+  "https://games.withgoogle.com
   
   Required parameters: applicationId
   
@@ -132,7 +132,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/games/api/reference/rest/v1configuration/leaderboardConfigurations/update
+  "https://games.withgoogle.com
   
   Required parameters: leaderboardId
   

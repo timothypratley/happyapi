@@ -1,13 +1,13 @@
 (ns happygapi.cloudidentity.inboundSamlSsoProfiles
   "Cloud Identity API: inboundSamlSsoProfiles.
   API for provisioning and managing identity resources.
-  See: https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles"
+  See: https://cloud.google.com/identity/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/create
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles/create
   
   Required parameters: none
   
@@ -46,7 +46,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/patch
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles/patch
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/delete
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles/delete
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles/get
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles/list
   
   Required parameters: none
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn idpCredentials-delete$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/idpCredentials/delete
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles.idpCredentials/delete
   
   Required parameters: name
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn idpCredentials-get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/idpCredentials/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles.idpCredentials/get
   
   Required parameters: name
   
@@ -215,7 +215,7 @@
      auth))))
 
 (defn idpCredentials-list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/idpCredentials/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles.idpCredentials/list
   
   Required parameters: parent
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn idpCredentials-add$
-  "https://cloud.google.com/identity/api/reference/rest/v1/inboundSamlSsoProfiles/idpCredentials/add
+  "https://cloud.google.com/identity/docs/reference/rest/v1/inboundSamlSsoProfiles.idpCredentials/add
   
   Required parameters: parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.reseller.resellernotify
   "Google Workspace Reseller API: resellernotify.
   Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information
-  See: https://developers.google.com/google-apps/reseller/api/reference/rest/v1/resellernotify"
+  See: https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getwatchdetails$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/resellernotify/getwatchdetails
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: none
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn register$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/resellernotify/register
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: none
   
@@ -60,7 +60,7 @@
      auth))))
 
 (defn unregister$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/resellernotify/unregister
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: none
   

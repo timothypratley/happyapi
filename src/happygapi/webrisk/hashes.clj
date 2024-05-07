@@ -1,17 +1,17 @@
 (ns happygapi.webrisk.hashes
   "Web Risk API: hashes.
   
-  See: https://cloud.google.com/web-risk/api/reference/rest/v1/hashes"
+  See: https://cloud.google.com/security/products/web-risk"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn search$
-  "https://cloud.google.com/web-risk/api/reference/rest/v1/hashes/search
+  "https://cloud.google.com/security/products/web-risk/v1/docs/hashes/search
   
   Required parameters: none
   
-  Optional parameters: hashPrefix, threatTypes
+  Optional parameters: threatTypes, hashPrefix
   
   Gets the full hashes that match the requested hash prefix. This is used after a hash prefix is looked up in a threatList and there is a match. The client side threatList only holds partial hashes so the client must query this method to determine if there is a full hash match of a threat."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}

@@ -1,13 +1,13 @@
 (ns happygapi.civicinfo.representatives
   "Google Civic Information API: representatives.
   Provides polling places, early vote locations, contest data, election officials, and government representatives for U.S. residential addresses.
-  See: https://developers.google.com/civic-information/api/reference/rest/v2/representatives"
+  See: https://developers.google.com/civic-information/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn representativeInfoByDivision$
-  "https://developers.google.com/civic-information/api/reference/rest/v2/representatives/representativeInfoByDivision
+  "https://developers.google.com/civic-information/docs/v2/representatives/representativeInfoByDivision
   
   Required parameters: ocdId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn representativeInfoByAddress$
-  "https://developers.google.com/civic-information/api/reference/rest/v2/representatives/representativeInfoByAddress
+  "https://developers.google.com/civic-information/docs/v2/representatives/representativeInfoByAddress
   
   Required parameters: none
   

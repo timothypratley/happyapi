@@ -1,13 +1,13 @@
 (ns happygapi.metastore.projects
   "Dataproc Metastore API: projects.
   The Dataproc Metastore API is used to manage the lifecycle and configuration of metastore services.
-  See: https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/dataproc-metastore/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-federations-list$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/federations/list
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.federations/list
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-federations-get$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/federations/get
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.federations/get
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-federations-create$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/federations/create
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.federations/create
   
   Required parameters: parent
   
@@ -262,7 +262,7 @@
      auth))))
 
 (defn locations-federations-patch$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/federations/patch
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.federations/patch
   
   Required parameters: name
   
@@ -303,7 +303,7 @@
      auth))))
 
 (defn locations-federations-delete$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/federations/delete
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.federations/delete
   
   Required parameters: name
   
@@ -329,7 +329,7 @@
      auth))))
 
 (defn locations-federations-setIamPolicy$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/federations/setIamPolicy
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.federations/setIamPolicy
   
   Required parameters: resource
   
@@ -365,7 +365,7 @@
      auth))))
 
 (defn locations-federations-getIamPolicy$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/federations/getIamPolicy
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.federations/getIamPolicy
   
   Required parameters: resource
   
@@ -391,7 +391,7 @@
      auth))))
 
 (defn locations-federations-testIamPermissions$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/federations/testIamPermissions
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.federations/testIamPermissions
   
   Required parameters: resource
   
@@ -423,7 +423,7 @@
      auth))))
 
 (defn locations-services-get$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/get
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/get
   
   Required parameters: name
   
@@ -449,7 +449,7 @@
      auth))))
 
 (defn locations-services-queryMetadata$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/queryMetadata
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/queryMetadata
   
   Required parameters: service
   
@@ -459,7 +459,7 @@
   
   {:query string}
   
-  Query DPMS metadata."
+  Query Dataproc Metastore metadata."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:service})]}
@@ -481,7 +481,7 @@
      auth))))
 
 (defn locations-services-setIamPolicy$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/setIamPolicy
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/setIamPolicy
   
   Required parameters: resource
   
@@ -517,7 +517,7 @@
      auth))))
 
 (defn locations-services-patch$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/patch
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/patch
   
   Required parameters: name
   
@@ -581,7 +581,7 @@
      auth))))
 
 (defn locations-services-testIamPermissions$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/testIamPermissions
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/testIamPermissions
   
   Required parameters: resource
   
@@ -613,7 +613,7 @@
      auth))))
 
 (defn locations-services-restore$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/restore
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/restore
   
   Required parameters: service
   
@@ -648,7 +648,7 @@
      auth))))
 
 (defn locations-services-create$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/create
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/create
   
   Required parameters: parent
   
@@ -712,7 +712,7 @@
      auth))))
 
 (defn locations-services-delete$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/delete
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/delete
   
   Required parameters: name
   
@@ -738,7 +738,7 @@
      auth))))
 
 (defn locations-services-getIamPolicy$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/getIamPolicy
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/getIamPolicy
   
   Required parameters: resource
   
@@ -764,7 +764,7 @@
      auth))))
 
 (defn locations-services-moveTableToDatabase$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/moveTableToDatabase
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/moveTableToDatabase
   
   Required parameters: service
   
@@ -796,7 +796,7 @@
      auth))))
 
 (defn locations-services-list$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/list
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/list
   
   Required parameters: parent
   
@@ -822,7 +822,7 @@
      auth))))
 
 (defn locations-services-alterTableProperties$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/alterTableProperties
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/alterTableProperties
   
   Required parameters: service
   
@@ -854,7 +854,7 @@
      auth))))
 
 (defn locations-services-exportMetadata$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/exportMetadata
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/exportMetadata
   
   Required parameters: service
   
@@ -888,7 +888,7 @@
      auth))))
 
 (defn locations-services-alterLocation$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/alterLocation
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services/alterLocation
   
   Required parameters: service
   
@@ -920,7 +920,7 @@
      auth))))
 
 (defn locations-services-metadataImports-list$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/metadataImports/list
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.metadataImports/list
   
   Required parameters: parent
   
@@ -946,7 +946,7 @@
      auth))))
 
 (defn locations-services-metadataImports-get$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/metadataImports/get
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.metadataImports/get
   
   Required parameters: name
   
@@ -972,7 +972,7 @@
      auth))))
 
 (defn locations-services-metadataImports-create$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/metadataImports/create
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.metadataImports/create
   
   Required parameters: parent
   
@@ -1013,7 +1013,7 @@
      auth))))
 
 (defn locations-services-metadataImports-patch$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/metadataImports/patch
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.metadataImports/patch
   
   Required parameters: name
   
@@ -1054,7 +1054,7 @@
      auth))))
 
 (defn locations-services-backups-list$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/backups/list
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.backups/list
   
   Required parameters: parent
   
@@ -1080,7 +1080,7 @@
      auth))))
 
 (defn locations-services-backups-get$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/backups/get
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.backups/get
   
   Required parameters: name
   
@@ -1106,7 +1106,7 @@
      auth))))
 
 (defn locations-services-backups-create$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/backups/create
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.backups/create
   
   Required parameters: parent
   
@@ -1166,7 +1166,7 @@
      auth))))
 
 (defn locations-services-backups-delete$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/backups/delete
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.backups/delete
   
   Required parameters: name
   
@@ -1192,7 +1192,7 @@
      auth))))
 
 (defn locations-services-backups-setIamPolicy$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/backups/setIamPolicy
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.backups/setIamPolicy
   
   Required parameters: resource
   
@@ -1228,7 +1228,7 @@
      auth))))
 
 (defn locations-services-backups-getIamPolicy$
-  "https://cloud.google.com/dataproc-metastore/docsapi/reference/rest/v1/projects/locations/services/backups/getIamPolicy
+  "https://cloud.google.com/dataproc-metastore/docs/reference/rest/v1/projects.locations.services.backups/getIamPolicy
   
   Required parameters: resource
   

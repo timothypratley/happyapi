@@ -1,13 +1,13 @@
 (ns happygapi.games.players
   "Google Play Game Services: players.
   The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
-  See: https://developers.google.com/games/api/reference/rest/v1/players"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/games/api/reference/rest/v1/players/get
+  "https://games.withgoogle.com
   
   Required parameters: playerId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn getScopedPlayerIds$
-  "https://developers.google.com/games/api/reference/rest/v1/players/getScopedPlayerIds
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn getMultipleApplicationPlayerIds$
-  "https://developers.google.com/games/api/reference/rest/v1/players/getMultipleApplicationPlayerIds
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/games/api/reference/rest/v1/players/list
+  "https://games.withgoogle.com
   
   Required parameters: collection
   

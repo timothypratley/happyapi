@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.targetingTypes
   "Display & Video 360 API: targetingTypes.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/targetingTypes"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn targetingOptions-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/targetingTypes/targetingOptions/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: targetingType, targetingOptionId
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn targetingOptions-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/targetingTypes/targetingOptions/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: targetingType
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn targetingOptions-search$
-  "https://developers.google.com/display-video/api/reference/rest/v3/targetingTypes/targetingOptions/search
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: targetingType
   

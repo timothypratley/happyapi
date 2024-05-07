@@ -1,13 +1,13 @@
 (ns happygapi.compute.instanceGroupManagerResizeRequests
   "Compute Engine API: instanceGroupManagerResizeRequests.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/instanceGroupManagerResizeRequests"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroupManagerResizeRequests/get
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroupManagerResizeRequests/get
   
   Required parameters: instanceGroupManager, project, resizeRequest, zone
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroupManagerResizeRequests/insert
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroupManagerResizeRequests/insert
   
   Required parameters: instanceGroupManager, project, zone
   
@@ -90,7 +90,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroupManagerResizeRequests/list
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroupManagerResizeRequests/list
   
   Required parameters: instanceGroupManager, project, zone
   
@@ -120,7 +120,7 @@
      auth))))
 
 (defn cancel$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroupManagerResizeRequests/cancel
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroupManagerResizeRequests/cancel
   
   Required parameters: instanceGroupManager, project, resizeRequest, zone
   
@@ -149,7 +149,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroupManagerResizeRequests/delete
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroupManagerResizeRequests/delete
   
   Required parameters: instanceGroupManager, project, resizeRequest, zone
   

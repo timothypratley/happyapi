@@ -1,13 +1,13 @@
 (ns happygapi.recommendationengine.projects
   "Recommendations AI (Beta): projects.
   Note that we now highly recommend new customers to use Retail API, which incorporates the GA version of the Recommendations AI funtionalities. To enable Retail API, please visit https://console.cloud.google.com/apis/library/retail.googleapis.com. The Recommendations AI service enables customers to build end-to-end personalized recommendation systems without requiring a high level of expertise in machine learning, recommendation system, or Google Cloud.
-  See: https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects"
+  See: https://cloud.google.com/recommendations-ai/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-catalogs-list$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/list
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs/list
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-catalogs-patch$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/patch
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs/patch
   
   Required parameters: name
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn locations-catalogs-operations-list$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/operations/list
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.operations/list
   
   Required parameters: name
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn locations-catalogs-operations-get$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/operations/get
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.operations/get
   
   Required parameters: name
   
@@ -121,7 +121,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-operations-list$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/operations/list
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.operations/list
   
   Required parameters: name
   
@@ -147,7 +147,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-operations-get$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/operations/get
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.operations/get
   
   Required parameters: name
   
@@ -173,7 +173,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-predictionApiKeyRegistrations-create$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/predictionApiKeyRegistrations/create
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.predictionApiKeyRegistrations/create
   
   Required parameters: parent
   
@@ -205,7 +205,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-predictionApiKeyRegistrations-list$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/predictionApiKeyRegistrations/list
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.predictionApiKeyRegistrations/list
   
   Required parameters: parent
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-predictionApiKeyRegistrations-delete$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/predictionApiKeyRegistrations/delete
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.predictionApiKeyRegistrations/delete
   
   Required parameters: name
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-placements-predict$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/placements/predict
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.placements/predict
   
   Required parameters: name
   
@@ -300,7 +300,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-userEvents-write$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/userEvents/write
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.userEvents/write
   
   Required parameters: parent
   
@@ -351,7 +351,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-userEvents-collect$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/userEvents/collect
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.userEvents/collect
   
   Required parameters: parent
   
@@ -377,7 +377,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-userEvents-list$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/userEvents/list
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.userEvents/list
   
   Required parameters: parent
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-userEvents-purge$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/userEvents/purge
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.userEvents/purge
   
   Required parameters: parent
   
@@ -435,7 +435,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-userEvents-import$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/userEvents/import
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.userEvents/import
   
   Required parameters: parent
   
@@ -472,7 +472,7 @@
      auth))))
 
 (defn locations-catalogs-eventStores-userEvents-rejoin$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/eventStores/userEvents/rejoin
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.eventStores.userEvents/rejoin
   
   Required parameters: parent
   
@@ -504,7 +504,7 @@
      auth))))
 
 (defn locations-catalogs-catalogItems-create$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/catalogItems/create
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.catalogItems/create
   
   Required parameters: parent
   
@@ -551,7 +551,7 @@
      auth))))
 
 (defn locations-catalogs-catalogItems-get$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/catalogItems/get
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.catalogItems/get
   
   Required parameters: name
   
@@ -577,7 +577,7 @@
      auth))))
 
 (defn locations-catalogs-catalogItems-list$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/catalogItems/list
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.catalogItems/list
   
   Required parameters: parent
   
@@ -603,7 +603,7 @@
      auth))))
 
 (defn locations-catalogs-catalogItems-patch$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/catalogItems/patch
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.catalogItems/patch
   
   Required parameters: name
   
@@ -650,7 +650,7 @@
      auth))))
 
 (defn locations-catalogs-catalogItems-delete$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/catalogItems/delete
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.catalogItems/delete
   
   Required parameters: name
   
@@ -676,7 +676,7 @@
      auth))))
 
 (defn locations-catalogs-catalogItems-import$
-  "https://cloud.google.com/recommendations-ai/docsapi/reference/rest/v1beta1/projects/locations/catalogs/catalogItems/import
+  "https://cloud.google.com/recommendations-ai/docs/reference/rest/v1beta1/projects.locations.catalogs.catalogItems/import
   
   Required parameters: parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionAutoscalers
   "Compute Engine API: regionAutoscalers.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionAutoscalers"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionAutoscalers/list
+  "https://cloud.google.com/products/compute/v1/docs/regionAutoscalers/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionAutoscalers/get
+  "https://cloud.google.com/products/compute/v1/docs/regionAutoscalers/get
   
   Required parameters: autoscaler, project, region
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionAutoscalers/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionAutoscalers/insert
   
   Required parameters: project, region
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionAutoscalers/update
+  "https://cloud.google.com/products/compute/v1/docs/regionAutoscalers/update
   
   Required parameters: project, region
   
@@ -171,7 +171,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionAutoscalers/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionAutoscalers/patch
   
   Required parameters: project, region
   
@@ -225,7 +225,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionAutoscalers/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionAutoscalers/delete
   
   Required parameters: autoscaler, project, region
   

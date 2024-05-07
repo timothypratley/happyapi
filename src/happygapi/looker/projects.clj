@@ -1,13 +1,13 @@
 (ns happygapi.looker.projects
   "Looker (Google Cloud core) API: projects.
   
-  See: https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/looker/docs/reference/rest/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-instances-get$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/get
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/get
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-instances-setIamPolicy$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/setIamPolicy
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/setIamPolicy
   
   Required parameters: resource
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn locations-instances-restart$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/restart
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/restart
   
   Required parameters: name
   
@@ -263,7 +263,7 @@
      auth))))
 
 (defn locations-instances-patch$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/patch
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/patch
   
   Required parameters: name
   
@@ -326,7 +326,7 @@
      auth))))
 
 (defn locations-instances-testIamPermissions$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/testIamPermissions
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/testIamPermissions
   
   Required parameters: resource
   
@@ -358,7 +358,7 @@
      auth))))
 
 (defn locations-instances-create$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/create
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/create
   
   Required parameters: parent
   
@@ -421,7 +421,7 @@
      auth))))
 
 (defn locations-instances-delete$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/delete
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/delete
   
   Required parameters: name
   
@@ -447,7 +447,7 @@
      auth))))
 
 (defn locations-instances-export$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/export
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/export
   
   Required parameters: name
   
@@ -479,7 +479,7 @@
      auth))))
 
 (defn locations-instances-getIamPolicy$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/getIamPolicy
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/getIamPolicy
   
   Required parameters: resource
   
@@ -505,7 +505,7 @@
      auth))))
 
 (defn locations-instances-list$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/list
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/list
   
   Required parameters: parent
   
@@ -531,7 +531,7 @@
      auth))))
 
 (defn locations-instances-import$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/import
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances/import
   
   Required parameters: name
   
@@ -563,7 +563,7 @@
      auth))))
 
 (defn locations-instances-backups-setIamPolicy$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/backups/setIamPolicy
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances.backups/setIamPolicy
   
   Required parameters: resource
   
@@ -599,7 +599,7 @@
      auth))))
 
 (defn locations-instances-backups-getIamPolicy$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/backups/getIamPolicy
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances.backups/getIamPolicy
   
   Required parameters: resource
   
@@ -625,7 +625,7 @@
      auth))))
 
 (defn locations-instances-backups-testIamPermissions$
-  "https://cloud.google.com/looker/docs/reference/rest/api/reference/rest/v1/projects/locations/instances/backups/testIamPermissions
+  "https://cloud.google.com/looker/docs/reference/rest/v1/projects.locations.instances.backups/testIamPermissions
   
   Required parameters: resource
   

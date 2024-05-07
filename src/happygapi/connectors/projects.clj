@@ -1,13 +1,13 @@
 (ns happygapi.connectors.projects
   "Connectors API: projects.
   Enables users to create and manage connections to Google Cloud services and third-party business applications using the Connectors interface.
-  See: https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects"
+  See: https://cloud.google.com/integration-connectors/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-connections-checkStatus$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/checkStatus
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-connections-checkReadiness$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/checkReadiness
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-connections-exchangeAuthCode$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/exchangeAuthCode
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn locations-connections-refreshAccessToken$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/refreshAccessToken
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn locations-connections-executeSqlQuery$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/executeSqlQuery
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: connection
   
@@ -158,7 +158,7 @@
      auth))))
 
 (defn locations-connections-actions-execute$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/actions/execute
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -190,7 +190,7 @@
      auth))))
 
 (defn locations-connections-actions-list$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/actions/list
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: parent
   
@@ -216,7 +216,7 @@
      auth))))
 
 (defn locations-connections-actions-get$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/actions/get
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -242,7 +242,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-get$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/get
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -268,7 +268,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-list$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/list
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: parent
   
@@ -294,7 +294,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-entities-list$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/entities/list
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: parent
   
@@ -320,7 +320,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-entities-get$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/entities/get
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -346,7 +346,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-entities-create$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/entities/create
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: parent
   
@@ -378,7 +378,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-entities-patch$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/entities/patch
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -410,7 +410,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-entities-updateEntitiesWithConditions$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/entities/updateEntitiesWithConditions
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: entityType
   
@@ -442,7 +442,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-entities-delete$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/entities/delete
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: name
   
@@ -468,7 +468,7 @@
      auth))))
 
 (defn locations-connections-entityTypes-entities-deleteEntitiesWithConditions$
-  "https://cloud.google.com/apigee/docs/api-platform/connectors/about-connectorsapi/reference/rest/v2/projects/locations/connections/entityTypes/entities/deleteEntitiesWithConditions
+  "https://cloud.google.com/integration-connectors/docs/overview
   
   Required parameters: entityType
   

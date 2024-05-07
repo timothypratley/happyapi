@@ -1,13 +1,13 @@
 (ns happygapi.cloudresourcemanager.folders
   "Cloud Resource Manager API: folders.
   Creates, reads, and updates metadata for Google Cloud Platform resource containers.
-  See: https://cloud.google.com/resource-managerapi/reference/rest/v3/folders"
+  See: https://cloud.google.com/resource-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/get
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/get
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/setIamPolicy
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/setIamPolicy
   
   Required parameters: resource
   
@@ -70,7 +70,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/patch
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/patch
   
   Required parameters: name
   
@@ -110,7 +110,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/testIamPermissions
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/testIamPermissions
   
   Required parameters: resource
   
@@ -142,7 +142,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/create
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/create
   
   Required parameters: none
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn move$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/move
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/move
   
   Required parameters: name
   
@@ -214,7 +214,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/delete
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/delete
   
   Required parameters: name
   
@@ -240,7 +240,7 @@
      auth))))
 
 (defn search$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/search
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/search
   
   Required parameters: none
   
@@ -267,7 +267,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/getIamPolicy
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/getIamPolicy
   
   Required parameters: resource
   
@@ -300,7 +300,7 @@
      auth))))
 
 (defn undelete$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/undelete
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/undelete
   
   Required parameters: name
   
@@ -332,7 +332,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/folders/list
+  "https://cloud.google.com/resource-manager/reference/rest/v3/folders/list
   
   Required parameters: none
   

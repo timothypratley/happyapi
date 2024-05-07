@@ -1,13 +1,13 @@
 (ns happygapi.bigquery.rowAccessPolicies
   "BigQuery API: rowAccessPolicies.
   A data platform for customers to create, manage, share and query data.
-  See: https://cloud.google.com/bigquery/api/reference/rest/v2/rowAccessPolicies"
+  See: https://cloud.google.com/bigquery/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/rowAccessPolicies/getIamPolicy
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/rowAccessPolicies/getIamPolicy
   
   Required parameters: resource
   
@@ -41,7 +41,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/rowAccessPolicies/list
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/rowAccessPolicies/list
   
   Required parameters: datasetId, projectId, tableId
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/rowAccessPolicies/testIamPermissions
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/rowAccessPolicies/testIamPermissions
   
   Required parameters: resource
   

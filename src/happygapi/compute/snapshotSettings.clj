@@ -1,13 +1,13 @@
 (ns happygapi.compute.snapshotSettings
   "Compute Engine API: snapshotSettings.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/snapshotSettings"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshotSettings/get
+  "https://cloud.google.com/products/compute/v1/docs/snapshotSettings/get
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshotSettings/patch
+  "https://cloud.google.com/products/compute/v1/docs/snapshotSettings/patch
   
   Required parameters: project
   

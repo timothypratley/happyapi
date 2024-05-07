@@ -1,13 +1,13 @@
 (ns happygapi.versionhistory.platforms
   "versionhistory.googleapis.com API: platforms.
   Version History API - Prod
-  See: https://developers.chrome.com/versionhistoryapi/reference/rest/v1/platforms"
+  See: https://developers.chrome.com/versionhistory"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.chrome.com/versionhistoryapi/reference/rest/v1/platforms/list
+  "https://developers.chrome.com/versionhistory
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn channels-list$
-  "https://developers.chrome.com/versionhistoryapi/reference/rest/v1/platforms/channels/list
+  "https://developers.chrome.com/versionhistory
   
   Required parameters: parent
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn channels-versions-list$
-  "https://developers.chrome.com/versionhistoryapi/reference/rest/v1/platforms/channels/versions/list
+  "https://developers.chrome.com/versionhistory
   
   Required parameters: parent
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn channels-versions-releases-list$
-  "https://developers.chrome.com/versionhistoryapi/reference/rest/v1/platforms/channels/versions/releases/list
+  "https://developers.chrome.com/versionhistory
   
   Required parameters: parent
   

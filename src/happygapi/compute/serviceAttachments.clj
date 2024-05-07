@@ -1,13 +1,13 @@
 (ns happygapi.compute.serviceAttachments
   "Compute Engine API: serviceAttachments.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/get
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/get
   
   Required parameters: project, region, serviceAttachment
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/setIamPolicy
   
   Required parameters: project, region, resource
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/insert
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/insert
   
   Required parameters: project, region
   
@@ -135,7 +135,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/patch
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/patch
   
   Required parameters: project, region, serviceAttachment
   
@@ -193,7 +193,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/testIamPermissions
   
   Required parameters: project, region, resource
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/aggregatedList
   
   Required parameters: project
   
@@ -255,7 +255,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/delete
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/delete
   
   Required parameters: project, region, serviceAttachment
   
@@ -284,7 +284,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/getIamPolicy
   
   Required parameters: project, region, resource
   
@@ -312,7 +312,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/serviceAttachments/list
+  "https://cloud.google.com/products/compute/v1/docs/serviceAttachments/list
   
   Required parameters: project, region
   

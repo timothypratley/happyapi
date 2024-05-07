@@ -1,13 +1,13 @@
 (ns happygapi.cloudchannel.accounts
   "Cloud Channel API: accounts.
   The Cloud Channel API enables Google Cloud partners to have a single unified resale platform and APIs across all of Google Cloud including GCP, Workspace, Maps and Chrome.
-  See: https://cloud.google.com/channelapi/reference/rest/v1/accounts"
+  See: https://cloud.google.com/channel/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn checkCloudIdentityAccountsExist$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/checkCloudIdentityAccountsExist
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/checkCloudIdentityAccountsExist
   
   Required parameters: parent
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn listTransferableSkus$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/listTransferableSkus
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/listTransferableSkus
   
   Required parameters: parent
   
@@ -76,7 +76,7 @@
      auth))))
 
 (defn listTransferableOffers$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/listTransferableOffers
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/listTransferableOffers
   
   Required parameters: parent
   
@@ -114,7 +114,7 @@
      auth))))
 
 (defn register$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/register
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/register
   
   Required parameters: account
   
@@ -146,7 +146,7 @@
      auth))))
 
 (defn unregister$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/unregister
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/unregister
   
   Required parameters: account
   
@@ -178,7 +178,7 @@
      auth))))
 
 (defn listSubscribers$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/listSubscribers
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/listSubscribers
   
   Required parameters: account
   
@@ -204,7 +204,7 @@
      auth))))
 
 (defn reports-run$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/reports/run
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/reports/run
   
   Required parameters: name
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn reports-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/reports/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/reports/list
   
   Required parameters: parent
   
@@ -267,7 +267,7 @@
      auth))))
 
 (defn reportJobs-fetchReportResults$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/reportJobs/fetchReportResults
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/reportJobs/fetchReportResults
   
   Required parameters: reportJob
   
@@ -299,7 +299,7 @@
      auth))))
 
 (defn customers-transferEntitlementsToGoogle$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/transferEntitlementsToGoogle
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/transferEntitlementsToGoogle
   
   Required parameters: parent
   
@@ -344,7 +344,7 @@
      auth))))
 
 (defn customers-transferEntitlements$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/transferEntitlements
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/transferEntitlements
   
   Required parameters: parent
   
@@ -390,7 +390,7 @@
      auth))))
 
 (defn customers-get$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/get
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/get
   
   Required parameters: name
   
@@ -416,7 +416,7 @@
      auth))))
 
 (defn customers-patch$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/patch
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/patch
   
   Required parameters: name
   
@@ -482,7 +482,7 @@
      auth))))
 
 (defn customers-create$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/create
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/create
   
   Required parameters: parent
   
@@ -548,7 +548,7 @@
      auth))))
 
 (defn customers-provisionCloudIdentity$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/provisionCloudIdentity
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/provisionCloudIdentity
   
   Required parameters: customer
   
@@ -589,7 +589,7 @@
      auth))))
 
 (defn customers-delete$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/delete
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/delete
   
   Required parameters: name
   
@@ -615,7 +615,7 @@
      auth))))
 
 (defn customers-listPurchasableOffers$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/listPurchasableOffers
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/listPurchasableOffers
   
   Required parameters: customer
   
@@ -641,7 +641,7 @@
      auth))))
 
 (defn customers-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/list
   
   Required parameters: parent
   
@@ -667,7 +667,7 @@
      auth))))
 
 (defn customers-queryEligibleBillingAccounts$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/queryEligibleBillingAccounts
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/queryEligibleBillingAccounts
   
   Required parameters: customer
   
@@ -693,7 +693,7 @@
      auth))))
 
 (defn customers-import$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/import
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/import
   
   Required parameters: parent
   
@@ -730,7 +730,7 @@
      auth))))
 
 (defn customers-listPurchasableSkus$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/listPurchasableSkus
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/listPurchasableSkus
   
   Required parameters: customer
   
@@ -756,7 +756,7 @@
      auth))))
 
 (defn customers-entitlements-changeParameters$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/changeParameters
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/changeParameters
   
   Required parameters: name
   
@@ -792,7 +792,7 @@
      auth))))
 
 (defn customers-entitlements-changeOffer$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/changeOffer
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/changeOffer
   
   Required parameters: name
   
@@ -830,7 +830,7 @@
      auth))))
 
 (defn customers-entitlements-get$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/get
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/get
   
   Required parameters: name
   
@@ -856,7 +856,7 @@
      auth))))
 
 (defn customers-entitlements-create$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/create
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/create
   
   Required parameters: parent
   
@@ -901,7 +901,7 @@
      auth))))
 
 (defn customers-entitlements-listEntitlementChanges$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/listEntitlementChanges
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/listEntitlementChanges
   
   Required parameters: parent
   
@@ -927,7 +927,7 @@
      auth))))
 
 (defn customers-entitlements-changeRenewalSettings$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/changeRenewalSettings
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/changeRenewalSettings
   
   Required parameters: name
   
@@ -963,7 +963,7 @@
      auth))))
 
 (defn customers-entitlements-lookupOffer$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/lookupOffer
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/lookupOffer
   
   Required parameters: entitlement
   
@@ -989,7 +989,7 @@
      auth))))
 
 (defn customers-entitlements-suspend$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/suspend
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/suspend
   
   Required parameters: name
   
@@ -1021,7 +1021,7 @@
      auth))))
 
 (defn customers-entitlements-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/list
   
   Required parameters: parent
   
@@ -1047,7 +1047,7 @@
      auth))))
 
 (defn customers-entitlements-cancel$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/cancel
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/cancel
   
   Required parameters: name
   
@@ -1079,7 +1079,7 @@
      auth))))
 
 (defn customers-entitlements-activate$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/activate
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/activate
   
   Required parameters: name
   
@@ -1111,7 +1111,7 @@
      auth))))
 
 (defn customers-entitlements-startPaidService$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/entitlements/startPaidService
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/entitlements/startPaidService
   
   Required parameters: name
   
@@ -1143,7 +1143,7 @@
      auth))))
 
 (defn customers-customerRepricingConfigs-get$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/customerRepricingConfigs/get
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/customerRepricingConfigs/get
   
   Required parameters: name
   
@@ -1169,7 +1169,7 @@
      auth))))
 
 (defn customers-customerRepricingConfigs-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/customerRepricingConfigs/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/customerRepricingConfigs/list
   
   Required parameters: parent
   
@@ -1195,7 +1195,7 @@
      auth))))
 
 (defn customers-customerRepricingConfigs-create$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/customerRepricingConfigs/create
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/customerRepricingConfigs/create
   
   Required parameters: parent
   
@@ -1234,7 +1234,7 @@
      auth))))
 
 (defn customers-customerRepricingConfigs-patch$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/customerRepricingConfigs/patch
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/customerRepricingConfigs/patch
   
   Required parameters: name
   
@@ -1273,7 +1273,7 @@
      auth))))
 
 (defn customers-customerRepricingConfigs-delete$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/customers/customerRepricingConfigs/delete
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/customers/customerRepricingConfigs/delete
   
   Required parameters: name
   
@@ -1299,7 +1299,7 @@
      auth))))
 
 (defn channelPartnerLinks-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/list
   
   Required parameters: parent
   
@@ -1325,7 +1325,7 @@
      auth))))
 
 (defn channelPartnerLinks-get$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/get
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/get
   
   Required parameters: name
   
@@ -1351,7 +1351,7 @@
      auth))))
 
 (defn channelPartnerLinks-create$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/create
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/create
   
   Required parameters: parent
   
@@ -1397,7 +1397,7 @@
      auth))))
 
 (defn channelPartnerLinks-patch$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/patch
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/patch
   
   Required parameters: name
   
@@ -1437,7 +1437,7 @@
      auth))))
 
 (defn channelPartnerLinks-customers-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/customers/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/customers/list
   
   Required parameters: parent
   
@@ -1463,7 +1463,7 @@
      auth))))
 
 (defn channelPartnerLinks-customers-get$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/customers/get
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/customers/get
   
   Required parameters: name
   
@@ -1489,7 +1489,7 @@
      auth))))
 
 (defn channelPartnerLinks-customers-create$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/customers/create
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/customers/create
   
   Required parameters: parent
   
@@ -1555,7 +1555,7 @@
      auth))))
 
 (defn channelPartnerLinks-customers-patch$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/customers/patch
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/customers/patch
   
   Required parameters: name
   
@@ -1621,7 +1621,7 @@
      auth))))
 
 (defn channelPartnerLinks-customers-delete$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/customers/delete
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/customers/delete
   
   Required parameters: name
   
@@ -1647,7 +1647,7 @@
      auth))))
 
 (defn channelPartnerLinks-customers-import$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/customers/import
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/customers/import
   
   Required parameters: parent
   
@@ -1684,7 +1684,7 @@
      auth))))
 
 (defn channelPartnerLinks-channelPartnerRepricingConfigs-get$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/get
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/get
   
   Required parameters: name
   
@@ -1710,7 +1710,7 @@
      auth))))
 
 (defn channelPartnerLinks-channelPartnerRepricingConfigs-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/list
   
   Required parameters: parent
   
@@ -1736,7 +1736,7 @@
      auth))))
 
 (defn channelPartnerLinks-channelPartnerRepricingConfigs-create$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/create
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/create
   
   Required parameters: parent
   
@@ -1775,7 +1775,7 @@
      auth))))
 
 (defn channelPartnerLinks-channelPartnerRepricingConfigs-patch$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/patch
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/patch
   
   Required parameters: name
   
@@ -1814,7 +1814,7 @@
      auth))))
 
 (defn channelPartnerLinks-channelPartnerRepricingConfigs-delete$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/delete
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/channelPartnerLinks/channelPartnerRepricingConfigs/delete
   
   Required parameters: name
   
@@ -1840,7 +1840,7 @@
      auth))))
 
 (defn skuGroups-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/skuGroups/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/skuGroups/list
   
   Required parameters: parent
   
@@ -1866,7 +1866,7 @@
      auth))))
 
 (defn skuGroups-billableSkus-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/skuGroups/billableSkus/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/skuGroups/billableSkus/list
   
   Required parameters: parent
   
@@ -1892,7 +1892,7 @@
      auth))))
 
 (defn offers-list$
-  "https://cloud.google.com/channelapi/reference/rest/v1/accounts/offers/list
+  "https://cloud.google.com/channel/docs/reference/rest/v1/accounts/offers/list
   
   Required parameters: parent
   

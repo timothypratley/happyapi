@@ -1,13 +1,13 @@
 (ns happygapi.drivelabels.limits
   "Drive Labels API: limits.
   An API for managing Drive Labels
-  See: https://developers.google.com/drive/labelsapi/reference/rest/v2/limits"
+  See: https://developers.google.com/drive/labels/guides/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getLabel$
-  "https://developers.google.com/drive/labelsapi/reference/rest/v2/limits/getLabel
+  "https://developers.google.com/drive/labels/guides/overview
   
   Required parameters: none
   

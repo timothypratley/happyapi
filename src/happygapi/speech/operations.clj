@@ -1,13 +1,13 @@
 (ns happygapi.speech.operations
   "Cloud Speech-to-Text API: operations.
   Converts audio to text by applying powerful neural network models.
-  See: https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/operations"
+  See: https://cloud.google.com/speech-to-text/docs/transcribe-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/operations/list
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/operations/list
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/speech-to-text/docs/quickstart-protocolapi/reference/rest/v1/operations/get
+  "https://cloud.google.com/speech-to-text/docs/reference/rest/v1/operations/get
   
   Required parameters: name
   

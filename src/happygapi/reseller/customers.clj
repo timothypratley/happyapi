@@ -1,13 +1,13 @@
 (ns happygapi.reseller.customers
   "Google Workspace Reseller API: customers.
   Perform common functions that are available on the Channel Services console at scale, like placing orders and viewing customer information
-  See: https://developers.google.com/google-apps/reseller/api/reference/rest/v1/customers"
+  See: https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/customers/get
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/customers/insert
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: none
   
@@ -84,7 +84,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/customers/update
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId
   
@@ -134,7 +134,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/google-apps/reseller/api/reference/rest/v1/customers/patch
+  "https://developers.google.com/admin-sdk/reseller/v1/how-tos/concepts
   
   Required parameters: customerId
   

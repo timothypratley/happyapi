@@ -1,13 +1,13 @@
 (ns happygapi.dns.resourceRecordSets
   "Cloud DNS API: resourceRecordSets.
   
-  See: https://cloud.google.com/dns/docsapi/reference/rest/v1/resourceRecordSets"
+  See: https://cloud.google.com/dns/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/resourceRecordSets/list
+  "https://cloud.google.com/dns/docs/reference/rest/v1/resourceRecordSets/list
   
   Required parameters: project, managedZone
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/resourceRecordSets/create
+  "https://cloud.google.com/dns/docs/reference/rest/v1/resourceRecordSets/create
   
   Required parameters: project, managedZone
   
@@ -52,7 +52,6 @@
    :routingPolicy {:geo RRSetRoutingPolicyGeoPolicy,
                    :wrr RRSetRoutingPolicyWrrPolicy,
                    :primaryBackup RRSetRoutingPolicyPrimaryBackupPolicy,
-                   :healthCheck string,
                    :kind string},
    :kind string}
   
@@ -79,7 +78,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/resourceRecordSets/get
+  "https://cloud.google.com/dns/docs/reference/rest/v1/resourceRecordSets/get
   
   Required parameters: project, managedZone, name, type
   
@@ -110,7 +109,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/resourceRecordSets/delete
+  "https://cloud.google.com/dns/docs/reference/rest/v1/resourceRecordSets/delete
   
   Required parameters: project, managedZone, name, type
   
@@ -139,7 +138,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/resourceRecordSets/patch
+  "https://cloud.google.com/dns/docs/reference/rest/v1/resourceRecordSets/patch
   
   Required parameters: project, managedZone, name, type
   
@@ -155,7 +154,6 @@
    :routingPolicy {:geo RRSetRoutingPolicyGeoPolicy,
                    :wrr RRSetRoutingPolicyWrrPolicy,
                    :primaryBackup RRSetRoutingPolicyPrimaryBackupPolicy,
-                   :healthCheck string,
                    :kind string},
    :kind string}
   

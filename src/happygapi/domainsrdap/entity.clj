@@ -1,13 +1,13 @@
 (ns happygapi.domainsrdap.entity
   "Domains RDAP API: entity.
   Read-only public API that lets users search for information about domain names.
-  See: https://developers.google.com/domains/rdap/api/reference/rest/v1/entity"
+  See: https://developers.google.com/domains/rdap/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/domains/rdap/api/reference/rest/v1/entity/get
+  "https://developers.google.com/domains/rdap/reference/rest/v1/entity/get
   
   Required parameters: entityId
   

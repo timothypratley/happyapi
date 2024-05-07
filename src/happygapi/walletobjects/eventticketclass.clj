@@ -1,13 +1,13 @@
 (ns happygapi.walletobjects.eventticketclass
   "Google Wallet API: eventticketclass.
   API for issuers to save and manage Google Wallet Objects.
-  See: https://developers.google.com/pay/passesapi/reference/rest/v1/eventticketclass"
+  See: https://developers.google.com/wallet"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/eventticketclass/get
+  "https://developers.google.com/wallet/reference/rest/v1/eventticketclass/get
   
   Required parameters: resourceId
   
@@ -32,132 +32,34 @@
       :as :json}
      auth))))
 
-(defn patch$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/eventticketclass/patch
+(defn list$
+  "https://developers.google.com/wallet/reference/rest/v1/eventticketclass/list
   
-  Required parameters: resourceId
+  Required parameters: none
   
-  Optional parameters: none
+  Optional parameters: issuerId, maxResults, token
   
-  Body: 
-  
-  {:wordMark {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
-   :eventName {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
-   :reviewStatus string,
-   :rowLabel string,
-   :textModulesData [{:id string,
-                      :localizedBody LocalizedString,
-                      :localizedHeader LocalizedString,
-                      :body string,
-                      :header string}],
-   :issuerName string,
-   :logo {:contentDescription LocalizedString,
-          :kind string,
-          :sourceUri ImageUri},
-   :wideLogo {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
-   :securityAnimation {:animationType string},
-   :multipleDevicesAndHoldersAllowedStatus string,
-   :homepageUri {:kind string,
-                 :uri string,
-                 :description string,
-                 :localizedDescription LocalizedString,
-                 :id string},
-   :customSeatLabel {:defaultValue TranslatedString,
-                     :translatedValues [TranslatedString],
-                     :kind string},
-   :customSectionLabel {:defaultValue TranslatedString,
-                        :translatedValues [TranslatedString],
-                        :kind string},
-   :callbackOptions {:url string, :updateRequestUrl string},
-   :linksModuleData {:uris [Uri]},
-   :imageModulesData [{:mainImage Image, :id string}],
-   :eventId string,
-   :locations [{:latitude number, :kind string, :longitude number}],
-   :dateTime {:kind string,
-              :doorsOpenLabel string,
-              :end string,
-              :customDoorsOpenLabel LocalizedString,
-              :start string,
-              :doorsOpen string},
-   :allowMultipleUsersPerObject boolean,
-   :hexBackgroundColor string,
-   :messages [{:body string,
-               :messageType string,
-               :header string,
-               :id string,
-               :kind string,
-               :displayInterval TimeInterval,
-               :localizedHeader LocalizedString,
-               :localizedBody LocalizedString}],
-   :sectionLabel string,
-   :localizedIssuerName {:defaultValue TranslatedString,
-                         :translatedValues [TranslatedString],
-                         :kind string},
-   :redemptionIssuers [string],
-   :review {:comments string},
-   :id string,
-   :kind string,
-   :venue {:name LocalizedString,
-           :address LocalizedString,
-           :kind string},
-   :customRowLabel {:defaultValue TranslatedString,
-                    :translatedValues [TranslatedString],
-                    :kind string},
-   :finePrint {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
-   :gateLabel string,
-   :seatLabel string,
-   :customConfirmationCodeLabel {:defaultValue TranslatedString,
-                                 :translatedValues [TranslatedString],
-                                 :kind string},
-   :confirmationCodeLabel string,
-   :classTemplateInfo {:listTemplateOverride ListTemplateOverride,
-                       :detailsTemplateOverride DetailsTemplateOverride,
-                       :cardBarcodeSectionDetails CardBarcodeSectionDetails,
-                       :cardTemplateOverride CardTemplateOverride},
-   :enableSmartTap boolean,
-   :version string,
-   :viewUnlockRequirement string,
-   :customGateLabel {:defaultValue TranslatedString,
-                     :translatedValues [TranslatedString],
-                     :kind string},
-   :infoModuleData {:labelValueRows [LabelValueRow],
-                    :showLastUpdateTime boolean},
-   :heroImage {:contentDescription LocalizedString,
-               :kind string,
-               :sourceUri ImageUri},
-   :countryCode string}
-  
-  Updates the event ticket class referenced by the given class ID. This method supports patch semantics."
+  Returns a list of all event ticket classes for a given issuer ID."
   {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:resourceId})]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{})]}
   (util/get-response
-   (http/patch
+   (http/get
     (util/get-url
      "https://walletobjects.googleapis.com/"
-     "walletobjects/v1/eventTicketClass/{resourceId}"
-     #{:resourceId}
+     "walletobjects/v1/eventTicketClass"
+     #{}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn update$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/eventticketclass/update
+  "https://developers.google.com/wallet/reference/rest/v1/eventticketclass/update
   
   Required parameters: resourceId
   
@@ -165,98 +67,98 @@
   
   Body: 
   
-  {:wordMark {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
-   :eventName {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
+  {:wordMark {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
+   :eventName {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
    :reviewStatus string,
    :rowLabel string,
-   :textModulesData [{:id string,
-                      :localizedBody LocalizedString,
-                      :localizedHeader LocalizedString,
+   :textModulesData [{:localizedBody LocalizedString,
                       :body string,
-                      :header string}],
+                      :localizedHeader LocalizedString,
+                      :header string,
+                      :id string}],
    :issuerName string,
-   :logo {:contentDescription LocalizedString,
-          :kind string,
-          :sourceUri ImageUri},
-   :wideLogo {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
+   :logo {:kind string,
+          :sourceUri ImageUri,
+          :contentDescription LocalizedString},
+   :wideLogo {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
    :securityAnimation {:animationType string},
    :multipleDevicesAndHoldersAllowedStatus string,
    :homepageUri {:kind string,
+                 :id string,
                  :uri string,
                  :description string,
-                 :localizedDescription LocalizedString,
-                 :id string},
-   :customSeatLabel {:defaultValue TranslatedString,
-                     :translatedValues [TranslatedString],
-                     :kind string},
-   :customSectionLabel {:defaultValue TranslatedString,
-                        :translatedValues [TranslatedString],
-                        :kind string},
+                 :localizedDescription LocalizedString},
+   :customSeatLabel {:translatedValues [TranslatedString],
+                     :kind string,
+                     :defaultValue TranslatedString},
+   :customSectionLabel {:translatedValues [TranslatedString],
+                        :kind string,
+                        :defaultValue TranslatedString},
    :callbackOptions {:url string, :updateRequestUrl string},
    :linksModuleData {:uris [Uri]},
-   :imageModulesData [{:mainImage Image, :id string}],
+   :imageModulesData [{:id string, :mainImage Image}],
    :eventId string,
    :locations [{:latitude number, :kind string, :longitude number}],
-   :dateTime {:kind string,
-              :doorsOpenLabel string,
+   :dateTime {:start string,
               :end string,
-              :customDoorsOpenLabel LocalizedString,
-              :start string,
-              :doorsOpen string},
+              :doorsOpenLabel string,
+              :doorsOpen string,
+              :kind string,
+              :customDoorsOpenLabel LocalizedString},
    :allowMultipleUsersPerObject boolean,
    :hexBackgroundColor string,
-   :messages [{:body string,
-               :messageType string,
-               :header string,
+   :messages [{:header string,
                :id string,
                :kind string,
-               :displayInterval TimeInterval,
+               :messageType string,
+               :body string,
                :localizedHeader LocalizedString,
-               :localizedBody LocalizedString}],
+               :localizedBody LocalizedString,
+               :displayInterval TimeInterval}],
    :sectionLabel string,
-   :localizedIssuerName {:defaultValue TranslatedString,
-                         :translatedValues [TranslatedString],
-                         :kind string},
+   :localizedIssuerName {:translatedValues [TranslatedString],
+                         :kind string,
+                         :defaultValue TranslatedString},
    :redemptionIssuers [string],
    :review {:comments string},
    :id string,
    :kind string,
    :venue {:name LocalizedString,
-           :address LocalizedString,
-           :kind string},
-   :customRowLabel {:defaultValue TranslatedString,
-                    :translatedValues [TranslatedString],
-                    :kind string},
-   :finePrint {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
+           :kind string,
+           :address LocalizedString},
+   :customRowLabel {:translatedValues [TranslatedString],
+                    :kind string,
+                    :defaultValue TranslatedString},
+   :finePrint {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
    :gateLabel string,
    :seatLabel string,
-   :customConfirmationCodeLabel {:defaultValue TranslatedString,
-                                 :translatedValues [TranslatedString],
-                                 :kind string},
+   :customConfirmationCodeLabel {:translatedValues [TranslatedString],
+                                 :kind string,
+                                 :defaultValue TranslatedString},
    :confirmationCodeLabel string,
-   :classTemplateInfo {:listTemplateOverride ListTemplateOverride,
+   :classTemplateInfo {:cardBarcodeSectionDetails CardBarcodeSectionDetails,
                        :detailsTemplateOverride DetailsTemplateOverride,
-                       :cardBarcodeSectionDetails CardBarcodeSectionDetails,
+                       :listTemplateOverride ListTemplateOverride,
                        :cardTemplateOverride CardTemplateOverride},
    :enableSmartTap boolean,
    :version string,
    :viewUnlockRequirement string,
-   :customGateLabel {:defaultValue TranslatedString,
-                     :translatedValues [TranslatedString],
-                     :kind string},
-   :infoModuleData {:labelValueRows [LabelValueRow],
-                    :showLastUpdateTime boolean},
-   :heroImage {:contentDescription LocalizedString,
-               :kind string,
-               :sourceUri ImageUri},
+   :customGateLabel {:translatedValues [TranslatedString],
+                     :kind string,
+                     :defaultValue TranslatedString},
+   :infoModuleData {:showLastUpdateTime boolean,
+                    :labelValueRows [LabelValueRow]},
+   :heroImage {:kind string,
+               :sourceUri ImageUri,
+               :contentDescription LocalizedString},
    :countryCode string}
   
   Updates the event ticket class referenced by the given class ID."
@@ -281,7 +183,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/eventticketclass/insert
+  "https://developers.google.com/wallet/reference/rest/v1/eventticketclass/insert
   
   Required parameters: none
   
@@ -289,98 +191,98 @@
   
   Body: 
   
-  {:wordMark {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
-   :eventName {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
+  {:wordMark {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
+   :eventName {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
    :reviewStatus string,
    :rowLabel string,
-   :textModulesData [{:id string,
-                      :localizedBody LocalizedString,
-                      :localizedHeader LocalizedString,
+   :textModulesData [{:localizedBody LocalizedString,
                       :body string,
-                      :header string}],
+                      :localizedHeader LocalizedString,
+                      :header string,
+                      :id string}],
    :issuerName string,
-   :logo {:contentDescription LocalizedString,
-          :kind string,
-          :sourceUri ImageUri},
-   :wideLogo {:contentDescription LocalizedString,
-              :kind string,
-              :sourceUri ImageUri},
+   :logo {:kind string,
+          :sourceUri ImageUri,
+          :contentDescription LocalizedString},
+   :wideLogo {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
    :securityAnimation {:animationType string},
    :multipleDevicesAndHoldersAllowedStatus string,
    :homepageUri {:kind string,
+                 :id string,
                  :uri string,
                  :description string,
-                 :localizedDescription LocalizedString,
-                 :id string},
-   :customSeatLabel {:defaultValue TranslatedString,
-                     :translatedValues [TranslatedString],
-                     :kind string},
-   :customSectionLabel {:defaultValue TranslatedString,
-                        :translatedValues [TranslatedString],
-                        :kind string},
+                 :localizedDescription LocalizedString},
+   :customSeatLabel {:translatedValues [TranslatedString],
+                     :kind string,
+                     :defaultValue TranslatedString},
+   :customSectionLabel {:translatedValues [TranslatedString],
+                        :kind string,
+                        :defaultValue TranslatedString},
    :callbackOptions {:url string, :updateRequestUrl string},
    :linksModuleData {:uris [Uri]},
-   :imageModulesData [{:mainImage Image, :id string}],
+   :imageModulesData [{:id string, :mainImage Image}],
    :eventId string,
    :locations [{:latitude number, :kind string, :longitude number}],
-   :dateTime {:kind string,
-              :doorsOpenLabel string,
+   :dateTime {:start string,
               :end string,
-              :customDoorsOpenLabel LocalizedString,
-              :start string,
-              :doorsOpen string},
+              :doorsOpenLabel string,
+              :doorsOpen string,
+              :kind string,
+              :customDoorsOpenLabel LocalizedString},
    :allowMultipleUsersPerObject boolean,
    :hexBackgroundColor string,
-   :messages [{:body string,
-               :messageType string,
-               :header string,
+   :messages [{:header string,
                :id string,
                :kind string,
-               :displayInterval TimeInterval,
+               :messageType string,
+               :body string,
                :localizedHeader LocalizedString,
-               :localizedBody LocalizedString}],
+               :localizedBody LocalizedString,
+               :displayInterval TimeInterval}],
    :sectionLabel string,
-   :localizedIssuerName {:defaultValue TranslatedString,
-                         :translatedValues [TranslatedString],
-                         :kind string},
+   :localizedIssuerName {:translatedValues [TranslatedString],
+                         :kind string,
+                         :defaultValue TranslatedString},
    :redemptionIssuers [string],
    :review {:comments string},
    :id string,
    :kind string,
    :venue {:name LocalizedString,
-           :address LocalizedString,
-           :kind string},
-   :customRowLabel {:defaultValue TranslatedString,
-                    :translatedValues [TranslatedString],
-                    :kind string},
-   :finePrint {:defaultValue TranslatedString,
-               :translatedValues [TranslatedString],
-               :kind string},
+           :kind string,
+           :address LocalizedString},
+   :customRowLabel {:translatedValues [TranslatedString],
+                    :kind string,
+                    :defaultValue TranslatedString},
+   :finePrint {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
    :gateLabel string,
    :seatLabel string,
-   :customConfirmationCodeLabel {:defaultValue TranslatedString,
-                                 :translatedValues [TranslatedString],
-                                 :kind string},
+   :customConfirmationCodeLabel {:translatedValues [TranslatedString],
+                                 :kind string,
+                                 :defaultValue TranslatedString},
    :confirmationCodeLabel string,
-   :classTemplateInfo {:listTemplateOverride ListTemplateOverride,
+   :classTemplateInfo {:cardBarcodeSectionDetails CardBarcodeSectionDetails,
                        :detailsTemplateOverride DetailsTemplateOverride,
-                       :cardBarcodeSectionDetails CardBarcodeSectionDetails,
+                       :listTemplateOverride ListTemplateOverride,
                        :cardTemplateOverride CardTemplateOverride},
    :enableSmartTap boolean,
    :version string,
    :viewUnlockRequirement string,
-   :customGateLabel {:defaultValue TranslatedString,
-                     :translatedValues [TranslatedString],
-                     :kind string},
-   :infoModuleData {:labelValueRows [LabelValueRow],
-                    :showLastUpdateTime boolean},
-   :heroImage {:contentDescription LocalizedString,
-               :kind string,
-               :sourceUri ImageUri},
+   :customGateLabel {:translatedValues [TranslatedString],
+                     :kind string,
+                     :defaultValue TranslatedString},
+   :infoModuleData {:showLastUpdateTime boolean,
+                    :labelValueRows [LabelValueRow]},
+   :heroImage {:kind string,
+               :sourceUri ImageUri,
+               :contentDescription LocalizedString},
    :countryCode string}
   
   Inserts an event ticket class with the given ID and properties."
@@ -404,34 +306,8 @@
       :as :json}
      auth))))
 
-(defn list$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/eventticketclass/list
-  
-  Required parameters: none
-  
-  Optional parameters: maxResults, issuerId, token
-  
-  Returns a list of all event ticket classes for a given issuer ID."
-  {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://walletobjects.googleapis.com/"
-     "walletobjects/v1/eventTicketClass"
-     #{}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn addmessage$
-  "https://developers.google.com/pay/passesapi/reference/rest/v1/eventticketclass/addmessage
+(defn patch$
+  "https://developers.google.com/wallet/reference/rest/v1/eventticketclass/patch
   
   Required parameters: resourceId
   
@@ -439,14 +315,138 @@
   
   Body: 
   
-  {:message {:body string,
-             :messageType string,
-             :header string,
+  {:wordMark {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
+   :eventName {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
+   :reviewStatus string,
+   :rowLabel string,
+   :textModulesData [{:localizedBody LocalizedString,
+                      :body string,
+                      :localizedHeader LocalizedString,
+                      :header string,
+                      :id string}],
+   :issuerName string,
+   :logo {:kind string,
+          :sourceUri ImageUri,
+          :contentDescription LocalizedString},
+   :wideLogo {:kind string,
+              :sourceUri ImageUri,
+              :contentDescription LocalizedString},
+   :securityAnimation {:animationType string},
+   :multipleDevicesAndHoldersAllowedStatus string,
+   :homepageUri {:kind string,
+                 :id string,
+                 :uri string,
+                 :description string,
+                 :localizedDescription LocalizedString},
+   :customSeatLabel {:translatedValues [TranslatedString],
+                     :kind string,
+                     :defaultValue TranslatedString},
+   :customSectionLabel {:translatedValues [TranslatedString],
+                        :kind string,
+                        :defaultValue TranslatedString},
+   :callbackOptions {:url string, :updateRequestUrl string},
+   :linksModuleData {:uris [Uri]},
+   :imageModulesData [{:id string, :mainImage Image}],
+   :eventId string,
+   :locations [{:latitude number, :kind string, :longitude number}],
+   :dateTime {:start string,
+              :end string,
+              :doorsOpenLabel string,
+              :doorsOpen string,
+              :kind string,
+              :customDoorsOpenLabel LocalizedString},
+   :allowMultipleUsersPerObject boolean,
+   :hexBackgroundColor string,
+   :messages [{:header string,
+               :id string,
+               :kind string,
+               :messageType string,
+               :body string,
+               :localizedHeader LocalizedString,
+               :localizedBody LocalizedString,
+               :displayInterval TimeInterval}],
+   :sectionLabel string,
+   :localizedIssuerName {:translatedValues [TranslatedString],
+                         :kind string,
+                         :defaultValue TranslatedString},
+   :redemptionIssuers [string],
+   :review {:comments string},
+   :id string,
+   :kind string,
+   :venue {:name LocalizedString,
+           :kind string,
+           :address LocalizedString},
+   :customRowLabel {:translatedValues [TranslatedString],
+                    :kind string,
+                    :defaultValue TranslatedString},
+   :finePrint {:translatedValues [TranslatedString],
+               :kind string,
+               :defaultValue TranslatedString},
+   :gateLabel string,
+   :seatLabel string,
+   :customConfirmationCodeLabel {:translatedValues [TranslatedString],
+                                 :kind string,
+                                 :defaultValue TranslatedString},
+   :confirmationCodeLabel string,
+   :classTemplateInfo {:cardBarcodeSectionDetails CardBarcodeSectionDetails,
+                       :detailsTemplateOverride DetailsTemplateOverride,
+                       :listTemplateOverride ListTemplateOverride,
+                       :cardTemplateOverride CardTemplateOverride},
+   :enableSmartTap boolean,
+   :version string,
+   :viewUnlockRequirement string,
+   :customGateLabel {:translatedValues [TranslatedString],
+                     :kind string,
+                     :defaultValue TranslatedString},
+   :infoModuleData {:showLastUpdateTime boolean,
+                    :labelValueRows [LabelValueRow]},
+   :heroImage {:kind string,
+               :sourceUri ImageUri,
+               :contentDescription LocalizedString},
+   :countryCode string}
+  
+  Updates the event ticket class referenced by the given class ID. This method supports patch semantics."
+  {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resourceId})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://walletobjects.googleapis.com/"
+     "walletobjects/v1/eventTicketClass/{resourceId}"
+     #{:resourceId}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn addmessage$
+  "https://developers.google.com/wallet/reference/rest/v1/eventticketclass/addmessage
+  
+  Required parameters: resourceId
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:message {:header string,
              :id string,
              :kind string,
-             :displayInterval TimeInterval,
+             :messageType string,
+             :body string,
              :localizedHeader LocalizedString,
-             :localizedBody LocalizedString}}
+             :localizedBody LocalizedString,
+             :displayInterval TimeInterval}}
   
   Adds a message to the event ticket class referenced by the given class ID."
   {:scopes ["https://www.googleapis.com/auth/wallet_object.issuer"]}

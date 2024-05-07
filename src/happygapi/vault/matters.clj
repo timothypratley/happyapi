@@ -1,13 +1,13 @@
 (ns happygapi.vault.matters
   "Google Vault API: matters.
   Retention and eDiscovery for Google Workspace. To work with Vault resources, the account must have the [required Vault privileges](https://support.google.com/vault/answer/2799699) and access to the matter. To access a matter, the account must have created the matter, have the matter shared with them, or have the **View All Matters** privilege. For example, to download an export, an account needs the **Manage Exports** privilege and the matter shared with them. 
-  See: https://developers.google.com/vaultapi/reference/rest/v1/matters"
+  See: https://developers.google.com/vault"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn removePermissions$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/removePermissions
+  "https://developers.google.com/vault/reference/rest/v1/matters/removePermissions
   
   Required parameters: matterId
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/get
+  "https://developers.google.com/vault/reference/rest/v1/matters/get
   
   Required parameters: matterId
   
@@ -66,7 +66,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/create
+  "https://developers.google.com/vault/reference/rest/v1/matters/create
   
   Required parameters: none
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn addPermissions$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/addPermissions
+  "https://developers.google.com/vault/reference/rest/v1/matters/addPermissions
   
   Required parameters: matterId
   
@@ -136,7 +136,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/update
+  "https://developers.google.com/vault/reference/rest/v1/matters/update
   
   Required parameters: matterId
   
@@ -172,7 +172,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/delete
+  "https://developers.google.com/vault/reference/rest/v1/matters/delete
   
   Required parameters: matterId
   
@@ -198,7 +198,7 @@
      auth))))
 
 (defn reopen$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/reopen
+  "https://developers.google.com/vault/reference/rest/v1/matters/reopen
   
   Required parameters: matterId
   
@@ -230,7 +230,7 @@
      auth))))
 
 (defn close$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/close
+  "https://developers.google.com/vault/reference/rest/v1/matters/close
   
   Required parameters: matterId
   
@@ -262,7 +262,7 @@
      auth))))
 
 (defn undelete$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/undelete
+  "https://developers.google.com/vault/reference/rest/v1/matters/undelete
   
   Required parameters: matterId
   
@@ -294,7 +294,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/list
+  "https://developers.google.com/vault/reference/rest/v1/matters/list
   
   Required parameters: none
   
@@ -321,7 +321,7 @@
      auth))))
 
 (defn count$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/count
+  "https://developers.google.com/vault/reference/rest/v1/matters/count
   
   Required parameters: matterId
   
@@ -372,7 +372,7 @@
      auth))))
 
 (defn exports-create$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/exports/create
+  "https://developers.google.com/vault/reference/rest/v1/matters/exports/create
   
   Required parameters: matterId
   
@@ -440,7 +440,7 @@
      auth))))
 
 (defn exports-delete$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/exports/delete
+  "https://developers.google.com/vault/reference/rest/v1/matters/exports/delete
   
   Required parameters: matterId, exportId
   
@@ -466,7 +466,7 @@
      auth))))
 
 (defn exports-get$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/exports/get
+  "https://developers.google.com/vault/reference/rest/v1/matters/exports/get
   
   Required parameters: matterId, exportId
   
@@ -493,7 +493,7 @@
      auth))))
 
 (defn exports-list$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/exports/list
+  "https://developers.google.com/vault/reference/rest/v1/matters/exports/list
   
   Required parameters: matterId
   
@@ -520,7 +520,7 @@
      auth))))
 
 (defn holds-create$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/create
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/create
   
   Required parameters: matterId
   
@@ -566,7 +566,7 @@
      auth))))
 
 (defn holds-update$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/update
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/update
   
   Required parameters: matterId, holdId
   
@@ -612,7 +612,7 @@
      auth))))
 
 (defn holds-delete$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/delete
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/delete
   
   Required parameters: matterId, holdId
   
@@ -638,7 +638,7 @@
      auth))))
 
 (defn holds-get$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/get
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/get
   
   Required parameters: matterId, holdId
   
@@ -665,7 +665,7 @@
      auth))))
 
 (defn holds-list$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/list
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/list
   
   Required parameters: matterId
   
@@ -692,7 +692,7 @@
      auth))))
 
 (defn holds-addHeldAccounts$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/addHeldAccounts
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/addHeldAccounts
   
   Required parameters: matterId, holdId
   
@@ -724,7 +724,7 @@
      auth))))
 
 (defn holds-removeHeldAccounts$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/removeHeldAccounts
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/removeHeldAccounts
   
   Required parameters: matterId, holdId
   
@@ -756,7 +756,7 @@
      auth))))
 
 (defn holds-accounts-create$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/accounts/create
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/accounts/create
   
   Required parameters: matterId, holdId
   
@@ -792,7 +792,7 @@
      auth))))
 
 (defn holds-accounts-delete$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/accounts/delete
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/accounts/delete
   
   Required parameters: matterId, holdId, accountId
   
@@ -818,7 +818,7 @@
      auth))))
 
 (defn holds-accounts-list$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/holds/accounts/list
+  "https://developers.google.com/vault/reference/rest/v1/matters/holds/accounts/list
   
   Required parameters: matterId, holdId
   
@@ -845,7 +845,7 @@
      auth))))
 
 (defn savedQueries-create$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/savedQueries/create
+  "https://developers.google.com/vault/reference/rest/v1/matters/savedQueries/create
   
   Required parameters: matterId
   
@@ -899,7 +899,7 @@
      auth))))
 
 (defn savedQueries-delete$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/savedQueries/delete
+  "https://developers.google.com/vault/reference/rest/v1/matters/savedQueries/delete
   
   Required parameters: matterId, savedQueryId
   
@@ -925,7 +925,7 @@
      auth))))
 
 (defn savedQueries-get$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/savedQueries/get
+  "https://developers.google.com/vault/reference/rest/v1/matters/savedQueries/get
   
   Required parameters: matterId, savedQueryId
   
@@ -952,7 +952,7 @@
      auth))))
 
 (defn savedQueries-list$
-  "https://developers.google.com/vaultapi/reference/rest/v1/matters/savedQueries/list
+  "https://developers.google.com/vault/reference/rest/v1/matters/savedQueries/list
   
   Required parameters: matterId
   

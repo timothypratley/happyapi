@@ -1,13 +1,13 @@
 (ns happygapi.compute.reservations
   "Compute Engine API: reservations.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/reservations"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/get
+  "https://cloud.google.com/products/compute/v1/docs/reservations/get
   
   Required parameters: project, reservation, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/reservations/setIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/insert
+  "https://cloud.google.com/products/compute/v1/docs/reservations/insert
   
   Required parameters: project, zone
   
@@ -132,7 +132,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/reservations/testIamPermissions
   
   Required parameters: project, resource, zone
   
@@ -166,7 +166,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/reservations/aggregatedList
   
   Required parameters: project
   
@@ -194,7 +194,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/update
+  "https://cloud.google.com/products/compute/v1/docs/reservations/update
   
   Required parameters: project, reservation, zone
   
@@ -249,7 +249,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/delete
+  "https://cloud.google.com/products/compute/v1/docs/reservations/delete
   
   Required parameters: project, reservation, zone
   
@@ -276,7 +276,7 @@
      auth))))
 
 (defn resize$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/resize
+  "https://cloud.google.com/products/compute/v1/docs/reservations/resize
   
   Required parameters: project, reservation, zone
   
@@ -309,7 +309,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/reservations/getIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -337,7 +337,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/reservations/list
+  "https://cloud.google.com/products/compute/v1/docs/reservations/list
   
   Required parameters: project, zone
   

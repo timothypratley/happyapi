@@ -1,13 +1,13 @@
 (ns happygapi.compute.targetGrpcProxies
   "Compute Engine API: targetGrpcProxies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/targetGrpcProxies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetGrpcProxies/list
+  "https://cloud.google.com/products/compute/v1/docs/targetGrpcProxies/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetGrpcProxies/get
+  "https://cloud.google.com/products/compute/v1/docs/targetGrpcProxies/get
   
   Required parameters: project, targetGrpcProxy
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetGrpcProxies/insert
+  "https://cloud.google.com/products/compute/v1/docs/targetGrpcProxies/insert
   
   Required parameters: project
   
@@ -105,7 +105,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetGrpcProxies/delete
+  "https://cloud.google.com/products/compute/v1/docs/targetGrpcProxies/delete
   
   Required parameters: project, targetGrpcProxy
   
@@ -132,7 +132,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetGrpcProxies/patch
+  "https://cloud.google.com/products/compute/v1/docs/targetGrpcProxies/patch
   
   Required parameters: project, targetGrpcProxy
   

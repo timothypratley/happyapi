@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.products
   "Google Play EMM API: products.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/products"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/products/get
+  "https://developers.google.com/android/work/play/emm-api/v1/products/get
   
   Required parameters: enterpriseId, productId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/products/list
+  "https://developers.google.com/android/work/play/emm-api/v1/products/list
   
   Required parameters: enterpriseId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn getPermissions$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/products/getPermissions
+  "https://developers.google.com/android/work/play/emm-api/v1/products/getPermissions
   
   Required parameters: enterpriseId, productId
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn generateApprovalUrl$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/products/generateApprovalUrl
+  "https://developers.google.com/android/work/play/emm-api/v1/products/generateApprovalUrl
   
   Required parameters: enterpriseId, productId
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn approve$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/products/approve
+  "https://developers.google.com/android/work/play/emm-api/v1/products/approve
   
   Required parameters: enterpriseId, productId
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn unapprove$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/products/unapprove
+  "https://developers.google.com/android/work/play/emm-api/v1/products/unapprove
   
   Required parameters: enterpriseId, productId
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn getAppRestrictionsSchema$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/products/getAppRestrictionsSchema
+  "https://developers.google.com/android/work/play/emm-api/v1/products/getAppRestrictionsSchema
   
   Required parameters: enterpriseId, productId
   

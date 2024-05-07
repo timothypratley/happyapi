@@ -1,13 +1,13 @@
 (ns happygapi.bigquerydatapolicy.projects
   "BigQuery Data Policy API: projects.
   Allows users to manage BigQuery data policies.
-  See: https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/bigquery/docs/column-data-masking"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-dataPolicies-get$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/get
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn locations-dataPolicies-setIamPolicy$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/setIamPolicy
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: resource
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn locations-dataPolicies-patch$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/patch
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: name
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn locations-dataPolicies-testIamPermissions$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/testIamPermissions
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: resource
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn locations-dataPolicies-create$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/create
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: parent
   
@@ -178,7 +178,7 @@
      auth))))
 
 (defn locations-dataPolicies-delete$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/delete
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: name
   
@@ -205,7 +205,7 @@
      auth))))
 
 (defn locations-dataPolicies-rename$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/rename
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: name
   
@@ -238,7 +238,7 @@
      auth))))
 
 (defn locations-dataPolicies-getIamPolicy$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/getIamPolicy
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: resource
   
@@ -271,7 +271,7 @@
      auth))))
 
 (defn locations-dataPolicies-list$
-  "https://cloud.google.com/bigquery/docs/column-data-maskingapi/reference/rest/v1/projects/locations/dataPolicies/list
+  "https://cloud.google.com/bigquery/docs/column-data-masking
   
   Required parameters: parent
   

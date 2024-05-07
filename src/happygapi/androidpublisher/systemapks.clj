@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.systemapks
   "Google Play Android Developer API: systemapks.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/systemapks"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn variants-create$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/systemapks/variants/create
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, versionCode
   
@@ -45,7 +45,7 @@
      auth))))
 
 (defn variants-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/systemapks/variants/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, versionCode
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn variants-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/systemapks/variants/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, versionCode, variantId
   
@@ -99,7 +99,7 @@
      auth))))
 
 (defn variants-download$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/systemapks/variants/download
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, versionCode, variantId
   

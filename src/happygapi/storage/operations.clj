@@ -1,13 +1,13 @@
 (ns happygapi.storage.operations
   "Cloud Storage JSON API: operations.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/operations"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn operations-cancel$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/operations/cancel
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets.operations/cancel
   
   Required parameters: bucket, operationId
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn operations-get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/operations/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets.operations/get
   
   Required parameters: bucket, operationId
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn operations-list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/buckets/operations/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/buckets.operations/list
   
   Required parameters: bucket
   

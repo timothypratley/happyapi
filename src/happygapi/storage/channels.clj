@@ -1,13 +1,13 @@
 (ns happygapi.storage.channels
   "Cloud Storage JSON API: channels.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/channels"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn stop$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/channels/stop
+  "https://cloud.google.com/storage/docs/reference/rest/v1/channels/stop
   
   Required parameters: none
   

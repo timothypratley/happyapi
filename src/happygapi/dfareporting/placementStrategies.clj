@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.placementStrategies
   "Campaign Manager 360 API: placementStrategies.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placementStrategies"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn patch$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placementStrategies/patch
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placementStrategies/delete
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placementStrategies/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placementStrategies/insert
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placementStrategies/list
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   
@@ -149,7 +149,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/placementStrategies/update
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   

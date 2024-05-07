@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.customBiddingAlgorithms
   "Display & Video 360 API: customBiddingAlgorithms.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn uploadRules$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/uploadRules
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn uploadScript$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/uploadScript
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn rules-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/rules/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId
   
@@ -234,7 +234,7 @@
      auth))))
 
 (defn rules-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/rules/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId, customBiddingAlgorithmRulesId
   
@@ -262,7 +262,7 @@
      auth))))
 
 (defn rules-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/rules/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId
   
@@ -288,7 +288,7 @@
      auth))))
 
 (defn scripts-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/scripts/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId
   
@@ -330,7 +330,7 @@
      auth))))
 
 (defn scripts-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/scripts/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId, customBiddingScriptId
   
@@ -358,7 +358,7 @@
      auth))))
 
 (defn scripts-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/customBiddingAlgorithms/scripts/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: customBiddingAlgorithmId
   

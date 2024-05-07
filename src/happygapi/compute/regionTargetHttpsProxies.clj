@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionTargetHttpsProxies
   "Compute Engine API: regionTargetHttpsProxies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionTargetHttpsProxies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetHttpsProxies/list
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetHttpsProxies/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetHttpsProxies/get
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetHttpsProxies/get
   
   Required parameters: project, region, targetHttpsProxy
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetHttpsProxies/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetHttpsProxies/insert
   
   Required parameters: project, region
   
@@ -114,7 +114,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetHttpsProxies/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetHttpsProxies/delete
   
   Required parameters: project, region, targetHttpsProxy
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetHttpsProxies/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetHttpsProxies/patch
   
   Required parameters: project, region, targetHttpsProxy
   
@@ -194,7 +194,7 @@
      auth))))
 
 (defn setUrlMap$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetHttpsProxies/setUrlMap
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetHttpsProxies/setUrlMap
   
   Required parameters: project, region, targetHttpsProxy
   
@@ -229,7 +229,7 @@
      auth))))
 
 (defn setSslCertificates$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetHttpsProxies/setSslCertificates
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetHttpsProxies/setSslCertificates
   
   Required parameters: project, region, targetHttpsProxy
   

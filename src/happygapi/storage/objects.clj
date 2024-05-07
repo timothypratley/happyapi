@@ -1,13 +1,13 @@
 (ns happygapi.storage.objects
   "Cloud Storage JSON API: objects.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn compose$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/compose
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/compose
   
   Required parameters: destinationBucket, destinationObject
   
@@ -82,7 +82,7 @@
      auth))))
 
 (defn watchAll$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/watchAll
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/watchAll
   
   Required parameters: bucket
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/get
   
   Required parameters: object, bucket
   
@@ -157,7 +157,7 @@
      auth))))
 
 (defn copy$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/copy
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/copy
   
   Required parameters: destinationBucket, sourceBucket, destinationObject, sourceObject
   
@@ -245,7 +245,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/setIamPolicy
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/setIamPolicy
   
   Required parameters: bucket, object
   
@@ -288,7 +288,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/insert
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/insert
   
   Required parameters: bucket
   
@@ -368,7 +368,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/patch
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/patch
   
   Required parameters: object, bucket
   
@@ -447,7 +447,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/testIamPermissions
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/testIamPermissions
   
   Required parameters: bucket, object, permissions
   
@@ -477,7 +477,7 @@
      auth))))
 
 (defn restore$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/restore
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/restore
   
   Required parameters: generation, object, bucket
   
@@ -504,7 +504,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/update
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/update
   
   Required parameters: object, bucket
   
@@ -583,7 +583,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/delete
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/delete
   
   Required parameters: bucket, object
   
@@ -611,7 +611,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/getIamPolicy
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/getIamPolicy
   
   Required parameters: bucket, object
   
@@ -641,7 +641,7 @@
      auth))))
 
 (defn bulkRestore$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/bulkRestore
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/bulkRestore
   
   Required parameters: bucket
   
@@ -679,7 +679,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/list
   
   Required parameters: bucket
   
@@ -709,7 +709,7 @@
      auth))))
 
 (defn rewrite$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objects/rewrite
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objects/rewrite
   
   Required parameters: destinationBucket, sourceBucket, destinationObject, sourceObject
   

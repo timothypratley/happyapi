@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionInstanceGroupManagers
   "Compute Engine API: regionInstanceGroupManagers.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn listManagedInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/listManagedInstances
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/listManagedInstances
   
   Required parameters: instanceGroupManager, project, region
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn setInstanceTemplate$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/setInstanceTemplate
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/setInstanceTemplate
   
   Required parameters: instanceGroupManager, project, region
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn listErrors$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/listErrors
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/listErrors
   
   Required parameters: instanceGroupManager, project, region
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/get
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/get
   
   Required parameters: instanceGroupManager, project, region
   
@@ -132,7 +132,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/insert
   
   Required parameters: project, region
   
@@ -215,7 +215,7 @@
      auth))))
 
 (defn abandonInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/abandonInstances
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/abandonInstances
   
   Required parameters: instanceGroupManager, project, region
   
@@ -250,7 +250,7 @@
      auth))))
 
 (defn updatePerInstanceConfigs$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/updatePerInstanceConfigs
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/updatePerInstanceConfigs
   
   Required parameters: instanceGroupManager, project, region
   
@@ -288,7 +288,7 @@
      auth))))
 
 (defn recreateInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/recreateInstances
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/recreateInstances
   
   Required parameters: instanceGroupManager, project, region
   
@@ -323,7 +323,7 @@
      auth))))
 
 (defn applyUpdatesToInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/applyUpdatesToInstances
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/applyUpdatesToInstances
   
   Required parameters: instanceGroupManager, project, region
   
@@ -361,7 +361,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/patch
   
   Required parameters: instanceGroupManager, project, region
   
@@ -446,7 +446,7 @@
      auth))))
 
 (defn deletePerInstanceConfigs$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/deletePerInstanceConfigs
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/deletePerInstanceConfigs
   
   Required parameters: instanceGroupManager, project, region
   
@@ -481,7 +481,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/delete
   
   Required parameters: instanceGroupManager, project, region
   
@@ -510,7 +510,7 @@
      auth))))
 
 (defn resize$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/resize
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/resize
   
   Required parameters: instanceGroupManager, project, region, size
   
@@ -539,7 +539,7 @@
      auth))))
 
 (defn listPerInstanceConfigs$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/listPerInstanceConfigs
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/listPerInstanceConfigs
   
   Required parameters: instanceGroupManager, project, region
   
@@ -569,7 +569,7 @@
      auth))))
 
 (defn setTargetPools$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/setTargetPools
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/setTargetPools
   
   Required parameters: instanceGroupManager, project, region
   
@@ -604,7 +604,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/list
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/list
   
   Required parameters: project, region
   
@@ -632,7 +632,7 @@
      auth))))
 
 (defn patchPerInstanceConfigs$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/patchPerInstanceConfigs
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/patchPerInstanceConfigs
   
   Required parameters: instanceGroupManager, project, region
   
@@ -670,7 +670,7 @@
      auth))))
 
 (defn createInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/createInstances
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/createInstances
   
   Required parameters: instanceGroupManager, project, region
   
@@ -708,7 +708,7 @@
      auth))))
 
 (defn deleteInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstanceGroupManagers/deleteInstances
+  "https://cloud.google.com/products/compute/v1/docs/regionInstanceGroupManagers/deleteInstances
   
   Required parameters: instanceGroupManager, project, region
   

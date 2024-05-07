@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.storelayoutclusters
   "Google Play EMM API: storelayoutclusters.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutclusters"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutclusters/list
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutclusters/list
   
   Required parameters: enterpriseId, pageId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutclusters/insert
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutclusters/insert
   
   Required parameters: enterpriseId, pageId
   
@@ -68,7 +68,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutclusters/get
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutclusters/get
   
   Required parameters: enterpriseId, pageId, clusterId
   
@@ -96,7 +96,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutclusters/update
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutclusters/update
   
   Required parameters: enterpriseId, pageId, clusterId
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutclusters/delete
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutclusters/delete
   
   Required parameters: enterpriseId, pageId, clusterId
   

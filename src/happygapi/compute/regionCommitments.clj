@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionCommitments
   "Compute Engine API: regionCommitments.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionCommitments"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionCommitments/list
+  "https://cloud.google.com/products/compute/v1/docs/regionCommitments/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionCommitments/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/regionCommitments/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionCommitments/get
+  "https://cloud.google.com/products/compute/v1/docs/regionCommitments/get
   
   Required parameters: commitment, project, region
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionCommitments/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionCommitments/insert
   
   Required parameters: project, region
   
@@ -161,7 +161,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionCommitments/update
+  "https://cloud.google.com/products/compute/v1/docs/regionCommitments/update
   
   Required parameters: commitment, project, region
   

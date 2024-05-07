@@ -1,13 +1,13 @@
 (ns happygapi.cloudtasks.projects
   "Cloud Tasks API: projects.
   Manages the execution of large numbers of distributed requests.
-  See: https://cloud.google.com/tasks/api/reference/rest/v2/projects"
+  See: https://cloud.google.com/tasks/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/list
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/get
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-updateCmekConfig$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/updateCmekConfig
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations/updateCmekConfig
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn locations-getCmekConfig$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/getCmekConfig
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations/getCmekConfig
   
   Required parameters: name
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn locations-queues-get$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/get
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/get
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-queues-setIamPolicy$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/setIamPolicy
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/setIamPolicy
   
   Required parameters: resource
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn locations-queues-patch$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/patch
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/patch
   
   Required parameters: name
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-queues-testIamPermissions$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/testIamPermissions
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/testIamPermissions
   
   Required parameters: resource
   
@@ -259,7 +259,7 @@
      auth))))
 
 (defn locations-queues-create$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/create
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/create
   
   Required parameters: parent
   
@@ -311,7 +311,7 @@
      auth))))
 
 (defn locations-queues-delete$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/delete
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/delete
   
   Required parameters: name
   
@@ -337,7 +337,7 @@
      auth))))
 
 (defn locations-queues-getIamPolicy$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/getIamPolicy
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/getIamPolicy
   
   Required parameters: resource
   
@@ -369,7 +369,7 @@
      auth))))
 
 (defn locations-queues-list$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/list
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/list
   
   Required parameters: parent
   
@@ -395,7 +395,7 @@
      auth))))
 
 (defn locations-queues-purge$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/purge
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/purge
   
   Required parameters: name
   
@@ -427,7 +427,7 @@
      auth))))
 
 (defn locations-queues-pause$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/pause
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/pause
   
   Required parameters: name
   
@@ -459,7 +459,7 @@
      auth))))
 
 (defn locations-queues-resume$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/resume
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues/resume
   
   Required parameters: name
   
@@ -491,7 +491,7 @@
      auth))))
 
 (defn locations-queues-tasks-list$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/tasks/list
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues.tasks/list
   
   Required parameters: parent
   
@@ -517,7 +517,7 @@
      auth))))
 
 (defn locations-queues-tasks-get$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/tasks/get
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues.tasks/get
   
   Required parameters: name
   
@@ -543,7 +543,7 @@
      auth))))
 
 (defn locations-queues-tasks-create$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/tasks/create
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues.tasks/create
   
   Required parameters: parent
   
@@ -586,7 +586,7 @@
      auth))))
 
 (defn locations-queues-tasks-delete$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/tasks/delete
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues.tasks/delete
   
   Required parameters: name
   
@@ -612,7 +612,7 @@
      auth))))
 
 (defn locations-queues-tasks-run$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/tasks/run
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues.tasks/run
   
   Required parameters: name
   
@@ -644,7 +644,7 @@
      auth))))
 
 (defn locations-queues-tasks-buffer$
-  "https://cloud.google.com/tasks/api/reference/rest/v2/projects/locations/queues/tasks/buffer
+  "https://cloud.google.com/tasks/docs/reference/rest/v2/projects.locations.queues.tasks/buffer
   
   Required parameters: queue, taskId
   

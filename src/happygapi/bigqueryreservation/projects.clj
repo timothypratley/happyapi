@@ -1,13 +1,13 @@
 (ns happygapi.bigqueryreservation.projects
   "BigQuery Reservation API: projects.
   A service to modify your BigQuery flat-rate reservations.
-  See: https://cloud.google.com/bigquery/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/bigquery/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-searchAssignments$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/searchAssignments
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn locations-searchAllAssignments$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/searchAllAssignments
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn locations-getBiReservation$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/getBiReservation
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -88,7 +88,7 @@
      auth))))
 
 (defn locations-updateBiReservation$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/updateBiReservation
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -126,7 +126,7 @@
      auth))))
 
 (defn locations-reservations-create$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/create
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   
@@ -138,11 +138,14 @@
    :autoscale {:currentSlots string, :maxSlots string},
    :concurrency string,
    :name string,
+   :originalPrimaryLocation string,
+   :secondaryLocation string,
    :updateTime string,
    :multiRegionAuxiliary boolean,
    :slotCapacity string,
    :edition string,
-   :ignoreIdleSlots boolean}
+   :ignoreIdleSlots boolean,
+   :primaryLocation string}
   
   Creates a new reservation resource."
   {:scopes ["https://www.googleapis.com/auth/bigquery"
@@ -167,7 +170,7 @@
      auth))))
 
 (defn locations-reservations-list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/list
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   
@@ -194,7 +197,7 @@
      auth))))
 
 (defn locations-reservations-get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/get
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -221,7 +224,7 @@
      auth))))
 
 (defn locations-reservations-delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/delete
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -248,7 +251,7 @@
      auth))))
 
 (defn locations-reservations-patch$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/patch
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -260,11 +263,14 @@
    :autoscale {:currentSlots string, :maxSlots string},
    :concurrency string,
    :name string,
+   :originalPrimaryLocation string,
+   :secondaryLocation string,
    :updateTime string,
    :multiRegionAuxiliary boolean,
    :slotCapacity string,
    :edition string,
-   :ignoreIdleSlots boolean}
+   :ignoreIdleSlots boolean,
+   :primaryLocation string}
   
   Updates an existing reservation resource."
   {:scopes ["https://www.googleapis.com/auth/bigquery"
@@ -288,8 +294,41 @@
       :as :json}
      auth))))
 
+(defn locations-reservations-failoverReservation$
+  "https://cloud.google.com/bigquery
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Failover a reservation to the secondary location. The operation should be done in the current secondary location, which will be promoted to the new primary location for the reservation. Attempting to failover a reservation in the current primary location will fail with the error code `google.rpc.Code.FAILED_PRECONDITION`."
+  {:scopes ["https://www.googleapis.com/auth/bigquery"
+            "https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://bigqueryreservation.googleapis.com/"
+     "v1/{+name}:failoverReservation"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-reservations-assignments-create$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/assignments/create
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   
@@ -322,7 +361,7 @@
      auth))))
 
 (defn locations-reservations-assignments-list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/assignments/list
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   
@@ -349,7 +388,7 @@
      auth))))
 
 (defn locations-reservations-assignments-delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/assignments/delete
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -376,7 +415,7 @@
      auth))))
 
 (defn locations-reservations-assignments-move$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/assignments/move
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -409,7 +448,7 @@
      auth))))
 
 (defn locations-reservations-assignments-patch$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/reservations/assignments/patch
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -442,7 +481,7 @@
      auth))))
 
 (defn locations-capacityCommitments-create$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/capacityCommitments/create
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   
@@ -485,7 +524,7 @@
      auth))))
 
 (defn locations-capacityCommitments-list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/capacityCommitments/list
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   
@@ -512,7 +551,7 @@
      auth))))
 
 (defn locations-capacityCommitments-get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/capacityCommitments/get
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -539,7 +578,7 @@
      auth))))
 
 (defn locations-capacityCommitments-delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/capacityCommitments/delete
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -566,7 +605,7 @@
      auth))))
 
 (defn locations-capacityCommitments-patch$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/capacityCommitments/patch
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -609,7 +648,7 @@
      auth))))
 
 (defn locations-capacityCommitments-split$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/capacityCommitments/split
+  "https://cloud.google.com/bigquery
   
   Required parameters: name
   
@@ -642,7 +681,7 @@
      auth))))
 
 (defn locations-capacityCommitments-merge$
-  "https://cloud.google.com/bigquery/api/reference/rest/v1/projects/locations/capacityCommitments/merge
+  "https://cloud.google.com/bigquery
   
   Required parameters: parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.healthChecks
   "Compute Engine API: healthChecks.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/healthChecks"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/healthChecks/list
+  "https://cloud.google.com/products/compute/v1/docs/healthChecks/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/healthChecks/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/healthChecks/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/healthChecks/get
+  "https://cloud.google.com/products/compute/v1/docs/healthChecks/get
   
   Required parameters: healthCheck, project
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/healthChecks/insert
+  "https://cloud.google.com/products/compute/v1/docs/healthChecks/insert
   
   Required parameters: project
   
@@ -173,7 +173,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/healthChecks/delete
+  "https://cloud.google.com/products/compute/v1/docs/healthChecks/delete
   
   Required parameters: healthCheck, project
   
@@ -200,7 +200,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/healthChecks/update
+  "https://cloud.google.com/products/compute/v1/docs/healthChecks/update
   
   Required parameters: healthCheck, project
   
@@ -282,7 +282,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/healthChecks/patch
+  "https://cloud.google.com/products/compute/v1/docs/healthChecks/patch
   
   Required parameters: healthCheck, project
   

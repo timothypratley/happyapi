@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.grants
   "Google Play Android Developer API: grants.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/grants"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/grants/create
+  "https://developers.google.com/android-publisher
   
   Required parameters: parent
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/grants/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: name
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/grants/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.dataplex.projects
   "Cloud Dataplex API: projects.
   Dataplex API is used to manage the lifecycle of data lakes.
-  See: https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/dataplex/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-lookupEntry$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lookupEntry
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-searchEntries$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/searchEntries
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-entryGroups-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -151,7 +151,7 @@
      auth))))
 
 (defn locations-entryGroups-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -191,7 +191,7 @@
      auth))))
 
 (defn locations-entryGroups-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -217,7 +217,7 @@
      auth))))
 
 (defn locations-entryGroups-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -243,7 +243,7 @@
      auth))))
 
 (defn locations-entryGroups-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -269,7 +269,7 @@
      auth))))
 
 (defn locations-entryGroups-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -305,7 +305,7 @@
      auth))))
 
 (defn locations-entryGroups-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -331,7 +331,7 @@
      auth))))
 
 (defn locations-entryGroups-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -363,7 +363,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/entries/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -410,7 +410,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/entries/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -457,7 +457,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/entries/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -483,7 +483,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/entries/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -509,7 +509,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryGroups/entries/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -535,7 +535,7 @@
      auth))))
 
 (defn locations-aspectTypes-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/aspectTypes/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -587,7 +587,7 @@
      auth))))
 
 (defn locations-aspectTypes-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/aspectTypes/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -639,7 +639,7 @@
      auth))))
 
 (defn locations-aspectTypes-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/aspectTypes/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -665,7 +665,7 @@
      auth))))
 
 (defn locations-aspectTypes-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/aspectTypes/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -691,7 +691,7 @@
      auth))))
 
 (defn locations-aspectTypes-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/aspectTypes/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -717,7 +717,7 @@
      auth))))
 
 (defn locations-aspectTypes-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/aspectTypes/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -753,7 +753,7 @@
      auth))))
 
 (defn locations-aspectTypes-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/aspectTypes/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -779,7 +779,7 @@
      auth))))
 
 (defn locations-aspectTypes-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/aspectTypes/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -811,7 +811,7 @@
      auth))))
 
 (defn locations-dataScans-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -837,7 +837,7 @@
      auth))))
 
 (defn locations-dataScans-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -873,7 +873,7 @@
      auth))))
 
 (defn locations-dataScans-run$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/run
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -905,7 +905,7 @@
      auth))))
 
 (defn locations-dataScans-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -934,7 +934,6 @@
                      :postScanActions GoogleCloudDataplexV1DataProfileSpecPostScanActions,
                      :includeFields GoogleCloudDataplexV1DataProfileSpecSelectedFields,
                      :excludeFields GoogleCloudDataplexV1DataProfileSpecSelectedFields},
-   :dataDocumentationSpec {},
    :dataQualitySpec {:rules [GoogleCloudDataplexV1DataQualityRule],
                      :samplingPercent number,
                      :rowFilter string,
@@ -947,7 +946,6 @@
                        :rowCount string,
                        :scannedData GoogleCloudDataplexV1ScannedData,
                        :postScanActionsResult GoogleCloudDataplexV1DataQualityResultPostScanActionsResult},
-   :dataDocumentationResult {:queries [GoogleCloudDataplexV1DataDocumentationResultQuery]},
    :data {:entity string, :resource string}}
   
   Updates a DataScan resource."
@@ -972,7 +970,7 @@
      auth))))
 
 (defn locations-dataScans-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1004,7 +1002,7 @@
      auth))))
 
 (defn locations-dataScans-generateDataQualityRules$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/generateDataQualityRules
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1036,7 +1034,7 @@
      auth))))
 
 (defn locations-dataScans-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -1065,7 +1063,6 @@
                      :postScanActions GoogleCloudDataplexV1DataProfileSpecPostScanActions,
                      :includeFields GoogleCloudDataplexV1DataProfileSpecSelectedFields,
                      :excludeFields GoogleCloudDataplexV1DataProfileSpecSelectedFields},
-   :dataDocumentationSpec {},
    :dataQualitySpec {:rules [GoogleCloudDataplexV1DataQualityRule],
                      :samplingPercent number,
                      :rowFilter string,
@@ -1078,7 +1075,6 @@
                        :rowCount string,
                        :scannedData GoogleCloudDataplexV1ScannedData,
                        :postScanActionsResult GoogleCloudDataplexV1DataQualityResultPostScanActionsResult},
-   :dataDocumentationResult {:queries [GoogleCloudDataplexV1DataDocumentationResultQuery]},
    :data {:entity string, :resource string}}
   
   Creates a DataScan resource."
@@ -1103,7 +1099,7 @@
      auth))))
 
 (defn locations-dataScans-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1129,7 +1125,7 @@
      auth))))
 
 (defn locations-dataScans-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1155,7 +1151,7 @@
      auth))))
 
 (defn locations-dataScans-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -1181,7 +1177,7 @@
      auth))))
 
 (defn locations-dataScans-jobs-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/jobs/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1207,7 +1203,7 @@
      auth))))
 
 (defn locations-dataScans-jobs-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/jobs/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -1233,7 +1229,7 @@
      auth))))
 
 (defn locations-dataScans-jobs-generateDataQualityRules$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataScans/jobs/generateDataQualityRules
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1265,7 +1261,7 @@
      auth))))
 
 (defn locations-governanceRules-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/governanceRules/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1301,7 +1297,7 @@
      auth))))
 
 (defn locations-governanceRules-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/governanceRules/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1327,7 +1323,7 @@
      auth))))
 
 (defn locations-governanceRules-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/governanceRules/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1359,7 +1355,7 @@
      auth))))
 
 (defn locations-dataAttributeBindings-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataAttributeBindings/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1395,7 +1391,7 @@
      auth))))
 
 (defn locations-dataAttributeBindings-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataAttributeBindings/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1421,7 +1417,7 @@
      auth))))
 
 (defn locations-dataAttributeBindings-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataAttributeBindings/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1453,7 +1449,7 @@
      auth))))
 
 (defn locations-dataAttributeBindings-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataAttributeBindings/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -1495,7 +1491,7 @@
      auth))))
 
 (defn locations-dataAttributeBindings-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataAttributeBindings/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1537,7 +1533,7 @@
      auth))))
 
 (defn locations-dataAttributeBindings-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataAttributeBindings/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1563,7 +1559,7 @@
      auth))))
 
 (defn locations-dataAttributeBindings-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataAttributeBindings/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -1589,7 +1585,7 @@
      auth))))
 
 (defn locations-dataAttributeBindings-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataAttributeBindings/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1615,7 +1611,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1651,7 +1647,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1677,7 +1673,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1709,7 +1705,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -1750,7 +1746,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1791,7 +1787,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1817,7 +1813,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -1843,7 +1839,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -1869,7 +1865,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-attributes-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/attributes/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1905,7 +1901,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-attributes-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/attributes/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1931,7 +1927,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-attributes-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/attributes/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -1963,7 +1959,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-attributes-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/attributes/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2008,7 +2004,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-attributes-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/attributes/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2053,7 +2049,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-attributes-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/attributes/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2079,7 +2075,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-attributes-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/attributes/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2105,7 +2101,7 @@
      auth))))
 
 (defn locations-dataTaxonomies-attributes-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/dataTaxonomies/attributes/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2131,7 +2127,7 @@
      auth))))
 
 (defn locations-lakes-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2167,7 +2163,7 @@
      auth))))
 
 (defn locations-lakes-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2193,7 +2189,7 @@
      auth))))
 
 (defn locations-lakes-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2225,7 +2221,7 @@
      auth))))
 
 (defn locations-lakes-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2273,7 +2269,7 @@
      auth))))
 
 (defn locations-lakes-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2321,7 +2317,7 @@
      auth))))
 
 (defn locations-lakes-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2347,7 +2343,7 @@
      auth))))
 
 (defn locations-lakes-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2373,7 +2369,7 @@
      auth))))
 
 (defn locations-lakes-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2399,7 +2395,7 @@
      auth))))
 
 (defn locations-lakes-zones-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2435,7 +2431,7 @@
      auth))))
 
 (defn locations-lakes-zones-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2461,7 +2457,7 @@
      auth))))
 
 (defn locations-lakes-zones-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2493,7 +2489,7 @@
      auth))))
 
 (defn locations-lakes-zones-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2543,7 +2539,7 @@
      auth))))
 
 (defn locations-lakes-zones-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2593,7 +2589,7 @@
      auth))))
 
 (defn locations-lakes-zones-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2619,7 +2615,7 @@
      auth))))
 
 (defn locations-lakes-zones-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2645,7 +2641,7 @@
      auth))))
 
 (defn locations-lakes-zones-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2671,7 +2667,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2707,7 +2703,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2733,7 +2729,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -2765,7 +2761,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2822,7 +2818,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2879,7 +2875,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2905,7 +2901,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2931,7 +2927,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -2957,7 +2953,7 @@
      auth))))
 
 (defn locations-lakes-zones-assets-actions-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/assets/actions/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -2983,7 +2979,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3041,7 +3037,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-update$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/update
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3099,7 +3095,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3125,7 +3121,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3151,7 +3147,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3177,7 +3173,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-partitions-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/partitions/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3209,7 +3205,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-partitions-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/partitions/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3235,7 +3231,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-partitions-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/partitions/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3261,7 +3257,7 @@
      auth))))
 
 (defn locations-lakes-zones-entities-partitions-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/entities/partitions/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3287,7 +3283,7 @@
      auth))))
 
 (defn locations-lakes-zones-actions-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/zones/actions/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3313,7 +3309,7 @@
      auth))))
 
 (defn locations-lakes-tasks-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3339,7 +3335,7 @@
      auth))))
 
 (defn locations-lakes-tasks-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -3375,7 +3371,7 @@
      auth))))
 
 (defn locations-lakes-tasks-run$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/run
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3407,7 +3403,7 @@
      auth))))
 
 (defn locations-lakes-tasks-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3470,7 +3466,7 @@
      auth))))
 
 (defn locations-lakes-tasks-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -3502,7 +3498,7 @@
      auth))))
 
 (defn locations-lakes-tasks-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3565,7 +3561,7 @@
      auth))))
 
 (defn locations-lakes-tasks-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3591,7 +3587,7 @@
      auth))))
 
 (defn locations-lakes-tasks-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -3617,7 +3613,7 @@
      auth))))
 
 (defn locations-lakes-tasks-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3643,7 +3639,7 @@
      auth))))
 
 (defn locations-lakes-tasks-jobs-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/jobs/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3669,7 +3665,7 @@
      auth))))
 
 (defn locations-lakes-tasks-jobs-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/jobs/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3695,7 +3691,7 @@
      auth))))
 
 (defn locations-lakes-tasks-jobs-cancel$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/tasks/jobs/cancel
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3727,7 +3723,7 @@
      auth))))
 
 (defn locations-lakes-environments-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -3763,7 +3759,7 @@
      auth))))
 
 (defn locations-lakes-environments-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -3789,7 +3785,7 @@
      auth))))
 
 (defn locations-lakes-environments-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -3821,7 +3817,7 @@
      auth))))
 
 (defn locations-lakes-environments-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3865,7 +3861,7 @@
      auth))))
 
 (defn locations-lakes-environments-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3909,7 +3905,7 @@
      auth))))
 
 (defn locations-lakes-environments-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3935,7 +3931,7 @@
      auth))))
 
 (defn locations-lakes-environments-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -3961,7 +3957,7 @@
      auth))))
 
 (defn locations-lakes-environments-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -3987,7 +3983,7 @@
      auth))))
 
 (defn locations-lakes-environments-sessions-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/environments/sessions/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -4013,7 +4009,7 @@
      auth))))
 
 (defn locations-lakes-contentitems-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/contentitems/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -4054,7 +4050,7 @@
      auth))))
 
 (defn locations-lakes-contentitems-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/contentitems/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4095,7 +4091,7 @@
      auth))))
 
 (defn locations-lakes-contentitems-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/contentitems/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4121,7 +4117,7 @@
      auth))))
 
 (defn locations-lakes-contentitems-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/contentitems/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4147,7 +4143,7 @@
      auth))))
 
 (defn locations-lakes-contentitems-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/contentitems/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -4173,7 +4169,7 @@
      auth))))
 
 (defn locations-lakes-contentitems-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/contentitems/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -4209,7 +4205,7 @@
      auth))))
 
 (defn locations-lakes-contentitems-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/contentitems/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -4241,7 +4237,7 @@
      auth))))
 
 (defn locations-lakes-contentitems-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/contentitems/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -4267,7 +4263,7 @@
      auth))))
 
 (defn locations-lakes-content-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/content/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -4308,7 +4304,7 @@
      auth))))
 
 (defn locations-lakes-content-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/content/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4349,7 +4345,7 @@
      auth))))
 
 (defn locations-lakes-content-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/content/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4375,7 +4371,7 @@
      auth))))
 
 (defn locations-lakes-content-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/content/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4401,7 +4397,7 @@
      auth))))
 
 (defn locations-lakes-content-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/content/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -4427,7 +4423,7 @@
      auth))))
 
 (defn locations-lakes-content-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/content/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -4463,7 +4459,7 @@
      auth))))
 
 (defn locations-lakes-content-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/content/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -4495,7 +4491,7 @@
      auth))))
 
 (defn locations-lakes-content-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/content/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -4521,7 +4517,7 @@
      auth))))
 
 (defn locations-lakes-actions-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/lakes/actions/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -4547,7 +4543,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4573,7 +4569,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4599,7 +4595,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4625,7 +4621,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4657,7 +4653,7 @@
      auth))))
 
 (defn locations-entryTypes-create$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryTypes/create
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -4701,7 +4697,7 @@
      auth))))
 
 (defn locations-entryTypes-patch$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryTypes/patch
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4745,7 +4741,7 @@
      auth))))
 
 (defn locations-entryTypes-delete$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryTypes/delete
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4771,7 +4767,7 @@
      auth))))
 
 (defn locations-entryTypes-list$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryTypes/list
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: parent
   
@@ -4797,7 +4793,7 @@
      auth))))
 
 (defn locations-entryTypes-get$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryTypes/get
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: name
   
@@ -4823,7 +4819,7 @@
      auth))))
 
 (defn locations-entryTypes-setIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryTypes/setIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -4859,7 +4855,7 @@
      auth))))
 
 (defn locations-entryTypes-getIamPolicy$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryTypes/getIamPolicy
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   
@@ -4885,7 +4881,7 @@
      auth))))
 
 (defn locations-entryTypes-testIamPermissions$
-  "https://cloud.google.com/dataplex/docsapi/reference/rest/v1/projects/locations/entryTypes/testIamPermissions
+  "https://cloud.google.com/dataplex/docs
   
   Required parameters: resource
   

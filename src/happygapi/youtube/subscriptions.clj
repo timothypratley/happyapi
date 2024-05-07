@@ -1,13 +1,13 @@
 (ns happygapi.youtube.subscriptions
   "YouTube Data API v3: subscriptions.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/subscriptions"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn insert$
-  "https://developers.google.com/youtube/api/reference/rest/v3/subscriptions/insert
+  "https://developers.google.com/youtube/v3/docs/subscriptions/insert
   
   Required parameters: part
   
@@ -15,23 +15,23 @@
   
   Body: 
   
-  {:kind string,
-   :id string,
-   :contentDetails {:newItemCount integer,
-                    :totalItemCount integer,
-                    :activityType string},
+  {:subscriberSnippet {:title string,
+                       :channelId string,
+                       :description string,
+                       :thumbnails ThumbnailDetails},
    :etag string,
-   :snippet {:channelTitle string,
-             :resourceId ResourceId,
+   :kind string,
+   :id string,
+   :snippet {:channelId string,
              :title string,
-             :channelId string,
+             :resourceId ResourceId,
              :thumbnails ThumbnailDetails,
+             :channelTitle string,
              :description string,
              :publishedAt string},
-   :subscriberSnippet {:title string,
-                       :thumbnails ThumbnailDetails,
-                       :channelId string,
-                       :description string}}
+   :contentDetails {:activityType string,
+                    :newItemCount integer,
+                    :totalItemCount integer}}
   
   Inserts a new resource into this collection."
   {:scopes ["https://www.googleapis.com/auth/youtube"
@@ -57,7 +57,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/youtube/api/reference/rest/v3/subscriptions/delete
+  "https://developers.google.com/youtube/v3/docs/subscriptions/delete
   
   Required parameters: id
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/youtube/api/reference/rest/v3/subscriptions/list
+  "https://developers.google.com/youtube/v3/docs/subscriptions/list
   
   Required parameters: part
   

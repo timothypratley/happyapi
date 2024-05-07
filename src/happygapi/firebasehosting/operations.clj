@@ -1,13 +1,13 @@
 (ns happygapi.firebasehosting.operations
   "Firebase Hosting API: operations.
   The Firebase Hosting REST API enables programmatic and customizable management and deployments to your Firebase-hosted sites. Use this REST API to create and manage channels and sites as well as to deploy new or updated hosting configurations and content files.
-  See: https://firebase.google.com/docs/hosting/api/reference/rest/v1/operations"
+  See: https://firebase.google.com/docs/hosting/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://firebase.google.com/docs/hosting/api/reference/rest/v1/operations/list
+  "https://firebase.google.com/docs/hosting
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn delete$
-  "https://firebase.google.com/docs/hosting/api/reference/rest/v1/operations/delete
+  "https://firebase.google.com/docs/hosting
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn cancel$
-  "https://firebase.google.com/docs/hosting/api/reference/rest/v1/operations/cancel
+  "https://firebase.google.com/docs/hosting
   
   Required parameters: name
   

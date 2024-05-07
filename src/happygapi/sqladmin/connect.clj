@@ -1,13 +1,13 @@
 (ns happygapi.sqladmin.connect
   "Cloud SQL Admin API: connect.
   API for Cloud SQL database instance management
-  See: https://developers.google.com/cloud-sql/api/reference/rest/v1/connect"
+  See: https://cloud.google.com/sql/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/connect/get
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/connect/get
   
   Required parameters: project, instance
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn generateEphemeral$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/connect/generateEphemeral
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/connect/generateEphemeral
   
   Required parameters: project, instance
   

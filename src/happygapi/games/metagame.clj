@@ -1,13 +1,13 @@
 (ns happygapi.games.metagame
   "Google Play Game Services: metagame.
   The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
-  See: https://developers.google.com/games/api/reference/rest/v1/metagame"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getMetagameConfig$
-  "https://developers.google.com/games/api/reference/rest/v1/metagame/getMetagameConfig
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn listCategoriesByPlayer$
-  "https://developers.google.com/games/api/reference/rest/v1/metagame/listCategoriesByPlayer
+  "https://games.withgoogle.com
   
   Required parameters: playerId, collection
   

@@ -1,13 +1,13 @@
 (ns happygapi.digitalassetlinks.statements
   "Digital Asset Links API: statements.
   Discovers relationships between online assets such as websites or mobile apps.
-  See: https://developers.google.com/digital-asset-links/api/reference/rest/v1/statements"
+  See: https://developers.google.com/digital-asset-links/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/digital-asset-links/api/reference/rest/v1/statements/list
+  "https://developers.google.com/digital-asset-links/reference/rest/v1/statements/list
   
   Required parameters: none
   

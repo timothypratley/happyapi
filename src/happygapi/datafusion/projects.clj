@@ -1,13 +1,13 @@
 (ns happygapi.datafusion.projects
   "Cloud Data Fusion API: projects.
   Cloud Data Fusion is a fully-managed, cloud native, enterprise data integration service for quickly building and managing data pipelines. It provides a graphical interface to increase time efficiency and reduce complexity, and allows business users, developers, and data scientists to easily and reliably build scalable data integration solutions to cleanse, prepare, blend, transfer and transform data without having to wrestle with infrastructure.
-  See: https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/data-fusion/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-versions-list$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/versions/list
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.versions/list
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-instances-get$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/get
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/get
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-instances-setIamPolicy$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/setIamPolicy
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/setIamPolicy
   
   Required parameters: resource
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn locations-instances-restart$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/restart
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/restart
   
   Required parameters: name
   
@@ -289,7 +289,7 @@
      auth))))
 
 (defn locations-instances-patch$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/patch
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/patch
   
   Required parameters: name
   
@@ -360,7 +360,7 @@
      auth))))
 
 (defn locations-instances-testIamPermissions$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/testIamPermissions
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/testIamPermissions
   
   Required parameters: resource
   
@@ -392,7 +392,7 @@
      auth))))
 
 (defn locations-instances-create$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/create
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/create
   
   Required parameters: parent
   
@@ -463,7 +463,7 @@
      auth))))
 
 (defn locations-instances-delete$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/delete
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/delete
   
   Required parameters: name
   
@@ -489,7 +489,7 @@
      auth))))
 
 (defn locations-instances-getIamPolicy$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/getIamPolicy
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/getIamPolicy
   
   Required parameters: resource
   
@@ -515,7 +515,7 @@
      auth))))
 
 (defn locations-instances-list$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/list
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances/list
   
   Required parameters: parent
   
@@ -541,7 +541,7 @@
      auth))))
 
 (defn locations-instances-dnsPeerings-create$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/dnsPeerings/create
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances.dnsPeerings/create
   
   Required parameters: parent
   
@@ -577,7 +577,7 @@
      auth))))
 
 (defn locations-instances-dnsPeerings-delete$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/dnsPeerings/delete
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances.dnsPeerings/delete
   
   Required parameters: name
   
@@ -603,7 +603,7 @@
      auth))))
 
 (defn locations-instances-dnsPeerings-list$
-  "https://cloud.google.com/data-fusion/docsapi/reference/rest/v1/projects/locations/instances/dnsPeerings/list
+  "https://cloud.google.com/data-fusion/docs/reference/rest/v1/projects.locations.instances.dnsPeerings/list
   
   Required parameters: parent
   

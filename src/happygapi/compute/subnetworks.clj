@@ -1,13 +1,13 @@
 (ns happygapi.compute.subnetworks
   "Compute Engine API: subnetworks.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/subnetworks"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/get
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/get
   
   Required parameters: project, region, subnetwork
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/setIamPolicy
   
   Required parameters: project, region, resource
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/insert
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/insert
   
   Required parameters: project, region
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn listUsable$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/listUsable
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/listUsable
   
   Required parameters: project
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/patch
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/patch
   
   Required parameters: project, region, subnetwork
   
@@ -233,7 +233,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/testIamPermissions
   
   Required parameters: project, region, resource
   
@@ -267,7 +267,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/aggregatedList
   
   Required parameters: project
   
@@ -295,7 +295,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/delete
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/delete
   
   Required parameters: project, region, subnetwork
   
@@ -322,7 +322,7 @@
      auth))))
 
 (defn setPrivateIpGoogleAccess$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/setPrivateIpGoogleAccess
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/setPrivateIpGoogleAccess
   
   Required parameters: project, region, subnetwork
   
@@ -355,7 +355,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/getIamPolicy
   
   Required parameters: project, region, resource
   
@@ -383,7 +383,7 @@
      auth))))
 
 (defn expandIpCidrRange$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/expandIpCidrRange
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/expandIpCidrRange
   
   Required parameters: project, region, subnetwork
   
@@ -416,7 +416,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/subnetworks/list
+  "https://cloud.google.com/products/compute/v1/docs/subnetworks/list
   
   Required parameters: project, region
   

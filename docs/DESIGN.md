@@ -23,7 +23,9 @@ Making a request is easy - [`clj-http`](https://github.com/dakrone/clj-http).
 But there is a lot more to it:
 
 * Authentication and authorization
-* What resources are available and what parameters can be passed?
+* Specification
+  * What resources are available and what parameters can be passed?
+  * How do I navigate the specification? (Online docs? Class hierarchy? REPL?)
 * Request validation
 * Response comprehension
 * Paging
@@ -66,6 +68,11 @@ Getting stuff out. Return or something else?
 ### Other APIs
 
 * Often have unmaintained wrappers 
+
+## Guiding Principles
+
+* Small, simple components that form a complete solution.
+* Invite customization.
 
 ## The Hard Parts
 
@@ -145,7 +152,7 @@ TODO: Can it be made compatible with things like Swagger?
 
 TODO: Compare, contrast, and learn from https://github.com/cognitect-labs/aws-api
 
-### Generate Code
+### Specifications at hand: Generate code
 
 * Docstrings
 * Symbol resolution
@@ -184,6 +191,14 @@ Dynamic var?
 
 There's a retry library, is it enough?
 
+Exceptions vs Errors (Having to deal with both sucks, but they are different, kind of? not really)
+
+#### Response comprehension
+
+1. Specification in documentation.
+2. Throw errors?
+3. unwrap items?
+
 #### Concurrency
 
 This is maybe just error handling and rate maximization? Or a task system? Or something else?
@@ -196,7 +211,9 @@ This is maybe just error handling and rate maximization? Or a task system? Or so
 Originally I chose to follow the api organization as closely as possible,
 but upon reflection I think it would be better to collect resources:
 
-`happygapi.youtube.videos/list$` vs `happygapi.youtube/videos-list`
+`happygapi.youtube.videos/list$`
+vs `happygapi.youtube/videos-list`
+vs `happygapi.youtube/videos$list`
 
 1. The methods often overlap core functions like `list`, `get` etc.
 2. Less requires are necessary when working with an API (YouTube has multiple resources).
@@ -237,4 +254,13 @@ These seem like they would be helpful
 
 Probably not? Maybe worth discussion.
 
-### Should record the GAPI version when publising
+### Should record the GAPI version when publishing
+
+
+## Ideas
+
+* Maybe API functions should create request maps???
+* API calls aren't functions
+* Actually clj-http solves many of these things, we just need some good defaults and a way to customize, except comprehension
+
+* Control flow: use nil instead of exceptions (as much as is possible, but what about when it isn't?)

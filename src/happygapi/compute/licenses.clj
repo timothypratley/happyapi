@@ -1,13 +1,13 @@
 (ns happygapi.compute.licenses
   "Compute Engine API: licenses.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/licenses"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenses/get
+  "https://cloud.google.com/products/compute/v1/docs/licenses/get
   
   Required parameters: license, project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenses/list
+  "https://cloud.google.com/products/compute/v1/docs/licenses/list
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenses/delete
+  "https://cloud.google.com/products/compute/v1/docs/licenses/delete
   
   Required parameters: license, project
   
@@ -90,7 +90,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenses/insert
+  "https://cloud.google.com/products/compute/v1/docs/licenses/insert
   
   Required parameters: project
   
@@ -136,7 +136,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenses/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/licenses/getIamPolicy
   
   Required parameters: project, resource
   
@@ -164,7 +164,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenses/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/licenses/setIamPolicy
   
   Required parameters: project, resource
   
@@ -206,7 +206,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenses/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/licenses/testIamPermissions
   
   Required parameters: project, resource
   

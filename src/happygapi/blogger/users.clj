@@ -1,13 +1,13 @@
 (ns happygapi.blogger.users
   "Blogger API: users.
   The Blogger API provides access to posts, comments and pages of a Blogger blog.
-  See: https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/users"
+  See: https://developers.google.com/blogger/docs/3.0/getting_started"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/users/get
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: userId
   

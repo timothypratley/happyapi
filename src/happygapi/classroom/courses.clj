@@ -1,13 +1,13 @@
 (ns happygapi.classroom.courses
   "Google Classroom API: courses.
   Manages classes, rosters, and invitations in Google Classroom.
-  See: https://developers.google.com/classroom/api/reference/rest/v1/courses"
+  See: https://developers.google.com/classroom/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/create
+  "https://developers.google.com/classroom/reference/rest/v1/courses/create
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/get
+  "https://developers.google.com/classroom/reference/rest/v1/courses/get
   
   Required parameters: id
   
@@ -86,7 +86,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/update
+  "https://developers.google.com/classroom/reference/rest/v1/courses/update
   
   Required parameters: id
   
@@ -138,7 +138,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/patch
+  "https://developers.google.com/classroom/reference/rest/v1/courses/patch
   
   Required parameters: id
   
@@ -190,7 +190,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/delete
+  "https://developers.google.com/classroom/reference/rest/v1/courses/delete
   
   Required parameters: id
   
@@ -216,7 +216,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/list
   
   Required parameters: none
   
@@ -243,7 +243,7 @@
      auth))))
 
 (defn aliases-create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/aliases/create
+  "https://developers.google.com/classroom/reference/rest/v1/courses/aliases/create
   
   Required parameters: courseId
   
@@ -275,7 +275,7 @@
      auth))))
 
 (defn aliases-delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/aliases/delete
+  "https://developers.google.com/classroom/reference/rest/v1/courses/aliases/delete
   
   Required parameters: courseId, alias
   
@@ -301,7 +301,7 @@
      auth))))
 
 (defn aliases-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/aliases/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/aliases/list
   
   Required parameters: courseId
   
@@ -328,7 +328,7 @@
      auth))))
 
 (defn courseWork-create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/create
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/create
   
   Required parameters: courseId
   
@@ -391,7 +391,7 @@
      auth))))
 
 (defn courseWork-patch$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/patch
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/patch
   
   Required parameters: courseId, id
   
@@ -454,7 +454,7 @@
      auth))))
 
 (defn courseWork-delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/delete
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/delete
   
   Required parameters: courseId, id
   
@@ -480,7 +480,7 @@
      auth))))
 
 (defn courseWork-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/get
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/get
   
   Required parameters: courseId, id
   
@@ -509,7 +509,7 @@
      auth))))
 
 (defn courseWork-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/list
   
   Required parameters: courseId
   
@@ -538,7 +538,7 @@
      auth))))
 
 (defn courseWork-modifyAssignees$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/modifyAssignees
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/modifyAssignees
   
   Required parameters: courseId, id
   
@@ -572,7 +572,7 @@
      auth))))
 
 (defn courseWork-studentSubmissions-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/studentSubmissions/get
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/studentSubmissions/get
   
   Required parameters: courseId, courseWorkId, id
   
@@ -603,7 +603,7 @@
      auth))))
 
 (defn courseWork-studentSubmissions-patch$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/studentSubmissions/patch
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/studentSubmissions/patch
   
   Required parameters: courseId, courseWorkId, id
   
@@ -653,7 +653,7 @@
      auth))))
 
 (defn courseWork-studentSubmissions-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/studentSubmissions/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/studentSubmissions/list
   
   Required parameters: courseId, courseWorkId
   
@@ -684,7 +684,7 @@
      auth))))
 
 (defn courseWork-studentSubmissions-turnIn$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/studentSubmissions/turnIn
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/studentSubmissions/turnIn
   
   Required parameters: courseId, courseWorkId, id
   
@@ -716,7 +716,7 @@
      auth))))
 
 (defn courseWork-studentSubmissions-reclaim$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/studentSubmissions/reclaim
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/studentSubmissions/reclaim
   
   Required parameters: courseId, courseWorkId, id
   
@@ -748,7 +748,7 @@
      auth))))
 
 (defn courseWork-studentSubmissions-return$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/studentSubmissions/return
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/studentSubmissions/return
   
   Required parameters: courseId, courseWorkId, id
   
@@ -780,7 +780,7 @@
      auth))))
 
 (defn courseWork-studentSubmissions-modifyAttachments$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWork/studentSubmissions/modifyAttachments
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWork/studentSubmissions/modifyAttachments
   
   Required parameters: courseId, courseWorkId, id
   
@@ -816,7 +816,7 @@
      auth))))
 
 (defn announcements-delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/announcements/delete
+  "https://developers.google.com/classroom/reference/rest/v1/courses/announcements/delete
   
   Required parameters: courseId, id
   
@@ -842,7 +842,7 @@
      auth))))
 
 (defn announcements-create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/announcements/create
+  "https://developers.google.com/classroom/reference/rest/v1/courses/announcements/create
   
   Required parameters: courseId
   
@@ -888,7 +888,7 @@
      auth))))
 
 (defn announcements-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/announcements/get
+  "https://developers.google.com/classroom/reference/rest/v1/courses/announcements/get
   
   Required parameters: courseId, id
   
@@ -915,7 +915,7 @@
      auth))))
 
 (defn announcements-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/announcements/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/announcements/list
   
   Required parameters: courseId
   
@@ -942,7 +942,7 @@
      auth))))
 
 (defn announcements-patch$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/announcements/patch
+  "https://developers.google.com/classroom/reference/rest/v1/courses/announcements/patch
   
   Required parameters: courseId, id
   
@@ -988,7 +988,7 @@
      auth))))
 
 (defn announcements-modifyAssignees$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/announcements/modifyAssignees
+  "https://developers.google.com/classroom/reference/rest/v1/courses/announcements/modifyAssignees
   
   Required parameters: courseId, id
   
@@ -1022,7 +1022,7 @@
      auth))))
 
 (defn courseWorkMaterials-create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWorkMaterials/create
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWorkMaterials/create
   
   Required parameters: courseId
   
@@ -1070,7 +1070,7 @@
      auth))))
 
 (defn courseWorkMaterials-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWorkMaterials/get
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWorkMaterials/get
   
   Required parameters: courseId, id
   
@@ -1097,7 +1097,7 @@
      auth))))
 
 (defn courseWorkMaterials-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWorkMaterials/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWorkMaterials/list
   
   Required parameters: courseId
   
@@ -1124,7 +1124,7 @@
      auth))))
 
 (defn courseWorkMaterials-patch$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWorkMaterials/patch
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWorkMaterials/patch
   
   Required parameters: courseId, id
   
@@ -1172,7 +1172,7 @@
      auth))))
 
 (defn courseWorkMaterials-delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/courseWorkMaterials/delete
+  "https://developers.google.com/classroom/reference/rest/v1/courses/courseWorkMaterials/delete
   
   Required parameters: courseId, id
   
@@ -1198,7 +1198,7 @@
      auth))))
 
 (defn topics-create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/topics/create
+  "https://developers.google.com/classroom/reference/rest/v1/courses/topics/create
   
   Required parameters: courseId
   
@@ -1230,7 +1230,7 @@
      auth))))
 
 (defn topics-patch$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/topics/patch
+  "https://developers.google.com/classroom/reference/rest/v1/courses/topics/patch
   
   Required parameters: courseId, id
   
@@ -1262,7 +1262,7 @@
      auth))))
 
 (defn topics-delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/topics/delete
+  "https://developers.google.com/classroom/reference/rest/v1/courses/topics/delete
   
   Required parameters: courseId, id
   
@@ -1288,7 +1288,7 @@
      auth))))
 
 (defn topics-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/topics/get
+  "https://developers.google.com/classroom/reference/rest/v1/courses/topics/get
   
   Required parameters: courseId, id
   
@@ -1315,7 +1315,7 @@
      auth))))
 
 (defn topics-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/topics/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/topics/list
   
   Required parameters: courseId
   
@@ -1342,7 +1342,7 @@
      auth))))
 
 (defn teachers-create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/teachers/create
+  "https://developers.google.com/classroom/reference/rest/v1/courses/teachers/create
   
   Required parameters: courseId
   
@@ -1383,7 +1383,7 @@
      auth))))
 
 (defn teachers-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/teachers/get
+  "https://developers.google.com/classroom/reference/rest/v1/courses/teachers/get
   
   Required parameters: courseId, userId
   
@@ -1412,7 +1412,7 @@
      auth))))
 
 (defn teachers-delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/teachers/delete
+  "https://developers.google.com/classroom/reference/rest/v1/courses/teachers/delete
   
   Required parameters: courseId, userId
   
@@ -1438,7 +1438,7 @@
      auth))))
 
 (defn teachers-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/teachers/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/teachers/list
   
   Required parameters: courseId
   
@@ -1467,7 +1467,7 @@
      auth))))
 
 (defn students-create$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/students/create
+  "https://developers.google.com/classroom/reference/rest/v1/courses/students/create
   
   Required parameters: courseId
   
@@ -1509,7 +1509,7 @@
      auth))))
 
 (defn students-get$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/students/get
+  "https://developers.google.com/classroom/reference/rest/v1/courses/students/get
   
   Required parameters: courseId, userId
   
@@ -1538,7 +1538,7 @@
      auth))))
 
 (defn students-delete$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/students/delete
+  "https://developers.google.com/classroom/reference/rest/v1/courses/students/delete
   
   Required parameters: courseId, userId
   
@@ -1564,7 +1564,7 @@
      auth))))
 
 (defn students-list$
-  "https://developers.google.com/classroom/api/reference/rest/v1/courses/students/list
+  "https://developers.google.com/classroom/reference/rest/v1/courses/students/list
   
   Required parameters: courseId
   

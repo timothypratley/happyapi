@@ -1,13 +1,13 @@
 (ns happygapi.backupdr.projects
   "Backup and DR Service API: projects.
   
-  See: https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/backup-disaster-recovery"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-managementServers-list$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/managementServers/list
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-managementServers-get$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/managementServers/get
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-managementServers-create$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/managementServers/create
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: parent
   
@@ -238,6 +238,7 @@
    :type string,
    :etag string,
    :state string,
+   :baProxyUri [string],
    :updateTime string,
    :workforceIdentityBasedManagementUri {:firstPartyManagementUri string,
                                          :thirdPartyManagementUri string},
@@ -267,7 +268,7 @@
      auth))))
 
 (defn locations-managementServers-delete$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/managementServers/delete
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: name
   
@@ -293,7 +294,7 @@
      auth))))
 
 (defn locations-managementServers-setIamPolicy$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/managementServers/setIamPolicy
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: resource
   
@@ -329,7 +330,7 @@
      auth))))
 
 (defn locations-managementServers-getIamPolicy$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/managementServers/getIamPolicy
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: resource
   
@@ -355,7 +356,7 @@
      auth))))
 
 (defn locations-managementServers-testIamPermissions$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/managementServers/testIamPermissions
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: resource
   
@@ -387,7 +388,7 @@
      auth))))
 
 (defn locations-backupVaults-testIamPermissions$
-  "https://cloud.google.com/backup-disaster-recoveryapi/reference/rest/v1/projects/locations/backupVaults/testIamPermissions
+  "https://cloud.google.com/backup-disaster-recovery
   
   Required parameters: resource
   

@@ -1,13 +1,13 @@
 (ns happygapi.cloudasset.v1
   "Cloud Asset API: v1.
   The Cloud Asset API manages the history and inventory of Google Cloud resources.
-  See: https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/v1"
+  See: https://cloud.google.com/asset-inventory/docs/export-asset-metadata"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/searchAllResources
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//searchAllResources
   
   Required parameters: scope
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/exportAssets
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//exportAssets
   
   Required parameters: parent
   
@@ -70,7 +70,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/analyzeOrgPolicyGovernedAssets
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//analyzeOrgPolicyGovernedAssets
   
   Required parameters: scope
   
@@ -96,7 +96,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/analyzeOrgPolicies
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//analyzeOrgPolicies
   
   Required parameters: scope
   
@@ -122,7 +122,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/analyzeIamPolicy
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//analyzeIamPolicy
   
   Required parameters: scope
   
@@ -148,7 +148,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/analyzeMove
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//analyzeMove
   
   Required parameters: resource
   
@@ -174,7 +174,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/batchGetAssetsHistory
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//batchGetAssetsHistory
   
   Required parameters: parent
   
@@ -200,7 +200,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/analyzeOrgPolicyGovernedContainers
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//analyzeOrgPolicyGovernedContainers
   
   Required parameters: scope
   
@@ -226,7 +226,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/analyzeIamPolicyLongrunning
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//analyzeIamPolicyLongrunning
   
   Required parameters: scope
   
@@ -266,7 +266,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/searchAllIamPolicies
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//searchAllIamPolicies
   
   Required parameters: scope
   
@@ -292,7 +292,7 @@
      auth))))
 
 (defn $
-  "https://cloud.google.com/asset-inventory/docs/quickstartapi/reference/rest/v1/queryAssets
+  "https://cloud.google.com/asset-inventory/docs/reference/rest/v1//queryAssets
   
   Required parameters: parent
   

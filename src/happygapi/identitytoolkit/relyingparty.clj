@@ -1,13 +1,13 @@
 (ns happygapi.identitytoolkit.relyingparty
   "Google Identity Toolkit API: relyingparty.
   Help the third party sites to implement federated login.
-  See: https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty"
+  See: https://developers.google.com/identity/toolkit/migrate-identityplatform"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn verifyPhoneNumber$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/verifyPhoneNumber
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/verifyPhoneNumber
   
   Required parameters: none
   
@@ -45,7 +45,7 @@
      auth))))
 
 (defn deleteAccount$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/deleteAccount
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/deleteAccount
   
   Required parameters: none
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn signupNewUser$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/signupNewUser
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/signupNewUser
   
   Required parameters: none
   
@@ -122,7 +122,7 @@
      auth))))
 
 (defn setProjectConfig$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/setProjectConfig
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/setProjectConfig
   
   Required parameters: none
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn getProjectConfig$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/getProjectConfig
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/getProjectConfig
   
   Required parameters: none
   
@@ -215,7 +215,7 @@
      auth))))
 
 (defn verifyPassword$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/verifyPassword
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/verifyPassword
   
   Required parameters: none
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn sendVerificationCode$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/sendVerificationCode
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/sendVerificationCode
   
   Required parameters: none
   
@@ -292,7 +292,7 @@
      auth))))
 
 (defn verifyCustomToken$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/verifyCustomToken
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/verifyCustomToken
   
   Required parameters: none
   
@@ -327,7 +327,7 @@
      auth))))
 
 (defn verifyAssertion$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/verifyAssertion
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/verifyAssertion
   
   Required parameters: none
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn emailLinkSignin$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/emailLinkSignin
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/emailLinkSignin
   
   Required parameters: none
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn getAccountInfo$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/getAccountInfo
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/getAccountInfo
   
   Required parameters: none
   
@@ -439,7 +439,7 @@
      auth))))
 
 (defn resetPassword$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/resetPassword
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/resetPassword
   
   Required parameters: none
   
@@ -474,7 +474,7 @@
      auth))))
 
 (defn getOobConfirmationCode$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/getOobConfirmationCode
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/getOobConfirmationCode
   
   Required parameters: none
   
@@ -520,7 +520,7 @@
      auth))))
 
 (defn signOutUser$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/signOutUser
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/signOutUser
   
   Required parameters: none
   
@@ -552,7 +552,7 @@
      auth))))
 
 (defn getPublicKeys$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/getPublicKeys
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/getPublicKeys
   
   Required parameters: none
   
@@ -578,7 +578,7 @@
      auth))))
 
 (defn setAccountInfo$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/setAccountInfo
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/setAccountInfo
   
   Required parameters: none
   
@@ -632,7 +632,7 @@
      auth))))
 
 (defn uploadAccount$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/uploadAccount
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/uploadAccount
   
   Required parameters: none
   
@@ -703,7 +703,7 @@
      auth))))
 
 (defn downloadAccount$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/downloadAccount
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/downloadAccount
   
   Required parameters: none
   
@@ -739,7 +739,7 @@
      auth))))
 
 (defn getRecaptchaParam$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/getRecaptchaParam
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/getRecaptchaParam
   
   Required parameters: none
   
@@ -765,7 +765,7 @@
      auth))))
 
 (defn createAuthUri$
-  "https://developers.google.com/identity-toolkit/v3/api/reference/rest/v3/relyingparty/createAuthUri
+  "https://developers.google.com/identity/toolkit/migrate-identityplatform/v3/docs/relyingparty/createAuthUri
   
   Required parameters: none
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.networkEndpointGroups
   "Compute Engine API: networkEndpointGroups.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/get
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/get
   
   Required parameters: networkEndpointGroup, project, zone
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/insert
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/insert
   
   Required parameters: project, zone
   
@@ -90,7 +90,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/testIamPermissions
   
   Required parameters: project, resource, zone
   
@@ -124,7 +124,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/aggregatedList
   
   Required parameters: project
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn attachNetworkEndpoints$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/attachNetworkEndpoints
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/attachNetworkEndpoints
   
   Required parameters: networkEndpointGroup, project, zone
   
@@ -191,7 +191,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/delete
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/delete
   
   Required parameters: networkEndpointGroup, project, zone
   
@@ -220,7 +220,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/list
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/list
   
   Required parameters: project, zone
   
@@ -248,7 +248,7 @@
      auth))))
 
 (defn listNetworkEndpoints$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/listNetworkEndpoints
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/listNetworkEndpoints
   
   Required parameters: networkEndpointGroup, project, zone
   
@@ -284,7 +284,7 @@
      auth))))
 
 (defn detachNetworkEndpoints$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networkEndpointGroups/detachNetworkEndpoints
+  "https://cloud.google.com/products/compute/v1/docs/networkEndpointGroups/detachNetworkEndpoints
   
   Required parameters: networkEndpointGroup, project, zone
   

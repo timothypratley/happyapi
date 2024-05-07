@@ -1,13 +1,13 @@
 (ns happygapi.content.conversionsources
   "Content API for Shopping: conversionsources.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/conversionsources"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/conversionsources/create
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -48,7 +48,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/conversionsources/patch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, conversionSourceId
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/conversionsources/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, conversionSourceId
   
@@ -119,7 +119,7 @@
      auth))))
 
 (defn undelete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/conversionsources/undelete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, conversionSourceId
   
@@ -153,7 +153,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/conversionsources/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, conversionSourceId
   
@@ -181,7 +181,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/conversionsources/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

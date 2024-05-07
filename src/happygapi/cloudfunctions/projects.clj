@@ -1,13 +1,13 @@
 (ns happygapi.cloudfunctions.projects
   "Cloud Functions API: projects.
   Manages lightweight user-provided functions executed in response to events.
-  See: https://cloud.google.com/functionsapi/reference/rest/v2/projects"
+  See: https://cloud.google.com/functions"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/list
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/operations/list
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.operations/list
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/operations/get
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.operations/get
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-functions-get$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/get
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-functions-setIamPolicy$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/setIamPolicy
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/setIamPolicy
   
   Required parameters: resource
   
@@ -147,7 +147,7 @@
      auth))))
 
 (defn locations-functions-setupFunctionUpgradeConfig$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/setupFunctionUpgradeConfig
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/setupFunctionUpgradeConfig
   
   Required parameters: name
   
@@ -179,7 +179,7 @@
      auth))))
 
 (defn locations-functions-patch$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/patch
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/patch
   
   Required parameters: name
   
@@ -265,7 +265,7 @@
      auth))))
 
 (defn locations-functions-testIamPermissions$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/testIamPermissions
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/testIamPermissions
   
   Required parameters: resource
   
@@ -297,7 +297,7 @@
      auth))))
 
 (defn locations-functions-redirectFunctionUpgradeTraffic$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/redirectFunctionUpgradeTraffic
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/redirectFunctionUpgradeTraffic
   
   Required parameters: name
   
@@ -329,7 +329,7 @@
      auth))))
 
 (defn locations-functions-create$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/create
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/create
   
   Required parameters: parent
   
@@ -415,7 +415,7 @@
      auth))))
 
 (defn locations-functions-generateUploadUrl$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/generateUploadUrl
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/generateUploadUrl
   
   Required parameters: parent
   
@@ -447,7 +447,7 @@
      auth))))
 
 (defn locations-functions-delete$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/delete
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/delete
   
   Required parameters: name
   
@@ -473,7 +473,7 @@
      auth))))
 
 (defn locations-functions-getIamPolicy$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/getIamPolicy
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/getIamPolicy
   
   Required parameters: resource
   
@@ -499,7 +499,7 @@
      auth))))
 
 (defn locations-functions-generateDownloadUrl$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/generateDownloadUrl
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/generateDownloadUrl
   
   Required parameters: name
   
@@ -531,7 +531,7 @@
      auth))))
 
 (defn locations-functions-commitFunctionUpgrade$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/commitFunctionUpgrade
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/commitFunctionUpgrade
   
   Required parameters: name
   
@@ -563,7 +563,7 @@
      auth))))
 
 (defn locations-functions-list$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/list
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/list
   
   Required parameters: parent
   
@@ -589,7 +589,7 @@
      auth))))
 
 (defn locations-functions-rollbackFunctionUpgradeTraffic$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/rollbackFunctionUpgradeTraffic
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/rollbackFunctionUpgradeTraffic
   
   Required parameters: name
   
@@ -621,7 +621,7 @@
      auth))))
 
 (defn locations-functions-abortFunctionUpgrade$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/functions/abortFunctionUpgrade
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.functions/abortFunctionUpgrade
   
   Required parameters: name
   
@@ -653,7 +653,7 @@
      auth))))
 
 (defn locations-runtimes-list$
-  "https://cloud.google.com/functionsapi/reference/rest/v2/projects/locations/runtimes/list
+  "https://cloud.google.com/functions/docs/reference/rest/v2/projects.locations.runtimes/list
   
   Required parameters: parent
   

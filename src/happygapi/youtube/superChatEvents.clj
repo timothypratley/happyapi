@@ -1,13 +1,13 @@
 (ns happygapi.youtube.superChatEvents
   "YouTube Data API v3: superChatEvents.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/superChatEvents"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/youtube/api/reference/rest/v3/superChatEvents/list
+  "https://developers.google.com/youtube/v3/docs/superChatEvents/list
   
   Required parameters: part
   

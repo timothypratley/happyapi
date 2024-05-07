@@ -1,13 +1,13 @@
 (ns happygapi.mybusinessverifications.locations
   "My Business Verifications API: locations.
   The My Business Verifications API provides an interface for taking verifications related actions for locations.
-  See: https://developers.google.com/my-business/api/reference/rest/v1/locations"
+  See: https://developers.google.com/my-business/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getVoiceOfMerchantState$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/getVoiceOfMerchantState
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn fetchVerificationOptions$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/fetchVerificationOptions
+  "https://developers.google.com/my-business
   
   Required parameters: location
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn verify$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/verify
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -103,7 +103,7 @@
      auth))))
 
 (defn verifications-complete$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/verifications/complete
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -135,7 +135,7 @@
      auth))))
 
 (defn verifications-list$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/verifications/list
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   

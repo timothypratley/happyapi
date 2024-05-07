@@ -1,13 +1,13 @@
 (ns happygapi.bigquery.models
   "BigQuery API: models.
   A data platform for customers to create, manage, share and query data.
-  See: https://cloud.google.com/bigquery/api/reference/rest/v2/models"
+  See: https://cloud.google.com/bigquery/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/models/delete
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/models/delete
   
   Required parameters: datasetId, modelId, projectId
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/models/get
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/models/get
   
   Required parameters: datasetId, modelId, projectId
   
@@ -62,7 +62,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/models/list
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/models/list
   
   Required parameters: datasetId, projectId
   
@@ -90,7 +90,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/models/patch
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/models/patch
   
   Required parameters: datasetId, modelId, projectId
   

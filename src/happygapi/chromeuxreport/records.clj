@@ -1,13 +1,13 @@
 (ns happygapi.chromeuxreport.records
   "Chrome UX Report API: records.
   The Chrome UX Report API lets you view real user experience data for millions of websites. 
-  See: https://developers.google.com/web/tools/chrome-user-experience-report/api/referenceapi/reference/rest/v1/records"
+  See: https://developer.chrome.com/docs/crux/api/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn queryRecord$
-  "https://developers.google.com/web/tools/chrome-user-experience-report/api/referenceapi/reference/rest/v1/records/queryRecord
+  "https://developer.chrome.com/docs/crux/api
   
   Required parameters: none
   
@@ -43,7 +43,7 @@
      auth))))
 
 (defn queryHistoryRecord$
-  "https://developers.google.com/web/tools/chrome-user-experience-report/api/referenceapi/reference/rest/v1/records/queryHistoryRecord
+  "https://developer.chrome.com/docs/crux/api
   
   Required parameters: none
   

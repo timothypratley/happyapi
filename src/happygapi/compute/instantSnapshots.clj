@@ -1,13 +1,13 @@
 (ns happygapi.compute.instantSnapshots
   "Compute Engine API: instantSnapshots.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/get
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/get
   
   Required parameters: instantSnapshot, project, zone
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/setIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/insert
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/insert
   
   Required parameters: project, zone
   
@@ -130,7 +130,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/testIamPermissions
   
   Required parameters: project, resource, zone
   
@@ -164,7 +164,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/setLabels
   
   Required parameters: project, resource, zone
   
@@ -197,7 +197,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/aggregatedList
   
   Required parameters: project
   
@@ -225,7 +225,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/delete
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/delete
   
   Required parameters: instantSnapshot, project, zone
   
@@ -254,7 +254,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/getIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -282,7 +282,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instantSnapshots/list
+  "https://cloud.google.com/products/compute/v1/docs/instantSnapshots/list
   
   Required parameters: project, zone
   

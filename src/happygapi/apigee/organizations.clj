@@ -1,13 +1,13 @@
 (ns happygapi.apigee.organizations
   "Apigee API: organizations.
   Use the Apigee API to programmatically develop and manage APIs with a set of RESTful operations. Develop and secure API proxies, deploy and undeploy API proxy revisions, monitor APIs, configure environments, manage users, and more. Note: This product is available as a free trial for a time period of 60 days.
-  See: https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations"
+  See: https://cloud.google.com/apigee"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getProjectMapping$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/getProjectMapping
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn getRuntimeConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/getRuntimeConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn updateSecuritySettings$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/updateSecuritySettings
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -93,7 +93,7 @@
   
   Body: 
   
-  {:name string, :mlRetrainingFeedbackEnabled boolean}
+  {:mlRetrainingFeedbackEnabled boolean, :name string}
   
   UpdateSecuritySettings updates the current security settings for API Security."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -117,7 +117,7 @@
      auth))))
 
 (defn setSyncAuthorization$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/setSyncAuthorization
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -149,7 +149,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/create
+  "https://cloud.google.com/apigee
   
   Required parameters: none
   
@@ -178,12 +178,12 @@
    :runtimeDatabaseEncryptionKeyName string,
    :lastModifiedAt string,
    :projectId string,
-   :addonsConfig {:advancedApiOpsConfig GoogleCloudApigeeV1AdvancedApiOpsConfig,
-                  :analyticsConfig GoogleCloudApigeeV1AnalyticsConfig,
-                  :apiSecurityConfig GoogleCloudApigeeV1ApiSecurityConfig,
-                  :connectorsPlatformConfig GoogleCloudApigeeV1ConnectorsPlatformConfig,
+   :addonsConfig {:apiSecurityConfig GoogleCloudApigeeV1ApiSecurityConfig,
                   :integrationConfig GoogleCloudApigeeV1IntegrationConfig,
-                  :monetizationConfig GoogleCloudApigeeV1MonetizationConfig},
+                  :monetizationConfig GoogleCloudApigeeV1MonetizationConfig,
+                  :connectorsPlatformConfig GoogleCloudApigeeV1ConnectorsPlatformConfig,
+                  :advancedApiOpsConfig GoogleCloudApigeeV1AdvancedApiOpsConfig,
+                  :analyticsConfig GoogleCloudApigeeV1AnalyticsConfig},
    :apigeeProjectId string,
    :attributes [string],
    :subscriptionPlan string,
@@ -213,7 +213,7 @@
      auth))))
 
 (defn setAddons$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/setAddons
+  "https://cloud.google.com/apigee
   
   Required parameters: org
   
@@ -221,12 +221,12 @@
   
   Body: 
   
-  {:addonsConfig {:advancedApiOpsConfig GoogleCloudApigeeV1AdvancedApiOpsConfig,
-                  :analyticsConfig GoogleCloudApigeeV1AnalyticsConfig,
-                  :apiSecurityConfig GoogleCloudApigeeV1ApiSecurityConfig,
-                  :connectorsPlatformConfig GoogleCloudApigeeV1ConnectorsPlatformConfig,
+  {:addonsConfig {:apiSecurityConfig GoogleCloudApigeeV1ApiSecurityConfig,
                   :integrationConfig GoogleCloudApigeeV1IntegrationConfig,
-                  :monetizationConfig GoogleCloudApigeeV1MonetizationConfig}}
+                  :monetizationConfig GoogleCloudApigeeV1MonetizationConfig,
+                  :connectorsPlatformConfig GoogleCloudApigeeV1ConnectorsPlatformConfig,
+                  :advancedApiOpsConfig GoogleCloudApigeeV1AdvancedApiOpsConfig,
+                  :analyticsConfig GoogleCloudApigeeV1AnalyticsConfig}}
   
   Configures the add-ons for the Apigee organization. The existing add-on configuration will be fully replaced."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -250,7 +250,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/update
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -279,12 +279,12 @@
    :runtimeDatabaseEncryptionKeyName string,
    :lastModifiedAt string,
    :projectId string,
-   :addonsConfig {:advancedApiOpsConfig GoogleCloudApigeeV1AdvancedApiOpsConfig,
-                  :analyticsConfig GoogleCloudApigeeV1AnalyticsConfig,
-                  :apiSecurityConfig GoogleCloudApigeeV1ApiSecurityConfig,
-                  :connectorsPlatformConfig GoogleCloudApigeeV1ConnectorsPlatformConfig,
+   :addonsConfig {:apiSecurityConfig GoogleCloudApigeeV1ApiSecurityConfig,
                   :integrationConfig GoogleCloudApigeeV1IntegrationConfig,
-                  :monetizationConfig GoogleCloudApigeeV1MonetizationConfig},
+                  :monetizationConfig GoogleCloudApigeeV1MonetizationConfig,
+                  :connectorsPlatformConfig GoogleCloudApigeeV1ConnectorsPlatformConfig,
+                  :advancedApiOpsConfig GoogleCloudApigeeV1AdvancedApiOpsConfig,
+                  :analyticsConfig GoogleCloudApigeeV1AnalyticsConfig},
    :apigeeProjectId string,
    :attributes [string],
    :subscriptionPlan string,
@@ -314,7 +314,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -340,7 +340,7 @@
      auth))))
 
 (defn getSecuritySettings$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/getSecuritySettings
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -366,7 +366,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -392,7 +392,7 @@
      auth))))
 
 (defn getSyncAuthorization$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/getSyncAuthorization
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -424,7 +424,7 @@
      auth))))
 
 (defn getDeployedIngressConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/getDeployedIngressConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -450,7 +450,7 @@
      auth))))
 
 (defn apps-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apps/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -476,7 +476,7 @@
      auth))))
 
 (defn apps-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apps/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -502,7 +502,7 @@
      auth))))
 
 (defn keyvaluemaps-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/keyvaluemaps/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -528,7 +528,7 @@
      auth))))
 
 (defn keyvaluemaps-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/keyvaluemaps/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -536,7 +536,7 @@
   
   Body: 
   
-  {:encrypted boolean, :name string}
+  {:name string, :encrypted boolean}
   
   Creates a key value map in an organization."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -559,40 +559,8 @@
       :as :json}
      auth))))
 
-(defn keyvaluemaps-entries-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/keyvaluemaps/entries/update
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:value string, :name string}
-  
-  Update key value entry scoped to an organization, environment, or API proxy for an existing key."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/put
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn keyvaluemaps-entries-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/keyvaluemaps/entries/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -617,40 +585,8 @@
       :as :json}
      auth))))
 
-(defn keyvaluemaps-entries-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/keyvaluemaps/entries/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:value string, :name string}
-  
-  Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/entries"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn keyvaluemaps-entries-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/keyvaluemaps/entries/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -675,8 +611,40 @@
       :as :json}
      auth))))
 
+(defn keyvaluemaps-entries-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :value string}
+  
+  Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/entries"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn keyvaluemaps-entries-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/keyvaluemaps/entries/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -701,23 +669,55 @@
       :as :json}
      auth))))
 
-(defn envgroups-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/list
+(defn keyvaluemaps-entries-update$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: none
   
-  Lists all environment groups."
+  Body: 
+  
+  {:name string, :value string}
+  
+  Update key value entry scoped to an organization, environment, or API proxy for an existing key."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn envgroups-getDeployedIngressConfig$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: view
+  
+  Gets the deployed ingress configuration for an environment group."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/envgroups"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -728,7 +728,7 @@
      auth))))
 
 (defn envgroups-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -753,44 +753,8 @@
       :as :json}
      auth))))
 
-(defn envgroups-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/create
-  
-  Required parameters: parent
-  
-  Optional parameters: name
-  
-  Body: 
-  
-  {:state string,
-   :hostnames [string],
-   :createdAt string,
-   :name string,
-   :lastModifiedAt string}
-  
-  Creates a new environment group."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/envgroups"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn envgroups-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -816,7 +780,7 @@
      auth))))
 
 (defn envgroups-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/patch
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -824,11 +788,11 @@
   
   Body: 
   
-  {:state string,
-   :hostnames [string],
-   :createdAt string,
+  {:createdAt string,
    :name string,
-   :lastModifiedAt string}
+   :lastModifiedAt string,
+   :hostnames [string],
+   :state string}
   
   Updates an environment group."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -851,47 +815,22 @@
       :as :json}
      auth))))
 
-(defn envgroups-getDeployedIngressConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/getDeployedIngressConfig
-  
-  Required parameters: name
-  
-  Optional parameters: view
-  
-  Gets the deployed ingress configuration for an environment group."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn envgroups-attachments-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/attachments/create
+(defn envgroups-create$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: name
   
   Body: 
   
-  {:environmentGroupId string,
-   :environment string,
+  {:createdAt string,
    :name string,
-   :createdAt string}
+   :lastModifiedAt string,
+   :hostnames [string],
+   :state string}
   
-  Creates a new attachment of an environment to an environment group."
+  Creates a new environment group."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -899,7 +838,7 @@
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/attachments"
+     "v1/{+parent}/envgroups"
      #{:parent}
      parameters)
     (merge-with
@@ -912,23 +851,49 @@
       :as :json}
      auth))))
 
-(defn envgroups-attachments-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/attachments/get
+(defn envgroups-list$
+  "https://cloud.google.com/apigee
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: pageSize, pageToken
   
-  Gets an environment group attachment."
+  Lists all environment groups."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/envgroups"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn envgroups-attachments-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize
+  
+  Lists all attachments of an environment group."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/attachments"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -939,7 +904,7 @@
      auth))))
 
 (defn envgroups-attachments-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/attachments/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -964,23 +929,23 @@
       :as :json}
      auth))))
 
-(defn envgroups-attachments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/envgroups/attachments/list
+(defn envgroups-attachments-get$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: none
   
-  Lists all attachments of an environment group."
+  Gets an environment group attachment."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/attachments"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -990,12 +955,47 @@
       :as :json}
      auth))))
 
-(defn appgroups-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/list
+(defn envgroups-attachments-create$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: filter, pageToken, pageSize
+  Optional parameters: none
+  
+  Body: 
+  
+  {:environmentGroupId string,
+   :environment string,
+   :createdAt string,
+   :name string}
+  
+  Creates a new attachment of an environment to an environment group."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/attachments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn appgroups-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, filter, pageSize
   
   Lists all AppGroups in an organization. A maximum of 1000 AppGroups are returned in the response if PageSize is not specified, or if the PageSize is greater than 1000."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1016,90 +1016,8 @@
       :as :json}
      auth))))
 
-(defn appgroups-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:appGroupId string,
-   :displayName string,
-   :channelId string,
-   :name string,
-   :createdAt string,
-   :organization string,
-   :channelUri string,
-   :status string,
-   :lastModifiedAt string,
-   :attributes [{:value string, :name string}]}
-  
-  Creates an AppGroup. Once created, user can register apps under the AppGroup to obtain secret key and password. At creation time, the AppGroup's state is set as `active`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/appgroups"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn appgroups-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/update
-  
-  Required parameters: name
-  
-  Optional parameters: action
-  
-  Body: 
-  
-  {:appGroupId string,
-   :displayName string,
-   :channelId string,
-   :name string,
-   :createdAt string,
-   :organization string,
-   :channelUri string,
-   :status string,
-   :lastModifiedAt string,
-   :attributes [{:value string, :name string}]}
-  
-  Updates an AppGroup. This API replaces the existing AppGroup details with those specified in the request. Include or exclude any existing details that you want to retain or delete, respectively. Note that the state of the AppGroup should be updated using `action`, and not via AppGroup."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/put
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn appgroups-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1125,7 +1043,7 @@
      auth))))
 
 (defn appgroups-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1150,34 +1068,90 @@
       :as :json}
      auth))))
 
-(defn appgroups-apps-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/list
+(defn appgroups-update$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: action
+  
+  Body: 
+  
+  {:appGroupId string,
+   :displayName string,
+   :channelId string,
+   :name string,
+   :createdAt string,
+   :organization string,
+   :channelUri string,
+   :status string,
+   :lastModifiedAt string,
+   :attributes [{:name string, :value string}]}
+  
+  Updates an AppGroup. This API replaces the existing AppGroup details with those specified in the request. Include or exclude any existing details that you want to retain or delete, respectively. Note that the state of the AppGroup should be updated using `action`, and not via AppGroup."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn appgroups-create$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: pageToken, pageSize
+  Optional parameters: none
   
-  Lists all apps created by an AppGroup in an Apigee organization. Optionally, you can request an expanded view of the AppGroup apps. Lists all AppGroupApps in an AppGroup. A maximum of 1000 AppGroup apps are returned in the response if PageSize is not specified, or if the PageSize is greater than 1000."
+  Body: 
+  
+  {:appGroupId string,
+   :displayName string,
+   :channelId string,
+   :name string,
+   :createdAt string,
+   :organization string,
+   :channelUri string,
+   :status string,
+   :lastModifiedAt string,
+   :attributes [{:name string, :value string}]}
+  
+  Creates an AppGroup. Once created, user can register apps under the AppGroup to obtain secret key and password. At creation time, the AppGroup's state is set as `active`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/get
+   (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/apps"
+     "v1/{+parent}/appgroups"
      #{:parent}
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn appgroups-apps-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1202,58 +1176,8 @@
       :as :json}
      auth))))
 
-(defn appgroups-apps-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/update
-  
-  Required parameters: name
-  
-  Optional parameters: action
-  
-  Body: 
-  
-  {:scopes [string],
-   :callbackUrl string,
-   :apiProducts [string],
-   :credentials [{:status string,
-                  :issuedAt string,
-                  :consumerKey string,
-                  :attributes [GoogleCloudApigeeV1Attribute],
-                  :consumerSecret string,
-                  :scopes [string],
-                  :apiProducts [GoogleCloudApigeeV1ApiProductRef],
-                  :expiresAt string}],
-   :name string,
-   :keyExpiresIn string,
-   :createdAt string,
-   :status string,
-   :appId string,
-   :lastModifiedAt string,
-   :appGroup string,
-   :attributes [{:value string, :name string}]}
-  
-  Updates the details for an AppGroup app. In addition, you can add an API product to an AppGroup app and automatically generate an API key for the app to use when calling APIs in the API product. If you want to use an existing API key for the API product, add the API product to the API key using the UpdateAppGroupAppKey API. Using this API, you cannot update the app name, as it is the primary key used to identify the app and cannot be changed. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/put
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn appgroups-apps-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -1264,13 +1188,13 @@
   {:scopes [string],
    :callbackUrl string,
    :apiProducts [string],
-   :credentials [{:status string,
-                  :issuedAt string,
-                  :consumerKey string,
+   :credentials [{:consumerKey string,
                   :attributes [GoogleCloudApigeeV1Attribute],
-                  :consumerSecret string,
-                  :scopes [string],
+                  :status string,
                   :apiProducts [GoogleCloudApigeeV1ApiProductRef],
+                  :scopes [string],
+                  :consumerSecret string,
+                  :issuedAt string,
                   :expiresAt string}],
    :name string,
    :keyExpiresIn string,
@@ -1279,7 +1203,7 @@
    :appId string,
    :lastModifiedAt string,
    :appGroup string,
-   :attributes [{:value string, :name string}]}
+   :attributes [{:name string, :value string}]}
   
   Creates an app and associates it with an AppGroup. This API associates the AppGroup app with the specified API product and auto-generates an API key for the app to use in calls to API proxies inside that API product. The `name` is the unique ID of the app that you can use in API calls."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1303,7 +1227,7 @@
      auth))))
 
 (defn appgroups-apps-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1328,8 +1252,84 @@
       :as :json}
      auth))))
 
+(defn appgroups-apps-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Lists all apps created by an AppGroup in an Apigee organization. Optionally, you can request an expanded view of the AppGroup apps. Lists all AppGroupApps in an AppGroup. A maximum of 1000 AppGroup apps are returned in the response if PageSize is not specified, or if the PageSize is greater than 1000."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/apps"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn appgroups-apps-update$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: action
+  
+  Body: 
+  
+  {:scopes [string],
+   :callbackUrl string,
+   :apiProducts [string],
+   :credentials [{:consumerKey string,
+                  :attributes [GoogleCloudApigeeV1Attribute],
+                  :status string,
+                  :apiProducts [GoogleCloudApigeeV1ApiProductRef],
+                  :scopes [string],
+                  :consumerSecret string,
+                  :issuedAt string,
+                  :expiresAt string}],
+   :name string,
+   :keyExpiresIn string,
+   :createdAt string,
+   :status string,
+   :appId string,
+   :lastModifiedAt string,
+   :appGroup string,
+   :attributes [{:name string, :value string}]}
+  
+  Updates the details for an AppGroup app. In addition, you can add an API product to an AppGroup app and automatically generate an API key for the app to use when calling APIs in the API product. If you want to use an existing API key for the API product, add the API product to the API key using the UpdateAppGroupAppKey API. Using this API, you cannot update the app name, as it is the primary key used to identify the app and cannot be changed. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn appgroups-apps-keys-updateAppGroupAppKey$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/keys/updateAppGroupAppKey
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1337,7 +1337,8 @@
   
   Body: 
   
-  {:appGroupAppKey {:scopes [string],
+  {:action string,
+   :appGroupAppKey {:scopes [string],
                     :apiProducts [GoogleCloudApigeeV1APIProductAssociation],
                     :expiresAt string,
                     :expiresInSeconds string,
@@ -1346,8 +1347,7 @@
                     :consumerKey string,
                     :status string,
                     :attributes [GoogleCloudApigeeV1Attribute]},
-   :apiProducts [string],
-   :action string}
+   :apiProducts [string]}
   
   Adds an API product to an AppGroupAppKey, enabling the app that holds the key to access the API resources bundled in the API product. In addition, you can add attributes to the AppGroupAppKey. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively. You can use the same key to access all API products associated with the app."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1371,7 +1371,7 @@
      auth))))
 
 (defn appgroups-apps-keys-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/keys/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -1380,14 +1380,14 @@
   Body: 
   
   {:scopes [string],
-   :apiProducts [{:apiproduct string, :status string}],
+   :apiProducts [{:status string, :apiproduct string}],
    :expiresAt string,
    :expiresInSeconds string,
    :consumerSecret string,
    :issuedAt string,
    :consumerKey string,
    :status string,
-   :attributes [{:value string, :name string}]}
+   :attributes [{:name string, :value string}]}
   
   Creates a custom consumer key and secret for a AppGroup app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the ProductizeAppGroupAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteAppGroupAppKey API."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1411,7 +1411,7 @@
      auth))))
 
 (defn appgroups-apps-keys-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/keys/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1437,7 +1437,7 @@
      auth))))
 
 (defn appgroups-apps-keys-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/keys/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1463,7 +1463,7 @@
      auth))))
 
 (defn appgroups-apps-keys-apiproducts-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/keys/apiproducts/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1489,7 +1489,7 @@
      auth))))
 
 (defn appgroups-apps-keys-apiproducts-updateAppGroupAppKeyApiProduct$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/appgroups/apps/keys/apiproducts/updateAppGroupAppKeyApiProduct
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1514,118 +1514,8 @@
       :as :json}
      auth))))
 
-(defn sites-apicategories-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apicategories/list
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Returns the API categories associated with a portal."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/apicategories"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn sites-apicategories-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apicategories/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes an API category."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn sites-apicategories-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apicategories/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:updateTime string, :siteId string, :id string, :name string}
-  
-  Creates a new API category."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/apicategories"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn sites-apicategories-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apicategories/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets an API category."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn sites-apicategories-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apicategories/patch
+(defn sites-apidocs-updateDocumentation$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1633,9 +1523,12 @@
   
   Body: 
   
-  {:updateTime string, :siteId string, :id string, :name string}
+  {:graphqlDocumentation {:endpointUri string,
+                          :schema GoogleCloudApigeeV1DocumentationFile},
+   :oasDocumentation {:spec GoogleCloudApigeeV1DocumentationFile,
+                      :format string}}
   
-  Updates an API category."
+  Updates the documentation for the specified catalog item. Note that the documentation file contents will not be populated in the return message."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1657,7 +1550,7 @@
      auth))))
 
 (defn sites-apidocs-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apidocs/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1683,7 +1576,7 @@
      auth))))
 
 (defn sites-apidocs-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apidocs/update
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1731,7 +1624,7 @@
      auth))))
 
 (defn sites-apidocs-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apidocs/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -1779,7 +1672,7 @@
      auth))))
 
 (defn sites-apidocs-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apidocs/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1805,7 +1698,7 @@
      auth))))
 
 (defn sites-apidocs-getDocumentation$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apidocs/getDocumentation
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1831,7 +1724,7 @@
      auth))))
 
 (defn sites-apidocs-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apidocs/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -1856,8 +1749,40 @@
       :as :json}
      auth))))
 
-(defn sites-apidocs-updateDocumentation$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sites/apidocs/updateDocumentation
+(defn sites-apicategories-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:updateTime string, :name string, :id string, :siteId string}
+  
+  Creates a new API category."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/apicategories"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn sites-apicategories-patch$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -1865,12 +1790,9 @@
   
   Body: 
   
-  {:oasDocumentation {:format string,
-                      :spec GoogleCloudApigeeV1DocumentationFile},
-   :graphqlDocumentation {:endpointUri string,
-                          :schema GoogleCloudApigeeV1DocumentationFile}}
+  {:updateTime string, :name string, :id string, :siteId string}
   
-  Updates the documentation for the specified catalog item. Note that the documentation file contents will not be populated in the return message."
+  Updates an API category."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1891,14 +1813,40 @@
       :as :json}
      auth))))
 
-(defn endpointAttachments-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/endpointAttachments/get
+(defn sites-apicategories-delete$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets the endpoint attachment."
+  Deletes an API category."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn sites-apicategories-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets an API category."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1917,14 +1865,14 @@
       :as :json}
      auth))))
 
-(defn endpointAttachments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/endpointAttachments/list
+(defn sites-apicategories-list$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: none
   
-  Lists the endpoint attachments in an organization."
+  Returns the API categories associated with a portal."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -1932,7 +1880,7 @@
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/endpointAttachments"
+     "v1/{+parent}/apicategories"
      #{:parent}
      parameters)
     (merge-with
@@ -1943,45 +1891,8 @@
       :as :json}
      auth))))
 
-(defn endpointAttachments-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/endpointAttachments/create
-  
-  Required parameters: parent
-  
-  Optional parameters: endpointAttachmentId
-  
-  Body: 
-  
-  {:serviceAttachment string,
-   :location string,
-   :connectionState string,
-   :state string,
-   :name string,
-   :host string}
-  
-  Creates an endpoint attachment. **Note:** Not supported for Apigee hybrid."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/endpointAttachments"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn endpointAttachments-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/endpointAttachments/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2006,8 +1917,97 @@
       :as :json}
      auth))))
 
+(defn endpointAttachments-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the endpoint attachment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn endpointAttachments-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: endpointAttachmentId
+  
+  Body: 
+  
+  {:serviceAttachment string,
+   :state string,
+   :host string,
+   :connectionState string,
+   :location string,
+   :name string}
+  
+  Creates an endpoint attachment. **Note:** Not supported for Apigee hybrid."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/endpointAttachments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn endpointAttachments-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Lists the endpoint attachments in an organization."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/endpointAttachments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn hostStats-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostStats/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2033,7 +2033,7 @@
      auth))))
 
 (defn apiproducts-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2058,60 +2058,8 @@
       :as :json}
      auth))))
 
-(defn apiproducts-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/list
-  
-  Required parameters: parent
-  
-  Optional parameters: startKey, attributevalue, expand, count, attributename
-  
-  Lists all API product names for an organization. Filter the list by passing an `attributename` and `attibutevalue`. The maximum number of API products returned is 1000. You can paginate the list of API products returned using the `startKey` and `count` query parameters."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/apiproducts"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apiproducts-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets configuration details for an API product. The API product name required in the request URL is the internal name of the product, not the display name. While they may be the same, it depends on whether the API product was created via the UI or the API. View the list of API products to verify the internal name."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn apiproducts-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/update
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2132,10 +2080,10 @@
    :quotaTimeUnit string,
    :proxies [string],
    :lastModifiedAt string,
-   :graphqlOperationGroup {:operationConfigs [GoogleCloudApigeeV1GraphQLOperationConfig],
-                           :operationConfigType string},
+   :graphqlOperationGroup {:operationConfigType string,
+                           :operationConfigs [GoogleCloudApigeeV1GraphQLOperationConfig]},
    :quotaInterval string,
-   :attributes [{:value string, :name string}],
+   :attributes [{:name string, :value string}],
    :operationGroup {:operationConfigs [GoogleCloudApigeeV1OperationConfig],
                     :operationConfigType string},
    :apiResources [string]}
@@ -2161,8 +2109,92 @@
       :as :json}
      auth))))
 
+(defn apiproducts-attributes$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:attribute [{:name string, :value string}]}
+  
+  Updates or creates API product attributes. This API **replaces** the current list of attributes with the attributes specified in the request body. In this way, you can update existing attributes, add new attributes, or delete existing attributes by omitting them from the request body. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}/attributes"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apiproducts-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: attributename, startKey, attributevalue, expand, count
+  
+  Lists all API product names for an organization. Filter the list by passing an `attributename` and `attibutevalue`. The maximum number of API products returned is 1000. You can paginate the list of API products returned using the `startKey` and `count` query parameters."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/apiproducts"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apiproducts-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets configuration details for an API product. The API product name required in the request URL is the internal name of the product, not the display name. While they may be the same, it depends on whether the API product was created via the UI or the API. View the list of API products to verify the internal name."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn apiproducts-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -2183,10 +2215,10 @@
    :quotaTimeUnit string,
    :proxies [string],
    :lastModifiedAt string,
-   :graphqlOperationGroup {:operationConfigs [GoogleCloudApigeeV1GraphQLOperationConfig],
-                           :operationConfigType string},
+   :graphqlOperationGroup {:operationConfigType string,
+                           :operationConfigs [GoogleCloudApigeeV1GraphQLOperationConfig]},
    :quotaInterval string,
-   :attributes [{:value string, :name string}],
+   :attributes [{:name string, :value string}],
    :operationGroup {:operationConfigs [GoogleCloudApigeeV1OperationConfig],
                     :operationConfigType string},
    :apiResources [string]}
@@ -2212,66 +2244,8 @@
       :as :json}
      auth))))
 
-(defn apiproducts-attributes$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/attributes
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:attribute [{:value string, :name string}]}
-  
-  Updates or creates API product attributes. This API **replaces** the current list of attributes with the attributes specified in the request body. In this way, you can update existing attributes, add new attributes, or delete existing attributes by omitting them from the request body. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}/attributes"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apiproducts-attributes-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/attributes/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the value of an API product attribute."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn apiproducts-attributes-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/attributes/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2296,23 +2270,19 @@
       :as :json}
      auth))))
 
-(defn apiproducts-attributes-updateApiProductAttribute$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/attributes/updateApiProductAttribute
+(defn apiproducts-attributes-get$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Body: 
-  
-  {:value string, :name string}
-  
-  Updates the value of an API product attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
+  Gets the value of an API product attribute."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
      "v1/{+name}"
@@ -2320,16 +2290,14 @@
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn apiproducts-attributes-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/attributes/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -2354,131 +2322,25 @@
       :as :json}
      auth))))
 
-(defn apiproducts-rateplans-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/rateplans/delete
+(defn apiproducts-attributes-updateApiProductAttribute$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes a rate plan."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apiproducts-rateplans-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/rateplans/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
   Body: 
   
-  {:description string,
-   :billingPeriod string,
-   :paymentFundingModel string,
-   :startTime string,
-   :displayName string,
-   :name string,
-   :revenueShareRates [{:end string,
-                        :start string,
-                        :sharePercentage number}],
-   :endTime string,
-   :fixedRecurringFee {:currencyCode string,
-                       :nanos integer,
-                       :units string},
-   :createdAt string,
-   :state string,
-   :consumptionPricingRates [{:fee GoogleTypeMoney,
-                              :end string,
-                              :start string}],
-   :apiproduct string,
-   :lastModifiedAt string,
-   :fixedFeeFrequency integer,
-   :consumptionPricingType string,
-   :currencyCode string,
-   :setupFee {:currencyCode string, :nanos integer, :units string},
-   :revenueShareType string}
+  {:name string, :value string}
   
-  Create a rate plan that is associated with an API product in an organization. Using rate plans, API product owners can monetize their API products by configuring one or more of the following: - Billing frequency - Initial setup fees for using an API product - Payment funding model (postpaid only) - Fixed recurring or consumption-based charges for using an API product - Revenue sharing with developer partners An API product can have multiple rate plans associated with it but *only one* rate plan can be active at any point of time. **Note: From the developer's perspective, they purchase API products not rate plans."
+  Updates the value of an API product attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with entities also get cached for at least 180 seconds after entity is accessed during runtime. In this case, the `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/rateplans"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apiproducts-rateplans-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/rateplans/update
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:description string,
-   :billingPeriod string,
-   :paymentFundingModel string,
-   :startTime string,
-   :displayName string,
-   :name string,
-   :revenueShareRates [{:end string,
-                        :start string,
-                        :sharePercentage number}],
-   :endTime string,
-   :fixedRecurringFee {:currencyCode string,
-                       :nanos integer,
-                       :units string},
-   :createdAt string,
-   :state string,
-   :consumptionPricingRates [{:fee GoogleTypeMoney,
-                              :end string,
-                              :start string}],
-   :apiproduct string,
-   :lastModifiedAt string,
-   :fixedFeeFrequency integer,
-   :consumptionPricingType string,
-   :currencyCode string,
-   :setupFee {:currencyCode string, :nanos integer, :units string},
-   :revenueShareType string}
-  
-  Updates an existing rate plan."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/put
-    (util/get-url
-     "https://apigee.googleapis.com/"
      "v1/{+name}"
      #{:name}
      parameters)
@@ -2487,39 +2349,13 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apiproducts-rateplans-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/rateplans/list
-  
-  Required parameters: parent
-  
-  Optional parameters: orderBy, count, expand, state, startKey
-  
-  Lists all the rate plans for an API product."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/rateplans"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn apiproducts-rateplans-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apiproducts/rateplans/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2544,14 +2380,126 @@
       :as :json}
      auth))))
 
-(defn sharedflows-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/list
+(defn apiproducts-rateplans-update$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:description string,
+   :billingPeriod string,
+   :paymentFundingModel string,
+   :startTime string,
+   :displayName string,
+   :name string,
+   :revenueShareRates [{:sharePercentage number,
+                        :start string,
+                        :end string}],
+   :endTime string,
+   :fixedRecurringFee {:nanos integer,
+                       :currencyCode string,
+                       :units string},
+   :createdAt string,
+   :state string,
+   :consumptionPricingRates [{:fee GoogleTypeMoney,
+                              :end string,
+                              :start string}],
+   :apiproduct string,
+   :lastModifiedAt string,
+   :fixedFeeFrequency integer,
+   :consumptionPricingType string,
+   :currencyCode string,
+   :setupFee {:nanos integer, :currencyCode string, :units string},
+   :revenueShareType string}
+  
+  Updates an existing rate plan."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apiproducts-rateplans-create$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: includeMetaData, includeRevisions
+  Optional parameters: none
   
-  Lists all shared flows in the organization."
+  Body: 
+  
+  {:description string,
+   :billingPeriod string,
+   :paymentFundingModel string,
+   :startTime string,
+   :displayName string,
+   :name string,
+   :revenueShareRates [{:sharePercentage number,
+                        :start string,
+                        :end string}],
+   :endTime string,
+   :fixedRecurringFee {:nanos integer,
+                       :currencyCode string,
+                       :units string},
+   :createdAt string,
+   :state string,
+   :consumptionPricingRates [{:fee GoogleTypeMoney,
+                              :end string,
+                              :start string}],
+   :apiproduct string,
+   :lastModifiedAt string,
+   :fixedFeeFrequency integer,
+   :consumptionPricingType string,
+   :currencyCode string,
+   :setupFee {:nanos integer, :currencyCode string, :units string},
+   :revenueShareType string}
+  
+  Create a rate plan that is associated with an API product in an organization. Using rate plans, API product owners can monetize their API products by configuring one or more of the following: - Billing frequency - Initial setup fees for using an API product - Payment funding model (postpaid only) - Fixed recurring or consumption-based charges for using an API product - Revenue sharing with developer partners An API product can have multiple rate plans associated with it but *only one* rate plan can be active at any point of time. **Note: From the developer's perspective, they purchase API products not rate plans."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/rateplans"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apiproducts-rateplans-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: count, expand, orderBy, state, startKey
+  
+  Lists all the rate plans for an API product."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -2559,7 +2507,7 @@
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/sharedflows"
+     "v1/{+parent}/rateplans"
      #{:parent}
      parameters)
     (merge-with
@@ -2570,19 +2518,19 @@
       :as :json}
      auth))))
 
-(defn sharedflows-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/get
+(defn apiproducts-rateplans-delete$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets a shared flow by name, including a list of its revisions."
+  Deletes a rate plan."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/delete
     (util/get-url
      "https://apigee.googleapis.com/"
      "v1/{+name}"
@@ -2597,7 +2545,7 @@
      auth))))
 
 (defn sharedflows-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -2605,7 +2553,7 @@
   
   Body: 
   
-  {:extensions [{}], :data string, :contentType string}
+  {:contentType string, :data string, :extensions [{}]}
   
   Uploads a ZIP-formatted shared flow configuration bundle to an organization. If the shared flow already exists, this creates a new revision of it. If the shared flow does not exist, this creates it. Once imported, the shared flow revision must be deployed before it can be accessed at runtime. The size limit of a shared flow bundle is 15 MB."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -2629,7 +2577,7 @@
      auth))))
 
 (defn sharedflows-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2654,19 +2602,19 @@
       :as :json}
      auth))))
 
-(defn sharedflows-revisions-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/revisions/delete
+(defn sharedflows-get$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes a shared flow and all associated policies, resources, and revisions. You must undeploy the shared flow before deleting it."
+  Gets a shared flow by name, including a list of its revisions."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/delete
+   (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
      "v1/{+name}"
@@ -2680,8 +2628,34 @@
       :as :json}
      auth))))
 
+(defn sharedflows-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: includeRevisions, includeMetaData
+  
+  Lists all shared flows in the organization."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/sharedflows"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn sharedflows-revisions-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/revisions/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2707,7 +2681,7 @@
      auth))))
 
 (defn sharedflows-revisions-updateSharedFlowRevision$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/revisions/updateSharedFlowRevision
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2715,7 +2689,7 @@
   
   Body: 
   
-  {:extensions [{}], :data string, :contentType string}
+  {:contentType string, :data string, :extensions [{}]}
   
   Updates a shared flow revision. This operation is only allowed on revisions which have never been deployed. After deployment a revision becomes immutable, even if it becomes undeployed. The payload is a ZIP-formatted shared flow. Content type must be either multipart/form-data or application/octet-stream."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -2738,8 +2712,34 @@
       :as :json}
      auth))))
 
+(defn sharedflows-revisions-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a shared flow and all associated policies, resources, and revisions. You must undeploy the shared flow before deleting it."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn sharedflows-revisions-deployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/revisions/deployments/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -2765,7 +2765,7 @@
      auth))))
 
 (defn sharedflows-deployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/sharedflows/deployments/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -2791,7 +2791,7 @@
      auth))))
 
 (defn deployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/deployments/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -2817,7 +2817,7 @@
      auth))))
 
 (defn environments-getTraceConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/getTraceConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2843,7 +2843,7 @@
      auth))))
 
 (defn environments-getApiSecurityRuntimeConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/getApiSecurityRuntimeConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2869,7 +2869,7 @@
      auth))))
 
 (defn environments-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2895,7 +2895,7 @@
      auth))))
 
 (defn environments-unsubscribe$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/unsubscribe
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -2927,7 +2927,7 @@
      auth))))
 
 (defn environments-updateDebugmask$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/updateDebugmask
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -2967,7 +2967,7 @@
      auth))))
 
 (defn environments-setIamPolicy$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/setIamPolicy
+  "https://cloud.google.com/apigee
   
   Required parameters: resource
   
@@ -2975,11 +2975,11 @@
   
   Body: 
   
-  {:updateMask string,
-   :policy {:version integer,
+  {:policy {:version integer,
+            :bindings [GoogleIamV1Binding],
             :etag string,
-            :auditConfigs [GoogleIamV1AuditConfig],
-            :bindings [GoogleIamV1Binding]}}
+            :auditConfigs [GoogleIamV1AuditConfig]},
+   :updateMask string}
   
   Sets the IAM policy on an environment, if the policy already exists it will be replaced. For more information, see [Manage users, roles, and permissions using the API](https://cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles). You must have the `apigee.environments.setIamPolicy` permission to call this API."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3003,7 +3003,7 @@
      auth))))
 
 (defn environments-testIamPermissions$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/testIamPermissions
+  "https://cloud.google.com/apigee
   
   Required parameters: resource
   
@@ -3035,7 +3035,7 @@
      auth))))
 
 (defn environments-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -3046,9 +3046,9 @@
   {:description string,
    :properties {:property [GoogleCloudApigeeV1Property]},
    :apiProxyType string,
-   :nodeConfig {:currentAggregateNodeCount string,
-                :maxNodeCount string,
-                :minNodeCount string},
+   :nodeConfig {:minNodeCount string,
+                :currentAggregateNodeCount string,
+                :maxNodeCount string},
    :displayName string,
    :name string,
    :createdAt string,
@@ -3081,7 +3081,7 @@
      auth))))
 
 (defn environments-updateSecurityActionsConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/updateSecurityActionsConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3089,7 +3089,7 @@
   
   Body: 
   
-  {:enabled boolean, :name string, :updateTime string}
+  {:updateTime string, :enabled boolean, :name string}
   
   UpdateSecurityActionConfig updates the current SecurityActions configuration. This method is used to enable/disable the feature at the environment level."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3113,7 +3113,7 @@
      auth))))
 
 (defn environments-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/update
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3124,9 +3124,9 @@
   {:description string,
    :properties {:property [GoogleCloudApigeeV1Property]},
    :apiProxyType string,
-   :nodeConfig {:currentAggregateNodeCount string,
-                :maxNodeCount string,
-                :minNodeCount string},
+   :nodeConfig {:minNodeCount string,
+                :currentAggregateNodeCount string,
+                :maxNodeCount string},
    :displayName string,
    :name string,
    :createdAt string,
@@ -3159,7 +3159,7 @@
      auth))))
 
 (defn environments-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3185,7 +3185,7 @@
      auth))))
 
 (defn environments-modifyEnvironment$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/modifyEnvironment
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3196,9 +3196,9 @@
   {:description string,
    :properties {:property [GoogleCloudApigeeV1Property]},
    :apiProxyType string,
-   :nodeConfig {:currentAggregateNodeCount string,
-                :maxNodeCount string,
-                :minNodeCount string},
+   :nodeConfig {:minNodeCount string,
+                :currentAggregateNodeCount string,
+                :maxNodeCount string},
    :displayName string,
    :name string,
    :createdAt string,
@@ -3231,7 +3231,7 @@
      auth))))
 
 (defn environments-getIamPolicy$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/getIamPolicy
+  "https://cloud.google.com/apigee
   
   Required parameters: resource
   
@@ -3257,7 +3257,7 @@
      auth))))
 
 (defn environments-updateTraceConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/updateTraceConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3265,9 +3265,9 @@
   
   Body: 
   
-  {:samplingConfig {:samplingRate number, :sampler string},
-   :endpoint string,
-   :exporter string}
+  {:exporter string,
+   :samplingConfig {:samplingRate number, :sampler string},
+   :endpoint string}
   
   Updates the trace configurations in an environment. Note that the repeated fields have replace semantics when included in the field mask and that they will be overwritten by the value of the fields in the request body."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3291,7 +3291,7 @@
      auth))))
 
 (defn environments-getSecurityActionsConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/getSecurityActionsConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3317,7 +3317,7 @@
      auth))))
 
 (defn environments-getAddonsConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/getAddonsConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3343,7 +3343,7 @@
      auth))))
 
 (defn environments-getDebugmask$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/getDebugmask
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3369,7 +3369,7 @@
      auth))))
 
 (defn environments-updateEnvironment$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/updateEnvironment
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3380,9 +3380,9 @@
   {:description string,
    :properties {:property [GoogleCloudApigeeV1Property]},
    :apiProxyType string,
-   :nodeConfig {:currentAggregateNodeCount string,
-                :maxNodeCount string,
-                :minNodeCount string},
+   :nodeConfig {:minNodeCount string,
+                :currentAggregateNodeCount string,
+                :maxNodeCount string},
    :displayName string,
    :name string,
    :createdAt string,
@@ -3415,7 +3415,7 @@
      auth))))
 
 (defn environments-getDeployedConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/getDeployedConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3441,7 +3441,7 @@
      auth))))
 
 (defn environments-subscribe$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/subscribe
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -3467,7 +3467,7 @@
      auth))))
 
 (defn environments-caches-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/caches/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3492,192 +3492,8 @@
       :as :json}
      auth))))
 
-(defn environments-archiveDeployments-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/archiveDeployments/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the specified ArchiveDeployment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-archiveDeployments-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/archiveDeployments/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:gcsUri string,
-   :name string,
-   :labels {},
-   :createdAt string,
-   :updatedAt string,
-   :operation string}
-  
-  Creates a new ArchiveDeployment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/archiveDeployments"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-archiveDeployments-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/archiveDeployments/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes an archive deployment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-archiveDeployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/archiveDeployments/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize, filter
-  
-  Lists the ArchiveDeployments in the specified Environment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/archiveDeployments"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-archiveDeployments-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/archiveDeployments/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:gcsUri string,
-   :name string,
-   :labels {},
-   :createdAt string,
-   :updatedAt string,
-   :operation string}
-  
-  Updates an existing ArchiveDeployment. Labels can modified but most of the other fields are not modifiable."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-archiveDeployments-generateUploadUrl$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/archiveDeployments/generateUploadUrl
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {}
-  
-  Generates a signed URL for uploading an Archive zip file to Google Cloud Storage. Once the upload is complete, the signed URL should be passed to CreateArchiveDeployment. When uploading to the generated signed URL, please follow these restrictions: * Source file type should be a zip file. * Source file size should not exceed 1GB limit. * No credentials should be attached - the signed URLs provide access to the target bucket using internal service identity; if credentials were attached, the identity from the credentials would be used, but that identity does not have permissions to upload files to the URL. When making a HTTP PUT request, these two headers need to be specified: * `content-type: application/zip` * `x-goog-content-length-range: 0,1073741824` And this header SHOULD NOT be specified: * `Authorization: Bearer YOUR_TOKEN`"
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/archiveDeployments:generateUploadUrl"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-archiveDeployments-generateDownloadUrl$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/archiveDeployments/generateDownloadUrl
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3708,8 +3524,192 @@
       :as :json}
      auth))))
 
+(defn environments-archiveDeployments-patch$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:updatedAt string,
+   :gcsUri string,
+   :labels {},
+   :createdAt string,
+   :operation string,
+   :name string}
+  
+  Updates an existing ArchiveDeployment. Labels can modified but most of the other fields are not modifiable."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-archiveDeployments-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the specified ArchiveDeployment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-archiveDeployments-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken, filter
+  
+  Lists the ArchiveDeployments in the specified Environment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/archiveDeployments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-archiveDeployments-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:updatedAt string,
+   :gcsUri string,
+   :labels {},
+   :createdAt string,
+   :operation string,
+   :name string}
+  
+  Creates a new ArchiveDeployment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/archiveDeployments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-archiveDeployments-generateUploadUrl$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Generates a signed URL for uploading an Archive zip file to Google Cloud Storage. Once the upload is complete, the signed URL should be passed to CreateArchiveDeployment. When uploading to the generated signed URL, please follow these restrictions: * Source file type should be a zip file. * Source file size should not exceed 1GB limit. * No credentials should be attached - the signed URLs provide access to the target bucket using internal service identity; if credentials were attached, the identity from the credentials would be used, but that identity does not have permissions to upload files to the URL. When making a HTTP PUT request, these two headers need to be specified: * `content-type: application/zip` * `x-goog-content-length-range: 0,1073741824` And this header SHOULD NOT be specified: * `Authorization: Bearer YOUR_TOKEN`"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/archiveDeployments:generateUploadUrl"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-archiveDeployments-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes an archive deployment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-securityActions-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityActions/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -3718,14 +3718,16 @@
   Body: 
   
   {:description string,
-   :conditionConfig {:ipAddressRanges [string],
-                     :accessTokens [string],
+   :conditionConfig {:accessTokens [string],
                      :apiProducts [string],
-                     :apiKeys [string],
+                     :regionCodes [string],
                      :developerApps [string],
+                     :developers [string],
+                     :ipAddressRanges [string],
+                     :asns [string],
+                     :apiKeys [string],
                      :botReasons [string],
-                     :userAgents [string],
-                     :developers [string]},
+                     :userAgents [string]},
    :name string,
    :flag {:headers [GoogleCloudApigeeV1SecurityActionHttpHeader]},
    :createTime string,
@@ -3757,40 +3759,8 @@
       :as :json}
      auth))))
 
-(defn environments-securityActions-enable$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityActions/enable
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {}
-  
-  Enable a SecurityAction. The `state` of the SecurityAction after enabling is `ENABLED`. `EnableSecurityAction` can be called on SecurityActions in the state `DISABLED`; SecurityActions in a different state (including `ENABLED) return an error."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}:enable"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-securityActions-disable$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityActions/disable
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3821,12 +3791,44 @@
       :as :json}
      auth))))
 
+(defn environments-securityActions-enable$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Enable a SecurityAction. The `state` of the SecurityAction after enabling is `ENABLED`. `EnableSecurityAction` can be called on SecurityActions in the state `DISABLED`; SecurityActions in a different state (including `ENABLED) return an error."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}:enable"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-securityActions-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityActions/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: pageToken, pageSize, filter
+  Optional parameters: pageSize, filter, pageToken
   
   Returns a list of SecurityActions. This returns both enabled and disabled actions."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3848,7 +3850,7 @@
      auth))))
 
 (defn environments-securityActions-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityActions/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -3873,42 +3875,48 @@
       :as :json}
      auth))))
 
-(defn environments-resourcefiles-listEnvironmentResources$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/resourcefiles/listEnvironmentResources
+(defn environments-resourcefiles-create$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent, type
+  Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: type, name
   
-  Lists all resource files, optionally filtering by type. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files)."
+  Body: 
+  
+  {:contentType string, :data string, :extensions [{}]}
+  
+  Creates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files)."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent :type})]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/get
+   (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/resourcefiles/{type}"
-     #{:parent :type}
+     "v1/{+parent}/resourcefiles"
+     #{:parent}
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn environments-resourcefiles-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/resourcefiles/update
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent, name, type
+  Required parameters: type, name, parent
   
   Optional parameters: none
   
   Body: 
   
-  {:extensions [{}], :data string, :contentType string}
+  {:contentType string, :data string, :extensions [{}]}
   
   Updates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files)."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3932,9 +3940,9 @@
      auth))))
 
 (defn environments-resourcefiles-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/resourcefiles/get
+  "https://cloud.google.com/apigee
   
-  Required parameters: name, parent, type
+  Required parameters: type, name, parent
   
   Optional parameters: none
   
@@ -3957,34 +3965,8 @@
       :as :json}
      auth))))
 
-(defn environments-resourcefiles-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/resourcefiles/list
-  
-  Required parameters: parent
-  
-  Optional parameters: type
-  
-  Lists all resource files, optionally filtering by type. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files)."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/resourcefiles"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-resourcefiles-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/resourcefiles/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: parent, type, name
   
@@ -4009,23 +3991,45 @@
       :as :json}
      auth))))
 
-(defn environments-resourcefiles-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/resourcefiles/create
+(defn environments-resourcefiles-listEnvironmentResources$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent, type
+  
+  Optional parameters: none
+  
+  Lists all resource files, optionally filtering by type. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files)."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent :type})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/resourcefiles/{type}"
+     #{:parent :type}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-resourcefiles-list$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: name, type
+  Optional parameters: type
   
-  Body: 
-  
-  {:extensions [{}], :data string, :contentType string}
-  
-  Creates a resource file. Specify the `Content-Type` as `application/octet-stream` or `multipart/form-data`. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files)."
+  Lists all resource files, optionally filtering by type. For more information about resource files, see [Resource files](https://cloud.google.com/apigee/docs/api-platform/develop/resource-files)."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
      "v1/{+parent}/resourcefiles"
@@ -4033,16 +4037,14 @@
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn environments-keyvaluemaps-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keyvaluemaps/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4068,7 +4070,7 @@
      auth))))
 
 (defn environments-keyvaluemaps-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keyvaluemaps/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -4076,7 +4078,7 @@
   
   Body: 
   
-  {:encrypted boolean, :name string}
+  {:name string, :encrypted boolean}
   
   Creates a key value map in an environment."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -4100,7 +4102,7 @@
      auth))))
 
 (defn environments-keyvaluemaps-entries-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keyvaluemaps/entries/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4125,34 +4127,8 @@
       :as :json}
      auth))))
 
-(defn environments-keyvaluemaps-entries-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keyvaluemaps/entries/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize
-  
-  Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/entries"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-keyvaluemaps-entries-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keyvaluemaps/entries/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4177,8 +4153,34 @@
       :as :json}
      auth))))
 
+(defn environments-keyvaluemaps-entries-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/entries"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-keyvaluemaps-entries-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keyvaluemaps/entries/update
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4186,7 +4188,7 @@
   
   Body: 
   
-  {:value string, :name string}
+  {:name string, :value string}
   
   Update key value entry scoped to an organization, environment, or API proxy for an existing key."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -4210,7 +4212,7 @@
      auth))))
 
 (defn environments-keyvaluemaps-entries-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keyvaluemaps/entries/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -4218,7 +4220,7 @@
   
   Body: 
   
-  {:value string, :name string}
+  {:name string, :value string}
   
   Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -4241,23 +4243,23 @@
       :as :json}
      auth))))
 
-(defn environments-securityReports-getResultView$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityReports/getResultView
+(defn environments-securityReports-list$
+  "https://cloud.google.com/apigee
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: status, pageSize, submittedBy, pageToken, to, from, dataset
   
-  After the query is completed, use this API to view the query result when result size is small."
+  Return a list of Security Reports"
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/securityReports"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -4267,8 +4269,54 @@
       :as :json}
      auth))))
 
+(defn environments-securityReports-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:reportDefinitionId string,
+   :limit integer,
+   :timeRange any,
+   :displayName string,
+   :envgroupHostname string,
+   :dimensions [string],
+   :filter string,
+   :mimeType string,
+   :csvDelimiter string,
+   :groupByTimeUnit string,
+   :metrics [{:value string,
+              :aggregationFunction string,
+              :operator string,
+              :name string,
+              :alias string}]}
+  
+  Submit a report request to be processed in the background. If the submission succeeds, the API returns a 200 status and an ID that refer to the report request. In addition to the HTTP status 200, the `state` of \"enqueued\" means that the request succeeded."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/securityReports"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-securityReports-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityReports/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4294,7 +4342,7 @@
      auth))))
 
 (defn environments-securityReports-getResult$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityReports/getResult
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4319,23 +4367,23 @@
       :as :json}
      auth))))
 
-(defn environments-securityReports-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityReports/list
+(defn environments-securityReports-getResultView$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: pageSize, to, status, submittedBy, dataset, pageToken, from
+  Optional parameters: none
   
-  Return a list of Security Reports"
+  After the query is completed, use this API to view the query result when result size is small."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/securityReports"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -4345,54 +4393,8 @@
       :as :json}
      auth))))
 
-(defn environments-securityReports-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityReports/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:reportDefinitionId string,
-   :limit integer,
-   :timeRange any,
-   :displayName string,
-   :envgroupHostname string,
-   :dimensions [string],
-   :filter string,
-   :mimeType string,
-   :csvDelimiter string,
-   :groupByTimeUnit string,
-   :metrics [{:alias string,
-              :name string,
-              :value string,
-              :operator string,
-              :aggregationFunction string}]}
-  
-  Submit a report request to be processed in the background. If the submission succeeds, the API returns a 200 status and an ID that refer to the report request. In addition to the HTTP status 200, the `state` of \"enqueued\" means that the request succeeded."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/securityReports"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-securityStats-queryTimeSeriesStats$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityStats/queryTimeSeriesStats
+  "https://cloud.google.com/apigee
   
   Required parameters: orgenv
   
@@ -4400,14 +4402,14 @@
   
   Body: 
   
-  {:timeRange {:endTime string, :startTime string},
-   :pageToken string,
-   :windowSize string,
+  {:windowSize string,
    :dimensions [string],
-   :metrics [{:name string, :order string, :aggregation string}],
+   :pageSize integer,
+   :timeRange {:startTime string, :endTime string},
+   :metrics [{:order string, :name string, :aggregation string}],
    :filter string,
-   :timestampOrder string,
-   :pageSize integer}
+   :pageToken string,
+   :timestampOrder string}
   
   Retrieve security statistics as a collection of time series."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -4431,7 +4433,7 @@
      auth))))
 
 (defn environments-securityStats-queryTabularStats$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityStats/queryTabularStats
+  "https://cloud.google.com/apigee
   
   Required parameters: orgenv
   
@@ -4439,12 +4441,12 @@
   
   Body: 
   
-  {:pageToken string,
+  {:filter string,
+   :timeRange {:startTime string, :endTime string},
    :pageSize integer,
-   :timeRange {:endTime string, :startTime string},
-   :metrics [{:name string, :order string, :aggregation string}],
-   :filter string,
-   :dimensions [string]}
+   :dimensions [string],
+   :metrics [{:order string, :name string, :aggregation string}],
+   :pageToken string}
   
   Retrieve security statistics as tabular rows."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -4467,43 +4469,8 @@
       :as :json}
      auth))))
 
-(defn environments-flowhooks-attachSharedFlowToFlowHook$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/flowhooks/attachSharedFlowToFlowHook
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:sharedFlow string,
-   :flowHookPoint string,
-   :description string,
-   :continueOnError boolean}
-  
-  Attaches a shared flow to a flow hook."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/put
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-flowhooks-detachSharedFlowFromFlowHook$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/flowhooks/detachSharedFlowFromFlowHook
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4529,7 +4496,7 @@
      auth))))
 
 (defn environments-flowhooks-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/flowhooks/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4554,8 +4521,8 @@
       :as :json}
      auth))))
 
-(defn environments-references-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/references/update
+(defn environments-flowhooks-attachSharedFlowToFlowHook$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4563,12 +4530,12 @@
   
   Body: 
   
-  {:resourceType string,
-   :refers string,
-   :name string,
-   :description string}
+  {:description string,
+   :flowHookPoint string,
+   :sharedFlow string,
+   :continueOnError boolean}
   
-  Updates an existing Reference. Note that this operation has PUT semantics; it will replace the entirety of the existing Reference with the resource in the request body."
+  Attaches a shared flow to a flow hook."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -4590,7 +4557,7 @@
      auth))))
 
 (defn environments-references-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/references/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4616,7 +4583,7 @@
      auth))))
 
 (defn environments-references-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/references/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4641,8 +4608,43 @@
       :as :json}
      auth))))
 
+(defn environments-references-update$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:refers string,
+   :resourceType string,
+   :name string,
+   :description string}
+  
+  Updates an existing Reference. Note that this operation has PUT semantics; it will replace the entirety of the existing Reference with the resource in the request body."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-references-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/references/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -4650,8 +4652,8 @@
   
   Body: 
   
-  {:resourceType string,
-   :refers string,
+  {:refers string,
+   :resourceType string,
    :name string,
    :description string}
   
@@ -4677,7 +4679,7 @@
      auth))))
 
 (defn environments-sharedflows-revisions-undeploy$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/sharedflows/revisions/undeploy
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4702,34 +4704,8 @@
       :as :json}
      auth))))
 
-(defn environments-sharedflows-revisions-getDeployments$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/sharedflows/revisions/getDeployments
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the deployment of a shared flow revision and actual state reported by runtime pods."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}/deployments"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-sharedflows-revisions-deploy$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/sharedflows/revisions/deploy
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4754,8 +4730,34 @@
       :as :json}
      auth))))
 
+(defn environments-sharedflows-revisions-getDeployments$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the deployment of a shared flow revision and actual state reported by runtime pods."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}/deployments"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-sharedflows-deployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/sharedflows/deployments/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -4781,7 +4783,7 @@
      auth))))
 
 (defn environments-deployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/deployments/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -4806,23 +4808,23 @@
       :as :json}
      auth))))
 
-(defn environments-analytics-admin-getSchemav2$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/analytics/admin/getSchemav2
+(defn environments-analytics-exports-list$
+  "https://cloud.google.com/apigee
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: type, disableCache
+  Optional parameters: none
   
-  Gets a list of metrics and dimensions that can be used to create analytics queries and reports. Each schema element contains the name of the field, its associated type, and a flag indicating whether it is a standard or custom field."
+  Lists the details and status of all analytics export jobs belonging to the parent organization and environment."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/analytics/exports"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -4833,7 +4835,7 @@
      auth))))
 
 (defn environments-analytics-exports-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/analytics/exports/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4859,7 +4861,7 @@
      auth))))
 
 (defn environments-analytics-exports-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/analytics/exports/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -4867,12 +4869,12 @@
   
   Body: 
   
-  {:datastoreName string,
+  {:description string,
+   :outputFormat string,
    :name string,
    :csvDelimiter string,
-   :outputFormat string,
-   :description string,
-   :dateRange {:end string, :start string}}
+   :dateRange {:end string, :start string},
+   :datastoreName string}
   
   Submit a data export job to be processed in the background. If the request is successful, the API returns a 201 status, a URI that can be used to retrieve the status of the export job, and the `state` value of \"enqueued\"."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -4895,23 +4897,23 @@
       :as :json}
      auth))))
 
-(defn environments-analytics-exports-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/analytics/exports/list
+(defn environments-analytics-admin-getSchemav2$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: type, disableCache
   
-  Lists the details and status of all analytics export jobs belonging to the parent organization and environment."
+  Gets a list of metrics and dimensions that can be used to create analytics queries and reports. Each schema element contains the name of the field, its associated type, and a flag indicating whether it is a standard or custom field."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/analytics/exports"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -4922,7 +4924,7 @@
      auth))))
 
 (defn environments-optimizedStats-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/optimizedStats/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -4947,8 +4949,76 @@
       :as :json}
      auth))))
 
+(defn environments-traceConfig-overrides-patch$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:samplingConfig {:samplingRate number, :sampler string},
+   :name string,
+   :apiProxy string}
+  
+  Updates a distributed trace configuration override. Note that the repeated fields have replace semantics when included in the field mask and that they will be overwritten by the value of the fields in the request body."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-traceConfig-overrides-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:samplingConfig {:samplingRate number, :sampler string},
+   :name string,
+   :apiProxy string}
+  
+  Creates a trace configuration override. The response contains a system-generated UUID, that can be used to view, update, or delete the configuration override. Use the List API to view the existing trace configuration overrides."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/overrides"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-traceConfig-overrides-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/traceConfig/overrides/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -4973,102 +5043,8 @@
       :as :json}
      auth))))
 
-(defn environments-traceConfig-overrides-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/traceConfig/overrides/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:samplingConfig {:samplingRate number, :sampler string},
-   :apiProxy string,
-   :name string}
-  
-  Updates a distributed trace configuration override. Note that the repeated fields have replace semantics when included in the field mask and that they will be overwritten by the value of the fields in the request body."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-traceConfig-overrides-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/traceConfig/overrides/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:samplingConfig {:samplingRate number, :sampler string},
-   :apiProxy string,
-   :name string}
-  
-  Creates a trace configuration override. The response contains a system-generated UUID, that can be used to view, update, or delete the configuration override. Use the List API to view the existing trace configuration overrides."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/overrides"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-traceConfig-overrides-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/traceConfig/overrides/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a distributed trace configuration override."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-traceConfig-overrides-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/traceConfig/overrides/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5093,40 +5069,14 @@
       :as :json}
      auth))))
 
-(defn environments-keystores-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/get
+(defn environments-traceConfig-overrides-delete$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets a keystore or truststore."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-keystores-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a keystore or truststore."
+  Deletes a distributed trace configuration override."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -5146,7 +5096,7 @@
      auth))))
 
 (defn environments-keystores-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -5177,40 +5127,14 @@
       :as :json}
      auth))))
 
-(defn environments-keystores-aliases-getCertificate$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/aliases/getCertificate
+(defn environments-keystores-delete$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets the certificate from an alias in PEM-encoded form."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}/certificate"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-keystores-aliases-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/aliases/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes an alias."
+  Deletes a keystore or truststore."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -5229,40 +5153,34 @@
       :as :json}
      auth))))
 
-(defn environments-keystores-aliases-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/aliases/create
+(defn environments-keystores-get$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: ignoreExpiryValidation, alias, _password, format, ignoreNewlineValidation
+  Optional parameters: none
   
-  Body: 
-  
-  {:extensions [{}], :data string, :contentType string}
-  
-  Creates an alias from a key/certificate pair. The structure of the request is controlled by the `format` query parameter: - `keycertfile` - Separate PEM-encoded key and certificate files are uploaded. Set `Content-Type: multipart/form-data` and include the `keyFile`, `certFile`, and `password` (if keys are encrypted) fields in the request body. If uploading to a truststore, omit `keyFile`. - `pkcs12` - A PKCS12 file is uploaded. Set `Content-Type: multipart/form-data`, provide the file in the `file` field, and include the `password` field if the file is encrypted in the request body. - `selfsignedcert` - A new private key and certificate are generated. Set `Content-Type: application/json` and include CertificateGenerationSpec in the request body."
+  Gets a keystore or truststore."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/aliases"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn environments-keystores-aliases-csr$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/aliases/csr
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5287,8 +5205,34 @@
       :as :json}
      auth))))
 
+(defn environments-keystores-aliases-getCertificate$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the certificate from an alias in PEM-encoded form."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}/certificate"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-keystores-aliases-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/aliases/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5313,8 +5257,34 @@
       :as :json}
      auth))))
 
+(defn environments-keystores-aliases-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes an alias."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-keystores-aliases-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/keystores/aliases/update
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5322,7 +5292,7 @@
   
   Body: 
   
-  {:extensions [{}], :data string, :contentType string}
+  {:contentType string, :data string, :extensions [{}]}
   
   Updates the certificate in an alias."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5345,60 +5315,40 @@
       :as :json}
      auth))))
 
-(defn environments-securityIncidents-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityIncidents/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  GetSecurityIncident gets the specified security incident. Returns NOT_FOUND if security incident is not present for the specified organization and environment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-securityIncidents-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityIncidents/list
+(defn environments-keystores-aliases-create$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: pageSize, pageToken, filter
+  Optional parameters: alias, ignoreExpiryValidation, _password, ignoreNewlineValidation, format
   
-  ListSecurityIncidents lists all the security incident associated with the environment."
+  Body: 
+  
+  {:contentType string, :data string, :extensions [{}]}
+  
+  Creates an alias from a key/certificate pair. The structure of the request is controlled by the `format` query parameter: - `keycertfile` - Separate PEM-encoded key and certificate files are uploaded. Set `Content-Type: multipart/form-data` and include the `keyFile`, `certFile`, and `password` (if keys are encrypted) fields in the request body. If uploading to a truststore, omit `keyFile`. - `pkcs12` - A PKCS12 file is uploaded. Set `Content-Type: multipart/form-data`, provide the file in the `file` field, and include the `password` field if the file is encrypted in the request body. - `selfsignedcert` - A new private key and certificate are generated. Set `Content-Type: application/json` and include CertificateGenerationSpec in the request body."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/get
+   (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/securityIncidents"
+     "v1/{+parent}/aliases"
      #{:parent}
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn environments-securityIncidents-batchUpdate$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityIncidents/batchUpdate
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -5430,8 +5380,60 @@
       :as :json}
      auth))))
 
+(defn environments-securityIncidents-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize, filter
+  
+  ListSecurityIncidents lists all the security incident associated with the environment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/securityIncidents"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-securityIncidents-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  GetSecurityIncident gets the specified security incident. Returns NOT_FOUND if security incident is not present for the specified organization and environment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-securityIncidents-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/securityIncidents/patch
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5471,7 +5473,7 @@
      auth))))
 
 (defn environments-targetservers-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/targetservers/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -5479,12 +5481,8 @@
   
   Body: 
   
-  {:name string,
-   :protocol string,
-   :port integer,
-   :description string,
-   :isEnabled boolean,
-   :sSLInfo {:protocols [string],
+  {:sSLInfo {:enforce boolean,
+             :protocols [string],
              :keyStore string,
              :keyAlias string,
              :trustStore string,
@@ -5493,7 +5491,12 @@
              :ciphers [string],
              :enabled boolean,
              :ignoreValidationErrors boolean},
-   :host string}
+   :host string,
+   :isEnabled boolean,
+   :description string,
+   :name string,
+   :protocol string,
+   :port integer}
   
   Creates a TargetServer in the specified environment."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5516,80 +5519,8 @@
       :as :json}
      auth))))
 
-(defn environments-targetservers-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/targetservers/update
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:name string,
-   :protocol string,
-   :port integer,
-   :description string,
-   :isEnabled boolean,
-   :sSLInfo {:protocols [string],
-             :keyStore string,
-             :keyAlias string,
-             :trustStore string,
-             :clientAuthEnabled boolean,
-             :commonName GoogleCloudApigeeV1TlsInfoCommonName,
-             :ciphers [string],
-             :enabled boolean,
-             :ignoreValidationErrors boolean},
-   :host string}
-  
-  Updates an existing TargetServer. Note that this operation has PUT semantics; it will replace the entirety of the existing TargetServer with the resource in the request body."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/put
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-targetservers-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/targetservers/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a TargetServer from an environment. Returns the deleted TargetServer resource."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-targetservers-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/targetservers/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5614,8 +5545,81 @@
       :as :json}
      auth))))
 
+(defn environments-targetservers-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a TargetServer from an environment. Returns the deleted TargetServer resource."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-targetservers-update$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:sSLInfo {:enforce boolean,
+             :protocols [string],
+             :keyStore string,
+             :keyAlias string,
+             :trustStore string,
+             :clientAuthEnabled boolean,
+             :commonName GoogleCloudApigeeV1TlsInfoCommonName,
+             :ciphers [string],
+             :enabled boolean,
+             :ignoreValidationErrors boolean},
+   :host string,
+   :isEnabled boolean,
+   :description string,
+   :name string,
+   :protocol string,
+   :port integer}
+  
+  Updates an existing TargetServer. Note that this operation has PUT semantics; it will replace the entirety of the existing TargetServer with the resource in the request body."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-apis-deployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/deployments/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -5641,11 +5645,11 @@
      auth))))
 
 (defn environments-apis-revisions-deploy$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/deploy
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
-  Optional parameters: serviceAccount, sequencedRollout, override
+  Optional parameters: serviceAccount, override, sequencedRollout
   
   Deploys a revision of an API proxy. If another revision of the same API proxy revision is currently deployed, set the `override` parameter to `true` to have this revision replace the currently deployed revision. You cannot invoke an API proxy until it has been deployed to an environment. After you deploy an API proxy revision, you cannot edit it. To edit the API proxy, you must create and deploy a new revision. For a request path `organizations/{org}/environments/{env}/apis/{api}/revisions/{rev}/deployments`, two permissions are required: * `apigee.deployments.create` on the resource `organizations/{org}/environments/{env}` * `apigee.proxyrevisions.deploy` on the resource `organizations/{org}/apis/{api}/revisions/{rev}` "
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5667,7 +5671,7 @@
      auth))))
 
 (defn environments-apis-revisions-getDeployments$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/getDeployments
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5693,7 +5697,7 @@
      auth))))
 
 (defn environments-apis-revisions-undeploy$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/undeploy
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5718,150 +5722,8 @@
       :as :json}
      auth))))
 
-(defn environments-apis-revisions-debugsessions-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/debugsessions/create
-  
-  Required parameters: parent
-  
-  Optional parameters: timeout
-  
-  Body: 
-  
-  {:tracesize integer,
-   :createTime string,
-   :validity integer,
-   :filter string,
-   :count integer,
-   :timeout string,
-   :name string}
-  
-  Creates a debug session for a deployed API Proxy revision."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/debugsessions"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-apis-revisions-debugsessions-deleteData$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/debugsessions/deleteData
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes the data from a debug session. This does not cancel the debug session or prevent further data from being collected if the session is still active in runtime pods."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}/data"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-apis-revisions-debugsessions-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/debugsessions/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Retrieves a debug session."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-apis-revisions-debugsessions-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/debugsessions/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken
-  
-  Lists debug sessions that are currently active in the given API Proxy revision."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/debugsessions"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-apis-revisions-debugsessions-data-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/debugsessions/data/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the debug data from a transaction."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-apis-revisions-deployments-generateUndeployChangeReport$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/deployments/generateUndeployChangeReport
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5887,7 +5749,7 @@
      auth))))
 
 (defn environments-apis-revisions-deployments-generateDeployChangeReport$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/apis/revisions/deployments/generateDeployChangeReport
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5912,8 +5774,150 @@
       :as :json}
      auth))))
 
+(defn environments-apis-revisions-debugsessions-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Retrieves a debug session."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-apis-revisions-debugsessions-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize
+  
+  Lists debug sessions that are currently active in the given API Proxy revision."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/debugsessions"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-apis-revisions-debugsessions-deleteData$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes the data from a debug session. This does not cancel the debug session or prevent further data from being collected if the session is still active in runtime pods."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}/data"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-apis-revisions-debugsessions-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: timeout
+  
+  Body: 
+  
+  {:count integer,
+   :validity integer,
+   :tracesize integer,
+   :name string,
+   :createTime string,
+   :timeout string,
+   :filter string}
+  
+  Creates a debug session for a deployed API Proxy revision."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/debugsessions"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-apis-revisions-debugsessions-data-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the debug data from a transaction."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-addonsConfig-setAddonEnablement$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/addonsConfig/setAddonEnablement
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -5944,86 +5948,8 @@
       :as :json}
      auth))))
 
-(defn environments-queries-getResult$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/queries/getResult
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is downloaded to the client as a zipped JSON file. The name of the downloaded file will be: OfflineQueryResult-.zip Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`"
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-queries-getResulturl$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/queries/getResulturl
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is sent to the client as a list of urls to JSON files."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn environments-queries-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/queries/list
-  
-  Required parameters: parent
-  
-  Optional parameters: submittedBy, inclQueriesWithoutReport, status, from, to, dataset
-  
-  Return a list of Asynchronous Queries"
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/queries"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn environments-queries-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/queries/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6048,8 +5974,60 @@
       :as :json}
      auth))))
 
+(defn environments-queries-getResult$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is downloaded to the client as a zipped JSON file. The name of the downloaded file will be: OfflineQueryResult-.zip Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn environments-queries-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: submittedBy, status, from, inclQueriesWithoutReport, to, dataset
+  
+  Return a list of Asynchronous Queries"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/queries"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-queries-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/queries/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -6067,11 +6045,11 @@
    :filter string,
    :csvDelimiter string,
    :groupByTimeUnit string,
-   :metrics [{:function string,
-              :alias string,
-              :name string,
+   :metrics [{:value string,
               :operator string,
-              :value string}]}
+              :function string,
+              :name string,
+              :alias string}]}
   
   Submit a query to be processed in the background. If the submission of the query succeeds, the API returns a 201 status and an ID that refer to the query. In addition to the HTTP status 201, the `state` of \"enqueued\" means that the request succeeded."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6094,8 +6072,34 @@
       :as :json}
      auth))))
 
+(defn environments-queries-getResulturl$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is sent to the client as a list of urls to JSON files."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn environments-stats-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/environments/stats/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6121,7 +6125,7 @@
      auth))))
 
 (defn optimizedHostStats-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/optimizedHostStats/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6146,106 +6150,8 @@
       :as :json}
      auth))))
 
-(defn hostSecurityReports-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostSecurityReports/list
-  
-  Required parameters: parent
-  
-  Optional parameters: envgroupHostname, pageToken, pageSize, status, from, submittedBy, dataset, to
-  
-  Return a list of Security Reports at host level."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/hostSecurityReports"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn hostSecurityReports-getResultView$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostSecurityReports/getResultView
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  After the query is completed, use this API to view the query result when result size is small."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn hostSecurityReports-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostSecurityReports/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:reportDefinitionId string,
-   :limit integer,
-   :timeRange any,
-   :displayName string,
-   :envgroupHostname string,
-   :dimensions [string],
-   :filter string,
-   :mimeType string,
-   :csvDelimiter string,
-   :groupByTimeUnit string,
-   :metrics [{:alias string,
-              :name string,
-              :value string,
-              :operator string,
-              :aggregationFunction string}]}
-  
-  Submit a query at host level to be processed in the background. If the submission of the query succeeds, the API returns a 201 status and an ID that refer to the query. In addition to the HTTP status 201, the `state` of \"enqueued\" means that the request succeeded."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/hostSecurityReports"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn hostSecurityReports-getResult$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostSecurityReports/getResult
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6270,8 +6176,54 @@
       :as :json}
      auth))))
 
+(defn hostSecurityReports-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:reportDefinitionId string,
+   :limit integer,
+   :timeRange any,
+   :displayName string,
+   :envgroupHostname string,
+   :dimensions [string],
+   :filter string,
+   :mimeType string,
+   :csvDelimiter string,
+   :groupByTimeUnit string,
+   :metrics [{:value string,
+              :aggregationFunction string,
+              :operator string,
+              :name string,
+              :alias string}]}
+  
+  Submit a query at host level to be processed in the background. If the submission of the query succeeds, the API returns a 201 status and an ID that refer to the query. In addition to the HTTP status 201, the `state` of \"enqueued\" means that the request succeeded."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/hostSecurityReports"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn hostSecurityReports-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostSecurityReports/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6296,8 +6248,60 @@
       :as :json}
      auth))))
 
+(defn hostSecurityReports-getResultView$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  After the query is completed, use this API to view the query result when result size is small."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn hostSecurityReports-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: envgroupHostname, pageToken, pageSize, status, from, submittedBy, dataset, to
+  
+  Return a list of Security Reports at host level."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/hostSecurityReports"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn datacollectors-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/datacollectors/patch
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6305,11 +6309,11 @@
   
   Body: 
   
-  {:type string,
+  {:lastModifiedAt string,
+   :type string,
    :description string,
-   :name string,
-   :lastModifiedAt string,
-   :createdAt string}
+   :createdAt string,
+   :name string}
   
   Updates a data collector."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6332,44 +6336,34 @@
       :as :json}
      auth))))
 
-(defn datacollectors-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/datacollectors/create
+(defn datacollectors-delete$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: dataCollectorId
+  Optional parameters: none
   
-  Body: 
-  
-  {:type string,
-   :description string,
-   :name string,
-   :lastModifiedAt string,
-   :createdAt string}
-  
-  Creates a new data collector."
+  Deletes a data collector."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/delete
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/datacollectors"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn datacollectors-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/datacollectors/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6395,11 +6389,11 @@
      auth))))
 
 (defn datacollectors-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/datacollectors/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: pageToken, pageSize
+  Optional parameters: pageSize, pageToken
   
   Lists all data collectors."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6420,54 +6414,22 @@
       :as :json}
      auth))))
 
-(defn datacollectors-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/datacollectors/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a data collector."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn analytics-datastores-test$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/analytics/datastores/test
+(defn datacollectors-create$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: dataCollectorId
   
   Body: 
   
-  {:datastoreConfig {:tablePrefix string,
-                     :bucketName string,
-                     :datasetName string,
-                     :projectId string,
-                     :path string},
-   :lastUpdateTime string,
-   :displayName string,
-   :self string,
-   :createTime string,
-   :targetType string,
-   :org string}
+  {:lastModifiedAt string,
+   :type string,
+   :description string,
+   :createdAt string,
+   :name string}
   
-  Test if Datastore configuration is correct. This includes checking if credentials provided by customer have required permissions in target destination storage"
+  Creates a new data collector."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -6475,7 +6437,7 @@
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/analytics/datastores:test"
+     "v1/{+parent}/datacollectors"
      #{:parent}
      parameters)
     (merge-with
@@ -6483,107 +6445,13 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn analytics-datastores-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/analytics/datastores/list
-  
-  Required parameters: parent
-  
-  Optional parameters: targetType
-  
-  List Datastores"
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/analytics/datastores"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn analytics-datastores-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/analytics/datastores/update
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:datastoreConfig {:tablePrefix string,
-                     :bucketName string,
-                     :datasetName string,
-                     :projectId string,
-                     :path string},
-   :lastUpdateTime string,
-   :displayName string,
-   :self string,
-   :createTime string,
-   :targetType string,
-   :org string}
-  
-  Update a Datastore"
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/put
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn analytics-datastores-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/analytics/datastores/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Delete a Datastore from an org."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn analytics-datastores-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/analytics/datastores/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6608,8 +6476,34 @@
       :as :json}
      auth))))
 
-(defn analytics-datastores-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/analytics/datastores/create
+(defn analytics-datastores-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: targetType
+  
+  List Datastores"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/analytics/datastores"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn analytics-datastores-test$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -6617,17 +6511,59 @@
   
   Body: 
   
-  {:datastoreConfig {:tablePrefix string,
-                     :bucketName string,
-                     :datasetName string,
-                     :projectId string,
-                     :path string},
+  {:targetType string,
+   :org string,
    :lastUpdateTime string,
-   :displayName string,
    :self string,
-   :createTime string,
-   :targetType string,
-   :org string}
+   :datastoreConfig {:projectId string,
+                     :datasetName string,
+                     :tablePrefix string,
+                     :path string,
+                     :bucketName string},
+   :displayName string,
+   :createTime string}
+  
+  Test if Datastore configuration is correct. This includes checking if credentials provided by customer have required permissions in target destination storage"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/analytics/datastores:test"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn analytics-datastores-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:targetType string,
+   :org string,
+   :lastUpdateTime string,
+   :self string,
+   :datastoreConfig {:projectId string,
+                     :datasetName string,
+                     :tablePrefix string,
+                     :path string,
+                     :bucketName string},
+   :displayName string,
+   :createTime string}
   
   Create a Datastore for an org"
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6650,8 +6586,76 @@
       :as :json}
      auth))))
 
+(defn analytics-datastores-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Delete a Datastore from an org."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn analytics-datastores-update$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:targetType string,
+   :org string,
+   :lastUpdateTime string,
+   :self string,
+   :datastoreConfig {:projectId string,
+                     :datasetName string,
+                     :tablePrefix string,
+                     :path string,
+                     :bucketName string},
+   :displayName string,
+   :createTime string}
+  
+  Update a Datastore"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn developers-getBalance$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/getBalance
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6677,7 +6681,7 @@
      auth))))
 
 (defn developers-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6703,7 +6707,7 @@
      auth))))
 
 (defn developers-updateMonetizationConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/updateMonetizationConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6735,7 +6739,7 @@
      auth))))
 
 (defn developers-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -6755,7 +6759,7 @@
    :lastModifiedAt string,
    :lastName string,
    :companies [string],
-   :attributes [{:value string, :name string}],
+   :attributes [{:name string, :value string}],
    :userName string}
   
   Creates a developer. Once created, the developer can register an app and obtain an API key. At creation time, a developer is set as `active`. To change the developer status, use the SetDeveloperStatus API."
@@ -6780,7 +6784,7 @@
      auth))))
 
 (defn developers-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/update
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6800,7 +6804,7 @@
    :lastModifiedAt string,
    :lastName string,
    :companies [string],
-   :attributes [{:value string, :name string}],
+   :attributes [{:name string, :value string}],
    :userName string}
   
   Updates a developer. This API replaces the existing developer details with those specified in the request. Include or exclude any existing details that you want to retain or delete, respectively. The custom attribute limit is 18. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
@@ -6825,7 +6829,7 @@
      auth))))
 
 (defn developers-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6851,11 +6855,11 @@
      auth))))
 
 (defn developers-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: app, count, startKey, ids, includeCompany, expand
+  Optional parameters: count, startKey, app, ids, includeCompany, expand
   
   Lists all developers in an organization by email address. By default, the response does not include company developers. Set the `includeCompany` query parameter to `true` to include company developers. **Note**: A maximum of 1000 developers are returned in the response. You paginate the list of developers returned using the `startKey` and `count` query parameters."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6877,7 +6881,7 @@
      auth))))
 
 (defn developers-getMonetizationConfig$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/getMonetizationConfig
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6903,7 +6907,7 @@
      auth))))
 
 (defn developers-setDeveloperStatus$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/setDeveloperStatus
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6929,7 +6933,7 @@
      auth))))
 
 (defn developers-attributes$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/attributes
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -6937,7 +6941,7 @@
   
   Body: 
   
-  {:attribute [{:value string, :name string}]}
+  {:attribute [{:name string, :value string}]}
   
   Updates developer attributes. This API replaces the existing attributes with those specified in the request. Add new attributes, and include or exclude any existing attributes that you want to retain or remove, respectively. The custom attribute limit is 18. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6960,8 +6964,8 @@
       :as :json}
      auth))))
 
-(defn developers-attributes-updateDeveloperAttribute$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/attributes/updateDeveloperAttribute
+(defn developers-balance-credit$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -6969,9 +6973,12 @@
   
   Body: 
   
-  {:value string, :name string}
+  {:transactionId string,
+   :transactionAmount {:nanos integer,
+                       :currencyCode string,
+                       :units string}}
   
-  Updates a developer attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
+  Credits the account balance for the developer."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -6979,7 +6986,7 @@
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}"
+     "v1/{+name}:credit"
      #{:name}
      parameters)
     (merge-with
@@ -6992,175 +6999,40 @@
       :as :json}
      auth))))
 
-(defn developers-attributes-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/attributes/list
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Returns a list of all developer attributes."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/attributes"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn developers-attributes-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/attributes/get
+(defn developers-balance-adjust$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
-  
-  Optional parameters: none
-  
-  Returns the value of the specified developer attribute."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn developers-attributes-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/attributes/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a developer attribute."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn developers-subscriptions-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/subscriptions/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets details for an API product subscription."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn developers-subscriptions-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/subscriptions/create
-  
-  Required parameters: parent
   
   Optional parameters: none
   
   Body: 
   
-  {:startTime string,
-   :lastModifiedAt string,
-   :createdAt string,
-   :apiproduct string,
-   :endTime string,
-   :name string}
+  {:adjustment {:nanos integer, :currencyCode string, :units string}}
   
-  Creates a subscription to an API product. "
+  Adjust the prepaid balance for the developer. This API will be used in scenarios where the developer has been under-charged or over-charged."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/subscriptions"
-     #{:parent}
+     "v1/{+name}:adjust"
+     #{:name}
      parameters)
     (merge-with
      merge
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn developers-subscriptions-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/subscriptions/list
-  
-  Required parameters: parent
-  
-  Optional parameters: count, startKey
-  
-  Lists all API product subscriptions for a developer."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/subscriptions"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn developers-subscriptions-expire$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/subscriptions/expire
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -7191,30 +7063,58 @@
       :as :json}
      auth))))
 
-(defn developers-balance-credit$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/balance/credit
+(defn developers-subscriptions-list$
+  "https://cloud.google.com/apigee
   
-  Required parameters: name
+  Required parameters: parent
+  
+  Optional parameters: count, startKey
+  
+  Lists all API product subscriptions for a developer."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/subscriptions"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-subscriptions-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
   
   Optional parameters: none
   
   Body: 
   
-  {:transactionId string,
-   :transactionAmount {:currencyCode string,
-                       :nanos integer,
-                       :units string}}
+  {:name string,
+   :createdAt string,
+   :lastModifiedAt string,
+   :startTime string,
+   :apiproduct string,
+   :endTime string}
   
-  Credits the account balance for the developer."
+  Creates a subscription to an API product. "
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}:credit"
-     #{:name}
+     "v1/{+parent}/subscriptions"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -7226,46 +7126,14 @@
       :as :json}
      auth))))
 
-(defn developers-balance-adjust$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/balance/adjust
+(defn developers-subscriptions-get$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Body: 
-  
-  {:adjustment {:currencyCode string, :nanos integer, :units string}}
-  
-  Adjust the prepaid balance for the developer. This API will be used in scenarios where the developer has been under-charged or over-charged."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}:adjust"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn developers-apps-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/get
-  
-  Required parameters: name
-  
-  Optional parameters: query, entity
-  
-  Returns the details for a developer app."
+  Gets details for an API product subscription."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -7284,12 +7152,122 @@
       :as :json}
      auth))))
 
-(defn developers-apps-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/list
+(defn developers-attributes-list$
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: count, expand, startKey, shallowExpand
+  Optional parameters: none
+  
+  Returns a list of all developer attributes."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/attributes"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-attributes-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a developer attribute."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-attributes-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Returns the value of the specified developer attribute."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-attributes-updateDeveloperAttribute$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :value string}
+  
+  Updates a developer attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-apps-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: startKey, expand, count, shallowExpand
   
   Lists all apps created by a developer in an Apigee organization. Optionally, you can request an expanded view of the developer apps. A maximum of 100 developer apps are returned per API call. You can paginate the list of deveoper apps returned using the `startKey` and `count` query parameters."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -7310,37 +7288,18 @@
       :as :json}
      auth))))
 
-(defn developers-apps-generateKeyPairOrUpdateDeveloperAppStatus$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/generateKeyPairOrUpdateDeveloperAppStatus
+(defn developers-apps-attributes$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
-  Optional parameters: action
+  Optional parameters: none
   
   Body: 
   
-  {:scopes [string],
-   :callbackUrl string,
-   :apiProducts [string],
-   :credentials [{:status string,
-                  :issuedAt string,
-                  :consumerKey string,
-                  :attributes [GoogleCloudApigeeV1Attribute],
-                  :consumerSecret string,
-                  :scopes [string],
-                  :apiProducts [GoogleCloudApigeeV1ApiProductRef],
-                  :expiresAt string}],
-   :name string,
-   :appFamily string,
-   :keyExpiresIn string,
-   :createdAt string,
-   :developerId string,
-   :status string,
-   :appId string,
-   :lastModifiedAt string,
-   :attributes [{:value string, :name string}]}
+  {:attribute [{:name string, :value string}]}
   
-  Manages access to a developer app by enabling you to: * Approve or revoke a developer app * Generate a new consumer key and secret for a developer app To approve or revoke a developer app, set the `action` query parameter to `approve` or `revoke`, respectively, and the `Content-Type` header to `application/octet-stream`. If a developer app is revoked, none of its API keys are valid for API calls even though the keys are still approved. If successful, the API call returns the following HTTP status code: `204 No Content` To generate a new consumer key and secret for a developer app, pass the new key/secret details. Rather than replace an existing key, this API generates a new key. In this case, multiple key pairs may be associated with a single developer app. Each key pair has an independent status (`approve` or `revoke`) and expiration time. Any approved, non-expired key can be used in an API call. For example, if you're using API key rotation, you can generate new keys with expiration times that overlap keys that are going to expire. You might also generate a new consumer key/secret if the security of the original key/secret is compromised. The `keyExpiresIn` property defines the expiration time for the API key in milliseconds. If you don't set this property or set it to `-1`, the API key never expires. **Notes**: * When generating a new key/secret, this API replaces the existing attributes, notes, and callback URLs with those specified in the request. Include or exclude any existing information that you want to retain or delete, respectively. * To migrate existing consumer keys and secrets to hybrid from another system, see the CreateDeveloperAppKey API."
+  Updates attributes for a developer app. This API replaces the current attributes with those specified in the request."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -7348,7 +7307,7 @@
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}"
+     "v1/{+name}/attributes"
      #{:name}
      parameters)
     (merge-with
@@ -7361,10 +7320,10 @@
       :as :json}
      auth))))
 
-(defn developers-apps-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/update
+(defn developers-apps-create$
+  "https://cloud.google.com/apigee
   
-  Required parameters: name
+  Required parameters: parent
   
   Optional parameters: none
   
@@ -7373,13 +7332,13 @@
   {:scopes [string],
    :callbackUrl string,
    :apiProducts [string],
-   :credentials [{:status string,
-                  :issuedAt string,
-                  :consumerKey string,
+   :credentials [{:consumerKey string,
                   :attributes [GoogleCloudApigeeV1Attribute],
-                  :consumerSecret string,
-                  :scopes [string],
+                  :status string,
                   :apiProducts [GoogleCloudApigeeV1ApiProductRef],
+                  :scopes [string],
+                  :consumerSecret string,
+                  :issuedAt string,
                   :expiresAt string}],
    :name string,
    :appFamily string,
@@ -7389,18 +7348,18 @@
    :status string,
    :appId string,
    :lastModifiedAt string,
-   :attributes [{:value string, :name string}]}
+   :attributes [{:name string, :value string}]}
   
-  Updates the details for a developer app. In addition, you can add an API product to a developer app and automatically generate an API key for the app to use when calling APIs in the API product. If you want to use an existing API key for the API product, add the API product to the API key using the UpdateDeveloperAppKey API. Using this API, you cannot update the following: * App name as it is the primary key used to identify the app and cannot be changed. * Scopes associated with the app. Instead, use the ReplaceDeveloperAppKey API. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively."
+  Creates an app associated with a developer. This API associates the developer app with the specified API product and auto-generates an API key for the app to use in calls to API proxies inside that API product. The `name` is the unique ID of the app that you can use in API calls. The `DisplayName` (set as an attribute) appears in the UI. If you don't set the `DisplayName` attribute, the `name` appears in the UI."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/put
+   (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/apps"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -7413,7 +7372,7 @@
      auth))))
 
 (defn developers-apps-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -7438,25 +7397,25 @@
       :as :json}
      auth))))
 
-(defn developers-apps-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/create
+(defn developers-apps-generateKeyPairOrUpdateDeveloperAppStatus$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: action
   
   Body: 
   
   {:scopes [string],
    :callbackUrl string,
    :apiProducts [string],
-   :credentials [{:status string,
-                  :issuedAt string,
-                  :consumerKey string,
+   :credentials [{:consumerKey string,
                   :attributes [GoogleCloudApigeeV1Attribute],
-                  :consumerSecret string,
-                  :scopes [string],
+                  :status string,
                   :apiProducts [GoogleCloudApigeeV1ApiProductRef],
+                  :scopes [string],
+                  :consumerSecret string,
+                  :issuedAt string,
                   :expiresAt string}],
    :name string,
    :appFamily string,
@@ -7466,18 +7425,18 @@
    :status string,
    :appId string,
    :lastModifiedAt string,
-   :attributes [{:value string, :name string}]}
+   :attributes [{:name string, :value string}]}
   
-  Creates an app associated with a developer. This API associates the developer app with the specified API product and auto-generates an API key for the app to use in calls to API proxies inside that API product. The `name` is the unique ID of the app that you can use in API calls. The `DisplayName` (set as an attribute) appears in the UI. If you don't set the `DisplayName` attribute, the `name` appears in the UI."
+  Manages access to a developer app by enabling you to: * Approve or revoke a developer app * Generate a new consumer key and secret for a developer app To approve or revoke a developer app, set the `action` query parameter to `approve` or `revoke`, respectively, and the `Content-Type` header to `application/octet-stream`. If a developer app is revoked, none of its API keys are valid for API calls even though the keys are still approved. If successful, the API call returns the following HTTP status code: `204 No Content` To generate a new consumer key and secret for a developer app, pass the new key/secret details. Rather than replace an existing key, this API generates a new key. In this case, multiple key pairs may be associated with a single developer app. Each key pair has an independent status (`approve` or `revoke`) and expiration time. Any approved, non-expired key can be used in an API call. For example, if you're using API key rotation, you can generate new keys with expiration times that overlap keys that are going to expire. You might also generate a new consumer key/secret if the security of the original key/secret is compromised. The `keyExpiresIn` property defines the expiration time for the API key in milliseconds. If you don't set this property or set it to `-1`, the API key never expires. **Notes**: * When generating a new key/secret, this API replaces the existing attributes, notes, and callback URLs with those specified in the request. Include or exclude any existing information that you want to retain or delete, respectively. * To migrate existing consumer keys and secrets to hybrid from another system, see the CreateDeveloperAppKey API."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/apps"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -7489,8 +7448,8 @@
       :as :json}
      auth))))
 
-(defn developers-apps-attributes$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/attributes
+(defn developers-apps-update$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -7498,9 +7457,86 @@
   
   Body: 
   
-  {:attribute [{:value string, :name string}]}
+  {:scopes [string],
+   :callbackUrl string,
+   :apiProducts [string],
+   :credentials [{:consumerKey string,
+                  :attributes [GoogleCloudApigeeV1Attribute],
+                  :status string,
+                  :apiProducts [GoogleCloudApigeeV1ApiProductRef],
+                  :scopes [string],
+                  :consumerSecret string,
+                  :issuedAt string,
+                  :expiresAt string}],
+   :name string,
+   :appFamily string,
+   :keyExpiresIn string,
+   :createdAt string,
+   :developerId string,
+   :status string,
+   :appId string,
+   :lastModifiedAt string,
+   :attributes [{:name string, :value string}]}
   
-  Updates attributes for a developer app. This API replaces the current attributes with those specified in the request."
+  Updates the details for a developer app. In addition, you can add an API product to a developer app and automatically generate an API key for the app to use when calling APIs in the API product. If you want to use an existing API key for the API product, add the API product to the API key using the UpdateDeveloperAppKey API. Using this API, you cannot update the following: * App name as it is the primary key used to identify the app and cannot be changed. * Scopes associated with the app. Instead, use the ReplaceDeveloperAppKey API. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-apps-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: query, entity
+  
+  Returns the details for a developer app."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-apps-attributes-updateDeveloperAppAttribute$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :value string}
+  
+  Updates a developer app attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -7508,7 +7544,7 @@
    (http/post
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}/attributes"
+     "v1/{+name}"
      #{:name}
      parameters)
     (merge-with
@@ -7522,7 +7558,7 @@
      auth))))
 
 (defn developers-apps-attributes-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/attributes/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -7547,66 +7583,8 @@
       :as :json}
      auth))))
 
-(defn developers-apps-attributes-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/attributes/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Returns a developer app attribute."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn developers-apps-attributes-updateDeveloperAppAttribute$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/attributes/updateDeveloperAppAttribute
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:value string, :name string}
-  
-  Updates a developer app attribute. **Note**: OAuth access tokens and Key Management Service (KMS) entities (apps, developers, and API products) are cached for 180 seconds (current default). Any custom attributes associated with these entities are cached for at least 180 seconds after the entity is accessed at runtime. Therefore, an `ExpiresIn` element on the OAuthV2 policy won't be able to expire an access token in less than 180 seconds."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn developers-apps-attributes-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/attributes/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -7631,19 +7609,19 @@
       :as :json}
      auth))))
 
-(defn developers-apps-keys-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/keys/delete
+(defn developers-apps-attributes-get$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes an app's consumer key and removes all API products associated with the app. After the consumer key is deleted, it cannot be used to access any APIs. **Note**: After you delete a consumer key, you may want to: 1. Create a new consumer key and secret for the developer app using the CreateDeveloperAppKey API, and subsequently add an API product to the key using the UpdateDeveloperAppKey API. 2. Delete the developer app, if it is no longer required."
+  Returns a developer app attribute."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/delete
+   (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
      "v1/{+name}"
@@ -7657,48 +7635,8 @@
       :as :json}
      auth))))
 
-(defn developers-apps-keys-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/keys/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:scopes [string],
-   :apiProducts [any],
-   :expiresAt string,
-   :expiresInSeconds string,
-   :consumerSecret string,
-   :issuedAt string,
-   :consumerKey string,
-   :status string,
-   :attributes [{:value string, :name string}]}
-  
-  Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API. **Note**: All keys start out with status=approved, even if status=revoked is passed when the key is created. To revoke a key, use the UpdateDeveloperAppKey API."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/keys"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn developers-apps-keys-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/keys/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -7723,48 +7661,8 @@
       :as :json}
      auth))))
 
-(defn developers-apps-keys-updateDeveloperAppKey$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/keys/updateDeveloperAppKey
-  
-  Required parameters: name
-  
-  Optional parameters: action
-  
-  Body: 
-  
-  {:scopes [string],
-   :apiProducts [any],
-   :expiresAt string,
-   :expiresInSeconds string,
-   :consumerSecret string,
-   :issuedAt string,
-   :consumerKey string,
-   :status string,
-   :attributes [{:value string, :name string}]}
-  
-  Adds an API product to a developer app key, enabling the app that holds the key to access the API resources bundled in the API product. In addition, you can add attributes to a developer app key. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively. You can use the same key to access all API products associated with the app."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn developers-apps-keys-replaceDeveloperAppKey$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/keys/replaceDeveloperAppKey
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -7780,7 +7678,7 @@
    :issuedAt string,
    :consumerKey string,
    :status string,
-   :attributes [{:value string, :name string}]}
+   :attributes [{:name string, :value string}]}
   
   Updates the scope of an app. This API replaces the existing scopes with those specified in the request. Include or exclude any existing scopes that you want to retain or delete, respectively. The specified scopes must already be defined for the API products associated with the app. This API sets the `scopes` element under the `apiProducts` element in the attributes of the app."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -7803,14 +7701,94 @@
       :as :json}
      auth))))
 
-(defn developers-apps-keys-apiproducts-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/keys/apiproducts/delete
+(defn developers-apps-keys-updateDeveloperAppKey$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: action
+  
+  Body: 
+  
+  {:scopes [string],
+   :apiProducts [any],
+   :expiresAt string,
+   :expiresInSeconds string,
+   :consumerSecret string,
+   :issuedAt string,
+   :consumerKey string,
+   :status string,
+   :attributes [{:name string, :value string}]}
+  
+  Adds an API product to a developer app key, enabling the app that holds the key to access the API resources bundled in the API product. In addition, you can add attributes to a developer app key. This API replaces the existing attributes with those specified in the request. Include or exclude any existing attributes that you want to retain or delete, respectively. You can use the same key to access all API products associated with the app."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-apps-keys-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:scopes [string],
+   :apiProducts [any],
+   :expiresAt string,
+   :expiresInSeconds string,
+   :consumerSecret string,
+   :issuedAt string,
+   :consumerKey string,
+   :status string,
+   :attributes [{:name string, :value string}]}
+  
+  Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API. **Note**: All keys start out with status=approved, even if status=revoked is passed when the key is created. To revoke a key, use the UpdateDeveloperAppKey API."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/keys"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn developers-apps-keys-delete$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Removes an API product from an app's consumer key. After the API product is removed, the app cannot access the API resources defined in that API product. **Note**: The consumer key is not removed, only its association with the API product."
+  Deletes an app's consumer key and removes all API products associated with the app. After the consumer key is deleted, it cannot be used to access any APIs. **Note**: After you delete a consumer key, you may want to: 1. Create a new consumer key and secret for the developer app using the CreateDeveloperAppKey API, and subsequently add an API product to the key using the UpdateDeveloperAppKey API. 2. Delete the developer app, if it is no longer required."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -7830,7 +7808,7 @@
      auth))))
 
 (defn developers-apps-keys-apiproducts-updateDeveloperAppKeyApiProduct$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/keys/apiproducts/updateDeveloperAppKeyApiProduct
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -7855,8 +7833,34 @@
       :as :json}
      auth))))
 
+(defn developers-apps-keys-apiproducts-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Removes an API product from an app's consumer key. After the API product is removed, the app cannot access the API resources defined in that API product. **Note**: The consumer key is not removed, only its association with the API product."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn developers-apps-keys-create-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/developers/apps/keys/create/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -7872,7 +7876,7 @@
    :issuedAt string,
    :consumerKey string,
    :status string,
-   :attributes [{:value string, :name string}]}
+   :attributes [{:name string, :value string}]}
   
   Creates a custom consumer key and secret for a developer app. This is particularly useful if you want to migrate existing consumer keys and secrets to Apigee from another system. Consumer keys and secrets can contain letters, numbers, underscores, and hyphens. No other special characters are allowed. To avoid service disruptions, a consumer key and secret should not exceed 2 KBs each. **Note**: When creating the consumer key and secret, an association to API products will not be made. Therefore, you should not specify the associated API products in your request. Instead, use the UpdateDeveloperAppKey API to make the association after the consumer key and secret are created. If a consumer key and secret already exist, you can keep them or delete them using the DeleteDeveloperAppKey API. **Note**: All keys start out with status=approved, even if status=revoked is passed when the key is created. To revoke a key, use the UpdateDeveloperAppKey API."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -7895,85 +7899,12 @@
       :as :json}
      auth))))
 
-(defn instances-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:description string,
-   :serviceAttachment string,
-   :diskEncryptionKeyName string,
-   :displayName string,
-   :name string,
-   :createdAt string,
-   :peeringCidrRange string,
-   :state string,
-   :port string,
-   :host string,
-   :accessLoggingConfig {:enabled boolean, :filter string},
-   :consumerAcceptList [string],
-   :ipRange string,
-   :runtimeVersion string,
-   :lastModifiedAt string,
-   :location string}
-  
-  Updates an Apigee runtime instance. You can update the fields described in NodeConfig. No other fields will be updated. **Note:** Not supported for Apigee hybrid."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn instances-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes an Apigee runtime instance. The instance stops serving requests and the runtime data is deleted. **Note:** Not supported for Apigee hybrid."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn instances-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: pageToken, pageSize
   
   Lists all Apigee runtime instances for the organization. **Note:** Not supported for Apigee hybrid."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -7994,8 +7925,45 @@
       :as :json}
      auth))))
 
+(defn instances-reportStatus$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: instance
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:resources [{:revisions [GoogleCloudApigeeV1RevisionStatus],
+                :uid string,
+                :resource string,
+                :totalReplicas integer}],
+   :reportTime string,
+   :instanceUid string}
+  
+  Reports the latest status for a runtime instance."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:instance})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+instance}:reportStatus"
+     #{:instance}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn instances-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -8013,7 +7981,7 @@
    :state string,
    :port string,
    :host string,
-   :accessLoggingConfig {:enabled boolean, :filter string},
+   :accessLoggingConfig {:filter string, :enabled boolean},
    :consumerAcceptList [string],
    :ipRange string,
    :runtimeVersion string,
@@ -8041,32 +8009,42 @@
       :as :json}
      auth))))
 
-(defn instances-reportStatus$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/reportStatus
+(defn instances-patch$
+  "https://cloud.google.com/apigee
   
-  Required parameters: instance
+  Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: updateMask
   
   Body: 
   
-  {:instanceUid string,
-   :resources [{:revisions [GoogleCloudApigeeV1RevisionStatus],
-                :resource string,
-                :totalReplicas integer,
-                :uid string}],
-   :reportTime string}
+  {:description string,
+   :serviceAttachment string,
+   :diskEncryptionKeyName string,
+   :displayName string,
+   :name string,
+   :createdAt string,
+   :peeringCidrRange string,
+   :state string,
+   :port string,
+   :host string,
+   :accessLoggingConfig {:filter string, :enabled boolean},
+   :consumerAcceptList [string],
+   :ipRange string,
+   :runtimeVersion string,
+   :lastModifiedAt string,
+   :location string}
   
-  Reports the latest status for a runtime instance."
+  Updates an Apigee runtime instance. You can update the fields described in NodeConfig. No other fields will be updated. **Note:** Not supported for Apigee hybrid."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:instance})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/patch
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+instance}:reportStatus"
-     #{:instance}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -8079,7 +8057,7 @@
      auth))))
 
 (defn instances-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8104,14 +8082,14 @@
       :as :json}
      auth))))
 
-(defn instances-attachments-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/attachments/delete
+(defn instances-delete$
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes an attachment. **Note:** Not supported for Apigee hybrid."
+  Deletes an Apigee runtime instance. The instance stops serving requests and the runtime data is deleted. **Note:** Not supported for Apigee hybrid."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -8130,92 +8108,8 @@
       :as :json}
      auth))))
 
-(defn instances-attachments-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/attachments/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:name string, :environment string, :createdAt string}
-  
-  Creates a new attachment of an environment to an instance. **Note:** Not supported for Apigee hybrid."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/attachments"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn instances-attachments-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/attachments/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets an attachment. **Note:** Not supported for Apigee hybrid."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn instances-attachments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/attachments/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize
-  
-  Lists all attachments to an instance. **Note:** Not supported for Apigee hybrid."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/attachments"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn instances-natAddresses-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/natAddresses/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8240,23 +8134,23 @@
       :as :json}
      auth))))
 
-(defn instances-natAddresses-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/natAddresses/list
+(defn instances-natAddresses-get$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: none
   
-  Lists the NAT addresses for an Apigee instance. **Note:** Not supported for Apigee hybrid."
+  Gets the details of a NAT address. **Note:** Not supported for Apigee hybrid."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/natAddresses"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -8267,7 +8161,7 @@
      auth))))
 
 (defn instances-natAddresses-activate$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/natAddresses/activate
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8298,8 +8192,34 @@
       :as :json}
      auth))))
 
+(defn instances-natAddresses-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Lists the NAT addresses for an Apigee instance. **Note:** Not supported for Apigee hybrid."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/natAddresses"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn instances-natAddresses-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/natAddresses/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -8307,7 +8227,7 @@
   
   Body: 
   
-  {:ipAddress string, :name string, :state string}
+  {:state string, :name string, :ipAddress string}
   
   Creates a NAT address. The address is created in the RESERVED state and a static external IP address will be provisioned. At this time, the instance will not use this IP address for Internet egress traffic. The address can be activated for use once any required firewall IP whitelisting has been completed. **Note:** Not supported for Apigee hybrid."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8330,34 +8250,8 @@
       :as :json}
      auth))))
 
-(defn instances-natAddresses-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/natAddresses/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the details of a NAT address. **Note:** Not supported for Apigee hybrid."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn instances-canaryevaluations-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/canaryevaluations/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -8397,7 +8291,7 @@
      auth))))
 
 (defn instances-canaryevaluations-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/instances/canaryevaluations/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8422,8 +8316,118 @@
       :as :json}
      auth))))
 
+(defn instances-attachments-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:environment string, :createdAt string, :name string}
+  
+  Creates a new attachment of an environment to an instance. **Note:** Not supported for Apigee hybrid."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/attachments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn instances-attachments-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes an attachment. **Note:** Not supported for Apigee hybrid."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn instances-attachments-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize
+  
+  Lists all attachments to an instance. **Note:** Not supported for Apigee hybrid."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/attachments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn instances-attachments-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets an attachment. **Note:** Not supported for Apigee hybrid."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn hostQueries-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostQueries/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -8441,11 +8445,11 @@
    :filter string,
    :csvDelimiter string,
    :groupByTimeUnit string,
-   :metrics [{:function string,
-              :alias string,
-              :name string,
+   :metrics [{:value string,
               :operator string,
-              :value string}]}
+              :function string,
+              :name string,
+              :alias string}]}
   
   Submit a query at host level to be processed in the background. If the submission of the query succeeds, the API returns a 201 status and an ID that refer to the query. In addition to the HTTP status 201, the `state` of \"enqueued\" means that the request succeeded."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8468,23 +8472,23 @@
       :as :json}
      auth))))
 
-(defn hostQueries-getResult$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostQueries/getResult
+(defn hostQueries-list$
+  "https://cloud.google.com/apigee
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: status, envgroupHostname, dataset, from, submittedBy, to, inclQueriesWithoutReport
   
-  After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is downloaded to the client as a zipped JSON file. The name of the downloaded file will be: OfflineQueryResult-.zip Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`"
+  Return a list of Asynchronous Queries at host level."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/hostQueries"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -8495,7 +8499,7 @@
      auth))))
 
 (defn hostQueries-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostQueries/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8520,23 +8524,23 @@
       :as :json}
      auth))))
 
-(defn hostQueries-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostQueries/list
+(defn hostQueries-getResult$
+  "https://cloud.google.com/apigee
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: envgroupHostname, inclQueriesWithoutReport, status, from, to, submittedBy, dataset
+  Optional parameters: none
   
-  Return a list of Asynchronous Queries at host level."
+  After the query is completed, use this API to retrieve the results. If the request succeeds, and there is a non-zero result set, the result is downloaded to the client as a zipped JSON file. The name of the downloaded file will be: OfflineQueryResult-.zip Example: `OfflineQueryResult-9cfc0d85-0f30-46d6-ae6f-318d0cb961bd.zip`"
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+parent}/hostQueries"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -8547,7 +8551,7 @@
      auth))))
 
 (defn hostQueries-getResultView$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/hostQueries/getResultView
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8572,8 +8576,45 @@
       :as :json}
      auth))))
 
+(defn securityAssessmentResults-batchCompute$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:pageToken string,
+   :include {:resources [GoogleCloudApigeeV1BatchComputeSecurityAssessmentResultsRequestResourceArrayResource]},
+   :scope string,
+   :profile string,
+   :includeAllResources {},
+   :pageSize integer}
+  
+  Compute RAV2 security scores for a set of resources."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}:batchCompute"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn operations-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/operations/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8599,11 +8640,11 @@
      auth))))
 
 (defn operations-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/operations/list
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
-  Optional parameters: pageSize, filter, pageToken
+  Optional parameters: filter, pageToken, pageSize
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8624,48 +8665,8 @@
       :as :json}
      auth))))
 
-(defn apis-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:labels {},
-   :apiProxyType string,
-   :revision [string],
-   :metaData {:subType string,
-              :lastModifiedAt string,
-              :createdAt string},
-   :name string,
-   :readOnly boolean,
-   :latestRevisionId string}
-  
-  Updates an existing API proxy."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn apis-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8690,8 +8691,106 @@
       :as :json}
      auth))))
 
+(defn apis-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: includeRevisions, includeMetaData
+  
+  Lists the names of all API proxies in an organization. The names returned correspond to the names defined in the configuration files for each API proxy."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/apis"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-patch$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:latestRevisionId string,
+   :readOnly boolean,
+   :apiProxyType string,
+   :labels {},
+   :metaData {:subType string,
+              :lastModifiedAt string,
+              :createdAt string},
+   :name string,
+   :revision [string]}
+  
+  Updates an existing API proxy."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: action, name, validate
+  
+  Body: 
+  
+  {:contentType string, :data string, :extensions [{}]}
+  
+  Creates an API proxy. The API proxy created will not be accessible at runtime until it is deployed to an environment. Create a new API proxy by setting the `name` query parameter to the name of the API proxy. Import an API proxy configuration bundle stored in zip format on your local machine to your organization by doing the following: * Set the `name` query parameter to the name of the API proxy. * Set the `action` query parameter to `import`. * Set the `Content-Type` header to `multipart/form-data`. * Pass as a file the name of API proxy configuration bundle stored in zip format on your local machine using the `file` form field. **Note**: To validate the API proxy configuration bundle only without importing it, set the `action` query parameter to `validate`. When importing an API proxy configuration bundle, if the API proxy does not exist, it will be created. If the API proxy exists, then a new revision is created. Invalid API proxy configurations are rejected, and a list of validation errors is returned to the client."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/apis"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn apis-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/get
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -8716,324 +8815,8 @@
       :as :json}
      auth))))
 
-(defn apis-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/create
-  
-  Required parameters: parent
-  
-  Optional parameters: action, name, validate
-  
-  Body: 
-  
-  {:extensions [{}], :data string, :contentType string}
-  
-  Creates an API proxy. The API proxy created will not be accessible at runtime until it is deployed to an environment. Create a new API proxy by setting the `name` query parameter to the name of the API proxy. Import an API proxy configuration bundle stored in zip format on your local machine to your organization by doing the following: * Set the `name` query parameter to the name of the API proxy. * Set the `action` query parameter to `import`. * Set the `Content-Type` header to `multipart/form-data`. * Pass as a file the name of API proxy configuration bundle stored in zip format on your local machine using the `file` form field. **Note**: To validate the API proxy configuration bundle only without importing it, set the `action` query parameter to `validate`. When importing an API proxy configuration bundle, if the API proxy does not exist, it will be created. If the API proxy exists, then a new revision is created. Invalid API proxy configurations are rejected, and a list of validation errors is returned to the client."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/apis"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/list
-  
-  Required parameters: parent
-  
-  Optional parameters: includeMetaData, includeRevisions
-  
-  Lists the names of all API proxies in an organization. The names returned correspond to the names defined in the configuration files for each API proxy."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/apis"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-keyvaluemaps-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/keyvaluemaps/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:encrypted boolean, :name string}
-  
-  Creates a key value map in an API proxy."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/keyvaluemaps"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-keyvaluemaps-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/keyvaluemaps/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a key value map from an API proxy."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-keyvaluemaps-entries-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/keyvaluemaps/entries/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken
-  
-  Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/entries"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-keyvaluemaps-entries-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/keyvaluemaps/entries/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:value string, :name string}
-  
-  Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/entries"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-keyvaluemaps-entries-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/keyvaluemaps/entries/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Notes:** * After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior. * Supported for Apigee hybrid 1.8.x and higher."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-keyvaluemaps-entries-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/keyvaluemaps/entries/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-keyvaluemaps-entries-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/keyvaluemaps/entries/update
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:value string, :name string}
-  
-  Update key value entry scoped to an organization, environment, or API proxy for an existing key."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/put
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-revisions-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/revisions/get
-  
-  Required parameters: name
-  
-  Optional parameters: format
-  
-  Gets an API proxy revision. To download the API proxy configuration bundle for the specified revision as a zip file, set the `format` query parameter to `bundle`. If you are using curl, specify `-o filename.zip` to save the output to a file; otherwise, it displays to `stdout`. Then, develop the API proxy configuration locally and upload the updated API proxy configuration revision, as described in [updateApiProxyRevision](updateApiProxyRevision)."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apis-revisions-updateApiProxyRevision$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/revisions/updateApiProxyRevision
-  
-  Required parameters: name
-  
-  Optional parameters: validate
-  
-  Body: 
-  
-  {:extensions [{}], :data string, :contentType string}
-  
-  Updates an existing API proxy revision by uploading the API proxy configuration bundle as a zip file from your local machine. You can update only API proxy revisions that have never been deployed. After deployment, an API proxy revision becomes immutable, even if it is undeployed. Set the `Content-Type` header to either `multipart/form-data` or `application/octet-stream`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn apis-revisions-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/revisions/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -9058,8 +8841,66 @@
       :as :json}
      auth))))
 
+(defn apis-revisions-updateApiProxyRevision$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: validate
+  
+  Body: 
+  
+  {:contentType string, :data string, :extensions [{}]}
+  
+  Updates an existing API proxy revision by uploading the API proxy configuration bundle as a zip file from your local machine. You can update only API proxy revisions that have never been deployed. After deployment, an API proxy revision becomes immutable, even if it is undeployed. Set the `Content-Type` header to either `multipart/form-data` or `application/octet-stream`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-revisions-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: format
+  
+  Gets an API proxy revision. To download the API proxy configuration bundle for the specified revision as a zip file, set the `format` query parameter to `bundle`. If you are using curl, specify `-o filename.zip` to save the output to a file; otherwise, it displays to `stdout`. Then, develop the API proxy configuration locally and upload the updated API proxy configuration revision, as described in [updateApiProxyRevision](updateApiProxyRevision)."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn apis-revisions-deployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/revisions/deployments/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -9084,8 +8925,208 @@
       :as :json}
      auth))))
 
+(defn apis-keyvaluemaps-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :encrypted boolean}
+  
+  Creates a key value map in an API proxy."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/keyvaluemaps"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-keyvaluemaps-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a key value map from an API proxy."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-keyvaluemaps-entries-update$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :value string}
+  
+  Update key value entry scoped to an organization, environment, or API proxy for an existing key."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/put
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-keyvaluemaps-entries-create$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :value string}
+  
+  Creates key value entries in a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/entries"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-keyvaluemaps-entries-list$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize
+  
+  Lists key value entries for key values maps scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+parent}/entries"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-keyvaluemaps-entries-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. **Note**: Supported for Apigee hybrid 1.8.x and higher."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apis-keyvaluemaps-entries-delete$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. **Notes:** * After you delete the key value entry, the policy consuming the entry will continue to function with its cached values for a few minutes. This is expected behavior. * Supported for Apigee hybrid 1.8.x and higher."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn apis-deployments-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/apis/deployments/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -9111,7 +9152,7 @@
      auth))))
 
 (defn reports-update$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/reports/update
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -9141,7 +9182,7 @@
    :sortOrder string,
    :timeUnit string,
    :environment string,
-   :metrics [{:function string, :name string}]}
+   :metrics [{:name string, :function string}]}
   
   Update an existing custom report definition"
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -9165,7 +9206,7 @@
      auth))))
 
 (defn reports-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/reports/list
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -9190,8 +9231,34 @@
       :as :json}
      auth))))
 
+(defn reports-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Retrieve a custom report definition."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn reports-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/reports/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -9221,7 +9288,7 @@
    :sortOrder string,
    :timeUnit string,
    :environment string,
-   :metrics [{:function string, :name string}]}
+   :metrics [{:name string, :function string}]}
   
   Creates a Custom Report for an Organization. A Custom Report provides Apigee Customers to create custom dashboards in addition to the standard dashboards which are provided. The Custom Report in its simplest form contains specifications about metrics, dimensions and filters. It is important to note that the custom report by itself does not provide an executable entity. The Edge UI converts the custom report definition into an analytics query and displays the result in a chart."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -9244,34 +9311,8 @@
       :as :json}
      auth))))
 
-(defn reports-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/reports/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Retrieve a custom report definition."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn reports-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/reports/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -9296,8 +9337,34 @@
       :as :json}
      auth))))
 
+(defn securityProfiles-get$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  GetSecurityProfile gets the specified security profile. Returns NOT_FOUND if security profile is not present for the specified organization."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn securityProfiles-patch$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/patch
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -9315,7 +9382,7 @@
    :name string,
    :revisionId string,
    :profileConfig {:categories [GoogleCloudApigeeV1ProfileConfigCategory]},
-   :environments [{:attachTime string, :environment string}],
+   :environments [{:environment string, :attachTime string}],
    :revisionPublishTime string,
    :maxScore integer,
    :revisionUpdateTime string}
@@ -9341,23 +9408,23 @@
       :as :json}
      auth))))
 
-(defn securityProfiles-get$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/get
+(defn securityProfiles-list$
+  "https://cloud.google.com/apigee
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: pageSize, pageToken
   
-  GetSecurityProfile gets the specified security profile. Returns NOT_FOUND if security profile is not present for the specified organization."
+  ListSecurityProfiles lists all the security profiles associated with the org including attached and unattached profiles."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://apigee.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/securityProfiles"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -9368,7 +9435,7 @@
      auth))))
 
 (defn securityProfiles-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -9393,34 +9460,8 @@
       :as :json}
      auth))))
 
-(defn securityProfiles-list$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize
-  
-  ListSecurityProfiles lists all the security profiles associated with the org including attached and unattached profiles."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+parent}/securityProfiles"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn securityProfiles-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -9438,7 +9479,7 @@
    :name string,
    :revisionId string,
    :profileConfig {:categories [GoogleCloudApigeeV1ProfileConfigCategory]},
-   :environments [{:attachTime string, :environment string}],
+   :environments [{:environment string, :attachTime string}],
    :revisionPublishTime string,
    :maxScore integer,
    :revisionUpdateTime string}
@@ -9465,11 +9506,11 @@
      auth))))
 
 (defn securityProfiles-listRevisions$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/listRevisions
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: pageToken, pageSize
   
   ListSecurityProfileRevisions lists all the revisions of the security profile."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -9491,7 +9532,7 @@
      auth))))
 
 (defn securityProfiles-environments-create$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/environments/create
+  "https://cloud.google.com/apigee
   
   Required parameters: parent
   
@@ -9522,8 +9563,43 @@
       :as :json}
      auth))))
 
+(defn securityProfiles-environments-computeEnvironmentScores$
+  "https://cloud.google.com/apigee
+  
+  Required parameters: profileEnvironment
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:pageSize integer,
+   :filters [{:scorePath string}],
+   :timeRange {:startTime string, :endTime string},
+   :pageToken string}
+  
+  ComputeEnvironmentScores calculates scores for requested time range for the specified security profile and environment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:profileEnvironment})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://apigee.googleapis.com/"
+     "v1/{+profileEnvironment}:computeEnvironmentScores"
+     #{:profileEnvironment}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn securityProfiles-environments-delete$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/environments/delete
+  "https://cloud.google.com/apigee
   
   Required parameters: name
   
@@ -9543,41 +9619,6 @@
     (merge-with
      merge
      {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn securityProfiles-environments-computeEnvironmentScores$
-  "https://cloud.google.com/apigee-api-management/api/reference/rest/v1/organizations/securityProfiles/environments/computeEnvironmentScores
-  
-  Required parameters: profileEnvironment
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:pageToken string,
-   :timeRange {:endTime string, :startTime string},
-   :filters [{:scorePath string}],
-   :pageSize integer}
-  
-  ComputeEnvironmentScores calculates scores for requested time range for the specified security profile and environment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:profileEnvironment})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://apigee.googleapis.com/"
-     "v1/{+profileEnvironment}:computeEnvironmentScores"
-     #{:profileEnvironment}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

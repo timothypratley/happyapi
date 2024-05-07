@@ -1,13 +1,13 @@
 (ns happygapi.adsensehost.customchannels
   "AdSense Host API: customchannels.
   Generates performance reports, generates ad codes, and provides publisher management capabilities for AdSense Hosts.
-  See: https://developers.google.com/adsense/host/api/reference/rest/v4.1/customchannels"
+  See: https://developers.google.com/adsense/host/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/customchannels/delete
+  "https://developers.google.com/adsense/host/v4.1/docs/customchannels/delete
   
   Required parameters: adClientId, customChannelId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/customchannels/get
+  "https://developers.google.com/adsense/host/v4.1/docs/customchannels/get
   
   Required parameters: adClientId, customChannelId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/customchannels/insert
+  "https://developers.google.com/adsense/host/v4.1/docs/customchannels/insert
   
   Required parameters: adClientId
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/customchannels/list
+  "https://developers.google.com/adsense/host/v4.1/docs/customchannels/list
   
   Required parameters: adClientId
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/customchannels/patch
+  "https://developers.google.com/adsense/host/v4.1/docs/customchannels/patch
   
   Required parameters: adClientId, customChannelId
   
@@ -149,7 +149,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/adsense/host/api/reference/rest/v4.1/customchannels/update
+  "https://developers.google.com/adsense/host/v4.1/docs/customchannels/update
   
   Required parameters: adClientId
   

@@ -1,13 +1,13 @@
 (ns happygapi.lifesciences.projects
   "Cloud Life Sciences API: projects.
   Cloud Life Sciences is a suite of services and tools for managing, processing, and transforming life sciences data.
-  See: https://cloud.google.com/life-sciencesapi/reference/rest/v2beta/projects"
+  See: https://cloud.google.com/life-sciences-solutions"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/life-sciencesapi/reference/rest/v2beta/projects/locations/list
+  "https://cloud.google.com/life-sciences-solutions
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/life-sciencesapi/reference/rest/v2beta/projects/locations/get
+  "https://cloud.google.com/life-sciences-solutions
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/life-sciencesapi/reference/rest/v2beta/projects/locations/operations/list
+  "https://cloud.google.com/life-sciences-solutions
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/life-sciencesapi/reference/rest/v2beta/projects/locations/operations/get
+  "https://cloud.google.com/life-sciences-solutions
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/life-sciencesapi/reference/rest/v2beta/projects/locations/operations/cancel
+  "https://cloud.google.com/life-sciences-solutions
   
   Required parameters: name
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-pipelines-run$
-  "https://cloud.google.com/life-sciencesapi/reference/rest/v2beta/projects/locations/pipelines/run
+  "https://cloud.google.com/life-sciences-solutions
   
   Required parameters: parent
   

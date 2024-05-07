@@ -1,13 +1,13 @@
 (ns happygapi.vpcaccess.projects
   "Serverless VPC Access API: projects.
   API for managing VPC access connectors.
-  See: https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/vpc/docs/configure-serverless-vpc-access"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-access
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-access
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-access
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-connectors-create$
-  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects/locations/connectors/create
+  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-access
   
   Required parameters: parent
   
@@ -127,7 +127,7 @@
      auth))))
 
 (defn locations-connectors-patch$
-  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects/locations/connectors/patch
+  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-access
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-connectors-get$
-  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects/locations/connectors/get
+  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-access
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-connectors-list$
-  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects/locations/connectors/list
+  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-access
   
   Required parameters: parent
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-connectors-delete$
-  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-accessapi/reference/rest/v1/projects/locations/connectors/delete
+  "https://cloud.google.com/vpc/docs/configure-serverless-vpc-access
   
   Required parameters: name
   

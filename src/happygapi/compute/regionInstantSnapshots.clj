@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionInstantSnapshots
   "Compute Engine API: regionInstantSnapshots.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots/list
+  "https://cloud.google.com/products/compute/v1/docs/regionInstantSnapshots/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots/get
+  "https://cloud.google.com/products/compute/v1/docs/regionInstantSnapshots/get
   
   Required parameters: instantSnapshot, project, region
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionInstantSnapshots/insert
   
   Required parameters: project, region
   
@@ -116,7 +116,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/regionInstantSnapshots/setLabels
   
   Required parameters: project, region, resource
   
@@ -149,7 +149,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionInstantSnapshots/delete
   
   Required parameters: instantSnapshot, project, region
   
@@ -178,7 +178,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionInstantSnapshots/getIamPolicy
   
   Required parameters: project, region, resource
   
@@ -206,7 +206,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionInstantSnapshots/setIamPolicy
   
   Required parameters: project, region, resource
   
@@ -248,7 +248,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionInstantSnapshots/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/regionInstantSnapshots/testIamPermissions
   
   Required parameters: project, region, resource
   

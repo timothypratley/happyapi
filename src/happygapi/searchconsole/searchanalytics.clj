@@ -1,13 +1,13 @@
 (ns happygapi.searchconsole.searchanalytics
   "Google Search Console API: searchanalytics.
   The Search Console API provides access to both Search Console data (verified users only) and to public information on an URL basis (anyone)
-  See: https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/searchanalytics"
+  See: https://developer.chrome.com/docs/lighthouse/overview/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn query$
-  "https://developers.google.com/webmaster-tools/search-console-api/api/reference/rest/v1/searchanalytics/query
+  "https://developer.chrome.com/docs/lighthouse/overview
   
   Required parameters: siteUrl
   
@@ -22,8 +22,8 @@
    :rowLimit integer,
    :dimensions [string],
    :endDate string,
-   :dimensionFilterGroups [{:filters [ApiDimensionFilter],
-                            :groupType string}],
+   :dimensionFilterGroups [{:groupType string,
+                            :filters [ApiDimensionFilter]}],
    :startRow integer,
    :aggregationType string}
   

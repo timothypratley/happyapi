@@ -1,13 +1,13 @@
 (ns happygapi.compute.networks
   "Compute Engine API: networks.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/networks"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/get
+  "https://cloud.google.com/products/compute/v1/docs/networks/get
   
   Required parameters: network, project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/insert
+  "https://cloud.google.com/products/compute/v1/docs/networks/insert
   
   Required parameters: project
   
@@ -96,7 +96,7 @@
      auth))))
 
 (defn getEffectiveFirewalls$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/getEffectiveFirewalls
+  "https://cloud.google.com/products/compute/v1/docs/networks/getEffectiveFirewalls
   
   Required parameters: network, project
   
@@ -124,7 +124,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/patch
+  "https://cloud.google.com/products/compute/v1/docs/networks/patch
   
   Required parameters: network, project
   
@@ -185,7 +185,7 @@
      auth))))
 
 (defn listPeeringRoutes$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/listPeeringRoutes
+  "https://cloud.google.com/products/compute/v1/docs/networks/listPeeringRoutes
   
   Required parameters: project, network
   
@@ -213,7 +213,7 @@
      auth))))
 
 (defn removePeering$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/removePeering
+  "https://cloud.google.com/products/compute/v1/docs/networks/removePeering
   
   Required parameters: network, project
   
@@ -246,7 +246,7 @@
      auth))))
 
 (defn addPeering$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/addPeering
+  "https://cloud.google.com/products/compute/v1/docs/networks/addPeering
   
   Required parameters: network, project
   
@@ -293,7 +293,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/delete
+  "https://cloud.google.com/products/compute/v1/docs/networks/delete
   
   Required parameters: network, project
   
@@ -320,7 +320,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/list
+  "https://cloud.google.com/products/compute/v1/docs/networks/list
   
   Required parameters: project
   
@@ -348,7 +348,7 @@
      auth))))
 
 (defn switchToCustomMode$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/switchToCustomMode
+  "https://cloud.google.com/products/compute/v1/docs/networks/switchToCustomMode
   
   Required parameters: network, project
   
@@ -375,7 +375,7 @@
      auth))))
 
 (defn updatePeering$
-  "https://cloud.google.com/compute/api/reference/rest/v1/networks/updatePeering
+  "https://cloud.google.com/products/compute/v1/docs/networks/updatePeering
   
   Required parameters: network, project
   

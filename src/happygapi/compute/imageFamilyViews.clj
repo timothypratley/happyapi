@@ -1,13 +1,13 @@
 (ns happygapi.compute.imageFamilyViews
   "Compute Engine API: imageFamilyViews.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/imageFamilyViews"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/imageFamilyViews/get
+  "https://cloud.google.com/products/compute/v1/docs/imageFamilyViews/get
   
   Required parameters: family, project, zone
   

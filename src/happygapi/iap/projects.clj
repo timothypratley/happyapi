@@ -1,13 +1,13 @@
 (ns happygapi.iap.projects
   "Cloud Identity-Aware Proxy API: projects.
   Controls access to cloud applications running on Google Cloud Platform.
-  See: https://cloud.google.com/iapapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/security/products/iap"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn iap_tunnel-locations-destGroups-list$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/iap_tunnel/locations/destGroups/list
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/iap_tunnel/locations/destGroups/list
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn iap_tunnel-locations-destGroups-create$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/iap_tunnel/locations/destGroups/create
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/iap_tunnel/locations/destGroups/create
   
   Required parameters: parent
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn iap_tunnel-locations-destGroups-get$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/iap_tunnel/locations/destGroups/get
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/iap_tunnel/locations/destGroups/get
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn iap_tunnel-locations-destGroups-delete$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/iap_tunnel/locations/destGroups/delete
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/iap_tunnel/locations/destGroups/delete
   
   Required parameters: name
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn iap_tunnel-locations-destGroups-patch$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/iap_tunnel/locations/destGroups/patch
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/iap_tunnel/locations/destGroups/patch
   
   Required parameters: name
   
@@ -149,7 +149,7 @@
      auth))))
 
 (defn brands-list$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/brands/list
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/brands/list
   
   Required parameters: parent
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn brands-create$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/brands/create
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/brands/create
   
   Required parameters: parent
   
@@ -210,7 +210,7 @@
      auth))))
 
 (defn brands-get$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/brands/get
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/brands/get
   
   Required parameters: name
   
@@ -236,7 +236,7 @@
      auth))))
 
 (defn brands-identityAwareProxyClients-create$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/brands/identityAwareProxyClients/create
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/brands/identityAwareProxyClients/create
   
   Required parameters: parent
   
@@ -268,7 +268,7 @@
      auth))))
 
 (defn brands-identityAwareProxyClients-list$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/brands/identityAwareProxyClients/list
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/brands/identityAwareProxyClients/list
   
   Required parameters: parent
   
@@ -294,7 +294,7 @@
      auth))))
 
 (defn brands-identityAwareProxyClients-get$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/brands/identityAwareProxyClients/get
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/brands/identityAwareProxyClients/get
   
   Required parameters: name
   
@@ -320,7 +320,7 @@
      auth))))
 
 (defn brands-identityAwareProxyClients-resetSecret$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/brands/identityAwareProxyClients/resetSecret
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/brands/identityAwareProxyClients/resetSecret
   
   Required parameters: name
   
@@ -352,7 +352,7 @@
      auth))))
 
 (defn brands-identityAwareProxyClients-delete$
-  "https://cloud.google.com/iapapi/reference/rest/v1/projects/brands/identityAwareProxyClients/delete
+  "https://cloud.google.com/security/products/iap/v1/docs/projects/brands/identityAwareProxyClients/delete
   
   Required parameters: name
   

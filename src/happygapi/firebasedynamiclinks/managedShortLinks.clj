@@ -1,13 +1,13 @@
 (ns happygapi.firebasedynamiclinks.managedShortLinks
   "Firebase Dynamic Links API: managedShortLinks.
   Programmatically creates and manages Firebase Dynamic Links.
-  See: https://firebase.google.com/docs/dynamic-links/api/reference/rest/v1/managedShortLinks"
+  See: https://firebase.google.com/docs/dynamic-links/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://firebase.google.com/docs/dynamic-links/api/reference/rest/v1/managedShortLinks/create
+  "https://firebase.google.com/docs/dynamic-links/v1/docs/managedShortLinks/create
   
   Required parameters: none
   
@@ -15,10 +15,10 @@
   
   Body: 
   
-  {:name string,
-   :longDynamicLink string,
-   :suffix {:option string, :customSuffix string},
+  {:suffix {:option string, :customSuffix string},
    :sdkVersion string,
+   :longDynamicLink string,
+   :name string,
    :dynamicLinkInfo {:socialMetaTagInfo SocialMetaTagInfo,
                      :analyticsInfo AnalyticsInfo,
                      :desktopInfo DesktopInfo,

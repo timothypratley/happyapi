@@ -1,13 +1,13 @@
 (ns happygapi.searchads360.customers
   "Search Ads 360 Reporting API: customers.
   The Search Ads 360 API allows developers to automate downloading reports from Search Ads 360.
-  See: https://developers.google.com/search-ads/reportingapi/reference/rest/v0/customers"
+  See: https://developers.google.com/search-ads/reporting"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn listAccessibleCustomers$
-  "https://developers.google.com/search-ads/reportingapi/reference/rest/v0/customers/listAccessibleCustomers
+  "https://developers.google.com/search-ads/reporting/api/reference/rest/v0/customers/listAccessibleCustomers
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn customColumns-get$
-  "https://developers.google.com/search-ads/reportingapi/reference/rest/v0/customers/customColumns/get
+  "https://developers.google.com/search-ads/reporting/api/reference/rest/v0/customers/customColumns/get
   
   Required parameters: resourceName
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn customColumns-list$
-  "https://developers.google.com/search-ads/reportingapi/reference/rest/v0/customers/customColumns/list
+  "https://developers.google.com/search-ads/reporting/api/reference/rest/v0/customers/customColumns/list
   
   Required parameters: customerId
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn searchAds360-search$
-  "https://developers.google.com/search-ads/reportingapi/reference/rest/v0/customers/searchAds360/search
+  "https://developers.google.com/search-ads/reporting/api/reference/rest/v0/customers/searchAds360/search
   
   Required parameters: customerId
   

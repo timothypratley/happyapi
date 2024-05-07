@@ -1,15 +1,15 @@
 (ns happygapi.playgrouping.apps
   "Google Play Grouping API: apps.
   playgrouping.googleapis.com API.
-  See: https://cloud.google.com/playgrouping/api/reference/rest/v1alpha1/apps"
+  See: https://cloud.google.com/playgrouping/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn tokens-verify$
-  "https://cloud.google.com/playgrouping/api/reference/rest/v1alpha1/apps/tokens/verify
+  "https://cloud.google.com/playgrouping
   
-  Required parameters: token, appPackage
+  Required parameters: appPackage, token
   
   Optional parameters: none
   
@@ -39,19 +39,19 @@
      auth))))
 
 (defn tokens-tags-createOrUpdate$
-  "https://cloud.google.com/playgrouping/api/reference/rest/v1alpha1/apps/tokens/tags/createOrUpdate
+  "https://cloud.google.com/playgrouping
   
-  Required parameters: token, appPackage
+  Required parameters: appPackage, token
   
   Optional parameters: none
   
   Body: 
   
   {:tags [{:key string,
-           :int64Value string,
-           :booleanValue boolean,
+           :timeValue string,
            :stringValue string,
-           :timeValue string}]}
+           :booleanValue boolean,
+           :int64Value string}]}
   
   Create or update tags for the user and app that are represented by the given token."
   {:scopes nil}

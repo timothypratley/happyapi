@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionUrlMaps
   "Compute Engine API: regionUrlMaps.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionUrlMaps"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionUrlMaps/list
+  "https://cloud.google.com/products/compute/v1/docs/regionUrlMaps/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionUrlMaps/get
+  "https://cloud.google.com/products/compute/v1/docs/regionUrlMaps/get
   
   Required parameters: project, region, urlMap
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionUrlMaps/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionUrlMaps/insert
   
   Required parameters: project, region
   
@@ -140,7 +140,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionUrlMaps/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionUrlMaps/delete
   
   Required parameters: project, region, urlMap
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionUrlMaps/update
+  "https://cloud.google.com/products/compute/v1/docs/regionUrlMaps/update
   
   Required parameters: project, region, urlMap
   
@@ -244,7 +244,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionUrlMaps/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionUrlMaps/patch
   
   Required parameters: project, region, urlMap
   
@@ -321,7 +321,7 @@
      auth))))
 
 (defn validate$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionUrlMaps/validate
+  "https://cloud.google.com/products/compute/v1/docs/regionUrlMaps/validate
   
   Required parameters: project, region, urlMap
   

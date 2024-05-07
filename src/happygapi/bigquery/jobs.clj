@@ -1,13 +1,13 @@
 (ns happygapi.bigquery.jobs
   "BigQuery API: jobs.
   A data platform for customers to create, manage, share and query data.
-  See: https://cloud.google.com/bigquery/api/reference/rest/v2/jobs"
+  See: https://cloud.google.com/bigquery/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn cancel$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/jobs/cancel
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/cancel
   
   Required parameters: jobId, projectId
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/jobs/delete
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/delete
   
   Required parameters: jobId, projectId
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/jobs/get
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/get
   
   Required parameters: jobId, projectId
   
@@ -89,7 +89,7 @@
      auth))))
 
 (defn getQueryResults$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/jobs/getQueryResults
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/getQueryResults
   
   Required parameters: jobId, projectId
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/jobs/insert
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/insert
   
   Required parameters: projectId
   
@@ -192,7 +192,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/jobs/list
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/list
   
   Required parameters: projectId
   
@@ -220,7 +220,7 @@
      auth))))
 
 (defn query$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/jobs/query
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query
   
   Required parameters: projectId
   

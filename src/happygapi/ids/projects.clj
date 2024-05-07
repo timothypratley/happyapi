@@ -1,13 +1,13 @@
 (ns happygapi.ids.projects
   "Cloud IDS API: projects.
   Cloud IDS (Cloud Intrusion Detection System) detects malware, spyware, command-and-control attacks, and other network-based threats. Its security efficacy is industry leading, built with Palo Alto Networks technologies. When you use this product, your organization name and consumption levels will be shared with Palo Alto Networks.
-  See: https://cloud.google.com/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-endpoints-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/endpoints/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-endpoints-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/endpoints/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-endpoints-create$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/endpoints/create
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -264,7 +264,7 @@
      auth))))
 
 (defn locations-endpoints-patch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/endpoints/patch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -307,7 +307,7 @@
      auth))))
 
 (defn locations-endpoints-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/endpoints/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -333,7 +333,7 @@
      auth))))
 
 (defn locations-endpoints-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/endpoints/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -369,7 +369,7 @@
      auth))))
 
 (defn locations-endpoints-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/endpoints/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -395,7 +395,7 @@
      auth))))
 
 (defn locations-endpoints-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/endpoints/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   

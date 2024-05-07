@@ -1,13 +1,13 @@
 (ns happygapi.playintegrity.v1
   "Google Play Integrity API: v1.
   The Play Integrity API helps you check that you're interacting with your genuine app on a genuine Android device powered by Google Play services. The Play Integrity API has replaced SafetyNet Attestation and Android Device Verification.
-  See: https://developer.android.com/google/play/integrityapi/reference/rest/v1/v1"
+  See: https://developer.android.com/google/play/integrity"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn $
-  "https://developer.android.com/google/play/integrityapi/reference/rest/v1/decodeIntegrityToken
+  "https://developer.android.com/google/play/integrity
   
   Required parameters: packageName
   

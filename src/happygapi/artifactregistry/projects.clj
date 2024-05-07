@@ -1,13 +1,13 @@
 (ns happygapi.artifactregistry.projects
   "Artifact Registry API: projects.
   Store and manage build artifacts in a scalable and integrated service built on Google infrastructure.
-  See: https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/artifact-registry/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getProjectSettings$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/getProjectSettings
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn updateProjectSettings$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/updateProjectSettings
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -66,7 +66,7 @@
      auth))))
 
 (defn locations-getVpcscConfig$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/getVpcscConfig
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -93,7 +93,7 @@
      auth))))
 
 (defn locations-updateVpcscConfig$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/updateVpcscConfig
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -125,7 +125,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -179,7 +179,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -206,7 +206,7 @@
      auth))))
 
 (defn locations-repositories-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -233,7 +233,7 @@
      auth))))
 
 (defn locations-repositories-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn locations-repositories-create$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/create
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn locations-repositories-patch$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/patch
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -374,7 +374,7 @@
      auth))))
 
 (defn locations-repositories-delete$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/delete
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -400,7 +400,7 @@
      auth))))
 
 (defn locations-repositories-setIamPolicy$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/setIamPolicy
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: resource
   
@@ -432,7 +432,7 @@
      auth))))
 
 (defn locations-repositories-getIamPolicy$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/getIamPolicy
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: resource
   
@@ -459,7 +459,7 @@
      auth))))
 
 (defn locations-repositories-testIamPermissions$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/testIamPermissions
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: resource
   
@@ -492,7 +492,7 @@
      auth))))
 
 (defn locations-repositories-googetArtifacts-import$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/googetArtifacts/import
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -524,7 +524,7 @@
      auth))))
 
 (defn locations-repositories-googetArtifacts-upload$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/googetArtifacts/upload
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -556,7 +556,7 @@
      auth))))
 
 (defn locations-repositories-kfpArtifacts-upload$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/kfpArtifacts/upload
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -588,7 +588,7 @@
      auth))))
 
 (defn locations-repositories-dockerImages-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/dockerImages/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -615,7 +615,7 @@
      auth))))
 
 (defn locations-repositories-dockerImages-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/dockerImages/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -642,7 +642,7 @@
      auth))))
 
 (defn locations-repositories-aptArtifacts-import$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/aptArtifacts/import
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -674,7 +674,7 @@
      auth))))
 
 (defn locations-repositories-aptArtifacts-upload$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/aptArtifacts/upload
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -706,7 +706,7 @@
      auth))))
 
 (defn locations-repositories-npmPackages-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/npmPackages/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -733,7 +733,7 @@
      auth))))
 
 (defn locations-repositories-npmPackages-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/npmPackages/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -760,7 +760,7 @@
      auth))))
 
 (defn locations-repositories-pythonPackages-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/pythonPackages/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -787,7 +787,7 @@
      auth))))
 
 (defn locations-repositories-pythonPackages-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/pythonPackages/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -814,7 +814,7 @@
      auth))))
 
 (defn locations-repositories-mavenArtifacts-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/mavenArtifacts/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -841,7 +841,7 @@
      auth))))
 
 (defn locations-repositories-mavenArtifacts-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/mavenArtifacts/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -867,8 +867,40 @@
       :as :json}
      auth))))
 
+(defn locations-repositories-genericArtifacts-upload$
+  "https://cloud.google.com/artifact-registry/docs
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:name string, :packageId string, :versionId string, :filename string}
+  
+  Directly uploads a Generic artifact. The returned Operation will complete once the resources are uploaded. Package, Version, and File resources are created based on the uploaded artifact. Uploaded artifacts that conflict with existing resources will raise an ALREADY_EXISTS error."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://artifactregistry.googleapis.com/"
+     "v1/{+parent}/genericArtifacts:create"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-repositories-goModules-upload$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/goModules/upload
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -900,7 +932,7 @@
      auth))))
 
 (defn locations-repositories-files-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/files/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -927,7 +959,7 @@
      auth))))
 
 (defn locations-repositories-files-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/files/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -954,7 +986,7 @@
      auth))))
 
 (defn locations-repositories-packages-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -981,7 +1013,7 @@
      auth))))
 
 (defn locations-repositories-packages-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -1008,7 +1040,7 @@
      auth))))
 
 (defn locations-repositories-packages-delete$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/delete
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -1034,7 +1066,7 @@
      auth))))
 
 (defn locations-repositories-packages-patch$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/patch
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -1070,7 +1102,7 @@
      auth))))
 
 (defn locations-repositories-packages-versions-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/versions/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -1097,7 +1129,7 @@
      auth))))
 
 (defn locations-repositories-packages-versions-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/versions/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -1124,7 +1156,7 @@
      auth))))
 
 (defn locations-repositories-packages-versions-delete$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/versions/delete
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -1150,7 +1182,7 @@
      auth))))
 
 (defn locations-repositories-packages-versions-batchDelete$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/versions/batchDelete
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -1182,7 +1214,7 @@
      auth))))
 
 (defn locations-repositories-packages-tags-list$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/tags/list
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -1209,7 +1241,7 @@
      auth))))
 
 (defn locations-repositories-packages-tags-get$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/tags/get
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -1236,7 +1268,7 @@
      auth))))
 
 (defn locations-repositories-packages-tags-create$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/tags/create
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -1268,7 +1300,7 @@
      auth))))
 
 (defn locations-repositories-packages-tags-patch$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/tags/patch
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -1300,7 +1332,7 @@
      auth))))
 
 (defn locations-repositories-packages-tags-delete$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/packages/tags/delete
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: name
   
@@ -1326,7 +1358,7 @@
      auth))))
 
 (defn locations-repositories-yumArtifacts-import$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/yumArtifacts/import
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   
@@ -1358,7 +1390,7 @@
      auth))))
 
 (defn locations-repositories-yumArtifacts-upload$
-  "https://cloud.google.com/artifacts/docs/api/reference/rest/v1/projects/locations/repositories/yumArtifacts/upload
+  "https://cloud.google.com/artifact-registry/docs
   
   Required parameters: parent
   

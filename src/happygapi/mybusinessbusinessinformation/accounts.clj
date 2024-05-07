@@ -1,13 +1,13 @@
 (ns happygapi.mybusinessbusinessinformation.accounts
   "My Business Business Information API: accounts.
   The My Business Business Information API provides an interface for managing business information. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
-  See: https://developers.google.com/my-business/api/reference/rest/v1/accounts"
+  See: https://developers.google.com/my-business/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/locations/list
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-create$
-  "https://developers.google.com/my-business/api/reference/rest/v1/accounts/locations/create
+  "https://developers.google.com/my-business
   
   Required parameters: parent
   

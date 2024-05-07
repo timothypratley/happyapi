@@ -1,13 +1,13 @@
 (ns happygapi.gamesManagement.achievements
   "Google Play Game Management: achievements.
   The Google Play Game Management API allows developers to manage resources from the Google Play Game service.
-  See: https://developers.google.com/games/api/reference/rest/v1management/achievements"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn reset$
-  "https://developers.google.com/games/api/reference/rest/v1management/achievements/reset
+  "https://games.withgoogle.com
   
   Required parameters: achievementId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn resetAll$
-  "https://developers.google.com/games/api/reference/rest/v1management/achievements/resetAll
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn resetAllForAllPlayers$
-  "https://developers.google.com/games/api/reference/rest/v1management/achievements/resetAllForAllPlayers
+  "https://games.withgoogle.com
   
   Required parameters: none
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn resetForAllPlayers$
-  "https://developers.google.com/games/api/reference/rest/v1management/achievements/resetForAllPlayers
+  "https://games.withgoogle.com
   
   Required parameters: achievementId
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn resetMultipleForAllPlayers$
-  "https://developers.google.com/games/api/reference/rest/v1management/achievements/resetMultipleForAllPlayers
+  "https://games.withgoogle.com
   
   Required parameters: none
   

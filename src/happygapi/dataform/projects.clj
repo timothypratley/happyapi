@@ -1,13 +1,13 @@
 (ns happygapi.dataform.projects
   "Dataform API: projects.
   Service to develop, version control, and operationalize SQL pipelines in BigQuery.
-  See: https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects"
+  See: https://cloud.google.com/dataform/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/list
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/get
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-repositories-readFile$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/readFile
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/readFile
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-repositories-get$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/get
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-repositories-setIamPolicy$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/setIamPolicy
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/setIamPolicy
   
   Required parameters: resource
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn locations-repositories-patch$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/patch
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/patch
   
   Required parameters: name
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn locations-repositories-testIamPermissions$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/testIamPermissions
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/testIamPermissions
   
   Required parameters: resource
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-repositories-create$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/create
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/create
   
   Required parameters: parent
   
@@ -267,7 +267,7 @@
      auth))))
 
 (defn locations-repositories-delete$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/delete
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/delete
   
   Required parameters: name
   
@@ -293,7 +293,7 @@
      auth))))
 
 (defn locations-repositories-fetchRemoteBranches$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/fetchRemoteBranches
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/fetchRemoteBranches
   
   Required parameters: name
   
@@ -319,7 +319,7 @@
      auth))))
 
 (defn locations-repositories-getIamPolicy$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/getIamPolicy
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/getIamPolicy
   
   Required parameters: resource
   
@@ -345,7 +345,7 @@
      auth))))
 
 (defn locations-repositories-queryDirectoryContents$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/queryDirectoryContents
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/queryDirectoryContents
   
   Required parameters: name
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn locations-repositories-list$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/list
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/list
   
   Required parameters: parent
   
@@ -397,7 +397,7 @@
      auth))))
 
 (defn locations-repositories-fetchHistory$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/fetchHistory
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/fetchHistory
   
   Required parameters: name
   
@@ -423,7 +423,7 @@
      auth))))
 
 (defn locations-repositories-commit$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/commit
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/commit
   
   Required parameters: name
   
@@ -457,7 +457,7 @@
      auth))))
 
 (defn locations-repositories-computeAccessTokenStatus$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/computeAccessTokenStatus
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/computeAccessTokenStatus
   
   Required parameters: name
   
@@ -483,7 +483,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-readFile$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/readFile
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/readFile
   
   Required parameters: workspace
   
@@ -509,7 +509,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-removeFile$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/removeFile
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/removeFile
   
   Required parameters: workspace
   
@@ -541,7 +541,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-get$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/get
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/get
   
   Required parameters: name
   
@@ -567,7 +567,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-push$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/push
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/push
   
   Required parameters: name
   
@@ -599,7 +599,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-setIamPolicy$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/setIamPolicy
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/setIamPolicy
   
   Required parameters: resource
   
@@ -631,7 +631,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-installNpmPackages$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/installNpmPackages
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/installNpmPackages
   
   Required parameters: workspace
   
@@ -663,7 +663,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-fetchFileGitStatuses$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/fetchFileGitStatuses
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/fetchFileGitStatuses
   
   Required parameters: name
   
@@ -689,7 +689,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-testIamPermissions$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/testIamPermissions
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/testIamPermissions
   
   Required parameters: resource
   
@@ -721,7 +721,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-reset$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/reset
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/reset
   
   Required parameters: name
   
@@ -753,7 +753,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-searchFiles$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/searchFiles
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/searchFiles
   
   Required parameters: workspace
   
@@ -779,7 +779,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-create$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/create
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/create
   
   Required parameters: parent
   
@@ -811,7 +811,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-delete$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/delete
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/delete
   
   Required parameters: name
   
@@ -837,7 +837,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-getIamPolicy$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/getIamPolicy
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/getIamPolicy
   
   Required parameters: resource
   
@@ -863,7 +863,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-queryDirectoryContents$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/queryDirectoryContents
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/queryDirectoryContents
   
   Required parameters: workspace
   
@@ -889,7 +889,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-writeFile$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/writeFile
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/writeFile
   
   Required parameters: workspace
   
@@ -921,7 +921,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-list$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/list
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/list
   
   Required parameters: parent
   
@@ -947,7 +947,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-moveFile$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/moveFile
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/moveFile
   
   Required parameters: workspace
   
@@ -979,7 +979,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-commit$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/commit
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/commit
   
   Required parameters: name
   
@@ -1013,7 +1013,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-makeDirectory$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/makeDirectory
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/makeDirectory
   
   Required parameters: workspace
   
@@ -1045,7 +1045,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-moveDirectory$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/moveDirectory
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/moveDirectory
   
   Required parameters: workspace
   
@@ -1077,7 +1077,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-fetchFileDiff$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/fetchFileDiff
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/fetchFileDiff
   
   Required parameters: workspace
   
@@ -1103,7 +1103,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-fetchGitAheadBehind$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/fetchGitAheadBehind
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/fetchGitAheadBehind
   
   Required parameters: name
   
@@ -1129,7 +1129,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-pull$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/pull
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/pull
   
   Required parameters: name
   
@@ -1161,7 +1161,7 @@
      auth))))
 
 (defn locations-repositories-workspaces-removeDirectory$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workspaces/removeDirectory
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workspaces/removeDirectory
   
   Required parameters: workspace
   
@@ -1193,7 +1193,7 @@
      auth))))
 
 (defn locations-repositories-releaseConfigs-list$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/releaseConfigs/list
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.releaseConfigs/list
   
   Required parameters: parent
   
@@ -1219,7 +1219,7 @@
      auth))))
 
 (defn locations-repositories-releaseConfigs-get$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/releaseConfigs/get
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.releaseConfigs/get
   
   Required parameters: name
   
@@ -1245,7 +1245,7 @@
      auth))))
 
 (defn locations-repositories-releaseConfigs-create$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/releaseConfigs/create
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.releaseConfigs/create
   
   Required parameters: parent
   
@@ -1255,14 +1255,15 @@
   
   {:name string,
    :gitCommitish string,
-   :codeCompilationConfig {:defaultDatabase string,
-                           :defaultSchema string,
+   :codeCompilationConfig {:defaultNotebookRuntimeOptions NotebookRuntimeOptions,
+                           :defaultDatabase string,
                            :defaultLocation string,
-                           :assertionSchema string,
-                           :vars {},
                            :databaseSuffix string,
+                           :defaultSchema string,
+                           :tablePrefix string,
+                           :assertionSchema string,
                            :schemaSuffix string,
-                           :tablePrefix string},
+                           :vars {}},
    :cronSchedule string,
    :timeZone string,
    :recentScheduledReleaseRecords [{:releaseTime string,
@@ -1293,7 +1294,7 @@
      auth))))
 
 (defn locations-repositories-releaseConfigs-patch$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/releaseConfigs/patch
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.releaseConfigs/patch
   
   Required parameters: name
   
@@ -1303,14 +1304,15 @@
   
   {:name string,
    :gitCommitish string,
-   :codeCompilationConfig {:defaultDatabase string,
-                           :defaultSchema string,
+   :codeCompilationConfig {:defaultNotebookRuntimeOptions NotebookRuntimeOptions,
+                           :defaultDatabase string,
                            :defaultLocation string,
-                           :assertionSchema string,
-                           :vars {},
                            :databaseSuffix string,
+                           :defaultSchema string,
+                           :tablePrefix string,
+                           :assertionSchema string,
                            :schemaSuffix string,
-                           :tablePrefix string},
+                           :vars {}},
    :cronSchedule string,
    :timeZone string,
    :recentScheduledReleaseRecords [{:releaseTime string,
@@ -1341,7 +1343,7 @@
      auth))))
 
 (defn locations-repositories-releaseConfigs-delete$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/releaseConfigs/delete
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.releaseConfigs/delete
   
   Required parameters: name
   
@@ -1367,11 +1369,11 @@
      auth))))
 
 (defn locations-repositories-compilationResults-list$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/compilationResults/list
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.compilationResults/list
   
   Required parameters: parent
   
-  Optional parameters: pageSize, pageToken, filter
+  Optional parameters: pageSize, pageToken, orderBy, filter
   
   Lists CompilationResults in a given Repository."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1393,7 +1395,7 @@
      auth))))
 
 (defn locations-repositories-compilationResults-get$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/compilationResults/get
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.compilationResults/get
   
   Required parameters: name
   
@@ -1419,7 +1421,7 @@
      auth))))
 
 (defn locations-repositories-compilationResults-create$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/compilationResults/create
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.compilationResults/create
   
   Required parameters: parent
   
@@ -1431,14 +1433,15 @@
    :gitCommitish string,
    :workspace string,
    :releaseConfig string,
-   :codeCompilationConfig {:defaultDatabase string,
-                           :defaultSchema string,
+   :codeCompilationConfig {:defaultNotebookRuntimeOptions NotebookRuntimeOptions,
+                           :defaultDatabase string,
                            :defaultLocation string,
-                           :assertionSchema string,
-                           :vars {},
                            :databaseSuffix string,
+                           :defaultSchema string,
+                           :tablePrefix string,
+                           :assertionSchema string,
                            :schemaSuffix string,
-                           :tablePrefix string},
+                           :vars {}},
    :resolvedGitCommitSha string,
    :dataformCoreVersion string,
    :compilationErrors [{:message string,
@@ -1468,7 +1471,7 @@
      auth))))
 
 (defn locations-repositories-compilationResults-query$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/compilationResults/query
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.compilationResults/query
   
   Required parameters: name
   
@@ -1494,7 +1497,7 @@
      auth))))
 
 (defn locations-repositories-workflowConfigs-list$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowConfigs/list
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowConfigs/list
   
   Required parameters: parent
   
@@ -1520,7 +1523,7 @@
      auth))))
 
 (defn locations-repositories-workflowConfigs-get$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowConfigs/get
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowConfigs/get
   
   Required parameters: name
   
@@ -1546,7 +1549,7 @@
      auth))))
 
 (defn locations-repositories-workflowConfigs-create$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowConfigs/create
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowConfigs/create
   
   Required parameters: parent
   
@@ -1590,7 +1593,7 @@
      auth))))
 
 (defn locations-repositories-workflowConfigs-patch$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowConfigs/patch
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowConfigs/patch
   
   Required parameters: name
   
@@ -1634,7 +1637,7 @@
      auth))))
 
 (defn locations-repositories-workflowConfigs-delete$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowConfigs/delete
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowConfigs/delete
   
   Required parameters: name
   
@@ -1660,7 +1663,7 @@
      auth))))
 
 (defn locations-repositories-workflowInvocations-list$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowInvocations/list
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowInvocations/list
   
   Required parameters: parent
   
@@ -1686,7 +1689,7 @@
      auth))))
 
 (defn locations-repositories-workflowInvocations-get$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowInvocations/get
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowInvocations/get
   
   Required parameters: name
   
@@ -1712,7 +1715,7 @@
      auth))))
 
 (defn locations-repositories-workflowInvocations-create$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowInvocations/create
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowInvocations/create
   
   Required parameters: parent
   
@@ -1755,7 +1758,7 @@
      auth))))
 
 (defn locations-repositories-workflowInvocations-delete$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowInvocations/delete
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowInvocations/delete
   
   Required parameters: name
   
@@ -1781,7 +1784,7 @@
      auth))))
 
 (defn locations-repositories-workflowInvocations-cancel$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowInvocations/cancel
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowInvocations/cancel
   
   Required parameters: name
   
@@ -1813,7 +1816,7 @@
      auth))))
 
 (defn locations-repositories-workflowInvocations-query$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/repositories/workflowInvocations/query
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.workflowInvocations/query
   
   Required parameters: name
   
@@ -1839,7 +1842,7 @@
      auth))))
 
 (defn locations-collections-setIamPolicy$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/collections/setIamPolicy
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.collections/setIamPolicy
   
   Required parameters: resource
   
@@ -1871,7 +1874,7 @@
      auth))))
 
 (defn locations-collections-getIamPolicy$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/collections/getIamPolicy
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.collections/getIamPolicy
   
   Required parameters: resource
   
@@ -1897,7 +1900,7 @@
      auth))))
 
 (defn locations-collections-testIamPermissions$
-  "https://cloud.google.com/dataform/docsapi/reference/rest/v1beta1/projects/locations/collections/testIamPermissions
+  "https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.collections/testIamPermissions
   
   Required parameters: resource
   

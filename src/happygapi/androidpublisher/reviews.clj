@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.reviews
   "Google Play Android Developer API: reviews.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/reviews"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/reviews/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, reviewId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/reviews/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn reply$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/reviews/reply
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, reviewId
   

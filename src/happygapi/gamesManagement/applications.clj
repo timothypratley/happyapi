@@ -1,13 +1,13 @@
 (ns happygapi.gamesManagement.applications
   "Google Play Game Management: applications.
   The Google Play Game Management API allows developers to manage resources from the Google Play Game service.
-  See: https://developers.google.com/games/api/reference/rest/v1management/applications"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn listHidden$
-  "https://developers.google.com/games/api/reference/rest/v1management/applications/listHidden
+  "https://games.withgoogle.com
   
   Required parameters: applicationId
   

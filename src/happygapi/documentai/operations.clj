@@ -1,13 +1,13 @@
 (ns happygapi.documentai.operations
   "Cloud Document AI API: operations.
   Service to parse structured information from unstructured or semi-structured documents using state-of-the-art Google AI such as natural language, computer vision, translation, and AutoML.
-  See: https://cloud.google.com/document-ai/docs/api/reference/rest/v1/operations"
+  See: https://cloud.google.com/document-ai/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://cloud.google.com/document-ai/docs/api/reference/rest/v1/operations/delete
+  "https://cloud.google.com/document-ai/docs
   
   Required parameters: name
   

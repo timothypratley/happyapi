@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionNetworkFirewallPolicies
   "Compute Engine API: regionNetworkFirewallPolicies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn cloneRules$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/cloneRules
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/cloneRules
   
   Required parameters: firewallPolicy, project, region
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn removeRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/removeRule
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/removeRule
   
   Required parameters: firewallPolicy, project, region
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/get
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/get
   
   Required parameters: firewallPolicy, project, region
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/setIamPolicy
   
   Required parameters: project, region, resource
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/insert
   
   Required parameters: project, region
   
@@ -202,7 +202,7 @@
      auth))))
 
 (defn getEffectiveFirewalls$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/getEffectiveFirewalls
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/getEffectiveFirewalls
   
   Required parameters: network, project, region
   
@@ -230,7 +230,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/patch
   
   Required parameters: firewallPolicy, project, region
   
@@ -297,7 +297,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/testIamPermissions
   
   Required parameters: project, region, resource
   
@@ -331,7 +331,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/delete
   
   Required parameters: firewallPolicy, project, region
   
@@ -360,7 +360,7 @@
      auth))))
 
 (defn removeAssociation$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/removeAssociation
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/removeAssociation
   
   Required parameters: firewallPolicy, project, region
   
@@ -389,7 +389,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/getIamPolicy
   
   Required parameters: project, region, resource
   
@@ -417,7 +417,7 @@
      auth))))
 
 (defn patchRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/patchRule
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/patchRule
   
   Required parameters: firewallPolicy, project, region
   
@@ -477,7 +477,7 @@
      auth))))
 
 (defn addRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/addRule
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/addRule
   
   Required parameters: firewallPolicy, project, region
   
@@ -537,7 +537,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/list
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/list
   
   Required parameters: project, region
   
@@ -565,7 +565,7 @@
      auth))))
 
 (defn getRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/getRule
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/getRule
   
   Required parameters: firewallPolicy, project, region
   
@@ -595,7 +595,7 @@
      auth))))
 
 (defn addAssociation$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/addAssociation
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/addAssociation
   
   Required parameters: firewallPolicy, project, region
   
@@ -634,7 +634,7 @@
      auth))))
 
 (defn getAssociation$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionNetworkFirewallPolicies/getAssociation
+  "https://cloud.google.com/products/compute/v1/docs/regionNetworkFirewallPolicies/getAssociation
   
   Required parameters: firewallPolicy, project, region
   

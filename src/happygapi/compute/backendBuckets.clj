@@ -1,13 +1,13 @@
 (ns happygapi.compute.backendBuckets
   "Compute Engine API: backendBuckets.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/get
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/get
   
   Required parameters: backendBucket, project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/setIamPolicy
   
   Required parameters: project, resource
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/insert
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/insert
   
   Required parameters: project
   
@@ -132,7 +132,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/patch
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/patch
   
   Required parameters: backendBucket, project
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/testIamPermissions
   
   Required parameters: project, resource
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/update
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/update
   
   Required parameters: backendBucket, project
   
@@ -276,7 +276,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/delete
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/delete
   
   Required parameters: backendBucket, project
   
@@ -303,7 +303,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/getIamPolicy
   
   Required parameters: project, resource
   
@@ -331,7 +331,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/list
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/list
   
   Required parameters: project
   
@@ -359,7 +359,7 @@
      auth))))
 
 (defn addSignedUrlKey$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/addSignedUrlKey
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/addSignedUrlKey
   
   Required parameters: backendBucket, project
   
@@ -392,7 +392,7 @@
      auth))))
 
 (defn deleteSignedUrlKey$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/deleteSignedUrlKey
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/deleteSignedUrlKey
   
   Required parameters: backendBucket, keyName, project
   
@@ -421,7 +421,7 @@
      auth))))
 
 (defn setEdgeSecurityPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/backendBuckets/setEdgeSecurityPolicy
+  "https://cloud.google.com/products/compute/v1/docs/backendBuckets/setEdgeSecurityPolicy
   
   Required parameters: backendBucket, project
   

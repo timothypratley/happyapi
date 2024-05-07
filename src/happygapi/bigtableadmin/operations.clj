@@ -1,13 +1,13 @@
 (ns happygapi.bigtableadmin.operations
   "Cloud Bigtable Admin API: operations.
   Administer your Cloud Bigtable tables and instances.
-  See: https://cloud.google.com/bigtable/api/reference/rest/v2/operations"
+  See: https://cloud.google.com/bigtable/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/bigtable/api/reference/rest/v2/operations/get
+  "https://cloud.google.com/bigtable
   
   Required parameters: name
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn projects-operations-list$
-  "https://cloud.google.com/bigtable/api/reference/rest/v2/operations/projects/operations/list
+  "https://cloud.google.com/bigtable
   
   Required parameters: name
   

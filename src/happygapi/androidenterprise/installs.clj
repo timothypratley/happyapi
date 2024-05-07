@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.installs
   "Google Play EMM API: installs.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/installs"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/installs/list
+  "https://developers.google.com/android/work/play/emm-api/v1/installs/list
   
   Required parameters: enterpriseId, userId, deviceId
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/installs/get
+  "https://developers.google.com/android/work/play/emm-api/v1/installs/get
   
   Required parameters: enterpriseId, userId, deviceId, installId
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/installs/update
+  "https://developers.google.com/android/work/play/emm-api/v1/installs/update
   
   Required parameters: enterpriseId, userId, deviceId, installId
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/installs/delete
+  "https://developers.google.com/android/work/play/emm-api/v1/installs/delete
   
   Required parameters: enterpriseId, userId, deviceId, installId
   

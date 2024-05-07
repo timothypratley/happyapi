@@ -1,13 +1,13 @@
 (ns happygapi.compute.images
   "Compute Engine API: images.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/images"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/get
+  "https://cloud.google.com/products/compute/v1/docs/images/get
   
   Required parameters: image, project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/images/setIamPolicy
   
   Required parameters: project, resource
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/insert
+  "https://cloud.google.com/products/compute/v1/docs/images/insert
   
   Required parameters: project
   
@@ -171,7 +171,7 @@
      auth))))
 
 (defn getFromFamily$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/getFromFamily
+  "https://cloud.google.com/products/compute/v1/docs/images/getFromFamily
   
   Required parameters: family, project
   
@@ -199,7 +199,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/patch
+  "https://cloud.google.com/products/compute/v1/docs/images/patch
   
   Required parameters: image, project
   
@@ -290,7 +290,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/images/testIamPermissions
   
   Required parameters: project, resource
   
@@ -324,7 +324,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/images/setLabels
   
   Required parameters: project, resource
   
@@ -357,7 +357,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/delete
+  "https://cloud.google.com/products/compute/v1/docs/images/delete
   
   Required parameters: image, project
   
@@ -384,7 +384,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/images/getIamPolicy
   
   Required parameters: project, resource
   
@@ -412,7 +412,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/list
+  "https://cloud.google.com/products/compute/v1/docs/images/list
   
   Required parameters: project
   
@@ -440,7 +440,7 @@
      auth))))
 
 (defn deprecate$
-  "https://cloud.google.com/compute/api/reference/rest/v1/images/deprecate
+  "https://cloud.google.com/products/compute/v1/docs/images/deprecate
   
   Required parameters: image, project
   

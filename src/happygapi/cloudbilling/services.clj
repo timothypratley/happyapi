@@ -1,13 +1,13 @@
 (ns happygapi.cloudbilling.services
   "Cloud Billing API: services.
   Allows developers to manage billing for their Google Cloud Platform projects programmatically.
-  See: https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/services"
+  See: https://cloud.google.com/billing/docs/apis"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/services/list
+  "https://cloud.google.com/billing/docs/reference/rest/v1/services/list
   
   Required parameters: none
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn skus-list$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/services/skus/list
+  "https://cloud.google.com/billing/docs/reference/rest/v1/services.skus/list
   
   Required parameters: parent
   

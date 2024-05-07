@@ -1,13 +1,13 @@
 (ns happygapi.sqladmin.sslCerts
   "Cloud SQL Admin API: sslCerts.
   API for Cloud SQL database instance management
-  See: https://developers.google.com/cloud-sql/api/reference/rest/v1/sslCerts"
+  See: https://cloud.google.com/sql/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn createEphemeral$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/sslCerts/createEphemeral
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/sslCerts/createEphemeral
   
   Required parameters: project, instance
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/sslCerts/delete
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/sslCerts/delete
   
   Required parameters: project, instance, sha1Fingerprint
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/sslCerts/get
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/sslCerts/get
   
   Required parameters: project, instance, sha1Fingerprint
   
@@ -98,7 +98,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/sslCerts/insert
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/sslCerts/insert
   
   Required parameters: project, instance
   
@@ -131,7 +131,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/sslCerts/list
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/sslCerts/list
   
   Required parameters: project, instance
   

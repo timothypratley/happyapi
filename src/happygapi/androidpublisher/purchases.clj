@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.purchases
   "Google Play Android Developer API: purchases.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/purchases"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn products-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/products/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, token
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn products-acknowledge$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/products/acknowledge
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, token
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn products-consume$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/products/consume
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, token
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn subscriptions-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/subscriptions/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, subscriptionId, token
   
@@ -119,7 +119,7 @@
      auth))))
 
 (defn subscriptions-cancel$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/subscriptions/cancel
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, subscriptionId, token
   
@@ -147,7 +147,7 @@
      auth))))
 
 (defn subscriptions-defer$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/subscriptions/defer
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, subscriptionId, token
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn subscriptions-refund$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/subscriptions/refund
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, subscriptionId, token
   
@@ -210,7 +210,7 @@
      auth))))
 
 (defn subscriptions-revoke$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/subscriptions/revoke
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, subscriptionId, token
   
@@ -238,7 +238,7 @@
      auth))))
 
 (defn subscriptions-acknowledge$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/subscriptions/acknowledge
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, subscriptionId, token
   
@@ -272,7 +272,7 @@
      auth))))
 
 (defn subscriptionsv2-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/subscriptionsv2/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, token
   
@@ -298,7 +298,7 @@
      auth))))
 
 (defn subscriptionsv2-revoke$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/subscriptionsv2/revoke
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, token
   
@@ -330,7 +330,7 @@
      auth))))
 
 (defn voidedpurchases-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/purchases/voidedpurchases/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   

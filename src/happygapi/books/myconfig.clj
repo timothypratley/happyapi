@@ -1,13 +1,13 @@
 (ns happygapi.books.myconfig
   "Books API: myconfig.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/myconfig"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getUserSettings$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/myconfig/getUserSettings
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/myconfig/getUserSettings
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn releaseDownloadAccess$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/myconfig/releaseDownloadAccess
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/myconfig/releaseDownloadAccess
   
   Required parameters: cpksver, volumeIds
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn requestAccess$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/myconfig/requestAccess
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/myconfig/requestAccess
   
   Required parameters: cpksver, nonce, source, volumeId
   
@@ -87,7 +87,7 @@
      auth))))
 
 (defn syncVolumeLicenses$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/myconfig/syncVolumeLicenses
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/myconfig/syncVolumeLicenses
   
   Required parameters: cpksver, nonce, source
   
@@ -113,7 +113,7 @@
      auth))))
 
 (defn updateUserSettings$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/myconfig/updateUserSettings
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/myconfig/updateUserSettings
   
   Required parameters: none
   

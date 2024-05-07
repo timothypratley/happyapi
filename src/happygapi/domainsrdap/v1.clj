@@ -1,13 +1,13 @@
 (ns happygapi.domainsrdap.v1
   "Domains RDAP API: v1.
   Read-only public API that lets users search for information about domain names.
-  See: https://developers.google.com/domains/rdap/api/reference/rest/v1/v1"
+  See: https://developers.google.com/domains/rdap/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn $
-  "https://developers.google.com/domains/rdap/api/reference/rest/v1/getHelp
+  "https://developers.google.com/domains/rdap/reference/rest/v1/getHelp
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn $
-  "https://developers.google.com/domains/rdap/api/reference/rest/v1/getIp
+  "https://developers.google.com/domains/rdap/reference/rest/v1/getIp
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn $
-  "https://developers.google.com/domains/rdap/api/reference/rest/v1/getDomains
+  "https://developers.google.com/domains/rdap/reference/rest/v1/getDomains
   
   Required parameters: none
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn $
-  "https://developers.google.com/domains/rdap/api/reference/rest/v1/getEntities
+  "https://developers.google.com/domains/rdap/reference/rest/v1/getEntities
   
   Required parameters: none
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn $
-  "https://developers.google.com/domains/rdap/api/reference/rest/v1/getNameservers
+  "https://developers.google.com/domains/rdap/reference/rest/v1/getNameservers
   
   Required parameters: none
   

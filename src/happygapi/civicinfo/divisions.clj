@@ -1,13 +1,13 @@
 (ns happygapi.civicinfo.divisions
   "Google Civic Information API: divisions.
   Provides polling places, early vote locations, contest data, election officials, and government representatives for U.S. residential addresses.
-  See: https://developers.google.com/civic-information/api/reference/rest/v2/divisions"
+  See: https://developers.google.com/civic-information/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn search$
-  "https://developers.google.com/civic-information/api/reference/rest/v2/divisions/search
+  "https://developers.google.com/civic-information/docs/v2/divisions/search
   
   Required parameters: none
   

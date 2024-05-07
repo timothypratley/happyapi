@@ -1,40 +1,60 @@
 (ns happygapi.tasks.tasks
   "Google Tasks API: tasks.
   The Google Tasks API lets you manage your tasks and task lists.
-  See: https://developers.google.com/tasks/api/reference/rest/v1/tasks"
+  See: https://developers.google.com/tasks/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
-(defn list$
-  "https://developers.google.com/tasks/api/reference/rest/v1/tasks/list
+(defn update$
+  "https://developers.google.com/tasks/reference/rest/v1/tasks/update
   
-  Required parameters: tasklist
+  Required parameters: task, tasklist
   
-  Optional parameters: completedMin, showCompleted, completedMax, pageToken, showHidden, dueMin, showDeleted, updatedMin, dueMax, maxResults
+  Optional parameters: none
   
-  Returns all tasks in the specified task list."
-  {:scopes ["https://www.googleapis.com/auth/tasks"
-            "https://www.googleapis.com/auth/tasks.readonly"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:tasklist})]}
+  Body: 
+  
+  {:deleted boolean,
+   :parent string,
+   :updated string,
+   :completed string,
+   :selfLink string,
+   :etag string,
+   :due string,
+   :title string,
+   :status string,
+   :hidden boolean,
+   :id string,
+   :kind string,
+   :notes string,
+   :position string,
+   :webViewLink string,
+   :links [{:link string, :type string, :description string}]}
+  
+  Updates the specified task."
+  {:scopes ["https://www.googleapis.com/auth/tasks"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:task :tasklist})]}
   (util/get-response
-   (http/get
+   (http/put
     (util/get-url
      "https://tasks.googleapis.com/"
-     "tasks/v1/lists/{tasklist}/tasks"
-     #{:tasklist}
+     "tasks/v1/lists/{tasklist}/tasks/{task}"
+     #{:task :tasklist}
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn clear$
-  "https://developers.google.com/tasks/api/reference/rest/v1/tasks/clear
+  "https://developers.google.com/tasks/reference/rest/v1/tasks/clear
   
   Required parameters: tasklist
   
@@ -59,22 +79,22 @@
       :as :json}
      auth))))
 
-(defn delete$
-  "https://developers.google.com/tasks/api/reference/rest/v1/tasks/delete
+(defn move$
+  "https://developers.google.com/tasks/reference/rest/v1/tasks/move
   
   Required parameters: task, tasklist
   
-  Optional parameters: none
+  Optional parameters: parent, previous
   
-  Deletes the specified task from the task list."
+  Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks. A user can have up to 2,000 subtasks per task."
   {:scopes ["https://www.googleapis.com/auth/tasks"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:task :tasklist})]}
   (util/get-response
-   (http/delete
+   (http/post
     (util/get-url
      "https://tasks.googleapis.com/"
-     "tasks/v1/lists/{tasklist}/tasks/{task}"
+     "tasks/v1/lists/{tasklist}/tasks/{task}/move"
      #{:task :tasklist}
      parameters)
     (merge-with
@@ -86,7 +106,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/tasks/api/reference/rest/v1/tasks/get
+  "https://developers.google.com/tasks/reference/rest/v1/tasks/get
   
   Required parameters: task, tasklist
   
@@ -112,55 +132,8 @@
       :as :json}
      auth))))
 
-(defn insert$
-  "https://developers.google.com/tasks/api/reference/rest/v1/tasks/insert
-  
-  Required parameters: tasklist
-  
-  Optional parameters: previous, parent
-  
-  Body: 
-  
-  {:deleted boolean,
-   :parent string,
-   :updated string,
-   :completed string,
-   :selfLink string,
-   :etag string,
-   :due string,
-   :title string,
-   :status string,
-   :hidden boolean,
-   :id string,
-   :kind string,
-   :notes string,
-   :position string,
-   :webViewLink string,
-   :links [{:type string, :link string, :description string}]}
-  
-  Creates a new task on the specified task list."
-  {:scopes ["https://www.googleapis.com/auth/tasks"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:tasklist})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://tasks.googleapis.com/"
-     "tasks/v1/lists/{tasklist}/tasks"
-     #{:tasklist}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn patch$
-  "https://developers.google.com/tasks/api/reference/rest/v1/tasks/patch
+  "https://developers.google.com/tasks/reference/rest/v1/tasks/patch
   
   Required parameters: tasklist, task
   
@@ -183,7 +156,7 @@
    :notes string,
    :position string,
    :webViewLink string,
-   :links [{:type string, :link string, :description string}]}
+   :links [{:link string, :type string, :description string}]}
   
   Updates the specified task. This method supports patch semantics."
   {:scopes ["https://www.googleapis.com/auth/tasks"]}
@@ -206,23 +179,24 @@
       :as :json}
      auth))))
 
-(defn move$
-  "https://developers.google.com/tasks/api/reference/rest/v1/tasks/move
+(defn list$
+  "https://developers.google.com/tasks/reference/rest/v1/tasks/list
   
-  Required parameters: tasklist, task
+  Required parameters: tasklist
   
-  Optional parameters: parent, previous
+  Optional parameters: completedMin, showCompleted, completedMax, pageToken, showHidden, dueMin, showDeleted, updatedMin, dueMax, maxResults
   
-  Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks."
-  {:scopes ["https://www.googleapis.com/auth/tasks"]}
+  Returns all tasks in the specified task list. A user can have up to 20,000 non-hidden tasks per list and up to 100,000 tasks in total at a time."
+  {:scopes ["https://www.googleapis.com/auth/tasks"
+            "https://www.googleapis.com/auth/tasks.readonly"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:task :tasklist})]}
+  {:pre [(util/has-keys? parameters #{:tasklist})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://tasks.googleapis.com/"
-     "tasks/v1/lists/{tasklist}/tasks/{task}/move"
-     #{:task :tasklist}
+     "tasks/v1/lists/{tasklist}/tasks"
+     #{:tasklist}
      parameters)
     (merge-with
      merge
@@ -232,12 +206,12 @@
       :as :json}
      auth))))
 
-(defn update$
-  "https://developers.google.com/tasks/api/reference/rest/v1/tasks/update
+(defn insert$
+  "https://developers.google.com/tasks/reference/rest/v1/tasks/insert
   
-  Required parameters: task, tasklist
+  Required parameters: tasklist
   
-  Optional parameters: none
+  Optional parameters: parent, previous
   
   Body: 
   
@@ -256,14 +230,42 @@
    :notes string,
    :position string,
    :webViewLink string,
-   :links [{:type string, :link string, :description string}]}
+   :links [{:link string, :type string, :description string}]}
   
-  Updates the specified task."
+  Creates a new task on the specified task list. A user can have up to 20,000 non-hidden tasks per list and up to 100,000 tasks in total at a time."
   {:scopes ["https://www.googleapis.com/auth/tasks"]}
   [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:tasklist})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://tasks.googleapis.com/"
+     "tasks/v1/lists/{tasklist}/tasks"
+     #{:tasklist}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn delete$
+  "https://developers.google.com/tasks/reference/rest/v1/tasks/delete
+  
+  Required parameters: task, tasklist
+  
+  Optional parameters: none
+  
+  Deletes the specified task from the task list."
+  {:scopes ["https://www.googleapis.com/auth/tasks"]}
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:task :tasklist})]}
   (util/get-response
-   (http/put
+   (http/delete
     (util/get-url
      "https://tasks.googleapis.com/"
      "tasks/v1/lists/{tasklist}/tasks/{task}"
@@ -271,9 +273,7 @@
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

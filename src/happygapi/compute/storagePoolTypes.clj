@@ -1,13 +1,13 @@
 (ns happygapi.compute.storagePoolTypes
   "Compute Engine API: storagePoolTypes.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/storagePoolTypes"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePoolTypes/list
+  "https://cloud.google.com/products/compute/v1/docs/storagePoolTypes/list
   
   Required parameters: project, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePoolTypes/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/storagePoolTypes/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePoolTypes/get
+  "https://cloud.google.com/products/compute/v1/docs/storagePoolTypes/get
   
   Required parameters: project, storagePoolType, zone
   

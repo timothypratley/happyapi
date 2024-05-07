@@ -1,13 +1,13 @@
 (ns happygapi.games.achievements
   "Google Play Game Services: achievements.
   The Google Play games service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
-  See: https://developers.google.com/games/api/reference/rest/v1/achievements"
+  See: https://games.withgoogle.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn increment$
-  "https://developers.google.com/games/api/reference/rest/v1/achievements/increment
+  "https://games.withgoogle.com
   
   Required parameters: achievementId, stepsToIncrement
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/games/api/reference/rest/v1/achievements/list
+  "https://games.withgoogle.com
   
   Required parameters: playerId
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn reveal$
-  "https://developers.google.com/games/api/reference/rest/v1/achievements/reveal
+  "https://games.withgoogle.com
   
   Required parameters: achievementId
   
@@ -87,7 +87,7 @@
      auth))))
 
 (defn setStepsAtLeast$
-  "https://developers.google.com/games/api/reference/rest/v1/achievements/setStepsAtLeast
+  "https://games.withgoogle.com
   
   Required parameters: achievementId, steps
   
@@ -113,7 +113,7 @@
      auth))))
 
 (defn unlock$
-  "https://developers.google.com/games/api/reference/rest/v1/achievements/unlock
+  "https://games.withgoogle.com
   
   Required parameters: achievementId
   
@@ -139,7 +139,7 @@
      auth))))
 
 (defn updateMultiple$
-  "https://developers.google.com/games/api/reference/rest/v1/achievements/updateMultiple
+  "https://games.withgoogle.com
   
   Required parameters: none
   

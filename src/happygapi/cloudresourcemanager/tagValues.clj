@@ -1,13 +1,13 @@
 (ns happygapi.cloudresourcemanager.tagValues
   "Cloud Resource Manager API: tagValues.
   Creates, reads, and updates metadata for Google Cloud Platform resource containers.
-  See: https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues"
+  See: https://cloud.google.com/resource-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/get
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/get
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/setIamPolicy
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/setIamPolicy
   
   Required parameters: resource
   
@@ -70,7 +70,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/patch
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/patch
   
   Required parameters: name
   
@@ -109,7 +109,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/testIamPermissions
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/testIamPermissions
   
   Required parameters: resource
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/create
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/create
   
   Required parameters: none
   
@@ -180,7 +180,7 @@
      auth))))
 
 (defn getNamespaced$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/getNamespaced
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/getNamespaced
   
   Required parameters: none
   
@@ -207,7 +207,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/delete
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/delete
   
   Required parameters: name
   
@@ -233,7 +233,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/getIamPolicy
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/getIamPolicy
   
   Required parameters: resource
   
@@ -266,7 +266,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/list
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/list
   
   Required parameters: none
   
@@ -293,7 +293,7 @@
      auth))))
 
 (defn tagHolds-create$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/tagHolds/create
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/tagHolds/create
   
   Required parameters: parent
   
@@ -329,7 +329,7 @@
      auth))))
 
 (defn tagHolds-delete$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/tagHolds/delete
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/tagHolds/delete
   
   Required parameters: name
   
@@ -355,7 +355,7 @@
      auth))))
 
 (defn tagHolds-list$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagValues/tagHolds/list
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagValues/tagHolds/list
   
   Required parameters: parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.aiplatform.projects
   "Vertex AI API: projects.
   Train high-quality custom machine learning models with minimal machine learning expertise and effort.
-  See: https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/vertex-ai/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -58,34 +58,8 @@
       :as :json}
      auth))))
 
-(defn locations-nasJobs-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/nasJobs/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a NasJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-nasJobs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/nasJobs/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -111,69 +85,23 @@
       :as :json}
      auth))))
 
-(defn locations-nasJobs-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/nasJobs/create
+(defn locations-nasJobs-delete$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: parent
+  Required parameters: name
   
   Optional parameters: none
   
-  Body: 
-  
-  {:labels {},
-   :encryptionSpec {:kmsKeyName string},
-   :startTime string,
-   :displayName string,
-   :name string,
-   :endTime string,
-   :createTime string,
-   :state string,
-   :updateTime string,
-   :nasJobSpec {:multiTrialAlgorithmSpec GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpec,
-                :resumeNasJobId string,
-                :searchSpaceSpec string},
-   :nasJobOutput {:multiTrialJobOutput GoogleCloudAiplatformV1NasJobOutputMultiTrialJobOutput},
-   :error {:details [{}], :code integer, :message string},
-   :enableRestrictedImageTraining boolean}
-  
-  Creates a NasJob"
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/nasJobs"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-nasJobs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/nasJobs/list
-  
-  Required parameters: parent
-  
-  Optional parameters: readMask, pageToken, filter, pageSize
-  
-  Lists NasJobs in a Location."
+  Deletes a NasJob."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/delete
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/nasJobs"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -184,7 +112,7 @@
      auth))))
 
 (defn locations-nasJobs-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/nasJobs/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -215,23 +143,69 @@
       :as :json}
      auth))))
 
-(defn locations-nasJobs-nasTrialDetails-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/nasJobs/nasTrialDetails/get
+(defn locations-nasJobs-create$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: parent
   
   Optional parameters: none
   
-  Gets a NasTrialDetail."
+  Body: 
+  
+  {:labels {},
+   :encryptionSpec {:kmsKeyName string},
+   :startTime string,
+   :displayName string,
+   :name string,
+   :endTime string,
+   :createTime string,
+   :state string,
+   :updateTime string,
+   :nasJobSpec {:searchSpaceSpec string,
+                :multiTrialAlgorithmSpec GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpec,
+                :resumeNasJobId string},
+   :nasJobOutput {:multiTrialJobOutput GoogleCloudAiplatformV1NasJobOutputMultiTrialJobOutput},
+   :error {:message string, :code integer, :details [{}]},
+   :enableRestrictedImageTraining boolean}
+  
+  Creates a NasJob"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/nasJobs"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-nasJobs-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: filter, pageSize, pageToken, readMask
+  
+  Lists NasJobs in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/nasJobs"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -242,7 +216,7 @@
      auth))))
 
 (defn locations-nasJobs-nasTrialDetails-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/nasJobs/nasTrialDetails/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -267,149 +241,14 @@
       :as :json}
      auth))))
 
-(defn locations-notebookRuntimes-assign$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimes/assign
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:notebookRuntime {:description string,
-                     :serviceAccount string,
-                     :labels {},
-                     :proxyUri string,
-                     :runtimeState string,
-                     :expirationTime string,
-                     :displayName string,
-                     :name string,
-                     :runtimeUser string,
-                     :createTime string,
-                     :isUpgradable boolean,
-                     :notebookRuntimeType string,
-                     :updateTime string,
-                     :reservationAffinity GoogleCloudAiplatformV1NotebookReservationAffinity,
-                     :version string,
-                     :healthState string,
-                     :networkTags [string],
-                     :notebookRuntimeTemplateRef GoogleCloudAiplatformV1NotebookRuntimeTemplateRef},
-   :notebookRuntimeTemplate string,
-   :notebookRuntimeId string}
-  
-  Assigns a NotebookRuntime to a user for a particular Notebook file. This method will either returns an existing assignment or generates a new one."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/notebookRuntimes:assign"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-notebookRuntimes-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimes/list
-  
-  Required parameters: parent
-  
-  Optional parameters: filter, orderBy, pageSize, pageToken, readMask
-  
-  Lists NotebookRuntimes in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/notebookRuntimes"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-notebookRuntimes-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimes/delete
+(defn locations-nasJobs-nasTrialDetails-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes a NotebookRuntime."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-notebookRuntimes-start$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimes/start
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {}
-  
-  Starts a NotebookRuntime."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:start"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-notebookRuntimes-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimes/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a NotebookRuntime."
+  Gets a NasTrialDetail."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -429,7 +268,7 @@
      auth))))
 
 (defn locations-notebookRuntimes-upgrade$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimes/upgrade
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -460,92 +299,46 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-searchDataItems$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/searchDataItems
-  
-  Required parameters: dataset
-  
-  Optional parameters: fieldMask, annotationsLimit, savedQuery, orderByAnnotation.savedQuery, orderByAnnotation.orderBy, dataLabelingJob, annotationsFilter, pageToken, orderByDataItem, pageSize, dataItemFilter, annotationFilters, orderBy
-  
-  Searches DataItems in a Dataset."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:dataset})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+dataset}:searchDataItems"
-     #{:dataset}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken, readMask, filter, orderBy
-  
-  Lists Datasets in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/datasets"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/get
-  
-  Required parameters: name
-  
-  Optional parameters: readMask
-  
-  Gets a Dataset."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/delete
+(defn locations-notebookRuntimes-start$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes a Dataset."
+  Body: 
+  
+  {}
+  
+  Starts a NotebookRuntime."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:start"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-notebookRuntimes-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a NotebookRuntime."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -564,8 +357,8 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/create
+(defn locations-notebookRuntimes-assign$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -573,30 +366,28 @@
   
   Body: 
   
-  {:description string,
-   :labels {},
-   :savedQueries [{:displayName string,
-                   :annotationSpecCount integer,
-                   :name string,
-                   :createTime string,
-                   :etag string,
-                   :annotationFilter string,
-                   :updateTime string,
-                   :supportAutomlTraining boolean,
-                   :metadata any,
-                   :problemType string}],
-   :encryptionSpec {:kmsKeyName string},
-   :metadataSchemaUri string,
-   :displayName string,
-   :name string,
-   :createTime string,
-   :metadataArtifact string,
-   :etag string,
-   :dataItemCount string,
-   :updateTime string,
-   :metadata any}
+  {:notebookRuntimeId string,
+   :notebookRuntime {:description string,
+                     :serviceAccount string,
+                     :labels {},
+                     :proxyUri string,
+                     :runtimeState string,
+                     :expirationTime string,
+                     :displayName string,
+                     :name string,
+                     :runtimeUser string,
+                     :createTime string,
+                     :isUpgradable boolean,
+                     :notebookRuntimeType string,
+                     :updateTime string,
+                     :reservationAffinity GoogleCloudAiplatformV1NotebookReservationAffinity,
+                     :version string,
+                     :healthState string,
+                     :networkTags [string],
+                     :notebookRuntimeTemplateRef GoogleCloudAiplatformV1NotebookRuntimeTemplateRef},
+   :notebookRuntimeTemplate string}
   
-  Creates a Dataset."
+  Assigns a NotebookRuntime to a user for a particular Notebook file. This method will either returns an existing assignment or generates a new one."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -604,7 +395,7 @@
    (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/datasets"
+     "v1/{+parent}/notebookRuntimes:assign"
      #{:parent}
      parameters)
     (merge-with
@@ -617,81 +408,60 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-export$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/export
+(defn locations-notebookRuntimes-list$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: readMask, filter, pageSize, orderBy, pageToken
   
-  Body: 
-  
-  {:exportConfig {:annotationSchemaUri string,
-                  :gcsDestination GoogleCloudAiplatformV1GcsDestination,
-                  :exportUse string,
-                  :fractionSplit GoogleCloudAiplatformV1ExportFractionSplit,
-                  :annotationsFilter string,
-                  :filterSplit GoogleCloudAiplatformV1ExportFilterSplit,
-                  :savedQueryId string}}
-  
-  Exports data from a Dataset."
+  Lists NotebookRuntimes in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}:export"
-     #{:name}
+     "v1/{+parent}/notebookRuntimes"
+     #{:parent}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
-(defn locations-datasets-import$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/import
+(defn locations-notebookRuntimes-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Body: 
-  
-  {:importConfigs [{:importSchemaUri string,
-                    :dataItemLabels {},
-                    :gcsSource GoogleCloudAiplatformV1GcsSource,
-                    :annotationLabels {}}]}
-  
-  Imports data into a Dataset."
+  Gets a NotebookRuntime."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}:import"
+     "v1/{+name}"
      #{:name}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-datasets-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -743,60 +513,8 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-datasetVersions-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/datasetVersions/list
-  
-  Required parameters: parent
-  
-  Optional parameters: orderBy, filter, readMask, pageSize, pageToken
-  
-  Lists DatasetVersions in a Dataset."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/datasetVersions"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-datasetVersions-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/datasetVersions/get
-  
-  Required parameters: name
-  
-  Optional parameters: readMask
-  
-  Gets a Dataset version."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-datasetVersions-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/datasetVersions/create
+(defn locations-datasets-create$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -804,15 +522,30 @@
   
   Body: 
   
-  {:etag string,
-   :bigQueryDatasetName string,
-   :createTime string,
-   :updateTime string,
+  {:description string,
+   :labels {},
+   :savedQueries [{:displayName string,
+                   :annotationSpecCount integer,
+                   :name string,
+                   :createTime string,
+                   :etag string,
+                   :annotationFilter string,
+                   :updateTime string,
+                   :supportAutomlTraining boolean,
+                   :metadata any,
+                   :problemType string}],
+   :encryptionSpec {:kmsKeyName string},
+   :metadataSchemaUri string,
    :displayName string,
-   :metadata any,
-   :name string}
+   :name string,
+   :createTime string,
+   :metadataArtifact string,
+   :etag string,
+   :dataItemCount string,
+   :updateTime string,
+   :metadata any}
   
-  Create a version from a Dataset."
+  Creates a Dataset."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -820,7 +553,7 @@
    (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/datasetVersions"
+     "v1/{+parent}/datasets"
      #{:parent}
      parameters)
     (merge-with
@@ -833,14 +566,139 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-datasetVersions-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/datasetVersions/delete
+(defn locations-datasets-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: orderBy, pageToken, pageSize, filter, readMask
+  
+  Lists Datasets in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/datasets"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-export$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes a Dataset version."
+  Body: 
+  
+  {:exportConfig {:filterSplit GoogleCloudAiplatformV1ExportFilterSplit,
+                  :exportUse string,
+                  :annotationsFilter string,
+                  :gcsDestination GoogleCloudAiplatformV1GcsDestination,
+                  :fractionSplit GoogleCloudAiplatformV1ExportFractionSplit,
+                  :savedQueryId string,
+                  :annotationSchemaUri string}}
+  
+  Exports data from a Dataset."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:export"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-import$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:importConfigs [{:gcsSource GoogleCloudAiplatformV1GcsSource,
+                    :annotationLabels {},
+                    :importSchemaUri string,
+                    :dataItemLabels {}}]}
+  
+  Imports data into a Dataset."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:import"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-searchDataItems$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: dataset
+  
+  Optional parameters: fieldMask, annotationsLimit, savedQuery, orderByAnnotation.savedQuery, orderByAnnotation.orderBy, dataLabelingJob, annotationsFilter, pageToken, orderByDataItem, pageSize, dataItemFilter, annotationFilters, orderBy
+  
+  Searches DataItems in a Dataset."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:dataset})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+dataset}:searchDataItems"
+     #{:dataset}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a Dataset."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -859,144 +717,14 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-datasetVersions-restore$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/datasetVersions/restore
+(defn locations-datasets-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: readMask
   
-  Restores a dataset version."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:restore"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageToken, pageSize, filter
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Gets a Dataset."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1006,6 +734,32 @@
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
      #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-savedQueries-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, orderBy, pageToken, readMask, filter
+  
+  Lists SavedQueries in a Dataset."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/savedQueries"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -1016,7 +770,7 @@
      auth))))
 
 (defn locations-datasets-savedQueries-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/savedQueries/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1041,60 +795,8 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-savedQueries-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/savedQueries/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, filter, readMask, pageToken, orderBy
-  
-  Lists SavedQueries in a Dataset."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/savedQueries"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-savedQueries-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/savedQueries/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-datasets-savedQueries-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/savedQueries/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1109,32 +811,6 @@
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-savedQueries-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/savedQueries/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
      #{:name}
      parameters)
     (merge-with
@@ -1146,11 +822,11 @@
      auth))))
 
 (defn locations-datasets-savedQueries-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/savedQueries/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageToken, pageSize, filter
+  Optional parameters: filter, pageSize, pageToken
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1171,86 +847,8 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-savedQueries-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/savedQueries/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-annotationSpecs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/annotationSpecs/get
-  
-  Required parameters: name
-  
-  Optional parameters: readMask
-  
-  Gets an AnnotationSpec."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-annotationSpecs-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/annotationSpecs/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-annotationSpecs-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/annotationSpecs/operations/delete
+(defn locations-datasets-savedQueries-operations-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1275,8 +873,8 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-annotationSpecs-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/annotationSpecs/operations/wait
+(defn locations-datasets-savedQueries-operations-wait$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1301,48 +899,22 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-annotationSpecs-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/annotationSpecs/operations/get
+(defn locations-datasets-savedQueries-operations-cancel$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-datasets-annotationSpecs-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/annotationSpecs/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageSize, pageToken, filter
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
+     "v1/{+name}:cancel"
      #{:name}
      parameters)
     (merge-with
@@ -1354,11 +926,11 @@
      auth))))
 
 (defn locations-datasets-dataItems-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageToken, pageSize, orderBy, readMask, filter
+  Optional parameters: orderBy, readMask, filter, pageSize, pageToken
   
   Lists DataItems in a Dataset."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1379,34 +951,8 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-dataItems-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-datasets-dataItems-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1431,14 +977,14 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-dataItems-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/operations/list
+(defn locations-datasets-dataItems-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageSize, filter, pageToken
+  Optional parameters: none
   
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1446,7 +992,7 @@
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
+     "v1/{+name}"
      #{:name}
      parameters)
     (merge-with
@@ -1458,7 +1004,7 @@
      auth))))
 
 (defn locations-datasets-dataItems-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1483,8 +1029,34 @@
       :as :json}
      auth))))
 
+(defn locations-datasets-dataItems-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageSize, pageToken
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-datasets-dataItems-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1510,11 +1082,11 @@
      auth))))
 
 (defn locations-datasets-dataItems-annotations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/annotations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageToken, readMask, pageSize, filter, orderBy
+  Optional parameters: pageSize, pageToken, orderBy, filter, readMask
   
   Lists Annotations belongs to a dataitem"
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1535,8 +1107,34 @@
       :as :json}
      auth))))
 
+(defn locations-datasets-dataItems-annotations-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-datasets-dataItems-annotations-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/annotations/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1561,8 +1159,34 @@
       :as :json}
      auth))))
 
+(defn locations-datasets-dataItems-annotations-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-datasets-dataItems-annotations-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/annotations/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1588,11 +1212,11 @@
      auth))))
 
 (defn locations-datasets-dataItems-annotations-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/annotations/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageToken, filter, pageSize
+  Optional parameters: filter, pageToken, pageSize
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -1613,14 +1237,14 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-dataItems-annotations-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/annotations/operations/get
+(defn locations-datasets-operations-list$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: pageToken, pageSize, filter
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1628,7 +1252,7 @@
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
+     "v1/{+name}/operations"
      #{:name}
      parameters)
     (merge-with
@@ -1639,8 +1263,34 @@
       :as :json}
      auth))))
 
-(defn locations-datasets-dataItems-annotations-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/datasets/dataItems/annotations/operations/wait
+(defn locations-datasets-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-operations-wait$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1665,14 +1315,14 @@
       :as :json}
      auth))))
 
-(defn locations-pipelineJobs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/get
+(defn locations-datasets-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets a PipelineJob."
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1691,8 +1341,332 @@
       :as :json}
      auth))))
 
+(defn locations-datasets-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-annotationSpecs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: readMask
+  
+  Gets an AnnotationSpec."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-annotationSpecs-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-annotationSpecs-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-annotationSpecs-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-annotationSpecs-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-annotationSpecs-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageSize, pageToken, filter
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-datasetVersions-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: readMask
+  
+  Gets a Dataset version."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-datasetVersions-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a Dataset version."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-datasetVersions-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: orderBy, pageToken, filter, readMask, pageSize
+  
+  Lists DatasetVersions in a Dataset."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/datasetVersions"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-datasetVersions-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:displayName string,
+   :createTime string,
+   :bigQueryDatasetName string,
+   :updateTime string,
+   :name string,
+   :metadata any,
+   :etag string}
+  
+  Create a version from a Dataset."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/datasetVersions"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-datasets-datasetVersions-restore$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Restores a dataset version."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:restore"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-pipelineJobs-batchDelete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/batchDelete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -1723,40 +1697,86 @@
       :as :json}
      auth))))
 
-(defn locations-pipelineJobs-batchCancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/batchCancel
+(defn locations-pipelineJobs-delete$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: parent
+  Required parameters: name
   
   Optional parameters: none
   
-  Body: 
-  
-  {:names [string]}
-  
-  Batch cancel PipelineJobs. Firstly the server will check if all the jobs are in non-terminal states, and skip the jobs that are already terminated. If the operation failed, none of the pipeline jobs are cancelled. The server will poll the states of all the pipeline jobs periodically to check the cancellation status. This operation will return an LRO."
+  Deletes a PipelineJob."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/delete
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/pipelineJobs:batchCancel"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-pipelineJobs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a PipelineJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-pipelineJobs-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, readMask, filter, orderBy, pageToken
+  
+  Lists PipelineJobs in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/pipelineJobs"
      #{:parent}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-pipelineJobs-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1788,7 +1808,7 @@
      auth))))
 
 (defn locations-pipelineJobs-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -1801,11 +1821,11 @@
    :encryptionSpec {:kmsKeyName string},
    :startTime string,
    :displayName string,
-   :runtimeConfig {:parameters {},
-                   :inputArtifacts {},
+   :runtimeConfig {:gcsOutputDirectory string,
                    :parameterValues {},
                    :failurePolicy string,
-                   :gcsOutputDirectory string},
+                   :inputArtifacts {},
+                   :parameters {}},
    :name string,
    :templateUri string,
    :endTime string,
@@ -1813,10 +1833,10 @@
    :reservedIpRanges [string],
    :state string,
    :updateTime string,
-   :jobDetail {:taskDetails [GoogleCloudAiplatformV1PipelineTaskDetail],
-               :pipelineRunContext GoogleCloudAiplatformV1Context,
+   :jobDetail {:pipelineRunContext GoogleCloudAiplatformV1Context,
+               :taskDetails [GoogleCloudAiplatformV1PipelineTaskDetail],
                :pipelineContext GoogleCloudAiplatformV1Context},
-   :error {:details [{}], :code integer, :message string},
+   :error {:message string, :code integer, :details [{}]},
    :network string,
    :pipelineSpec {},
    :scheduleName string,
@@ -1843,66 +1863,46 @@
       :as :json}
      auth))))
 
-(defn locations-pipelineJobs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/list
+(defn locations-pipelineJobs-batchCancel$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: filter, pageToken, pageSize, orderBy, readMask
+  Optional parameters: none
   
-  Lists PipelineJobs in a Location."
+  Body: 
+  
+  {:names [string]}
+  
+  Batch cancel PipelineJobs. Firstly the server will check if all the jobs are in non-terminal states, and skip the jobs that are already terminated. If the operation failed, none of the pipeline jobs are cancelled. The server will poll the states of all the pipeline jobs periodically to check the cancellation status. This operation will return an LRO."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/get
+   (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/pipelineJobs"
+     "v1/{+parent}/pipelineJobs:batchCancel"
      #{:parent}
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
-(defn locations-pipelineJobs-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/delete
+(defn locations-pipelineJobs-operations-list$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: filter, pageToken, pageSize
   
-  Deletes a PipelineJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-pipelineJobs-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -1910,7 +1910,7 @@
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
+     "v1/{+name}/operations"
      #{:name}
      parameters)
     (merge-with
@@ -1922,7 +1922,7 @@
      auth))))
 
 (defn locations-pipelineJobs-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -1947,60 +1947,8 @@
       :as :json}
      auth))))
 
-(defn locations-pipelineJobs-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-pipelineJobs-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageToken, pageSize, filter
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-pipelineJobs-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/pipelineJobs/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -2025,34 +1973,8 @@
       :as :json}
      auth))))
 
-(defn locations-tuningJobs-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tuningJobs/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tuningJobs-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tuningJobs/operations/get
+(defn locations-pipelineJobs-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -2077,19 +1999,125 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/delete
+(defn locations-pipelineJobs-operations-cancel$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: force
+  Optional parameters: none
   
-  Deletes a single MetadataStore and all its child resources (Artifacts, Executions, and Contexts)."
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/delete
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tuningJobs-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:description string,
+   :labels {},
+   :startTime string,
+   :tunedModel {:endpoint string, :model string},
+   :name string,
+   :tunedModelDisplayName string,
+   :endTime string,
+   :createTime string,
+   :state string,
+   :baseModel string,
+   :updateTime string,
+   :experiment string,
+   :supervisedTuningSpec {:validationDatasetUri string,
+                          :trainingDatasetUri string,
+                          :hyperParameters GoogleCloudAiplatformV1SupervisedHyperParameters},
+   :tuningDataStats {:supervisedTuningDataStats GoogleCloudAiplatformV1SupervisedTuningDataStats},
+   :error {:message string, :code integer, :details [{}]}}
+  
+  Creates a TuningJob. A created TuningJob right away will be attempted to be run."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/tuningJobs"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tuningJobs-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Cancels a TuningJob. Starts asynchronous cancellation on the TuningJob. The server makes a best effort to cancel the job, but success is not guaranteed. Clients can use GenAiTuningService.GetTuningJob or other methods to check whether the cancellation succeeded or whether the job completed despite cancellation. On successful cancellation, the TuningJob is not deleted; instead it becomes a job with a TuningJob.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`, and TuningJob.state is set to `CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tuningJobs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a TuningJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
@@ -2103,45 +2131,112 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/create
+(defn locations-tuningJobs-list$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: metadataStoreId
+  Optional parameters: pageToken, filter, pageSize
   
-  Body: 
-  
-  {:state {:diskUtilizationBytes string},
-   :description string,
-   :encryptionSpec {:kmsKeyName string},
-   :updateTime string,
-   :name string,
-   :createTime string}
-  
-  Initializes a MetadataStore, including allocation of resources."
+  Lists TuningJobs in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/metadataStores"
+     "v1/{+parent}/tuningJobs"
      #{:parent}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tuningJobs-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, filter, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tuningJobs-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tuningJobs-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-metadataStores-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -2166,8 +2261,34 @@
       :as :json}
      auth))))
 
+(defn locations-metadataStores-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: force
+  
+  Deletes a single MetadataStore and all its child resources (Artifacts, Executions, and Contexts)."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-metadataStores-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -2192,539 +2313,23 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-executions-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/list
+(defn locations-metadataStores-create$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: orderBy, pageToken, pageSize, filter
-  
-  Lists Executions in the MetadataStore."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/executions"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Retrieves a specific Execution."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-addExecutionEvents$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/addExecutionEvents
-  
-  Required parameters: execution
-  
-  Optional parameters: none
+  Optional parameters: metadataStoreId
   
   Body: 
   
-  {:events [{:execution string,
-             :labels {},
-             :type string,
-             :eventTime string,
-             :artifact string}]}
-  
-  Adds Events to the specified Execution. An Event indicates whether an Artifact was used as an input or output for an Execution. If an Event already exists between the Execution and the Artifact, the Event is skipped."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:execution})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+execution}:addExecutionEvents"
-     #{:execution}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/create
-  
-  Required parameters: parent
-  
-  Optional parameters: executionId
-  
-  Body: 
-  
-  {:description string,
-   :labels {},
-   :schemaTitle string,
-   :displayName string,
-   :name string,
+  {:updateTime string,
+   :encryptionSpec {:kmsKeyName string},
    :createTime string,
-   :etag string,
-   :state string,
-   :updateTime string,
-   :metadata {},
-   :schemaVersion string}
-  
-  Creates an Execution associated with a MetadataStore."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/executions"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-queryExecutionInputsAndOutputs$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/queryExecutionInputsAndOutputs
-  
-  Required parameters: execution
-  
-  Optional parameters: none
-  
-  Obtains the set of input and output Artifacts for this Execution, in the form of LineageSubgraph that also contains the Execution and connecting Events."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:execution})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+execution}:queryExecutionInputsAndOutputs"
-     #{:execution}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/delete
-  
-  Required parameters: name
-  
-  Optional parameters: etag
-  
-  Deletes an Execution."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-purge$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/purge
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:filter string, :force boolean}
-  
-  Purges Executions."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/executions:purge"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/patch
-  
-  Required parameters: name
-  
-  Optional parameters: allowMissing, updateMask
-  
-  Body: 
-  
-  {:description string,
-   :labels {},
-   :schemaTitle string,
-   :displayName string,
    :name string,
-   :createTime string,
-   :etag string,
-   :state string,
-   :updateTime string,
-   :metadata {},
-   :schemaVersion string}
-  
-  Updates a stored Execution."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-executions-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/executions/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageSize, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageSize, filter, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-metadataSchemas-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/metadataSchemas/create
-  
-  Required parameters: parent
-  
-  Optional parameters: metadataSchemaId
-  
-  Body: 
-  
-  {:createTime string,
-   :schema string,
-   :schemaType string,
    :description string,
-   :name string,
-   :schemaVersion string}
+   :state {:diskUtilizationBytes string}}
   
-  Creates a MetadataSchema."
+  Initializes a MetadataStore, including allocation of resources."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -2732,7 +2337,7 @@
    (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/metadataSchemas"
+     "v1/{+parent}/metadataStores"
      #{:parent}
      parameters)
     (merge-with
@@ -2740,65 +2345,13 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-metadataSchemas-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/metadataSchemas/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Retrieves a specific MetadataSchema."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-metadataSchemas-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/metadataSchemas/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken, filter
-  
-  Lists MetadataSchemas."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/metadataSchemas"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-metadataStores-contexts-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -2824,7 +2377,7 @@
      auth))))
 
 (defn locations-metadataStores-contexts-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -2866,7 +2419,7 @@
      auth))))
 
 (defn locations-metadataStores-contexts-addContextChildren$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/addContextChildren
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: context
   
@@ -2898,7 +2451,7 @@
      auth))))
 
 (defn locations-metadataStores-contexts-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -2940,7 +2493,7 @@
      auth))))
 
 (defn locations-metadataStores-contexts-queryContextLineageSubgraph$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/queryContextLineageSubgraph
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: context
   
@@ -2966,11 +2519,11 @@
      auth))))
 
 (defn locations-metadataStores-contexts-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: force, etag
+  Optional parameters: etag, force
   
   Deletes a stored Context."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -2992,11 +2545,11 @@
      auth))))
 
 (defn locations-metadataStores-contexts-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageToken, orderBy, pageSize, filter
+  Optional parameters: filter, pageToken, pageSize, orderBy
   
   Lists Contexts on the MetadataStore."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3018,7 +2571,7 @@
      auth))))
 
 (defn locations-metadataStores-contexts-addContextArtifactsAndExecutions$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/addContextArtifactsAndExecutions
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: context
   
@@ -3026,7 +2579,7 @@
   
   Body: 
   
-  {:executions [string], :artifacts [string]}
+  {:artifacts [string], :executions [string]}
   
   Adds a set of Artifacts and Executions to a Context. If any of the Artifacts or Executions have already been added to a Context, they are simply skipped."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3050,7 +2603,7 @@
      auth))))
 
 (defn locations-metadataStores-contexts-purge$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/purge
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -3058,7 +2611,7 @@
   
   Body: 
   
-  {:filter string, :force boolean}
+  {:force boolean, :filter string}
   
   Purges Contexts."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3082,7 +2635,7 @@
      auth))))
 
 (defn locations-metadataStores-contexts-removeContextChildren$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/removeContextChildren
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: context
   
@@ -3113,60 +2666,8 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-contexts-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-contexts-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-metadataStores-contexts-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -3192,7 +2693,7 @@
      auth))))
 
 (defn locations-metadataStores-contexts-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -3218,11 +2719,11 @@
      auth))))
 
 (defn locations-metadataStores-contexts-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/contexts/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageToken, pageSize, filter
+  Optional parameters: pageSize, filter, pageToken
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3243,14 +2744,40 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-artifacts-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/get
+(defn locations-metadataStores-contexts-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-contexts-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Retrieves a specific Artifact."
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -3269,12 +2796,424 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-artifacts-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/patch
+(defn locations-metadataStores-executions-purge$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:filter string, :force boolean}
+  
+  Purges Executions."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/executions:purge"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: executionId
+  
+  Body: 
+  
+  {:description string,
+   :labels {},
+   :schemaTitle string,
+   :displayName string,
+   :name string,
+   :createTime string,
+   :etag string,
+   :state string,
+   :updateTime string,
+   :metadata {},
+   :schemaVersion string}
+  
+  Creates an Execution associated with a MetadataStore."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/executions"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: allowMissing, updateMask
+  Optional parameters: none
+  
+  Retrieves a specific Execution."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-patch$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask, allowMissing
+  
+  Body: 
+  
+  {:description string,
+   :labels {},
+   :schemaTitle string,
+   :displayName string,
+   :name string,
+   :createTime string,
+   :etag string,
+   :state string,
+   :updateTime string,
+   :metadata {},
+   :schemaVersion string}
+  
+  Updates a stored Execution."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: etag
+  
+  Deletes an Execution."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken, filter, orderBy
+  
+  Lists Executions in the MetadataStore."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/executions"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-queryExecutionInputsAndOutputs$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: execution
+  
+  Optional parameters: none
+  
+  Obtains the set of input and output Artifacts for this Execution, in the form of LineageSubgraph that also contains the Execution and connecting Events."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:execution})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+execution}:queryExecutionInputsAndOutputs"
+     #{:execution}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-addExecutionEvents$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: execution
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:events [{:execution string,
+             :artifact string,
+             :eventTime string,
+             :labels {},
+             :type string}]}
+  
+  Adds Events to the specified Execution. An Event indicates whether an Artifact was used as an input or output for an Execution. If an Event already exists between the Execution and the Artifact, the Event is skipped."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:execution})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+execution}:addExecutionEvents"
+     #{:execution}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, filter, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-executions-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-artifacts-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize, orderBy, filter
+  
+  Lists Artifacts in the MetadataStore."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/artifacts"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-artifacts-patch$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask, allowMissing
   
   Body: 
   
@@ -3312,40 +3251,8 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-artifacts-purge$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/purge
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:filter string, :force boolean}
-  
-  Purges Artifacts."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/artifacts:purge"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-metadataStores-artifacts-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -3370,8 +3277,66 @@
       :as :json}
      auth))))
 
+(defn locations-metadataStores-artifacts-purge$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:force boolean, :filter string}
+  
+  Purges Artifacts."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/artifacts:purge"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-artifacts-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Retrieves a specific Artifact."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-metadataStores-artifacts-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -3413,34 +3378,8 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-artifacts-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, orderBy, pageToken, filter
-  
-  Lists Artifacts in the MetadataStore."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/artifacts"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-metadataStores-artifacts-queryArtifactLineageSubgraph$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/queryArtifactLineageSubgraph
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: artifact
   
@@ -3465,40 +3404,14 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-artifacts-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/operations/delete
+(defn locations-metadataStores-artifacts-operations-list$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: pageToken, pageSize, filter
   
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-artifacts-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -3506,33 +3419,7 @@
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-metadataStores-artifacts-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
+     "v1/{+name}/operations"
      #{:name}
      parameters)
     (merge-with
@@ -3544,7 +3431,7 @@
      auth))))
 
 (defn locations-metadataStores-artifacts-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -3569,12 +3456,142 @@
       :as :json}
      auth))))
 
-(defn locations-metadataStores-artifacts-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/metadataStores/artifacts/operations/list
+(defn locations-metadataStores-artifacts-operations-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: filter, pageToken, pageSize
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-artifacts-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-artifacts-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, pageSize, filter
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3595,12 +3612,153 @@
       :as :json}
      auth))))
 
+(defn locations-metadataStores-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-metadataSchemas-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Retrieves a specific MetadataSchema."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-metadataSchemas-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: filter, pageToken, pageSize
+  
+  Lists MetadataSchemas."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/metadataSchemas"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-metadataStores-metadataSchemas-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: metadataSchemaId
+  
+  Body: 
+  
+  {:description string,
+   :createTime string,
+   :name string,
+   :schemaType string,
+   :schema string,
+   :schemaVersion string}
+  
+  Creates a MetadataSchema."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/metadataSchemas"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-deploymentResourcePools-queryDeployedModels$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/queryDeployedModels
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: deploymentResourcePool
   
-  Optional parameters: pageSize, pageToken
+  Optional parameters: pageToken, pageSize
   
   List DeployedModels that have been deployed on this DeploymentResourcePool."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3622,7 +3780,7 @@
      auth))))
 
 (defn locations-deploymentResourcePools-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -3631,9 +3789,9 @@
   Body: 
   
   {:deploymentResourcePoolId string,
-   :deploymentResourcePool {:name string,
-                            :createTime string,
-                            :dedicatedResources GoogleCloudAiplatformV1DedicatedResources}}
+   :deploymentResourcePool {:dedicatedResources GoogleCloudAiplatformV1DedicatedResources,
+                            :name string,
+                            :createTime string}}
   
   Create a DeploymentResourcePool."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -3656,60 +3814,8 @@
       :as :json}
      auth))))
 
-(defn locations-deploymentResourcePools-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken
-  
-  List DeploymentResourcePools in a location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/deploymentResourcePools"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-deploymentResourcePools-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Get a DeploymentResourcePool."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-deploymentResourcePools-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -3734,8 +3840,60 @@
       :as :json}
      auth))))
 
+(defn locations-deploymentResourcePools-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize
+  
+  List DeploymentResourcePools in a location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/deploymentResourcePools"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-deploymentResourcePools-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Get a DeploymentResourcePool."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-deploymentResourcePools-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -3760,60 +3918,8 @@
       :as :json}
      auth))))
 
-(defn locations-deploymentResourcePools-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageSize, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-deploymentResourcePools-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-deploymentResourcePools-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -3838,8 +3944,34 @@
       :as :json}
      auth))))
 
+(defn locations-deploymentResourcePools-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageToken, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-deploymentResourcePools-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/deploymentResourcePools/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -3864,182 +3996,34 @@
       :as :json}
      auth))))
 
-(defn locations-publishers-models-computeTokens$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/publishers/models/computeTokens
+(defn locations-deploymentResourcePools-operations-delete$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: endpoint
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:instances [any]}
-  
-  Return a list of tokens based on the input text."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:endpoint})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+endpoint}:computeTokens"
-     #{:endpoint}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-publishers-models-streamGenerateContent$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/publishers/models/streamGenerateContent
-  
-  Required parameters: model
+  Required parameters: name
   
   Optional parameters: none
   
-  Body: 
-  
-  {:contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
-   :generationConfig {:topK number,
-                      :topP number,
-                      :temperature number,
-                      :candidateCount integer,
-                      :stopSequences [string],
-                      :maxOutputTokens integer},
-   :safetySettings [{:method string,
-                     :category string,
-                     :threshold string}],
-   :tools [{:functionDeclarations [GoogleCloudAiplatformV1FunctionDeclaration],
-            :googleSearchRetrieval GoogleCloudAiplatformV1GoogleSearchRetrieval,
-            :retrieval GoogleCloudAiplatformV1Retrieval}]}
-  
-  Generate content with multimodal inputs with streaming support."
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:model})]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/delete
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+model}:streamGenerateContent"
-     #{:model}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-publishers-models-countTokens$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/publishers/models/countTokens
-  
-  Required parameters: endpoint
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
-   :instances [any],
-   :model string}
-  
-  Perform a token counting."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:endpoint})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+endpoint}:countTokens"
-     #{:endpoint}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-publishers-models-rawPredict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/publishers/models/rawPredict
-  
-  Required parameters: endpoint
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:httpBody {:data string, :extensions [{}], :contentType string}}
-  
-  Perform an online prediction with an arbitrary HTTP payload. The response includes the following HTTP headers: * `X-Vertex-AI-Endpoint-Id`: ID of the Endpoint that served this prediction. * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's DeployedModel that served this prediction."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:endpoint})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+endpoint}:rawPredict"
-     #{:endpoint}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-publishers-models-streamRawPredict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/publishers/models/streamRawPredict
-  
-  Required parameters: endpoint
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:httpBody {:data string, :extensions [{}], :contentType string}}
-  
-  Perform a streaming online prediction with an arbitrary HTTP payload."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:endpoint})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+endpoint}:streamRawPredict"
-     #{:endpoint}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-publishers-models-generateContent$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/publishers/models/generateContent
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: model
   
@@ -4047,19 +4031,23 @@
   
   Body: 
   
-  {:contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
-   :generationConfig {:topK number,
-                      :topP number,
-                      :temperature number,
-                      :candidateCount integer,
+  {:generationConfig {:responseMimeType string,
+                      :presencePenalty number,
                       :stopSequences [string],
-                      :maxOutputTokens integer},
-   :safetySettings [{:method string,
-                     :category string,
-                     :threshold string}],
+                      :topP number,
+                      :maxOutputTokens integer,
+                      :frequencyPenalty number,
+                      :topK number,
+                      :candidateCount integer,
+                      :temperature number},
    :tools [{:functionDeclarations [GoogleCloudAiplatformV1FunctionDeclaration],
-            :googleSearchRetrieval GoogleCloudAiplatformV1GoogleSearchRetrieval,
-            :retrieval GoogleCloudAiplatformV1Retrieval}]}
+            :retrieval GoogleCloudAiplatformV1Retrieval}],
+   :safetySettings [{:method string,
+                     :threshold string,
+                     :category string}],
+   :contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
+   :systemInstruction {:parts [GoogleCloudAiplatformV1Part],
+                       :role string}}
   
   Generate content with multimodal inputs."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -4082,40 +4070,8 @@
       :as :json}
      auth))))
 
-(defn locations-publishers-models-predict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/publishers/models/predict
-  
-  Required parameters: endpoint
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:instances [any], :parameters any}
-  
-  Perform an online prediction."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:endpoint})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+endpoint}:predict"
-     #{:endpoint}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-publishers-models-serverStreamingPredict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/publishers/models/serverStreamingPredict
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -4173,8 +4129,244 @@
       :as :json}
      auth))))
 
+(defn locations-publishers-models-streamGenerateContent$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: model
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:generationConfig {:responseMimeType string,
+                      :presencePenalty number,
+                      :stopSequences [string],
+                      :topP number,
+                      :maxOutputTokens integer,
+                      :frequencyPenalty number,
+                      :topK number,
+                      :candidateCount integer,
+                      :temperature number},
+   :tools [{:functionDeclarations [GoogleCloudAiplatformV1FunctionDeclaration],
+            :retrieval GoogleCloudAiplatformV1Retrieval}],
+   :safetySettings [{:method string,
+                     :threshold string,
+                     :category string}],
+   :contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
+   :systemInstruction {:parts [GoogleCloudAiplatformV1Part],
+                       :role string}}
+  
+  Generate content with multimodal inputs with streaming support."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:model})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+model}:streamGenerateContent"
+     #{:model}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-publishers-models-streamRawPredict$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: endpoint
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:httpBody {:contentType string, :extensions [{}], :data string}}
+  
+  Perform a streaming online prediction with an arbitrary HTTP payload."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:endpoint})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+endpoint}:streamRawPredict"
+     #{:endpoint}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-publishers-models-computeTokens$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: endpoint
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:instances [any]}
+  
+  Return a list of tokens based on the input text."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:endpoint})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+endpoint}:computeTokens"
+     #{:endpoint}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-publishers-models-rawPredict$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: endpoint
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:httpBody {:contentType string, :extensions [{}], :data string}}
+  
+  Perform an online prediction with an arbitrary HTTP payload. The response includes the following HTTP headers: * `X-Vertex-AI-Endpoint-Id`: ID of the Endpoint that served this prediction. * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's DeployedModel that served this prediction."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:endpoint})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+endpoint}:rawPredict"
+     #{:endpoint}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-publishers-models-countTokens$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: endpoint
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
+   :model string,
+   :instances [any]}
+  
+  Perform a token counting."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:endpoint})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+endpoint}:countTokens"
+     #{:endpoint}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-publishers-models-predict$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: endpoint
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:instances [any], :parameters any}
+  
+  Perform an online prediction."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:endpoint})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+endpoint}:predict"
+     #{:endpoint}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-hyperparameterTuningJobs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a HyperparameterTuningJob"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-hyperparameterTuningJobs-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4199,8 +4391,40 @@
       :as :json}
      auth))))
 
+(defn locations-hyperparameterTuningJobs-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Cancels a HyperparameterTuningJob. Starts asynchronous cancellation on the HyperparameterTuningJob. The server makes a best effort to cancel the job, but success is not guaranteed. Clients can use JobService.GetHyperparameterTuningJob or other methods to check whether the cancellation succeeded or whether the job completed despite cancellation. On successful cancellation, the HyperparameterTuningJob is not deleted; instead it becomes a job with a HyperparameterTuningJob.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`, and HyperparameterTuningJob.state is set to `CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-hyperparameterTuningJobs-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -4242,7 +4466,7 @@
                :convexAutomatedStoppingSpec GoogleCloudAiplatformV1StudySpecConvexAutomatedStoppingSpec,
                :metrics [GoogleCloudAiplatformV1StudySpecMetricSpec]},
    :updateTime string,
-   :error {:details [{}], :code integer, :message string},
+   :error {:message string, :code integer, :details [{}]},
    :trials [{:clientId string,
              :customJob string,
              :startTime string,
@@ -4278,44 +4502,12 @@
       :as :json}
      auth))))
 
-(defn locations-hyperparameterTuningJobs-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {}
-  
-  Cancels a HyperparameterTuningJob. Starts asynchronous cancellation on the HyperparameterTuningJob. The server makes a best effort to cancel the job, but success is not guaranteed. Clients can use JobService.GetHyperparameterTuningJob or other methods to check whether the cancellation succeeded or whether the job completed despite cancellation. On successful cancellation, the HyperparameterTuningJob is not deleted; instead it becomes a job with a HyperparameterTuningJob.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`, and HyperparameterTuningJob.state is set to `CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-hyperparameterTuningJobs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageSize, readMask, pageToken, filter
+  Optional parameters: filter, pageSize, pageToken, readMask
   
   Lists HyperparameterTuningJobs in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -4336,14 +4528,14 @@
       :as :json}
      auth))))
 
-(defn locations-hyperparameterTuningJobs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/get
+(defn locations-hyperparameterTuningJobs-operations-list$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: pageToken, pageSize, filter
   
-  Gets a HyperparameterTuningJob"
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -4351,7 +4543,7 @@
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
+     "v1/{+name}/operations"
      #{:name}
      parameters)
     (merge-with
@@ -4363,7 +4555,7 @@
      auth))))
 
 (defn locations-hyperparameterTuningJobs-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4388,34 +4580,8 @@
       :as :json}
      auth))))
 
-(defn locations-hyperparameterTuningJobs-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageSize, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-hyperparameterTuningJobs-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4441,7 +4607,7 @@
      auth))))
 
 (defn locations-hyperparameterTuningJobs-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4467,7 +4633,7 @@
      auth))))
 
 (defn locations-hyperparameterTuningJobs-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/hyperparameterTuningJobs/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4492,8 +4658,40 @@
       :as :json}
      auth))))
 
+(defn locations-migratableResources-search$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:filter string, :pageSize integer, :pageToken string}
+  
+  Searches all of the resources in automl.googleapis.com, datalabeling.googleapis.com and ml.googleapis.com that can be migrated to Vertex AI's given location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/migratableResources:search"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-migratableResources-batchMigrate$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/migratableResources/batchMigrate
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -4502,8 +4700,8 @@
   Body: 
   
   {:migrateResourceRequests [{:migrateMlEngineModelVersionConfig GoogleCloudAiplatformV1MigrateResourceRequestMigrateMlEngineModelVersionConfig,
-                              :migrateAutomlModelConfig GoogleCloudAiplatformV1MigrateResourceRequestMigrateAutomlModelConfig,
                               :migrateDataLabelingDatasetConfig GoogleCloudAiplatformV1MigrateResourceRequestMigrateDataLabelingDatasetConfig,
+                              :migrateAutomlModelConfig GoogleCloudAiplatformV1MigrateResourceRequestMigrateAutomlModelConfig,
                               :migrateAutomlDatasetConfig GoogleCloudAiplatformV1MigrateResourceRequestMigrateAutomlDatasetConfig}]}
   
   Batch migrates resources from ml.googleapis.com, automl.googleapis.com, and datalabeling.googleapis.com to Vertex AI."
@@ -4527,66 +4725,8 @@
       :as :json}
      auth))))
 
-(defn locations-migratableResources-search$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/migratableResources/search
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:pageToken string, :filter string, :pageSize integer}
-  
-  Searches all of the resources in automl.googleapis.com, datalabeling.googleapis.com and ml.googleapis.com that can be migrated to Vertex AI's given location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/migratableResources:search"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-migratableResources-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/migratableResources/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-migratableResources-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/migratableResources/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4611,14 +4751,14 @@
       :as :json}
      auth))))
 
-(defn locations-migratableResources-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/migratableResources/operations/list
+(defn locations-migratableResources-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageSize, pageToken, filter
+  Optional parameters: none
   
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -4626,7 +4766,7 @@
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
+     "v1/{+name}"
      #{:name}
      parameters)
     (merge-with
@@ -4638,7 +4778,7 @@
      auth))))
 
 (defn locations-migratableResources-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/migratableResources/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4663,8 +4803,34 @@
       :as :json}
      auth))))
 
+(defn locations-migratableResources-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageToken, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-migratableResources-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/migratableResources/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4689,8 +4855,34 @@
       :as :json}
      auth))))
 
+(defn locations-featureGroups-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: orderBy, filter, pageSize, pageToken
+  
+  Lists FeatureGroups in a given project and location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/featureGroups"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-featureGroups-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4715,34 +4907,34 @@
       :as :json}
      auth))))
 
-(defn locations-featureGroups-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/patch
+(defn locations-featureGroups-create$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: updateMask
+  Optional parameters: featureGroupId
   
   Body: 
   
-  {:description string,
-   :updateTime string,
+  {:etag string,
    :labels {},
-   :etag string,
+   :updateTime string,
+   :bigQuery {:entityIdColumns [string],
+              :bigQuerySource GoogleCloudAiplatformV1BigQuerySource},
+   :createTime string,
    :name string,
-   :bigQuery {:bigQuerySource GoogleCloudAiplatformV1BigQuerySource,
-              :entityIdColumns [string]},
-   :createTime string}
+   :description string}
   
-  Updates the parameters of a single FeatureGroup."
+  Creates a new FeatureGroup in a given project and location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/patch
+   (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/featureGroups"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -4755,7 +4947,7 @@
      auth))))
 
 (defn locations-featureGroups-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4780,151 +4972,8 @@
       :as :json}
      auth))))
 
-(defn locations-featureGroups-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/create
-  
-  Required parameters: parent
-  
-  Optional parameters: featureGroupId
-  
-  Body: 
-  
-  {:description string,
-   :updateTime string,
-   :labels {},
-   :etag string,
-   :name string,
-   :bigQuery {:bigQuerySource GoogleCloudAiplatformV1BigQuerySource,
-              :entityIdColumns [string]},
-   :createTime string}
-  
-  Creates a new FeatureGroup in a given project and location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/featureGroups"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureGroups-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/list
-  
-  Required parameters: parent
-  
-  Optional parameters: filter, orderBy, pageToken, pageSize
-  
-  Lists FeatureGroups in a given project and location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/featureGroups"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureGroups-features-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets details of a single Feature."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureGroups-features-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a single Feature."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureGroups-features-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/list
-  
-  Required parameters: parent
-  
-  Optional parameters: orderBy, pageSize, filter, readMask, pageToken, latestStatsCount
-  
-  Lists Features in a given FeatureGroup."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/features"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureGroups-features-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/patch
+(defn locations-featureGroups-patch$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -4932,20 +4981,16 @@
   
   Body: 
   
-  {:description string,
+  {:etag string,
    :labels {},
-   :disableMonitoring boolean,
-   :valueType string,
-   :versionColumnName string,
-   :name string,
-   :createTime string,
-   :etag string,
    :updateTime string,
-   :pointOfContact string,
-   :monitoringStatsAnomalies [{:featureStatsAnomaly GoogleCloudAiplatformV1FeatureStatsAnomaly,
-                               :objective string}]}
+   :bigQuery {:entityIdColumns [string],
+              :bigQuerySource GoogleCloudAiplatformV1BigQuerySource},
+   :createTime string,
+   :name string,
+   :description string}
   
-  Updates the parameters of a single Feature."
+  Updates the parameters of a single FeatureGroup."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -4966,8 +5011,34 @@
       :as :json}
      auth))))
 
+(defn locations-featureGroups-features-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: orderBy, filter, readMask, pageSize, pageToken, latestStatsCount
+  
+  Lists Features in a given FeatureGroup."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/features"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-featureGroups-features-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -5009,14 +5080,40 @@
       :as :json}
      auth))))
 
-(defn locations-featureGroups-features-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/operations/delete
+(defn locations-featureGroups-features-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  Gets details of a single Feature."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureGroups-features-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a single Feature."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -5035,34 +5132,51 @@
       :as :json}
      auth))))
 
-(defn locations-featureGroups-features-operations-listWait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/operations/listWait
+(defn locations-featureGroups-features-patch$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageToken, pageSize, filter
+  Optional parameters: updateMask
   
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  Body: 
+  
+  {:description string,
+   :labels {},
+   :disableMonitoring boolean,
+   :valueType string,
+   :versionColumnName string,
+   :name string,
+   :createTime string,
+   :etag string,
+   :updateTime string,
+   :pointOfContact string,
+   :monitoringStatsAnomalies [{:featureStatsAnomaly GoogleCloudAiplatformV1FeatureStatsAnomaly,
+                               :objective string}]}
+  
+  Updates the parameters of a single Feature."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/patch
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
+     "v1/{+name}"
      #{:name}
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-featureGroups-features-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -5088,7 +5202,7 @@
      auth))))
 
 (defn locations-featureGroups-features-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/features/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -5113,45 +5227,19 @@
       :as :json}
      auth))))
 
-(defn locations-featureGroups-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/operations/get
+(defn locations-featureGroups-features-operations-listWait$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: filter, pageSize, pageToken
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureGroups-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}:wait"
@@ -5165,8 +5253,8 @@
       :as :json}
      auth))))
 
-(defn locations-featureGroups-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/operations/delete
+(defn locations-featureGroups-features-operations-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -5192,7 +5280,7 @@
      auth))))
 
 (defn locations-featureGroups-operations-listWait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureGroups/operations/listWait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -5217,8 +5305,86 @@
       :as :json}
      auth))))
 
+(defn locations-featureGroups-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureGroups-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureGroups-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-endpoints-streamGenerateContent$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/streamGenerateContent
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: model
   
@@ -5226,19 +5392,23 @@
   
   Body: 
   
-  {:contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
-   :generationConfig {:topK number,
-                      :topP number,
-                      :temperature number,
-                      :candidateCount integer,
+  {:generationConfig {:responseMimeType string,
+                      :presencePenalty number,
                       :stopSequences [string],
-                      :maxOutputTokens integer},
-   :safetySettings [{:method string,
-                     :category string,
-                     :threshold string}],
+                      :topP number,
+                      :maxOutputTokens integer,
+                      :frequencyPenalty number,
+                      :topK number,
+                      :candidateCount integer,
+                      :temperature number},
    :tools [{:functionDeclarations [GoogleCloudAiplatformV1FunctionDeclaration],
-            :googleSearchRetrieval GoogleCloudAiplatformV1GoogleSearchRetrieval,
-            :retrieval GoogleCloudAiplatformV1Retrieval}]}
+            :retrieval GoogleCloudAiplatformV1Retrieval}],
+   :safetySettings [{:method string,
+                     :threshold string,
+                     :category string}],
+   :contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
+   :systemInstruction {:parts [GoogleCloudAiplatformV1Part],
+                       :role string}}
   
   Generate content with multimodal inputs with streaming support."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5262,7 +5432,7 @@
      auth))))
 
 (defn locations-endpoints-mutateDeployedModel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/mutateDeployedModel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5275,6 +5445,7 @@
                    :modelVersionId string,
                    :disableContainerLogging boolean,
                    :automaticResources GoogleCloudAiplatformV1AutomaticResources,
+                   :disableExplanations boolean,
                    :displayName string,
                    :explanationSpec GoogleCloudAiplatformV1ExplanationSpec,
                    :dedicatedResources GoogleCloudAiplatformV1DedicatedResources,
@@ -5307,7 +5478,7 @@
      auth))))
 
 (defn locations-endpoints-explain$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/explain
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5315,12 +5486,12 @@
   
   Body: 
   
-  {:explanationSpecOverride {:examplesOverride GoogleCloudAiplatformV1ExamplesOverride,
-                             :metadata GoogleCloudAiplatformV1ExplanationMetadataOverride,
-                             :parameters GoogleCloudAiplatformV1ExplanationParameters},
-   :deployedModelId string,
+  {:instances [any],
    :parameters any,
-   :instances [any]}
+   :deployedModelId string,
+   :explanationSpecOverride {:parameters GoogleCloudAiplatformV1ExplanationParameters,
+                             :metadata GoogleCloudAiplatformV1ExplanationMetadataOverride,
+                             :examplesOverride GoogleCloudAiplatformV1ExamplesOverride}}
   
   Perform an online explanation. If deployed_model_id is specified, the corresponding DeployModel must have explanation_spec populated. If deployed_model_id is not specified, all DeployedModels must have explanation_spec populated."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5344,7 +5515,7 @@
      auth))))
 
 (defn locations-endpoints-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -5370,7 +5541,7 @@
      auth))))
 
 (defn locations-endpoints-directPredict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/directPredict
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5429,7 +5600,7 @@
      auth))))
 
 (defn locations-endpoints-undeployModel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/undeployModel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5437,7 +5608,7 @@
   
   Body: 
   
-  {:deployedModelId string, :trafficSplit {}}
+  {:trafficSplit {}, :deployedModelId string}
   
   Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources it's using."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5461,7 +5632,7 @@
      auth))))
 
 (defn locations-endpoints-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -5478,14 +5649,15 @@
    :etag string,
    :trafficSplit {},
    :updateTime string,
-   :predictRequestResponseLoggingConfig {:enabled boolean,
-                                         :samplingRate number,
-                                         :bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination},
+   :predictRequestResponseLoggingConfig {:bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination,
+                                         :enabled boolean,
+                                         :samplingRate number},
    :enablePrivateServiceConnect boolean,
    :deployedModels [{:serviceAccount string,
                      :modelVersionId string,
                      :disableContainerLogging boolean,
                      :automaticResources GoogleCloudAiplatformV1AutomaticResources,
+                     :disableExplanations boolean,
                      :displayName string,
                      :explanationSpec GoogleCloudAiplatformV1ExplanationSpec,
                      :dedicatedResources GoogleCloudAiplatformV1DedicatedResources,
@@ -5496,6 +5668,8 @@
                      :privateEndpoints GoogleCloudAiplatformV1PrivateEndpoints,
                      :model string}],
    :modelDeploymentMonitoringJob string,
+   :privateServiceConnectConfig {:enablePrivateServiceConnect boolean,
+                                 :projectAllowlist [string]},
    :network string}
   
   Updates an Endpoint."
@@ -5520,7 +5694,7 @@
      auth))))
 
 (defn locations-endpoints-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -5537,14 +5711,15 @@
    :etag string,
    :trafficSplit {},
    :updateTime string,
-   :predictRequestResponseLoggingConfig {:enabled boolean,
-                                         :samplingRate number,
-                                         :bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination},
+   :predictRequestResponseLoggingConfig {:bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination,
+                                         :enabled boolean,
+                                         :samplingRate number},
    :enablePrivateServiceConnect boolean,
    :deployedModels [{:serviceAccount string,
                      :modelVersionId string,
                      :disableContainerLogging boolean,
                      :automaticResources GoogleCloudAiplatformV1AutomaticResources,
+                     :disableExplanations boolean,
                      :displayName string,
                      :explanationSpec GoogleCloudAiplatformV1ExplanationSpec,
                      :dedicatedResources GoogleCloudAiplatformV1DedicatedResources,
@@ -5555,6 +5730,8 @@
                      :privateEndpoints GoogleCloudAiplatformV1PrivateEndpoints,
                      :model string}],
    :modelDeploymentMonitoringJob string,
+   :privateServiceConnectConfig {:enablePrivateServiceConnect boolean,
+                                 :projectAllowlist [string]},
    :network string}
   
   Creates an Endpoint."
@@ -5579,7 +5756,7 @@
      auth))))
 
 (defn locations-endpoints-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -5605,7 +5782,7 @@
      auth))))
 
 (defn locations-endpoints-computeTokens$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/computeTokens
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5637,11 +5814,11 @@
      auth))))
 
 (defn locations-endpoints-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageToken, readMask, orderBy, pageSize, filter
+  Optional parameters: orderBy, readMask, pageToken, pageSize, filter
   
   Lists Endpoints in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5663,7 +5840,7 @@
      auth))))
 
 (defn locations-endpoints-serverStreamingPredict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/serverStreamingPredict
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5722,7 +5899,7 @@
      auth))))
 
 (defn locations-endpoints-rawPredict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/rawPredict
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5730,7 +5907,7 @@
   
   Body: 
   
-  {:httpBody {:data string, :extensions [{}], :contentType string}}
+  {:httpBody {:contentType string, :extensions [{}], :data string}}
   
   Perform an online prediction with an arbitrary HTTP payload. The response includes the following HTTP headers: * `X-Vertex-AI-Endpoint-Id`: ID of the Endpoint that served this prediction. * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's DeployedModel that served this prediction."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5754,7 +5931,7 @@
      auth))))
 
 (defn locations-endpoints-streamRawPredict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/streamRawPredict
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5762,7 +5939,7 @@
   
   Body: 
   
-  {:httpBody {:data string, :extensions [{}], :contentType string}}
+  {:httpBody {:contentType string, :extensions [{}], :data string}}
   
   Perform a streaming online prediction with an arbitrary HTTP payload."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5786,7 +5963,7 @@
      auth))))
 
 (defn locations-endpoints-predict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/predict
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5818,7 +5995,7 @@
      auth))))
 
 (defn locations-endpoints-countTokens$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/countTokens
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5827,8 +6004,8 @@
   Body: 
   
   {:contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
-   :instances [any],
-   :model string}
+   :model string,
+   :instances [any]}
   
   Perform a token counting."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5852,7 +6029,7 @@
      auth))))
 
 (defn locations-endpoints-generateContent$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/generateContent
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: model
   
@@ -5860,19 +6037,23 @@
   
   Body: 
   
-  {:contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
-   :generationConfig {:topK number,
-                      :topP number,
-                      :temperature number,
-                      :candidateCount integer,
+  {:generationConfig {:responseMimeType string,
+                      :presencePenalty number,
                       :stopSequences [string],
-                      :maxOutputTokens integer},
-   :safetySettings [{:method string,
-                     :category string,
-                     :threshold string}],
+                      :topP number,
+                      :maxOutputTokens integer,
+                      :frequencyPenalty number,
+                      :topK number,
+                      :candidateCount integer,
+                      :temperature number},
    :tools [{:functionDeclarations [GoogleCloudAiplatformV1FunctionDeclaration],
-            :googleSearchRetrieval GoogleCloudAiplatformV1GoogleSearchRetrieval,
-            :retrieval GoogleCloudAiplatformV1Retrieval}]}
+            :retrieval GoogleCloudAiplatformV1Retrieval}],
+   :safetySettings [{:method string,
+                     :threshold string,
+                     :category string}],
+   :contents [{:parts [GoogleCloudAiplatformV1Part], :role string}],
+   :systemInstruction {:parts [GoogleCloudAiplatformV1Part],
+                       :role string}}
   
   Generate content with multimodal inputs."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5896,7 +6077,7 @@
      auth))))
 
 (defn locations-endpoints-directRawPredict$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/directRawPredict
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5904,7 +6085,7 @@
   
   Body: 
   
-  {:methodName string, :input string}
+  {:input string, :methodName string}
   
   Perform an unary online prediction request to a gRPC model server for custom containers."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -5928,7 +6109,7 @@
      auth))))
 
 (defn locations-endpoints-deployModel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/deployModel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: endpoint
   
@@ -5940,6 +6121,7 @@
                    :modelVersionId string,
                    :disableContainerLogging boolean,
                    :automaticResources GoogleCloudAiplatformV1AutomaticResources,
+                   :disableExplanations boolean,
                    :displayName string,
                    :explanationSpec GoogleCloudAiplatformV1ExplanationSpec,
                    :dedicatedResources GoogleCloudAiplatformV1DedicatedResources,
@@ -5973,7 +6155,7 @@
      auth))))
 
 (defn locations-endpoints-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -5998,86 +6180,8 @@
       :as :json}
      auth))))
 
-(defn locations-endpoints-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-endpoints-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageToken, pageSize, filter
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-endpoints-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-endpoints-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/endpoints/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6102,8 +6206,144 @@
       :as :json}
      auth))))
 
+(defn locations-endpoints-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageToken, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-endpoints-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-endpoints-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-trainingPipelines-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a TrainingPipeline."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-trainingPipelines-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {}
+  
+  Cancels a TrainingPipeline. Starts asynchronous cancellation on the TrainingPipeline. The server makes a best effort to cancel the pipeline, but success is not guaranteed. Clients can use PipelineService.GetTrainingPipeline or other methods to check whether the cancellation succeeded or whether the pipeline completed despite cancellation. On successful cancellation, the TrainingPipeline is not deleted; instead it becomes a pipeline with a TrainingPipeline.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`, and TrainingPipeline.state is set to `CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-trainingPipelines-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6128,8 +6368,34 @@
       :as :json}
      auth))))
 
+(defn locations-trainingPipelines-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: filter, readMask, pageToken, pageSize
+  
+  Lists TrainingPipelines in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/trainingPipelines"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-trainingPipelines-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -6194,7 +6460,7 @@
                      :persistMlUseAssignment boolean,
                      :savedQueryId string},
    :trainingTaskInputs any,
-   :error {:details [{}], :code integer, :message string}}
+   :error {:message string, :code integer, :details [{}]}}
   
   Creates a TrainingPipeline. A created TrainingPipeline right away will be attempted to be run."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6217,170 +6483,8 @@
       :as :json}
      auth))))
 
-(defn locations-trainingPipelines-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {}
-  
-  Cancels a TrainingPipeline. Starts asynchronous cancellation on the TrainingPipeline. The server makes a best effort to cancel the pipeline, but success is not guaranteed. Clients can use PipelineService.GetTrainingPipeline or other methods to check whether the cancellation succeeded or whether the pipeline completed despite cancellation. On successful cancellation, the TrainingPipeline is not deleted; instead it becomes a pipeline with a TrainingPipeline.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`, and TrainingPipeline.state is set to `CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-trainingPipelines-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, filter, pageToken, readMask
-  
-  Lists TrainingPipelines in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/trainingPipelines"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-trainingPipelines-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a TrainingPipeline."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-trainingPipelines-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-trainingPipelines-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-trainingPipelines-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageSize, filter, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-trainingPipelines-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6405,8 +6509,34 @@
       :as :json}
      auth))))
 
+(defn locations-trainingPipelines-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-trainingPipelines-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/trainingPipelines/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6431,8 +6561,60 @@
       :as :json}
      auth))))
 
+(defn locations-trainingPipelines-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageSize, pageToken, filter
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-trainingPipelines-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-models-updateExplanationDataset$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/updateExplanationDataset
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: model
   
@@ -6442,8 +6624,8 @@
   
   {:examples {:presets GoogleCloudAiplatformV1Presets,
               :exampleGcsSource GoogleCloudAiplatformV1ExamplesExampleGcsSource,
-              :nearestNeighborSearchConfig any,
-              :neighborCount integer}}
+              :neighborCount integer,
+              :nearestNeighborSearchConfig any}}
   
   Incrementally update the dataset used for an examples model."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6467,7 +6649,7 @@
      auth))))
 
 (defn locations-models-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6493,7 +6675,7 @@
      auth))))
 
 (defn locations-models-copy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/copy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -6501,10 +6683,10 @@
   
   Body: 
   
-  {:modelId string,
+  {:encryptionSpec {:kmsKeyName string},
+   :modelId string,
    :parentModel string,
-   :sourceModel string,
-   :encryptionSpec {:kmsKeyName string}}
+   :sourceModel string}
   
   Copies an already existing Vertex AI Model into the specified Location. The source Model must exist in the same Project. When copying custom Models, the users themselves are responsible for Model.metadata content to be region-agnostic, as well as making sure that any resources (e.g. files) it depends on remain accessible."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6528,7 +6710,7 @@
      auth))))
 
 (defn locations-models-setIamPolicy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/setIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -6536,9 +6718,9 @@
   
   Body: 
   
-  {:policy {:bindings [GoogleIamV1Binding],
-            :version integer,
-            :etag string}}
+  {:policy {:etag string,
+            :bindings [GoogleIamV1Binding],
+            :version integer}}
   
   Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6562,7 +6744,7 @@
      auth))))
 
 (defn locations-models-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6574,8 +6756,8 @@
    :labels {},
    :versionUpdateTime string,
    :versionId string,
-   :predictSchemata {:predictionSchemaUri string,
-                     :instanceSchemaUri string,
+   :predictSchemata {:instanceSchemaUri string,
+                     :predictionSchemaUri string,
                      :parametersSchemaUri string},
    :artifactUri string,
    :pipelineJob string,
@@ -6608,17 +6790,17 @@
    :modelSourceInfo {:copy boolean, :sourceType string},
    :updateTime string,
    :originalModelInfo {:model string},
-   :dataStats {:trainingDataItemsCount string,
-               :trainingAnnotationsCount string,
+   :dataStats {:validationAnnotationsCount string,
                :validationDataItemsCount string,
+               :trainingDataItemsCount string,
                :testAnnotationsCount string,
-               :validationAnnotationsCount string,
+               :trainingAnnotationsCount string,
                :testDataItemsCount string},
-   :deployedModels [{:deployedModelId string, :endpoint string}],
+   :deployedModels [{:endpoint string, :deployedModelId string}],
    :supportedDeploymentResourcesTypes [string],
    :versionCreateTime string,
-   :baseModelSource {:genieSource GoogleCloudAiplatformV1GenieSource,
-                     :modelGardenSource GoogleCloudAiplatformV1ModelGardenSource},
+   :baseModelSource {:modelGardenSource GoogleCloudAiplatformV1ModelGardenSource,
+                     :genieSource GoogleCloudAiplatformV1GenieSource},
    :metadata any,
    :supportedExportFormats [{:id string, :exportableContents [string]}]}
   
@@ -6644,7 +6826,7 @@
      auth))))
 
 (defn locations-models-testIamPermissions$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/testIamPermissions
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -6670,7 +6852,7 @@
      auth))))
 
 (defn locations-models-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6696,7 +6878,7 @@
      auth))))
 
 (defn locations-models-mergeVersionAliases$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/mergeVersionAliases
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6728,7 +6910,7 @@
      auth))))
 
 (defn locations-models-export$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/export
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6736,9 +6918,9 @@
   
   Body: 
   
-  {:outputConfig {:exportFormatId string,
-                  :artifactDestination GoogleCloudAiplatformV1GcsDestination,
-                  :imageDestination GoogleCloudAiplatformV1ContainerRegistryDestination}}
+  {:outputConfig {:imageDestination GoogleCloudAiplatformV1ContainerRegistryDestination,
+                  :exportFormatId string,
+                  :artifactDestination GoogleCloudAiplatformV1GcsDestination}}
   
   Exports a trained, exportable Model to a location specified by the user. A Model is considered to be exportable if it has at least one supported export format."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6762,7 +6944,7 @@
      auth))))
 
 (defn locations-models-getIamPolicy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/getIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -6788,11 +6970,11 @@
      auth))))
 
 (defn locations-models-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: filter, pageSize, readMask, orderBy, pageToken
+  Optional parameters: orderBy, filter, pageSize, pageToken, readMask
   
   Lists Models in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6814,11 +6996,11 @@
      auth))))
 
 (defn locations-models-listVersions$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/listVersions
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: filter, readMask, pageSize, orderBy, pageToken
+  Optional parameters: readMask, filter, pageSize, orderBy, pageToken
   
   Lists versions of the specified model."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6840,7 +7022,7 @@
      auth))))
 
 (defn locations-models-upload$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/upload
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -6848,8 +7030,7 @@
   
   Body: 
   
-  {:serviceAccount string,
-   :parentModel string,
+  {:modelId string,
    :model {:description string,
            :labels {},
            :versionUpdateTime string,
@@ -6881,7 +7062,8 @@
            :baseModelSource GoogleCloudAiplatformV1ModelBaseModelSource,
            :metadata any,
            :supportedExportFormats [GoogleCloudAiplatformV1ModelExportFormat]},
-   :modelId string}
+   :parentModel string,
+   :serviceAccount string}
   
   Uploads a Model artifact into Vertex AI."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -6905,7 +7087,7 @@
      auth))))
 
 (defn locations-models-deleteVersion$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/deleteVersion
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -6930,60 +7112,8 @@
       :as :json}
      auth))))
 
-(defn locations-models-evaluations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/list
-  
-  Required parameters: parent
-  
-  Optional parameters: filter, pageToken, readMask, pageSize
-  
-  Lists ModelEvaluations in a Model."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/evaluations"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-models-evaluations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a ModelEvaluation."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-models-evaluations-import$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/import
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -7024,52 +7154,14 @@
       :as :json}
      auth))))
 
-(defn locations-models-evaluations-slices-batchImport$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/slices/batchImport
+(defn locations-models-evaluations-list$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: pageToken, readMask, pageSize, filter
   
-  Body: 
-  
-  {:evaluatedAnnotations [{:explanations [GoogleCloudAiplatformV1EvaluatedAnnotationExplanation],
-                           :dataItemPayload any,
-                           :errorAnalysisAnnotations [GoogleCloudAiplatformV1ErrorAnalysisAnnotation],
-                           :predictions [any],
-                           :groundTruths [any],
-                           :type string,
-                           :evaluatedDataItemViewId string}]}
-  
-  Imports a list of externally generated EvaluatedAnnotations."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}:batchImport"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-models-evaluations-slices-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/slices/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, filter, pageToken, readMask
-  
-  Lists ModelEvaluationSlices in a ModelEvaluation."
+  Lists ModelEvaluations in a Model."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -7077,7 +7169,7 @@
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/slices"
+     "v1/{+parent}/evaluations"
      #{:parent}
      parameters)
     (merge-with
@@ -7088,8 +7180,34 @@
       :as :json}
      auth))))
 
+(defn locations-models-evaluations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a ModelEvaluation."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-models-evaluations-slices-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/slices/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7114,8 +7232,72 @@
       :as :json}
      auth))))
 
+(defn locations-models-evaluations-slices-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, filter, pageSize, readMask
+  
+  Lists ModelEvaluationSlices in a ModelEvaluation."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/slices"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-models-evaluations-slices-batchImport$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:evaluatedAnnotations [{:type string,
+                           :predictions [any],
+                           :dataItemPayload any,
+                           :errorAnalysisAnnotations [GoogleCloudAiplatformV1ErrorAnalysisAnnotation],
+                           :evaluatedDataItemViewId string,
+                           :explanations [GoogleCloudAiplatformV1EvaluatedAnnotationExplanation],
+                           :groundTruths [any]}]}
+  
+  Imports a list of externally generated EvaluatedAnnotations."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}:batchImport"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-models-evaluations-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7140,86 +7322,8 @@
       :as :json}
      auth))))
 
-(defn locations-models-evaluations-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-models-evaluations-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageToken, pageSize
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-models-evaluations-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-models-evaluations-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/evaluations/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7244,86 +7348,8 @@
       :as :json}
      auth))))
 
-(defn locations-models-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-models-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-models-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-models-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/operations/list
+(defn locations-models-evaluations-operations-list$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7348,8 +7374,164 @@
       :as :json}
      auth))))
 
+(defn locations-models-evaluations-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-models-evaluations-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-models-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, pageSize, filter
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-models-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-models-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-models-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-models-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/models/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7374,38 +7556,12 @@
       :as :json}
      auth))))
 
-(defn locations-customJobs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a CustomJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-customJobs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageToken, readMask, filter, pageSize
+  Optional parameters: pageSize, readMask, filter, pageToken
   
   Lists CustomJobs in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -7426,34 +7582,8 @@
       :as :json}
      auth))))
 
-(defn locations-customJobs-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a CustomJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-customJobs-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7484,8 +7614,34 @@
       :as :json}
      auth))))
 
+(defn locations-customJobs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a CustomJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-customJobs-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -7517,7 +7673,7 @@
    :state string,
    :updateTime string,
    :webAccessUris {},
-   :error {:details [{}], :code integer, :message string}}
+   :error {:message string, :code integer, :details [{}]}}
   
   Creates a CustomJob. A created CustomJob right away will be attempted to be run."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -7540,45 +7696,19 @@
       :as :json}
      auth))))
 
-(defn locations-customJobs-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageSize, filter, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-customJobs-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/operations/get
+(defn locations-customJobs-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Deletes a CustomJob."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/delete
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
@@ -7592,60 +7722,8 @@
       :as :json}
      auth))))
 
-(defn locations-customJobs-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-customJobs-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-customJobs-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/customJobs/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7670,12 +7748,116 @@
       :as :json}
      auth))))
 
+(defn locations-customJobs-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-customJobs-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, filter, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-customJobs-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-customJobs-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-specialistPools-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageSize, readMask, pageToken
+  Optional parameters: pageToken, readMask, pageSize
   
   Lists SpecialistPools in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -7696,45 +7878,8 @@
       :as :json}
      auth))))
 
-(defn locations-specialistPools-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:specialistManagersCount integer,
-   :specialistWorkerEmails [string],
-   :pendingDataLabelingJobs [string],
-   :specialistManagerEmails [string],
-   :name string,
-   :displayName string}
-  
-  Updates a SpecialistPool."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-specialistPools-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -7743,9 +7888,9 @@
   Body: 
   
   {:specialistManagersCount integer,
-   :specialistWorkerEmails [string],
    :pendingDataLabelingJobs [string],
    :specialistManagerEmails [string],
+   :specialistWorkerEmails [string],
    :name string,
    :displayName string}
   
@@ -7770,8 +7915,45 @@
       :as :json}
      auth))))
 
+(defn locations-specialistPools-patch$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:specialistManagersCount integer,
+   :pendingDataLabelingJobs [string],
+   :specialistManagerEmails [string],
+   :specialistWorkerEmails [string],
+   :name string,
+   :displayName string}
+  
+  Updates a SpecialistPool."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-specialistPools-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7797,7 +7979,7 @@
      auth))))
 
 (defn locations-specialistPools-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7823,7 +8005,7 @@
      auth))))
 
 (defn locations-specialistPools-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7848,60 +8030,8 @@
       :as :json}
      auth))))
 
-(defn locations-specialistPools-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-specialistPools-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-specialistPools-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7927,11 +8057,11 @@
      auth))))
 
 (defn locations-specialistPools-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/specialistPools/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageToken, filter, pageSize
+  Optional parameters: pageSize, pageToken, filter
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -7952,8 +8082,131 @@
       :as :json}
      auth))))
 
+(defn locations-specialistPools-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-specialistPools-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-studies-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a Study by name."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-studies-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:inactiveReason string,
+   :studySpec {:algorithm string,
+               :measurementSelectionType string,
+               :observationNoise string,
+               :studyStoppingConfig GoogleCloudAiplatformV1StudySpecStudyStoppingConfig,
+               :decayCurveStoppingSpec GoogleCloudAiplatformV1StudySpecDecayCurveAutomatedStoppingSpec,
+               :medianAutomatedStoppingSpec GoogleCloudAiplatformV1StudySpecMedianAutomatedStoppingSpec,
+               :parameters [GoogleCloudAiplatformV1StudySpecParameterSpec],
+               :convexAutomatedStoppingSpec GoogleCloudAiplatformV1StudySpecConvexAutomatedStoppingSpec,
+               :metrics [GoogleCloudAiplatformV1StudySpecMetricSpec]},
+   :createTime string,
+   :displayName string,
+   :name string,
+   :state string}
+  
+  Creates a Study. A resource name will be generated after creation of the Study."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/studies"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-studies-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -7978,36 +8231,19 @@
       :as :json}
      auth))))
 
-(defn locations-studies-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/create
+(defn locations-studies-list$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: pageSize, pageToken
   
-  Body: 
-  
-  {:displayName string,
-   :inactiveReason string,
-   :createTime string,
-   :state string,
-   :studySpec {:algorithm string,
-               :measurementSelectionType string,
-               :observationNoise string,
-               :studyStoppingConfig GoogleCloudAiplatformV1StudySpecStudyStoppingConfig,
-               :decayCurveStoppingSpec GoogleCloudAiplatformV1StudySpecDecayCurveAutomatedStoppingSpec,
-               :medianAutomatedStoppingSpec GoogleCloudAiplatformV1StudySpecMedianAutomatedStoppingSpec,
-               :parameters [GoogleCloudAiplatformV1StudySpecParameterSpec],
-               :convexAutomatedStoppingSpec GoogleCloudAiplatformV1StudySpecConvexAutomatedStoppingSpec,
-               :metrics [GoogleCloudAiplatformV1StudySpecMetricSpec]},
-   :name string}
-  
-  Creates a Study. A resource name will be generated after creation of the Study."
+  Lists all the studies in a region for an associated project."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+parent}/studies"
@@ -8015,16 +8251,14 @@
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-studies-lookup$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/lookup
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -8055,60 +8289,8 @@
       :as :json}
      auth))))
 
-(defn locations-studies-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken
-  
-  Lists all the studies in a region for an associated project."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/studies"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-studies-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a Study by name."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-studies-trials-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8134,7 +8316,7 @@
      auth))))
 
 (defn locations-studies-trials-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -8145,16 +8327,16 @@
   {:clientId string,
    :customJob string,
    :startTime string,
-   :measurements [{:metrics [GoogleCloudAiplatformV1MeasurementMetric],
+   :measurements [{:stepCount string,
                    :elapsedDuration string,
-                   :stepCount string}],
+                   :metrics [GoogleCloudAiplatformV1MeasurementMetric]}],
    :name string,
    :endTime string,
    :state string,
    :id string,
-   :finalMeasurement {:metrics [GoogleCloudAiplatformV1MeasurementMetric],
+   :finalMeasurement {:stepCount string,
                       :elapsedDuration string,
-                      :stepCount string},
+                      :metrics [GoogleCloudAiplatformV1MeasurementMetric]},
    :infeasibleReason string,
    :webAccessUris {},
    :parameters [{:value any, :parameterId string}]}
@@ -8181,7 +8363,7 @@
      auth))))
 
 (defn locations-studies-trials-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8207,7 +8389,7 @@
      auth))))
 
 (defn locations-studies-trials-listOptimalTrials$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/listOptimalTrials
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -8239,7 +8421,7 @@
      auth))))
 
 (defn locations-studies-trials-stop$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/stop
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8271,7 +8453,7 @@
      auth))))
 
 (defn locations-studies-trials-suggest$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/suggest
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -8279,10 +8461,10 @@
   
   Body: 
   
-  {:suggestionCount integer,
-   :clientId string,
+  {:clientId string,
    :contexts [{:parameters [GoogleCloudAiplatformV1TrialParameter],
-               :description string}]}
+               :description string}],
+   :suggestionCount integer}
   
   Adds one or more Trials to a Study, with parameter values suggested by Vertex AI Vizier. Returns a long-running operation associated with the generation of Trial suggestions. When this long-running operation succeeds, it will contain a SuggestTrialsResponse."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8306,11 +8488,11 @@
      auth))))
 
 (defn locations-studies-trials-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageToken, pageSize
+  Optional parameters: pageSize, pageToken
   
   Lists the Trials associated with a Study."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8332,7 +8514,7 @@
      auth))))
 
 (defn locations-studies-trials-checkTrialEarlyStoppingState$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/checkTrialEarlyStoppingState
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: trialName
   
@@ -8364,7 +8546,7 @@
      auth))))
 
 (defn locations-studies-trials-complete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/complete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8372,11 +8554,11 @@
   
   Body: 
   
-  {:finalMeasurement {:metrics [GoogleCloudAiplatformV1MeasurementMetric],
-                      :elapsedDuration string,
-                      :stepCount string},
+  {:trialInfeasible boolean,
    :infeasibleReason string,
-   :trialInfeasible boolean}
+   :finalMeasurement {:stepCount string,
+                      :elapsedDuration string,
+                      :metrics [GoogleCloudAiplatformV1MeasurementMetric]}}
   
   Marks a Trial as complete."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8400,7 +8582,7 @@
      auth))))
 
 (defn locations-studies-trials-addTrialMeasurement$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/addTrialMeasurement
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: trialName
   
@@ -8408,9 +8590,9 @@
   
   Body: 
   
-  {:measurement {:metrics [GoogleCloudAiplatformV1MeasurementMetric],
+  {:measurement {:stepCount string,
                  :elapsedDuration string,
-                 :stepCount string}}
+                 :metrics [GoogleCloudAiplatformV1MeasurementMetric]}}
   
   Adds a measurement of the objective metrics to a Trial. This measurement is assumed to have been taken before the Trial is complete."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8434,7 +8616,7 @@
      auth))))
 
 (defn locations-studies-trials-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8460,11 +8642,11 @@
      auth))))
 
 (defn locations-studies-trials-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageToken, filter, pageSize
+  Optional parameters: pageToken, pageSize, filter
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8485,34 +8667,8 @@
       :as :json}
      auth))))
 
-(defn locations-studies-trials-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-studies-trials-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8538,7 +8694,7 @@
      auth))))
 
 (defn locations-studies-trials-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/trials/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8563,74 +8719,22 @@
       :as :json}
      auth))))
 
-(defn locations-studies-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/operations/delete
+(defn locations-studies-trials-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/delete
+   (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-studies-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-studies-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
      #{:name}
      parameters)
     (merge-with
@@ -8642,7 +8746,7 @@
      auth))))
 
 (defn locations-studies-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8668,11 +8772,11 @@
      auth))))
 
 (defn locations-studies-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/studies/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageSize, pageToken, filter
+  Optional parameters: filter, pageToken, pageSize
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8693,8 +8797,112 @@
       :as :json}
      auth))))
 
+(defn locations-studies-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-studies-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-studies-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-notebookRuntimeTemplates-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: readMask, pageSize, filter, pageToken, orderBy
+  
+  Lists NotebookRuntimeTemplates in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/notebookRuntimeTemplates"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-notebookRuntimeTemplates-testIamPermissions$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimeTemplates/testIamPermissions
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -8719,91 +8927,8 @@
       :as :json}
      auth))))
 
-(defn locations-notebookRuntimeTemplates-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimeTemplates/create
-  
-  Required parameters: parent
-  
-  Optional parameters: notebookRuntimeTemplateId
-  
-  Body: 
-  
-  {:description string,
-   :serviceAccount string,
-   :machineSpec {:machineType string,
-                 :acceleratorType string,
-                 :acceleratorCount integer,
-                 :tpuTopology string},
-   :labels {},
-   :isDefault boolean,
-   :idleShutdownConfig {:idleShutdownDisabled boolean,
-                        :idleTimeout string},
-   :networkSpec {:network string,
-                 :enableInternetAccess boolean,
-                 :subnetwork string},
-   :displayName string,
-   :name string,
-   :createTime string,
-   :etag string,
-   :notebookRuntimeType string,
-   :updateTime string,
-   :dataPersistentDiskSpec {:diskType string, :diskSizeGb string},
-   :reservationAffinity {:key string,
-                         :values [string],
-                         :consumeReservationType string},
-   :eucConfig {:eucDisabled boolean, :bypassActasCheck boolean},
-   :networkTags [string],
-   :shieldedVmConfig {:enableSecureBoot boolean}}
-  
-  Creates a NotebookRuntimeTemplate."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/notebookRuntimeTemplates"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-notebookRuntimeTemplates-getIamPolicy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimeTemplates/getIamPolicy
-  
-  Required parameters: resource
-  
-  Optional parameters: options.requestedPolicyVersion
-  
-  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:resource})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+resource}:getIamPolicy"
-     #{:resource}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-notebookRuntimeTemplates-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimeTemplates/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8828,8 +8953,91 @@
       :as :json}
      auth))))
 
+(defn locations-notebookRuntimeTemplates-getIamPolicy$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: resource
+  
+  Optional parameters: options.requestedPolicyVersion
+  
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+resource}:getIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-notebookRuntimeTemplates-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: notebookRuntimeTemplateId
+  
+  Body: 
+  
+  {:description string,
+   :serviceAccount string,
+   :machineSpec {:acceleratorCount integer,
+                 :acceleratorType string,
+                 :machineType string,
+                 :tpuTopology string},
+   :labels {},
+   :isDefault boolean,
+   :idleShutdownConfig {:idleTimeout string,
+                        :idleShutdownDisabled boolean},
+   :networkSpec {:subnetwork string,
+                 :network string,
+                 :enableInternetAccess boolean},
+   :displayName string,
+   :name string,
+   :createTime string,
+   :etag string,
+   :notebookRuntimeType string,
+   :updateTime string,
+   :dataPersistentDiskSpec {:diskType string, :diskSizeGb string},
+   :reservationAffinity {:values [string],
+                         :consumeReservationType string,
+                         :key string},
+   :eucConfig {:bypassActasCheck boolean, :eucDisabled boolean},
+   :networkTags [string],
+   :shieldedVmConfig {:enableSecureBoot boolean}}
+  
+  Creates a NotebookRuntimeTemplate."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/notebookRuntimeTemplates"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-notebookRuntimeTemplates-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimeTemplates/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8854,34 +9062,8 @@
       :as :json}
      auth))))
 
-(defn locations-notebookRuntimeTemplates-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimeTemplates/list
-  
-  Required parameters: parent
-  
-  Optional parameters: readMask, filter, pageToken, pageSize, orderBy
-  
-  Lists NotebookRuntimeTemplates in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/notebookRuntimeTemplates"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-notebookRuntimeTemplates-setIamPolicy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/notebookRuntimeTemplates/setIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -8889,9 +9071,9 @@
   
   Body: 
   
-  {:policy {:bindings [GoogleIamV1Binding],
-            :version integer,
-            :etag string}}
+  {:policy {:etag string,
+            :bindings [GoogleIamV1Binding],
+            :version integer}}
   
   Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -8914,8 +9096,60 @@
       :as :json}
      auth))))
 
+(defn locations-tensorboards-batchRead$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: tensorboard
+  
+  Optional parameters: timeSeries
+  
+  Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars, 100 for tensors and blob references. If the number of data points stored is less than the limit, all data is returned. Otherwise, the number limit of data points is randomly selected from this time series and returned."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:tensorboard})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+tensorboard}:batchRead"
+     #{:tensorboard}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-readSize$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: tensorboard
+  
+  Optional parameters: none
+  
+  Returns the storage size for a given TensorBoard instance."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:tensorboard})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+tensorboard}:readSize"
+     #{:tensorboard}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-tensorboards-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8956,8 +9190,35 @@
       :as :json}
      auth))))
 
+(defn locations-tensorboards-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, orderBy, readMask, filter, pageSize
+  
+  Lists Tensorboards in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/tensorboards"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-tensorboards-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -8983,7 +9244,7 @@
      auth))))
 
 (defn locations-tensorboards-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -9009,24 +9270,23 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/list
+(defn locations-tensorboards-readUsage$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: parent
+  Required parameters: tensorboard
   
-  Optional parameters: readMask, filter, pageToken, orderBy, pageSize
+  Optional parameters: none
   
-  Lists Tensorboards in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  Returns a list of monthly active users for a given TensorBoard instance."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:tensorboard})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/tensorboards"
-     #{:parent}
+     "v1/{+tensorboard}:readUsage"
+     #{:tensorboard}
      parameters)
     (merge-with
      merge
@@ -9037,7 +9297,7 @@
      auth))))
 
 (defn locations-tensorboards-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -9078,119 +9338,8 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-readUsage$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/readUsage
-  
-  Required parameters: tensorboard
-  
-  Optional parameters: none
-  
-  Returns a list of monthly active users for a given TensorBoard instance."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:tensorboard})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+tensorboard}:readUsage"
-     #{:tensorboard}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-batchRead$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/batchRead
-  
-  Required parameters: tensorboard
-  
-  Optional parameters: timeSeries
-  
-  Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars, 100 for tensors and blob references. If the number of data points stored is less than the limit, all data is returned. Otherwise, the number limit of data points is randomly selected from this time series and returned."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:tensorboard})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+tensorboard}:batchRead"
-     #{:tensorboard}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-readSize$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/readSize
-  
-  Required parameters: tensorboard
-  
-  Optional parameters: none
-  
-  Returns the storage size for a given TensorBoard instance."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:tensorboard})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+tensorboard}:readSize"
-     #{:tensorboard}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-write$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/write
-  
-  Required parameters: tensorboardExperiment
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:writeRunDataRequests [{:timeSeriesData [GoogleCloudAiplatformV1TimeSeriesData],
-                           :tensorboardRun string}]}
-  
-  Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's. If any data fail to be ingested, an error is returned."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:tensorboardExperiment})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+tensorboardExperiment}:write"
-     #{:tensorboardExperiment}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-tensorboards-experiments-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -9199,13 +9348,13 @@
   Body: 
   
   {:source string,
-   :description string,
+   :name string,
    :displayName string,
-   :updateTime string,
+   :etag string,
+   :description string,
    :createTime string,
    :labels {},
-   :etag string,
-   :name string}
+   :updateTime string}
   
   Updates a TensorboardExperiment."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -9228,8 +9377,167 @@
       :as :json}
      auth))))
 
+(defn locations-tensorboards-experiments-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, orderBy, filter, pageToken, readMask
+  
+  Lists TensorboardExperiments in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/experiments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a TensorboardExperiment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-batchCreate$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:requests [{:parent string,
+               :tensorboardTimeSeries GoogleCloudAiplatformV1TensorboardTimeSeries,
+               :tensorboardTimeSeriesId string}]}
+  
+  Batch create TensorboardTimeSeries that belong to a TensorboardExperiment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}:batchCreate"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-write$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: tensorboardExperiment
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:writeRunDataRequests [{:tensorboardRun string,
+                           :timeSeriesData [GoogleCloudAiplatformV1TimeSeriesData]}]}
+  
+  Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's. If any data fail to be ingested, an error is returned."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:tensorboardExperiment})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+tensorboardExperiment}:write"
+     #{:tensorboardExperiment}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: tensorboardExperimentId
+  
+  Body: 
+  
+  {:source string,
+   :name string,
+   :displayName string,
+   :etag string,
+   :description string,
+   :createTime string,
+   :labels {},
+   :updateTime string}
+  
+  Creates a TensorboardExperiment."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/experiments"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-tensorboards-experiments-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -9255,298 +9563,8 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-experiments-batchCreate$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/batchCreate
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:requests [{:tensorboardTimeSeriesId string,
-               :parent string,
-               :tensorboardTimeSeries GoogleCloudAiplatformV1TensorboardTimeSeries}]}
-  
-  Batch create TensorboardTimeSeries that belong to a TensorboardExperiment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}:batchCreate"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a TensorboardExperiment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/list
-  
-  Required parameters: parent
-  
-  Optional parameters: readMask, orderBy, pageSize, pageToken, filter
-  
-  Lists TensorboardExperiments in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/experiments"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/create
-  
-  Required parameters: parent
-  
-  Optional parameters: tensorboardExperimentId
-  
-  Body: 
-  
-  {:source string,
-   :description string,
-   :displayName string,
-   :updateTime string,
-   :createTime string,
-   :labels {},
-   :etag string,
-   :name string}
-  
-  Creates a TensorboardExperiment."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/experiments"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageToken, filter, pageSize
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-batchCreate$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/batchCreate
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:requests [{:tensorboardRunId string,
-               :parent string,
-               :tensorboardRun GoogleCloudAiplatformV1TensorboardRun}]}
-  
-  Batch create TensorboardRuns."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/runs:batchCreate"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-tensorboards-experiments-runs-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -9554,13 +9572,13 @@
   
   Body: 
   
-  {:description string,
-   :etag string,
-   :createTime string,
+  {:displayName string,
    :labels {},
-   :name string,
-   :displayName string,
-   :updateTime string}
+   :createTime string,
+   :etag string,
+   :description string,
+   :updateTime string,
+   :name string}
   
   Creates a TensorboardRun."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -9583,108 +9601,8 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-experiments-runs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a TensorboardRun."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-write$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/write
-  
-  Required parameters: tensorboardRun
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:timeSeriesData [{:tensorboardTimeSeriesId string,
-                     :valueType string,
-                     :values [GoogleCloudAiplatformV1TimeSeriesDataPoint]}],
-   :tensorboardRun string}
-  
-  Write time series data points into multiple TensorboardTimeSeries under a TensorboardRun. If any data fail to be ingested, an error is returned."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:tensorboardRun})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+tensorboardRun}:write"
-     #{:tensorboardRun}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:description string,
-   :etag string,
-   :createTime string,
-   :labels {},
-   :name string,
-   :displayName string,
-   :updateTime string}
-  
-  Updates a TensorboardRun."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-tensorboards-experiments-runs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -9710,8 +9628,107 @@
       :as :json}
      auth))))
 
+(defn locations-tensorboards-experiments-runs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a TensorboardRun."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-batchCreate$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:requests [{:parent string,
+               :tensorboardRun GoogleCloudAiplatformV1TensorboardRun,
+               :tensorboardRunId string}]}
+  
+  Batch create TensorboardRuns."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/runs:batchCreate"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-patch$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:displayName string,
+   :labels {},
+   :createTime string,
+   :etag string,
+   :description string,
+   :updateTime string,
+   :name string}
+  
+  Updates a TensorboardRun."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-tensorboards-experiments-runs-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -9736,142 +9753,47 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-experiments-runs-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/operations/delete
+(defn locations-tensorboards-experiments-runs-write$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: tensorboardRun
   
   Optional parameters: none
   
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  Body: 
+  
+  {:tensorboardRun string,
+   :timeSeriesData [{:tensorboardTimeSeriesId string,
+                     :valueType string,
+                     :values [GoogleCloudAiplatformV1TimeSeriesDataPoint]}]}
+  
+  Write time series data points into multiple TensorboardTimeSeries under a TensorboardRun. If any data fail to be ingested, an error is returned."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageSize, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:tensorboardRun})]}
   (util/get-response
    (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
+     "v1/{+tensorboardRun}:write"
+     #{:tensorboardRun}
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-tensorboards-experiments-runs-timeSeries-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: filter, orderBy, pageSize, readMask, pageToken
+  Optional parameters: pageToken, readMask, filter, orderBy, pageSize
   
   Lists TensorboardTimeSeries in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -9893,19 +9815,69 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-experiments-runs-timeSeries-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/delete
+(defn locations-tensorboards-experiments-runs-timeSeries-exportTensorboardTimeSeries$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: tensorboardTimeSeries
   
   Optional parameters: none
   
-  Deletes a TensorboardTimeSeries."
+  Body: 
+  
+  {:filter string,
+   :pageToken string,
+   :pageSize integer,
+   :orderBy string}
+  
+  Exports a TensorboardTimeSeries' data. Data is returned in paginated responses."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:tensorboardTimeSeries})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+tensorboardTimeSeries}:exportTensorboardTimeSeries"
+     #{:tensorboardTimeSeries}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-timeSeries-patch$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:description string,
+   :valueType string,
+   :displayName string,
+   :name string,
+   :createTime string,
+   :etag string,
+   :pluginData string,
+   :updateTime string,
+   :pluginName string,
+   :metadata {:maxBlobSequenceLength string,
+              :maxWallTime string,
+              :maxStep string}}
+  
+  Updates a TensorboardTimeSeries."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/delete
+   (http/patch
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
@@ -9913,14 +9885,59 @@
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-timeSeries-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: tensorboardTimeSeriesId
+  
+  Body: 
+  
+  {:description string,
+   :valueType string,
+   :displayName string,
+   :name string,
+   :createTime string,
+   :etag string,
+   :pluginData string,
+   :updateTime string,
+   :pluginName string,
+   :metadata {:maxBlobSequenceLength string,
+              :maxWallTime string,
+              :maxStep string}}
+  
+  Creates a TensorboardTimeSeries."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/timeSeries"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-tensorboards-experiments-runs-timeSeries-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -9946,8 +9963,61 @@
       :as :json}
      auth))))
 
+(defn locations-tensorboards-experiments-runs-timeSeries-read$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: tensorboardTimeSeries
+  
+  Optional parameters: filter, maxDataPoints
+  
+  Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less than 1000, all data is returned. Otherwise, 1000 data points is randomly selected from this time series and returned. This value can be changed by changing max_data_points, which can't be greater than 10k."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:tensorboardTimeSeries})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+tensorboardTimeSeries}:read"
+     #{:tensorboardTimeSeries}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-timeSeries-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a TensorboardTimeSeries."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-tensorboards-experiments-runs-timeSeries-readBlobData$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/readBlobData
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: timeSeries
   
@@ -9973,193 +10043,19 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-experiments-runs-timeSeries-exportTensorboardTimeSeries$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/exportTensorboardTimeSeries
-  
-  Required parameters: tensorboardTimeSeries
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:pageToken string,
-   :orderBy string,
-   :pageSize integer,
-   :filter string}
-  
-  Exports a TensorboardTimeSeries' data. Data is returned in paginated responses."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:tensorboardTimeSeries})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+tensorboardTimeSeries}:exportTensorboardTimeSeries"
-     #{:tensorboardTimeSeries}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-timeSeries-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/create
-  
-  Required parameters: parent
-  
-  Optional parameters: tensorboardTimeSeriesId
-  
-  Body: 
-  
-  {:description string,
-   :valueType string,
-   :displayName string,
-   :name string,
-   :createTime string,
-   :etag string,
-   :pluginData string,
-   :updateTime string,
-   :pluginName string,
-   :metadata {:maxWallTime string,
-              :maxBlobSequenceLength string,
-              :maxStep string}}
-  
-  Creates a TensorboardTimeSeries."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/timeSeries"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-timeSeries-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:description string,
-   :valueType string,
-   :displayName string,
-   :name string,
-   :createTime string,
-   :etag string,
-   :pluginData string,
-   :updateTime string,
-   :pluginName string,
-   :metadata {:maxWallTime string,
-              :maxBlobSequenceLength string,
-              :maxStep string}}
-  
-  Updates a TensorboardTimeSeries."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-timeSeries-read$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/read
-  
-  Required parameters: tensorboardTimeSeries
-  
-  Optional parameters: maxDataPoints, filter
-  
-  Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less than 1000, all data is returned. Otherwise, 1000 data points is randomly selected from this time series and returned. This value can be changed by changing max_data_points, which can't be greater than 10k."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/cloud-platform.read-only"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:tensorboardTimeSeries})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+tensorboardTimeSeries}:read"
-     #{:tensorboardTimeSeries}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-timeSeries-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-experiments-runs-timeSeries-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/operations/get
+(defn locations-tensorboards-experiments-runs-timeSeries-operations-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/delete
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
@@ -10174,7 +10070,7 @@
      auth))))
 
 (defn locations-tensorboards-experiments-runs-timeSeries-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10199,12 +10095,38 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-experiments-runs-timeSeries-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/operations/list
+(defn locations-tensorboards-experiments-runs-timeSeries-operations-wait$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageSize, filter, pageToken
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-timeSeries-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageToken, pageSize
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -10225,34 +10147,8 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-experiments-runs-timeSeries-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/experiments/runs/timeSeries/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-tensorboards-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/operations/get
+(defn locations-tensorboards-experiments-runs-timeSeries-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10277,8 +10173,86 @@
       :as :json}
      auth))))
 
-(defn locations-tensorboards-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/operations/delete
+(defn locations-tensorboards-experiments-runs-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-runs-operations-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10303,8 +10277,164 @@
       :as :json}
      auth))))
 
+(defn locations-tensorboards-experiments-runs-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageSize, pageToken
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, pageSize, filter
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-experiments-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-tensorboards-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10330,7 +10460,7 @@
      auth))))
 
 (defn locations-tensorboards-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10356,11 +10486,11 @@
      auth))))
 
 (defn locations-tensorboards-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/tensorboards/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageSize, filter, pageToken
+  Optional parameters: pageToken, pageSize, filter
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -10381,8 +10511,86 @@
       :as :json}
      auth))))
 
+(defn locations-tensorboards-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-tensorboards-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-modelDeploymentMonitoringJobs-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: filter, pageSize, readMask, pageToken
+  
+  Lists ModelDeploymentMonitoringJobs in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/modelDeploymentMonitoringJobs"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-modelDeploymentMonitoringJobs-pause$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/pause
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10413,248 +10621,8 @@
       :as :json}
      auth))))
 
-(defn locations-modelDeploymentMonitoringJobs-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:bigqueryTables [{:requestResponseLoggingSchemaVersion string,
-                     :bigqueryTablePath string,
-                     :logType string,
-                     :logSource string}],
-   :labels {},
-   :statsAnomaliesBaseDirectory {:outputUriPrefix string},
-   :modelDeploymentMonitoringObjectiveConfigs [{:deployedModelId string,
-                                                :objectiveConfig GoogleCloudAiplatformV1ModelMonitoringObjectiveConfig}],
-   :scheduleState string,
-   :loggingSamplingStrategy {:randomSampleConfig GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfig},
-   :encryptionSpec {:kmsKeyName string},
-   :modelDeploymentMonitoringScheduleConfig {:monitorWindow string,
-                                             :monitorInterval string},
-   :displayName string,
-   :predictInstanceSchemaUri string,
-   :name string,
-   :analysisInstanceSchemaUri string,
-   :createTime string,
-   :state string,
-   :latestMonitoringPipelineMetadata {:runTime string,
-                                      :status GoogleRpcStatus},
-   :updateTime string,
-   :nextScheduleTime string,
-   :modelMonitoringAlertConfig {:notificationChannels [string],
-                                :enableLogging boolean,
-                                :emailAlertConfig GoogleCloudAiplatformV1ModelMonitoringAlertConfigEmailAlertConfig},
-   :error {:details [{}], :code integer, :message string},
-   :logTtl string,
-   :samplePredictInstance any,
-   :endpoint string,
-   :enableMonitoringPipelineLogs boolean}
-  
-  Creates a ModelDeploymentMonitoringJob. It will run periodically on a configured interval."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/modelDeploymentMonitoringJobs"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-modelDeploymentMonitoringJobs-searchModelDeploymentMonitoringStatsAnomalies$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/searchModelDeploymentMonitoringStatsAnomalies
-  
-  Required parameters: modelDeploymentMonitoringJob
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:pageToken string,
-   :startTime string,
-   :deployedModelId string,
-   :objectives [{:topFeatureCount integer, :type string}],
-   :featureDisplayName string,
-   :pageSize integer,
-   :endTime string}
-  
-  Searches Model Monitoring Statistics generated within a given time window."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:modelDeploymentMonitoringJob})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+modelDeploymentMonitoringJob}:searchModelDeploymentMonitoringStatsAnomalies"
-     #{:modelDeploymentMonitoringJob}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-modelDeploymentMonitoringJobs-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:bigqueryTables [{:requestResponseLoggingSchemaVersion string,
-                     :bigqueryTablePath string,
-                     :logType string,
-                     :logSource string}],
-   :labels {},
-   :statsAnomaliesBaseDirectory {:outputUriPrefix string},
-   :modelDeploymentMonitoringObjectiveConfigs [{:deployedModelId string,
-                                                :objectiveConfig GoogleCloudAiplatformV1ModelMonitoringObjectiveConfig}],
-   :scheduleState string,
-   :loggingSamplingStrategy {:randomSampleConfig GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfig},
-   :encryptionSpec {:kmsKeyName string},
-   :modelDeploymentMonitoringScheduleConfig {:monitorWindow string,
-                                             :monitorInterval string},
-   :displayName string,
-   :predictInstanceSchemaUri string,
-   :name string,
-   :analysisInstanceSchemaUri string,
-   :createTime string,
-   :state string,
-   :latestMonitoringPipelineMetadata {:runTime string,
-                                      :status GoogleRpcStatus},
-   :updateTime string,
-   :nextScheduleTime string,
-   :modelMonitoringAlertConfig {:notificationChannels [string],
-                                :enableLogging boolean,
-                                :emailAlertConfig GoogleCloudAiplatformV1ModelMonitoringAlertConfigEmailAlertConfig},
-   :error {:details [{}], :code integer, :message string},
-   :logTtl string,
-   :samplePredictInstance any,
-   :endpoint string,
-   :enableMonitoringPipelineLogs boolean}
-  
-  Updates a ModelDeploymentMonitoringJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-modelDeploymentMonitoringJobs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a ModelDeploymentMonitoringJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-modelDeploymentMonitoringJobs-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a ModelDeploymentMonitoringJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-modelDeploymentMonitoringJobs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/list
-  
-  Required parameters: parent
-  
-  Optional parameters: filter, pageToken, readMask, pageSize
-  
-  Lists ModelDeploymentMonitoringJobs in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/modelDeploymentMonitoringJobs"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-modelDeploymentMonitoringJobs-resume$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/resume
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10685,8 +10653,274 @@
       :as :json}
      auth))))
 
+(defn locations-modelDeploymentMonitoringJobs-patch$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:bigqueryTables [{:logSource string,
+                     :logType string,
+                     :requestResponseLoggingSchemaVersion string,
+                     :bigqueryTablePath string}],
+   :labels {},
+   :statsAnomaliesBaseDirectory {:outputUriPrefix string},
+   :modelDeploymentMonitoringObjectiveConfigs [{:deployedModelId string,
+                                                :objectiveConfig GoogleCloudAiplatformV1ModelMonitoringObjectiveConfig}],
+   :scheduleState string,
+   :loggingSamplingStrategy {:randomSampleConfig GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfig},
+   :encryptionSpec {:kmsKeyName string},
+   :modelDeploymentMonitoringScheduleConfig {:monitorWindow string,
+                                             :monitorInterval string},
+   :displayName string,
+   :predictInstanceSchemaUri string,
+   :name string,
+   :analysisInstanceSchemaUri string,
+   :createTime string,
+   :state string,
+   :latestMonitoringPipelineMetadata {:status GoogleRpcStatus,
+                                      :runTime string},
+   :updateTime string,
+   :nextScheduleTime string,
+   :modelMonitoringAlertConfig {:emailAlertConfig GoogleCloudAiplatformV1ModelMonitoringAlertConfigEmailAlertConfig,
+                                :enableLogging boolean,
+                                :notificationChannels [string]},
+   :error {:message string, :code integer, :details [{}]},
+   :logTtl string,
+   :samplePredictInstance any,
+   :endpoint string,
+   :enableMonitoringPipelineLogs boolean}
+  
+  Updates a ModelDeploymentMonitoringJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-modelDeploymentMonitoringJobs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a ModelDeploymentMonitoringJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-modelDeploymentMonitoringJobs-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:bigqueryTables [{:logSource string,
+                     :logType string,
+                     :requestResponseLoggingSchemaVersion string,
+                     :bigqueryTablePath string}],
+   :labels {},
+   :statsAnomaliesBaseDirectory {:outputUriPrefix string},
+   :modelDeploymentMonitoringObjectiveConfigs [{:deployedModelId string,
+                                                :objectiveConfig GoogleCloudAiplatformV1ModelMonitoringObjectiveConfig}],
+   :scheduleState string,
+   :loggingSamplingStrategy {:randomSampleConfig GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfig},
+   :encryptionSpec {:kmsKeyName string},
+   :modelDeploymentMonitoringScheduleConfig {:monitorWindow string,
+                                             :monitorInterval string},
+   :displayName string,
+   :predictInstanceSchemaUri string,
+   :name string,
+   :analysisInstanceSchemaUri string,
+   :createTime string,
+   :state string,
+   :latestMonitoringPipelineMetadata {:status GoogleRpcStatus,
+                                      :runTime string},
+   :updateTime string,
+   :nextScheduleTime string,
+   :modelMonitoringAlertConfig {:emailAlertConfig GoogleCloudAiplatformV1ModelMonitoringAlertConfigEmailAlertConfig,
+                                :enableLogging boolean,
+                                :notificationChannels [string]},
+   :error {:message string, :code integer, :details [{}]},
+   :logTtl string,
+   :samplePredictInstance any,
+   :endpoint string,
+   :enableMonitoringPipelineLogs boolean}
+  
+  Creates a ModelDeploymentMonitoringJob. It will run periodically on a configured interval."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/modelDeploymentMonitoringJobs"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-modelDeploymentMonitoringJobs-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a ModelDeploymentMonitoringJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-modelDeploymentMonitoringJobs-searchModelDeploymentMonitoringStatsAnomalies$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: modelDeploymentMonitoringJob
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:pageSize integer,
+   :deployedModelId string,
+   :featureDisplayName string,
+   :objectives [{:type string, :topFeatureCount integer}],
+   :endTime string,
+   :startTime string,
+   :pageToken string}
+  
+  Searches Model Monitoring Statistics generated within a given time window."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:modelDeploymentMonitoringJob})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+modelDeploymentMonitoringJob}:searchModelDeploymentMonitoringStatsAnomalies"
+     #{:modelDeploymentMonitoringJob}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-modelDeploymentMonitoringJobs-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, filter, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-modelDeploymentMonitoringJobs-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-modelDeploymentMonitoringJobs-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10712,7 +10946,7 @@
      auth))))
 
 (defn locations-modelDeploymentMonitoringJobs-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10737,60 +10971,8 @@
       :as :json}
      auth))))
 
-(defn locations-modelDeploymentMonitoringJobs-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-modelDeploymentMonitoringJobs-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageToken, pageSize
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-modelDeploymentMonitoringJobs-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/modelDeploymentMonitoringJobs/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10816,7 +10998,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10841,86 +11023,8 @@
       :as :json}
      auth))))
 
-(defn locations-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageSize, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10945,8 +11049,216 @@
       :as :json}
      auth))))
 
+(defn locations-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageToken, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-dataLabelingJobs-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:labels {},
+   :instructionUri string,
+   :datasets [string],
+   :encryptionSpec {:kmsKeyName string},
+   :activeLearningConfig {:maxDataItemPercentage integer,
+                          :maxDataItemCount string,
+                          :sampleConfig GoogleCloudAiplatformV1SampleConfig,
+                          :trainingConfig GoogleCloudAiplatformV1TrainingConfig},
+   :displayName string,
+   :name string,
+   :createTime string,
+   :state string,
+   :updateTime string,
+   :inputs any,
+   :specialistPools [string],
+   :labelerCount integer,
+   :error {:message string, :code integer, :details [{}]},
+   :inputsSchemaUri string,
+   :currentSpend {:nanos integer, :units string, :currencyCode string},
+   :annotationLabels {},
+   :labelingProgress integer}
+  
+  Creates a DataLabelingJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/dataLabelingJobs"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-dataLabelingJobs-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, filter, pageSize, readMask, orderBy
+  
+  Lists DataLabelingJobs in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/dataLabelingJobs"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-dataLabelingJobs-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a DataLabelingJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-dataLabelingJobs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a DataLabelingJob."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-dataLabelingJobs-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -10977,164 +11289,8 @@
       :as :json}
      auth))))
 
-(defn locations-dataLabelingJobs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/list
-  
-  Required parameters: parent
-  
-  Optional parameters: filter, orderBy, pageSize, readMask, pageToken
-  
-  Lists DataLabelingJobs in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/dataLabelingJobs"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-dataLabelingJobs-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a DataLabelingJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-dataLabelingJobs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a DataLabelingJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-dataLabelingJobs-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/create
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:labels {},
-   :instructionUri string,
-   :datasets [string],
-   :encryptionSpec {:kmsKeyName string},
-   :activeLearningConfig {:trainingConfig GoogleCloudAiplatformV1TrainingConfig,
-                          :maxDataItemCount string,
-                          :sampleConfig GoogleCloudAiplatformV1SampleConfig,
-                          :maxDataItemPercentage integer},
-   :displayName string,
-   :name string,
-   :createTime string,
-   :state string,
-   :updateTime string,
-   :inputs any,
-   :specialistPools [string],
-   :labelerCount integer,
-   :error {:details [{}], :code integer, :message string},
-   :inputsSchemaUri string,
-   :currentSpend {:nanos integer, :currencyCode string, :units string},
-   :annotationLabels {},
-   :labelingProgress integer}
-  
-  Creates a DataLabelingJob."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/dataLabelingJobs"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-dataLabelingJobs-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-dataLabelingJobs-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11160,7 +11316,7 @@
      auth))))
 
 (defn locations-dataLabelingJobs-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11185,34 +11341,8 @@
       :as :json}
      auth))))
 
-(defn locations-dataLabelingJobs-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageSize, pageToken, filter
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-dataLabelingJobs-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/dataLabelingJobs/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11237,112 +11367,60 @@
       :as :json}
      auth))))
 
-(defn locations-schedules-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/create
+(defn locations-dataLabelingJobs-operations-list$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: pageToken, pageSize, filter
   
-  Body: 
-  
-  {:nextRunTime string,
-   :startTime string,
-   :catchUp boolean,
-   :displayName string,
-   :name string,
-   :endTime string,
-   :lastPauseTime string,
-   :maxConcurrentRunCount string,
-   :createTime string,
-   :state string,
-   :cron string,
-   :lastResumeTime string,
-   :updateTime string,
-   :allowQueueing boolean,
-   :lastScheduledRunResponse {:runResponse string,
-                              :scheduledRunTime string},
-   :startedRunCount string,
-   :createPipelineJobRequest {:parent string,
-                              :pipelineJob GoogleCloudAiplatformV1PipelineJob,
-                              :pipelineJobId string},
-   :maxRunCount string}
-  
-  Creates a Schedule."
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/schedules"
-     #{:parent}
+     "v1/{+name}/operations"
+     #{:name}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
-(defn locations-schedules-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/patch
+(defn locations-dataLabelingJobs-operations-wait$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: updateMask
+  Optional parameters: timeout
   
-  Body: 
-  
-  {:nextRunTime string,
-   :startTime string,
-   :catchUp boolean,
-   :displayName string,
-   :name string,
-   :endTime string,
-   :lastPauseTime string,
-   :maxConcurrentRunCount string,
-   :createTime string,
-   :state string,
-   :cron string,
-   :lastResumeTime string,
-   :updateTime string,
-   :allowQueueing boolean,
-   :lastScheduledRunResponse {:runResponse string,
-                              :scheduledRunTime string},
-   :startedRunCount string,
-   :createPipelineJobRequest {:parent string,
-                              :pipelineJob GoogleCloudAiplatformV1PipelineJob,
-                              :pipelineJobId string},
-   :maxRunCount string}
-  
-  Updates an active or paused Schedule. When the Schedule is updated, new runs will be scheduled starting from the updated next execution time after the update time based on the time_specification in the updated Schedule. All unstarted runs before the update time will be skipped while already created runs will NOT be paused or canceled."
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/patch
+   (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
+     "v1/{+name}:wait"
      #{:name}
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-schedules-resume$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/resume
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11373,8 +11451,86 @@
       :as :json}
      auth))))
 
+(defn locations-schedules-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a Schedule."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-schedules-patch$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:nextRunTime string,
+   :startTime string,
+   :catchUp boolean,
+   :displayName string,
+   :name string,
+   :endTime string,
+   :lastPauseTime string,
+   :maxConcurrentRunCount string,
+   :createTime string,
+   :state string,
+   :cron string,
+   :lastResumeTime string,
+   :updateTime string,
+   :allowQueueing boolean,
+   :lastScheduledRunResponse {:runResponse string,
+                              :scheduledRunTime string},
+   :startedRunCount string,
+   :createPipelineJobRequest {:parent string,
+                              :pipelineJobId string,
+                              :pipelineJob GoogleCloudAiplatformV1PipelineJob},
+   :maxRunCount string}
+  
+  Updates an active or paused Schedule. When the Schedule is updated, new runs will be scheduled starting from the updated next execution time after the update time based on the time_specification in the updated Schedule. All unstarted runs before the update time will be skipped while already created runs will NOT be paused or canceled."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-schedules-pause$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/pause
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11405,8 +11561,60 @@
       :as :json}
      auth))))
 
+(defn locations-schedules-create$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:nextRunTime string,
+   :startTime string,
+   :catchUp boolean,
+   :displayName string,
+   :name string,
+   :endTime string,
+   :lastPauseTime string,
+   :maxConcurrentRunCount string,
+   :createTime string,
+   :state string,
+   :cron string,
+   :lastResumeTime string,
+   :updateTime string,
+   :allowQueueing boolean,
+   :lastScheduledRunResponse {:runResponse string,
+                              :scheduledRunTime string},
+   :startedRunCount string,
+   :createPipelineJobRequest {:parent string,
+                              :pipelineJobId string,
+                              :pipelineJob GoogleCloudAiplatformV1PipelineJob},
+   :maxRunCount string}
+  
+  Creates a Schedule."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/schedules"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-schedules-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11432,11 +11640,11 @@
      auth))))
 
 (defn locations-schedules-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: orderBy, pageSize, pageToken, filter
+  Optional parameters: pageToken, orderBy, pageSize, filter
   
   Lists Schedules in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -11457,112 +11665,8 @@
       :as :json}
      auth))))
 
-(defn locations-schedules-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a Schedule."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-schedules-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-schedules-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-schedules-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageToken, filter, pageSize
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-schedules-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11587,8 +11691,34 @@
       :as :json}
      auth))))
 
+(defn locations-schedules-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-schedules-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/schedules/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11613,8 +11743,60 @@
       :as :json}
      auth))))
 
+(defn locations-schedules-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, pageSize, filter
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-schedules-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-indexes-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11639,143 +11821,8 @@
       :as :json}
      auth))))
 
-(defn locations-indexes-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/list
-  
-  Required parameters: parent
-  
-  Optional parameters: filter, pageToken, readMask, pageSize
-  
-  Lists Indexes in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/indexes"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-indexes-upsertDatapoints$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/upsertDatapoints
-  
-  Required parameters: index
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:updateMask string,
-   :datapoints [{:featureVector [number],
-                 :datapointId string,
-                 :numericRestricts [GoogleCloudAiplatformV1IndexDatapointNumericRestriction],
-                 :crowdingTag GoogleCloudAiplatformV1IndexDatapointCrowdingTag,
-                 :restricts [GoogleCloudAiplatformV1IndexDatapointRestriction]}]}
-  
-  Add/update Datapoints into an Index."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:index})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+index}:upsertDatapoints"
-     #{:index}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-indexes-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:description string,
-   :labels {},
-   :indexStats {:shardsCount integer, :vectorsCount string},
-   :encryptionSpec {:kmsKeyName string},
-   :metadataSchemaUri string,
-   :displayName string,
-   :name string,
-   :createTime string,
-   :etag string,
-   :deployedIndexes [{:deployedIndexId string,
-                      :indexEndpoint string,
-                      :displayName string}],
-   :updateTime string,
-   :indexUpdateMethod string,
-   :metadata any}
-  
-  Updates an Index."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-indexes-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets an Index."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-indexes-removeDatapoints$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/removeDatapoints
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: index
   
@@ -11806,8 +11853,60 @@
       :as :json}
      auth))))
 
+(defn locations-indexes-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, readMask, filter, pageSize
+  
+  Lists Indexes in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/indexes"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-indexes-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets an Index."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-indexes-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -11817,15 +11916,15 @@
   
   {:description string,
    :labels {},
-   :indexStats {:shardsCount integer, :vectorsCount string},
+   :indexStats {:vectorsCount string, :shardsCount integer},
    :encryptionSpec {:kmsKeyName string},
    :metadataSchemaUri string,
    :displayName string,
    :name string,
    :createTime string,
    :etag string,
-   :deployedIndexes [{:deployedIndexId string,
-                      :indexEndpoint string,
+   :deployedIndexes [{:indexEndpoint string,
+                      :deployedIndexId string,
                       :displayName string}],
    :updateTime string,
    :indexUpdateMethod string,
@@ -11852,19 +11951,37 @@
       :as :json}
      auth))))
 
-(defn locations-indexes-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/operations/get
+(defn locations-indexes-patch$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: updateMask
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Body: 
+  
+  {:description string,
+   :labels {},
+   :indexStats {:vectorsCount string, :shardsCount integer},
+   :encryptionSpec {:kmsKeyName string},
+   :metadataSchemaUri string,
+   :displayName string,
+   :name string,
+   :createTime string,
+   :etag string,
+   :deployedIndexes [{:indexEndpoint string,
+                      :deployedIndexId string,
+                      :displayName string}],
+   :updateTime string,
+   :indexUpdateMethod string,
+   :metadata any}
+  
+  Updates an Index."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/patch
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
@@ -11872,14 +11989,53 @@
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-indexes-upsertDatapoints$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: index
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:updateMask string,
+   :datapoints [{:datapointId string,
+                 :numericRestricts [GoogleCloudAiplatformV1IndexDatapointNumericRestriction],
+                 :restricts [GoogleCloudAiplatformV1IndexDatapointRestriction],
+                 :featureVector [number],
+                 :crowdingTag GoogleCloudAiplatformV1IndexDatapointCrowdingTag}]}
+  
+  Add/update Datapoints into an Index."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:index})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+index}:upsertDatapoints"
+     #{:index}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-indexes-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11904,60 +12060,8 @@
       :as :json}
      auth))))
 
-(defn locations-indexes-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageToken, pageSize
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-indexes-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-indexes-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexes/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -11982,8 +12086,86 @@
       :as :json}
      auth))))
 
+(defn locations-indexes-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageSize, pageToken
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-indexes-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-indexes-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-featurestores-searchFeatures$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/searchFeatures
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: location
   
@@ -12009,7 +12191,7 @@
      auth))))
 
 (defn locations-featurestores-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -12035,7 +12217,7 @@
      auth))))
 
 (defn locations-featurestores-setIamPolicy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/setIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -12043,9 +12225,9 @@
   
   Body: 
   
-  {:policy {:bindings [GoogleIamV1Binding],
-            :version integer,
-            :etag string}}
+  {:policy {:etag string,
+            :bindings [GoogleIamV1Binding],
+            :version integer}}
   
   Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12069,7 +12251,7 @@
      auth))))
 
 (defn locations-featurestores-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -12078,8 +12260,8 @@
   Body: 
   
   {:labels {},
-   :onlineServingConfig {:fixedNodeCount integer,
-                         :scaling GoogleCloudAiplatformV1FeaturestoreOnlineServingConfigScaling},
+   :onlineServingConfig {:scaling GoogleCloudAiplatformV1FeaturestoreOnlineServingConfigScaling,
+                         :fixedNodeCount integer},
    :encryptionSpec {:kmsKeyName string},
    :name string,
    :createTime string,
@@ -12110,7 +12292,7 @@
      auth))))
 
 (defn locations-featurestores-testIamPermissions$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/testIamPermissions
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -12136,7 +12318,7 @@
      auth))))
 
 (defn locations-featurestores-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -12145,8 +12327,8 @@
   Body: 
   
   {:labels {},
-   :onlineServingConfig {:fixedNodeCount integer,
-                         :scaling GoogleCloudAiplatformV1FeaturestoreOnlineServingConfigScaling},
+   :onlineServingConfig {:scaling GoogleCloudAiplatformV1FeaturestoreOnlineServingConfigScaling,
+                         :fixedNodeCount integer},
    :encryptionSpec {:kmsKeyName string},
    :name string,
    :createTime string,
@@ -12177,7 +12359,7 @@
      auth))))
 
 (defn locations-featurestores-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -12203,7 +12385,7 @@
      auth))))
 
 (defn locations-featurestores-getIamPolicy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/getIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -12229,7 +12411,7 @@
      auth))))
 
 (defn locations-featurestores-batchReadFeatureValues$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/batchReadFeatureValues
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: featurestore
   
@@ -12238,15 +12420,15 @@
   Body: 
   
   {:passThroughFields [{:fieldName string}],
-   :csvReadInstances {:gcsSource GoogleCloudAiplatformV1GcsSource},
-   :bigqueryReadInstances {:inputUri string},
-   :destination {:bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination,
-                 :tfrecordDestination GoogleCloudAiplatformV1TFRecordDestination,
-                 :csvDestination GoogleCloudAiplatformV1CsvDestination},
+   :entityTypeSpecs [{:featureSelector GoogleCloudAiplatformV1FeatureSelector,
+                      :entityTypeId string,
+                      :settings [GoogleCloudAiplatformV1DestinationFeatureSetting]}],
    :startTime string,
-   :entityTypeSpecs [{:entityTypeId string,
-                      :featureSelector GoogleCloudAiplatformV1FeatureSelector,
-                      :settings [GoogleCloudAiplatformV1DestinationFeatureSetting]}]}
+   :destination {:tfrecordDestination GoogleCloudAiplatformV1TFRecordDestination,
+                 :csvDestination GoogleCloudAiplatformV1CsvDestination,
+                 :bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination},
+   :csvReadInstances {:gcsSource GoogleCloudAiplatformV1GcsSource},
+   :bigqueryReadInstances {:inputUri string}}
   
   Batch reads Feature values from a Featurestore. This API enables batch reading Feature values, where each read instance in the batch may read Feature values of entities from one or more EntityTypes. Point-in-time correctness is guaranteed for Feature values of each read instance as of each instance's read timestamp."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12270,11 +12452,11 @@
      auth))))
 
 (defn locations-featurestores-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: filter, pageSize, pageToken, readMask, orderBy
+  Optional parameters: readMask, pageToken, filter, pageSize, orderBy
   
   Lists Featurestores in a given project and location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12295,138 +12477,8 @@
       :as :json}
      auth))))
 
-(defn locations-featurestores-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/operations/cancel
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:cancel"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featurestores-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageSize, filter, pageToken
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featurestores-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featurestores-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featurestores-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-featurestores-entityTypes-readFeatureValues$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/readFeatureValues
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: entityType
   
@@ -12434,8 +12486,8 @@
   
   Body: 
   
-  {:entityId string,
-   :featureSelector {:idMatcher GoogleCloudAiplatformV1IdMatcher}}
+  {:featureSelector {:idMatcher GoogleCloudAiplatformV1IdMatcher},
+   :entityId string}
   
   Reads Feature values of a specific entity of an EntityType. For reading feature values of multiple entities of an EntityType, please use StreamingReadFeatureValues."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12459,7 +12511,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -12485,7 +12537,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-setIamPolicy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/setIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -12493,9 +12545,9 @@
   
   Body: 
   
-  {:policy {:bindings [GoogleIamV1Binding],
-            :version integer,
-            :etag string}}
+  {:policy {:etag string,
+            :bindings [GoogleIamV1Binding],
+            :version integer}}
   
   Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12519,7 +12571,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-importFeatureValues$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/importFeatureValues
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: entityType
   
@@ -12560,7 +12612,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -12568,17 +12620,17 @@
   
   Body: 
   
-  {:offlineStorageTtlDays integer,
-   :monitoringConfig {:snapshotAnalysis GoogleCloudAiplatformV1FeaturestoreMonitoringConfigSnapshotAnalysis,
+  {:updateTime string,
+   :monitoringConfig {:categoricalThresholdConfig GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig,
+                      :snapshotAnalysis GoogleCloudAiplatformV1FeaturestoreMonitoringConfigSnapshotAnalysis,
                       :importFeaturesAnalysis GoogleCloudAiplatformV1FeaturestoreMonitoringConfigImportFeaturesAnalysis,
-                      :numericalThresholdConfig GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig,
-                      :categoricalThresholdConfig GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig},
-   :labels {},
-   :createTime string,
+                      :numericalThresholdConfig GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig},
    :description string,
+   :offlineStorageTtlDays integer,
+   :labels {},
    :etag string,
-   :name string,
-   :updateTime string}
+   :createTime string,
+   :name string}
   
   Updates the parameters of a single EntityType."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12602,7 +12654,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-testIamPermissions$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/testIamPermissions
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -12628,7 +12680,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -12636,17 +12688,17 @@
   
   Body: 
   
-  {:offlineStorageTtlDays integer,
-   :monitoringConfig {:snapshotAnalysis GoogleCloudAiplatformV1FeaturestoreMonitoringConfigSnapshotAnalysis,
+  {:updateTime string,
+   :monitoringConfig {:categoricalThresholdConfig GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig,
+                      :snapshotAnalysis GoogleCloudAiplatformV1FeaturestoreMonitoringConfigSnapshotAnalysis,
                       :importFeaturesAnalysis GoogleCloudAiplatformV1FeaturestoreMonitoringConfigImportFeaturesAnalysis,
-                      :numericalThresholdConfig GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig,
-                      :categoricalThresholdConfig GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig},
-   :labels {},
-   :createTime string,
+                      :numericalThresholdConfig GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig},
    :description string,
+   :offlineStorageTtlDays integer,
+   :labels {},
    :etag string,
-   :name string,
-   :updateTime string}
+   :createTime string,
+   :name string}
   
   Creates a new EntityType in a given Featurestore."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12670,7 +12722,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-deleteFeatureValues$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/deleteFeatureValues
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: entityType
   
@@ -12705,7 +12757,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-exportFeatureValues$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/exportFeatureValues
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: entityType
   
@@ -12713,13 +12765,13 @@
   
   Body: 
   
-  {:featureSelector {:idMatcher GoogleCloudAiplatformV1IdMatcher},
-   :settings [{:destinationField string, :featureId string}],
+  {:fullExport {:endTime string, :startTime string},
+   :featureSelector {:idMatcher GoogleCloudAiplatformV1IdMatcher},
    :snapshotExport {:snapshotTime string, :startTime string},
-   :fullExport {:endTime string, :startTime string},
-   :destination {:bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination,
-                 :tfrecordDestination GoogleCloudAiplatformV1TFRecordDestination,
-                 :csvDestination GoogleCloudAiplatformV1CsvDestination}}
+   :destination {:tfrecordDestination GoogleCloudAiplatformV1TFRecordDestination,
+                 :csvDestination GoogleCloudAiplatformV1CsvDestination,
+                 :bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination},
+   :settings [{:featureId string, :destinationField string}]}
   
   Exports Feature values from all the entities of a target EntityType."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12743,7 +12795,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -12769,7 +12821,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-getIamPolicy$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/getIamPolicy
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: resource
   
@@ -12795,7 +12847,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-writeFeatureValues$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/writeFeatureValues
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: entityType
   
@@ -12803,7 +12855,7 @@
   
   Body: 
   
-  {:payloads [{:featureValues {}, :entityId string}]}
+  {:payloads [{:entityId string, :featureValues {}}]}
   
   Writes Feature values of one or more entities of an EntityType. The Feature values are merged into existing entities if any. The Feature values to be written must have timestamp within the online storage retention."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12827,11 +12879,11 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: readMask, orderBy, filter, pageSize, pageToken
+  Optional parameters: filter, readMask, orderBy, pageSize, pageToken
   
   Lists EntityTypes in a given Featurestore."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12853,7 +12905,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-streamingReadFeatureValues$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/streamingReadFeatureValues
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: entityType
   
@@ -12861,8 +12913,8 @@
   
   Body: 
   
-  {:entityIds [string],
-   :featureSelector {:idMatcher GoogleCloudAiplatformV1IdMatcher}}
+  {:featureSelector {:idMatcher GoogleCloudAiplatformV1IdMatcher},
+   :entityIds [string]}
   
   Reads Feature values for multiple entities. Depending on their size, data for different entities may be broken up across multiple responses."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -12885,34 +12937,8 @@
       :as :json}
      auth))))
 
-(defn locations-featurestores-entityTypes-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-featurestores-entityTypes-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/operations/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -12937,34 +12963,8 @@
       :as :json}
      auth))))
 
-(defn locations-featurestores-entityTypes-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/operations/list
-  
-  Required parameters: name
-  
-  Optional parameters: pageToken, filter, pageSize
-  
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-featurestores-entityTypes-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -12990,7 +12990,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13015,14 +13015,40 @@
       :as :json}
      auth))))
 
-(defn locations-featurestores-entityTypes-features-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/delete
+(defn locations-featurestores-entityTypes-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageToken, pageSize, filter
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-entityTypes-operations-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Deletes a single Feature."
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -13041,94 +13067,8 @@
       :as :json}
      auth))))
 
-(defn locations-featurestores-entityTypes-features-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/list
-  
-  Required parameters: parent
-  
-  Optional parameters: latestStatsCount, orderBy, filter, readMask, pageToken, pageSize
-  
-  Lists Features in a given EntityType."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/features"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featurestores-entityTypes-features-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets details of a single Feature."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featurestores-entityTypes-features-batchCreate$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/batchCreate
-  
-  Required parameters: parent
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:requests [{:feature GoogleCloudAiplatformV1Feature,
-               :parent string,
-               :featureId string}]}
-  
-  Creates a batch of Features in a given EntityType."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/features:batchCreate"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-featurestores-entityTypes-features-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -13171,7 +13111,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-features-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13213,14 +13153,48 @@
       :as :json}
      auth))))
 
-(defn locations-featurestores-entityTypes-features-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/operations/get
+(defn locations-featurestores-entityTypes-features-batchCreate$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:requests [{:featureId string,
+               :parent string,
+               :feature GoogleCloudAiplatformV1Feature}]}
+  
+  Creates a batch of Features in a given EntityType."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/features:batchCreate"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-entityTypes-features-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
   Optional parameters: none
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Gets details of a single Feature."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -13239,12 +13213,64 @@
       :as :json}
      auth))))
 
-(defn locations-featurestores-entityTypes-features-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/operations/list
+(defn locations-featurestores-entityTypes-features-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: pageSize, filter, pageToken
+  Optional parameters: none
+  
+  Deletes a single Feature."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-entityTypes-features-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, readMask, filter, orderBy, latestStatsCount, pageSize
+  
+  Lists Features in a given EntityType."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/features"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-entityTypes-features-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageToken, pageSize
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -13266,7 +13292,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-features-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13292,7 +13318,7 @@
      auth))))
 
 (defn locations-featurestores-entityTypes-features-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13317,8 +13343,164 @@
       :as :json}
      auth))))
 
+(defn locations-featurestores-entityTypes-features-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-featurestores-entityTypes-features-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featurestores/entityTypes/features/operations/delete
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: pageSize, pageToken, filter
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-operations-cancel$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featurestores-operations-delete$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13344,7 +13526,7 @@
      auth))))
 
 (defn locations-indexEndpoints-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13370,7 +13552,7 @@
      auth))))
 
 (defn locations-indexEndpoints-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/patch
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13401,8 +13583,8 @@
                       :deployedIndexAuthConfig GoogleCloudAiplatformV1DeployedIndexAuthConfig}],
    :updateTime string,
    :enablePrivateServiceConnect boolean,
-   :privateServiceConnectConfig {:projectAllowlist [string],
-                                 :enablePrivateServiceConnect boolean},
+   :privateServiceConnectConfig {:enablePrivateServiceConnect boolean,
+                                 :projectAllowlist [string]},
    :network string}
   
   Updates an IndexEndpoint."
@@ -13427,7 +13609,7 @@
      auth))))
 
 (defn locations-indexEndpoints-undeployIndex$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/undeployIndex
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: indexEndpoint
   
@@ -13459,7 +13641,7 @@
      auth))))
 
 (defn locations-indexEndpoints-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -13490,8 +13672,8 @@
                       :deployedIndexAuthConfig GoogleCloudAiplatformV1DeployedIndexAuthConfig}],
    :updateTime string,
    :enablePrivateServiceConnect boolean,
-   :privateServiceConnectConfig {:projectAllowlist [string],
-                                 :enablePrivateServiceConnect boolean},
+   :privateServiceConnectConfig {:enablePrivateServiceConnect boolean,
+                                 :projectAllowlist [string]},
    :network string}
   
   Creates an IndexEndpoint."
@@ -13516,7 +13698,7 @@
      auth))))
 
 (defn locations-indexEndpoints-readIndexDatapoints$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/readIndexDatapoints
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: indexEndpoint
   
@@ -13524,7 +13706,7 @@
   
   Body: 
   
-  {:ids [string], :deployedIndexId string}
+  {:deployedIndexId string, :ids [string]}
   
   Reads the datapoints/vectors of the given IDs. A maximum of 1000 datapoints can be retrieved in a batch."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -13548,7 +13730,7 @@
      auth))))
 
 (defn locations-indexEndpoints-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13574,11 +13756,11 @@
      auth))))
 
 (defn locations-indexEndpoints-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: pageSize, readMask, pageToken, filter
+  Optional parameters: readMask, pageSize, filter, pageToken
   
   Lists IndexEndpoints in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -13600,7 +13782,7 @@
      auth))))
 
 (defn locations-indexEndpoints-mutateDeployedIndex$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/mutateDeployedIndex
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: indexEndpoint
   
@@ -13608,22 +13790,22 @@
   
   Body: 
   
-  {:automaticResources {:maxReplicaCount integer,
-                        :minReplicaCount integer},
+  {:automaticResources {:minReplicaCount integer,
+                        :maxReplicaCount integer},
    :index string,
    :displayName string,
-   :dedicatedResources {:minReplicaCount integer,
-                        :machineSpec GoogleCloudAiplatformV1MachineSpec,
+   :dedicatedResources {:machineSpec GoogleCloudAiplatformV1MachineSpec,
                         :maxReplicaCount integer,
+                        :minReplicaCount integer,
                         :autoscalingMetricSpecs [GoogleCloudAiplatformV1AutoscalingMetricSpec]},
    :createTime string,
    :reservedIpRanges [string],
    :indexSyncTime string,
    :enableAccessLogging boolean,
    :id string,
-   :privateEndpoints {:serviceAttachment string,
+   :privateEndpoints {:matchGrpcAddress string,
                       :pscAutomatedEndpoints [GoogleCloudAiplatformV1PscAutomatedEndpoints],
-                      :matchGrpcAddress string},
+                      :serviceAttachment string},
    :deploymentGroup string,
    :deployedIndexAuthConfig {:authProvider GoogleCloudAiplatformV1DeployedIndexAuthConfigAuthProvider}}
   
@@ -13649,7 +13831,7 @@
      auth))))
 
 (defn locations-indexEndpoints-deployIndex$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/deployIndex
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: indexEndpoint
   
@@ -13692,7 +13874,7 @@
      auth))))
 
 (defn locations-indexEndpoints-findNeighbors$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/findNeighbors
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: indexEndpoint
   
@@ -13702,10 +13884,10 @@
   
   {:returnFullDatapoint boolean,
    :deployedIndexId string,
-   :queries [{:datapoint GoogleCloudAiplatformV1IndexDatapoint,
-              :neighborCount integer,
-              :approximateNeighborCount integer,
+   :queries [{:neighborCount integer,
               :perCrowdingAttributeNeighborCount integer,
+              :approximateNeighborCount integer,
+              :datapoint GoogleCloudAiplatformV1IndexDatapoint,
               :fractionLeafNodesToSearchOverride number}]}
   
   Finds the nearest neighbors of each vector within the request."
@@ -13729,34 +13911,8 @@
       :as :json}
      auth))))
 
-(defn locations-indexEndpoints-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-indexEndpoints-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13781,34 +13937,8 @@
       :as :json}
      auth))))
 
-(defn locations-indexEndpoints-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-indexEndpoints-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/operations/list
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13833,8 +13963,60 @@
       :as :json}
      auth))))
 
+(defn locations-indexEndpoints-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-indexEndpoints-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-indexEndpoints-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/indexEndpoints/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13859,8 +14041,34 @@
       :as :json}
      auth))))
 
+(defn locations-batchPredictionJobs-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: filter, readMask, pageToken, pageSize
+  
+  Lists BatchPredictionJobs in a Location."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/batchPredictionJobs"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-batchPredictionJobs-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/batchPredictionJobs/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13885,34 +14093,8 @@
       :as :json}
      auth))))
 
-(defn locations-batchPredictionJobs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/batchPredictionJobs/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, readMask, pageToken, filter
-  
-  Lists BatchPredictionJobs in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/batchPredictionJobs"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-batchPredictionJobs-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/batchPredictionJobs/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -13943,8 +14125,34 @@
       :as :json}
      auth))))
 
+(defn locations-batchPredictionJobs-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a BatchPredictionJob"
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-batchPredictionJobs-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/batchPredictionJobs/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -13957,42 +14165,42 @@
    :labels {},
    :disableContainerLogging boolean,
    :modelParameters any,
-   :outputInfo {:bigqueryOutputTable string,
-                :gcsOutputDirectory string,
-                :bigqueryOutputDataset string},
+   :outputInfo {:bigqueryOutputDataset string,
+                :bigqueryOutputTable string,
+                :gcsOutputDirectory string},
    :encryptionSpec {:kmsKeyName string},
    :startTime string,
    :displayName string,
    :explanationSpec {:metadata GoogleCloudAiplatformV1ExplanationMetadata,
                      :parameters GoogleCloudAiplatformV1ExplanationParameters},
-   :dedicatedResources {:startingReplicaCount integer,
-                        :maxReplicaCount integer,
+   :dedicatedResources {:maxReplicaCount integer,
+                        :startingReplicaCount integer,
                         :machineSpec GoogleCloudAiplatformV1MachineSpec},
-   :completionStats {:successfulCount string,
-                     :incompleteCount string,
+   :completionStats {:incompleteCount string,
                      :successfulForecastPointCount string,
-                     :failedCount string},
+                     :failedCount string,
+                     :successfulCount string},
    :name string,
    :endTime string,
    :createTime string,
    :state string,
    :updateTime string,
-   :outputConfig {:predictionsFormat string,
-                  :bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination,
+   :outputConfig {:bigqueryDestination GoogleCloudAiplatformV1BigQueryDestination,
+                  :predictionsFormat string,
                   :gcsDestination GoogleCloudAiplatformV1GcsDestination},
    :unmanagedContainerModel {:predictSchemata GoogleCloudAiplatformV1PredictSchemata,
-                             :containerSpec GoogleCloudAiplatformV1ModelContainerSpec,
-                             :artifactUri string},
-   :partialFailures [{:details [{}], :code integer, :message string}],
-   :error {:details [{}], :code integer, :message string},
+                             :artifactUri string,
+                             :containerSpec GoogleCloudAiplatformV1ModelContainerSpec},
+   :partialFailures [{:message string, :code integer, :details [{}]}],
+   :error {:message string, :code integer, :details [{}]},
    :instanceConfig {:keyField string,
-                    :includedFields [string],
+                    :instanceType string,
                     :excludedFields [string],
-                    :instanceType string},
+                    :includedFields [string]},
    :generateExplanation boolean,
    :inputConfig {:instancesFormat string,
-                 :bigquerySource GoogleCloudAiplatformV1BigQuerySource,
-                 :gcsSource GoogleCloudAiplatformV1GcsSource},
+                 :gcsSource GoogleCloudAiplatformV1GcsSource,
+                 :bigquerySource GoogleCloudAiplatformV1BigQuerySource},
    :manualBatchTuningParameters {:batchSize integer},
    :resourcesConsumed {:replicaHours number},
    :model string}
@@ -14018,23 +14226,23 @@
       :as :json}
      auth))))
 
-(defn locations-batchPredictionJobs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/batchPredictionJobs/get
+(defn locations-featureOnlineStores-list$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: none
+  Optional parameters: orderBy, pageToken, filter, pageSize
   
-  Gets a BatchPredictionJob"
+  Lists FeatureOnlineStores in a given project and location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/featureOnlineStores"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -14044,33 +14252,35 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/patch
+(defn locations-featureOnlineStores-create$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: updateMask
+  Optional parameters: featureOnlineStoreId
   
   Body: 
   
-  {:name string,
-   :labels {},
-   :state string,
-   :bigtable {:autoScaling GoogleCloudAiplatformV1FeatureOnlineStoreBigtableAutoScaling},
-   :updateTime string,
+  {:labels {},
+   :optimized {},
+   :name string,
+   :createTime string,
    :etag string,
-   :createTime string}
+   :state string,
+   :updateTime string,
+   :dedicatedServingEndpoint {:publicEndpointDomainName string},
+   :bigtable {:autoScaling GoogleCloudAiplatformV1FeatureOnlineStoreBigtableAutoScaling}}
   
-  Updates the parameters of a single FeatureOnlineStore."
+  Creates a new FeatureOnlineStore in a given project and location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
-   (http/patch
+   (http/post
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
+     "v1/{+parent}/featureOnlineStores"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -14082,34 +14292,8 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets details of a single FeatureOnlineStore."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-featureOnlineStores-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -14134,59 +14318,35 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/list
+(defn locations-featureOnlineStores-patch$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: parent
+  Required parameters: name
   
-  Optional parameters: orderBy, filter, pageSize, pageToken
-  
-  Lists FeatureOnlineStores in a given project and location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/featureOnlineStores"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureOnlineStores-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/create
-  
-  Required parameters: parent
-  
-  Optional parameters: featureOnlineStoreId
+  Optional parameters: updateMask
   
   Body: 
   
-  {:name string,
-   :labels {},
-   :state string,
-   :bigtable {:autoScaling GoogleCloudAiplatformV1FeatureOnlineStoreBigtableAutoScaling},
-   :updateTime string,
+  {:labels {},
+   :optimized {},
+   :name string,
+   :createTime string,
    :etag string,
-   :createTime string}
+   :state string,
+   :updateTime string,
+   :dedicatedServingEndpoint {:publicEndpointDomainName string},
+   :bigtable {:autoScaling GoogleCloudAiplatformV1FeatureOnlineStoreBigtableAutoScaling}}
   
-  Creates a new FeatureOnlineStore in a given project and location."
+  Updates the parameters of a single FeatureOnlineStore."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/post
+   (http/patch
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/featureOnlineStores"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -14198,61 +14358,23 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-featureViews-searchNearestEntities$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/searchNearestEntities
+(defn locations-featureOnlineStores-get$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: featureView
+  Required parameters: name
   
   Optional parameters: none
   
-  Body: 
-  
-  {:returnFullEntity boolean,
-   :query {:embedding GoogleCloudAiplatformV1NearestNeighborQueryEmbedding,
-           :neighborCount integer,
-           :parameters GoogleCloudAiplatformV1NearestNeighborQueryParameters,
-           :perCrowdingAttributeNeighborCount integer,
-           :stringFilters [GoogleCloudAiplatformV1NearestNeighborQueryStringFilter],
-           :entityId string}}
-  
-  Search the nearest entities under a FeatureView. Search only works for indexable feature view; if a feature view isn't indexable, returns Invalid argument response."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:featureView})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+featureView}:searchNearestEntities"
-     #{:featureView}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureOnlineStores-featureViews-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, filter, pageToken, orderBy
-  
-  Lists FeatureViews in a given FeatureOnlineStore."
+  Gets details of a single FeatureOnlineStore."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/featureViews"
-     #{:parent}
+     "v1/{+name}"
+     #{:name}
      parameters)
     (merge-with
      merge
@@ -14263,23 +14385,30 @@
      auth))))
 
 (defn locations-featureOnlineStores-featureViews-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
-  Optional parameters: runSyncImmediately, featureViewId
+  Optional parameters: featureViewId, runSyncImmediately
   
   Body: 
   
   {:labels {},
+   :name string,
+   :createTime string,
    :etag string,
-   :featureRegistrySource {:featureGroups [GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup],
-                           :projectNumber string},
+   :syncConfig {:cron string},
+   :indexConfig {:distanceMeasureType string,
+                 :bruteForceConfig GoogleCloudAiplatformV1FeatureViewIndexConfigBruteForceConfig,
+                 :filterColumns [string],
+                 :treeAhConfig GoogleCloudAiplatformV1FeatureViewIndexConfigTreeAHConfig,
+                 :embeddingColumn string,
+                 :embeddingDimension integer,
+                 :crowdingColumn string},
    :updateTime string,
    :bigQuerySource {:entityIdColumns [string], :uri string},
-   :createTime string,
-   :name string,
-   :syncConfig {:cron string}}
+   :featureRegistrySource {:featureGroups [GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup],
+                           :projectNumber string}}
   
   Creates a new FeatureView in a given FeatureOnlineStore."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -14302,8 +14431,179 @@
       :as :json}
      auth))))
 
+(defn locations-featureOnlineStores-featureViews-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a single FeatureView."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureOnlineStores-featureViews-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: parent
+  
+  Optional parameters: orderBy, filter, pageToken, pageSize
+  
+  Lists FeatureViews in a given FeatureOnlineStore."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+parent}/featureViews"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureOnlineStores-featureViews-fetchFeatureValues$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: featureView
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:dataKey {:compositeKey GoogleCloudAiplatformV1FeatureViewDataKeyCompositeKey,
+             :key string},
+   :dataFormat string}
+  
+  Fetch feature values under a FeatureView."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:featureView})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+featureView}:fetchFeatureValues"
+     #{:featureView}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureOnlineStores-featureViews-patch$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:labels {},
+   :name string,
+   :createTime string,
+   :etag string,
+   :syncConfig {:cron string},
+   :indexConfig {:distanceMeasureType string,
+                 :bruteForceConfig GoogleCloudAiplatformV1FeatureViewIndexConfigBruteForceConfig,
+                 :filterColumns [string],
+                 :treeAhConfig GoogleCloudAiplatformV1FeatureViewIndexConfigTreeAHConfig,
+                 :embeddingColumn string,
+                 :embeddingDimension integer,
+                 :crowdingColumn string},
+   :updateTime string,
+   :bigQuerySource {:entityIdColumns [string], :uri string},
+   :featureRegistrySource {:featureGroups [GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup],
+                           :projectNumber string}}
+  
+  Updates the parameters of a single FeatureView."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureOnlineStores-featureViews-searchNearestEntities$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: featureView
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:query {:perCrowdingAttributeNeighborCount integer,
+           :neighborCount integer,
+           :stringFilters [GoogleCloudAiplatformV1NearestNeighborQueryStringFilter],
+           :embedding GoogleCloudAiplatformV1NearestNeighborQueryEmbedding,
+           :parameters GoogleCloudAiplatformV1NearestNeighborQueryParameters,
+           :entityId string},
+   :returnFullEntity boolean}
+  
+  Search the nearest entities under a FeatureView. Search only works for indexable feature view; if a feature view isn't indexable, returns Invalid argument response."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:featureView})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+featureView}:searchNearestEntities"
+     #{:featureView}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-featureOnlineStores-featureViews-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -14328,42 +14628,8 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-featureViews-fetchFeatureValues$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/fetchFeatureValues
-  
-  Required parameters: featureView
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:dataFormat string,
-   :dataKey {:key string,
-             :compositeKey GoogleCloudAiplatformV1FeatureViewDataKeyCompositeKey}}
-  
-  Fetch feature values under a FeatureView."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:featureView})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+featureView}:fetchFeatureValues"
-     #{:featureView}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-featureOnlineStores-featureViews-sync$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/sync
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: featureView
   
@@ -14394,100 +14660,8 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-featureViews-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:labels {},
-   :etag string,
-   :featureRegistrySource {:featureGroups [GoogleCloudAiplatformV1FeatureViewFeatureRegistrySourceFeatureGroup],
-                           :projectNumber string},
-   :updateTime string,
-   :bigQuerySource {:entityIdColumns [string], :uri string},
-   :createTime string,
-   :name string,
-   :syncConfig {:cron string}}
-  
-  Updates the parameters of a single FeatureView."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureOnlineStores-featureViews-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a single FeatureView."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureOnlineStores-featureViews-featureViewSyncs-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/featureViewSyncs/list
-  
-  Required parameters: parent
-  
-  Optional parameters: filter, pageToken, orderBy, pageSize
-  
-  Lists FeatureViewSyncs in a given FeatureView."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/featureViewSyncs"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-featureOnlineStores-featureViews-featureViewSyncs-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/featureViewSyncs/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -14512,22 +14686,48 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-featureViews-operations-listWait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/operations/listWait
+(defn locations-featureOnlineStores-featureViews-featureViewSyncs-list$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: filter, pageToken, pageSize
+  Optional parameters: orderBy, filter, pageToken, pageSize
   
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  Lists FeatureViewSyncs in a given FeatureView."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
+     "v1/{+parent}/featureViewSyncs"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureOnlineStores-featureViews-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
      #{:name}
      parameters)
     (merge-with
@@ -14539,7 +14739,7 @@
      auth))))
 
 (defn locations-featureOnlineStores-featureViews-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -14564,64 +14764,12 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-featureViews-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/operations/delete
+(defn locations-featureOnlineStores-featureViews-operations-listWait$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureOnlineStores-featureViews-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/featureViews/operations/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureOnlineStores-operations-listWait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/operations/listWait
-  
-  Required parameters: name
-  
-  Optional parameters: filter, pageToken, pageSize
+  Optional parameters: pageSize, filter, pageToken
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -14642,34 +14790,8 @@
       :as :json}
      auth))))
 
-(defn locations-featureOnlineStores-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/operations/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-featureOnlineStores-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/operations/get
+(defn locations-featureOnlineStores-featureViews-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -14695,7 +14817,7 @@
      auth))))
 
 (defn locations-featureOnlineStores-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/featureOnlineStores/operations/wait
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -14720,42 +14842,19 @@
       :as :json}
      auth))))
 
-(defn locations-persistentResources-patch$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/patch
+(defn locations-featureOnlineStores-operations-get$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: updateMask
+  Optional parameters: none
   
-  Body: 
-  
-  {:labels {},
-   :resourceRuntime {:notebookRuntimeTemplate string, :accessUris {}},
-   :encryptionSpec {:kmsKeyName string},
-   :startTime string,
-   :displayName string,
-   :name string,
-   :createTime string,
-   :reservedIpRanges [string],
-   :state string,
-   :updateTime string,
-   :error {:details [{}], :code integer, :message string},
-   :resourcePools [{:machineSpec GoogleCloudAiplatformV1MachineSpec,
-                    :usedReplicaCount string,
-                    :id string,
-                    :autoscalingSpec GoogleCloudAiplatformV1ResourcePoolAutoscalingSpec,
-                    :replicaCount string,
-                    :diskSpec GoogleCloudAiplatformV1DiskSpec}],
-   :network string,
-   :resourceRuntimeSpec {:serviceAccountSpec GoogleCloudAiplatformV1ServiceAccountSpec,
-                         :raySpec GoogleCloudAiplatformV1RaySpec}}
-  
-  Updates a PersistentResource."
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
+  [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/patch
+   (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
@@ -14763,16 +14862,92 @@
      parameters)
     (merge-with
      merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureOnlineStores-operations-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-featureOnlineStores-operations-listWait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageToken, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-persistentResources-delete$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a PersistentResource."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
 (defn locations-persistentResources-reboot$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/reboot
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -14803,34 +14978,8 @@
       :as :json}
      auth))))
 
-(defn locations-persistentResources-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a PersistentResource."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-persistentResources-create$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/create
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: parent
   
@@ -14839,7 +14988,7 @@
   Body: 
   
   {:labels {},
-   :resourceRuntime {:notebookRuntimeTemplate string, :accessUris {}},
+   :resourceRuntime {},
    :encryptionSpec {:kmsKeyName string},
    :startTime string,
    :displayName string,
@@ -14848,16 +14997,16 @@
    :reservedIpRanges [string],
    :state string,
    :updateTime string,
-   :error {:details [{}], :code integer, :message string},
-   :resourcePools [{:machineSpec GoogleCloudAiplatformV1MachineSpec,
-                    :usedReplicaCount string,
-                    :id string,
+   :error {:message string, :code integer, :details [{}]},
+   :resourcePools [{:diskSpec GoogleCloudAiplatformV1DiskSpec,
                     :autoscalingSpec GoogleCloudAiplatformV1ResourcePoolAutoscalingSpec,
+                    :usedReplicaCount string,
                     :replicaCount string,
-                    :diskSpec GoogleCloudAiplatformV1DiskSpec}],
+                    :machineSpec GoogleCloudAiplatformV1MachineSpec,
+                    :id string}],
    :network string,
-   :resourceRuntimeSpec {:serviceAccountSpec GoogleCloudAiplatformV1ServiceAccountSpec,
-                         :raySpec GoogleCloudAiplatformV1RaySpec}}
+   :resourceRuntimeSpec {:raySpec GoogleCloudAiplatformV1RaySpec,
+                         :serviceAccountSpec GoogleCloudAiplatformV1ServiceAccountSpec}}
   
   Creates a PersistentResource."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -14880,34 +15029,8 @@
       :as :json}
      auth))))
 
-(defn locations-persistentResources-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken
-  
-  Lists PersistentResources in a Location."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+parent}/persistentResources"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn locations-persistentResources-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/get
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -14932,19 +15055,42 @@
       :as :json}
      auth))))
 
-(defn locations-persistentResources-operations-get$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/operations/get
+(defn locations-persistentResources-patch$
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: updateMask
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Body: 
+  
+  {:labels {},
+   :resourceRuntime {},
+   :encryptionSpec {:kmsKeyName string},
+   :startTime string,
+   :displayName string,
+   :name string,
+   :createTime string,
+   :reservedIpRanges [string],
+   :state string,
+   :updateTime string,
+   :error {:message string, :code integer, :details [{}]},
+   :resourcePools [{:diskSpec GoogleCloudAiplatformV1DiskSpec,
+                    :autoscalingSpec GoogleCloudAiplatformV1ResourcePoolAutoscalingSpec,
+                    :usedReplicaCount string,
+                    :replicaCount string,
+                    :machineSpec GoogleCloudAiplatformV1MachineSpec,
+                    :id string}],
+   :network string,
+   :resourceRuntimeSpec {:raySpec GoogleCloudAiplatformV1RaySpec,
+                         :serviceAccountSpec GoogleCloudAiplatformV1ServiceAccountSpec}}
+  
+  Updates a PersistentResource."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
+  [auth parameters body]
   {:pre [(util/has-keys? parameters #{:name})]}
   (util/get-response
-   (http/get
+   (http/patch
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}"
@@ -14952,55 +15098,31 @@
      parameters)
     (merge-with
      merge
-     {:throw-exceptions false,
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}
      auth))))
 
-(defn locations-persistentResources-operations-list$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/operations/list
+(defn locations-persistentResources-list$
+  "https://cloud.google.com/vertex-ai
   
-  Required parameters: name
+  Required parameters: parent
   
-  Optional parameters: pageToken, filter, pageSize
+  Optional parameters: pageToken, pageSize
   
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  Lists PersistentResources in a Location."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
+  {:pre [(util/has-keys? parameters #{:parent})]}
   (util/get-response
    (http/get
     (util/get-url
      "https://aiplatform.googleapis.com/"
-     "v1/{+name}/operations"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn locations-persistentResources-operations-wait$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/operations/wait
-  
-  Required parameters: name
-  
-  Optional parameters: timeout
-  
-  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://aiplatform.googleapis.com/"
-     "v1/{+name}:wait"
-     #{:name}
+     "v1/{+parent}/persistentResources"
+     #{:parent}
      parameters)
     (merge-with
      merge
@@ -15011,7 +15133,7 @@
      auth))))
 
 (defn locations-persistentResources-operations-delete$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/operations/delete
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -15036,8 +15158,60 @@
       :as :json}
      auth))))
 
+(defn locations-persistentResources-operations-list$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: filter, pageToken, pageSize
+  
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}/operations"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-persistentResources-operations-get$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-persistentResources-operations-cancel$
-  "https://cloud.google.com/vertex-ai/api/reference/rest/v1/projects/locations/persistentResources/operations/cancel
+  "https://cloud.google.com/vertex-ai
   
   Required parameters: name
   
@@ -15052,6 +15226,32 @@
     (util/get-url
      "https://aiplatform.googleapis.com/"
      "v1/{+name}:cancel"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-persistentResources-operations-wait$
+  "https://cloud.google.com/vertex-ai
+  
+  Required parameters: name
+  
+  Optional parameters: timeout
+  
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://aiplatform.googleapis.com/"
+     "v1/{+name}:wait"
      #{:name}
      parameters)
     (merge-with

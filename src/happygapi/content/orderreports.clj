@@ -1,13 +1,13 @@
 (ns happygapi.content.orderreports
   "Content API for Shopping: orderreports.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreports"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn listdisbursements$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreports/listdisbursements
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn listtransactions$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orderreports/listtransactions
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, disbursementId
   

@@ -1,13 +1,13 @@
 (ns happygapi.storage.managedFolders
   "Cloud Storage JSON API: managedFolders.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/managedFolders"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/managedFolders/delete
+  "https://cloud.google.com/storage/docs/reference/rest/v1/managedFolders/delete
   
   Required parameters: bucket, managedFolder
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/managedFolders/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/managedFolders/get
   
   Required parameters: bucket, managedFolder
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/managedFolders/getIamPolicy
+  "https://cloud.google.com/storage/docs/reference/rest/v1/managedFolders/getIamPolicy
   
   Required parameters: bucket, managedFolder
   
@@ -95,7 +95,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/managedFolders/insert
+  "https://cloud.google.com/storage/docs/reference/rest/v1/managedFolders/insert
   
   Required parameters: bucket
   
@@ -136,7 +136,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/managedFolders/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/managedFolders/list
   
   Required parameters: bucket
   
@@ -166,7 +166,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/managedFolders/setIamPolicy
+  "https://cloud.google.com/storage/docs/reference/rest/v1/managedFolders/setIamPolicy
   
   Required parameters: bucket, managedFolder
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/managedFolders/testIamPermissions
+  "https://cloud.google.com/storage/docs/reference/rest/v1/managedFolders/testIamPermissions
   
   Required parameters: bucket, managedFolder, permissions
   

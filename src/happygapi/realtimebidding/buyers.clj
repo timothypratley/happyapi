@@ -1,13 +1,13 @@
 (ns happygapi.realtimebidding.buyers
   "Real-time Bidding API: buyers.
   Allows external bidders to manage their RTB integration with Google. This includes managing bidder endpoints, QPS quotas, configuring what ad inventory to receive via pretargeting, submitting creatives for verification, and accessing creative metadata such as approval status.
-  See: https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers"
+  See: https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/get
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers/get
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/list
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers/list
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn getRemarketingTag$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/getRemarketingTag
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers/getRemarketingTag
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn creatives-list$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/creatives/list
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.creatives/list
   
   Required parameters: parent
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn creatives-get$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/creatives/get
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.creatives/get
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn creatives-create$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/creatives/create
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.creatives/create
   
   Required parameters: parent
   
@@ -217,7 +217,7 @@
      auth))))
 
 (defn creatives-patch$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/creatives/patch
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.creatives/patch
   
   Required parameters: name
   
@@ -297,7 +297,7 @@
      auth))))
 
 (defn userLists-get$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/userLists/get
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.userLists/get
   
   Required parameters: name
   
@@ -323,7 +323,7 @@
      auth))))
 
 (defn userLists-list$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/userLists/list
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.userLists/list
   
   Required parameters: parent
   
@@ -349,7 +349,7 @@
      auth))))
 
 (defn userLists-create$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/userLists/create
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.userLists/create
   
   Required parameters: parent
   
@@ -389,7 +389,7 @@
      auth))))
 
 (defn userLists-update$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/userLists/update
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.userLists/update
   
   Required parameters: name
   
@@ -429,7 +429,7 @@
      auth))))
 
 (defn userLists-open$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/userLists/open
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.userLists/open
   
   Required parameters: name
   
@@ -461,7 +461,7 @@
      auth))))
 
 (defn userLists-close$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/userLists/close
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.userLists/close
   
   Required parameters: name
   
@@ -493,7 +493,7 @@
      auth))))
 
 (defn userLists-getRemarketingTag$
-  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/api/reference/rest/v1/buyers/userLists/getRemarketingTag
+  "https://developers.google.com/authorized-buyers/apis/realtimebidding/reference/rest/v1/buyers.userLists/getRemarketingTag
   
   Required parameters: name
   

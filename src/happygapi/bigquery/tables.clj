@@ -1,13 +1,13 @@
 (ns happygapi.bigquery.tables
   "BigQuery API: tables.
   A data platform for customers to create, manage, share and query data.
-  See: https://cloud.google.com/bigquery/api/reference/rest/v2/tables"
+  See: https://cloud.google.com/bigquery/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/get
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/get
   
   Required parameters: datasetId, projectId, tableId
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/setIamPolicy
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/setIamPolicy
   
   Required parameters: resource
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/insert
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/insert
   
   Required parameters: datasetId, projectId
   
@@ -84,8 +84,10 @@
    :description string,
    :maxStaleness string,
    :numBytes string,
-   :schema {:fields [TableFieldSchema]},
+   :schema {:fields [TableFieldSchema],
+            :foreignTypeInfo ForeignTypeInfo},
    :labels {},
+   :restrictions {:type string},
    :numTimeTravelPhysicalBytes string,
    :numLongTermBytes string,
    :numPhysicalBytes string,
@@ -133,6 +135,9 @@
    :partitionDefinition {:partitionedColumn [PartitionedColumn]},
    :resourceTags {},
    :defaultRoundingMode string,
+   :externalCatalogTableOptions {:connectionId string,
+                                 :parameters {},
+                                 :storageDescriptor StorageDescriptor},
    :clustering {:fields [string]},
    :friendlyName string,
    :tableReference {:datasetId string,
@@ -210,7 +215,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/patch
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/patch
   
   Required parameters: datasetId, projectId, tableId
   
@@ -222,8 +227,10 @@
    :description string,
    :maxStaleness string,
    :numBytes string,
-   :schema {:fields [TableFieldSchema]},
+   :schema {:fields [TableFieldSchema],
+            :foreignTypeInfo ForeignTypeInfo},
    :labels {},
+   :restrictions {:type string},
    :numTimeTravelPhysicalBytes string,
    :numLongTermBytes string,
    :numPhysicalBytes string,
@@ -271,6 +278,9 @@
    :partitionDefinition {:partitionedColumn [PartitionedColumn]},
    :resourceTags {},
    :defaultRoundingMode string,
+   :externalCatalogTableOptions {:connectionId string,
+                                 :parameters {},
+                                 :storageDescriptor StorageDescriptor},
    :clustering {:fields [string]},
    :friendlyName string,
    :tableReference {:datasetId string,
@@ -348,7 +358,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/testIamPermissions
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/testIamPermissions
   
   Required parameters: resource
   
@@ -382,7 +392,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/update
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/update
   
   Required parameters: datasetId, projectId, tableId
   
@@ -394,8 +404,10 @@
    :description string,
    :maxStaleness string,
    :numBytes string,
-   :schema {:fields [TableFieldSchema]},
+   :schema {:fields [TableFieldSchema],
+            :foreignTypeInfo ForeignTypeInfo},
    :labels {},
+   :restrictions {:type string},
    :numTimeTravelPhysicalBytes string,
    :numLongTermBytes string,
    :numPhysicalBytes string,
@@ -443,6 +455,9 @@
    :partitionDefinition {:partitionedColumn [PartitionedColumn]},
    :resourceTags {},
    :defaultRoundingMode string,
+   :externalCatalogTableOptions {:connectionId string,
+                                 :parameters {},
+                                 :storageDescriptor StorageDescriptor},
    :clustering {:fields [string]},
    :friendlyName string,
    :tableReference {:datasetId string,
@@ -520,7 +535,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/delete
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/delete
   
   Required parameters: datasetId, projectId, tableId
   
@@ -547,7 +562,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/getIamPolicy
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/getIamPolicy
   
   Required parameters: resource
   
@@ -581,7 +596,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/tables/list
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/list
   
   Required parameters: datasetId, projectId
   

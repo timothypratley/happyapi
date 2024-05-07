@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionZones
   "Compute Engine API: regionZones.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionZones"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionZones/list
+  "https://cloud.google.com/products/compute/v1/docs/regionZones/list
   
   Required parameters: project, region
   

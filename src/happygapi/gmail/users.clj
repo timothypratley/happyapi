@@ -1,17 +1,17 @@
 (ns happygapi.gmail.users
   "Gmail API: users.
   The Gmail API lets you view and manage Gmail mailbox data like threads, messages, and labels.
-  See: https://developers.google.com/gmail/api/api/reference/rest/v1/users"
+  See: https://developers.google.com/gmail/api/guides"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getProfile$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/getProfile
+  "https://developers.google.com/gmail/api/reference/rest/v1/users/getProfile
   
   Required parameters: userId
   
-  Optional parameters: none
+  Optional parameters: temporaryEeccBypass
   
   Gets the current user's Gmail profile."
   {:scopes ["https://mail.google.com/"
@@ -37,7 +37,7 @@
      auth))))
 
 (defn watch$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/watch
+  "https://developers.google.com/gmail/api/reference/rest/v1/users/watch
   
   Required parameters: userId
   
@@ -75,7 +75,7 @@
      auth))))
 
 (defn stop$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/stop
+  "https://developers.google.com/gmail/api/reference/rest/v1/users/stop
   
   Required parameters: userId
   
@@ -104,7 +104,7 @@
      auth))))
 
 (defn drafts-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/drafts/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.drafts/delete
   
   Required parameters: userId, id
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn drafts-create$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/drafts/create
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.drafts/create
   
   Required parameters: userId
   
@@ -177,7 +177,7 @@
      auth))))
 
 (defn drafts-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/drafts/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.drafts/get
   
   Required parameters: userId, id
   
@@ -206,7 +206,7 @@
      auth))))
 
 (defn drafts-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/drafts/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.drafts/list
   
   Required parameters: userId
   
@@ -235,7 +235,7 @@
      auth))))
 
 (defn drafts-send$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/drafts/send
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.drafts/send
   
   Required parameters: userId
   
@@ -279,7 +279,7 @@
      auth))))
 
 (defn drafts-update$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/drafts/update
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.drafts/update
   
   Required parameters: userId, id
   
@@ -323,7 +323,7 @@
      auth))))
 
 (defn history-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/history/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.history/list
   
   Required parameters: userId
   
@@ -352,11 +352,11 @@
      auth))))
 
 (defn messages-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/get
   
   Required parameters: userId, id
   
-  Optional parameters: format, metadataHeaders
+  Optional parameters: format, metadataHeaders, temporaryEeccBypass
   
   Gets the specified message."
   {:scopes ["https://mail.google.com/"
@@ -384,7 +384,7 @@
      auth))))
 
 (defn messages-insert$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/insert
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/insert
   
   Required parameters: userId
   
@@ -431,7 +431,7 @@
      auth))))
 
 (defn messages-untrash$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/untrash
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/untrash
   
   Required parameters: userId, id
   
@@ -458,7 +458,7 @@
      auth))))
 
 (defn messages-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/delete
   
   Required parameters: userId, id
   
@@ -484,7 +484,7 @@
      auth))))
 
 (defn messages-batchDelete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/batchDelete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/batchDelete
   
   Required parameters: userId
   
@@ -516,7 +516,7 @@
      auth))))
 
 (defn messages-batchModify$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/batchModify
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/batchModify
   
   Required parameters: userId
   
@@ -549,11 +549,11 @@
      auth))))
 
 (defn messages-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/list
   
   Required parameters: userId
   
-  Optional parameters: maxResults, pageToken, q, labelIds, includeSpamTrash
+  Optional parameters: maxResults, pageToken, q, labelIds, includeSpamTrash, temporaryEeccBypass
   
   Lists the messages in the user's mailbox."
   {:scopes ["https://mail.google.com/"
@@ -578,7 +578,7 @@
      auth))))
 
 (defn messages-send$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/send
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/send
   
   Required parameters: userId
   
@@ -627,7 +627,7 @@
      auth))))
 
 (defn messages-import$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/import
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/import
   
   Required parameters: userId
   
@@ -674,7 +674,7 @@
      auth))))
 
 (defn messages-modify$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/modify
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/modify
   
   Required parameters: userId, id
   
@@ -707,7 +707,7 @@
      auth))))
 
 (defn messages-trash$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/trash
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages/trash
   
   Required parameters: userId, id
   
@@ -734,11 +734,11 @@
      auth))))
 
 (defn messages-attachments-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/messages/attachments/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.messages.attachments/get
   
   Required parameters: userId, messageId, id
   
-  Optional parameters: none
+  Optional parameters: temporaryEeccBypass
   
   Gets the specified message attachment."
   {:scopes ["https://mail.google.com/"
@@ -764,7 +764,7 @@
      auth))))
 
 (defn labels-create$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/labels/create
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.labels/create
   
   Required parameters: userId
   
@@ -807,7 +807,7 @@
      auth))))
 
 (defn labels-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/labels/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.labels/delete
   
   Required parameters: userId, id
   
@@ -835,7 +835,7 @@
      auth))))
 
 (defn labels-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/labels/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.labels/get
   
   Required parameters: userId, id
   
@@ -865,7 +865,7 @@
      auth))))
 
 (defn labels-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/labels/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.labels/list
   
   Required parameters: userId
   
@@ -895,7 +895,7 @@
      auth))))
 
 (defn labels-update$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/labels/update
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.labels/update
   
   Required parameters: userId, id
   
@@ -938,7 +938,7 @@
      auth))))
 
 (defn labels-patch$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/labels/patch
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.labels/patch
   
   Required parameters: userId, id
   
@@ -981,7 +981,7 @@
      auth))))
 
 (defn threads-trash$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/threads/trash
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.threads/trash
   
   Required parameters: userId, id
   
@@ -1008,7 +1008,7 @@
      auth))))
 
 (defn threads-untrash$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/threads/untrash
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.threads/untrash
   
   Required parameters: userId, id
   
@@ -1035,7 +1035,7 @@
      auth))))
 
 (defn threads-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/threads/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.threads/delete
   
   Required parameters: userId, id
   
@@ -1061,11 +1061,11 @@
      auth))))
 
 (defn threads-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/threads/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.threads/get
   
   Required parameters: userId, id
   
-  Optional parameters: format, metadataHeaders
+  Optional parameters: format, metadataHeaders, temporaryEeccBypass
   
   Gets the specified thread."
   {:scopes ["https://mail.google.com/"
@@ -1093,11 +1093,11 @@
      auth))))
 
 (defn threads-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/threads/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.threads/list
   
   Required parameters: userId
   
-  Optional parameters: maxResults, pageToken, q, labelIds, includeSpamTrash
+  Optional parameters: maxResults, pageToken, q, labelIds, includeSpamTrash, temporaryEeccBypass
   
   Lists the threads in the user's mailbox."
   {:scopes ["https://mail.google.com/"
@@ -1122,7 +1122,7 @@
      auth))))
 
 (defn threads-modify$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/threads/modify
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.threads/modify
   
   Required parameters: userId, id
   
@@ -1155,7 +1155,7 @@
      auth))))
 
 (defn settings-getLanguage$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/getLanguage
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/getLanguage
   
   Required parameters: userId
   
@@ -1184,7 +1184,7 @@
      auth))))
 
 (defn settings-updateImap$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/updateImap
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/updateImap
   
   Required parameters: userId
   
@@ -1219,7 +1219,7 @@
      auth))))
 
 (defn settings-getVacation$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/getVacation
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/getVacation
   
   Required parameters: userId
   
@@ -1248,7 +1248,7 @@
      auth))))
 
 (defn settings-getAutoForwarding$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/getAutoForwarding
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/getAutoForwarding
   
   Required parameters: userId
   
@@ -1277,7 +1277,7 @@
      auth))))
 
 (defn settings-updateAutoForwarding$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/updateAutoForwarding
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/updateAutoForwarding
   
   Required parameters: userId
   
@@ -1309,7 +1309,7 @@
      auth))))
 
 (defn settings-updateVacation$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/updateVacation
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/updateVacation
   
   Required parameters: userId
   
@@ -1348,7 +1348,7 @@
      auth))))
 
 (defn settings-updateLanguage$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/updateLanguage
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/updateLanguage
   
   Required parameters: userId
   
@@ -1380,7 +1380,7 @@
      auth))))
 
 (defn settings-getImap$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/getImap
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/getImap
   
   Required parameters: userId
   
@@ -1409,7 +1409,7 @@
      auth))))
 
 (defn settings-getPop$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/getPop
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/getPop
   
   Required parameters: userId
   
@@ -1438,7 +1438,7 @@
      auth))))
 
 (defn settings-updatePop$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/updatePop
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings/updatePop
   
   Required parameters: userId
   
@@ -1470,7 +1470,7 @@
      auth))))
 
 (defn settings-sendAs-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs/list
   
   Required parameters: userId
   
@@ -1499,7 +1499,7 @@
      auth))))
 
 (defn settings-sendAs-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs/get
   
   Required parameters: userId, sendAsEmail
   
@@ -1528,7 +1528,7 @@
      auth))))
 
 (defn settings-sendAs-create$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/create
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs/create
   
   Required parameters: userId
   
@@ -1572,7 +1572,7 @@
      auth))))
 
 (defn settings-sendAs-update$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/update
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs/update
   
   Required parameters: userId, sendAsEmail
   
@@ -1617,7 +1617,7 @@
      auth))))
 
 (defn settings-sendAs-patch$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/patch
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs/patch
   
   Required parameters: userId, sendAsEmail
   
@@ -1662,7 +1662,7 @@
      auth))))
 
 (defn settings-sendAs-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs/delete
   
   Required parameters: userId, sendAsEmail
   
@@ -1688,7 +1688,7 @@
      auth))))
 
 (defn settings-sendAs-verify$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/verify
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs/verify
   
   Required parameters: userId, sendAsEmail
   
@@ -1714,7 +1714,7 @@
      auth))))
 
 (defn settings-sendAs-smimeInfo-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/smimeInfo/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs.smimeInfo/list
   
   Required parameters: userId, sendAsEmail
   
@@ -1744,7 +1744,7 @@
      auth))))
 
 (defn settings-sendAs-smimeInfo-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/smimeInfo/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs.smimeInfo/get
   
   Required parameters: userId, sendAsEmail, id
   
@@ -1774,7 +1774,7 @@
      auth))))
 
 (defn settings-sendAs-smimeInfo-insert$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/smimeInfo/insert
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs.smimeInfo/insert
   
   Required parameters: userId, sendAsEmail
   
@@ -1813,7 +1813,7 @@
      auth))))
 
 (defn settings-sendAs-smimeInfo-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/smimeInfo/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs.smimeInfo/delete
   
   Required parameters: userId, sendAsEmail, id
   
@@ -1840,7 +1840,7 @@
      auth))))
 
 (defn settings-sendAs-smimeInfo-setDefault$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/sendAs/smimeInfo/setDefault
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.sendAs.smimeInfo/setDefault
   
   Required parameters: userId, sendAsEmail, id
   
@@ -1867,7 +1867,7 @@
      auth))))
 
 (defn settings-cse-identities-create$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/identities/create
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.identities/create
   
   Required parameters: userId
   
@@ -1903,7 +1903,7 @@
      auth))))
 
 (defn settings-cse-identities-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/identities/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.identities/delete
   
   Required parameters: userId, cseEmailAddress
   
@@ -1930,7 +1930,7 @@
      auth))))
 
 (defn settings-cse-identities-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/identities/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.identities/get
   
   Required parameters: userId, cseEmailAddress
   
@@ -1960,7 +1960,7 @@
      auth))))
 
 (defn settings-cse-identities-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/identities/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.identities/list
   
   Required parameters: userId
   
@@ -1990,7 +1990,7 @@
      auth))))
 
 (defn settings-cse-identities-patch$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/identities/patch
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.identities/patch
   
   Required parameters: userId, emailAddress
   
@@ -2026,7 +2026,7 @@
      auth))))
 
 (defn settings-cse-keypairs-create$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/keypairs/create
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.keypairs/create
   
   Required parameters: userId
   
@@ -2067,7 +2067,7 @@
      auth))))
 
 (defn settings-cse-keypairs-disable$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/keypairs/disable
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.keypairs/disable
   
   Required parameters: userId, keyPairId
   
@@ -2100,7 +2100,7 @@
      auth))))
 
 (defn settings-cse-keypairs-enable$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/keypairs/enable
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.keypairs/enable
   
   Required parameters: userId, keyPairId
   
@@ -2133,7 +2133,7 @@
      auth))))
 
 (defn settings-cse-keypairs-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/keypairs/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.keypairs/get
   
   Required parameters: userId, keyPairId
   
@@ -2163,7 +2163,7 @@
      auth))))
 
 (defn settings-cse-keypairs-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/keypairs/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.keypairs/list
   
   Required parameters: userId
   
@@ -2193,7 +2193,7 @@
      auth))))
 
 (defn settings-cse-keypairs-obliterate$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/cse/keypairs/obliterate
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.cse.keypairs/obliterate
   
   Required parameters: userId, keyPairId
   
@@ -2226,7 +2226,7 @@
      auth))))
 
 (defn settings-filters-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/filters/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters/list
   
   Required parameters: userId
   
@@ -2255,7 +2255,7 @@
      auth))))
 
 (defn settings-filters-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/filters/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters/get
   
   Required parameters: userId, id
   
@@ -2284,7 +2284,7 @@
      auth))))
 
 (defn settings-filters-create$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/filters/create
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters/create
   
   Required parameters: userId
   
@@ -2328,7 +2328,7 @@
      auth))))
 
 (defn settings-filters-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/filters/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.filters/delete
   
   Required parameters: userId, id
   
@@ -2354,7 +2354,7 @@
      auth))))
 
 (defn settings-forwardingAddresses-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/forwardingAddresses/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.forwardingAddresses/list
   
   Required parameters: userId
   
@@ -2383,7 +2383,7 @@
      auth))))
 
 (defn settings-forwardingAddresses-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/forwardingAddresses/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.forwardingAddresses/get
   
   Required parameters: userId, forwardingEmail
   
@@ -2412,7 +2412,7 @@
      auth))))
 
 (defn settings-forwardingAddresses-create$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/forwardingAddresses/create
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.forwardingAddresses/create
   
   Required parameters: userId
   
@@ -2444,7 +2444,7 @@
      auth))))
 
 (defn settings-forwardingAddresses-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/forwardingAddresses/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.forwardingAddresses/delete
   
   Required parameters: userId, forwardingEmail
   
@@ -2470,7 +2470,7 @@
      auth))))
 
 (defn settings-delegates-list$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/delegates/list
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.delegates/list
   
   Required parameters: userId
   
@@ -2499,7 +2499,7 @@
      auth))))
 
 (defn settings-delegates-get$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/delegates/get
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.delegates/get
   
   Required parameters: userId, delegateEmail
   
@@ -2528,7 +2528,7 @@
      auth))))
 
 (defn settings-delegates-create$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/delegates/create
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.delegates/create
   
   Required parameters: userId
   
@@ -2560,7 +2560,7 @@
      auth))))
 
 (defn settings-delegates-delete$
-  "https://developers.google.com/gmail/api/api/reference/rest/v1/users/settings/delegates/delete
+  "https://developers.google.com/gmail/api/reference/rest/v1/users.settings.delegates/delete
   
   Required parameters: userId, delegateEmail
   

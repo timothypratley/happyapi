@@ -1,13 +1,13 @@
 (ns happygapi.dns.changes
   "Cloud DNS API: changes.
   
-  See: https://cloud.google.com/dns/docsapi/reference/rest/v1/changes"
+  See: https://cloud.google.com/dns/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/changes/create
+  "https://cloud.google.com/dns/docs/reference/rest/v1/changes/create
   
   Required parameters: project, managedZone
   
@@ -58,7 +58,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/changes/get
+  "https://cloud.google.com/dns/docs/reference/rest/v1/changes/get
   
   Required parameters: project, managedZone, changeId
   
@@ -89,7 +89,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/dns/docsapi/reference/rest/v1/changes/list
+  "https://cloud.google.com/dns/docs/reference/rest/v1/changes/list
   
   Required parameters: project, managedZone
   

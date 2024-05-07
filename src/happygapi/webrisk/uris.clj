@@ -1,13 +1,13 @@
 (ns happygapi.webrisk.uris
   "Web Risk API: uris.
   
-  See: https://cloud.google.com/web-risk/api/reference/rest/v1/uris"
+  See: https://cloud.google.com/security/products/web-risk"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn search$
-  "https://cloud.google.com/web-risk/api/reference/rest/v1/uris/search
+  "https://cloud.google.com/security/products/web-risk/v1/docs/uris/search
   
   Required parameters: none
   

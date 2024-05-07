@@ -1,13 +1,13 @@
 (ns happygapi.content.orders
   "Content API for Shopping: orders.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn refundorder$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/refundorder
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -43,7 +43,7 @@
      auth))))
 
 (defn createtestorder$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/createtestorder
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -89,7 +89,7 @@
      auth))))
 
 (defn updatelineitemshippingdetails$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/updatelineitemshippingdetails
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -125,7 +125,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -151,7 +151,7 @@
      auth))))
 
 (defn acknowledge$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/acknowledge
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -183,7 +183,7 @@
      auth))))
 
 (defn setlineitemmetadata$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/setlineitemmetadata
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -218,7 +218,7 @@
      auth))))
 
 (defn createtestreturn$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/createtestreturn
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -250,7 +250,7 @@
      auth))))
 
 (defn cancellineitem$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/cancellineitem
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -287,7 +287,7 @@
      auth))))
 
 (defn updateshipment$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/updateshipment
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -329,7 +329,7 @@
      auth))))
 
 (defn rejectreturnlineitem$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/rejectreturnlineitem
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -366,7 +366,7 @@
      auth))))
 
 (defn instorerefundlineitem$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/instorerefundlineitem
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -405,7 +405,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -431,7 +431,7 @@
      auth))))
 
 (defn shiplineitems$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/shiplineitems
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -470,7 +470,7 @@
      auth))))
 
 (defn captureOrder$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/captureOrder
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -502,7 +502,7 @@
      auth))))
 
 (defn gettestordertemplate$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/gettestordertemplate
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, templateName
   
@@ -528,7 +528,7 @@
      auth))))
 
 (defn getbymerchantorderid$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/getbymerchantorderid
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, merchantOrderId
   
@@ -554,7 +554,7 @@
      auth))))
 
 (defn cancel$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/cancel
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -586,7 +586,7 @@
      auth))))
 
 (defn advancetestorder$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/advancetestorder
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -612,7 +612,7 @@
      auth))))
 
 (defn refunditem$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/refunditem
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -652,7 +652,7 @@
      auth))))
 
 (defn returnrefundlineitem$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/returnrefundlineitem
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -691,7 +691,7 @@
      auth))))
 
 (defn canceltestorderbycustomer$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/canceltestorderbycustomer
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   
@@ -723,7 +723,7 @@
      auth))))
 
 (defn updatemerchantorderid$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/orders/updatemerchantorderid
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, orderId
   

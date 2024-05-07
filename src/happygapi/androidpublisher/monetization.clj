@@ -1,13 +1,13 @@
 (ns happygapi.androidpublisher.monetization
   "Google Play Android Developer API: monetization.
   Lets Android application developers access their Google Play accounts. At a high level, the expected workflow is to \"insert\" an Edit, make changes as necessary, and then \"commit\" it. 
-  See: https://developers.google.com/android-publisherapi/reference/rest/v3/monetization"
+  See: https://developers.google.com/android-publisher"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn convertRegionPrices$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/convertRegionPrices
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn subscriptions-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn subscriptions-batchGet$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/batchGet
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn subscriptions-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn subscriptions-create$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/create
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn subscriptions-patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId
   
@@ -213,7 +213,7 @@
      auth))))
 
 (defn subscriptions-batchUpdate$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/batchUpdate
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName
   
@@ -249,7 +249,7 @@
      auth))))
 
 (defn subscriptions-delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId
   
@@ -275,7 +275,7 @@
      auth))))
 
 (defn subscriptions-archive$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/archive
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId
   
@@ -307,7 +307,7 @@
      auth))))
 
 (defn subscriptions-basePlans-delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -335,7 +335,7 @@
      auth))))
 
 (defn subscriptions-basePlans-activate$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/activate
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -372,7 +372,7 @@
      auth))))
 
 (defn subscriptions-basePlans-deactivate$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/deactivate
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -409,7 +409,7 @@
      auth))))
 
 (defn subscriptions-basePlans-batchUpdateStates$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/batchUpdateStates
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId
   
@@ -442,7 +442,7 @@
      auth))))
 
 (defn subscriptions-basePlans-migratePrices$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/migratePrices
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -483,7 +483,7 @@
      auth))))
 
 (defn subscriptions-basePlans-batchMigratePrices$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/batchMigratePrices
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId
   
@@ -520,7 +520,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-get$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/get
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId, offerId
   
@@ -548,7 +548,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-batchUpdateStates$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/batchUpdateStates
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -583,7 +583,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-patch$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/patch
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId, offerId
   
@@ -631,7 +631,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-batchUpdate$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/batchUpdate
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -669,7 +669,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-create$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/create
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -717,7 +717,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-batchGet$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/batchGet
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -754,7 +754,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-delete$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/delete
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId, offerId
   
@@ -782,7 +782,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-deactivate$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/deactivate
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId, offerId
   
@@ -820,7 +820,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-list$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/list
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId
   
@@ -848,7 +848,7 @@
      auth))))
 
 (defn subscriptions-basePlans-offers-activate$
-  "https://developers.google.com/android-publisherapi/reference/rest/v3/monetization/subscriptions/basePlans/offers/activate
+  "https://developers.google.com/android-publisher
   
   Required parameters: packageName, productId, basePlanId, offerId
   

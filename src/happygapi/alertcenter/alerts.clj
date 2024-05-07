@@ -1,13 +1,13 @@
 (ns happygapi.alertcenter.alerts
   "Google Workspace Alert Center API: alerts.
   Manages alerts on issues affecting your domain. Note: The current version of this API (v1beta1) is available to all Google Workspace customers. 
-  See: https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts"
+  See: https://developers.google.com/admin-sdk/alertcenter/guides"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/list
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/list
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/get
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/get
   
   Required parameters: alertId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/delete
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/delete
   
   Required parameters: alertId
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn undelete$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/undelete
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/undelete
   
   Required parameters: alertId
   
@@ -117,7 +117,7 @@
      auth))))
 
 (defn getMetadata$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/getMetadata
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/getMetadata
   
   Required parameters: alertId
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn batchDelete$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/batchDelete
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/batchDelete
   
   Required parameters: none
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn batchUndelete$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/batchUndelete
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/batchUndelete
   
   Required parameters: none
   
@@ -207,7 +207,7 @@
      auth))))
 
 (defn feedback-create$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/feedback/create
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts.feedback/create
   
   Required parameters: alertId
   
@@ -244,7 +244,7 @@
      auth))))
 
 (defn feedback-list$
-  "https://developers.google.com/admin-sdk/alertcenter/api/reference/rest/v1beta1/alerts/feedback/list
+  "https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts.feedback/list
   
   Required parameters: alertId
   

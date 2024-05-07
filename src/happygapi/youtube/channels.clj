@@ -1,13 +1,13 @@
 (ns happygapi.youtube.channels
   "YouTube Data API v3: channels.
   The YouTube Data API v3 is an API that provides access to YouTube data, such as videos, playlists, and channels.
-  See: https://developers.google.com/youtube/api/reference/rest/v3/channels"
+  See: https://developers.google.com/youtube/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn update$
-  "https://developers.google.com/youtube/api/reference/rest/v3/channels/update
+  "https://developers.google.com/youtube/v3/docs/channels/update
   
   Required parameters: part
   
@@ -15,43 +15,43 @@
   
   Body: 
   
-  {:contentOwnerDetails {:timeLinked string, :contentOwner string},
+  {:contentOwnerDetails {:contentOwner string, :timeLinked string},
    :localizations {},
    :brandingSettings {:image ImageSettings,
-                      :hints [PropertyValue],
                       :channel ChannelSettings,
+                      :hints [PropertyValue],
                       :watch WatchSettings},
-   :snippet {:publishedAt string,
-             :defaultLanguage string,
-             :customUrl string,
-             :description string,
-             :title string,
+   :snippet {:description string,
              :thumbnails ThumbnailDetails,
-             :localized ChannelLocalization,
-             :country string},
+             :customUrl string,
+             :title string,
+             :country string,
+             :defaultLanguage string,
+             :publishedAt string,
+             :localized ChannelLocalization},
    :etag string,
    :auditDetails {:contentIdClaimsGoodStanding boolean,
-                  :copyrightStrikesGoodStanding boolean,
-                  :communityGuidelinesGoodStanding boolean},
+                  :communityGuidelinesGoodStanding boolean,
+                  :copyrightStrikesGoodStanding boolean},
    :conversionPings {:pings [ChannelConversionPing]},
-   :statistics {:commentCount string,
-                :viewCount string,
-                :subscriberCount string,
+   :statistics {:subscriberCount string,
                 :hiddenSubscriberCount boolean,
+                :viewCount string,
+                :commentCount string,
                 :videoCount string},
-   :status {:longUploadsStatus string,
-            :selfDeclaredMadeForKids boolean,
-            :madeForKids boolean,
+   :status {:madeForKids boolean,
+            :longUploadsStatus string,
+            :isLinked boolean,
             :privacyStatus string,
-            :isLinked boolean},
+            :selfDeclaredMadeForKids boolean},
    :id string,
    :kind string,
-   :contentDetails {:relatedPlaylists {:likes string,
-                                       :watchLater string,
+   :contentDetails {:relatedPlaylists {:watchLater string,
                                        :uploads string,
+                                       :favorites string,
                                        :watchHistory string,
-                                       :favorites string}},
-   :topicDetails {:topicIds [string], :topicCategories [string]}}
+                                       :likes string}},
+   :topicDetails {:topicCategories [string], :topicIds [string]}}
   
   Updates an existing resource."
   {:scopes ["https://www.googleapis.com/auth/youtube"
@@ -77,7 +77,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/youtube/api/reference/rest/v3/channels/list
+  "https://developers.google.com/youtube/v3/docs/channels/list
   
   Required parameters: part
   

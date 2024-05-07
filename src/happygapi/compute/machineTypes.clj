@@ -1,13 +1,13 @@
 (ns happygapi.compute.machineTypes
   "Compute Engine API: machineTypes.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/machineTypes"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineTypes/list
+  "https://cloud.google.com/products/compute/v1/docs/machineTypes/list
   
   Required parameters: project, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineTypes/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/machineTypes/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/machineTypes/get
+  "https://cloud.google.com/products/compute/v1/docs/machineTypes/get
   
   Required parameters: machineType, project, zone
   

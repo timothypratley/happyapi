@@ -1,13 +1,13 @@
 (ns happygapi.secretmanager.projects
   "Secret Manager API: projects.
   Stores sensitive data such as API keys, passwords, and certificates. Provides convenience while improving security. 
-  See: https://cloud.google.com/secret-manager/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/security/products/secret-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-secrets-get$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/get
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/get
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-secrets-setIamPolicy$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/setIamPolicy
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/setIamPolicy
   
   Required parameters: resource
   
@@ -121,7 +121,7 @@
      auth))))
 
 (defn locations-secrets-patch$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/patch
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/patch
   
   Required parameters: name
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn locations-secrets-testIamPermissions$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/testIamPermissions
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/testIamPermissions
   
   Required parameters: resource
   
@@ -197,7 +197,7 @@
      auth))))
 
 (defn locations-secrets-create$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/create
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/create
   
   Required parameters: parent
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn locations-secrets-addVersion$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/addVersion
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/addVersion
   
   Required parameters: parent
   
@@ -273,7 +273,7 @@
      auth))))
 
 (defn locations-secrets-delete$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/delete
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/delete
   
   Required parameters: name
   
@@ -299,7 +299,7 @@
      auth))))
 
 (defn locations-secrets-getIamPolicy$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/getIamPolicy
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/getIamPolicy
   
   Required parameters: resource
   
@@ -325,7 +325,7 @@
      auth))))
 
 (defn locations-secrets-list$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/list
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/list
   
   Required parameters: parent
   
@@ -351,7 +351,7 @@
      auth))))
 
 (defn locations-secrets-versions-list$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/versions/list
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/versions/list
   
   Required parameters: parent
   
@@ -377,7 +377,7 @@
      auth))))
 
 (defn locations-secrets-versions-get$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/versions/get
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/versions/get
   
   Required parameters: name
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn locations-secrets-versions-access$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/versions/access
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/versions/access
   
   Required parameters: name
   
@@ -429,7 +429,7 @@
      auth))))
 
 (defn locations-secrets-versions-disable$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/versions/disable
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/versions/disable
   
   Required parameters: name
   
@@ -461,7 +461,7 @@
      auth))))
 
 (defn locations-secrets-versions-enable$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/versions/enable
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/versions/enable
   
   Required parameters: name
   
@@ -493,7 +493,7 @@
      auth))))
 
 (defn locations-secrets-versions-destroy$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/locations/secrets/versions/destroy
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/locations/secrets/versions/destroy
   
   Required parameters: name
   
@@ -525,7 +525,7 @@
      auth))))
 
 (defn secrets-get$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/get
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/get
   
   Required parameters: name
   
@@ -551,7 +551,7 @@
      auth))))
 
 (defn secrets-setIamPolicy$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/setIamPolicy
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/setIamPolicy
   
   Required parameters: resource
   
@@ -587,7 +587,7 @@
      auth))))
 
 (defn secrets-patch$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/patch
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/patch
   
   Required parameters: name
   
@@ -631,7 +631,7 @@
      auth))))
 
 (defn secrets-testIamPermissions$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/testIamPermissions
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/testIamPermissions
   
   Required parameters: resource
   
@@ -663,7 +663,7 @@
      auth))))
 
 (defn secrets-create$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/create
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/create
   
   Required parameters: parent
   
@@ -707,7 +707,7 @@
      auth))))
 
 (defn secrets-addVersion$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/addVersion
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/addVersion
   
   Required parameters: parent
   
@@ -739,7 +739,7 @@
      auth))))
 
 (defn secrets-delete$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/delete
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/delete
   
   Required parameters: name
   
@@ -765,7 +765,7 @@
      auth))))
 
 (defn secrets-getIamPolicy$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/getIamPolicy
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/getIamPolicy
   
   Required parameters: resource
   
@@ -791,7 +791,7 @@
      auth))))
 
 (defn secrets-list$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/list
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/list
   
   Required parameters: parent
   
@@ -817,7 +817,7 @@
      auth))))
 
 (defn secrets-versions-list$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/versions/list
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/versions/list
   
   Required parameters: parent
   
@@ -843,7 +843,7 @@
      auth))))
 
 (defn secrets-versions-get$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/versions/get
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/versions/get
   
   Required parameters: name
   
@@ -869,7 +869,7 @@
      auth))))
 
 (defn secrets-versions-access$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/versions/access
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/versions/access
   
   Required parameters: name
   
@@ -895,7 +895,7 @@
      auth))))
 
 (defn secrets-versions-disable$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/versions/disable
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/versions/disable
   
   Required parameters: name
   
@@ -927,7 +927,7 @@
      auth))))
 
 (defn secrets-versions-enable$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/versions/enable
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/versions/enable
   
   Required parameters: name
   
@@ -959,7 +959,7 @@
      auth))))
 
 (defn secrets-versions-destroy$
-  "https://cloud.google.com/secret-manager/api/reference/rest/v1/projects/secrets/versions/destroy
+  "https://cloud.google.com/security/products/secret-manager/v1/docs/projects/secrets/versions/destroy
   
   Required parameters: name
   

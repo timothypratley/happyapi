@@ -1,13 +1,13 @@
 (ns happygapi.compute.zoneOperations
   "Compute Engine API: zoneOperations.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/zoneOperations"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/zoneOperations/list
+  "https://cloud.google.com/products/compute/v1/docs/zoneOperations/list
   
   Required parameters: project, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/zoneOperations/get
+  "https://cloud.google.com/products/compute/v1/docs/zoneOperations/get
   
   Required parameters: operation, project, zone
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn wait$
-  "https://cloud.google.com/compute/api/reference/rest/v1/zoneOperations/wait
+  "https://cloud.google.com/products/compute/v1/docs/zoneOperations/wait
   
   Required parameters: operation, project, zone
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/zoneOperations/delete
+  "https://cloud.google.com/products/compute/v1/docs/zoneOperations/delete
   
   Required parameters: operation, project, zone
   

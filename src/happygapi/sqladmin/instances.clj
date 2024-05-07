@@ -1,13 +1,13 @@
 (ns happygapi.sqladmin.instances
   "Cloud SQL Admin API: instances.
   API for Cloud SQL database instance management
-  See: https://developers.google.com/cloud-sql/api/reference/rest/v1/instances"
+  See: https://cloud.google.com/sql/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn failover$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/failover
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/failover
   
   Required parameters: project, instance
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/get
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/get
   
   Required parameters: project, instance
   
@@ -67,7 +67,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/insert
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/insert
   
   Required parameters: project
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn demoteMaster$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/demoteMaster
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/demoteMaster
   
   Required parameters: project, instance
   
@@ -240,7 +240,7 @@
      auth))))
 
 (defn restart$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/restart
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/restart
   
   Required parameters: project, instance
   
@@ -267,7 +267,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/patch
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/patch
   
   Required parameters: project, instance
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn addServerCa$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/addServerCa
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/addServerCa
   
   Required parameters: project, instance
   
@@ -430,7 +430,7 @@
      auth))))
 
 (defn stopReplica$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/stopReplica
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/stopReplica
   
   Required parameters: project, instance
   
@@ -457,7 +457,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/update
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/update
   
   Required parameters: project, instance
   
@@ -593,7 +593,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/delete
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/delete
   
   Required parameters: project, instance
   
@@ -620,7 +620,7 @@
      auth))))
 
 (defn releaseSsrsLease$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/releaseSsrsLease
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/releaseSsrsLease
   
   Required parameters: project, instance
   
@@ -647,7 +647,7 @@
      auth))))
 
 (defn export$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/export
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/export
   
   Required parameters: project, instance
   
@@ -698,7 +698,7 @@
      auth))))
 
 (defn demote$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/demote
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/demote
   
   Required parameters: project, instance
   
@@ -732,7 +732,7 @@
      auth))))
 
 (defn listServerCas$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/listServerCas
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/listServerCas
   
   Required parameters: project, instance
   
@@ -759,13 +759,13 @@
      auth))))
 
 (defn promoteReplica$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/promoteReplica
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/promoteReplica
   
   Required parameters: project, instance
   
   Optional parameters: failover
   
-  Promotes the read replica instance to be a stand-alone Cloud SQL instance. Using this operation might cause your instance to restart."
+  Promotes the read replica instance to be an independent Cloud SQL primary instance. Using this operation might cause your instance to restart."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
             "https://www.googleapis.com/auth/sqlservice.admin"]}
   [auth parameters]
@@ -786,7 +786,7 @@
      auth))))
 
 (defn acquireSsrsLease$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/acquireSsrsLease
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/acquireSsrsLease
   
   Required parameters: project, instance
   
@@ -822,7 +822,7 @@
      auth))))
 
 (defn resetSslConfig$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/resetSslConfig
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/resetSslConfig
   
   Required parameters: project, instance
   
@@ -849,7 +849,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/list
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/list
   
   Required parameters: project
   
@@ -876,7 +876,7 @@
      auth))))
 
 (defn clone$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/clone
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/clone
   
   Required parameters: project, instance
   
@@ -916,7 +916,7 @@
      auth))))
 
 (defn restoreBackup$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/restoreBackup
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/restoreBackup
   
   Required parameters: project, instance
   
@@ -952,7 +952,7 @@
      auth))))
 
 (defn startReplica$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/startReplica
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/startReplica
   
   Required parameters: project, instance
   
@@ -979,7 +979,7 @@
      auth))))
 
 (defn rotateServerCa$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/rotateServerCa
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/rotateServerCa
   
   Required parameters: project, instance
   
@@ -1012,7 +1012,7 @@
      auth))))
 
 (defn truncateLog$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/truncateLog
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/truncateLog
   
   Required parameters: project, instance
   
@@ -1045,13 +1045,13 @@
      auth))))
 
 (defn switchover$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/switchover
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/switchover
   
   Required parameters: project, instance
   
   Optional parameters: dbTimeout
   
-  Switches over from the primary instance to the replica instance."
+  Switches over from the primary instance to the designated DR replica instance."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
             "https://www.googleapis.com/auth/sqlservice.admin"]}
   [auth parameters]
@@ -1072,7 +1072,7 @@
      auth))))
 
 (defn reencrypt$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/reencrypt
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/reencrypt
   
   Required parameters: project, instance
   
@@ -1105,7 +1105,7 @@
      auth))))
 
 (defn import$
-  "https://developers.google.com/cloud-sql/api/reference/rest/v1/instances/import
+  "https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances/import
   
   Required parameters: project, instance
   
@@ -1132,7 +1132,9 @@
                                       :recoveryOnly boolean,
                                       :bakType string,
                                       :stopAt string,
-                                      :stopAtMark string}}}
+                                      :stopAtMark string},
+                   :sqlImportOptions {:threads integer,
+                                      :parallel boolean}}}
   
   Imports data into a Cloud SQL instance from a SQL dump or CSV file in Cloud Storage."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}

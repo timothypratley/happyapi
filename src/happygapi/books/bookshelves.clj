@@ -1,13 +1,13 @@
 (ns happygapi.books.bookshelves
   "Books API: bookshelves.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/bookshelves"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/bookshelves/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/bookshelves/get
   
   Required parameters: userId, shelf
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/bookshelves/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/bookshelves/list
   
   Required parameters: userId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn volumes-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/bookshelves/volumes/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/bookshelves/volumes/list
   
   Required parameters: userId, shelf
   

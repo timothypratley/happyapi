@@ -1,13 +1,13 @@
 (ns happygapi.workstations.projects
   "Cloud Workstations API: projects.
   Allows administrators to create managed developer environments in the cloud. 
-  See: https://cloud.google.com/workstationsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/workstations"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-workstationClusters-get$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/get
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters/get
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-workstationClusters-list$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/list
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters/list
   
   Required parameters: parent
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-workstationClusters-create$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/create
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters/create
   
   Required parameters: parent
   
@@ -272,7 +272,7 @@
      auth))))
 
 (defn locations-workstationClusters-patch$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/patch
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters/patch
   
   Required parameters: name
   
@@ -323,7 +323,7 @@
      auth))))
 
 (defn locations-workstationClusters-delete$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/delete
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters/delete
   
   Required parameters: name
   
@@ -349,7 +349,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-get$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/get
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/get
   
   Required parameters: name
   
@@ -375,7 +375,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-setIamPolicy$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/setIamPolicy
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/setIamPolicy
   
   Required parameters: resource
   
@@ -411,7 +411,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-listUsable$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/listUsable
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/listUsable
   
   Required parameters: parent
   
@@ -437,7 +437,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-patch$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/patch
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/patch
   
   Required parameters: name
   
@@ -497,7 +497,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-testIamPermissions$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/testIamPermissions
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/testIamPermissions
   
   Required parameters: resource
   
@@ -529,7 +529,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-create$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/create
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/create
   
   Required parameters: parent
   
@@ -589,7 +589,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-delete$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/delete
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/delete
   
   Required parameters: name
   
@@ -615,7 +615,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-getIamPolicy$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/getIamPolicy
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/getIamPolicy
   
   Required parameters: resource
   
@@ -641,7 +641,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-list$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/list
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs/list
   
   Required parameters: parent
   
@@ -667,7 +667,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-get$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/get
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/get
   
   Required parameters: name
   
@@ -693,7 +693,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-setIamPolicy$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/setIamPolicy
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/setIamPolicy
   
   Required parameters: resource
   
@@ -729,7 +729,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-listUsable$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/listUsable
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/listUsable
   
   Required parameters: parent
   
@@ -755,7 +755,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-patch$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/patch
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/patch
   
   Required parameters: name
   
@@ -801,7 +801,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-testIamPermissions$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/testIamPermissions
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/testIamPermissions
   
   Required parameters: resource
   
@@ -833,7 +833,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-create$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/create
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/create
   
   Required parameters: parent
   
@@ -879,7 +879,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-start$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/start
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/start
   
   Required parameters: name
   
@@ -911,7 +911,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-delete$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/delete
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/delete
   
   Required parameters: name
   
@@ -937,7 +937,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-generateAccessToken$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/generateAccessToken
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/generateAccessToken
   
   Required parameters: workstation
   
@@ -969,7 +969,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-getIamPolicy$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/getIamPolicy
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/getIamPolicy
   
   Required parameters: resource
   
@@ -995,7 +995,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-stop$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/stop
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/stop
   
   Required parameters: name
   
@@ -1027,7 +1027,7 @@
      auth))))
 
 (defn locations-workstationClusters-workstationConfigs-workstations-list$
-  "https://cloud.google.com/workstationsapi/reference/rest/v1/projects/locations/workstationClusters/workstationConfigs/workstations/list
+  "https://cloud.google.com/workstations/docs/reference/rest/v1/projects.locations.workstationClusters.workstationConfigs.workstations/list
   
   Required parameters: parent
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.instanceGroups
   "Compute Engine API: instanceGroups.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/get
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/get
   
   Required parameters: instanceGroup, project, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/insert
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/insert
   
   Required parameters: project, zone
   
@@ -80,7 +80,7 @@
      auth))))
 
 (defn addInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/addInstances
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/addInstances
   
   Required parameters: instanceGroup, project, zone
   
@@ -113,7 +113,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/aggregatedList
   
   Required parameters: project
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/delete
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/delete
   
   Required parameters: instanceGroup, project, zone
   
@@ -168,7 +168,7 @@
      auth))))
 
 (defn setNamedPorts$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/setNamedPorts
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/setNamedPorts
   
   Required parameters: instanceGroup, project, zone
   
@@ -201,7 +201,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/list
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/list
   
   Required parameters: project, zone
   
@@ -229,7 +229,7 @@
      auth))))
 
 (defn listInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/listInstances
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/listInstances
   
   Required parameters: instanceGroup, project, zone
   
@@ -263,7 +263,7 @@
      auth))))
 
 (defn removeInstances$
-  "https://cloud.google.com/compute/api/reference/rest/v1/instanceGroups/removeInstances
+  "https://cloud.google.com/products/compute/v1/docs/instanceGroups/removeInstances
   
   Required parameters: instanceGroup, project, zone
   

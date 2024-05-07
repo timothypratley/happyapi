@@ -1,13 +1,13 @@
 (ns happygapi.runtimeconfig.operations
   "Cloud Runtime Configuration API: operations.
   The Runtime Configurator allows you to dynamically configure and expose variables through Google Cloud Platform. In addition, you can also set Watchers and Waiters that will watch for changes to your data and return based on certain conditions.
-  See: https://cloud.google.com/deployment-manager/runtime-configurator/api/reference/rest/v1/operations"
+  See: https://cloud.google.com/deployment-manager/runtime-configurator/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/deployment-manager/runtime-configurator/api/reference/rest/v1/operations/list
+  "https://cloud.google.com/deployment-manager/runtime-configurator/reference/rest/v1/operations/list
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/deployment-manager/runtime-configurator/api/reference/rest/v1/operations/delete
+  "https://cloud.google.com/deployment-manager/runtime-configurator/reference/rest/v1/operations/delete
   
   Required parameters: name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn cancel$
-  "https://cloud.google.com/deployment-manager/runtime-configurator/api/reference/rest/v1/operations/cancel
+  "https://cloud.google.com/deployment-manager/runtime-configurator/reference/rest/v1/operations/cancel
   
   Required parameters: name
   

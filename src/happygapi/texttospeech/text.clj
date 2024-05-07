@@ -1,13 +1,13 @@
 (ns happygapi.texttospeech.text
   "Cloud Text-to-Speech API: text.
   Synthesizes natural-sounding speech by applying powerful neural network models.
-  See: https://cloud.google.com/text-to-speech/api/reference/rest/v1/text"
+  See: https://cloud.google.com/text-to-speech/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn synthesize$
-  "https://cloud.google.com/text-to-speech/api/reference/rest/v1/text/synthesize
+  "https://cloud.google.com/text-to-speech/docs/reference/rest/v1/text/synthesize
   
   Required parameters: none
   

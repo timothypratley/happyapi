@@ -1,13 +1,13 @@
 (ns happygapi.cloudsearch.settings
   "Cloud Search API: settings.
   Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.
-  See: https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings"
+  See: https://developers.google.com/cloud-search/docs/guides/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getCustomer$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/getCustomer
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings/getCustomer
   
   Required parameters: none
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn updateCustomer$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/updateCustomer
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings/updateCustomer
   
   Required parameters: none
   
@@ -73,7 +73,7 @@
      auth))))
 
 (defn searchapplications-list$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/searchapplications/list
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/list
   
   Required parameters: none
   
@@ -101,7 +101,7 @@
      auth))))
 
 (defn searchapplications-get$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/searchapplications/get
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/get
   
   Required parameters: name
   
@@ -129,7 +129,7 @@
      auth))))
 
 (defn searchapplications-create$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/searchapplications/create
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/create
   
   Required parameters: none
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn searchapplications-update$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/searchapplications/update
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/update
   
   Required parameters: name
   
@@ -235,7 +235,7 @@
      auth))))
 
 (defn searchapplications-patch$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/searchapplications/patch
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/patch
   
   Required parameters: name
   
@@ -288,7 +288,7 @@
      auth))))
 
 (defn searchapplications-delete$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/searchapplications/delete
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/delete
   
   Required parameters: name
   
@@ -316,7 +316,7 @@
      auth))))
 
 (defn searchapplications-reset$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/searchapplications/reset
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/reset
   
   Required parameters: name
   
@@ -350,7 +350,7 @@
      auth))))
 
 (defn datasources-create$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/datasources/create
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/create
   
   Required parameters: none
   
@@ -394,7 +394,7 @@
      auth))))
 
 (defn datasources-delete$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/datasources/delete
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/delete
   
   Required parameters: name
   
@@ -422,7 +422,7 @@
      auth))))
 
 (defn datasources-get$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/datasources/get
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/get
   
   Required parameters: name
   
@@ -450,7 +450,7 @@
      auth))))
 
 (defn datasources-update$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/datasources/update
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/update
   
   Required parameters: name
   
@@ -494,7 +494,7 @@
      auth))))
 
 (defn datasources-patch$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/datasources/patch
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/patch
   
   Required parameters: name
   
@@ -538,7 +538,7 @@
      auth))))
 
 (defn datasources-list$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/settings/datasources/list
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/list
   
   Required parameters: none
   

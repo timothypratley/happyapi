@@ -1,13 +1,13 @@
 (ns happygapi.bigquery.datasets
   "BigQuery API: datasets.
   A data platform for customers to create, manage, share and query data.
-  See: https://cloud.google.com/bigquery/api/reference/rest/v2/datasets"
+  See: https://cloud.google.com/bigquery/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/datasets/delete
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/delete
   
   Required parameters: datasetId, projectId
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/datasets/get
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/get
   
   Required parameters: datasetId, projectId
   
@@ -62,7 +62,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/datasets/insert
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/insert
   
   Required parameters: projectId
   
@@ -72,10 +72,13 @@
   
   {:creationTime string,
    :description string,
+   :externalCatalogDatasetOptions {:defaultStorageLocationUri string,
+                                   :parameters {}},
    :defaultEncryptionConfiguration {:kmsKeyName string},
    :defaultPartitionExpirationMs string,
    :tags [{:tagKey string, :tagValue string}],
    :labels {},
+   :restrictions {:type string},
    :satisfiesPzi boolean,
    :linkedDatasetSource {:sourceDataset DatasetReference},
    :maxTimeTravelHours string,
@@ -134,7 +137,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/datasets/list
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/list
   
   Required parameters: projectId
   
@@ -162,7 +165,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/datasets/patch
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/patch
   
   Required parameters: datasetId, projectId
   
@@ -172,10 +175,13 @@
   
   {:creationTime string,
    :description string,
+   :externalCatalogDatasetOptions {:defaultStorageLocationUri string,
+                                   :parameters {}},
    :defaultEncryptionConfiguration {:kmsKeyName string},
    :defaultPartitionExpirationMs string,
    :tags [{:tagKey string, :tagValue string}],
    :labels {},
+   :restrictions {:type string},
    :satisfiesPzi boolean,
    :linkedDatasetSource {:sourceDataset DatasetReference},
    :maxTimeTravelHours string,
@@ -234,7 +240,7 @@
      auth))))
 
 (defn undelete$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/datasets/undelete
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/undelete
   
   Required parameters: datasetId, projectId
   
@@ -267,7 +273,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/bigquery/api/reference/rest/v2/datasets/update
+  "https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/update
   
   Required parameters: datasetId, projectId
   
@@ -277,10 +283,13 @@
   
   {:creationTime string,
    :description string,
+   :externalCatalogDatasetOptions {:defaultStorageLocationUri string,
+                                   :parameters {}},
    :defaultEncryptionConfiguration {:kmsKeyName string},
    :defaultPartitionExpirationMs string,
    :tags [{:tagKey string, :tagValue string}],
    :labels {},
+   :restrictions {:type string},
    :satisfiesPzi boolean,
    :linkedDatasetSource {:sourceDataset DatasetReference},
    :maxTimeTravelHours string,

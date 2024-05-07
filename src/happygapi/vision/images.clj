@@ -1,13 +1,13 @@
 (ns happygapi.vision.images
   "Cloud Vision API: images.
   Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.
-  See: https://cloud.google.com/vision/api/reference/rest/v1/images"
+  See: https://cloud.google.com/vision/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn annotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/images/annotate
+  "https://cloud.google.com/vision/reference/rest/v1/images/annotate
   
   Required parameters: none
   
@@ -44,7 +44,7 @@
      auth))))
 
 (defn asyncBatchAnnotate$
-  "https://cloud.google.com/vision/api/reference/rest/v1/images/asyncBatchAnnotate
+  "https://cloud.google.com/vision/reference/rest/v1/images/asyncBatchAnnotate
   
   Required parameters: none
   

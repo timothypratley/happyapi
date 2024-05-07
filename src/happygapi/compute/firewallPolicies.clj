@@ -1,13 +1,13 @@
 (ns happygapi.compute.firewallPolicies
   "Compute Engine API: firewallPolicies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn cloneRules$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/cloneRules
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/cloneRules
   
   Required parameters: firewallPolicy
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn removeRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/removeRule
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/removeRule
   
   Required parameters: firewallPolicy
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/get
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/get
   
   Required parameters: firewallPolicy
   
@@ -89,7 +89,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/setIamPolicy
   
   Required parameters: resource
   
@@ -131,7 +131,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/insert
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/insert
   
   Required parameters: none
   
@@ -196,7 +196,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/patch
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/patch
   
   Required parameters: firewallPolicy
   
@@ -261,7 +261,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/testIamPermissions
   
   Required parameters: resource
   
@@ -295,7 +295,7 @@
      auth))))
 
 (defn move$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/move
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/move
   
   Required parameters: firewallPolicy
   
@@ -322,7 +322,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/delete
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/delete
   
   Required parameters: firewallPolicy
   
@@ -349,7 +349,7 @@
      auth))))
 
 (defn removeAssociation$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/removeAssociation
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/removeAssociation
   
   Required parameters: firewallPolicy
   
@@ -376,7 +376,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/getIamPolicy
   
   Required parameters: resource
   
@@ -404,7 +404,7 @@
      auth))))
 
 (defn patchRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/patchRule
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/patchRule
   
   Required parameters: firewallPolicy
   
@@ -462,7 +462,7 @@
      auth))))
 
 (defn addRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/addRule
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/addRule
   
   Required parameters: firewallPolicy
   
@@ -520,7 +520,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/list
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/list
   
   Required parameters: none
   
@@ -548,7 +548,7 @@
      auth))))
 
 (defn getRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/getRule
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/getRule
   
   Required parameters: firewallPolicy
   
@@ -576,7 +576,7 @@
      auth))))
 
 (defn addAssociation$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/addAssociation
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/addAssociation
   
   Required parameters: firewallPolicy
   
@@ -613,7 +613,7 @@
      auth))))
 
 (defn getAssociation$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/getAssociation
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/getAssociation
   
   Required parameters: firewallPolicy
   
@@ -641,7 +641,7 @@
      auth))))
 
 (defn listAssociations$
-  "https://cloud.google.com/compute/api/reference/rest/v1/firewallPolicies/listAssociations
+  "https://cloud.google.com/products/compute/v1/docs/firewallPolicies/listAssociations
   
   Required parameters: none
   

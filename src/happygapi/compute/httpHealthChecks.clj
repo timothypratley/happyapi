@@ -1,13 +1,13 @@
 (ns happygapi.compute.httpHealthChecks
   "Compute Engine API: httpHealthChecks.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/httpHealthChecks"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/httpHealthChecks/list
+  "https://cloud.google.com/products/compute/v1/docs/httpHealthChecks/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/httpHealthChecks/get
+  "https://cloud.google.com/products/compute/v1/docs/httpHealthChecks/get
   
   Required parameters: httpHealthCheck, project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/httpHealthChecks/insert
+  "https://cloud.google.com/products/compute/v1/docs/httpHealthChecks/insert
   
   Required parameters: project
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/httpHealthChecks/delete
+  "https://cloud.google.com/products/compute/v1/docs/httpHealthChecks/delete
   
   Required parameters: httpHealthCheck, project
   
@@ -135,7 +135,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/httpHealthChecks/update
+  "https://cloud.google.com/products/compute/v1/docs/httpHealthChecks/update
   
   Required parameters: httpHealthCheck, project
   
@@ -180,7 +180,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/httpHealthChecks/patch
+  "https://cloud.google.com/products/compute/v1/docs/httpHealthChecks/patch
   
   Required parameters: httpHealthCheck, project
   

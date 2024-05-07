@@ -1,13 +1,13 @@
 (ns happygapi.content.freelistingsprogram
   "Content API for Shopping: freelistingsprogram.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/freelistingsprogram"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/freelistingsprogram/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn requestreview$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/freelistingsprogram/requestreview
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn checkoutsettings-get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/freelistingsprogram/checkoutsettings/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn checkoutsettings-insert$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/freelistingsprogram/checkoutsettings/insert
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn checkoutsettings-delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/freelistingsprogram/checkoutsettings/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

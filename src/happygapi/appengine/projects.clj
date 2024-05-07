@@ -1,13 +1,13 @@
 (ns happygapi.appengine.projects
   "App Engine Admin API: projects.
   Provisions and manages developers' App Engine applications.
-  See: https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/appengine/docs/admin-api/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-applications-authorizedDomains-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/projects/locations/applications/authorizedDomains/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/projects/locations/applications/authorizedDomains/list
   
   Required parameters: projectsId, locationsId, applicationsId
   

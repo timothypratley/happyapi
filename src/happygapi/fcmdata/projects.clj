@@ -1,13 +1,13 @@
 (ns happygapi.fcmdata.projects
   "Firebase Cloud Messaging Data API: projects.
   Provides additional information about Firebase Cloud Messaging (FCM) message sends and deliveries.
-  See: https://firebase.google.com/docs/cloud-messagingapi/reference/rest/v1beta1/projects"
+  See: https://firebase.google.com/docs/cloud-messaging"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn androidApps-deliveryData-list$
-  "https://firebase.google.com/docs/cloud-messagingapi/reference/rest/v1beta1/projects/androidApps/deliveryData/list
+  "https://firebase.google.com/docs/cloud-messaging
   
   Required parameters: parent
   

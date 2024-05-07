@@ -1,13 +1,13 @@
 (ns happygapi.videointelligence.projects
   "Cloud Video Intelligence API: projects.
   Detects objects, explicit content, and scene changes in videos. It also specifies the region for annotation and transcribes speech to text. Supports both asynchronous API and streaming API.
-  See: https://cloud.google.com/video-intelligence/docs/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/video-intelligence/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/video-intelligence/docs/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/video-intelligence/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/video-intelligence/docs/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/video-intelligence/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/video-intelligence/docs/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/video-intelligence/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/video-intelligence/docs/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/video-intelligence/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   

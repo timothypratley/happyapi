@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionTargetTcpProxies
   "Compute Engine API: regionTargetTcpProxies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionTargetTcpProxies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetTcpProxies/list
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetTcpProxies/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetTcpProxies/get
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetTcpProxies/get
   
   Required parameters: project, region, targetTcpProxy
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetTcpProxies/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetTcpProxies/insert
   
   Required parameters: project, region
   
@@ -107,7 +107,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionTargetTcpProxies/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionTargetTcpProxies/delete
   
   Required parameters: project, region, targetTcpProxy
   

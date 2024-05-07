@@ -1,13 +1,13 @@
 (ns happygapi.firebase.projects
   "Firebase Management API: projects.
   The Firebase Management API enables programmatic setup and management of Firebase projects, including a project's Firebase resources and Firebase apps.
-  See: https://firebase.google.comapi/reference/rest/v1beta1/projects"
+  See: https://firebase.google.com"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/get
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn patch$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/patch
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn getAnalyticsDetails$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/getAnalyticsDetails
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn addFirebase$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/addFirebase
+  "https://firebase.google.com
   
   Required parameters: project
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn removeAnalytics$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/removeAnalytics
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -174,7 +174,7 @@
      auth))))
 
 (defn searchApps$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/searchApps
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn list$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/list
+  "https://firebase.google.com
   
   Required parameters: none
   
@@ -232,7 +232,7 @@
      auth))))
 
 (defn getAdminSdkConfig$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/getAdminSdkConfig
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -261,7 +261,7 @@
      auth))))
 
 (defn addGoogleAnalytics$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/addGoogleAnalytics
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -294,7 +294,7 @@
      auth))))
 
 (defn androidApps-get$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/get
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -323,7 +323,7 @@
      auth))))
 
 (defn androidApps-list$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/list
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -352,7 +352,7 @@
      auth))))
 
 (defn androidApps-create$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/create
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -395,7 +395,7 @@
      auth))))
 
 (defn androidApps-patch$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/patch
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -438,7 +438,7 @@
      auth))))
 
 (defn androidApps-remove$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/remove
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -474,7 +474,7 @@
      auth))))
 
 (defn androidApps-undelete$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/undelete
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -507,7 +507,7 @@
      auth))))
 
 (defn androidApps-getConfig$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/getConfig
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -536,7 +536,7 @@
      auth))))
 
 (defn androidApps-sha-list$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/sha/list
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -565,7 +565,7 @@
      auth))))
 
 (defn androidApps-sha-create$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/sha/create
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -598,7 +598,7 @@
      auth))))
 
 (defn androidApps-sha-delete$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/androidApps/sha/delete
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -625,7 +625,7 @@
      auth))))
 
 (defn iosApps-get$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/iosApps/get
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -654,7 +654,7 @@
      auth))))
 
 (defn iosApps-list$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/iosApps/list
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -683,7 +683,7 @@
      auth))))
 
 (defn iosApps-create$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/iosApps/create
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -726,7 +726,7 @@
      auth))))
 
 (defn iosApps-patch$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/iosApps/patch
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -769,7 +769,7 @@
      auth))))
 
 (defn iosApps-remove$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/iosApps/remove
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -805,7 +805,7 @@
      auth))))
 
 (defn iosApps-undelete$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/iosApps/undelete
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -838,7 +838,7 @@
      auth))))
 
 (defn iosApps-getConfig$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/iosApps/getConfig
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -867,7 +867,7 @@
      auth))))
 
 (defn availableLocations-list$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/availableLocations/list
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -896,7 +896,7 @@
      auth))))
 
 (defn defaultLocation-finalize$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/defaultLocation/finalize
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -929,7 +929,7 @@
      auth))))
 
 (defn webApps-get$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/webApps/get
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -958,7 +958,7 @@
      auth))))
 
 (defn webApps-list$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/webApps/list
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -987,7 +987,7 @@
      auth))))
 
 (defn webApps-create$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/webApps/create
+  "https://firebase.google.com
   
   Required parameters: parent
   
@@ -1029,7 +1029,7 @@
      auth))))
 
 (defn webApps-patch$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/webApps/patch
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -1071,7 +1071,7 @@
      auth))))
 
 (defn webApps-remove$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/webApps/remove
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -1107,7 +1107,7 @@
      auth))))
 
 (defn webApps-undelete$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/webApps/undelete
+  "https://firebase.google.com
   
   Required parameters: name
   
@@ -1140,7 +1140,7 @@
      auth))))
 
 (defn webApps-getConfig$
-  "https://firebase.google.comapi/reference/rest/v1beta1/projects/webApps/getConfig
+  "https://firebase.google.com
   
   Required parameters: name
   

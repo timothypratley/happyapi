@@ -1,13 +1,13 @@
 (ns happygapi.cloudshell.users
   "Cloud Shell API: users.
   Allows users to start, configure, and connect to interactive shell sessions running in the cloud. 
-  See: https://cloud.google.com/shell/docs/api/reference/rest/v1/users"
+  See: https://cloud.google.com/shell/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn environments-get$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/users/environments/get
+  "https://cloud.google.com/shell/docs/reference/rest/v1/users/environments/get
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn environments-start$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/users/environments/start
+  "https://cloud.google.com/shell/docs/reference/rest/v1/users/environments/start
   
   Required parameters: name
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn environments-authorize$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/users/environments/authorize
+  "https://cloud.google.com/shell/docs/reference/rest/v1/users/environments/authorize
   
   Required parameters: name
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn environments-addPublicKey$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/users/environments/addPublicKey
+  "https://cloud.google.com/shell/docs/reference/rest/v1/users/environments/addPublicKey
   
   Required parameters: environment
   
@@ -129,7 +129,7 @@
      auth))))
 
 (defn environments-removePublicKey$
-  "https://cloud.google.com/shell/docs/api/reference/rest/v1/users/environments/removePublicKey
+  "https://cloud.google.com/shell/docs/reference/rest/v1/users/environments/removePublicKey
   
   Required parameters: environment
   

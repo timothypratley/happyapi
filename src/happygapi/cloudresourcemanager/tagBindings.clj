@@ -1,13 +1,13 @@
 (ns happygapi.cloudresourcemanager.tagBindings
   "Cloud Resource Manager API: tagBindings.
   Creates, reads, and updates metadata for Google Cloud Platform resource containers.
-  See: https://cloud.google.com/resource-managerapi/reference/rest/v3/tagBindings"
+  See: https://cloud.google.com/resource-manager"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagBindings/list
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagBindings/list
   
   Required parameters: none
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagBindings/create
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagBindings/create
   
   Required parameters: none
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/resource-managerapi/reference/rest/v3/tagBindings/delete
+  "https://cloud.google.com/resource-manager/reference/rest/v3/tagBindings/delete
   
   Required parameters: name
   

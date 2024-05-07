@@ -1,13 +1,13 @@
 (ns happygapi.cloudprofiler.projects
   "Cloud Profiler API: projects.
   Manages continuous profiling information.
-  See: https://cloud.google.com/profiler/api/reference/rest/v2/projects"
+  See: https://cloud.google.com/products/operations"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn profiles-create$
-  "https://cloud.google.com/profiler/api/reference/rest/v2/projects/profiles/create
+  "https://cloud.google.com/products/operations/v2/docs/projects/profiles/create
   
   Required parameters: parent
   
@@ -42,7 +42,7 @@
      auth))))
 
 (defn profiles-createOffline$
-  "https://cloud.google.com/profiler/api/reference/rest/v2/projects/profiles/createOffline
+  "https://cloud.google.com/products/operations/v2/docs/projects/profiles/createOffline
   
   Required parameters: parent
   
@@ -82,7 +82,7 @@
      auth))))
 
 (defn profiles-patch$
-  "https://cloud.google.com/profiler/api/reference/rest/v2/projects/profiles/patch
+  "https://cloud.google.com/products/operations/v2/docs/projects/profiles/patch
   
   Required parameters: name
   
@@ -122,7 +122,7 @@
      auth))))
 
 (defn profiles-list$
-  "https://cloud.google.com/profiler/api/reference/rest/v2/projects/profiles/list
+  "https://cloud.google.com/products/operations/v2/docs/projects/profiles/list
   
   Required parameters: parent
   

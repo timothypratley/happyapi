@@ -1,13 +1,13 @@
 (ns happygapi.compute.sslPolicies
   "Compute Engine API: sslPolicies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/sslPolicies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslPolicies/list
+  "https://cloud.google.com/products/compute/v1/docs/sslPolicies/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslPolicies/get
+  "https://cloud.google.com/products/compute/v1/docs/sslPolicies/get
   
   Required parameters: project, sslPolicy
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslPolicies/insert
+  "https://cloud.google.com/products/compute/v1/docs/sslPolicies/insert
   
   Required parameters: project
   
@@ -110,7 +110,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslPolicies/delete
+  "https://cloud.google.com/products/compute/v1/docs/sslPolicies/delete
   
   Required parameters: project, sslPolicy
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslPolicies/patch
+  "https://cloud.google.com/products/compute/v1/docs/sslPolicies/patch
   
   Required parameters: project, sslPolicy
   
@@ -184,7 +184,7 @@
      auth))))
 
 (defn listAvailableFeatures$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslPolicies/listAvailableFeatures
+  "https://cloud.google.com/products/compute/v1/docs/sslPolicies/listAvailableFeatures
   
   Required parameters: project
   
@@ -212,7 +212,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslPolicies/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/sslPolicies/aggregatedList
   
   Required parameters: project
   

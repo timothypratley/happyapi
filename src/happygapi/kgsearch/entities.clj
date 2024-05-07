@@ -1,17 +1,17 @@
 (ns happygapi.kgsearch.entities
   "Knowledge Graph Search API: entities.
   Searches the Google Knowledge Graph for entities.
-  See: https://developers.google.com/knowledge-graph/api/reference/rest/v1/entities"
+  See: https://developers.google.com/knowledge-graph/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn search$
-  "https://developers.google.com/knowledge-graph/api/reference/rest/v1/entities/search
+  "https://developers.google.com/knowledge-graph
   
   Required parameters: none
   
-  Optional parameters: ids, limit, languages, types, prefix, query, indent
+  Optional parameters: types, indent, limit, prefix, query, languages, ids
   
   Searches Knowledge Graph for entities that match the constraints. A list of matched entities will be returned in response, which will be in JSON-LD format and compatible with http://schema.org"
   {:scopes nil}

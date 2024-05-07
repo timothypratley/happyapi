@@ -1,10 +1,10 @@
-{:SearchResponse {:description "Response message includes the context and a list of matching results which contain the detail of associated entities.",
-                  :properties {:@context {:description "The local context applicable for the response. See more details at http://www.w3.org/TR/json-ld/#context-definitions.",
-                                          :type "any"},
-                               :@type {:type "any",
+{:SearchResponse {:id "SearchResponse",
+                  :description "Response message includes the context and a list of matching results which contain the detail of associated entities.",
+                  :type "object",
+                  :properties {:@type {:type "any",
                                        :description "The schema type of top-level JSON-LD object, e.g. ItemList."},
                                :itemListElement {:type "array",
                                                  :description "The item list of search results.",
-                                                 :items {:type "any"}}},
-                  :type "object",
-                  :id "SearchResponse"}}
+                                                 :items {:type "any"}},
+                               :@context {:type "any",
+                                          :description "The local context applicable for the response. See more details at http://www.w3.org/TR/json-ld/#context-definitions."}}}}

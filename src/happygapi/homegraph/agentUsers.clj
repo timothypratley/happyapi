@@ -1,13 +1,13 @@
 (ns happygapi.homegraph.agentUsers
   "HomeGraph API: agentUsers.
   
-  See: https://developers.home.google.com/cloud-to-cloud/get-startedapi/reference/rest/v1/agentUsers"
+  See: https://developers.home.google.com/cloud-to-cloud/get-started"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.home.google.com/cloud-to-cloud/get-startedapi/reference/rest/v1/agentUsers/delete
+  "https://developers.home.google.com/cloud-to-cloud/get-started
   
   Required parameters: agentUserId
   

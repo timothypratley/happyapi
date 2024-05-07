@@ -1,13 +1,13 @@
 (ns happygapi.jobs.projects
   "Cloud Talent Solution API: projects.
   Cloud Talent Solution provides the capability to create, read, update, and delete job postings, as well as search jobs based on keywords and filters. 
-  See: https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects"
+  See: https://cloud.google.com/talent-solution/job-search/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn operations-get$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/operations/get
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.operations/get
   
   Required parameters: name
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn tenants-completeQuery$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/completeQuery
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants/completeQuery
   
   Required parameters: tenant
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn tenants-create$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/create
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants/create
   
   Required parameters: parent
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn tenants-get$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/get
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants/get
   
   Required parameters: name
   
@@ -121,7 +121,7 @@
      auth))))
 
 (defn tenants-patch$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/patch
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants/patch
   
   Required parameters: name
   
@@ -154,7 +154,7 @@
      auth))))
 
 (defn tenants-delete$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/delete
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants/delete
   
   Required parameters: name
   
@@ -181,7 +181,7 @@
      auth))))
 
 (defn tenants-list$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/list
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants/list
   
   Required parameters: parent
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn tenants-companies-create$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/companies/create
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.companies/create
   
   Required parameters: parent
   
@@ -253,7 +253,7 @@
      auth))))
 
 (defn tenants-companies-get$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/companies/get
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.companies/get
   
   Required parameters: name
   
@@ -280,7 +280,7 @@
      auth))))
 
 (defn tenants-companies-patch$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/companies/patch
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.companies/patch
   
   Required parameters: name
   
@@ -325,7 +325,7 @@
      auth))))
 
 (defn tenants-companies-delete$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/companies/delete
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.companies/delete
   
   Required parameters: name
   
@@ -352,7 +352,7 @@
      auth))))
 
 (defn tenants-companies-list$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/companies/list
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.companies/list
   
   Required parameters: parent
   
@@ -379,7 +379,7 @@
      auth))))
 
 (defn tenants-clientEvents-create$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/clientEvents/create
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.clientEvents/create
   
   Required parameters: parent
   
@@ -416,7 +416,7 @@
      auth))))
 
 (defn tenants-jobs-get$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/get
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/get
   
   Required parameters: name
   
@@ -443,7 +443,7 @@
      auth))))
 
 (defn tenants-jobs-patch$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/patch
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/patch
   
   Required parameters: name
   
@@ -510,7 +510,7 @@
      auth))))
 
 (defn tenants-jobs-batchUpdate$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/batchUpdate
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/batchUpdate
   
   Required parameters: parent
   
@@ -573,7 +573,7 @@
      auth))))
 
 (defn tenants-jobs-create$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/create
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/create
   
   Required parameters: parent
   
@@ -640,7 +640,7 @@
      auth))))
 
 (defn tenants-jobs-batchCreate$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/batchCreate
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/batchCreate
   
   Required parameters: parent
   
@@ -702,7 +702,7 @@
      auth))))
 
 (defn tenants-jobs-delete$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/delete
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/delete
   
   Required parameters: name
   
@@ -729,7 +729,7 @@
      auth))))
 
 (defn tenants-jobs-search$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/search
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/search
   
   Required parameters: parent
   
@@ -793,7 +793,7 @@
      auth))))
 
 (defn tenants-jobs-batchDelete$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/batchDelete
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/batchDelete
   
   Required parameters: parent
   
@@ -826,7 +826,7 @@
      auth))))
 
 (defn tenants-jobs-list$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/list
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/list
   
   Required parameters: parent
   
@@ -853,7 +853,7 @@
      auth))))
 
 (defn tenants-jobs-searchForAlert$
-  "https://cloud.google.com/talent-solution/job-search/docs/api/reference/rest/v4/projects/tenants/jobs/searchForAlert
+  "https://cloud.google.com/talent-solution/job-search/docs/reference/rest/v4/projects.tenants.jobs/searchForAlert
   
   Required parameters: parent
   

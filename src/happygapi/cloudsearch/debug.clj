@@ -1,13 +1,13 @@
 (ns happygapi.cloudsearch.debug
   "Cloud Search API: debug.
   Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.
-  See: https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/debug"
+  See: https://developers.google.com/cloud-search/docs/guides/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn datasources-items-checkAccess$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/debug/datasources/items/checkAccess
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/debug.datasources.items/checkAccess
   
   Required parameters: name
   
@@ -44,7 +44,7 @@
      auth))))
 
 (defn datasources-items-searchByViewUrl$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/debug/datasources/items/searchByViewUrl
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/debug.datasources.items/searchByViewUrl
   
   Required parameters: name
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn datasources-items-unmappedids-list$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/debug/datasources/items/unmappedids/list
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/debug.datasources.items.unmappedids/list
   
   Required parameters: parent
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn identitysources-unmappedids-list$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/debug/identitysources/unmappedids/list
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/debug.identitysources.unmappedids/list
   
   Required parameters: parent
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn identitysources-items-listForunmappedidentity$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/debug/identitysources/items/listForunmappedidentity
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/debug.identitysources.items/listForunmappedidentity
   
   Required parameters: parent
   

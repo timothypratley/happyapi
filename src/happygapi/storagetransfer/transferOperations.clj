@@ -1,13 +1,13 @@
 (ns happygapi.storagetransfer.transferOperations
   "Storage Transfer API: transferOperations.
   Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. 
-  See: https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferOperations"
+  See: https://cloud.google.com/storage-transfer/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferOperations/list
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferOperations/list
   
   Required parameters: name, filter
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferOperations/get
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferOperations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn cancel$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferOperations/cancel
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferOperations/cancel
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn pause$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferOperations/pause
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferOperations/pause
   
   Required parameters: name
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn resume$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferOperations/resume
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferOperations/resume
   
   Required parameters: name
   

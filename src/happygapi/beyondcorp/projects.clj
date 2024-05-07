@@ -1,13 +1,13 @@
 (ns happygapi.beyondcorp.projects
   "BeyondCorp API: projects.
   Beyondcorp Enterprise provides identity and context aware access controls for enterprise resources and enables zero-trust access. Using the Beyondcorp Enterprise APIs, enterprises can set up multi-cloud and on-prem connectivity solutions.
-  See: https://cloud.google.com/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-appConnections-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-appConnections-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn locations-appConnections-patch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/patch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -277,7 +277,7 @@
      auth))))
 
 (defn locations-appConnections-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -309,7 +309,7 @@
      auth))))
 
 (defn locations-appConnections-create$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/create
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -355,7 +355,7 @@
      auth))))
 
 (defn locations-appConnections-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn locations-appConnections-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -407,7 +407,7 @@
      auth))))
 
 (defn locations-appConnections-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -433,7 +433,7 @@
      auth))))
 
 (defn locations-appConnections-resolve$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnections/resolve
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -459,7 +459,7 @@
      auth))))
 
 (defn locations-appConnectors-resolveInstanceConfig$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/resolveInstanceConfig
+  "https://cloud.google.com
   
   Required parameters: appConnector
   
@@ -485,7 +485,7 @@
      auth))))
 
 (defn locations-appConnectors-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -511,7 +511,7 @@
      auth))))
 
 (defn locations-appConnectors-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -547,7 +547,7 @@
      auth))))
 
 (defn locations-appConnectors-patch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/patch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -591,7 +591,7 @@
      auth))))
 
 (defn locations-appConnectors-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -623,7 +623,7 @@
      auth))))
 
 (defn locations-appConnectors-create$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/create
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -667,7 +667,7 @@
      auth))))
 
 (defn locations-appConnectors-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -693,7 +693,7 @@
      auth))))
 
 (defn locations-appConnectors-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -719,7 +719,7 @@
      auth))))
 
 (defn locations-appConnectors-reportStatus$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/reportStatus
+  "https://cloud.google.com
   
   Required parameters: appConnector
   
@@ -757,7 +757,7 @@
      auth))))
 
 (defn locations-appConnectors-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appConnectors/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -783,7 +783,7 @@
      auth))))
 
 (defn locations-appGateways-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appGateways/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -809,7 +809,7 @@
      auth))))
 
 (defn locations-appGateways-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appGateways/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -835,7 +835,7 @@
      auth))))
 
 (defn locations-appGateways-create$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appGateways/create
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -877,7 +877,7 @@
      auth))))
 
 (defn locations-appGateways-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appGateways/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -903,7 +903,7 @@
      auth))))
 
 (defn locations-appGateways-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appGateways/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -939,7 +939,7 @@
      auth))))
 
 (defn locations-appGateways-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appGateways/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -965,7 +965,7 @@
      auth))))
 
 (defn locations-appGateways-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/appGateways/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -997,7 +997,7 @@
      auth))))
 
 (defn locations-clientConnectorServices-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/clientConnectorServices/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1033,7 +1033,7 @@
      auth))))
 
 (defn locations-clientConnectorServices-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/clientConnectorServices/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1059,7 +1059,7 @@
      auth))))
 
 (defn locations-clientConnectorServices-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/clientConnectorServices/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1091,7 +1091,7 @@
      auth))))
 
 (defn locations-clientGateways-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/clientGateways/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1127,7 +1127,7 @@
      auth))))
 
 (defn locations-clientGateways-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/clientGateways/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1153,7 +1153,7 @@
      auth))))
 
 (defn locations-clientGateways-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/clientGateways/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   

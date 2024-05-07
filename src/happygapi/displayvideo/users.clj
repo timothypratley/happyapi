@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.users
   "Display & Video 360 API: users.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/users"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/users/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: userId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/users/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/users/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -99,7 +99,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/users/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: userId
   
@@ -139,7 +139,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/users/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: userId
   
@@ -165,7 +165,7 @@
      auth))))
 
 (defn bulkEditAssignedUserRoles$
-  "https://developers.google.com/display-video/api/reference/rest/v3/users/bulkEditAssignedUserRoles
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: userId
   

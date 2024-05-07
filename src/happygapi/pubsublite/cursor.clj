@@ -1,13 +1,13 @@
 (ns happygapi.pubsublite.cursor
   "Pub/Sub Lite API: cursor.
   
-  See: https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/cursor"
+  See: https://cloud.google.com/pubsub/lite/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn projects-locations-subscriptions-commitCursor$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/cursor/projects/locations/subscriptions/commitCursor
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/cursor.projects.locations.subscriptions/commitCursor
   
   Required parameters: subscription
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn projects-locations-subscriptions-cursors-list$
-  "https://cloud.google.com/pubsub/lite/docsapi/reference/rest/v1/cursor/projects/locations/subscriptions/cursors/list
+  "https://cloud.google.com/pubsub/lite/docs/reference/rest/v1/cursor.projects.locations.subscriptions.cursors/list
   
   Required parameters: parent
   

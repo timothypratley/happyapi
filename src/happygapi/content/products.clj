@@ -1,13 +1,13 @@
 (ns happygapi.content.products
   "Content API for Shopping: products.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/products"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn custombatch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/products/custombatch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -45,7 +45,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/products/delete
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, productId
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/products/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, productId
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/products/insert
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -153,6 +153,7 @@
    :isBundle boolean,
    :maxHandlingTime string,
    :adsLabels [string],
+   :freeShippingThreshold [{:country string, :priceThreshold Price}],
    :customAttributes [{:name string,
                        :value string,
                        :groupValues [CustomAttribute]}],
@@ -168,18 +169,22 @@
    :canonicalLink string,
    :sizeType string,
    :source string,
+   :structuredTitle {:digitalSourceType string, :content string},
    :shoppingAdsExcludedCountries [string],
    :googleProductCategory string,
    :brand string,
    :title string,
    :unitPricingBaseMeasure {:value string, :unit string},
-   :loyaltyPoints {:name string, :pointsValue string, :ratio number},
    :pickupMethod string,
    :offerId string,
-   :installment {:months string, :amount Price},
+   :installment {:months string,
+                 :amount Price,
+                 :downpayment Price,
+                 :creditType string},
    :identifierExists boolean,
    :excludedDestinations [string],
    :adult boolean,
+   :autoPricingMinPrice {:value string, :currency string},
    :itemGroupId string,
    :customLabel2 string,
    :productLength {:value number, :unit string},
@@ -219,12 +224,18 @@
                :price Price,
                :country string}],
    :gender string,
+   :loyaltyProgram {:programLabel string,
+                    :tierLabel string,
+                    :price Price,
+                    :cashbackForFutureUse Price,
+                    :loyaltyPoints string},
    :targetCountry string,
    :minEnergyEfficiencyClass string,
    :promotionIds [string],
    :price {:value string, :currency string},
    :adsGrouping string,
    :externalSellerId string,
+   :structuredDescription {:digitalSourceType string, :content string},
    :imageLink string,
    :expirationDate string,
    :pattern string,
@@ -255,7 +266,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/products/update
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, productId
   
@@ -311,6 +322,7 @@
    :isBundle boolean,
    :maxHandlingTime string,
    :adsLabels [string],
+   :freeShippingThreshold [{:country string, :priceThreshold Price}],
    :customAttributes [{:name string,
                        :value string,
                        :groupValues [CustomAttribute]}],
@@ -326,18 +338,22 @@
    :canonicalLink string,
    :sizeType string,
    :source string,
+   :structuredTitle {:digitalSourceType string, :content string},
    :shoppingAdsExcludedCountries [string],
    :googleProductCategory string,
    :brand string,
    :title string,
    :unitPricingBaseMeasure {:value string, :unit string},
-   :loyaltyPoints {:name string, :pointsValue string, :ratio number},
    :pickupMethod string,
    :offerId string,
-   :installment {:months string, :amount Price},
+   :installment {:months string,
+                 :amount Price,
+                 :downpayment Price,
+                 :creditType string},
    :identifierExists boolean,
    :excludedDestinations [string],
    :adult boolean,
+   :autoPricingMinPrice {:value string, :currency string},
    :itemGroupId string,
    :customLabel2 string,
    :productLength {:value number, :unit string},
@@ -377,12 +393,18 @@
                :price Price,
                :country string}],
    :gender string,
+   :loyaltyProgram {:programLabel string,
+                    :tierLabel string,
+                    :price Price,
+                    :cashbackForFutureUse Price,
+                    :loyaltyPoints string},
    :targetCountry string,
    :minEnergyEfficiencyClass string,
    :promotionIds [string],
    :price {:value string, :currency string},
    :adsGrouping string,
    :externalSellerId string,
+   :structuredDescription {:digitalSourceType string, :content string},
    :imageLink string,
    :expirationDate string,
    :pattern string,
@@ -413,7 +435,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/products/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

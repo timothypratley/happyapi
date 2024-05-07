@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.floodlightGroups
   "Display & Video 360 API: floodlightGroups.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/floodlightGroups"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/floodlightGroups/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: floodlightGroupId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/floodlightGroups/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: floodlightGroupId
   
@@ -75,7 +75,7 @@
      auth))))
 
 (defn floodlightActivities-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/floodlightGroups/floodlightActivities/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: floodlightGroupId, floodlightActivityId
   
@@ -103,7 +103,7 @@
      auth))))
 
 (defn floodlightActivities-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/floodlightGroups/floodlightActivities/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: floodlightGroupId
   

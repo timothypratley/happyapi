@@ -1,227 +1,13 @@
 (ns happygapi.firebaseappdistribution.projects
   "Firebase App Distribution API: projects.
   
-  See: https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects"
+  See: https://firebase.google.com/products/app-distribution"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
-(defn groups-list$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/groups/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken
-  
-  List groups."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+parent}/groups"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn groups-get$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/groups/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Get a group."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn groups-delete$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/groups/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Delete a group."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn groups-create$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/groups/create
-  
-  Required parameters: parent
-  
-  Optional parameters: groupId
-  
-  Body: 
-  
-  {:releaseCount integer,
-   :displayName string,
-   :name string,
-   :testerCount integer,
-   :inviteLinkCount integer}
-  
-  Create a group."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+parent}/groups"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn groups-patch$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/groups/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:releaseCount integer,
-   :displayName string,
-   :name string,
-   :testerCount integer,
-   :inviteLinkCount integer}
-  
-  Update a group."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn groups-batchLeave$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/groups/batchLeave
-  
-  Required parameters: group
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:emails [string]}
-  
-  Batch removed members from a group. The testers will lose access to all releases that the groups have access to."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:group})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+group}:batchLeave"
-     #{:group}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn groups-batchJoin$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/groups/batchJoin
-  
-  Required parameters: group
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:createMissingTesters boolean, :emails [string]}
-  
-  Batch adds members to a group. The testers will gain access to all releases that the groups have access to."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:group})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+group}:batchJoin"
-     #{:group}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn apps-getAabInfo$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/getAabInfo
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
@@ -247,7 +33,7 @@
      auth))))
 
 (defn apps-releases-distribute$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/distribute
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
@@ -278,47 +64,8 @@
       :as :json}
      auth))))
 
-(defn apps-releases-patch$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/patch
-  
-  Required parameters: name
-  
-  Optional parameters: updateMask
-  
-  Body: 
-  
-  {:testingUri string,
-   :firebaseConsoleUri string,
-   :binaryDownloadUri string,
-   :createTime string,
-   :releaseNotes {:text string},
-   :displayVersion string,
-   :name string,
-   :buildVersion string}
-  
-  Updates a release."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/patch
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn apps-releases-batchDelete$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/batchDelete
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: parent
   
@@ -349,34 +96,8 @@
       :as :json}
      auth))))
 
-(defn apps-releases-list$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken, filter, orderBy
-  
-  Lists releases. By default, sorts by `createTime` in descending order."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+parent}/releases"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn apps-releases-get$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/get
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
@@ -401,14 +122,131 @@
       :as :json}
      auth))))
 
-(defn apps-releases-operations-list$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/operations/list
+(defn apps-releases-list$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, orderBy, filter, pageSize
+  
+  Lists releases. By default, sorts by `createTime` in descending order."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+parent}/releases"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-releases-patch$
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
-  Optional parameters: pageSize, filter, pageToken
+  Optional parameters: updateMask
   
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
+  Body: 
+  
+  {:buildVersion string,
+   :releaseNotes {:text string},
+   :binaryDownloadUri string,
+   :displayVersion string,
+   :firebaseConsoleUri string,
+   :name string,
+   :createTime string,
+   :testingUri string}
+  
+  Updates a release."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-releases-feedbackReports-delete$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes a feedback report."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-releases-feedbackReports-list$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  Lists feedback reports. By default, sorts by `createTime` in descending order."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+parent}/feedbackReports"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn apps-releases-feedbackReports-get$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets a feedback report."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -416,7 +254,7 @@
    (http/get
     (util/get-url
      "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+name}/operations"
+     "v1/{+name}"
      #{:name}
      parameters)
     (merge-with
@@ -428,7 +266,7 @@
      auth))))
 
 (defn apps-releases-operations-wait$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/operations/wait
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
@@ -459,14 +297,14 @@
       :as :json}
      auth))))
 
-(defn apps-releases-operations-get$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/operations/get
+(defn apps-releases-operations-list$
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
-  Optional parameters: none
+  Optional parameters: filter, pageToken, pageSize
   
-  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:name})]}
@@ -474,7 +312,7 @@
    (http/get
     (util/get-url
      "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+name}"
+     "v1/{+name}/operations"
      #{:name}
      parameters)
     (merge-with
@@ -486,7 +324,7 @@
      auth))))
 
 (defn apps-releases-operations-delete$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/operations/delete
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
@@ -511,8 +349,34 @@
       :as :json}
      auth))))
 
+(defn apps-releases-operations-get$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn apps-releases-operations-cancel$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/operations/cancel
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
@@ -543,66 +407,14 @@
       :as :json}
      auth))))
 
-(defn apps-releases-feedbackReports-delete$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/feedbackReports/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes a feedback report."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-releases-feedbackReports-get$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/feedbackReports/get
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets a feedback report."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn apps-releases-feedbackReports-list$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/apps/releases/feedbackReports/list
+(defn testers-list$
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: parent
   
-  Optional parameters: pageToken, pageSize
+  Optional parameters: pageSize, filter, pageToken
   
-  Lists feedback reports. By default, sorts by `createTime` in descending order."
+  Lists testers and their resource ids."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -610,7 +422,7 @@
    (http/get
     (util/get-url
      "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+parent}/feedbackReports"
+     "v1/{+parent}/testers"
      #{:parent}
      parameters)
     (merge-with
@@ -621,40 +433,8 @@
       :as :json}
      auth))))
 
-(defn testers-batchRemove$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/testers/batchRemove
-  
-  Required parameters: project
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:emails [string]}
-  
-  Batch removes testers. If found, this call deletes testers for the specified emails. Returns all deleted testers."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:project})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+project}/testers:batchRemove"
-     #{:project}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn testers-batchAdd$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/testers/batchAdd
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: project
   
@@ -686,7 +466,7 @@
      auth))))
 
 (defn testers-patch$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/testers/patch
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: name
   
@@ -694,8 +474,8 @@
   
   Body: 
   
-  {:groups [string],
-   :name string,
+  {:name string,
+   :groups [string],
    :lastActivityTime string,
    :displayName string}
   
@@ -720,14 +500,170 @@
       :as :json}
      auth))))
 
-(defn testers-list$
-  "https://firebase.google.com/products/app-distributionapi/reference/rest/v1/projects/testers/list
+(defn testers-batchRemove$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: project
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:emails [string]}
+  
+  Batch removes testers. If found, this call deletes testers for the specified emails. Returns all deleted testers."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:project})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+project}/testers:batchRemove"
+     #{:project}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn groups-get$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Get a group."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn groups-delete$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Delete a group."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn groups-create$
+  "https://firebase.google.com/products/app-distribution
   
   Required parameters: parent
   
-  Optional parameters: pageToken, pageSize, filter
+  Optional parameters: groupId
   
-  Lists testers and their resource ids."
+  Body: 
+  
+  {:inviteLinkCount integer,
+   :testerCount integer,
+   :name string,
+   :releaseCount integer,
+   :displayName string}
+  
+  Create a group."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+parent}/groups"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn groups-patch$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: name
+  
+  Optional parameters: updateMask
+  
+  Body: 
+  
+  {:inviteLinkCount integer,
+   :testerCount integer,
+   :name string,
+   :releaseCount integer,
+   :displayName string}
+  
+  Update a group."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/patch
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn groups-list$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken
+  
+  List groups."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters]
   {:pre [(util/has-keys? parameters #{:parent})]}
@@ -735,12 +671,76 @@
    (http/get
     (util/get-url
      "https://firebaseappdistribution.googleapis.com/"
-     "v1/{+parent}/testers"
+     "v1/{+parent}/groups"
      #{:parent}
      parameters)
     (merge-with
      merge
      {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn groups-batchLeave$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: group
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:emails [string]}
+  
+  Batch removed members from a group. The testers will lose access to all releases that the groups have access to."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:group})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+group}:batchLeave"
+     #{:group}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn groups-batchJoin$
+  "https://firebase.google.com/products/app-distribution
+  
+  Required parameters: group
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:createMissingTesters boolean, :emails [string]}
+  
+  Batch adds members to a group. The testers will gain access to all releases that the groups have access to."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:group})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://firebaseappdistribution.googleapis.com/"
+     "v1/{+group}:batchJoin"
+     #{:group}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

@@ -1,13 +1,13 @@
 (ns happygapi.storage.bucketAccessControls
   "Cloud Storage JSON API: bucketAccessControls.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/bucketAccessControls"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/bucketAccessControls/delete
+  "https://cloud.google.com/storage/docs/reference/rest/v1/bucketAccessControls/delete
   
   Required parameters: bucket, entity
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/bucketAccessControls/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/bucketAccessControls/get
   
   Required parameters: bucket, entity
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/bucketAccessControls/insert
+  "https://cloud.google.com/storage/docs/reference/rest/v1/bucketAccessControls/insert
   
   Required parameters: bucket
   
@@ -104,7 +104,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/bucketAccessControls/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/bucketAccessControls/list
   
   Required parameters: bucket
   
@@ -131,7 +131,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/bucketAccessControls/patch
+  "https://cloud.google.com/storage/docs/reference/rest/v1/bucketAccessControls/patch
   
   Required parameters: bucket, entity
   
@@ -174,7 +174,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/bucketAccessControls/update
+  "https://cloud.google.com/storage/docs/reference/rest/v1/bucketAccessControls/update
   
   Required parameters: bucket, entity
   

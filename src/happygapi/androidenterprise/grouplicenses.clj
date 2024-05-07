@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.grouplicenses
   "Google Play EMM API: grouplicenses.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/grouplicenses"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/grouplicenses/list
+  "https://developers.google.com/android/work/play/emm-api/v1/grouplicenses/list
   
   Required parameters: enterpriseId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/grouplicenses/get
+  "https://developers.google.com/android/work/play/emm-api/v1/grouplicenses/get
   
   Required parameters: enterpriseId, groupLicenseId
   

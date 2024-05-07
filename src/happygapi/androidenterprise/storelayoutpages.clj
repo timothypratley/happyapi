@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.storelayoutpages
   "Google Play EMM API: storelayoutpages.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutpages"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutpages/list
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutpages/list
   
   Required parameters: enterpriseId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutpages/insert
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutpages/insert
   
   Required parameters: enterpriseId
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutpages/get
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutpages/get
   
   Required parameters: enterpriseId, pageId
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutpages/update
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutpages/update
   
   Required parameters: enterpriseId, pageId
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/storelayoutpages/delete
+  "https://developers.google.com/android/work/play/emm-api/v1/storelayoutpages/delete
   
   Required parameters: enterpriseId, pageId
   

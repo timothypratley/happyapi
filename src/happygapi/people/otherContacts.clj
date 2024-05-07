@@ -1,13 +1,13 @@
 (ns happygapi.people.otherContacts
   "People API: otherContacts.
   Provides access to information about profiles and contacts.
-  See: https://developers.google.com/people/api/reference/rest/v1/otherContacts"
+  See: https://developers.google.com/people/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/people/api/reference/rest/v1/otherContacts/list
+  "https://developers.google.com/people/api/rest/v1/otherContacts/list
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn copyOtherContactToMyContactsGroup$
-  "https://developers.google.com/people/api/reference/rest/v1/otherContacts/copyOtherContactToMyContactsGroup
+  "https://developers.google.com/people/api/rest/v1/otherContacts/copyOtherContactToMyContactsGroup
   
   Required parameters: resourceName
   
@@ -66,7 +66,7 @@
      auth))))
 
 (defn search$
-  "https://developers.google.com/people/api/reference/rest/v1/otherContacts/search
+  "https://developers.google.com/people/api/rest/v1/otherContacts/search
   
   Required parameters: none
   

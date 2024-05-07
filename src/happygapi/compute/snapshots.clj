@@ -1,13 +1,13 @@
 (ns happygapi.compute.snapshots
   "Compute Engine API: snapshots.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/snapshots"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshots/list
+  "https://cloud.google.com/products/compute/v1/docs/snapshots/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshots/get
+  "https://cloud.google.com/products/compute/v1/docs/snapshots/get
   
   Required parameters: project, snapshot
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshots/insert
+  "https://cloud.google.com/products/compute/v1/docs/snapshots/insert
   
   Required parameters: project
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshots/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/snapshots/setLabels
   
   Required parameters: project, resource
   
@@ -176,7 +176,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshots/delete
+  "https://cloud.google.com/products/compute/v1/docs/snapshots/delete
   
   Required parameters: project, snapshot
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshots/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/snapshots/getIamPolicy
   
   Required parameters: project, resource
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshots/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/snapshots/setIamPolicy
   
   Required parameters: project, resource
   
@@ -273,7 +273,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/snapshots/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/snapshots/testIamPermissions
   
   Required parameters: project, resource
   

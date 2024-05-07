@@ -1,13 +1,13 @@
 (ns happygapi.privateca.projects
   "Certificate Authority API: projects.
   The Certificate Authority Service API is a highly-available, scalable service that enables you to simplify and automate the management of private certificate authorities (CAs) while staying in control of your private keys. 
-  See: https://cloud.google.com/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-caPools-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-caPools-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn locations-caPools-patch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/patch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -274,7 +274,7 @@
      auth))))
 
 (defn locations-caPools-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -306,7 +306,7 @@
      auth))))
 
 (defn locations-caPools-fetchCaCerts$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/fetchCaCerts
+  "https://cloud.google.com
   
   Required parameters: caPool
   
@@ -316,7 +316,7 @@
   
   {:requestId string}
   
-  FetchCaCerts returns the current trust anchor for the CaPool. This will include CA certificate chains for all Certificate Authorities in the ENABLED, DISABLED, or STAGED states."
+  FetchCaCerts returns the current trust anchor for the CaPool. This will include CA certificate chains for all certificate authorities in the ENABLED, DISABLED, or STAGED states."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:caPool})]}
@@ -338,7 +338,7 @@
      auth))))
 
 (defn locations-caPools-create$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/create
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -381,7 +381,7 @@
      auth))))
 
 (defn locations-caPools-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -407,7 +407,7 @@
      auth))))
 
 (defn locations-caPools-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -433,7 +433,7 @@
      auth))))
 
 (defn locations-caPools-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -459,7 +459,7 @@
      auth))))
 
 (defn locations-caPools-certificates-create$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificates/create
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -514,7 +514,7 @@
      auth))))
 
 (defn locations-caPools-certificates-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificates/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -540,7 +540,7 @@
      auth))))
 
 (defn locations-caPools-certificates-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificates/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -566,7 +566,7 @@
      auth))))
 
 (defn locations-caPools-certificates-revoke$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificates/revoke
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -598,7 +598,7 @@
      auth))))
 
 (defn locations-caPools-certificates-patch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificates/patch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -653,7 +653,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-disable$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/disable
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -685,7 +685,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -711,7 +711,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-enable$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/enable
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -743,7 +743,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-patch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/patch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -802,7 +802,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-create$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/create
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -861,7 +861,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -887,7 +887,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-undelete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/undelete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -919,7 +919,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -945,7 +945,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-fetch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/fetch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -971,7 +971,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-activate$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/activate
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -1006,7 +1006,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-certificateRevocationLists-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/certificateRevocationLists/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -1032,7 +1032,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-certificateRevocationLists-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/certificateRevocationLists/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -1058,7 +1058,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-certificateRevocationLists-patch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/certificateRevocationLists/patch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -1101,7 +1101,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-certificateRevocationLists-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/certificateRevocationLists/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1137,7 +1137,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-certificateRevocationLists-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/certificateRevocationLists/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1163,7 +1163,7 @@
      auth))))
 
 (defn locations-caPools-certificateAuthorities-certificateRevocationLists-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/caPools/certificateAuthorities/certificateRevocationLists/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1195,7 +1195,7 @@
      auth))))
 
 (defn locations-certificateTemplates-create$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/certificateTemplates/create
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -1243,7 +1243,7 @@
      auth))))
 
 (defn locations-certificateTemplates-delete$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/certificateTemplates/delete
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -1269,7 +1269,7 @@
      auth))))
 
 (defn locations-certificateTemplates-get$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/certificateTemplates/get
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -1295,7 +1295,7 @@
      auth))))
 
 (defn locations-certificateTemplates-list$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/certificateTemplates/list
+  "https://cloud.google.com
   
   Required parameters: parent
   
@@ -1321,7 +1321,7 @@
      auth))))
 
 (defn locations-certificateTemplates-patch$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/certificateTemplates/patch
+  "https://cloud.google.com
   
   Required parameters: name
   
@@ -1369,7 +1369,7 @@
      auth))))
 
 (defn locations-certificateTemplates-setIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/certificateTemplates/setIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1405,7 +1405,7 @@
      auth))))
 
 (defn locations-certificateTemplates-getIamPolicy$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/certificateTemplates/getIamPolicy
+  "https://cloud.google.com
   
   Required parameters: resource
   
@@ -1431,7 +1431,7 @@
      auth))))
 
 (defn locations-certificateTemplates-testIamPermissions$
-  "https://cloud.google.com/api/reference/rest/v1/projects/locations/certificateTemplates/testIamPermissions
+  "https://cloud.google.com
   
   Required parameters: resource
   

@@ -1,13 +1,13 @@
 (ns happygapi.content.liasettings
   "Content API for Shopping: liasettings.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn setinventoryverificationcontact$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/setinventoryverificationcontact
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId, country, language, contactName, contactEmail
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn setomnichannelexperience$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/setomnichannelexperience
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -97,7 +97,7 @@
      auth))))
 
 (defn requestinventoryverification$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/requestinventoryverification
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId, country
   
@@ -125,7 +125,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/update
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -166,7 +166,7 @@
      auth))))
 
 (defn requestgmbaccess$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/requestgmbaccess
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId, gmbEmail
   
@@ -194,7 +194,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -220,7 +220,7 @@
      auth))))
 
 (defn setposdataprovider$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/setposdataprovider
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId, country
   
@@ -248,7 +248,7 @@
      auth))))
 
 (defn listposdataproviders$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/listposdataproviders
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   
@@ -274,7 +274,7 @@
      auth))))
 
 (defn getaccessiblegmbaccounts$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/getaccessiblegmbaccounts
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId, accountId
   
@@ -300,7 +300,7 @@
      auth))))
 
 (defn custombatch$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/liasettings/custombatch
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: none
   

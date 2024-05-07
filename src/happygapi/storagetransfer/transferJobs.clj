@@ -1,13 +1,13 @@
 (ns happygapi.storagetransfer.transferJobs
   "Storage Transfer API: transferJobs.
   Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. 
-  See: https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferJobs"
+  See: https://cloud.google.com/storage-transfer/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferJobs/create
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/create
   
   Required parameters: none
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferJobs/patch
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/patch
   
   Required parameters: jobName
   
@@ -126,7 +126,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferJobs/get
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/get
   
   Required parameters: jobName, projectId
   
@@ -152,7 +152,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferJobs/list
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/list
   
   Required parameters: filter
   
@@ -178,7 +178,7 @@
      auth))))
 
 (defn run$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferJobs/run
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/run
   
   Required parameters: jobName
   
@@ -210,7 +210,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/transferJobs/delete
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/transferJobs/delete
   
   Required parameters: jobName, projectId
   

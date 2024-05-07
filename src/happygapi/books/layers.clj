@@ -1,13 +1,13 @@
 (ns happygapi.books.layers
   "Books API: layers.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/layers"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/layers/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/layers/get
   
   Required parameters: volumeId, summaryId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/layers/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/layers/list
   
   Required parameters: volumeId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn annotationData-get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/layers/annotationData/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/layers/annotationData/get
   
   Required parameters: volumeId, contentVersion, layerId, annotationDataId
   
@@ -87,7 +87,7 @@
      auth))))
 
 (defn annotationData-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/layers/annotationData/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/layers/annotationData/list
   
   Required parameters: volumeId, contentVersion, layerId
   
@@ -115,7 +115,7 @@
      auth))))
 
 (defn volumeAnnotations-get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/layers/volumeAnnotations/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/layers/volumeAnnotations/get
   
   Required parameters: volumeId, layerId, annotationId
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn volumeAnnotations-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/layers/volumeAnnotations/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/layers/volumeAnnotations/list
   
   Required parameters: volumeId, contentVersion, layerId
   

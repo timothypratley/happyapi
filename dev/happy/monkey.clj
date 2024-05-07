@@ -1,20 +1,22 @@
 (ns happy.monkey
   "Discovers Google API definitions."
-  (:require [clj-http.client :as http]))
+  (:require [clj-http.client :as http]
+            [happy.raven :as raven]))
 
-(def discovery-url "https://www.googleapis.com/discovery/v1/apis")
+(def discovery-url "https://www.googleapis.com/discovery/v1/apis?preferred=true")
 
-(defn fetch
-  "API definitions rarely change, use the memoized version as much as possible."
-  [url]
-  (-> (http/get url {:accept :json :as :json})
-      (:body)))
-
-(defn list-apis
+(defn list-apis'
   "Returns a vector of preferred APIs with their discovery URL."
   []
-  (vec
-    (for [{:keys [preferred name version discoveryRestUrl]} (-> (fetch discovery-url)
-                                                                (:items))
-          :when preferred]
-      [name version discoveryRestUrl])))
+  (-> (raven/get-json discovery-url)
+      (:items)
+      (or (println "ROOT DISCOVERY FAILED:" discovery-url))))
+
+(def list-apis (memoize list-apis'))
+
+(defonce apis (-> (list-apis)
+                  (->> (group-by :name))
+                  (update-vals first)))
+
+(comment
+  (get apis "adexperiencereport"))

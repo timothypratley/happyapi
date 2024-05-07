@@ -1,13 +1,13 @@
 (ns happygapi.appengine.apps
   "App Engine Admin API: apps.
   Provisions and manages developers' App Engine applications.
-  See: https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps"
+  See: https://cloud.google.com/appengine/docs/admin-api/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/get
   
   Required parameters: appsId
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn create$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/create
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/create
   
   Required parameters: none
   
@@ -86,7 +86,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/patch
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/patch
   
   Required parameters: appsId
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn repair$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/repair
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/repair
   
   Required parameters: appsId
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn listRuntimes$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/listRuntimes
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/listRuntimes
   
   Required parameters: appsId
   
@@ -197,7 +197,7 @@
      auth))))
 
 (defn operations-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/operations/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/operations/list
   
   Required parameters: appsId
   
@@ -225,7 +225,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/operations/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/operations/get
   
   Required parameters: appsId, operationsId
   
@@ -253,7 +253,7 @@
      auth))))
 
 (defn services-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/list
   
   Required parameters: appsId
   
@@ -281,7 +281,7 @@
      auth))))
 
 (defn services-get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/get
   
   Required parameters: appsId, servicesId
   
@@ -309,7 +309,7 @@
      auth))))
 
 (defn services-patch$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/patch
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/patch
   
   Required parameters: appsId, servicesId
   
@@ -346,7 +346,7 @@
      auth))))
 
 (defn services-delete$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/delete
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/delete
   
   Required parameters: appsId, servicesId
   
@@ -372,7 +372,7 @@
      auth))))
 
 (defn services-versions-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/list
   
   Required parameters: appsId, servicesId
   
@@ -400,7 +400,7 @@
      auth))))
 
 (defn services-versions-get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/get
   
   Required parameters: appsId, servicesId, versionsId
   
@@ -430,7 +430,7 @@
      auth))))
 
 (defn services-versions-create$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/create
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/create
   
   Required parameters: appsId, servicesId
   
@@ -562,7 +562,7 @@
      auth))))
 
 (defn services-versions-patch$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/patch
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/patch
   
   Required parameters: appsId, servicesId, versionsId
   
@@ -696,7 +696,7 @@
      auth))))
 
 (defn services-versions-delete$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/delete
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/delete
   
   Required parameters: appsId, servicesId, versionsId
   
@@ -724,7 +724,7 @@
      auth))))
 
 (defn services-versions-instances-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/instances/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/instances/list
   
   Required parameters: appsId, servicesId, versionsId
   
@@ -754,7 +754,7 @@
      auth))))
 
 (defn services-versions-instances-get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/instances/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/instances/get
   
   Required parameters: appsId, servicesId, versionsId, instancesId
   
@@ -784,7 +784,7 @@
      auth))))
 
 (defn services-versions-instances-delete$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/instances/delete
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/instances/delete
   
   Required parameters: appsId, servicesId, versionsId, instancesId
   
@@ -812,7 +812,7 @@
      auth))))
 
 (defn services-versions-instances-debug$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/services/versions/instances/debug
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/services/versions/instances/debug
   
   Required parameters: appsId, servicesId, versionsId, instancesId
   
@@ -846,7 +846,7 @@
      auth))))
 
 (defn firewall-ingressRules-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/firewall/ingressRules/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/firewall/ingressRules/list
   
   Required parameters: appsId
   
@@ -874,7 +874,7 @@
      auth))))
 
 (defn firewall-ingressRules-batchUpdate$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/firewall/ingressRules/batchUpdate
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/firewall/ingressRules/batchUpdate
   
   Required parameters: appsId
   
@@ -909,7 +909,7 @@
      auth))))
 
 (defn firewall-ingressRules-create$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/firewall/ingressRules/create
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/firewall/ingressRules/create
   
   Required parameters: appsId
   
@@ -944,7 +944,7 @@
      auth))))
 
 (defn firewall-ingressRules-get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/firewall/ingressRules/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/firewall/ingressRules/get
   
   Required parameters: appsId, ingressRulesId
   
@@ -972,7 +972,7 @@
      auth))))
 
 (defn firewall-ingressRules-patch$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/firewall/ingressRules/patch
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/firewall/ingressRules/patch
   
   Required parameters: appsId, ingressRulesId
   
@@ -1007,7 +1007,7 @@
      auth))))
 
 (defn firewall-ingressRules-delete$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/firewall/ingressRules/delete
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/firewall/ingressRules/delete
   
   Required parameters: appsId, ingressRulesId
   
@@ -1033,7 +1033,7 @@
      auth))))
 
 (defn authorizedDomains-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/authorizedDomains/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/authorizedDomains/list
   
   Required parameters: appsId
   
@@ -1061,7 +1061,7 @@
      auth))))
 
 (defn authorizedCertificates-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/authorizedCertificates/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/authorizedCertificates/list
   
   Required parameters: appsId
   
@@ -1089,7 +1089,7 @@
      auth))))
 
 (defn authorizedCertificates-get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/authorizedCertificates/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/authorizedCertificates/get
   
   Required parameters: appsId, authorizedCertificatesId
   
@@ -1119,7 +1119,7 @@
      auth))))
 
 (defn authorizedCertificates-create$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/authorizedCertificates/create
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/authorizedCertificates/create
   
   Required parameters: appsId
   
@@ -1159,7 +1159,7 @@
      auth))))
 
 (defn authorizedCertificates-patch$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/authorizedCertificates/patch
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/authorizedCertificates/patch
   
   Required parameters: appsId, authorizedCertificatesId
   
@@ -1201,7 +1201,7 @@
      auth))))
 
 (defn authorizedCertificates-delete$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/authorizedCertificates/delete
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/authorizedCertificates/delete
   
   Required parameters: appsId, authorizedCertificatesId
   
@@ -1229,7 +1229,7 @@
      auth))))
 
 (defn domainMappings-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/domainMappings/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/domainMappings/list
   
   Required parameters: appsId
   
@@ -1257,7 +1257,7 @@
      auth))))
 
 (defn domainMappings-get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/domainMappings/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/domainMappings/get
   
   Required parameters: appsId, domainMappingsId
   
@@ -1285,7 +1285,7 @@
      auth))))
 
 (defn domainMappings-create$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/domainMappings/create
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/domainMappings/create
   
   Required parameters: appsId
   
@@ -1322,7 +1322,7 @@
      auth))))
 
 (defn domainMappings-patch$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/domainMappings/patch
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/domainMappings/patch
   
   Required parameters: appsId, domainMappingsId
   
@@ -1359,7 +1359,7 @@
      auth))))
 
 (defn domainMappings-delete$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/domainMappings/delete
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/domainMappings/delete
   
   Required parameters: appsId, domainMappingsId
   
@@ -1385,7 +1385,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/locations/list
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/locations/list
   
   Required parameters: appsId
   
@@ -1413,7 +1413,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/appengine/docs/admin-api/api/reference/rest/v1/apps/locations/get
+  "https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps/locations/get
   
   Required parameters: appsId, locationsId
   

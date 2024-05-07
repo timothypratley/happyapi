@@ -1,17 +1,17 @@
 (ns happygapi.policysimulator.operations
   "Policy Simulator API: operations.
    Policy Simulator is a collection of endpoints for creating, running, and viewing a Replay. A `Replay` is a type of simulation that lets you see how your members' access to resources might change if you changed your IAM policy. During a `Replay`, Policy Simulator re-evaluates, or replays, past access attempts under both the current policy and your proposed policy, and compares those results to determine how your members' access might change under the proposed policy.
-  See: https://cloud.google.com/iam/docs/simulating-accessapi/reference/rest/v1/operations"
+  See: https://cloud.google.com/policy-intelligence/docs/simulate-iam-policies"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/iam/docs/simulating-accessapi/reference/rest/v1/operations/list
+  "https://cloud.google.com/policy-intelligence/docs/simulate-iam-policies
   
   Required parameters: name
   
-  Optional parameters: pageToken, filter, pageSize
+  Optional parameters: filter, pageSize, pageToken
   
   Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/iam/docs/simulating-accessapi/reference/rest/v1/operations/get
+  "https://cloud.google.com/policy-intelligence/docs/simulate-iam-policies
   
   Required parameters: name
   

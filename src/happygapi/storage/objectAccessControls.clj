@@ -1,13 +1,13 @@
 (ns happygapi.storage.objectAccessControls
   "Cloud Storage JSON API: objectAccessControls.
   Stores and retrieves potentially large, immutable data objects.
-  See: https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objectAccessControls"
+  See: https://cloud.google.com/storage/docs/json_api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objectAccessControls/delete
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objectAccessControls/delete
   
   Required parameters: bucket, entity, object
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objectAccessControls/get
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objectAccessControls/get
   
   Required parameters: bucket, entity, object
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objectAccessControls/insert
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objectAccessControls/insert
   
   Required parameters: bucket, object
   
@@ -106,7 +106,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objectAccessControls/list
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objectAccessControls/list
   
   Required parameters: bucket, object
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objectAccessControls/patch
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objectAccessControls/patch
   
   Required parameters: bucket, entity, object
   
@@ -178,7 +178,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/storage/docs/json_api/api/reference/rest/v1/objectAccessControls/update
+  "https://cloud.google.com/storage/docs/reference/rest/v1/objectAccessControls/update
   
   Required parameters: bucket, entity, object
   

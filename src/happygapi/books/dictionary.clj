@@ -1,13 +1,13 @@
 (ns happygapi.books.dictionary
   "Books API: dictionary.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/dictionary"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn listOfflineMetadata$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/dictionary/listOfflineMetadata
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/dictionary/listOfflineMetadata
   
   Required parameters: cpksver
   

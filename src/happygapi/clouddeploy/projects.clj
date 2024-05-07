@@ -1,13 +1,13 @@
 (ns happygapi.clouddeploy.projects
   "Cloud Deploy API: projects.
   
-  See: https://cloud.google.com/deploy/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/deploy/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-getConfig$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/getConfig
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-setIamPolicy$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/setIamPolicy
+  "https://cloud.google.com/deploy
   
   Required parameters: resource
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-patch$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/patch
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -301,7 +301,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-testIamPermissions$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/testIamPermissions
+  "https://cloud.google.com/deploy
   
   Required parameters: resource
   
@@ -333,7 +333,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-create$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/create
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -377,7 +377,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-delete$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/delete
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-getIamPolicy$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/getIamPolicy
+  "https://cloud.google.com/deploy
   
   Required parameters: resource
   
@@ -429,7 +429,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-rollbackTarget$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/rollbackTarget
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -466,7 +466,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/list
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -492,7 +492,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/list
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -518,7 +518,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -544,7 +544,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-create$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/create
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -633,7 +633,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-abandon$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/abandon
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -665,7 +665,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-approve$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/approve
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -697,7 +697,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-advance$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/advance
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -729,7 +729,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-cancel$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/cancel
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -761,7 +761,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/list
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -787,7 +787,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -813,7 +813,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-create$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/create
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -872,7 +872,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-ignoreJob$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/ignoreJob
+  "https://cloud.google.com/deploy
   
   Required parameters: rollout
   
@@ -904,7 +904,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-retryJob$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/retryJob
+  "https://cloud.google.com/deploy
   
   Required parameters: rollout
   
@@ -936,7 +936,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-jobRuns-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/jobRuns/list
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -962,7 +962,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-jobRuns-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/jobRuns/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -988,7 +988,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-releases-rollouts-jobRuns-terminate$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/releases/rollouts/jobRuns/terminate
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1020,7 +1020,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-automations-create$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/automations/create
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -1065,7 +1065,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-automations-patch$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/automations/patch
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1110,7 +1110,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-automations-delete$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/automations/delete
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1136,7 +1136,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-automations-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/automations/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1162,7 +1162,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-automations-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/automations/list
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -1188,7 +1188,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-automationRuns-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/automationRuns/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1214,7 +1214,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-automationRuns-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/automationRuns/list
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -1240,7 +1240,7 @@
      auth))))
 
 (defn locations-deliveryPipelines-automationRuns-cancel$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/deliveryPipelines/automationRuns/cancel
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1272,7 +1272,7 @@
      auth))))
 
 (defn locations-targets-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/targets/list
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -1298,7 +1298,7 @@
      auth))))
 
 (defn locations-targets-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/targets/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1324,7 +1324,7 @@
      auth))))
 
 (defn locations-targets-create$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/targets/create
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -1378,7 +1378,7 @@
      auth))))
 
 (defn locations-targets-patch$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/targets/patch
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1432,7 +1432,7 @@
      auth))))
 
 (defn locations-targets-delete$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/targets/delete
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1458,7 +1458,7 @@
      auth))))
 
 (defn locations-targets-setIamPolicy$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/targets/setIamPolicy
+  "https://cloud.google.com/deploy
   
   Required parameters: resource
   
@@ -1494,7 +1494,7 @@
      auth))))
 
 (defn locations-targets-getIamPolicy$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/targets/getIamPolicy
+  "https://cloud.google.com/deploy
   
   Required parameters: resource
   
@@ -1520,7 +1520,7 @@
      auth))))
 
 (defn locations-targets-testIamPermissions$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/targets/testIamPermissions
+  "https://cloud.google.com/deploy
   
   Required parameters: resource
   
@@ -1552,7 +1552,7 @@
      auth))))
 
 (defn locations-customTargetTypes-list$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/customTargetTypes/list
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -1578,7 +1578,7 @@
      auth))))
 
 (defn locations-customTargetTypes-get$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/customTargetTypes/get
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1604,7 +1604,7 @@
      auth))))
 
 (defn locations-customTargetTypes-create$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/customTargetTypes/create
+  "https://cloud.google.com/deploy
   
   Required parameters: parent
   
@@ -1647,7 +1647,7 @@
      auth))))
 
 (defn locations-customTargetTypes-patch$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/customTargetTypes/patch
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1690,7 +1690,7 @@
      auth))))
 
 (defn locations-customTargetTypes-delete$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/customTargetTypes/delete
+  "https://cloud.google.com/deploy
   
   Required parameters: name
   
@@ -1716,7 +1716,7 @@
      auth))))
 
 (defn locations-customTargetTypes-setIamPolicy$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/customTargetTypes/setIamPolicy
+  "https://cloud.google.com/deploy
   
   Required parameters: resource
   
@@ -1752,7 +1752,7 @@
      auth))))
 
 (defn locations-customTargetTypes-getIamPolicy$
-  "https://cloud.google.com/deploy/api/reference/rest/v1/projects/locations/customTargetTypes/getIamPolicy
+  "https://cloud.google.com/deploy
   
   Required parameters: resource
   

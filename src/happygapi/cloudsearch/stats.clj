@@ -1,13 +1,13 @@
 (ns happygapi.cloudsearch.stats
   "Cloud Search API: stats.
   Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.
-  See: https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats"
+  See: https://developers.google.com/cloud-search/docs/guides/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn getIndex$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/getIndex
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats/getIndex
   
   Required parameters: none
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn getQuery$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/getQuery
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats/getQuery
   
   Required parameters: none
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn getUser$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/getUser
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats/getUser
   
   Required parameters: none
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn getSession$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/getSession
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats/getSession
   
   Required parameters: none
   
@@ -119,7 +119,7 @@
      auth))))
 
 (defn getSearchapplication$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/getSearchapplication
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats/getSearchapplication
   
   Required parameters: none
   
@@ -147,7 +147,7 @@
      auth))))
 
 (defn index-datasources-get$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/index/datasources/get
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats.index.datasources/get
   
   Required parameters: name
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn query-searchapplications-get$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/query/searchapplications/get
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats.query.searchapplications/get
   
   Required parameters: name
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn user-searchapplications-get$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/user/searchapplications/get
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats.user.searchapplications/get
   
   Required parameters: name
   
@@ -231,7 +231,7 @@
      auth))))
 
 (defn session-searchapplications-get$
-  "https://developers.google.com/cloud-search/docs/guides/api/reference/rest/v1/stats/session/searchapplications/get
+  "https://developers.google.com/cloud-search/docs/reference/rest/v1/stats.session.searchapplications/get
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.zones
   "Compute Engine API: zones.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/zones"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/zones/list
+  "https://cloud.google.com/products/compute/v1/docs/zones/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/zones/get
+  "https://cloud.google.com/products/compute/v1/docs/zones/get
   
   Required parameters: project, zone
   

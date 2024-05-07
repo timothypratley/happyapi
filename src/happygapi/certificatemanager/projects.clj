@@ -1,13 +1,13 @@
 (ns happygapi.certificatemanager.projects
   "Certificate Manager API: projects.
   
-  See: https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/certificate-manager/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-certificates-list$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificates/list
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-certificates-get$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificates/get
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-certificates-create$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificates/create
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -268,7 +268,7 @@
      auth))))
 
 (defn locations-certificates-patch$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificates/patch
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -315,7 +315,7 @@
      auth))))
 
 (defn locations-certificates-delete$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificates/delete
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -341,7 +341,7 @@
      auth))))
 
 (defn locations-certificateMaps-list$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/list
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -367,7 +367,7 @@
      auth))))
 
 (defn locations-certificateMaps-get$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/get
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -393,7 +393,7 @@
      auth))))
 
 (defn locations-certificateMaps-create$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/create
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -432,7 +432,7 @@
      auth))))
 
 (defn locations-certificateMaps-patch$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/patch
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -471,7 +471,7 @@
      auth))))
 
 (defn locations-certificateMaps-delete$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/delete
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -497,7 +497,7 @@
      auth))))
 
 (defn locations-certificateMaps-certificateMapEntries-list$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/certificateMapEntries/list
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -523,7 +523,7 @@
      auth))))
 
 (defn locations-certificateMaps-certificateMapEntries-get$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/certificateMapEntries/get
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -549,7 +549,7 @@
      auth))))
 
 (defn locations-certificateMaps-certificateMapEntries-create$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/certificateMapEntries/create
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -589,7 +589,7 @@
      auth))))
 
 (defn locations-certificateMaps-certificateMapEntries-patch$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/certificateMapEntries/patch
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -629,7 +629,7 @@
      auth))))
 
 (defn locations-certificateMaps-certificateMapEntries-delete$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateMaps/certificateMapEntries/delete
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -655,7 +655,7 @@
      auth))))
 
 (defn locations-dnsAuthorizations-list$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/dnsAuthorizations/list
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -681,7 +681,7 @@
      auth))))
 
 (defn locations-dnsAuthorizations-get$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/dnsAuthorizations/get
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -707,7 +707,7 @@
      auth))))
 
 (defn locations-dnsAuthorizations-create$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/dnsAuthorizations/create
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -746,7 +746,7 @@
      auth))))
 
 (defn locations-dnsAuthorizations-patch$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/dnsAuthorizations/patch
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -785,7 +785,7 @@
      auth))))
 
 (defn locations-dnsAuthorizations-delete$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/dnsAuthorizations/delete
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -811,7 +811,7 @@
      auth))))
 
 (defn locations-certificateIssuanceConfigs-list$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateIssuanceConfigs/list
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -837,7 +837,7 @@
      auth))))
 
 (defn locations-certificateIssuanceConfigs-get$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateIssuanceConfigs/get
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -863,7 +863,7 @@
      auth))))
 
 (defn locations-certificateIssuanceConfigs-create$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateIssuanceConfigs/create
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -903,7 +903,7 @@
      auth))))
 
 (defn locations-certificateIssuanceConfigs-delete$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/certificateIssuanceConfigs/delete
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -929,7 +929,7 @@
      auth))))
 
 (defn locations-trustConfigs-list$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/trustConfigs/list
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -955,7 +955,7 @@
      auth))))
 
 (defn locations-trustConfigs-get$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/trustConfigs/get
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -981,7 +981,7 @@
      auth))))
 
 (defn locations-trustConfigs-create$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/trustConfigs/create
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: parent
   
@@ -1021,7 +1021,7 @@
      auth))))
 
 (defn locations-trustConfigs-patch$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/trustConfigs/patch
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   
@@ -1061,7 +1061,7 @@
      auth))))
 
 (defn locations-trustConfigs-delete$
-  "https://cloud.google.com/certificate-managerapi/reference/rest/v1/projects/locations/trustConfigs/delete
+  "https://cloud.google.com/certificate-manager/docs
   
   Required parameters: name
   

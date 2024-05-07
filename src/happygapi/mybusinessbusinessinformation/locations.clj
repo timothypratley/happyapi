@@ -1,13 +1,13 @@
 (ns happygapi.mybusinessbusinessinformation.locations
   "My Business Business Information API: locations.
   The My Business Business Information API provides an interface for managing business information. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
-  See: https://developers.google.com/my-business/api/reference/rest/v1/locations"
+  See: https://developers.google.com/my-business/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn updateAttributes$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/updateAttributes
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -44,7 +44,7 @@
      auth))))
 
 (defn getAttributes$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/getAttributes
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -70,7 +70,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/get
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -96,7 +96,7 @@
      auth))))
 
 (defn getGoogleUpdated$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/getGoogleUpdated
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -122,7 +122,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/patch
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/delete
+  "https://developers.google.com/my-business
   
   Required parameters: name
   
@@ -229,7 +229,7 @@
      auth))))
 
 (defn attributes-getGoogleUpdated$
-  "https://developers.google.com/my-business/api/reference/rest/v1/locations/attributes/getGoogleUpdated
+  "https://developers.google.com/my-business
   
   Required parameters: name
   

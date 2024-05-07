@@ -1,13 +1,13 @@
 (ns happygapi.alloydb.projects
   "AlloyDB API: projects.
   AlloyDB for PostgreSQL is an open source-compatible database service that provides a powerful option for migrating, modernizing, or building commercial-grade applications. It offers full compatibility with standard PostgreSQL, and is more than 4x faster for transactional workloads and up to 100x faster for analytical queries than standard PostgreSQL in our performance tests. AlloyDB for PostgreSQL offers a 99.99 percent availability SLA inclusive of maintenance. AlloyDB is optimized for the most demanding use cases, allowing you to build new applications that require high transaction throughput, large database sizes, or multiple read resources; scale existing PostgreSQL workloads with no application changes; and modernize legacy proprietary databases. 
-  See: https://cloud.google.com/alloydb/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/alloydb/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-clusters-list$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/list
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters/list
   
   Required parameters: parent
   
@@ -195,7 +195,7 @@
      auth))))
 
 (defn locations-clusters-get$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/get
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters/get
   
   Required parameters: name
   
@@ -221,7 +221,7 @@
      auth))))
 
 (defn locations-clusters-create$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/create
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters/create
   
   Required parameters: parent
   
@@ -246,11 +246,13 @@
                           :schedule [string],
                           :earliestRestorableTime string},
    :createTime string,
+   :pscConfig {:pscEnabled boolean},
    :etag string,
    :state string,
    :networkConfig {:network string, :allocatedIpRange string},
    :updateTime string,
    :reconciling boolean,
+   :maintenanceUpdatePolicy {:maintenanceWindows [MaintenanceWindow]},
    :automatedBackupPolicy {:weeklySchedule WeeklySchedule,
                            :timeBasedRetention TimeBasedRetention,
                            :quantityBasedRetention QuantityBasedRetention,
@@ -293,7 +295,7 @@
      auth))))
 
 (defn locations-clusters-patch$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/patch
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters/patch
   
   Required parameters: name
   
@@ -318,11 +320,13 @@
                           :schedule [string],
                           :earliestRestorableTime string},
    :createTime string,
+   :pscConfig {:pscEnabled boolean},
    :etag string,
    :state string,
    :networkConfig {:network string, :allocatedIpRange string},
    :updateTime string,
    :reconciling boolean,
+   :maintenanceUpdatePolicy {:maintenanceWindows [MaintenanceWindow]},
    :automatedBackupPolicy {:weeklySchedule WeeklySchedule,
                            :timeBasedRetention TimeBasedRetention,
                            :quantityBasedRetention QuantityBasedRetention,
@@ -365,7 +369,7 @@
      auth))))
 
 (defn locations-clusters-delete$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/delete
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters/delete
   
   Required parameters: name
   
@@ -391,7 +395,7 @@
      auth))))
 
 (defn locations-clusters-promote$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/promote
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters/promote
   
   Required parameters: name
   
@@ -423,7 +427,7 @@
      auth))))
 
 (defn locations-clusters-restore$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/restore
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters/restore
   
   Required parameters: parent
   
@@ -446,11 +450,13 @@
              :primaryConfig PrimaryConfig,
              :continuousBackupInfo ContinuousBackupInfo,
              :createTime string,
+             :pscConfig PscConfig,
              :etag string,
              :state string,
              :networkConfig NetworkConfig,
              :updateTime string,
              :reconciling boolean,
+             :maintenanceUpdatePolicy MaintenanceUpdatePolicy,
              :automatedBackupPolicy AutomatedBackupPolicy,
              :satisfiesPzs boolean,
              :migrationSource MigrationSource,
@@ -486,7 +492,7 @@
      auth))))
 
 (defn locations-clusters-createsecondary$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/createsecondary
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters/createsecondary
   
   Required parameters: parent
   
@@ -511,11 +517,13 @@
                           :schedule [string],
                           :earliestRestorableTime string},
    :createTime string,
+   :pscConfig {:pscEnabled boolean},
    :etag string,
    :state string,
    :networkConfig {:network string, :allocatedIpRange string},
    :updateTime string,
    :reconciling boolean,
+   :maintenanceUpdatePolicy {:maintenanceWindows [MaintenanceWindow]},
    :automatedBackupPolicy {:weeklySchedule WeeklySchedule,
                            :timeBasedRetention TimeBasedRetention,
                            :quantityBasedRetention QuantityBasedRetention,
@@ -558,7 +566,7 @@
      auth))))
 
 (defn locations-clusters-instances-failover$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/failover
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/failover
   
   Required parameters: name
   
@@ -590,7 +598,7 @@
      auth))))
 
 (defn locations-clusters-instances-get$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/get
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/get
   
   Required parameters: name
   
@@ -616,7 +624,7 @@
      auth))))
 
 (defn locations-clusters-instances-injectFault$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/injectFault
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/injectFault
   
   Required parameters: name
   
@@ -648,7 +656,7 @@
      auth))))
 
 (defn locations-clusters-instances-restart$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/restart
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/restart
   
   Required parameters: name
   
@@ -680,7 +688,7 @@
      auth))))
 
 (defn locations-clusters-instances-patch$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/patch
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/patch
   
   Required parameters: name
   
@@ -690,6 +698,9 @@
   
   {:availabilityType string,
    :labels {},
+   :pscInstanceConfig {:serviceAttachmentLink string,
+                       :allowedConsumerProjects [string],
+                       :pscDnsName string},
    :databaseFlags {},
    :deleteTime string,
    :clientConnectionConfig {:requireConnectors boolean,
@@ -741,7 +752,7 @@
      auth))))
 
 (defn locations-clusters-instances-create$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/create
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/create
   
   Required parameters: parent
   
@@ -751,6 +762,9 @@
   
   {:availabilityType string,
    :labels {},
+   :pscInstanceConfig {:serviceAttachmentLink string,
+                       :allowedConsumerProjects [string],
+                       :pscDnsName string},
    :databaseFlags {},
    :deleteTime string,
    :clientConnectionConfig {:requireConnectors boolean,
@@ -802,7 +816,7 @@
      auth))))
 
 (defn locations-clusters-instances-delete$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/delete
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/delete
   
   Required parameters: name
   
@@ -828,7 +842,7 @@
      auth))))
 
 (defn locations-clusters-instances-createsecondary$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/createsecondary
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/createsecondary
   
   Required parameters: parent
   
@@ -838,6 +852,9 @@
   
   {:availabilityType string,
    :labels {},
+   :pscInstanceConfig {:serviceAttachmentLink string,
+                       :allowedConsumerProjects [string],
+                       :pscDnsName string},
    :databaseFlags {},
    :deleteTime string,
    :clientConnectionConfig {:requireConnectors boolean,
@@ -889,7 +906,7 @@
      auth))))
 
 (defn locations-clusters-instances-list$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/list
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/list
   
   Required parameters: parent
   
@@ -915,7 +932,7 @@
      auth))))
 
 (defn locations-clusters-instances-getConnectionInfo$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/instances/getConnectionInfo
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances/getConnectionInfo
   
   Required parameters: parent
   
@@ -941,7 +958,7 @@
      auth))))
 
 (defn locations-clusters-users-list$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/users/list
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.users/list
   
   Required parameters: parent
   
@@ -967,7 +984,7 @@
      auth))))
 
 (defn locations-clusters-users-get$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/users/get
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.users/get
   
   Required parameters: name
   
@@ -993,7 +1010,7 @@
      auth))))
 
 (defn locations-clusters-users-create$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/users/create
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.users/create
   
   Required parameters: parent
   
@@ -1028,7 +1045,7 @@
      auth))))
 
 (defn locations-clusters-users-patch$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/users/patch
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.users/patch
   
   Required parameters: name
   
@@ -1063,7 +1080,7 @@
      auth))))
 
 (defn locations-clusters-users-delete$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/clusters/users/delete
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.users/delete
   
   Required parameters: name
   
@@ -1089,7 +1106,7 @@
      auth))))
 
 (defn locations-backups-list$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/backups/list
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.backups/list
   
   Required parameters: parent
   
@@ -1115,7 +1132,7 @@
      auth))))
 
 (defn locations-backups-get$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/backups/get
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.backups/get
   
   Required parameters: name
   
@@ -1141,7 +1158,7 @@
      auth))))
 
 (defn locations-backups-create$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/backups/create
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.backups/create
   
   Required parameters: parent
   
@@ -1195,7 +1212,7 @@
      auth))))
 
 (defn locations-backups-patch$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/backups/patch
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.backups/patch
   
   Required parameters: name
   
@@ -1249,7 +1266,7 @@
      auth))))
 
 (defn locations-backups-delete$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/backups/delete
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.backups/delete
   
   Required parameters: name
   
@@ -1275,7 +1292,7 @@
      auth))))
 
 (defn locations-supportedDatabaseFlags-list$
-  "https://cloud.google.com/alloydb/api/reference/rest/v1/projects/locations/supportedDatabaseFlags/list
+  "https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.supportedDatabaseFlags/list
   
   Required parameters: parent
   

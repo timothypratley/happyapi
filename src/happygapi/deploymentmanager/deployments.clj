@@ -1,13 +1,13 @@
 (ns happygapi.deploymentmanager.deployments
   "Cloud Deployment Manager V2 API: deployments.
   The Google Cloud Deployment Manager v2 API provides services for configuring, deploying, and viewing Google Cloud services and APIs via templates which specify deployments of Cloud resources.
-  See: https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments"
+  See: https://cloud.google.com/deployment-manager/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn cancelPreview$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/cancelPreview
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, deployment
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/get
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, deployment
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/setIamPolicy
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, resource
   
@@ -107,7 +107,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/insert
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/patch
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, deployment
   
@@ -257,7 +257,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/testIamPermissions
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, resource
   
@@ -290,7 +290,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/update
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, deployment
   
@@ -365,7 +365,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/delete
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, deployment
   
@@ -392,7 +392,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/getIamPolicy
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, resource
   
@@ -419,7 +419,7 @@
      auth))))
 
 (defn stop$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/stop
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project, deployment
   
@@ -452,7 +452,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/deployment-managerapi/reference/rest/v2/deployments/list
+  "https://cloud.google.com/deployment-manager/docs
   
   Required parameters: project
   

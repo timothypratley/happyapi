@@ -591,6 +591,43 @@
                                                             :$ref "FleetObservabilityMembershipState"},
                                        :state {:description "The high-level state of this Feature for a single membership.",
                                                :$ref "FeatureState"}}},
+ :ServiceMeshCondition {:id "ServiceMeshCondition",
+                        :description "Condition being reported.",
+                        :type "object",
+                        :properties {:code {:description "Unique identifier of the condition which describes the condition recognizable to the user.",
+                                            :type "string",
+                                            :enumDescriptions ["Default Unspecified code"
+                                                               "Mesh IAM permission denied error code"
+                                                               "CNI config unsupported error code"
+                                                               "GKE sandbox unsupported error code"
+                                                               "Nodepool workload identity federation required error code"
+                                                               "CNI installation failed error code"
+                                                               "CNI pod unschedulable error code"
+                                                               "Multiple control planes unsupported error code"
+                                                               "VPC-SC GA is supported for this control plane."],
+                                            :enum ["CODE_UNSPECIFIED"
+                                                   "MESH_IAM_PERMISSION_DENIED"
+                                                   "CNI_CONFIG_UNSUPPORTED"
+                                                   "GKE_SANDBOX_UNSUPPORTED"
+                                                   "NODEPOOL_WORKLOAD_IDENTITY_FEDERATION_REQUIRED"
+                                                   "CNI_INSTALLATION_FAILED"
+                                                   "CNI_POD_UNSCHEDULABLE"
+                                                   "UNSUPPORTED_MULTIPLE_CONTROL_PLANES"
+                                                   "VPCSC_GA_SUPPORTED"]},
+                                     :documentationLink {:description "Links contains actionable information.",
+                                                         :type "string"},
+                                     :details {:description "A short summary about the issue.",
+                                               :type "string"},
+                                     :severity {:description "Severity level of the condition.",
+                                                :type "string",
+                                                :enumDescriptions ["Unspecified severity"
+                                                                   "Indicates an issue that prevents the mesh from operating correctly"
+                                                                   "Indicates a setting is likely wrong, but the mesh is still able to operate"
+                                                                   "An informational message, not requiring any action"],
+                                                :enum ["SEVERITY_UNSPECIFIED"
+                                                       "ERROR"
+                                                       "WARNING"
+                                                       "INFO"]}}},
  :ServiceMeshStatusDetails {:id "ServiceMeshStatusDetails",
                             :description "Structured and human-readable details for a status.",
                             :type "object",
@@ -1135,7 +1172,11 @@
                                                                     :$ref "ServiceMeshControlPlaneManagement"},
                                            :dataPlaneManagement {:description "Output only. Status of data plane management.",
                                                                  :readOnly true,
-                                                                 :$ref "ServiceMeshDataPlaneManagement"}}},
+                                                                 :$ref "ServiceMeshDataPlaneManagement"},
+                                           :conditions {:description "Output only. List of conditions reported for this membership.",
+                                                        :readOnly true,
+                                                        :type "array",
+                                                        :items {:$ref "ServiceMeshCondition"}}}},
  :RBACRoleBinding {:id "RBACRoleBinding",
                    :description "RBACRoleBinding represents a rbacrolebinding across the Fleet",
                    :type "object",

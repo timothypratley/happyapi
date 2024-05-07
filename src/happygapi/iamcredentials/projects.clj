@@ -1,13 +1,13 @@
 (ns happygapi.iamcredentials.projects
   "IAM Service Account Credentials API: projects.
   Creates short-lived credentials for impersonating IAM service accounts. Disabling this API also disables the IAM API (iam.googleapis.com). However, enabling this API doesn't enable the IAM API. 
-  See: https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentialsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/iam/docs/create-short-lived-credentials-direct"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn serviceAccounts-generateAccessToken$
-  "https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentialsapi/reference/rest/v1/projects/serviceAccounts/generateAccessToken
+  "https://cloud.google.com/iam/docs/create-short-lived-credentials-direct
   
   Required parameters: name
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn serviceAccounts-generateIdToken$
-  "https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentialsapi/reference/rest/v1/projects/serviceAccounts/generateIdToken
+  "https://cloud.google.com/iam/docs/create-short-lived-credentials-direct
   
   Required parameters: name
   
@@ -71,7 +71,7 @@
      auth))))
 
 (defn serviceAccounts-signBlob$
-  "https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentialsapi/reference/rest/v1/projects/serviceAccounts/signBlob
+  "https://cloud.google.com/iam/docs/create-short-lived-credentials-direct
   
   Required parameters: name
   
@@ -103,7 +103,7 @@
      auth))))
 
 (defn serviceAccounts-signJwt$
-  "https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentialsapi/reference/rest/v1/projects/serviceAccounts/signJwt
+  "https://cloud.google.com/iam/docs/create-short-lived-credentials-direct
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.playdeveloperreporting.apps
   "Google Play Developer Reporting API: apps.
   
-  See: https://developers.google.com/play/developer/reportingapi/reference/rest/v1beta1/apps"
+  See: https://developers.google.com/play/developer/reporting"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn search$
-  "https://developers.google.com/play/developer/reportingapi/reference/rest/v1beta1/apps/search
+  "https://developers.google.com/play/developer/reporting/reference/rest/v1beta1/apps/search
   
   Required parameters: none
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn fetchReleaseFilterOptions$
-  "https://developers.google.com/play/developer/reportingapi/reference/rest/v1beta1/apps/fetchReleaseFilterOptions
+  "https://developers.google.com/play/developer/reporting/reference/rest/v1beta1/apps/fetchReleaseFilterOptions
   
   Required parameters: name
   

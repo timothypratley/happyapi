@@ -1,13 +1,13 @@
 (ns happygapi.dataproc.projects
   "Cloud Dataproc API: projects.
   Manages Hadoop-based clusters and jobs on Google Cloud Platform.
-  See: https://cloud.google.com/dataproc/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/dataproc/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn regions-operations-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/operations/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.operations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn regions-operations-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/operations/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.operations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn regions-operations-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/operations/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.operations/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn regions-operations-cancel$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/operations/cancel
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.operations/cancel
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn regions-operations-setIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/operations/setIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.operations/setIamPolicy
   
   Required parameters: resource
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn regions-operations-getIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/operations/getIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.operations/getIamPolicy
   
   Required parameters: resource
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn regions-operations-testIamPermissions$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/operations/testIamPermissions
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.operations/testIamPermissions
   
   Required parameters: resource
   
@@ -207,7 +207,7 @@
      auth))))
 
 (defn regions-autoscalingPolicies-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/autoscalingPolicies/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.autoscalingPolicies/create
   
   Required parameters: parent
   
@@ -250,7 +250,7 @@
      auth))))
 
 (defn regions-autoscalingPolicies-update$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/autoscalingPolicies/update
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.autoscalingPolicies/update
   
   Required parameters: name
   
@@ -293,7 +293,7 @@
      auth))))
 
 (defn regions-autoscalingPolicies-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/autoscalingPolicies/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.autoscalingPolicies/get
   
   Required parameters: name
   
@@ -319,7 +319,7 @@
      auth))))
 
 (defn regions-autoscalingPolicies-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/autoscalingPolicies/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.autoscalingPolicies/list
   
   Required parameters: parent
   
@@ -345,7 +345,7 @@
      auth))))
 
 (defn regions-autoscalingPolicies-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/autoscalingPolicies/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.autoscalingPolicies/delete
   
   Required parameters: name
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn regions-autoscalingPolicies-setIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/autoscalingPolicies/setIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.autoscalingPolicies/setIamPolicy
   
   Required parameters: resource
   
@@ -403,7 +403,7 @@
      auth))))
 
 (defn regions-autoscalingPolicies-getIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/autoscalingPolicies/getIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.autoscalingPolicies/getIamPolicy
   
   Required parameters: resource
   
@@ -435,7 +435,7 @@
      auth))))
 
 (defn regions-autoscalingPolicies-testIamPermissions$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/autoscalingPolicies/testIamPermissions
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.autoscalingPolicies/testIamPermissions
   
   Required parameters: resource
   
@@ -467,7 +467,7 @@
      auth))))
 
 (defn regions-clusters-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/get
   
   Required parameters: projectId, region, clusterName
   
@@ -495,7 +495,7 @@
      auth))))
 
 (defn regions-clusters-setIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/setIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/setIamPolicy
   
   Required parameters: resource
   
@@ -527,7 +527,7 @@
      auth))))
 
 (defn regions-clusters-patch$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/patch
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/patch
   
   Required parameters: projectId, region, clusterName
   
@@ -593,7 +593,7 @@
      auth))))
 
 (defn regions-clusters-testIamPermissions$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/testIamPermissions
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/testIamPermissions
   
   Required parameters: resource
   
@@ -625,7 +625,7 @@
      auth))))
 
 (defn regions-clusters-injectCredentials$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/injectCredentials
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/injectCredentials
   
   Required parameters: project, region, cluster
   
@@ -657,7 +657,7 @@
      auth))))
 
 (defn regions-clusters-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/create
   
   Required parameters: projectId, region
   
@@ -721,7 +721,7 @@
      auth))))
 
 (defn regions-clusters-start$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/start
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/start
   
   Required parameters: projectId, region, clusterName
   
@@ -755,7 +755,7 @@
      auth))))
 
 (defn regions-clusters-repair$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/repair
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/repair
   
   Required parameters: projectId, region, clusterName
   
@@ -795,7 +795,7 @@
      auth))))
 
 (defn regions-clusters-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/delete
   
   Required parameters: projectId, region, clusterName
   
@@ -823,7 +823,7 @@
      auth))))
 
 (defn regions-clusters-diagnose$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/diagnose
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/diagnose
   
   Required parameters: projectId, region, clusterName
   
@@ -863,7 +863,7 @@
      auth))))
 
 (defn regions-clusters-getIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/getIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/getIamPolicy
   
   Required parameters: resource
   
@@ -895,7 +895,7 @@
      auth))))
 
 (defn regions-clusters-stop$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/stop
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/stop
   
   Required parameters: projectId, region, clusterName
   
@@ -929,7 +929,7 @@
      auth))))
 
 (defn regions-clusters-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters/list
   
   Required parameters: projectId, region
   
@@ -955,7 +955,7 @@
      auth))))
 
 (defn regions-clusters-nodeGroups-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/nodeGroups/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters.nodeGroups/create
   
   Required parameters: parent
   
@@ -1003,7 +1003,7 @@
      auth))))
 
 (defn regions-clusters-nodeGroups-resize$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/nodeGroups/resize
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters.nodeGroups/resize
   
   Required parameters: name
   
@@ -1038,7 +1038,7 @@
      auth))))
 
 (defn regions-clusters-nodeGroups-repair$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/nodeGroups/repair
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters.nodeGroups/repair
   
   Required parameters: name
   
@@ -1070,7 +1070,7 @@
      auth))))
 
 (defn regions-clusters-nodeGroups-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/clusters/nodeGroups/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.clusters.nodeGroups/get
   
   Required parameters: name
   
@@ -1096,7 +1096,7 @@
      auth))))
 
 (defn regions-jobs-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/get
   
   Required parameters: projectId, region, jobId
   
@@ -1122,7 +1122,7 @@
      auth))))
 
 (defn regions-jobs-setIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/setIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/setIamPolicy
   
   Required parameters: resource
   
@@ -1154,7 +1154,7 @@
      auth))))
 
 (defn regions-jobs-patch$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/patch
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/patch
   
   Required parameters: projectId, region, jobId
   
@@ -1278,7 +1278,7 @@
      auth))))
 
 (defn regions-jobs-testIamPermissions$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/testIamPermissions
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/testIamPermissions
   
   Required parameters: resource
   
@@ -1310,7 +1310,7 @@
      auth))))
 
 (defn regions-jobs-submit$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/submit
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/submit
   
   Required parameters: projectId, region
   
@@ -1364,7 +1364,7 @@
      auth))))
 
 (defn regions-jobs-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/delete
   
   Required parameters: projectId, region, jobId
   
@@ -1390,7 +1390,7 @@
      auth))))
 
 (defn regions-jobs-getIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/getIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/getIamPolicy
   
   Required parameters: resource
   
@@ -1422,7 +1422,7 @@
      auth))))
 
 (defn regions-jobs-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/list
   
   Required parameters: projectId, region
   
@@ -1448,7 +1448,7 @@
      auth))))
 
 (defn regions-jobs-submitAsOperation$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/submitAsOperation
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/submitAsOperation
   
   Required parameters: projectId, region
   
@@ -1502,7 +1502,7 @@
      auth))))
 
 (defn regions-jobs-cancel$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/jobs/cancel
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.jobs/cancel
   
   Required parameters: projectId, region, jobId
   
@@ -1534,7 +1534,7 @@
      auth))))
 
 (defn regions-workflowTemplates-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/get
   
   Required parameters: name
   
@@ -1560,7 +1560,7 @@
      auth))))
 
 (defn regions-workflowTemplates-setIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/setIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/setIamPolicy
   
   Required parameters: resource
   
@@ -1592,7 +1592,7 @@
      auth))))
 
 (defn regions-workflowTemplates-testIamPermissions$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/testIamPermissions
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/testIamPermissions
   
   Required parameters: resource
   
@@ -1624,7 +1624,7 @@
      auth))))
 
 (defn regions-workflowTemplates-instantiateInline$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/instantiateInline
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/instantiateInline
   
   Required parameters: parent
   
@@ -1683,7 +1683,7 @@
      auth))))
 
 (defn regions-workflowTemplates-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/create
   
   Required parameters: parent
   
@@ -1742,7 +1742,7 @@
      auth))))
 
 (defn regions-workflowTemplates-update$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/update
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/update
   
   Required parameters: name
   
@@ -1801,7 +1801,7 @@
      auth))))
 
 (defn regions-workflowTemplates-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/delete
   
   Required parameters: name
   
@@ -1827,7 +1827,7 @@
      auth))))
 
 (defn regions-workflowTemplates-getIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/getIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/getIamPolicy
   
   Required parameters: resource
   
@@ -1859,7 +1859,7 @@
      auth))))
 
 (defn regions-workflowTemplates-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/list
   
   Required parameters: parent
   
@@ -1885,7 +1885,7 @@
      auth))))
 
 (defn regions-workflowTemplates-instantiate$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/regions/workflowTemplates/instantiate
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.regions.workflowTemplates/instantiate
   
   Required parameters: name
   
@@ -1917,7 +1917,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -1943,7 +1943,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -1969,7 +1969,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -1995,7 +1995,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -2021,7 +2021,7 @@
      auth))))
 
 (defn locations-batches-analyze$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/batches/analyze
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.batches/analyze
   
   Required parameters: name
   
@@ -2053,7 +2053,7 @@
      auth))))
 
 (defn locations-batches-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/batches/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.batches/create
   
   Required parameters: parent
   
@@ -2126,7 +2126,7 @@
      auth))))
 
 (defn locations-batches-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/batches/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.batches/get
   
   Required parameters: name
   
@@ -2152,7 +2152,7 @@
      auth))))
 
 (defn locations-batches-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/batches/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.batches/list
   
   Required parameters: parent
   
@@ -2178,7 +2178,7 @@
      auth))))
 
 (defn locations-batches-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/batches/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.batches/delete
   
   Required parameters: name
   
@@ -2204,7 +2204,7 @@
      auth))))
 
 (defn locations-autoscalingPolicies-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/autoscalingPolicies/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.autoscalingPolicies/create
   
   Required parameters: parent
   
@@ -2247,7 +2247,7 @@
      auth))))
 
 (defn locations-autoscalingPolicies-update$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/autoscalingPolicies/update
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.autoscalingPolicies/update
   
   Required parameters: name
   
@@ -2290,7 +2290,7 @@
      auth))))
 
 (defn locations-autoscalingPolicies-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/autoscalingPolicies/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.autoscalingPolicies/get
   
   Required parameters: name
   
@@ -2316,7 +2316,7 @@
      auth))))
 
 (defn locations-autoscalingPolicies-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/autoscalingPolicies/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.autoscalingPolicies/list
   
   Required parameters: parent
   
@@ -2342,7 +2342,7 @@
      auth))))
 
 (defn locations-autoscalingPolicies-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/autoscalingPolicies/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.autoscalingPolicies/delete
   
   Required parameters: name
   
@@ -2368,7 +2368,7 @@
      auth))))
 
 (defn locations-autoscalingPolicies-setIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/autoscalingPolicies/setIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.autoscalingPolicies/setIamPolicy
   
   Required parameters: resource
   
@@ -2400,7 +2400,7 @@
      auth))))
 
 (defn locations-autoscalingPolicies-getIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/autoscalingPolicies/getIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.autoscalingPolicies/getIamPolicy
   
   Required parameters: resource
   
@@ -2432,7 +2432,7 @@
      auth))))
 
 (defn locations-autoscalingPolicies-testIamPermissions$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/autoscalingPolicies/testIamPermissions
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.autoscalingPolicies/testIamPermissions
   
   Required parameters: resource
   
@@ -2464,7 +2464,7 @@
      auth))))
 
 (defn locations-sessions-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessions/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessions/create
   
   Required parameters: parent
   
@@ -2520,7 +2520,7 @@
      auth))))
 
 (defn locations-sessions-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessions/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessions/get
   
   Required parameters: name
   
@@ -2546,7 +2546,7 @@
      auth))))
 
 (defn locations-sessions-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessions/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessions/list
   
   Required parameters: parent
   
@@ -2572,7 +2572,7 @@
      auth))))
 
 (defn locations-sessions-terminate$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessions/terminate
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessions/terminate
   
   Required parameters: name
   
@@ -2604,7 +2604,7 @@
      auth))))
 
 (defn locations-sessions-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessions/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessions/delete
   
   Required parameters: name
   
@@ -2630,7 +2630,7 @@
      auth))))
 
 (defn locations-sessionTemplates-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessionTemplates/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessionTemplates/create
   
   Required parameters: parent
   
@@ -2675,7 +2675,7 @@
      auth))))
 
 (defn locations-sessionTemplates-patch$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessionTemplates/patch
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessionTemplates/patch
   
   Required parameters: name
   
@@ -2720,7 +2720,7 @@
      auth))))
 
 (defn locations-sessionTemplates-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessionTemplates/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessionTemplates/get
   
   Required parameters: name
   
@@ -2746,7 +2746,7 @@
      auth))))
 
 (defn locations-sessionTemplates-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessionTemplates/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessionTemplates/list
   
   Required parameters: parent
   
@@ -2772,7 +2772,7 @@
      auth))))
 
 (defn locations-sessionTemplates-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/sessionTemplates/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.sessionTemplates/delete
   
   Required parameters: name
   
@@ -2798,7 +2798,7 @@
      auth))))
 
 (defn locations-workflowTemplates-get$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/get
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/get
   
   Required parameters: name
   
@@ -2824,7 +2824,7 @@
      auth))))
 
 (defn locations-workflowTemplates-setIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/setIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/setIamPolicy
   
   Required parameters: resource
   
@@ -2856,7 +2856,7 @@
      auth))))
 
 (defn locations-workflowTemplates-testIamPermissions$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/testIamPermissions
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/testIamPermissions
   
   Required parameters: resource
   
@@ -2888,7 +2888,7 @@
      auth))))
 
 (defn locations-workflowTemplates-instantiateInline$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/instantiateInline
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/instantiateInline
   
   Required parameters: parent
   
@@ -2947,7 +2947,7 @@
      auth))))
 
 (defn locations-workflowTemplates-create$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/create
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/create
   
   Required parameters: parent
   
@@ -3006,7 +3006,7 @@
      auth))))
 
 (defn locations-workflowTemplates-update$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/update
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/update
   
   Required parameters: name
   
@@ -3065,7 +3065,7 @@
      auth))))
 
 (defn locations-workflowTemplates-delete$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/delete
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/delete
   
   Required parameters: name
   
@@ -3091,7 +3091,7 @@
      auth))))
 
 (defn locations-workflowTemplates-getIamPolicy$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/getIamPolicy
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/getIamPolicy
   
   Required parameters: resource
   
@@ -3123,7 +3123,7 @@
      auth))))
 
 (defn locations-workflowTemplates-list$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/list
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/list
   
   Required parameters: parent
   
@@ -3149,7 +3149,7 @@
      auth))))
 
 (defn locations-workflowTemplates-instantiate$
-  "https://cloud.google.com/dataproc/api/reference/rest/v1/projects/locations/workflowTemplates/instantiate
+  "https://cloud.google.com/dataproc/reference/rest/v1/projects.locations.workflowTemplates/instantiate
   
   Required parameters: name
   

@@ -1,13 +1,13 @@
 (ns happygapi.sheets.spreadsheets
   "Google Sheets API: spreadsheets.
   Reads and writes Google Sheets.
-  See: https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets"
+  See: https://developers.google.com/sheets/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/create
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/create
   
   Required parameters: none
   
@@ -79,7 +79,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/get
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/get
   
   Required parameters: spreadsheetId
   
@@ -109,7 +109,7 @@
      auth))))
 
 (defn getByDataFilter$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/getByDataFilter
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/getByDataFilter
   
   Required parameters: spreadsheetId
   
@@ -146,7 +146,7 @@
      auth))))
 
 (defn batchUpdate$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/batchUpdate
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/batchUpdate
   
   Required parameters: spreadsheetId
   
@@ -247,7 +247,7 @@
      auth))))
 
 (defn values-batchGetByDataFilter$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/batchGetByDataFilter
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/batchGetByDataFilter
   
   Required parameters: spreadsheetId
   
@@ -286,7 +286,7 @@
      auth))))
 
 (defn values-get$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/get
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/get
   
   Required parameters: spreadsheetId, range
   
@@ -316,7 +316,7 @@
      auth))))
 
 (defn values-batchUpdate$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/batchUpdate
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/batchUpdate
   
   Required parameters: spreadsheetId
   
@@ -354,7 +354,7 @@
      auth))))
 
 (defn values-batchGet$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/batchGet
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/batchGet
   
   Required parameters: spreadsheetId
   
@@ -384,7 +384,7 @@
      auth))))
 
 (defn values-batchClearByDataFilter$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/batchClearByDataFilter
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/batchClearByDataFilter
   
   Required parameters: spreadsheetId
   
@@ -420,7 +420,7 @@
      auth))))
 
 (defn values-append$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/append
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/append
   
   Required parameters: spreadsheetId, range
   
@@ -454,7 +454,7 @@
      auth))))
 
 (defn values-update$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/update
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/update
   
   Required parameters: spreadsheetId, range
   
@@ -488,7 +488,7 @@
      auth))))
 
 (defn values-batchUpdateByDataFilter$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/batchUpdateByDataFilter
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/batchUpdateByDataFilter
   
   Required parameters: spreadsheetId
   
@@ -528,7 +528,7 @@
      auth))))
 
 (defn values-batchClear$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/batchClear
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/batchClear
   
   Required parameters: spreadsheetId
   
@@ -562,7 +562,7 @@
      auth))))
 
 (defn values-clear$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/values/clear
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/values/clear
   
   Required parameters: spreadsheetId, range
   
@@ -596,7 +596,7 @@
      auth))))
 
 (defn developerMetadata-get$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/developerMetadata/get
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/developerMetadata/get
   
   Required parameters: spreadsheetId, metadataId
   
@@ -624,7 +624,7 @@
      auth))))
 
 (defn developerMetadata-search$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/developerMetadata/search
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/developerMetadata/search
   
   Required parameters: spreadsheetId
   
@@ -660,7 +660,7 @@
      auth))))
 
 (defn sheets-copyTo$
-  "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/sheets/copyTo
+  "https://developers.google.com/sheets/reference/rest/v4/spreadsheets/sheets/copyTo
   
   Required parameters: spreadsheetId, sheetId
   

@@ -1,13 +1,13 @@
 (ns happygapi.calendar.calendarList
   "Calendar API: calendarList.
   Manipulates events and other calendar data.
-  See: https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/calendarList"
+  See: https://developers.google.com/calendar"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/calendarList/delete
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/calendarList/get
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId
   
@@ -60,7 +60,7 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/calendarList/insert
+  "https://developers.google.com/calendar
   
   Required parameters: none
   
@@ -110,7 +110,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/calendarList/list
+  "https://developers.google.com/calendar
   
   Required parameters: none
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/calendarList/patch
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId
   
@@ -187,7 +187,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/calendarList/update
+  "https://developers.google.com/calendar
   
   Required parameters: calendarId
   
@@ -237,7 +237,7 @@
      auth))))
 
 (defn watch$
-  "https://developers.google.com/google-apps/calendar/firstappapi/reference/rest/v3/calendarList/watch
+  "https://developers.google.com/calendar
   
   Required parameters: none
   

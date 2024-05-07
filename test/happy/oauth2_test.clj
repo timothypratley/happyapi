@@ -19,7 +19,7 @@
   (credentials/auth!)
   (let [config @credentials/*secret
         scopes @credentials/*scopes
-        credentials (credentials/fetch-credentials "user")]
+        credentials (credentials/read-credentials "user")]
     (and
       (is (oauth2/refreshable? config credentials))
       (let [new-credentials (oauth2/refresh-credentials config scopes credentials)]

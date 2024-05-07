@@ -1,13 +1,13 @@
 (ns happygapi.datalabeling.projects
   "Data Labeling API: projects.
   Public API for Google Cloud AI Data Labeling Service.
-  See: https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects"
+  See: https://cloud.google.com/ai-platform/data-labeling/docs"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn operations-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/operations/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.operations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/operations/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.operations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn operations-delete$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/operations/delete
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.operations/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn operations-cancel$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/operations/cancel
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.operations/cancel
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn datasets-create$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/create
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets/create
   
   Required parameters: parent
   
@@ -150,7 +150,7 @@
      auth))))
 
 (defn datasets-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets/get
   
   Required parameters: name
   
@@ -176,7 +176,7 @@
      auth))))
 
 (defn datasets-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets/list
   
   Required parameters: parent
   
@@ -202,7 +202,7 @@
      auth))))
 
 (defn datasets-delete$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/delete
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets/delete
   
   Required parameters: name
   
@@ -228,7 +228,7 @@
      auth))))
 
 (defn datasets-importData$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/importData
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets/importData
   
   Required parameters: name
   
@@ -266,7 +266,7 @@
      auth))))
 
 (defn datasets-exportData$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/exportData
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets/exportData
   
   Required parameters: name
   
@@ -302,7 +302,7 @@
      auth))))
 
 (defn datasets-dataItems-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/dataItems/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.dataItems/get
   
   Required parameters: name
   
@@ -328,7 +328,7 @@
      auth))))
 
 (defn datasets-dataItems-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/dataItems/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.dataItems/list
   
   Required parameters: parent
   
@@ -354,7 +354,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets/get
   
   Required parameters: name
   
@@ -380,7 +380,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets/list
   
   Required parameters: parent
   
@@ -406,7 +406,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-delete$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/delete
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets/delete
   
   Required parameters: name
   
@@ -432,7 +432,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-dataItems-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/dataItems/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.dataItems/get
   
   Required parameters: name
   
@@ -458,7 +458,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-dataItems-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/dataItems/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.dataItems/list
   
   Required parameters: parent
   
@@ -484,7 +484,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-examples-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/examples/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.examples/get
   
   Required parameters: name
   
@@ -510,7 +510,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-examples-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/examples/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.examples/list
   
   Required parameters: parent
   
@@ -536,7 +536,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-feedbackThreads-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/feedbackThreads/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.feedbackThreads/get
   
   Required parameters: name
   
@@ -562,7 +562,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-feedbackThreads-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/feedbackThreads/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.feedbackThreads/list
   
   Required parameters: parent
   
@@ -588,7 +588,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-feedbackThreads-delete$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/feedbackThreads/delete
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.feedbackThreads/delete
   
   Required parameters: name
   
@@ -614,7 +614,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-feedbackThreads-feedbackMessages-create$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/feedbackThreads/feedbackMessages/create
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.feedbackThreads.feedbackMessages/create
   
   Required parameters: parent
   
@@ -651,7 +651,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-feedbackThreads-feedbackMessages-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/feedbackThreads/feedbackMessages/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.feedbackThreads.feedbackMessages/get
   
   Required parameters: name
   
@@ -677,7 +677,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-feedbackThreads-feedbackMessages-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/feedbackThreads/feedbackMessages/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.feedbackThreads.feedbackMessages/list
   
   Required parameters: parent
   
@@ -703,7 +703,7 @@
      auth))))
 
 (defn datasets-annotatedDatasets-feedbackThreads-feedbackMessages-delete$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/annotatedDatasets/feedbackThreads/feedbackMessages/delete
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.annotatedDatasets.feedbackThreads.feedbackMessages/delete
   
   Required parameters: name
   
@@ -729,7 +729,7 @@
      auth))))
 
 (defn datasets-image-label$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/image/label
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.image/label
   
   Required parameters: parent
   
@@ -779,7 +779,7 @@
      auth))))
 
 (defn datasets-video-label$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/video/label
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.video/label
   
   Required parameters: parent
   
@@ -830,7 +830,7 @@
      auth))))
 
 (defn datasets-text-label$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/text/label
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.text/label
   
   Required parameters: parent
   
@@ -875,7 +875,7 @@
      auth))))
 
 (defn datasets-evaluations-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/evaluations/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.evaluations/get
   
   Required parameters: name
   
@@ -901,7 +901,7 @@
      auth))))
 
 (defn datasets-evaluations-exampleComparisons-search$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/datasets/evaluations/exampleComparisons/search
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.datasets.evaluations.exampleComparisons/search
   
   Required parameters: parent
   
@@ -933,7 +933,7 @@
      auth))))
 
 (defn annotationSpecSets-create$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/annotationSpecSets/create
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.annotationSpecSets/create
   
   Required parameters: parent
   
@@ -969,7 +969,7 @@
      auth))))
 
 (defn annotationSpecSets-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/annotationSpecSets/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.annotationSpecSets/get
   
   Required parameters: name
   
@@ -995,7 +995,7 @@
      auth))))
 
 (defn annotationSpecSets-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/annotationSpecSets/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.annotationSpecSets/list
   
   Required parameters: parent
   
@@ -1021,7 +1021,7 @@
      auth))))
 
 (defn annotationSpecSets-delete$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/annotationSpecSets/delete
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.annotationSpecSets/delete
   
   Required parameters: name
   
@@ -1047,7 +1047,7 @@
      auth))))
 
 (defn instructions-create$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/instructions/create
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.instructions/create
   
   Required parameters: parent
   
@@ -1087,7 +1087,7 @@
      auth))))
 
 (defn instructions-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/instructions/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.instructions/get
   
   Required parameters: name
   
@@ -1113,7 +1113,7 @@
      auth))))
 
 (defn instructions-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/instructions/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.instructions/list
   
   Required parameters: parent
   
@@ -1139,7 +1139,7 @@
      auth))))
 
 (defn instructions-delete$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/instructions/delete
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.instructions/delete
   
   Required parameters: name
   
@@ -1165,7 +1165,7 @@
      auth))))
 
 (defn evaluations-search$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/evaluations/search
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.evaluations/search
   
   Required parameters: parent
   
@@ -1191,7 +1191,7 @@
      auth))))
 
 (defn evaluationJobs-create$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/evaluationJobs/create
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.evaluationJobs/create
   
   Required parameters: parent
   
@@ -1232,7 +1232,7 @@
      auth))))
 
 (defn evaluationJobs-patch$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/evaluationJobs/patch
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.evaluationJobs/patch
   
   Required parameters: name
   
@@ -1282,7 +1282,7 @@
      auth))))
 
 (defn evaluationJobs-get$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/evaluationJobs/get
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.evaluationJobs/get
   
   Required parameters: name
   
@@ -1308,7 +1308,7 @@
      auth))))
 
 (defn evaluationJobs-pause$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/evaluationJobs/pause
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.evaluationJobs/pause
   
   Required parameters: name
   
@@ -1340,7 +1340,7 @@
      auth))))
 
 (defn evaluationJobs-resume$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/evaluationJobs/resume
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.evaluationJobs/resume
   
   Required parameters: name
   
@@ -1372,7 +1372,7 @@
      auth))))
 
 (defn evaluationJobs-delete$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/evaluationJobs/delete
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.evaluationJobs/delete
   
   Required parameters: name
   
@@ -1398,7 +1398,7 @@
      auth))))
 
 (defn evaluationJobs-list$
-  "https://cloud.google.com/data-labeling/docs/api/reference/rest/v1beta1/projects/evaluationJobs/list
+  "https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest/v1beta1/projects.evaluationJobs/list
   
   Required parameters: parent
   

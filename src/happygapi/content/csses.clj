@@ -1,13 +1,13 @@
 (ns happygapi.content.csses
   "Content API for Shopping: csses.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/csses"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/csses/list
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: cssGroupId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/csses/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: cssGroupId, cssDomainId
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn updatelabels$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/csses/updatelabels
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: cssGroupId, cssDomainId
   

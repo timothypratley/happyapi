@@ -1,13 +1,97 @@
 (ns happygapi.run.projects
   "Cloud Run Admin API: projects.
   Deploy and manage user provided container images that scale automatically based on incoming requests. The Cloud Run Admin API v1 follows the Knative Serving API specification, while v2 is aligned with Google Cloud AIP-based API standards, as described in https://google.aip.dev/.
-  See: https://cloud.google.com/run/api/reference/rest/v2/projects"
+  See: https://cloud.google.com/run/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
+(defn locations-exportMetadata$
+  "https://cloud.google.com/run
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Export generated customer metadata for a given resource."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://run.googleapis.com/"
+     "v2/{+name}:exportMetadata"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-exportImageMetadata$
+  "https://cloud.google.com/run
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Export image metadata for a given resource."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://run.googleapis.com/"
+     "v2/{+name}:exportImageMetadata"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn locations-exportImage$
+  "https://cloud.google.com/run
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:destinationRepo string}
+  
+  Export image for a given resource."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://run.googleapis.com/"
+     "v2/{+name}:exportImage"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-operations-list$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/operations/list
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -33,7 +117,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/operations/get
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -59,7 +143,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/operations/delete
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -85,7 +169,7 @@
      auth))))
 
 (defn locations-operations-wait$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/operations/wait
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -117,7 +201,7 @@
      auth))))
 
 (defn locations-jobs-get$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/get
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -143,7 +227,7 @@
      auth))))
 
 (defn locations-jobs-setIamPolicy$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/setIamPolicy
+  "https://cloud.google.com/run
   
   Required parameters: resource
   
@@ -179,7 +263,7 @@
      auth))))
 
 (defn locations-jobs-run$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/run
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -215,7 +299,7 @@
      auth))))
 
 (defn locations-jobs-patch$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/patch
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -239,6 +323,7 @@
    :name string,
    :executionCount integer,
    :binaryAuthorization {:useDefault boolean,
+                         :policy string,
                          :breakglassJustification string},
    :client string,
    :createTime string,
@@ -265,6 +350,7 @@
                  :executionReason string}],
    :clientVersion string,
    :satisfiesPzs boolean,
+   :startExecutionToken string,
    :annotations {},
    :expireTime string,
    :launchStage string}
@@ -291,7 +377,7 @@
      auth))))
 
 (defn locations-jobs-testIamPermissions$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/testIamPermissions
+  "https://cloud.google.com/run
   
   Required parameters: resource
   
@@ -323,7 +409,7 @@
      auth))))
 
 (defn locations-jobs-create$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/create
+  "https://cloud.google.com/run
   
   Required parameters: parent
   
@@ -347,6 +433,7 @@
    :name string,
    :executionCount integer,
    :binaryAuthorization {:useDefault boolean,
+                         :policy string,
                          :breakglassJustification string},
    :client string,
    :createTime string,
@@ -373,6 +460,7 @@
                  :executionReason string}],
    :clientVersion string,
    :satisfiesPzs boolean,
+   :startExecutionToken string,
    :annotations {},
    :expireTime string,
    :launchStage string}
@@ -399,7 +487,7 @@
      auth))))
 
 (defn locations-jobs-delete$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/delete
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -425,7 +513,7 @@
      auth))))
 
 (defn locations-jobs-getIamPolicy$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/getIamPolicy
+  "https://cloud.google.com/run
   
   Required parameters: resource
   
@@ -451,7 +539,7 @@
      auth))))
 
 (defn locations-jobs-list$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/list
+  "https://cloud.google.com/run
   
   Required parameters: parent
   
@@ -476,8 +564,34 @@
       :as :json}
      auth))))
 
+(defn locations-jobs-executions-exportStatus$
+  "https://cloud.google.com/run
+  
+  Required parameters: name, operationId
+  
+  Optional parameters: none
+  
+  Read the status of an image export operation."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name :operationId})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://run.googleapis.com/"
+     "v2/{+name}/{+operationId}:exportStatus"
+     #{:name :operationId}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-jobs-executions-get$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/executions/get
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -503,7 +617,7 @@
      auth))))
 
 (defn locations-jobs-executions-list$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/executions/list
+  "https://cloud.google.com/run
   
   Required parameters: parent
   
@@ -529,7 +643,7 @@
      auth))))
 
 (defn locations-jobs-executions-delete$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/executions/delete
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -555,7 +669,7 @@
      auth))))
 
 (defn locations-jobs-executions-cancel$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/executions/cancel
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -587,7 +701,7 @@
      auth))))
 
 (defn locations-jobs-executions-tasks-get$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/executions/tasks/get
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -613,7 +727,7 @@
      auth))))
 
 (defn locations-jobs-executions-tasks-list$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/jobs/executions/tasks/list
+  "https://cloud.google.com/run
   
   Required parameters: parent
   
@@ -639,7 +753,7 @@
      auth))))
 
 (defn locations-services-create$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/create
+  "https://cloud.google.com/run
   
   Required parameters: parent
   
@@ -668,6 +782,7 @@
    :uid string,
    :name string,
    :binaryAuthorization {:useDefault boolean,
+                         :policy string,
                          :breakglassJustification string},
    :latestCreatedRevision string,
    :client string,
@@ -682,6 +797,7 @@
               :labels {},
               :maxInstanceRequestConcurrency integer,
               :revision string,
+              :nodeSelector GoogleCloudRunV2NodeSelector,
               :healthCheckDisabled boolean,
               :encryptionKey string,
               :vpcAccess GoogleCloudRunV2VpcAccess,
@@ -737,7 +853,7 @@
      auth))))
 
 (defn locations-services-get$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/get
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -763,7 +879,7 @@
      auth))))
 
 (defn locations-services-list$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/list
+  "https://cloud.google.com/run
   
   Required parameters: parent
   
@@ -789,7 +905,7 @@
      auth))))
 
 (defn locations-services-patch$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/patch
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -818,6 +934,7 @@
    :uid string,
    :name string,
    :binaryAuthorization {:useDefault boolean,
+                         :policy string,
                          :breakglassJustification string},
    :latestCreatedRevision string,
    :client string,
@@ -832,6 +949,7 @@
               :labels {},
               :maxInstanceRequestConcurrency integer,
               :revision string,
+              :nodeSelector GoogleCloudRunV2NodeSelector,
               :healthCheckDisabled boolean,
               :encryptionKey string,
               :vpcAccess GoogleCloudRunV2VpcAccess,
@@ -887,7 +1005,7 @@
      auth))))
 
 (defn locations-services-delete$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/delete
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -913,7 +1031,7 @@
      auth))))
 
 (defn locations-services-getIamPolicy$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/getIamPolicy
+  "https://cloud.google.com/run
   
   Required parameters: resource
   
@@ -939,7 +1057,7 @@
      auth))))
 
 (defn locations-services-setIamPolicy$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/setIamPolicy
+  "https://cloud.google.com/run
   
   Required parameters: resource
   
@@ -975,7 +1093,7 @@
      auth))))
 
 (defn locations-services-testIamPermissions$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/testIamPermissions
+  "https://cloud.google.com/run
   
   Required parameters: resource
   
@@ -1006,8 +1124,34 @@
       :as :json}
      auth))))
 
+(defn locations-services-revisions-exportStatus$
+  "https://cloud.google.com/run
+  
+  Required parameters: name, operationId
+  
+  Optional parameters: none
+  
+  Read the status of an image export operation."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name :operationId})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://run.googleapis.com/"
+     "v2/{+name}/{+operationId}:exportStatus"
+     #{:name :operationId}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn locations-services-revisions-get$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/revisions/get
+  "https://cloud.google.com/run
   
   Required parameters: name
   
@@ -1033,7 +1177,7 @@
      auth))))
 
 (defn locations-services-revisions-list$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/revisions/list
+  "https://cloud.google.com/run
   
   Required parameters: parent
   
@@ -1059,7 +1203,7 @@
      auth))))
 
 (defn locations-services-revisions-delete$
-  "https://cloud.google.com/run/api/reference/rest/v2/projects/locations/services/revisions/delete
+  "https://cloud.google.com/run
   
   Required parameters: name
   

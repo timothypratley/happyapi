@@ -1,13 +1,13 @@
 (ns happygapi.people.people
   "People API: people.
   Provides access to information about profiles and contacts.
-  See: https://developers.google.com/people/api/reference/rest/v1/people"
+  See: https://developers.google.com/people/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn createContact$
-  "https://developers.google.com/people/api/reference/rest/v1/people/createContact
+  "https://developers.google.com/people/api/rest/v1/people/createContact
   
   Required parameters: none
   
@@ -176,7 +176,7 @@
      auth))))
 
 (defn searchContacts$
-  "https://developers.google.com/people/api/reference/rest/v1/people/searchContacts
+  "https://developers.google.com/people/api/rest/v1/people/searchContacts
   
   Required parameters: none
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/people/api/reference/rest/v1/people/get
+  "https://developers.google.com/people/api/rest/v1/people/get
   
   Required parameters: resourceName
   
@@ -240,7 +240,7 @@
      auth))))
 
 (defn searchDirectoryPeople$
-  "https://developers.google.com/people/api/reference/rest/v1/people/searchDirectoryPeople
+  "https://developers.google.com/people/api/rest/v1/people/searchDirectoryPeople
   
   Required parameters: none
   
@@ -266,7 +266,7 @@
      auth))))
 
 (defn deleteContact$
-  "https://developers.google.com/people/api/reference/rest/v1/people/deleteContact
+  "https://developers.google.com/people/api/rest/v1/people/deleteContact
   
   Required parameters: resourceName
   
@@ -292,7 +292,7 @@
      auth))))
 
 (defn updateContact$
-  "https://developers.google.com/people/api/reference/rest/v1/people/updateContact
+  "https://developers.google.com/people/api/rest/v1/people/updateContact
   
   Required parameters: resourceName
   
@@ -461,7 +461,7 @@
      auth))))
 
 (defn updateContactPhoto$
-  "https://developers.google.com/people/api/reference/rest/v1/people/updateContactPhoto
+  "https://developers.google.com/people/api/rest/v1/people/updateContactPhoto
   
   Required parameters: resourceName
   
@@ -493,7 +493,7 @@
      auth))))
 
 (defn deleteContactPhoto$
-  "https://developers.google.com/people/api/reference/rest/v1/people/deleteContactPhoto
+  "https://developers.google.com/people/api/rest/v1/people/deleteContactPhoto
   
   Required parameters: resourceName
   
@@ -519,7 +519,7 @@
      auth))))
 
 (defn batchDeleteContacts$
-  "https://developers.google.com/people/api/reference/rest/v1/people/batchDeleteContacts
+  "https://developers.google.com/people/api/rest/v1/people/batchDeleteContacts
   
   Required parameters: none
   
@@ -551,7 +551,7 @@
      auth))))
 
 (defn batchUpdateContacts$
-  "https://developers.google.com/people/api/reference/rest/v1/people/batchUpdateContacts
+  "https://developers.google.com/people/api/rest/v1/people/batchUpdateContacts
   
   Required parameters: none
   
@@ -586,7 +586,7 @@
      auth))))
 
 (defn listDirectoryPeople$
-  "https://developers.google.com/people/api/reference/rest/v1/people/listDirectoryPeople
+  "https://developers.google.com/people/api/rest/v1/people/listDirectoryPeople
   
   Required parameters: none
   
@@ -612,7 +612,7 @@
      auth))))
 
 (defn getBatchGet$
-  "https://developers.google.com/people/api/reference/rest/v1/people/getBatchGet
+  "https://developers.google.com/people/api/rest/v1/people/getBatchGet
   
   Required parameters: none
   
@@ -649,7 +649,7 @@
      auth))))
 
 (defn batchCreateContacts$
-  "https://developers.google.com/people/api/reference/rest/v1/people/batchCreateContacts
+  "https://developers.google.com/people/api/rest/v1/people/batchCreateContacts
   
   Required parameters: none
   
@@ -683,7 +683,7 @@
      auth))))
 
 (defn connections-list$
-  "https://developers.google.com/people/api/reference/rest/v1/people/connections/list
+  "https://developers.google.com/people/api/rest/v1/people.connections/list
   
   Required parameters: resourceName
   

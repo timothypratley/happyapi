@@ -1,13 +1,13 @@
 (ns happygapi.cloudidentity.customers
   "Cloud Identity API: customers.
   API for provisioning and managing identity resources.
-  See: https://cloud.google.com/identity/api/reference/rest/v1/customers"
+  See: https://cloud.google.com/identity/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn userinvitations-get$
-  "https://cloud.google.com/identity/api/reference/rest/v1/customers/userinvitations/get
+  "https://cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/get
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn userinvitations-list$
-  "https://cloud.google.com/identity/api/reference/rest/v1/customers/userinvitations/list
+  "https://cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/list
   
   Required parameters: parent
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn userinvitations-send$
-  "https://cloud.google.com/identity/api/reference/rest/v1/customers/userinvitations/send
+  "https://cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/send
   
   Required parameters: name
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn userinvitations-cancel$
-  "https://cloud.google.com/identity/api/reference/rest/v1/customers/userinvitations/cancel
+  "https://cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/cancel
   
   Required parameters: name
   
@@ -123,7 +123,7 @@
      auth))))
 
 (defn userinvitations-isInvitableUser$
-  "https://cloud.google.com/identity/api/reference/rest/v1/customers/userinvitations/isInvitableUser
+  "https://cloud.google.com/identity/docs/reference/rest/v1/customers.userinvitations/isInvitableUser
   
   Required parameters: name
   

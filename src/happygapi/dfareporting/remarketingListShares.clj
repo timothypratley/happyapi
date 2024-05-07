@@ -1,13 +1,13 @@
 (ns happygapi.dfareporting.remarketingListShares
   "Campaign Manager 360 API: remarketingListShares.
   Build applications to efficiently manage large or complex trafficking, reporting, and attribution workflows for Campaign Manager 360.
-  See: https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/remarketingListShares"
+  See: https://developers.google.com/doubleclick-advertisers/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn patch$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/remarketingListShares/patch
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, id
   
@@ -42,7 +42,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/remarketingListShares/get
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId, remarketingListId
   
@@ -68,7 +68,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/doubleclick-advertisers/api/reference/rest/v4/remarketingListShares/update
+  "https://developers.google.com/doubleclick-advertisers
   
   Required parameters: profileId
   

@@ -1,7 +1,16 @@
 (ns happygapi.ocr.ocr-test
   (:require [clojure.test :refer :all]
             [happy.oauth2-credentials :as credentials]
-            [happygapi.vision.images :as gimg]))
+            [happygapi.vision.images :as gimg]
+            [happygapi.documentai.projects :as dap]
+            [happygapi.documentai.operations :as dao]
+            [happygapi.documentai.uiv1beta3 :as dai]
+            ))
+
+(dap/locations-processors-create$)
+(dap/locations-processors-process$)
+(dai/projects-locations-get$)
+(dao/delete$)
 
 (deftest t
   (credentials/init!)

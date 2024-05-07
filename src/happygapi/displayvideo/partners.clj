@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.partners
   "Display & Video 360 API: partners.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/partners"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn editAssignedTargetingOptions$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/editAssignedTargetingOptions
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId
   
@@ -42,7 +42,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId
   
@@ -68,7 +68,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn channels-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, channelId
   
@@ -120,7 +120,7 @@
      auth))))
 
 (defn channels-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId
   
@@ -146,7 +146,7 @@
      auth))))
 
 (defn channels-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId
   
@@ -184,7 +184,7 @@
      auth))))
 
 (defn channels-patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, channelId
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn channels-sites-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/sites/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, channelId
   
@@ -248,7 +248,7 @@
      auth))))
 
 (defn channels-sites-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/sites/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, channelId
   
@@ -280,7 +280,7 @@
      auth))))
 
 (defn channels-sites-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/sites/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, channelId, urlOrAppId
   
@@ -308,7 +308,7 @@
      auth))))
 
 (defn channels-sites-bulkEdit$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/sites/bulkEdit
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, channelId
   
@@ -343,7 +343,7 @@
      auth))))
 
 (defn channels-sites-replace$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/channels/sites/replace
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, channelId
   
@@ -377,7 +377,7 @@
      auth))))
 
 (defn targetingTypes-assignedTargetingOptions-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/targetingTypes/assignedTargetingOptions/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, targetingType, assignedTargetingOptionId
   
@@ -405,7 +405,7 @@
      auth))))
 
 (defn targetingTypes-assignedTargetingOptions-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/targetingTypes/assignedTargetingOptions/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, targetingType
   
@@ -431,7 +431,7 @@
      auth))))
 
 (defn targetingTypes-assignedTargetingOptions-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/targetingTypes/assignedTargetingOptions/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, targetingType
   
@@ -567,7 +567,7 @@
      auth))))
 
 (defn targetingTypes-assignedTargetingOptions-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/partners/targetingTypes/assignedTargetingOptions/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: partnerId, targetingType, assignedTargetingOptionId
   

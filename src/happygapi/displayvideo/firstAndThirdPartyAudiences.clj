@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.firstAndThirdPartyAudiences
   "Display & Video 360 API: firstAndThirdPartyAudiences.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: firstAndThirdPartyAudienceId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: firstAndThirdPartyAudienceId
   
@@ -157,7 +157,7 @@
      auth))))
 
 (defn editCustomerMatchMembers$
-  "https://developers.google.com/display-video/api/reference/rest/v3/firstAndThirdPartyAudiences/editCustomerMatchMembers
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: firstAndThirdPartyAudienceId
   

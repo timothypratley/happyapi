@@ -1,13 +1,13 @@
 (ns happygapi.fcm.projects
   "Firebase Cloud Messaging API: projects.
   FCM send API that provides a cross-platform messaging solution to reliably deliver messages at no cost.
-  See: https://firebase.google.com/docs/cloud-messagingapi/reference/rest/v1/projects"
+  See: https://firebase.google.com/docs/cloud-messaging"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn messages-send$
-  "https://firebase.google.com/docs/cloud-messagingapi/reference/rest/v1/projects/messages/send
+  "https://firebase.google.com/docs/cloud-messaging
   
   Required parameters: parent
   

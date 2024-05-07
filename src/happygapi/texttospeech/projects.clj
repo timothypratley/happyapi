@@ -1,13 +1,13 @@
 (ns happygapi.texttospeech.projects
   "Cloud Text-to-Speech API: projects.
   Synthesizes natural-sounding speech by applying powerful neural network models.
-  See: https://cloud.google.com/text-to-speech/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/text-to-speech/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-synthesizeLongAudio$
-  "https://cloud.google.com/text-to-speech/api/reference/rest/v1/projects/locations/synthesizeLongAudio
+  "https://cloud.google.com/text-to-speech/docs/reference/rest/v1/projects.locations/synthesizeLongAudio
   
   Required parameters: parent
   
@@ -50,7 +50,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/text-to-speech/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/text-to-speech/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -76,7 +76,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/text-to-speech/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/text-to-speech/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   

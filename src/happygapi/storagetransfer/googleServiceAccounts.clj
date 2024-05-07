@@ -1,13 +1,13 @@
 (ns happygapi.storagetransfer.googleServiceAccounts
   "Storage Transfer API: googleServiceAccounts.
   Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. 
-  See: https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/googleServiceAccounts"
+  See: https://cloud.google.com/storage-transfer/docs/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/storage-transfer/docsapi/reference/rest/v1/googleServiceAccounts/get
+  "https://cloud.google.com/storage-transfer/docs/reference/rest/v1/googleServiceAccounts/get
   
   Required parameters: projectId
   

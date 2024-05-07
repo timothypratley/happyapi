@@ -1,13 +1,13 @@
 (ns happygapi.compute.licenseCodes
   "Compute Engine API: licenseCodes.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/licenseCodes"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenseCodes/get
+  "https://cloud.google.com/products/compute/v1/docs/licenseCodes/get
   
   Required parameters: licenseCode, project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/licenseCodes/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/licenseCodes/testIamPermissions
   
   Required parameters: project, resource
   

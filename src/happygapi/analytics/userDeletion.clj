@@ -1,13 +1,13 @@
 (ns happygapi.analytics.userDeletion
   "Google Analytics API: userDeletion.
   Views and manages your Google Analytics data.
-  See: https://developers.google.com/analytics/api/reference/rest/v3/userDeletion"
+  See: https://developers.google.com/analytics/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn userDeletionRequest-upsert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/userDeletion/userDeletionRequest/upsert
+  "https://developers.google.com/analytics
   
   Required parameters: none
   

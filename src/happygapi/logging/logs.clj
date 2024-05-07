@@ -1,13 +1,13 @@
 (ns happygapi.logging.logs
   "Cloud Logging API: logs.
   Writes log entries and manages your Cloud Logging configuration.
-  See: https://cloud.google.com/logging/docs/api/reference/rest/v2/logs"
+  See: https://cloud.google.com/logging/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn delete$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/logs/delete
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/logs/delete
   
   Required parameters: logName
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/logging/docs/api/reference/rest/v2/logs/list
+  "https://cloud.google.com/logging/docs/reference/rest/v2/TopLevel/logs/list
   
   Required parameters: parent
   

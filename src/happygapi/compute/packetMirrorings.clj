@@ -1,13 +1,13 @@
 (ns happygapi.compute.packetMirrorings
   "Compute Engine API: packetMirrorings.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/packetMirrorings"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/packetMirrorings/get
+  "https://cloud.google.com/products/compute/v1/docs/packetMirrorings/get
   
   Required parameters: packetMirroring, project, region
   
@@ -37,7 +37,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/packetMirrorings/insert
+  "https://cloud.google.com/products/compute/v1/docs/packetMirrorings/insert
   
   Required parameters: project, region
   
@@ -86,7 +86,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/packetMirrorings/patch
+  "https://cloud.google.com/products/compute/v1/docs/packetMirrorings/patch
   
   Required parameters: packetMirroring, project, region
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/packetMirrorings/delete
+  "https://cloud.google.com/products/compute/v1/docs/packetMirrorings/delete
   
   Required parameters: packetMirroring, project, region
   
@@ -166,7 +166,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/packetMirrorings/list
+  "https://cloud.google.com/products/compute/v1/docs/packetMirrorings/list
   
   Required parameters: project, region
   
@@ -194,7 +194,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/packetMirrorings/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/packetMirrorings/aggregatedList
   
   Required parameters: project
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/packetMirrorings/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/packetMirrorings/testIamPermissions
   
   Required parameters: project, region, resource
   

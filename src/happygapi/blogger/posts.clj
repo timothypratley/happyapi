@@ -1,17 +1,17 @@
 (ns happygapi.blogger.posts
   "Blogger API: posts.
   The Blogger API provides access to posts, comments and pages of a Blogger blog.
-  See: https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts"
+  See: https://developers.google.com/blogger/docs/3.0/getting_started"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/get
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
-  Required parameters: postId, blogId
+  Required parameters: blogId, postId
   
-  Optional parameters: maxComments, view, fetchImages, fetchBody
+  Optional parameters: fetchImages, view, maxComments, fetchBody
   
   Gets a post by blog id and post id"
   {:scopes ["https://www.googleapis.com/auth/blogger"
@@ -34,11 +34,11 @@
      auth))))
 
 (defn insert$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/insert
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: blogId
   
-  Optional parameters: fetchImages, isDraft, fetchBody
+  Optional parameters: fetchBody, fetchImages, isDraft
   
   Body: 
   
@@ -50,26 +50,26 @@
    :selfLink string,
    :etag string,
    :title string,
-   :author {:image {:url string},
+   :author {:displayName string,
+            :url string,
             :id string,
-            :displayName string,
-            :url string},
+            :image {:url string}},
    :replies {:items [{:inReplyTo {:id string},
                       :content string,
                       :updated string,
                       :selfLink string,
                       :author {:image {:url string},
-                               :id string,
+                               :url string,
                                :displayName string,
-                               :url string},
+                               :id string},
                       :status string,
                       :id string,
                       :kind string,
                       :post {:id string},
                       :blog {:id string},
                       :published string}],
-             :selfLink string,
-             :totalItems string},
+             :totalItems string,
+             :selfLink string},
    :status string,
    :customMetaData string,
    :trashed string,
@@ -77,7 +77,7 @@
    :kind string,
    :url string,
    :readerComments string,
-   :location {:lng number, :name string, :span string, :lat number},
+   :location {:name string, :span string, :lng number, :lat number},
    :blog {:id string},
    :published string}
   
@@ -103,11 +103,11 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/patch
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
-  Required parameters: postId, blogId
+  Required parameters: blogId, postId
   
-  Optional parameters: fetchImages, revert, maxComments, fetchBody, publish
+  Optional parameters: revert, publish, fetchImages, fetchBody, maxComments
   
   Body: 
   
@@ -119,26 +119,26 @@
    :selfLink string,
    :etag string,
    :title string,
-   :author {:image {:url string},
+   :author {:displayName string,
+            :url string,
             :id string,
-            :displayName string,
-            :url string},
+            :image {:url string}},
    :replies {:items [{:inReplyTo {:id string},
                       :content string,
                       :updated string,
                       :selfLink string,
                       :author {:image {:url string},
-                               :id string,
+                               :url string,
                                :displayName string,
-                               :url string},
+                               :id string},
                       :status string,
                       :id string,
                       :kind string,
                       :post {:id string},
                       :blog {:id string},
                       :published string}],
-             :selfLink string,
-             :totalItems string},
+             :totalItems string,
+             :selfLink string},
    :status string,
    :customMetaData string,
    :trashed string,
@@ -146,7 +146,7 @@
    :kind string,
    :url string,
    :readerComments string,
-   :location {:lng number, :name string, :span string, :lat number},
+   :location {:name string, :span string, :lng number, :lat number},
    :blog {:id string},
    :published string}
   
@@ -172,11 +172,11 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/update
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: blogId, postId
   
-  Optional parameters: fetchImages, revert, maxComments, publish, fetchBody
+  Optional parameters: maxComments, revert, fetchImages, fetchBody, publish
   
   Body: 
   
@@ -188,26 +188,26 @@
    :selfLink string,
    :etag string,
    :title string,
-   :author {:image {:url string},
+   :author {:displayName string,
+            :url string,
             :id string,
-            :displayName string,
-            :url string},
+            :image {:url string}},
    :replies {:items [{:inReplyTo {:id string},
                       :content string,
                       :updated string,
                       :selfLink string,
                       :author {:image {:url string},
-                               :id string,
+                               :url string,
                                :displayName string,
-                               :url string},
+                               :id string},
                       :status string,
                       :id string,
                       :kind string,
                       :post {:id string},
                       :blog {:id string},
                       :published string}],
-             :selfLink string,
-             :totalItems string},
+             :totalItems string,
+             :selfLink string},
    :status string,
    :customMetaData string,
    :trashed string,
@@ -215,7 +215,7 @@
    :kind string,
    :url string,
    :readerComments string,
-   :location {:lng number, :name string, :span string, :lat number},
+   :location {:name string, :span string, :lng number, :lat number},
    :blog {:id string},
    :published string}
   
@@ -241,7 +241,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/delete
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: blogId, postId
   
@@ -267,9 +267,9 @@
      auth))))
 
 (defn search$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/search
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
-  Required parameters: blogId, q
+  Required parameters: q, blogId
   
   Optional parameters: orderBy, fetchBodies
   
@@ -294,7 +294,7 @@
      auth))))
 
 (defn revert$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/revert
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: blogId, postId
   
@@ -320,7 +320,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/list
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
   Required parameters: blogId
   
@@ -347,9 +347,9 @@
      auth))))
 
 (defn publish$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/publish
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
-  Required parameters: blogId, postId
+  Required parameters: postId, blogId
   
   Optional parameters: publishDate
   
@@ -373,11 +373,11 @@
      auth))))
 
 (defn getByPath$
-  "https://developers.google.com/blogger/docs/3.0/getting_startedapi/reference/rest/v3/posts/getByPath
+  "https://developers.google.com/blogger/docs/3.0/getting_started
   
-  Required parameters: blogId, path
+  Required parameters: path, blogId
   
-  Optional parameters: view, maxComments
+  Optional parameters: maxComments, view
   
   Gets a post by path."
   {:scopes ["https://www.googleapis.com/auth/blogger"

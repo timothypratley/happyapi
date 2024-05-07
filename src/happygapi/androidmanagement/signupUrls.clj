@@ -1,13 +1,13 @@
 (ns happygapi.androidmanagement.signupUrls
   "Android Management API: signupUrls.
   The Android Management API provides remote enterprise management of Android devices and apps.
-  See: https://developers.google.com/android/managementapi/reference/rest/v1/signupUrls"
+  See: https://developers.google.com/android/management"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn create$
-  "https://developers.google.com/android/managementapi/reference/rest/v1/signupUrls/create
+  "https://developers.google.com/android/management/reference/rest/v1/signupUrls/create
   
   Required parameters: none
   

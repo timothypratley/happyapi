@@ -1,13 +1,13 @@
 (ns happygapi.androidenterprise.enterprises
   "Google Play EMM API: enterprises.
   Manages the deployment of apps to Android Enterprise devices.
-  See: https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises"
+  See: https://developers.google.com/android/work/play/emm-api"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn setAccount$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/setAccount
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/setAccount
   
   Required parameters: enterpriseId
   
@@ -39,7 +39,7 @@
      auth))))
 
 (defn getStoreLayout$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/getStoreLayout
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/getStoreLayout
   
   Required parameters: enterpriseId
   
@@ -65,7 +65,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/get
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/get
   
   Required parameters: enterpriseId
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn createWebToken$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/createWebToken
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/createWebToken
   
   Required parameters: enterpriseId
   
@@ -108,7 +108,7 @@
    :managedConfigurations {:enabled boolean},
    :zeroTouch {:enabled boolean}}
   
-  Returns a unique token to access an embeddable UI. To generate a web UI, pass the generated token into the managed Google Play javascript API. Each token may only be used to start one UI session. See the javascript API documentation for further information."
+  Returns a unique token to access an embeddable UI. To generate a web UI, pass the generated token into the managed Google Play javascript API. Each token may only be used to start one UI session. See the JavaScript API documentation for further information."
   {:scopes ["https://www.googleapis.com/auth/androidenterprise"]}
   [auth parameters body]
   {:pre [(util/has-keys? parameters #{:enterpriseId})]}
@@ -130,7 +130,7 @@
      auth))))
 
 (defn createEnrollmentToken$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/createEnrollmentToken
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/createEnrollmentToken
   
   Required parameters: enterpriseId
   
@@ -156,7 +156,7 @@
      auth))))
 
 (defn generateSignupUrl$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/generateSignupUrl
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/generateSignupUrl
   
   Required parameters: none
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn unenroll$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/unenroll
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/unenroll
   
   Required parameters: enterpriseId
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn completeSignup$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/completeSignup
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/completeSignup
   
   Required parameters: none
   
@@ -234,7 +234,7 @@
      auth))))
 
 (defn setStoreLayout$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/setStoreLayout
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/setStoreLayout
   
   Required parameters: enterpriseId
   
@@ -266,7 +266,7 @@
      auth))))
 
 (defn acknowledgeNotificationSet$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/acknowledgeNotificationSet
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/acknowledgeNotificationSet
   
   Required parameters: none
   
@@ -292,7 +292,7 @@
      auth))))
 
 (defn pullNotificationSet$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/pullNotificationSet
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/pullNotificationSet
   
   Required parameters: none
   
@@ -318,7 +318,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/list
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/list
   
   Required parameters: domain
   
@@ -344,7 +344,7 @@
      auth))))
 
 (defn sendTestPushNotification$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/sendTestPushNotification
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/sendTestPushNotification
   
   Required parameters: enterpriseId
   
@@ -370,7 +370,7 @@
      auth))))
 
 (defn getServiceAccount$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/getServiceAccount
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/getServiceAccount
   
   Required parameters: enterpriseId
   
@@ -396,7 +396,7 @@
      auth))))
 
 (defn enroll$
-  "https://developers.google.com/android/work/play/emm-apiapi/reference/rest/v1/enterprises/enroll
+  "https://developers.google.com/android/work/play/emm-api/v1/enterprises/enroll
   
   Required parameters: token
   

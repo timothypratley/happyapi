@@ -1,13 +1,13 @@
 (ns happygapi.compute.targetTcpProxies
   "Compute Engine API: targetTcpProxies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/targetTcpProxies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetTcpProxies/list
+  "https://cloud.google.com/products/compute/v1/docs/targetTcpProxies/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetTcpProxies/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/targetTcpProxies/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetTcpProxies/get
+  "https://cloud.google.com/products/compute/v1/docs/targetTcpProxies/get
   
   Required parameters: project, targetTcpProxy
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetTcpProxies/insert
+  "https://cloud.google.com/products/compute/v1/docs/targetTcpProxies/insert
   
   Required parameters: project
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetTcpProxies/delete
+  "https://cloud.google.com/products/compute/v1/docs/targetTcpProxies/delete
   
   Required parameters: project, targetTcpProxy
   
@@ -160,7 +160,7 @@
      auth))))
 
 (defn setBackendService$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetTcpProxies/setBackendService
+  "https://cloud.google.com/products/compute/v1/docs/targetTcpProxies/setBackendService
   
   Required parameters: project, targetTcpProxy
   
@@ -193,7 +193,7 @@
      auth))))
 
 (defn setProxyHeader$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetTcpProxies/setProxyHeader
+  "https://cloud.google.com/products/compute/v1/docs/targetTcpProxies/setProxyHeader
   
   Required parameters: project, targetTcpProxy
   

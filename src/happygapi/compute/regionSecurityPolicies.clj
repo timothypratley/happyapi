@@ -1,13 +1,13 @@
 (ns happygapi.compute.regionSecurityPolicies
   "Compute Engine API: regionSecurityPolicies.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn removeRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/removeRule
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/removeRule
   
   Required parameters: project, region, securityPolicy
   
@@ -36,7 +36,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/get
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/get
   
   Required parameters: project, region, securityPolicy
   
@@ -66,7 +66,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/insert
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/insert
   
   Required parameters: project, region
   
@@ -132,7 +132,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/patch
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/patch
   
   Required parameters: project, region, securityPolicy
   
@@ -200,7 +200,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/delete
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/delete
   
   Required parameters: project, region, securityPolicy
   
@@ -229,7 +229,7 @@
      auth))))
 
 (defn patchRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/patchRule
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/patchRule
   
   Required parameters: project, region, securityPolicy
   
@@ -292,7 +292,7 @@
      auth))))
 
 (defn addRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/addRule
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/addRule
   
   Required parameters: project, region, securityPolicy
   
@@ -355,7 +355,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/list
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/list
   
   Required parameters: project, region
   
@@ -383,7 +383,7 @@
      auth))))
 
 (defn getRule$
-  "https://cloud.google.com/compute/api/reference/rest/v1/regionSecurityPolicies/getRule
+  "https://cloud.google.com/products/compute/v1/docs/regionSecurityPolicies/getRule
   
   Required parameters: project, region, securityPolicy
   

@@ -1,13 +1,13 @@
 (ns happygapi.compute.storagePools
   "Compute Engine API: storagePools.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/storagePools"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/get
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/get
   
   Required parameters: project, storagePool, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/setIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -77,7 +77,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/insert
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/insert
   
   Required parameters: project, zone
   
@@ -146,7 +146,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/testIamPermissions
   
   Required parameters: project, resource, zone
   
@@ -180,7 +180,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/aggregatedList
   
   Required parameters: project
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/update
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/update
   
   Required parameters: project, storagePool, zone
   
@@ -277,7 +277,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/delete
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/delete
   
   Required parameters: project, storagePool, zone
   
@@ -304,7 +304,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/getIamPolicy
   
   Required parameters: project, resource, zone
   
@@ -332,7 +332,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/list
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/list
   
   Required parameters: project, zone
   
@@ -360,7 +360,7 @@
      auth))))
 
 (defn listDisks$
-  "https://cloud.google.com/compute/api/reference/rest/v1/storagePools/listDisks
+  "https://cloud.google.com/products/compute/v1/docs/storagePools/listDisks
   
   Required parameters: project, storagePool, zone
   

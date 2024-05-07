@@ -1,13 +1,13 @@
 (ns happygapi.compute.addresses
   "Compute Engine API: addresses.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/addresses"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/addresses/list
+  "https://cloud.google.com/products/compute/v1/docs/addresses/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/addresses/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/addresses/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/addresses/get
+  "https://cloud.google.com/products/compute/v1/docs/addresses/get
   
   Required parameters: address, project, region
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/addresses/insert
+  "https://cloud.google.com/products/compute/v1/docs/addresses/insert
   
   Required parameters: project, region
   
@@ -143,7 +143,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/addresses/delete
+  "https://cloud.google.com/products/compute/v1/docs/addresses/delete
   
   Required parameters: address, project, region
   
@@ -170,7 +170,7 @@
      auth))))
 
 (defn move$
-  "https://cloud.google.com/compute/api/reference/rest/v1/addresses/move
+  "https://cloud.google.com/products/compute/v1/docs/addresses/move
   
   Required parameters: address, project, region
   
@@ -203,7 +203,7 @@
      auth))))
 
 (defn setLabels$
-  "https://cloud.google.com/compute/api/reference/rest/v1/addresses/setLabels
+  "https://cloud.google.com/products/compute/v1/docs/addresses/setLabels
   
   Required parameters: project, region, resource
   

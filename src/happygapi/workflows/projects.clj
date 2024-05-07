@@ -1,13 +1,13 @@
 (ns happygapi.workflows.projects
   "Workflows API: projects.
   Manage workflow definitions. To execute workflows and manage executions, see the Workflows Executions API.
-  See: https://cloud.google.com/workflowsapi/reference/rest/v1/projects"
+  See: https://cloud.google.com/workflows"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/list
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/get
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-workflows-list$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/list
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.workflows/list
   
   Required parameters: parent
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn locations-workflows-get$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/get
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.workflows/get
   
   Required parameters: name
   
@@ -189,7 +189,7 @@
      auth))))
 
 (defn locations-workflows-create$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/create
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.workflows/create
   
   Required parameters: parent
   
@@ -234,7 +234,7 @@
      auth))))
 
 (defn locations-workflows-delete$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/delete
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.workflows/delete
   
   Required parameters: name
   
@@ -260,7 +260,7 @@
      auth))))
 
 (defn locations-workflows-patch$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/patch
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.workflows/patch
   
   Required parameters: name
   
@@ -305,7 +305,7 @@
      auth))))
 
 (defn locations-workflows-listRevisions$
-  "https://cloud.google.com/workflowsapi/reference/rest/v1/projects/locations/workflows/listRevisions
+  "https://cloud.google.com/workflows/docs/reference/rest/v1/projects.locations.workflows/listRevisions
   
   Required parameters: name
   

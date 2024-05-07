@@ -1,13 +1,13 @@
 (ns happygapi.cloudbilling.organizations
   "Cloud Billing API: organizations.
   Allows developers to manage billing for their Google Cloud Platform projects programmatically.
-  See: https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/organizations"
+  See: https://cloud.google.com/billing/docs/apis"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn billingAccounts-list$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/organizations/billingAccounts/list
+  "https://cloud.google.com/billing/docs/reference/rest/v1/organizations.billingAccounts/list
   
   Required parameters: parent
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn billingAccounts-create$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/organizations/billingAccounts/create
+  "https://cloud.google.com/billing/docs/reference/rest/v1/organizations.billingAccounts/create
   
   Required parameters: parent
   
@@ -72,7 +72,7 @@
      auth))))
 
 (defn billingAccounts-move$
-  "https://cloud.google.com/billing/docs/apisapi/reference/rest/v1/organizations/billingAccounts/move
+  "https://cloud.google.com/billing/docs/reference/rest/v1/organizations.billingAccounts/move
   
   Required parameters: destinationParent, name
   

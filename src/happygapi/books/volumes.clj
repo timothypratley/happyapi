@@ -1,13 +1,13 @@
 (ns happygapi.books.volumes
   "Books API: volumes.
   The Google Books API allows clients to access the Google Books repository.
-  See: https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/volumes"
+  See: https://developers.google.com/books/docs/v1/getting_started?csw=1"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/volumes/get
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/volumes/get
   
   Required parameters: volumeId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/volumes/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/volumes/list
   
   Required parameters: q
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn associated-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/volumes/associated/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/volumes/associated/list
   
   Required parameters: volumeId
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn mybooks-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/volumes/mybooks/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/volumes/mybooks/list
   
   Required parameters: none
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn recommended-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/volumes/recommended/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/volumes/recommended/list
   
   Required parameters: none
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn recommended-rate$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/volumes/recommended/rate
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/volumes/recommended/rate
   
   Required parameters: rating, volumeId
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn useruploaded-list$
-  "https://code.google.com/apis/books/docs/v1/getting_started.htmlapi/reference/rest/v1/volumes/useruploaded/list
+  "https://developers.google.com/books/docs/v1/getting_started?csw=1/v1/docs/volumes/useruploaded/list
   
   Required parameters: none
   

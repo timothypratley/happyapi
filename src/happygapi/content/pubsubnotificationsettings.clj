@@ -1,13 +1,13 @@
 (ns happygapi.content.pubsubnotificationsettings
   "Content API for Shopping: pubsubnotificationsettings.
   Manage your product listings and accounts for Google Shopping
-  See: https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pubsubnotificationsettings"
+  See: https://developers.google.com/shopping-content/guides/quickstart"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn get$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pubsubnotificationsettings/get
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn update$
-  "https://developers.google.com/shopping-content/v2/api/reference/rest/v2.1/pubsubnotificationsettings/update
+  "https://developers.google.com/shopping-content/guides/quickstart
   
   Required parameters: merchantId
   

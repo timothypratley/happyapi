@@ -1,13 +1,13 @@
 (ns happygapi.iam.policies
   "Identity and Access Management (IAM) API: policies.
   Manages identity and access control for Google Cloud resources, including the creation of service accounts, which you can use to authenticate to Google and make API calls. Enabling this API also enables the IAM Service Account Credentials API (iamcredentials.googleapis.com). However, disabling this API doesn't disable the IAM Service Account Credentials API. 
-  See: https://cloud.google.com/iam/api/reference/rest/v2/policies"
+  See: https://cloud.google.com/security/products/iam"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn listPolicies$
-  "https://cloud.google.com/iam/api/reference/rest/v2/policies/listPolicies
+  "https://cloud.google.com/security/products/iam/v2/docs/policies/listPolicies
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/iam/api/reference/rest/v2/policies/get
+  "https://cloud.google.com/security/products/iam/v2/docs/policies/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn createPolicy$
-  "https://cloud.google.com/iam/api/reference/rest/v2/policies/createPolicy
+  "https://cloud.google.com/security/products/iam/v2/docs/policies/createPolicy
   
   Required parameters: parent
   
@@ -100,7 +100,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/iam/api/reference/rest/v2/policies/update
+  "https://cloud.google.com/security/products/iam/v2/docs/policies/update
   
   Required parameters: name
   
@@ -141,7 +141,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/iam/api/reference/rest/v2/policies/delete
+  "https://cloud.google.com/security/products/iam/v2/docs/policies/delete
   
   Required parameters: name
   
@@ -167,7 +167,7 @@
      auth))))
 
 (defn operations-get$
-  "https://cloud.google.com/iam/api/reference/rest/v2/policies/operations/get
+  "https://cloud.google.com/security/products/iam/v2/docs/policies/operations/get
   
   Required parameters: name
   

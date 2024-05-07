@@ -1,13 +1,13 @@
 (ns happygapi.compute.sslCertificates
   "Compute Engine API: sslCertificates.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/sslCertificates"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslCertificates/list
+  "https://cloud.google.com/products/compute/v1/docs/sslCertificates/list
   
   Required parameters: project
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslCertificates/get
+  "https://cloud.google.com/products/compute/v1/docs/sslCertificates/get
   
   Required parameters: project, sslCertificate
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslCertificates/insert
+  "https://cloud.google.com/products/compute/v1/docs/sslCertificates/insert
   
   Required parameters: project
   
@@ -109,7 +109,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslCertificates/delete
+  "https://cloud.google.com/products/compute/v1/docs/sslCertificates/delete
   
   Required parameters: project, sslCertificate
   
@@ -136,7 +136,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/sslCertificates/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/sslCertificates/aggregatedList
   
   Required parameters: project
   

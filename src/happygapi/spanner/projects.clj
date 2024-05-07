@@ -1,13 +1,13 @@
 (ns happygapi.spanner.projects
   "Cloud Spanner API: projects.
   Cloud Spanner is a managed, mission-critical, globally consistent and scalable relational database service.
-  See: https://cloud.google.com/spanner/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/spanner/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn instanceConfigs-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -34,7 +34,7 @@
      auth))))
 
 (defn instanceConfigs-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -61,7 +61,7 @@
      auth))))
 
 (defn instanceConfigs-create$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/create
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -108,7 +108,7 @@
      auth))))
 
 (defn instanceConfigs-patch$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/patch
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -155,7 +155,7 @@
      auth))))
 
 (defn instanceConfigs-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -182,7 +182,7 @@
      auth))))
 
 (defn instanceConfigs-operations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/operations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -209,7 +209,7 @@
      auth))))
 
 (defn instanceConfigs-operations-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/operations/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -236,7 +236,7 @@
      auth))))
 
 (defn instanceConfigs-operations-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/operations/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -263,7 +263,7 @@
      auth))))
 
 (defn instanceConfigs-operations-cancel$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/operations/cancel
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -290,7 +290,7 @@
      auth))))
 
 (defn instanceConfigs-ssdCaches-operations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/ssdCaches/operations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -317,7 +317,7 @@
      auth))))
 
 (defn instanceConfigs-ssdCaches-operations-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/ssdCaches/operations/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -344,7 +344,7 @@
      auth))))
 
 (defn instanceConfigs-ssdCaches-operations-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/ssdCaches/operations/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -371,7 +371,7 @@
      auth))))
 
 (defn instanceConfigs-ssdCaches-operations-cancel$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigs/ssdCaches/operations/cancel
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -398,7 +398,7 @@
      auth))))
 
 (defn instanceConfigOperations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instanceConfigOperations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -424,35 +424,8 @@
       :as :json}
      auth))))
 
-(defn instances-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageSize, pageToken, filter, instanceDeadline
-  
-  Lists all instances in the given project."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/spanner.admin"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://spanner.googleapis.com/"
-     "v1/{+parent}/instances"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn instances-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -478,41 +451,28 @@
       :as :json}
      auth))))
 
-(defn instances-create$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/create
+(defn instances-setIamPolicy$
+  "https://cloud.google.com/spanner
   
-  Required parameters: parent
+  Required parameters: resource
   
   Optional parameters: none
   
   Body: 
   
-  {:instanceId string,
-   :instance {:labels {},
-              :freeInstanceMetadata FreeInstanceMetadata,
-              :instanceType string,
-              :config string,
-              :displayName string,
-              :name string,
-              :createTime string,
-              :state string,
-              :updateTime string,
-              :endpointUris [string],
-              :processingUnits integer,
-              :nodeCount integer,
-              :autoscalingConfig AutoscalingConfig}}
+  {:policy {:version integer, :bindings [Binding], :etag string}}
   
-  Creates an instance and begins preparing it to begin serving. The returned long-running operation can be used to track the progress of preparing the new instance. The instance name is assigned by the caller. If the named instance already exists, `CreateInstance` returns `ALREADY_EXISTS`. Immediately upon completion of this request: * The instance is readable via the API, with all requested attributes but no allocated resources. Its state is `CREATING`. Until completion of the returned operation: * Cancelling the operation renders the instance immediately unreadable via the API. * The instance can be deleted. * All other attempts to modify the instance are rejected. Upon completion of the returned operation: * Billing for all successfully-allocated resources begins (some types may have lower than the requested levels). * Databases can be created in the instance. * The instance's allocated resource levels are readable via the API. * The instance's state becomes `READY`. The returned long-running operation will have a name of the format `/operations/` and can be used to track creation of the instance. The metadata field type is CreateInstanceMetadata. The response field type is Instance, if successful."
+  Sets the access control policy on an instance resource. Replaces any existing policy. Authorization requires `spanner.instances.setIamPolicy` on resource."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
             "https://www.googleapis.com/auth/spanner.admin"]}
   [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:parent})]}
+  {:pre [(util/has-keys? parameters #{:resource})]}
   (util/get-response
    (http/post
     (util/get-url
      "https://spanner.googleapis.com/"
-     "v1/{+parent}/instances"
-     #{:parent}
+     "v1/{+resource}:setIamPolicy"
+     #{:resource}
      parameters)
     (merge-with
      merge
@@ -525,7 +485,7 @@
      auth))))
 
 (defn instances-patch$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/patch
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -570,101 +530,8 @@
       :as :json}
      auth))))
 
-(defn instances-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/delete
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Deletes an instance. Immediately upon completion of the request: * Billing ceases for all of the instance's reserved resources. Soon afterward: * The instance and *all of its databases* immediately and irrevocably disappear from the API. All data in the databases is permanently deleted."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/spanner.admin"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/delete
-    (util/get-url
-     "https://spanner.googleapis.com/"
-     "v1/{+name}"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn instances-setIamPolicy$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/setIamPolicy
-  
-  Required parameters: resource
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:policy {:version integer, :bindings [Binding], :etag string}}
-  
-  Sets the access control policy on an instance resource. Replaces any existing policy. Authorization requires `spanner.instances.setIamPolicy` on resource."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/spanner.admin"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:resource})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://spanner.googleapis.com/"
-     "v1/{+resource}:setIamPolicy"
-     #{:resource}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn instances-getIamPolicy$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/getIamPolicy
-  
-  Required parameters: resource
-  
-  Optional parameters: none
-  
-  Body: 
-  
-  {:options {:requestedPolicyVersion integer}}
-  
-  Gets the access control policy for an instance resource. Returns an empty policy if an instance exists but does not have a policy set. Authorization requires `spanner.instances.getIamPolicy` on resource."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
-            "https://www.googleapis.com/auth/spanner.admin"]}
-  [auth parameters body]
-  {:pre [(util/has-keys? parameters #{:resource})]}
-  (util/get-response
-   (http/post
-    (util/get-url
-     "https://spanner.googleapis.com/"
-     "v1/{+resource}:getIamPolicy"
-     #{:resource}
-     parameters)
-    (merge-with
-     merge
-     {:content-type :json,
-      :body (json/generate-string body),
-      :throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn instances-testIamPermissions$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/testIamPermissions
+  "https://cloud.google.com/spanner
   
   Required parameters: resource
   
@@ -696,8 +563,174 @@
       :as :json}
      auth))))
 
+(defn instances-create$
+  "https://cloud.google.com/spanner
+  
+  Required parameters: parent
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:instanceId string,
+   :instance {:labels {},
+              :freeInstanceMetadata FreeInstanceMetadata,
+              :instanceType string,
+              :config string,
+              :displayName string,
+              :name string,
+              :createTime string,
+              :state string,
+              :updateTime string,
+              :endpointUris [string],
+              :processingUnits integer,
+              :nodeCount integer,
+              :autoscalingConfig AutoscalingConfig}}
+  
+  Creates an instance and begins preparing it to begin serving. The returned long-running operation can be used to track the progress of preparing the new instance. The instance name is assigned by the caller. If the named instance already exists, `CreateInstance` returns `ALREADY_EXISTS`. Immediately upon completion of this request: * The instance is readable via the API, with all requested attributes but no allocated resources. Its state is `CREATING`. Until completion of the returned operation: * Cancelling the operation renders the instance immediately unreadable via the API. * The instance can be deleted. * All other attempts to modify the instance are rejected. Upon completion of the returned operation: * Billing for all successfully-allocated resources begins (some types may have lower than the requested levels). * Databases can be created in the instance. * The instance's allocated resource levels are readable via the API. * The instance's state becomes `READY`. The returned long-running operation will have a name of the format `/operations/` and can be used to track creation of the instance. The metadata field type is CreateInstanceMetadata. The response field type is Instance, if successful."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/spanner.admin"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://spanner.googleapis.com/"
+     "v1/{+parent}/instances"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn instances-move$
+  "https://cloud.google.com/spanner
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:targetConfig string}
+  
+  Moves the instance to the target instance config. The returned long-running operation can be used to track the progress of moving the instance. `MoveInstance` returns `FAILED_PRECONDITION` if the instance meets any of the following criteria: * Has an ongoing move to a different instance config * Has backups * Has an ongoing update * Is under free trial * Contains any CMEK-enabled databases While the operation is pending: * All other attempts to modify the instance, including changes to its compute capacity, are rejected. * The following database and backup admin operations are rejected: * DatabaseAdmin.CreateDatabase, * DatabaseAdmin.UpdateDatabaseDdl (Disabled if default_leader is specified in the request.) * DatabaseAdmin.RestoreDatabase * DatabaseAdmin.CreateBackup * DatabaseAdmin.CopyBackup * Both the source and target instance configs are subject to hourly compute and storage charges. * The instance may experience higher read-write latencies and a higher transaction abort rate. However, moving an instance does not cause any downtime. The returned long-running operation will have a name of the format `/operations/` and can be used to track the move instance operation. The metadata field type is MoveInstanceMetadata. The response field type is Instance, if successful. Cancelling the operation sets its metadata's cancel_time. Cancellation is not immediate since it involves moving any data previously moved to target instance config back to the original instance config. The same operation can be used to track the progress of the cancellation. Upon successful completion of the cancellation, the operation terminates with CANCELLED status. Upon completion(if not cancelled) of the returned operation: * Instance would be successfully moved to the target instance config. * You are billed for compute and storage in target instance config. Authorization requires `spanner.instances.update` permission on the resource instance. For more details, please see [documentation](https://cloud.google.com/spanner/docs/move-instance)."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/spanner.admin"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://spanner.googleapis.com/"
+     "v1/{+name}:move"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn instances-delete$
+  "https://cloud.google.com/spanner
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Deletes an instance. Immediately upon completion of the request: * Billing ceases for all of the instance's reserved resources. Soon afterward: * The instance and *all of its databases* immediately and irrevocably disappear from the API. All data in the databases is permanently deleted."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/spanner.admin"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/delete
+    (util/get-url
+     "https://spanner.googleapis.com/"
+     "v1/{+name}"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn instances-getIamPolicy$
+  "https://cloud.google.com/spanner
+  
+  Required parameters: resource
+  
+  Optional parameters: none
+  
+  Body: 
+  
+  {:options {:requestedPolicyVersion integer}}
+  
+  Gets the access control policy for an instance resource. Returns an empty policy if an instance exists but does not have a policy set. Authorization requires `spanner.instances.getIamPolicy` on resource."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/spanner.admin"]}
+  [auth parameters body]
+  {:pre [(util/has-keys? parameters #{:resource})]}
+  (util/get-response
+   (http/post
+    (util/get-url
+     "https://spanner.googleapis.com/"
+     "v1/{+resource}:getIamPolicy"
+     #{:resource}
+     parameters)
+    (merge-with
+     merge
+     {:content-type :json,
+      :body (json/generate-string body),
+      :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn instances-list$
+  "https://cloud.google.com/spanner
+  
+  Required parameters: parent
+  
+  Optional parameters: pageSize, pageToken, filter, instanceDeadline
+  
+  Lists all instances in the given project."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"
+            "https://www.googleapis.com/auth/spanner.admin"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://spanner.googleapis.com/"
+     "v1/{+parent}/instances"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn instances-databases-getDdl$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/getDdl
+  "https://cloud.google.com/spanner
   
   Required parameters: database
   
@@ -724,7 +757,7 @@
      auth))))
 
 (defn instances-databases-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -751,7 +784,7 @@
      auth))))
 
 (defn instances-databases-setIamPolicy$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/setIamPolicy
+  "https://cloud.google.com/spanner
   
   Required parameters: resource
   
@@ -784,7 +817,7 @@
      auth))))
 
 (defn instances-databases-patch$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/patch
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -805,7 +838,7 @@
    :reconciling boolean,
    :databaseDialect string,
    :enableDropProtection boolean,
-   :encryptionConfig {:kmsKeyName string}}
+   :encryptionConfig {:kmsKeyName string, :kmsKeyNames [string]}}
   
   Updates a Cloud Spanner database. The returned long-running operation can be used to track the progress of updating the database. If the named database does not exist, returns `NOT_FOUND`. While the operation is pending: * The database's reconciling field is set to true. * Cancelling the operation is best-effort. If the cancellation succeeds, the operation metadata's cancel_time is set, the updates are reverted, and the operation terminates with a `CANCELLED` status. * New UpdateDatabase requests will return a `FAILED_PRECONDITION` error until the pending operation is done (returns successfully or with error). * Reading the database via the API continues to give the pre-request values. Upon completion of the returned operation: * The new values are in effect and readable via the API. * The database's reconciling field becomes false. The returned long-running operation will have a name of the format `projects//instances//databases//operations/` and can be used to track the database modification. The metadata field type is UpdateDatabaseMetadata. The response field type is Database, if successful."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -830,7 +863,7 @@
      auth))))
 
 (defn instances-databases-testIamPermissions$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/testIamPermissions
+  "https://cloud.google.com/spanner
   
   Required parameters: resource
   
@@ -863,7 +896,7 @@
      auth))))
 
 (defn instances-databases-restore$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/restore
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -873,7 +906,9 @@
   
   {:databaseId string,
    :backup string,
-   :encryptionConfig {:encryptionType string, :kmsKeyName string}}
+   :encryptionConfig {:encryptionType string,
+                      :kmsKeyName string,
+                      :kmsKeyNames [string]}}
   
   Create a new database by restoring from a completed backup. The new database must be in the same project and in an instance with the same instance configuration as the instance containing the backup. The returned database long-running operation has a name of the format `projects//instances//databases//operations/`, and can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreDatabaseMetadata. The response type is Database, if successful. Cancelling the returned operation will stop the restore and delete the database. There can be only one database being restored into an instance at a time. Once the restore operation completes, a new restore operation can be initiated, without waiting for the optimize operation associated with the first restore to complete."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -898,7 +933,7 @@
      auth))))
 
 (defn instances-databases-create$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/create
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -908,7 +943,7 @@
   
   {:createStatement string,
    :extraStatements [string],
-   :encryptionConfig {:kmsKeyName string},
+   :encryptionConfig {:kmsKeyName string, :kmsKeyNames [string]},
    :databaseDialect string,
    :protoDescriptors string}
   
@@ -935,7 +970,7 @@
      auth))))
 
 (defn instances-databases-updateDdl$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/updateDdl
+  "https://cloud.google.com/spanner
   
   Required parameters: database
   
@@ -968,7 +1003,7 @@
      auth))))
 
 (defn instances-databases-getIamPolicy$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/getIamPolicy
+  "https://cloud.google.com/spanner
   
   Required parameters: resource
   
@@ -1001,7 +1036,7 @@
      auth))))
 
 (defn instances-databases-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -1028,7 +1063,7 @@
      auth))))
 
 (defn instances-databases-getScans$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/getScans
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1055,7 +1090,7 @@
      auth))))
 
 (defn instances-databases-dropDatabase$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/dropDatabase
+  "https://cloud.google.com/spanner
   
   Required parameters: database
   
@@ -1082,7 +1117,7 @@
      auth))))
 
 (defn instances-databases-operations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/operations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1109,7 +1144,7 @@
      auth))))
 
 (defn instances-databases-operations-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/operations/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1136,7 +1171,7 @@
      auth))))
 
 (defn instances-databases-operations-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/operations/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1163,7 +1198,7 @@
      auth))))
 
 (defn instances-databases-operations-cancel$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/operations/cancel
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1190,7 +1225,7 @@
      auth))))
 
 (defn instances-databases-databaseRoles-testIamPermissions$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/databaseRoles/testIamPermissions
+  "https://cloud.google.com/spanner
   
   Required parameters: resource
   
@@ -1223,7 +1258,7 @@
      auth))))
 
 (defn instances-databases-databaseRoles-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/databaseRoles/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -1250,7 +1285,7 @@
      auth))))
 
 (defn instances-databases-sessions-rollback$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/rollback
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1283,7 +1318,7 @@
      auth))))
 
 (defn instances-databases-sessions-executeStreamingSql$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/executeStreamingSql
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1333,7 +1368,7 @@
      auth))))
 
 (defn instances-databases-sessions-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1360,7 +1395,7 @@
      auth))))
 
 (defn instances-databases-sessions-batchWrite$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/batchWrite
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1397,7 +1432,7 @@
      auth))))
 
 (defn instances-databases-sessions-executeSql$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/executeSql
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1447,7 +1482,7 @@
      auth))))
 
 (defn instances-databases-sessions-read$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/read
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1495,7 +1530,7 @@
      auth))))
 
 (defn instances-databases-sessions-partitionRead$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/partitionRead
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1535,7 +1570,7 @@
      auth))))
 
 (defn instances-databases-sessions-create$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/create
+  "https://cloud.google.com/spanner
   
   Required parameters: database
   
@@ -1573,7 +1608,7 @@
      auth))))
 
 (defn instances-databases-sessions-batchCreate$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/batchCreate
+  "https://cloud.google.com/spanner
   
   Required parameters: database
   
@@ -1612,7 +1647,7 @@
      auth))))
 
 (defn instances-databases-sessions-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1639,7 +1674,7 @@
      auth))))
 
 (defn instances-databases-sessions-partitionQuery$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/partitionQuery
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1678,7 +1713,7 @@
      auth))))
 
 (defn instances-databases-sessions-beginTransaction$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/beginTransaction
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1717,7 +1752,7 @@
      auth))))
 
 (defn instances-databases-sessions-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/list
+  "https://cloud.google.com/spanner
   
   Required parameters: database
   
@@ -1744,7 +1779,7 @@
      auth))))
 
 (defn instances-databases-sessions-commit$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/commit
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1791,7 +1826,7 @@
      auth))))
 
 (defn instances-databases-sessions-executeBatchDml$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/executeBatchDml
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1831,7 +1866,7 @@
      auth))))
 
 (defn instances-databases-sessions-streamingRead$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databases/sessions/streamingRead
+  "https://cloud.google.com/spanner
   
   Required parameters: session
   
@@ -1879,7 +1914,7 @@
      auth))))
 
 (defn instances-operations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/operations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1906,7 +1941,7 @@
      auth))))
 
 (defn instances-operations-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/operations/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1933,7 +1968,7 @@
      auth))))
 
 (defn instances-operations-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/operations/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1960,7 +1995,7 @@
      auth))))
 
 (defn instances-operations-cancel$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/operations/cancel
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -1987,7 +2022,7 @@
      auth))))
 
 (defn instances-backups-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2014,7 +2049,7 @@
      auth))))
 
 (defn instances-backups-copy$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/copy
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -2025,7 +2060,9 @@
   {:backupId string,
    :sourceBackup string,
    :expireTime string,
-   :encryptionConfig {:encryptionType string, :kmsKeyName string}}
+   :encryptionConfig {:encryptionType string,
+                      :kmsKeyName string,
+                      :kmsKeyNames [string]}}
   
   Starts copying a Cloud Spanner Backup. The returned backup long-running operation will have a name of the format `projects//instances//backups//operations/` and can be used to track copying of the backup. The operation is associated with the destination backup. The metadata field type is CopyBackupMetadata. The response field type is Backup, if successful. Cancelling the returned operation will stop the copying and delete the destination backup. Concurrent CopyBackup requests can run on the same source backup."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"
@@ -2050,7 +2087,7 @@
      auth))))
 
 (defn instances-backups-setIamPolicy$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/setIamPolicy
+  "https://cloud.google.com/spanner
   
   Required parameters: resource
   
@@ -2083,7 +2120,7 @@
      auth))))
 
 (defn instances-backups-patch$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/patch
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2100,6 +2137,9 @@
    :sizeBytes string,
    :createTime string,
    :state string,
+   :encryptionInformation [{:encryptionType string,
+                            :encryptionStatus Status,
+                            :kmsKeyVersion string}],
    :referencingBackups [string],
    :database string,
    :databaseDialect string,
@@ -2129,7 +2169,7 @@
      auth))))
 
 (defn instances-backups-testIamPermissions$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/testIamPermissions
+  "https://cloud.google.com/spanner
   
   Required parameters: resource
   
@@ -2162,11 +2202,11 @@
      auth))))
 
 (defn instances-backups-create$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/create
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
-  Optional parameters: backupId, encryptionConfig.encryptionType, encryptionConfig.kmsKeyName
+  Optional parameters: backupId, encryptionConfig.encryptionType, encryptionConfig.kmsKeyName, encryptionConfig.kmsKeyNames
   
   Body: 
   
@@ -2179,6 +2219,9 @@
    :sizeBytes string,
    :createTime string,
    :state string,
+   :encryptionInformation [{:encryptionType string,
+                            :encryptionStatus Status,
+                            :kmsKeyVersion string}],
    :referencingBackups [string],
    :database string,
    :databaseDialect string,
@@ -2208,7 +2251,7 @@
      auth))))
 
 (defn instances-backups-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2235,7 +2278,7 @@
      auth))))
 
 (defn instances-backups-getIamPolicy$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/getIamPolicy
+  "https://cloud.google.com/spanner
   
   Required parameters: resource
   
@@ -2268,7 +2311,7 @@
      auth))))
 
 (defn instances-backups-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -2295,7 +2338,7 @@
      auth))))
 
 (defn instances-backups-operations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/operations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2322,7 +2365,7 @@
      auth))))
 
 (defn instances-backups-operations-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/operations/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2349,7 +2392,7 @@
      auth))))
 
 (defn instances-backups-operations-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/operations/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2376,7 +2419,7 @@
      auth))))
 
 (defn instances-backups-operations-cancel$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backups/operations/cancel
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2403,7 +2446,7 @@
      auth))))
 
 (defn instances-databaseOperations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/databaseOperations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -2430,7 +2473,7 @@
      auth))))
 
 (defn instances-backupOperations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/backupOperations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -2457,7 +2500,7 @@
      auth))))
 
 (defn instances-instancePartitions-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -2484,7 +2527,7 @@
      auth))))
 
 (defn instances-instancePartitions-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2511,7 +2554,7 @@
      auth))))
 
 (defn instances-instancePartitions-create$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/create
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   
@@ -2555,7 +2598,7 @@
      auth))))
 
 (defn instances-instancePartitions-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2582,7 +2625,7 @@
      auth))))
 
 (defn instances-instancePartitions-patch$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/patch
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2626,7 +2669,7 @@
      auth))))
 
 (defn instances-instancePartitions-operations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/operations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2653,7 +2696,7 @@
      auth))))
 
 (defn instances-instancePartitions-operations-get$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/operations/get
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2680,7 +2723,7 @@
      auth))))
 
 (defn instances-instancePartitions-operations-delete$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/operations/delete
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2707,7 +2750,7 @@
      auth))))
 
 (defn instances-instancePartitions-operations-cancel$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitions/operations/cancel
+  "https://cloud.google.com/spanner
   
   Required parameters: name
   
@@ -2734,7 +2777,7 @@
      auth))))
 
 (defn instances-instancePartitionOperations-list$
-  "https://cloud.google.com/spanner/api/reference/rest/v1/projects/instances/instancePartitionOperations/list
+  "https://cloud.google.com/spanner
   
   Required parameters: parent
   

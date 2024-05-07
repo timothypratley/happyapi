@@ -1,13 +1,13 @@
 (ns happygapi.notebooks.projects
   "Notebooks API: projects.
   Notebooks API is used to manage notebook resources in Google Cloud.
-  See: https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects"
+  See: https://cloud.google.com/vertex-ai/docs/workbench/user-managed"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-list$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/list
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-get$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/get
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/operations/list
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.operations/list
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/operations/get
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.operations/get
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/operations/delete
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -137,7 +137,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/operations/cancel
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -169,7 +169,7 @@
      auth))))
 
 (defn locations-instances-rollback$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/rollback
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/rollback
   
   Required parameters: name
   
@@ -201,7 +201,7 @@
      auth))))
 
 (defn locations-instances-get$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/get
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/get
   
   Required parameters: name
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn locations-instances-setIamPolicy$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/setIamPolicy
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/setIamPolicy
   
   Required parameters: resource
   
@@ -259,7 +259,7 @@
      auth))))
 
 (defn locations-instances-patch$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/patch
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/patch
   
   Required parameters: name
   
@@ -326,7 +326,7 @@
      auth))))
 
 (defn locations-instances-testIamPermissions$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/testIamPermissions
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/testIamPermissions
   
   Required parameters: resource
   
@@ -358,7 +358,7 @@
      auth))))
 
 (defn locations-instances-reset$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/reset
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/reset
   
   Required parameters: name
   
@@ -390,7 +390,7 @@
      auth))))
 
 (defn locations-instances-create$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/create
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/create
   
   Required parameters: parent
   
@@ -457,7 +457,7 @@
      auth))))
 
 (defn locations-instances-resizeDisk$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/resizeDisk
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/resizeDisk
   
   Required parameters: notebookInstance
   
@@ -496,7 +496,7 @@
      auth))))
 
 (defn locations-instances-start$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/start
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/start
   
   Required parameters: name
   
@@ -528,7 +528,7 @@
      auth))))
 
 (defn locations-instances-delete$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/delete
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/delete
   
   Required parameters: name
   
@@ -554,7 +554,7 @@
      auth))))
 
 (defn locations-instances-diagnose$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/diagnose
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/diagnose
   
   Required parameters: name
   
@@ -591,7 +591,7 @@
      auth))))
 
 (defn locations-instances-getIamPolicy$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/getIamPolicy
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/getIamPolicy
   
   Required parameters: resource
   
@@ -617,7 +617,7 @@
      auth))))
 
 (defn locations-instances-upgrade$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/upgrade
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/upgrade
   
   Required parameters: name
   
@@ -649,7 +649,7 @@
      auth))))
 
 (defn locations-instances-checkUpgradability$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/checkUpgradability
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/checkUpgradability
   
   Required parameters: notebookInstance
   
@@ -675,7 +675,7 @@
      auth))))
 
 (defn locations-instances-getConfig$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/getConfig
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/getConfig
   
   Required parameters: name
   
@@ -701,7 +701,7 @@
      auth))))
 
 (defn locations-instances-stop$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/stop
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/stop
   
   Required parameters: name
   
@@ -733,7 +733,7 @@
      auth))))
 
 (defn locations-instances-list$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/list
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/list
   
   Required parameters: parent
   
@@ -759,7 +759,7 @@
      auth))))
 
 (defn locations-instances-reportInfoSystem$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/reportInfoSystem
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/reportInfoSystem
   
   Required parameters: name
   
@@ -791,7 +791,7 @@
      auth))))
 
 (defn locations-instances-upgradeSystem$
-  "https://cloud.google.com/notebooks/docs/api/reference/rest/v2/projects/locations/instances/upgradeSystem
+  "https://cloud.google.com/vertex-ai/docs/workbench/reference/rest/v2/projects.locations.instances/upgradeSystem
   
   Required parameters: name
   

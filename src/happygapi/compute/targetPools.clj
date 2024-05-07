@@ -1,13 +1,13 @@
 (ns happygapi.compute.targetPools
   "Compute Engine API: targetPools.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/targetPools"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn setSecurityPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/setSecurityPolicy
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/setSecurityPolicy
   
   Required parameters: project, region, targetPool
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn getHealth$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/getHealth
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/getHealth
   
   Required parameters: project, region, targetPool
   
@@ -74,7 +74,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/get
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/get
   
   Required parameters: project, region, targetPool
   
@@ -102,7 +102,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/insert
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/insert
   
   Required parameters: project, region
   
@@ -147,7 +147,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/aggregatedList
   
   Required parameters: project
   
@@ -175,7 +175,7 @@
      auth))))
 
 (defn setBackup$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/setBackup
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/setBackup
   
   Required parameters: project, region, targetPool
   
@@ -208,7 +208,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/delete
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/delete
   
   Required parameters: project, region, targetPool
   
@@ -235,7 +235,7 @@
      auth))))
 
 (defn removeInstance$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/removeInstance
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/removeInstance
   
   Required parameters: project, region, targetPool
   
@@ -268,7 +268,7 @@
      auth))))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/list
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/list
   
   Required parameters: project, region
   
@@ -296,7 +296,7 @@
      auth))))
 
 (defn removeHealthCheck$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/removeHealthCheck
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/removeHealthCheck
   
   Required parameters: project, region, targetPool
   
@@ -329,7 +329,7 @@
      auth))))
 
 (defn addInstance$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/addInstance
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/addInstance
   
   Required parameters: project, region, targetPool
   
@@ -362,7 +362,7 @@
      auth))))
 
 (defn addHealthCheck$
-  "https://cloud.google.com/compute/api/reference/rest/v1/targetPools/addHealthCheck
+  "https://cloud.google.com/products/compute/v1/docs/targetPools/addHealthCheck
   
   Required parameters: project, region, targetPool
   

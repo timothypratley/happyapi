@@ -1,13 +1,13 @@
 (ns happygapi.datacatalog.projects
   "Google Cloud Data Catalog API: projects.
   A fully managed and highly scalable data discovery and metadata management service. 
-  See: https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects"
+  See: https://cloud.google.com/data-catalog/docs/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn locations-operations-list$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/operations/list
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.operations/list
   
   Required parameters: name
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn locations-operations-get$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/operations/get
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.operations/get
   
   Required parameters: name
   
@@ -59,7 +59,7 @@
      auth))))
 
 (defn locations-operations-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/operations/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.operations/delete
   
   Required parameters: name
   
@@ -85,7 +85,7 @@
      auth))))
 
 (defn locations-operations-cancel$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/operations/cancel
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.operations/cancel
   
   Required parameters: name
   
@@ -111,7 +111,7 @@
      auth))))
 
 (defn locations-entryGroups-create$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/create
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/create
   
   Required parameters: parent
   
@@ -148,7 +148,7 @@
      auth))))
 
 (defn locations-entryGroups-get$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/get
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/get
   
   Required parameters: name
   
@@ -174,7 +174,7 @@
      auth))))
 
 (defn locations-entryGroups-patch$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/patch
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/patch
   
   Required parameters: name
   
@@ -211,7 +211,7 @@
      auth))))
 
 (defn locations-entryGroups-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/delete
   
   Required parameters: name
   
@@ -237,7 +237,7 @@
      auth))))
 
 (defn locations-entryGroups-list$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/list
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/list
   
   Required parameters: parent
   
@@ -263,7 +263,7 @@
      auth))))
 
 (defn locations-entryGroups-setIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/setIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/setIamPolicy
   
   Required parameters: resource
   
@@ -295,7 +295,7 @@
      auth))))
 
 (defn locations-entryGroups-getIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/getIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/getIamPolicy
   
   Required parameters: resource
   
@@ -327,7 +327,7 @@
      auth))))
 
 (defn locations-entryGroups-testIamPermissions$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/testIamPermissions
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/testIamPermissions
   
   Required parameters: resource
   
@@ -359,7 +359,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-modifyEntryContacts$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/modifyEntryContacts
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/modifyEntryContacts
   
   Required parameters: name
   
@@ -391,7 +391,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-get$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/get
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/get
   
   Required parameters: name
   
@@ -417,7 +417,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-patch$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/patch
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/patch
   
   Required parameters: name
   
@@ -507,7 +507,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-testIamPermissions$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/testIamPermissions
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/testIamPermissions
   
   Required parameters: resource
   
@@ -539,7 +539,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-create$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/create
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/create
   
   Required parameters: parent
   
@@ -629,7 +629,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/delete
   
   Required parameters: name
   
@@ -655,7 +655,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-star$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/star
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/star
   
   Required parameters: name
   
@@ -687,7 +687,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-getIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/getIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/getIamPolicy
   
   Required parameters: resource
   
@@ -719,7 +719,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-list$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/list
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/list
   
   Required parameters: parent
   
@@ -745,7 +745,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-modifyEntryOverview$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/modifyEntryOverview
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/modifyEntryOverview
   
   Required parameters: name
   
@@ -777,7 +777,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-unstar$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/unstar
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/unstar
   
   Required parameters: name
   
@@ -809,7 +809,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-import$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/import
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries/import
   
   Required parameters: parent
   
@@ -841,7 +841,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-tags-create$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/tags/create
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create
   
   Required parameters: parent
   
@@ -877,7 +877,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-tags-patch$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/tags/patch
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/patch
   
   Required parameters: name
   
@@ -913,7 +913,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-tags-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/tags/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/delete
   
   Required parameters: name
   
@@ -939,7 +939,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-tags-list$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/tags/list
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/list
   
   Required parameters: parent
   
@@ -965,7 +965,7 @@
      auth))))
 
 (defn locations-entryGroups-entries-tags-reconcile$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/entries/tags/reconcile
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/reconcile
   
   Required parameters: parent
   
@@ -1003,7 +1003,7 @@
      auth))))
 
 (defn locations-entryGroups-tags-create$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/tags/create
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.tags/create
   
   Required parameters: parent
   
@@ -1039,7 +1039,7 @@
      auth))))
 
 (defn locations-entryGroups-tags-patch$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/tags/patch
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.tags/patch
   
   Required parameters: name
   
@@ -1075,7 +1075,7 @@
      auth))))
 
 (defn locations-entryGroups-tags-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/tags/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.tags/delete
   
   Required parameters: name
   
@@ -1101,7 +1101,7 @@
      auth))))
 
 (defn locations-entryGroups-tags-list$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/entryGroups/tags/list
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.tags/list
   
   Required parameters: parent
   
@@ -1127,7 +1127,7 @@
      auth))))
 
 (defn locations-tagTemplates-create$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/create
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create
   
   Required parameters: parent
   
@@ -1163,7 +1163,7 @@
      auth))))
 
 (defn locations-tagTemplates-get$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/get
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/get
   
   Required parameters: name
   
@@ -1189,7 +1189,7 @@
      auth))))
 
 (defn locations-tagTemplates-patch$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/patch
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/patch
   
   Required parameters: name
   
@@ -1225,7 +1225,7 @@
      auth))))
 
 (defn locations-tagTemplates-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/delete
   
   Required parameters: name
   
@@ -1251,7 +1251,7 @@
      auth))))
 
 (defn locations-tagTemplates-setIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/setIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/setIamPolicy
   
   Required parameters: resource
   
@@ -1283,7 +1283,7 @@
      auth))))
 
 (defn locations-tagTemplates-getIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/getIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/getIamPolicy
   
   Required parameters: resource
   
@@ -1315,7 +1315,7 @@
      auth))))
 
 (defn locations-tagTemplates-testIamPermissions$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/testIamPermissions
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/testIamPermissions
   
   Required parameters: resource
   
@@ -1347,7 +1347,7 @@
      auth))))
 
 (defn locations-tagTemplates-fields-create$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/fields/create
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates.fields/create
   
   Required parameters: parent
   
@@ -1385,7 +1385,7 @@
      auth))))
 
 (defn locations-tagTemplates-fields-patch$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/fields/patch
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates.fields/patch
   
   Required parameters: name
   
@@ -1423,7 +1423,7 @@
      auth))))
 
 (defn locations-tagTemplates-fields-rename$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/fields/rename
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates.fields/rename
   
   Required parameters: name
   
@@ -1455,7 +1455,7 @@
      auth))))
 
 (defn locations-tagTemplates-fields-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/fields/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates.fields/delete
   
   Required parameters: name
   
@@ -1481,7 +1481,7 @@
      auth))))
 
 (defn locations-tagTemplates-fields-enumValues-rename$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/tagTemplates/fields/enumValues/rename
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates.fields.enumValues/rename
   
   Required parameters: name
   
@@ -1513,7 +1513,7 @@
      auth))))
 
 (defn locations-taxonomies-get$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/get
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/get
   
   Required parameters: name
   
@@ -1539,7 +1539,7 @@
      auth))))
 
 (defn locations-taxonomies-setIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/setIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/setIamPolicy
   
   Required parameters: resource
   
@@ -1571,7 +1571,7 @@
      auth))))
 
 (defn locations-taxonomies-patch$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/patch
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/patch
   
   Required parameters: name
   
@@ -1611,7 +1611,7 @@
      auth))))
 
 (defn locations-taxonomies-testIamPermissions$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/testIamPermissions
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/testIamPermissions
   
   Required parameters: resource
   
@@ -1643,7 +1643,7 @@
      auth))))
 
 (defn locations-taxonomies-replace$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/replace
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/replace
   
   Required parameters: name
   
@@ -1678,7 +1678,7 @@
      auth))))
 
 (defn locations-taxonomies-create$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/create
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/create
   
   Required parameters: parent
   
@@ -1718,7 +1718,7 @@
      auth))))
 
 (defn locations-taxonomies-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/delete
   
   Required parameters: name
   
@@ -1744,7 +1744,7 @@
      auth))))
 
 (defn locations-taxonomies-export$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/export
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/export
   
   Required parameters: parent
   
@@ -1770,7 +1770,7 @@
      auth))))
 
 (defn locations-taxonomies-getIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/getIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/getIamPolicy
   
   Required parameters: resource
   
@@ -1802,7 +1802,7 @@
      auth))))
 
 (defn locations-taxonomies-list$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/list
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/list
   
   Required parameters: parent
   
@@ -1828,7 +1828,7 @@
      auth))))
 
 (defn locations-taxonomies-import$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/import
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies/import
   
   Required parameters: parent
   
@@ -1861,7 +1861,7 @@
      auth))))
 
 (defn locations-taxonomies-policyTags-create$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/policyTags/create
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies.policyTags/create
   
   Required parameters: parent
   
@@ -1897,7 +1897,7 @@
      auth))))
 
 (defn locations-taxonomies-policyTags-delete$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/policyTags/delete
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies.policyTags/delete
   
   Required parameters: name
   
@@ -1923,7 +1923,7 @@
      auth))))
 
 (defn locations-taxonomies-policyTags-patch$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/policyTags/patch
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies.policyTags/patch
   
   Required parameters: name
   
@@ -1959,7 +1959,7 @@
      auth))))
 
 (defn locations-taxonomies-policyTags-list$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/policyTags/list
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies.policyTags/list
   
   Required parameters: parent
   
@@ -1985,7 +1985,7 @@
      auth))))
 
 (defn locations-taxonomies-policyTags-get$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/policyTags/get
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies.policyTags/get
   
   Required parameters: name
   
@@ -2011,7 +2011,7 @@
      auth))))
 
 (defn locations-taxonomies-policyTags-getIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/policyTags/getIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies.policyTags/getIamPolicy
   
   Required parameters: resource
   
@@ -2043,7 +2043,7 @@
      auth))))
 
 (defn locations-taxonomies-policyTags-setIamPolicy$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/policyTags/setIamPolicy
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies.policyTags/setIamPolicy
   
   Required parameters: resource
   
@@ -2075,7 +2075,7 @@
      auth))))
 
 (defn locations-taxonomies-policyTags-testIamPermissions$
-  "https://cloud.google.com/data-catalog/docs/api/reference/rest/v1/projects/locations/taxonomies/policyTags/testIamPermissions
+  "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.taxonomies.policyTags/testIamPermissions
   
   Required parameters: resource
   

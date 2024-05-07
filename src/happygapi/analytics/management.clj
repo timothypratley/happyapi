@@ -1,13 +1,13 @@
 (ns happygapi.analytics.management
   "Google Analytics API: management.
   Views and manages your Google Analytics data.
-  See: https://developers.google.com/analytics/api/reference/rest/v3/management"
+  See: https://developers.google.com/analytics/"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn clientId-hashClientId$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/clientId/hashClientId
+  "https://developers.google.com/analytics
   
   Required parameters: none
   
@@ -40,7 +40,7 @@
      auth))))
 
 (defn goals-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/goals/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, goalId, profileId, webPropertyId
   
@@ -69,7 +69,7 @@
      auth))))
 
 (defn goals-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/goals/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -133,7 +133,7 @@
      auth))))
 
 (defn goals-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/goals/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -163,7 +163,7 @@
      auth))))
 
 (defn goals-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/goals/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, goalId, profileId, webPropertyId
   
@@ -227,7 +227,7 @@
      auth))))
 
 (defn goals-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/goals/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, goalId, profileId, webPropertyId
   
@@ -291,7 +291,7 @@
      auth))))
 
 (defn experiments-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/experiments/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, experimentId, profileId, webPropertyId
   
@@ -320,7 +320,7 @@
      auth))))
 
 (defn experiments-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/experiments/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, experimentId, profileId, webPropertyId
   
@@ -350,7 +350,7 @@
      auth))))
 
 (defn experiments-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/experiments/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -416,7 +416,7 @@
      auth))))
 
 (defn experiments-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/experiments/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -446,7 +446,7 @@
      auth))))
 
 (defn experiments-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/experiments/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, experimentId, profileId, webPropertyId
   
@@ -512,7 +512,7 @@
      auth))))
 
 (defn experiments-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/experiments/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, experimentId, profileId, webPropertyId
   
@@ -578,7 +578,7 @@
      auth))))
 
 (defn profileFilterLinks-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileFilterLinks/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId, profileId, webPropertyId
   
@@ -606,7 +606,7 @@
      auth))))
 
 (defn profileFilterLinks-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileFilterLinks/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId, profileId, webPropertyId
   
@@ -635,7 +635,7 @@
      auth))))
 
 (defn profileFilterLinks-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileFilterLinks/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -684,7 +684,7 @@
      auth))))
 
 (defn profileFilterLinks-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileFilterLinks/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -713,7 +713,7 @@
      auth))))
 
 (defn profileFilterLinks-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileFilterLinks/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId, profileId, webPropertyId
   
@@ -762,7 +762,7 @@
      auth))))
 
 (defn profileFilterLinks-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileFilterLinks/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId, profileId, webPropertyId
   
@@ -811,7 +811,7 @@
      auth))))
 
 (defn filters-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/filters/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, filterId
   
@@ -837,7 +837,7 @@
      auth))))
 
 (defn filters-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/filters/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, filterId
   
@@ -864,7 +864,7 @@
      auth))))
 
 (defn filters-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/filters/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId
   
@@ -936,7 +936,7 @@
      auth))))
 
 (defn filters-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/filters/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId
   
@@ -963,7 +963,7 @@
      auth))))
 
 (defn filters-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/filters/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, filterId
   
@@ -1035,7 +1035,7 @@
      auth))))
 
 (defn filters-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/filters/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, filterId
   
@@ -1107,7 +1107,7 @@
      auth))))
 
 (defn customMetrics-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customMetrics/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customMetricId, webPropertyId
   
@@ -1136,7 +1136,7 @@
      auth))))
 
 (defn customMetrics-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customMetrics/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1182,7 +1182,7 @@
      auth))))
 
 (defn customMetrics-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customMetrics/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1209,7 +1209,7 @@
      auth))))
 
 (defn customMetrics-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customMetrics/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customMetricId, webPropertyId
   
@@ -1257,7 +1257,7 @@
      auth))))
 
 (defn customMetrics-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customMetrics/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customMetricId, webPropertyId
   
@@ -1305,7 +1305,7 @@
      auth))))
 
 (defn webpropertyUserLinks-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webpropertyUserLinks/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId, webPropertyId
   
@@ -1333,7 +1333,7 @@
      auth))))
 
 (defn webpropertyUserLinks-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webpropertyUserLinks/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1386,7 +1386,7 @@
      auth))))
 
 (defn webpropertyUserLinks-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webpropertyUserLinks/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1413,7 +1413,7 @@
      auth))))
 
 (defn webpropertyUserLinks-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webpropertyUserLinks/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId, webPropertyId
   
@@ -1468,7 +1468,7 @@
      auth))))
 
 (defn webPropertyAdWordsLinks-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webPropertyAdWordsLinks/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyAdWordsLinkId, webPropertyId
   
@@ -1496,7 +1496,7 @@
      auth))))
 
 (defn webPropertyAdWordsLinks-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webPropertyAdWordsLinks/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyAdWordsLinkId, webPropertyId
   
@@ -1525,7 +1525,7 @@
      auth))))
 
 (defn webPropertyAdWordsLinks-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webPropertyAdWordsLinks/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1570,7 +1570,7 @@
      auth))))
 
 (defn webPropertyAdWordsLinks-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webPropertyAdWordsLinks/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1597,7 +1597,7 @@
      auth))))
 
 (defn webPropertyAdWordsLinks-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webPropertyAdWordsLinks/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyAdWordsLinkId, webPropertyId
   
@@ -1644,7 +1644,7 @@
      auth))))
 
 (defn webPropertyAdWordsLinks-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webPropertyAdWordsLinks/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyAdWordsLinkId, webPropertyId
   
@@ -1691,7 +1691,7 @@
      auth))))
 
 (defn webproperties-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webproperties/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1718,7 +1718,7 @@
      auth))))
 
 (defn webproperties-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webproperties/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId
   
@@ -1768,7 +1768,7 @@
      auth))))
 
 (defn webproperties-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webproperties/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId
   
@@ -1796,7 +1796,7 @@
      auth))))
 
 (defn webproperties-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webproperties/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1846,7 +1846,7 @@
      auth))))
 
 (defn webproperties-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/webproperties/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1896,7 +1896,7 @@
      auth))))
 
 (defn customDimensions-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customDimensions/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customDimensionId, webPropertyId
   
@@ -1925,7 +1925,7 @@
      auth))))
 
 (defn customDimensions-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customDimensions/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1968,7 +1968,7 @@
      auth))))
 
 (defn customDimensions-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customDimensions/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -1995,7 +1995,7 @@
      auth))))
 
 (defn customDimensions-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customDimensions/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customDimensionId, webPropertyId
   
@@ -2040,7 +2040,7 @@
      auth))))
 
 (defn customDimensions-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customDimensions/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customDimensionId, webPropertyId
   
@@ -2085,7 +2085,7 @@
      auth))))
 
 (defn segments-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/segments/list
+  "https://developers.google.com/analytics
   
   Required parameters: none
   
@@ -2113,7 +2113,7 @@
      auth))))
 
 (defn accountSummaries-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/accountSummaries/list
+  "https://developers.google.com/analytics
   
   Required parameters: none
   
@@ -2140,7 +2140,7 @@
      auth))))
 
 (defn accountUserLinks-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/accountUserLinks/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId
   
@@ -2166,7 +2166,7 @@
      auth))))
 
 (defn accountUserLinks-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/accountUserLinks/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId
   
@@ -2219,7 +2219,7 @@
      auth))))
 
 (defn accountUserLinks-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/accountUserLinks/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId
   
@@ -2246,7 +2246,7 @@
      auth))))
 
 (defn accountUserLinks-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/accountUserLinks/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId
   
@@ -2299,7 +2299,7 @@
      auth))))
 
 (defn profileUserLinks-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileUserLinks/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId, profileId, webPropertyId
   
@@ -2327,7 +2327,7 @@
      auth))))
 
 (defn profileUserLinks-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileUserLinks/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -2382,7 +2382,7 @@
      auth))))
 
 (defn profileUserLinks-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileUserLinks/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -2411,7 +2411,7 @@
      auth))))
 
 (defn profileUserLinks-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profileUserLinks/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, linkId, profileId, webPropertyId
   
@@ -2466,7 +2466,7 @@
      auth))))
 
 (defn uploads-deleteUploadData$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/uploads/deleteUploadData
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customDataSourceId, webPropertyId
   
@@ -2501,7 +2501,7 @@
      auth))))
 
 (defn uploads-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/uploads/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customDataSourceId, uploadId, webPropertyId
   
@@ -2531,7 +2531,7 @@
      auth))))
 
 (defn uploads-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/uploads/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customDataSourceId, webPropertyId
   
@@ -2561,7 +2561,7 @@
      auth))))
 
 (defn uploads-uploadData$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/uploads/uploadData
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, customDataSourceId, webPropertyId
   
@@ -2590,7 +2590,7 @@
      auth))))
 
 (defn customDataSources-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/customDataSources/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -2618,7 +2618,7 @@
      auth))))
 
 (defn profiles-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profiles/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -2646,7 +2646,7 @@
      auth))))
 
 (defn profiles-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profiles/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -2675,7 +2675,7 @@
      auth))))
 
 (defn profiles-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profiles/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -2732,7 +2732,7 @@
      auth))))
 
 (defn profiles-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profiles/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -2760,7 +2760,7 @@
      auth))))
 
 (defn profiles-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profiles/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -2819,7 +2819,7 @@
      auth))))
 
 (defn profiles-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/profiles/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -2878,7 +2878,7 @@
      auth))))
 
 (defn remarketingAudience-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/remarketingAudience/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, remarketingAudienceId, webPropertyId
   
@@ -2906,7 +2906,7 @@
      auth))))
 
 (defn remarketingAudience-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/remarketingAudience/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, remarketingAudienceId, webPropertyId
   
@@ -2935,7 +2935,7 @@
      auth))))
 
 (defn remarketingAudience-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/remarketingAudience/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -2999,7 +2999,7 @@
      auth))))
 
 (defn remarketingAudience-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/remarketingAudience/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, webPropertyId
   
@@ -3026,7 +3026,7 @@
      auth))))
 
 (defn remarketingAudience-patch$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/remarketingAudience/patch
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, remarketingAudienceId, webPropertyId
   
@@ -3092,7 +3092,7 @@
      auth))))
 
 (defn remarketingAudience-update$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/remarketingAudience/update
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, remarketingAudienceId, webPropertyId
   
@@ -3158,7 +3158,7 @@
      auth))))
 
 (defn accounts-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/accounts/list
+  "https://developers.google.com/analytics
   
   Required parameters: none
   
@@ -3186,7 +3186,7 @@
      auth))))
 
 (defn unsampledReports-delete$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/unsampledReports/delete
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, unsampledReportId, webPropertyId
   
@@ -3214,7 +3214,7 @@
      auth))))
 
 (defn unsampledReports-get$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/unsampledReports/get
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, unsampledReportId, webPropertyId
   
@@ -3244,7 +3244,7 @@
      auth))))
 
 (defn unsampledReports-insert$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/unsampledReports/insert
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   
@@ -3297,7 +3297,7 @@
      auth))))
 
 (defn unsampledReports-list$
-  "https://developers.google.com/analytics/api/reference/rest/v3/management/unsampledReports/list
+  "https://developers.google.com/analytics
   
   Required parameters: accountId, profileId, webPropertyId
   

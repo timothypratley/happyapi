@@ -1,13 +1,13 @@
 (ns happygapi.displayvideo.advertisers
   "Display & Video 360 API: advertisers.
   Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.
-  See: https://developers.google.com/display-video/api/reference/rest/v3/advertisers"
+  See: https://developers.google.com/display-video/api/guides/getting-started/overview"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn listAssignedTargetingOptions$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/listAssignedTargetingOptions
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn editAssignedTargetingOptions$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/editAssignedTargetingOptions
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -68,7 +68,7 @@
      auth))))
 
 (defn get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -94,7 +94,7 @@
      auth))))
 
 (defn list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -120,7 +120,7 @@
      auth))))
 
 (defn create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: none
   
@@ -171,7 +171,7 @@
      auth))))
 
 (defn patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -222,7 +222,7 @@
      auth))))
 
 (defn delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -248,7 +248,7 @@
      auth))))
 
 (defn audit$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/audit
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -274,7 +274,7 @@
      auth))))
 
 (defn invoices-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/invoices/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -301,7 +301,7 @@
      auth))))
 
 (defn invoices-lookupInvoiceCurrency$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/invoices/lookupInvoiceCurrency
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -328,7 +328,7 @@
      auth))))
 
 (defn locationLists-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/locationLists/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, locationListId
   
@@ -354,7 +354,7 @@
      auth))))
 
 (defn locationLists-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/locationLists/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -380,7 +380,7 @@
      auth))))
 
 (defn locationLists-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/locationLists/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -416,7 +416,7 @@
      auth))))
 
 (defn locationLists-patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/locationLists/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, locationListId
   
@@ -452,7 +452,7 @@
      auth))))
 
 (defn locationLists-assignedLocations-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/locationLists/assignedLocations/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, locationListId
   
@@ -478,7 +478,7 @@
      auth))))
 
 (defn locationLists-assignedLocations-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/locationLists/assignedLocations/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, locationListId
   
@@ -510,7 +510,7 @@
      auth))))
 
 (defn locationLists-assignedLocations-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/locationLists/assignedLocations/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, locationListId, assignedLocationId
   
@@ -538,7 +538,7 @@
      auth))))
 
 (defn locationLists-assignedLocations-bulkEdit$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/locationLists/assignedLocations/bulkEdit
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, locationListId
   
@@ -573,7 +573,7 @@
      auth))))
 
 (defn channels-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, channelId
   
@@ -599,7 +599,7 @@
      auth))))
 
 (defn channels-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -625,7 +625,7 @@
      auth))))
 
 (defn channels-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -663,7 +663,7 @@
      auth))))
 
 (defn channels-patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, channelId
   
@@ -701,7 +701,7 @@
      auth))))
 
 (defn channels-sites-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/sites/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, channelId
   
@@ -727,7 +727,7 @@
      auth))))
 
 (defn channels-sites-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/sites/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, channelId
   
@@ -759,7 +759,7 @@
      auth))))
 
 (defn channels-sites-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/sites/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, channelId, urlOrAppId
   
@@ -787,7 +787,7 @@
      auth))))
 
 (defn channels-sites-bulkEdit$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/sites/bulkEdit
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, channelId
   
@@ -822,7 +822,7 @@
      auth))))
 
 (defn channels-sites-replace$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/channels/sites/replace
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, channelId
   
@@ -856,7 +856,7 @@
      auth))))
 
 (defn assets-upload$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/assets/upload
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -888,7 +888,7 @@
      auth))))
 
 (defn negativeKeywordLists-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, negativeKeywordListId
   
@@ -916,7 +916,7 @@
      auth))))
 
 (defn negativeKeywordLists-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -942,7 +942,7 @@
      auth))))
 
 (defn negativeKeywordLists-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -978,7 +978,7 @@
      auth))))
 
 (defn negativeKeywordLists-patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, negativeKeywordListId
   
@@ -1016,7 +1016,7 @@
      auth))))
 
 (defn negativeKeywordLists-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, negativeKeywordListId
   
@@ -1044,7 +1044,7 @@
      auth))))
 
 (defn negativeKeywordLists-negativeKeywords-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/negativeKeywords/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, negativeKeywordListId
   
@@ -1072,7 +1072,7 @@
      auth))))
 
 (defn negativeKeywordLists-negativeKeywords-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/negativeKeywords/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, negativeKeywordListId
   
@@ -1106,7 +1106,7 @@
      auth))))
 
 (defn negativeKeywordLists-negativeKeywords-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/negativeKeywords/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, negativeKeywordListId, keywordValue
   
@@ -1134,7 +1134,7 @@
      auth))))
 
 (defn negativeKeywordLists-negativeKeywords-bulkEdit$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/negativeKeywords/bulkEdit
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, negativeKeywordListId
   
@@ -1169,7 +1169,7 @@
      auth))))
 
 (defn negativeKeywordLists-negativeKeywords-replace$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/negativeKeywordLists/negativeKeywords/replace
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, negativeKeywordListId
   
@@ -1203,7 +1203,7 @@
      auth))))
 
 (defn lineItems-duplicate$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/duplicate
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, lineItemId
   
@@ -1235,7 +1235,7 @@
      auth))))
 
 (defn lineItems-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, lineItemId
   
@@ -1261,7 +1261,7 @@
      auth))))
 
 (defn lineItems-generateDefault$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/generateDefault
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -1299,7 +1299,7 @@
      auth))))
 
 (defn lineItems-patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, lineItemId
   
@@ -1386,7 +1386,7 @@
      auth))))
 
 (defn lineItems-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -1473,7 +1473,7 @@
      auth))))
 
 (defn lineItems-bulkUpdate$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/bulkUpdate
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -1531,7 +1531,7 @@
      auth))))
 
 (defn lineItems-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, lineItemId
   
@@ -1557,7 +1557,7 @@
      auth))))
 
 (defn lineItems-bulkEditAssignedTargetingOptions$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/bulkEditAssignedTargetingOptions
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -1593,7 +1593,7 @@
      auth))))
 
 (defn lineItems-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -1619,7 +1619,7 @@
      auth))))
 
 (defn lineItems-bulkListAssignedTargetingOptions$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/bulkListAssignedTargetingOptions
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -1645,7 +1645,7 @@
      auth))))
 
 (defn lineItems-targetingTypes-assignedTargetingOptions-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/targetingTypes/assignedTargetingOptions/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, lineItemId, targetingType, assignedTargetingOptionId
   
@@ -1679,7 +1679,7 @@
      auth))))
 
 (defn lineItems-targetingTypes-assignedTargetingOptions-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/targetingTypes/assignedTargetingOptions/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, lineItemId, targetingType
   
@@ -1707,7 +1707,7 @@
      auth))))
 
 (defn lineItems-targetingTypes-assignedTargetingOptions-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/targetingTypes/assignedTargetingOptions/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, lineItemId, targetingType
   
@@ -1845,7 +1845,7 @@
      auth))))
 
 (defn lineItems-targetingTypes-assignedTargetingOptions-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/lineItems/targetingTypes/assignedTargetingOptions/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, lineItemId, targetingType, assignedTargetingOptionId
   
@@ -1879,7 +1879,7 @@
      auth))))
 
 (defn campaigns-listAssignedTargetingOptions$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/campaigns/listAssignedTargetingOptions
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, campaignId
   
@@ -1905,7 +1905,7 @@
      auth))))
 
 (defn campaigns-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/campaigns/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, campaignId
   
@@ -1932,7 +1932,7 @@
      auth))))
 
 (defn campaigns-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/campaigns/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -1959,7 +1959,7 @@
      auth))))
 
 (defn campaigns-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/campaigns/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -2015,7 +2015,7 @@
      auth))))
 
 (defn campaigns-patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/campaigns/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, campaignId
   
@@ -2071,7 +2071,7 @@
      auth))))
 
 (defn campaigns-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/campaigns/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, campaignId
   
@@ -2098,7 +2098,7 @@
      auth))))
 
 (defn campaigns-targetingTypes-assignedTargetingOptions-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/campaigns/targetingTypes/assignedTargetingOptions/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, campaignId, targetingType, assignedTargetingOptionId
   
@@ -2132,7 +2132,7 @@
      auth))))
 
 (defn campaigns-targetingTypes-assignedTargetingOptions-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/campaigns/targetingTypes/assignedTargetingOptions/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, campaignId, targetingType
   
@@ -2160,7 +2160,7 @@
      auth))))
 
 (defn adGroupAds-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/adGroupAds/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, adGroupAdId
   
@@ -2186,7 +2186,7 @@
      auth))))
 
 (defn adGroupAds-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/adGroupAds/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -2212,7 +2212,7 @@
      auth))))
 
 (defn creatives-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/creatives/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, creativeId
   
@@ -2238,7 +2238,7 @@
      auth))))
 
 (defn creatives-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/creatives/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -2264,7 +2264,7 @@
      auth))))
 
 (defn creatives-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/creatives/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -2366,7 +2366,7 @@
      auth))))
 
 (defn creatives-patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/creatives/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, creativeId
   
@@ -2468,7 +2468,7 @@
      auth))))
 
 (defn creatives-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/creatives/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, creativeId
   
@@ -2494,7 +2494,7 @@
      auth))))
 
 (defn targetingTypes-assignedTargetingOptions-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/targetingTypes/assignedTargetingOptions/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, targetingType, assignedTargetingOptionId
   
@@ -2522,7 +2522,7 @@
      auth))))
 
 (defn targetingTypes-assignedTargetingOptions-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/targetingTypes/assignedTargetingOptions/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, targetingType
   
@@ -2548,7 +2548,7 @@
      auth))))
 
 (defn targetingTypes-assignedTargetingOptions-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/targetingTypes/assignedTargetingOptions/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, targetingType
   
@@ -2684,7 +2684,7 @@
      auth))))
 
 (defn targetingTypes-assignedTargetingOptions-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/targetingTypes/assignedTargetingOptions/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, targetingType, assignedTargetingOptionId
   
@@ -2712,7 +2712,7 @@
      auth))))
 
 (defn adGroups-bulkListAdGroupAssignedTargetingOptions$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/adGroups/bulkListAdGroupAssignedTargetingOptions
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -2738,7 +2738,7 @@
      auth))))
 
 (defn adGroups-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/adGroups/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, adGroupId
   
@@ -2764,7 +2764,7 @@
      auth))))
 
 (defn adGroups-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/adGroups/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -2790,7 +2790,7 @@
      auth))))
 
 (defn adGroups-targetingTypes-assignedTargetingOptions-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/adGroups/targetingTypes/assignedTargetingOptions/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, adGroupId, targetingType, assignedTargetingOptionId
   
@@ -2824,7 +2824,7 @@
      auth))))
 
 (defn adGroups-targetingTypes-assignedTargetingOptions-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/adGroups/targetingTypes/assignedTargetingOptions/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, adGroupId, targetingType
   
@@ -2852,7 +2852,7 @@
      auth))))
 
 (defn insertionOrders-listAssignedTargetingOptions$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/listAssignedTargetingOptions
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, insertionOrderId
   
@@ -2880,7 +2880,7 @@
      auth))))
 
 (defn insertionOrders-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, insertionOrderId
   
@@ -2908,7 +2908,7 @@
      auth))))
 
 (defn insertionOrders-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -2934,7 +2934,7 @@
      auth))))
 
 (defn insertionOrders-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId
   
@@ -2951,7 +2951,8 @@
    :kpi {:kpiType string,
          :kpiAmountMicros string,
          :kpiPercentageMicros string,
-         :kpiString string},
+         :kpiString string,
+         :kpiAlgorithmId string},
    :bidStrategy {:fixedBid FixedBidStrategy,
                  :maximizeSpendAutoBid MaximizeSpendBidStrategy,
                  :performanceGoalAutoBid PerformanceGoalBidStrategy,
@@ -3000,7 +3001,7 @@
      auth))))
 
 (defn insertionOrders-patch$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/patch
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, insertionOrderId
   
@@ -3017,7 +3018,8 @@
    :kpi {:kpiType string,
          :kpiAmountMicros string,
          :kpiPercentageMicros string,
-         :kpiString string},
+         :kpiString string,
+         :kpiAlgorithmId string},
    :bidStrategy {:fixedBid FixedBidStrategy,
                  :maximizeSpendAutoBid MaximizeSpendBidStrategy,
                  :performanceGoalAutoBid PerformanceGoalBidStrategy,
@@ -3068,7 +3070,7 @@
      auth))))
 
 (defn insertionOrders-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, insertionOrderId
   
@@ -3096,7 +3098,7 @@
      auth))))
 
 (defn insertionOrders-targetingTypes-assignedTargetingOptions-get$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/targetingTypes/assignedTargetingOptions/get
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, insertionOrderId, targetingType, assignedTargetingOptionId
   
@@ -3130,7 +3132,7 @@
      auth))))
 
 (defn insertionOrders-targetingTypes-assignedTargetingOptions-list$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/targetingTypes/assignedTargetingOptions/list
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, insertionOrderId, targetingType
   
@@ -3158,7 +3160,7 @@
      auth))))
 
 (defn insertionOrders-targetingTypes-assignedTargetingOptions-create$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/targetingTypes/assignedTargetingOptions/create
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, insertionOrderId, targetingType
   
@@ -3296,7 +3298,7 @@
      auth))))
 
 (defn insertionOrders-targetingTypes-assignedTargetingOptions-delete$
-  "https://developers.google.com/display-video/api/reference/rest/v3/advertisers/insertionOrders/targetingTypes/assignedTargetingOptions/delete
+  "https://developers.google.com/display-video/api/guides/getting-started/overview
   
   Required parameters: advertiserId, insertionOrderId, targetingType, assignedTargetingOptionId
   

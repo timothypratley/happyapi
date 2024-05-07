@@ -1,13 +1,13 @@
 (ns happygapi.compute.autoscalers
   "Compute Engine API: autoscalers.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/autoscalers"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/autoscalers/list
+  "https://cloud.google.com/products/compute/v1/docs/autoscalers/list
   
   Required parameters: project, zone
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/autoscalers/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/autoscalers/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/autoscalers/get
+  "https://cloud.google.com/products/compute/v1/docs/autoscalers/get
   
   Required parameters: autoscaler, project, zone
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/autoscalers/insert
+  "https://cloud.google.com/products/compute/v1/docs/autoscalers/insert
   
   Required parameters: project, zone
   
@@ -145,7 +145,7 @@
      auth))))
 
 (defn update$
-  "https://cloud.google.com/compute/api/reference/rest/v1/autoscalers/update
+  "https://cloud.google.com/products/compute/v1/docs/autoscalers/update
   
   Required parameters: project, zone
   
@@ -199,7 +199,7 @@
      auth))))
 
 (defn patch$
-  "https://cloud.google.com/compute/api/reference/rest/v1/autoscalers/patch
+  "https://cloud.google.com/products/compute/v1/docs/autoscalers/patch
   
   Required parameters: project, zone
   
@@ -253,7 +253,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/autoscalers/delete
+  "https://cloud.google.com/products/compute/v1/docs/autoscalers/delete
   
   Required parameters: autoscaler, project, zone
   

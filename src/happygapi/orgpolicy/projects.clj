@@ -1,13 +1,13 @@
 (ns happygapi.orgpolicy.projects
   "Organization Policy API: projects.
   The Organization Policy API allows users to configure governance rules on their Google Cloud resources across the resource hierarchy.
-  See: https://cloud.google.com/orgpolicy/docs/reference/rest/index.htmlapi/reference/rest/v2/projects"
+  See: https://cloud.google.com/resource-manager/docs/reference/orgpolicy/rest"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn constraints-list$
-  "https://cloud.google.com/orgpolicy/docs/reference/rest/index.htmlapi/reference/rest/v2/projects/constraints/list
+  "https://cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/projects.constraints/list
   
   Required parameters: parent
   
@@ -33,7 +33,7 @@
      auth))))
 
 (defn policies-create$
-  "https://cloud.google.com/orgpolicy/docs/reference/rest/index.htmlapi/reference/rest/v2/projects/policies/create
+  "https://cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/projects.policies/create
   
   Required parameters: parent
   
@@ -41,19 +41,19 @@
   
   Body: 
   
-  {:spec {:updateTime string,
+  {:alternate {:launch string, :spec GoogleCloudOrgpolicyV2PolicySpec},
+   :spec {:rules [GoogleCloudOrgpolicyV2PolicySpecPolicyRule],
           :etag string,
-          :rules [GoogleCloudOrgpolicyV2PolicySpecPolicyRule],
+          :updateTime string,
           :inheritFromParent boolean,
           :reset boolean},
    :etag string,
-   :dryRunSpec {:updateTime string,
-                :etag string,
-                :rules [GoogleCloudOrgpolicyV2PolicySpecPolicyRule],
-                :inheritFromParent boolean,
-                :reset boolean},
    :name string,
-   :alternate {:spec GoogleCloudOrgpolicyV2PolicySpec, :launch string}}
+   :dryRunSpec {:rules [GoogleCloudOrgpolicyV2PolicySpecPolicyRule],
+                :etag string,
+                :updateTime string,
+                :inheritFromParent boolean,
+                :reset boolean}}
   
   Creates a policy. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy already exists on the given Google Cloud resource."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -76,60 +76,8 @@
       :as :json}
      auth))))
 
-(defn policies-getEffectivePolicy$
-  "https://cloud.google.com/orgpolicy/docs/reference/rest/index.htmlapi/reference/rest/v2/projects/policies/getEffectivePolicy
-  
-  Required parameters: name
-  
-  Optional parameters: none
-  
-  Gets the effective policy on a resource. This is the result of merging policies in the resource hierarchy and evaluating conditions. The returned policy will not have an `etag` or `condition` set because it is an evaluated policy across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:name})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://orgpolicy.googleapis.com/"
-     "v2/{+name}:getEffectivePolicy"
-     #{:name}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
-(defn policies-list$
-  "https://cloud.google.com/orgpolicy/docs/reference/rest/index.htmlapi/reference/rest/v2/projects/policies/list
-  
-  Required parameters: parent
-  
-  Optional parameters: pageToken, pageSize
-  
-  Retrieves all of the policies that exist on a particular resource."
-  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
-  [auth parameters]
-  {:pre [(util/has-keys? parameters #{:parent})]}
-  (util/get-response
-   (http/get
-    (util/get-url
-     "https://orgpolicy.googleapis.com/"
-     "v2/{+parent}/policies"
-     #{:parent}
-     parameters)
-    (merge-with
-     merge
-     {:throw-exceptions false,
-      :query-params parameters,
-      :accept :json,
-      :as :json}
-     auth))))
-
 (defn policies-get$
-  "https://cloud.google.com/orgpolicy/docs/reference/rest/index.htmlapi/reference/rest/v2/projects/policies/get
+  "https://cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/projects.policies/get
   
   Required parameters: name
   
@@ -155,7 +103,7 @@
      auth))))
 
 (defn policies-delete$
-  "https://cloud.google.com/orgpolicy/docs/reference/rest/index.htmlapi/reference/rest/v2/projects/policies/delete
+  "https://cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/projects.policies/delete
   
   Required parameters: name
   
@@ -180,8 +128,34 @@
       :as :json}
      auth))))
 
+(defn policies-getEffectivePolicy$
+  "https://cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/projects.policies/getEffectivePolicy
+  
+  Required parameters: name
+  
+  Optional parameters: none
+  
+  Gets the effective policy on a resource. This is the result of merging policies in the resource hierarchy and evaluating conditions. The returned policy will not have an `etag` or `condition` set because it is an evaluated policy across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:name})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://orgpolicy.googleapis.com/"
+     "v2/{+name}:getEffectivePolicy"
+     #{:name}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
 (defn policies-patch$
-  "https://cloud.google.com/orgpolicy/docs/reference/rest/index.htmlapi/reference/rest/v2/projects/policies/patch
+  "https://cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/projects.policies/patch
   
   Required parameters: name
   
@@ -189,19 +163,19 @@
   
   Body: 
   
-  {:spec {:updateTime string,
+  {:alternate {:launch string, :spec GoogleCloudOrgpolicyV2PolicySpec},
+   :spec {:rules [GoogleCloudOrgpolicyV2PolicySpecPolicyRule],
           :etag string,
-          :rules [GoogleCloudOrgpolicyV2PolicySpecPolicyRule],
+          :updateTime string,
           :inheritFromParent boolean,
           :reset boolean},
    :etag string,
-   :dryRunSpec {:updateTime string,
-                :etag string,
-                :rules [GoogleCloudOrgpolicyV2PolicySpecPolicyRule],
-                :inheritFromParent boolean,
-                :reset boolean},
    :name string,
-   :alternate {:spec GoogleCloudOrgpolicyV2PolicySpec, :launch string}}
+   :dryRunSpec {:rules [GoogleCloudOrgpolicyV2PolicySpecPolicyRule],
+                :etag string,
+                :updateTime string,
+                :inheritFromParent boolean,
+                :reset boolean}}
   
   Updates a policy. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or the policy do not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag supplied in the request does not match the persisted etag of the policy Note: the supplied policy will perform a full overwrite of all fields."
   {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
@@ -219,6 +193,32 @@
      {:content-type :json,
       :body (json/generate-string body),
       :throw-exceptions false,
+      :query-params parameters,
+      :accept :json,
+      :as :json}
+     auth))))
+
+(defn policies-list$
+  "https://cloud.google.com/resource-manager/docs/reference/orgpolicy/rest/v2/projects.policies/list
+  
+  Required parameters: parent
+  
+  Optional parameters: pageToken, pageSize
+  
+  Retrieves all of the policies that exist on a particular resource."
+  {:scopes ["https://www.googleapis.com/auth/cloud-platform"]}
+  [auth parameters]
+  {:pre [(util/has-keys? parameters #{:parent})]}
+  (util/get-response
+   (http/get
+    (util/get-url
+     "https://orgpolicy.googleapis.com/"
+     "v2/{+parent}/policies"
+     #{:parent}
+     parameters)
+    (merge-with
+     merge
+     {:throw-exceptions false,
       :query-params parameters,
       :accept :json,
       :as :json}

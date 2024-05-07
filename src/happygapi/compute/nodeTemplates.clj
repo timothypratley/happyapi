@@ -1,13 +1,13 @@
 (ns happygapi.compute.nodeTemplates
   "Compute Engine API: nodeTemplates.
   Creates and runs virtual machines on Google Cloud Platform. 
-  See: https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates"
+  See: https://cloud.google.com/products/compute"
   (:require [cheshire.core :as json]
             [clj-http.client :as http]
             [happy.util :as util]))
 
 (defn list$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates/list
+  "https://cloud.google.com/products/compute/v1/docs/nodeTemplates/list
   
   Required parameters: project, region
   
@@ -35,7 +35,7 @@
      auth))))
 
 (defn aggregatedList$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates/aggregatedList
+  "https://cloud.google.com/products/compute/v1/docs/nodeTemplates/aggregatedList
   
   Required parameters: project
   
@@ -63,7 +63,7 @@
      auth))))
 
 (defn get$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates/get
+  "https://cloud.google.com/products/compute/v1/docs/nodeTemplates/get
   
   Required parameters: nodeTemplate, project, region
   
@@ -91,7 +91,7 @@
      auth))))
 
 (defn insert$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates/insert
+  "https://cloud.google.com/products/compute/v1/docs/nodeTemplates/insert
   
   Required parameters: project, region
   
@@ -139,7 +139,7 @@
      auth))))
 
 (defn delete$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates/delete
+  "https://cloud.google.com/products/compute/v1/docs/nodeTemplates/delete
   
   Required parameters: nodeTemplate, project, region
   
@@ -166,7 +166,7 @@
      auth))))
 
 (defn getIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates/getIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/nodeTemplates/getIamPolicy
   
   Required parameters: project, region, resource
   
@@ -194,7 +194,7 @@
      auth))))
 
 (defn setIamPolicy$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates/setIamPolicy
+  "https://cloud.google.com/products/compute/v1/docs/nodeTemplates/setIamPolicy
   
   Required parameters: project, region, resource
   
@@ -236,7 +236,7 @@
      auth))))
 
 (defn testIamPermissions$
-  "https://cloud.google.com/compute/api/reference/rest/v1/nodeTemplates/testIamPermissions
+  "https://cloud.google.com/products/compute/v1/docs/nodeTemplates/testIamPermissions
   
   Required parameters: project, region, resource
   

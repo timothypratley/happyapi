@@ -2,7 +2,7 @@
   "Tries to figure out the urls for api, resource, and method documentation."
   (:require [clj-http.client :as http]
             [clojure.string :as str]
-            [happy.common.middleware :as mw]))
+            [happy.common.common :as mw]))
 
 (defonce pattern-cache& (atom {}))
 (defonce redirect-cache& (atom {}))

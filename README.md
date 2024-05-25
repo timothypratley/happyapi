@@ -122,7 +122,7 @@ There are two methods for obtaining a token:
   Do not add this file to source control, keep it secured.
   This method is suitable for automated jobs.
 
-The [`happy.oauth2-credentials`](src/happy/oauth2/oauth2_credentials.clj) namespace provides a convenient way to
+The [`happy.oauth2-credentials`](src/happy/oauth2_credentials.clj) namespace provides a convenient way to
 manage authorization.
 By default, it tries to read `secret.json` or `service.json` from disk in the current directory.
 You can pass in configuration map of the same shape instead.
@@ -130,12 +130,12 @@ You can pass in configuration map of the same shape instead.
 If you want to use HappyGAPI in a web app, you should instead store and fetch tokens from your database.
 This can be done by calling `init!` with a `fetch` and `store` function, or by creating your own implementation of `auth!`.
 
-The [`happy.oauth2-capture-redirect`](src/happy/oauth2/oauth2_capture_redirect.clj)
+The [`happy.oauth2-capture-redirect`](src/happy/oauth2_capture_redirect.clj)
 namespace provides a listener to capture a code when the user is redirected to your site from the oauth2 provider.
 If you use it, you will need to include [ring](https://github.com/ring-clojure/ring) as a dependency.
 Web applications should instead define a route to capture the code.
 
-The [`happy.oauth2`](src/happy/oauth2/oauth2.clj) namespace provides generic functions to support oauth2 authorization so that you can assemble only the parts you need.
+The [`happy.oauth2`](src/happy/oauth2.clj) namespace provides generic functions to support oauth2 authorization so that you can assemble only the parts you need.
 
 
 ## Retries

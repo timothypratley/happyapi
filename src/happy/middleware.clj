@@ -137,3 +137,5 @@
   (fn
     ([args] (request (uri-from-template args)))
     ([args respond raise] (request (uri-from-template args) respond raise))))
+
+;; TODO: what about retries?

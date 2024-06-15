@@ -1,7 +1,7 @@
 (ns happygapi.sheets.spreadsheets-test
   (:require [clojure.test :refer [deftest is testing]]
             [happygapi.sheets.spreadsheets :as gsheets]
-            [happy.oauth2-credentials :as credentials]))
+            [happy.oauth2.credentials :as credentials]))
 
 (def spreadsheet-id "1NbGRyCRMoOT_MLhnubC5900JNwiQq_uqvdKwbqZOfyM")
 

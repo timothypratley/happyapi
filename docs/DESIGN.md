@@ -264,3 +264,5 @@ Probably not? Maybe worth discussion.
 * Actually clj-http solves many of these things, we just need some good defaults and a way to customize, except comprehension
 
 * Control flow: use nil instead of exceptions (as much as is possible, but what about when it isn't?)
+
+* keep happygapi and happy in separate projects to avoid spam diffs

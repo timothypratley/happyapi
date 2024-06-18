@@ -46,3 +46,6 @@
 ;; might be cool to support others, or not.
 (def uri-template
   (resolve-fn 'com.grzm.uri-template/expand))
+
+#_(def throttle-fn
+  (resolve-fn 'throttler.core/throttle-fn))

@@ -4,27 +4,28 @@
             [happy.gapi.monkey :as monkey]
             [happy.gapi.raven :as raven]
             [clojure.java.io :as io]
-            [clojure.string :as str]
-            [fipp.clojure :as pprint]))
+            [clojure.pprint :as pprint]
+            [clojure.string :as str]))
 
 (def discovery-failed& (atom #{}))
 
 (defn pprint-str [x]
-  (with-out-str (pprint/pprint x)))
+  (-> (pprint/pprint x)
+      (->> (pprint/with-pprint-dispatch pprint/code-dispatch))
+      (with-out-str)
+      ;; docstrings shouldn't be escaped
+      (str/replace "\\n" "\n")))
 
-(defn ns-str [resource-ns]
-  (str/replace
-    (str/join \newline
-              (map pprint-str resource-ns))
-    #"\\n"
-    ;; TODO: why the leading spaces??? this makes no sense
-    "\n  "))
+(defn ns-str [forms]
+  (str/join \newline
+            (map pprint-str forms)))
 
 (defn write-api-ns [api]
-  (println "Writing" (:name api) (:version api))
-  (->> (beaver/build-api-ns api)
-       (ns-str)
-       (spit (io/file beaver/out-dir name ".clj")))
+  (let [target (io/file beaver/out-dir (str (:name api) ".clj"))]
+    (println "Writing" (:name api) (:version api) (str target))
+    (->> (beaver/build-api-ns api)
+         (ns-str)
+         (spit target)))
   ;; TODO: make these useful
   #_(spit (io/file ".." "happygapi" "resources" (str (:name api) "_schema.edn"))
           (pprint-str (:schemas api)))

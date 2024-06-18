@@ -6,17 +6,13 @@ TODO: The ClojureScript part
 
 ## Context
 
-### Calling an API is hard
+Calling an API is often a study in incidental complexity
 
-> Everybody wants to be a bodybuilder,
-> but nobody wants to lift no heavy-ass weights.
->
-> -- Ronnie Coleman
+> Oh, what a tangled web we weave.
+> 
+> -- Sir Walter Scott
 
-Everybody wants to be a data savant,
-but nobody wants to call no tricksy-doody APIs.
-
-![](https://i0.wp.com/www.muscleandfitness.com/wp-content/uploads/2019/02/ronnie-coleman-squat-barbell-1109.jpg?quality=86&strip=all)
+![](https://svgsilh.com/svg/311050.svg)
 
 Making a request is easy - [`clj-http`](https://github.com/dakrone/clj-http).
 (Side note: v3 has changed quite a lot!)
@@ -44,7 +40,6 @@ A client with stateful stuff.
 Call request with a data object.
 
 Getting stuff out. Return or something else?
-
 
 ### Google APIs
 

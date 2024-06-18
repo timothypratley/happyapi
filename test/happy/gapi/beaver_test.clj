@@ -11,7 +11,7 @@
   `(is (= (m/match ~x ~pattern 'test/match ~'_else ~x) 'test/match)))
 
 (deftest method-name-test
-  (is (= 'bar-baz-booz (beaver/method "foo.bar.baz.booz"))))
+  (is (= 'bar-baz-booz (beaver/method-sym "foo.bar.baz.booz"))))
 
 (deftest extract-method-test
   (let [method (beaver/extract-method

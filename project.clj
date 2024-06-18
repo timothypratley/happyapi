@@ -9,8 +9,7 @@
                  [com.grzm/uri-template "0.7.1"]]
   :deploy-repositories {"releases" {:url "https://repo.clojars.org"}}
   :profiles {:dev     {:source-paths ["dev"]
-                       :dependencies [[fipp "0.6.26"]
-                                      [meander/epsilon "0.0.650"]
+                       :dependencies [[meander/epsilon "0.0.650"]
                                       [ring "1.12.1"]
                                       [org.scicloj/kind-portal "1-beta1"]
                                       [djblue/portal "0.56.0"]

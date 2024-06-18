@@ -138,4 +138,33 @@
     ([args] (request (uri-from-template args)))
     ([args respond raise] (request (uri-from-template args) respond raise))))
 
-;; TODO: what about retries?
+;; TODO: what about retries? (note that most clients automatically retry some stuff)
+;; just recommend another library (like again)?
+#_(defn try-n-times [f n]
+  (if (zero? n)
+    (f)
+    (try
+      (f)
+      (catch Throwable _
+        (if (retryable?)
+          (try-n-times f (dec n))
+          ...
+          )))))
+
+#_(defn wrap-retry [request]
+  (fn request*
+    ([args]
+     (try-n-times #(request args) 3))
+    ([args respond raise]
+     (request args respond (fn [ex]
+                             (if (retryable?)
+                               ;; TODO: is *?
+                               (request* args respond raise)
+                               (raise)))))))
+
+;; TODO: paging should save progress? or is it ok with informative exceptions?
+
+;; TODO: metering? Seeing as this is a pass through wrapper, just recommend that library right?!
+
+#_(defn wrap-throttle [request]
+  (pluggable/throttle-fn request 100 :second))

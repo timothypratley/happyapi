@@ -1,6 +1,6 @@
-# HappyGAPI Design
+# HappyAPI Design
 
-A function oriented, happy way to call Google APIs from Clojure/Script.
+A function oriented, happy way to call APIs from Clojure/Script.
 
 TODO: The ClojureScript part
 
@@ -15,7 +15,6 @@ Calling an API is often a study in incidental complexity
 ![](https://svgsilh.com/svg/311050.svg)
 
 Making a request is easy - [`clj-http`](https://github.com/dakrone/clj-http).
-(Side note: v3 has changed quite a lot!)
 But there is a lot more to it:
 
 * Authentication and authorization

@@ -1,6 +1,6 @@
-(defproject happygapi "0.4.10"
-  :description "A Clojure library with source generated functions for using Google APIs."
-  :url "http://github.com/timothypratley/happygapi"
+(defproject happyapi "0.1.0-SNAPSHOT"
+  :description "Middleware oriented oauth2 client for webservices"
+  :url "http://github.com/timothypratley/happyapi"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url  "https://www.eclipse.org/legal/epl-2.0/"}
   :main happy.gapi.lion

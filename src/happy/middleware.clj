@@ -120,6 +120,7 @@
     (:items body)
     body))
 
+;; TODO: is there a better name?
 (defn wrap-deitemize [request]
   (fn
     ([args]

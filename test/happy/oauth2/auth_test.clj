@@ -28,5 +28,5 @@
         config (credentials/read-secret)]
     (and
       (is credentials)
-      (is (auth/revoke-token request config credentials))
+      (is (pluggable/success? (auth/revoke-token request config credentials)))
       (credentials/delete-credentials "user"))))

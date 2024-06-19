@@ -1,7 +1,6 @@
 (ns happy.gapi.raven
   "Tries to figure out the urls for api, resource, and method documentation."
-  (:require [clj-http.client :as http]
-            [clojure.string :as str]
+  (:require [clojure.string :as str]
             [happy.middleware :as middleware]
             [happy.pluggable :as pluggable]))
 
@@ -20,15 +19,17 @@
 
 
 (def http-request
-  ((comp middleware/wrap-informative-exceptions middleware/wrap-cookie-policy-standard)
-   http/request))
+  (-> pluggable/http-request
+      (middleware/wrap-informative-exceptions)
+      (middleware/wrap-cookie-policy-standard)))
 
-(def json-request (middleware/wrap-json http-request))
+(def json-request
+  (-> http-request
+      (middleware/wrap-json)
+      (middleware/wrap-deitemize)))
 
 (defn get-json [url]
-  ;; TODO: this highlights the issue of error handling, should json-request return just the data instead of body?
-  ;; TODO: or should the caller look in body?
-  (:body (json-request {:url url :method :get})))
+  (json-request {:url url :method :get}))
 
 ;; alternatively add to the stack
 #_(defn http-request2 [request]
@@ -73,10 +74,8 @@
 ;; when to just write the code
 
 (defn can-get? [url]
-  (pluggable/success? (http-request {:method           :get
-                                     :url              url
-                                     ;; TODO: should this be a middleware?
-                                     :throw-exceptions false})))
+  (pluggable/success? (http-request {:method :get
+                                     :url    url})))
 
 (defn format-url [m pattern]
   (str/join \/ (for [expr pattern]
@@ -220,20 +219,20 @@
    (I wish they would give us the correct url in the first place).
    Some, like https://cloud.google.com/learnmoreurl, are 404 dead links."
   [url]
-  (let [response (http-request {:method           :get
-                                :url              url
-                                :throw-exceptions false})]
-    (if (pluggable/success? response)
+  (try
+    (let [response (http-request {:method :get
+                                  :url    url})]
       (let [{:keys [trace-redirects]} response
             redirect (last trace-redirects)]
         (if redirect
-          (do (println "REDIRECTED:" url redirect)
+          (do (println "Redirect:" url "to" redirect)
               (swap! redirect-cache& assoc url redirect)
               redirect)
-          url))
-      (do (println "DEAD LINK:" (:status response) url)
-          (swap! dead-link-cache& conj url)
-          url))))
+          url)))
+    (catch Exception ex
+      (println "Dead documentationLink:" (ex-message ex))
+      (swap! dead-link-cache& conj url)
+      url)))
 
 (def maybe-redirected
   (memoize maybe-redirected'))

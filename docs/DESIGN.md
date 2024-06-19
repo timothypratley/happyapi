@@ -43,6 +43,7 @@ Getting stuff out. Return or something else?
 ### Google APIs
 
 * Very wide! Everything from consumer cloud (docs, videos, email, ...) to professional cloud services (OCR, batch processing, databases, servers, ...)
+* 285 apis! (visualize as 17x17 dots)
 * Has a lot of good stuff, both consumer and professional. OCR, Translate, Dataflow
 * Competitive pricing
 * Well defined, regular, documented
@@ -260,3 +261,7 @@ Probably not? Maybe worth discussion.
 * Control flow: use nil instead of exceptions (as much as is possible, but what about when it isn't?)
 
 * keep happygapi and happy in separate projects to avoid spam diffs
+
+* Recommend exceptions
+  * Reason I avoided them in the past is info swallowing, but informative exceptions solve that
+  * TODO: rationale why they are better

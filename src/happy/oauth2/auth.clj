@@ -50,16 +50,15 @@
   "Step 5: Exchange authorization code for refresh and access tokens.
   When the user is redirected back to your app from Google with a short-lived code,
   exchange the code for a long-lived access token."
-  [request {:as config :keys [token_uri client_id client_secret redirect_uri redirect_uris refresh_token]} code]
+  [request {:as config :keys [token_uri client_id client_secret redirect_uri redirect_uris]} code]
   {:pre [token_uri client_id client_secret (or redirect_uri redirect_uris) code]}
-  (let [resp (request {:method           :post
-                       :url              token_uri
-                       :form-params      {:client_id     client_id
-                                          :client_secret client_secret
-                                          :code          code
-                                          :grant_type    "authorization_code"
-                                          :redirect_uri  (or redirect_uri (last redirect_uris))}
-                       :throw-exceptions false})]
+  (let [resp (request {:method      :post
+                       :url         token_uri
+                       :form-params {:client_id     client_id
+                                     :client_secret client_secret
+                                     :code          code
+                                     :grant_type    "authorization_code"
+                                     :redirect_uri  (or redirect_uri (last redirect_uris))}})]
     (when (pluggable/success? resp)
       (with-timestamp (:body resp)))))
 
@@ -73,43 +72,44 @@
   [request {:as config :keys [token_uri client_id client_secret client_email private_key]} scopes {:as credentials :keys [refresh_token]}]
   {:pre [token_uri (or (and client_id client_secret refresh_token)
                        (and client_email private_key))]}
-  (let [now (quot (.getTime (Date.)) 1000)
-        params (cond private_key
-                     {:grant_type "urn:ietf:params:oauth:grant-type:jwt-bearer"
-                      :assertion  (jwt/sign
-                                    {:iss   client_email,
-                                     :scope (str/join " " scopes),
-                                     :aud   token_uri
-                                     :exp   (+ now 3600)
-                                     :iat   now}
-                                    (keys/str->private-key private_key)
-                                    {:alg    :rs256
-                                     :header {:alg "RS256"
-                                              :typ "JWT"}})}
+  (try
+    (let [now (quot (.getTime (Date.)) 1000)
+          params (cond private_key
+                       {:grant_type "urn:ietf:params:oauth:grant-type:jwt-bearer"
+                        :assertion  (jwt/sign
+                                      {:iss   client_email,
+                                       :scope (str/join " " scopes),
+                                       :aud   token_uri
+                                       :exp   (+ now 3600)
+                                       :iat   now}
+                                      (keys/str->private-key private_key)
+                                      {:alg    :rs256
+                                       :header {:alg "RS256"
+                                                :typ "JWT"}})}
 
-                     refresh_token
-                     {:client_id     client_id
-                      :client_secret client_secret
-                      :grant_type    "refresh_token"
-                      :refresh_token refresh_token})
+                       refresh_token
+                       {:client_id     client_id
+                        :client_secret client_secret
+                        :grant_type    "refresh_token"
+                        :refresh_token refresh_token})
 
-        args {:url              token_uri
-              :method           :post
-              :form-params      params
-              :throw-exceptions false}
-        resp (request args)]
-    (when (pluggable/success? resp)
-      (with-timestamp (:body resp)))))
+          args {:url         token_uri
+                :method      :post
+                :form-params params}
+          resp (request args)]
+      (when (pluggable/success? resp)
+        (with-timestamp (:body resp))))
+    (catch Exception ex
+      ;; TODO: should probably only swallow 401?
+      )))
 
 (defn revoke-token
   "Given a credentials map containing either an access token or refresh token, revokes it."
   [request {:as config :keys [token_uri]} {:as credentials :keys [access_token refresh_token]}]
   {:pre [token_uri (or access_token refresh_token)]}
-  (pluggable/success?
-    (request {:method           :post
-              :url              (str/replace token_uri #"/token$" "/revoke")
-              :form-params      {"token" (or access_token refresh_token)}
-              :throw-exceptions false})))
+  (request {:method      :post
+            :url         (str/replace token_uri #"/token$" "/revoke")
+            :form-params {"token" (or access_token refresh_token)}}))
 
 (defn valid? [{:as credentials :keys [expires_at access_token]}]
   (boolean

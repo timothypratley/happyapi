@@ -31,12 +31,17 @@
           (pprint-str (:schemas api)))
   :done)
 
-(defn fetch-and-write [{:keys [name version discoveryRestUrl]}]
-  (println "Fetching" name version discoveryRestUrl)
-  (some-> (or (raven/get-json discoveryRestUrl)
-              (do (swap! discovery-failed& conj discoveryRestUrl)
-                  (println "DISCOVERY FAILED:" discoveryRestUrl)))
-          (write-api-ns)))
+(defn fetch-and-write [{:keys [name version discoveryRestUrl idx]}]
+  (try
+    (println (str "Fetching" (when idx
+                               (str " " idx " of " (count monkey/apis))))
+             name version discoveryRestUrl)
+    (-> (raven/get-json discoveryRestUrl)
+        (write-api-ns))
+    (catch Exception ex
+      (swap! discovery-failed& conj discoveryRestUrl)
+      (println (ex-message ex))
+      (println "To retry/resume, use" (pr-str `(write-one ~name)) "or" (pr-str `(write-all ~name))))))
 
 (comment
   (fetch-and-write {:discoveryRestUrl "https://spanner.googleapis.com/$discovery/rest?version=v1"}))
@@ -74,11 +79,20 @@
 (comment
   (report))
 
-(defn write-all []
-  (.mkdirs beaver/out-dir)
-  (run! fetch-and-write (vals monkey/apis))
-  (report)
-  :done)
+(defn write-all
+  "Pass an api name to resume generation at a failure"
+  ([] (write-all nil))
+  ([start]
+   (.mkdirs beaver/out-dir)
+   (let [apis (->> (vals monkey/apis)
+                 (sort-by :name)
+                 (map-indexed (fn [idx api]
+                                (assoc api :idx idx))))
+         remaining (cond->> apis
+                            start (drop-while (comp (complement #{start}) :name)))]
+     (run! fetch-and-write remaining))
+   (report)
+   :done))
 
 (defn write-one [api-name]
   (some-> (get monkey/apis api-name)
@@ -90,6 +104,9 @@
   (swap! raven/pattern-cache& dissoc "speech")
   (get monkey/apis "speech")
   (write-one "speech")
+  (write-one "datalineage")
+  ;; TODO: poly is no more
+  (write-all "poly")
 
   )
 

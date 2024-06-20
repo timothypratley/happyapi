@@ -74,8 +74,11 @@
 ;; when to just write the code
 
 (defn can-get? [url]
-  (pluggable/success? (http-request {:method :get
-                                     :url    url})))
+  (try
+    (pluggable/success? (http-request {:method :get
+                                       :url    url}))
+    (catch Exception ex
+      false)))
 
 (defn format-url [m pattern]
   (str/join \/ (for [expr pattern]

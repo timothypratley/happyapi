@@ -7,13 +7,13 @@
 
 (deftest auth2-test
   (let [config (credentials/read-secret)
-        clj-http (client/wrap-api clj-http/request config)
-        kit-http (client/wrap-api (comp deref httpkit/request) config)
+        clj-request (client/wrap-api clj-http/request config)
+        kit-request (client/wrap-api (comp deref httpkit/request) config)
         req {:method       :get
              :url          "https://openidconnect.googleapis.com/v1/userinfo"
              :scopes       ["https://www.googleapis.com/auth/userinfo.email"]
              :query-params {}}
-        resp1 (clj-http req)
-        _ (is (get-in resp1 [:body :email]))
-        resp2 (kit-http req)
-        _ (is (get-in resp2 [:body :email]))]))
+        resp1 (clj-request req)
+        _ (is (get-in resp1 [:email]))
+        resp2 (kit-request req)
+        _ (is (get-in resp2 [:email]))]))

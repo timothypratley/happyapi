@@ -9,7 +9,6 @@
 (deftest wrap-uri-template-test
   (let [request (-> (fn
                       ([args]
-                       (prn args)
                        (is (= (:url args) "fooBARbaz")))
                       ([args respond raise]
                        (is (= (:url args) "fooBARbaz"))))

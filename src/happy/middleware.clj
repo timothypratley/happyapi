@@ -132,7 +132,9 @@
               raise))))
 
 (defn uri-from-template [{:as args :keys [uri-template uri-template-args]}]
-  (assoc args :url (pluggable/uri-template uri-template uri-template-args)))
+  (if uri-template
+    (assoc args :url (pluggable/uri-template uri-template uri-template-args))
+    args))
 
 (defn wrap-uri-template [request]
   (fn

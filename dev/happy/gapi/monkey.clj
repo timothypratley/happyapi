@@ -7,9 +7,7 @@
 (defn list-apis'
   "Returns a vector of preferred APIs with their discovery URL."
   []
-  (-> (raven/get-json discovery-url)
-      (:items)
-      (or (println "ROOT DISCOVERY FAILED:" discovery-url))))
+  (raven/get-json discovery-url))
 
 (def list-apis (memoize list-apis'))
 

@@ -67,9 +67,8 @@
       (middleware/wrap-json)
       (wrap-oauth2 config)
       (middleware/wrap-uri-template)
-      (middleware/wrap-deitemize)
-      ;; TODO: wrap response normalization
-      (middleware/wrap-paging)))
+      (middleware/wrap-paging)
+      (middleware/wrap-deitemize)))
 
 (def api-request
   "Makes API requests.

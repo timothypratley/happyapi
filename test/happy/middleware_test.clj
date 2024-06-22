@@ -60,16 +60,16 @@
         request (-> (fn
                       ([args]
                        (let [c (swap! counter inc)]
-                         {:status   200
-                          :body     {:items (get responses c)}
-                          :nextPage (when (= c 0)
-                                      "page2")}))
+                         {:status        200
+                          :body          {:items (get responses c)
+                                          :nextPageToken (when (= c 0)
+                                                           "page2")}}))
                       ([args respond raise]
                        (let [c (swap! counter inc)]
-                         (respond {:status   200
-                                   :body     {:items (get responses c)}
-                                   :nextPage (when (= c 2)
-                                               "page4")}))))
+                         (respond {:status        200
+                                   :body          {:items (get responses c)
+                                                   :nextPageToken (when (= c 2)
+                                                                    "page4")}}))))
                     (middleware/wrap-paging)
                     (middleware/wrap-deitemize))]
     (is (= (request {}) [1 2 3 4 5 6]))

@@ -7,7 +7,7 @@
             [meander.strategy.epsilon :as s]
             [meander.epsilon :as m]))
 
-(def project-name "happygapi")
+(def project-name "happygapi2")
 (def out-dir (io/file ".." project-name "src" project-name))
 
 (defn method-sym
@@ -44,32 +44,41 @@
               ;;>
               [~(summarize-schema ?item schema depth)]
 
-              {:type                 "object"
-               :properties           (m/pred seq (m/seqable [!property !item] ...))}
+              {:type       "object"
+               :properties (m/pred seq (m/seqable [!property !item] ...))}
               ;;>
               {& ([!property (m/app #(summarize-schema % schema depth) !item)] ...)}
-
-              {:type "object"}
-              ;;>
-              any
 
               {:type (m/pred string? ?type)}
               ;;>
               (m/app symbol ?type))))
 
-(defn doc-string [{:as ?api :keys [schemas]} {:as ?method :keys [description request]} ?request-sym !optional-parameters]
-  (str description \newline \newline
-       (str "Docs: " (raven/doc-link ?api ?method))
-       (when (seq !optional-parameters)
+(defn doc-string [{:as ?api :keys [schemas]} {:as ?method :keys [description request parameters parameterOrder]} ?request-sym]
+  (str description \newline
+       (raven/doc-link ?api ?method)
+
+       (when (or request (seq parameterOrder))
+         (str \newline
+              (when (seq parameterOrder)
+                (str \newline
+                     (str/join \newline
+                               (for [p parameterOrder]
+                                 (let [{:keys [type description]} (get parameters (keyword p))]
+                                   (str p " <" type "> " description))))))
+              (when request
+                (str \newline
+                     ?request-sym
+                     (if-let [s (summarize-schema request schemas)]
+                       (str ":" \newline (str/trim-newline (with-out-str (pprint/pprint s))))
+                       " <unspecified>")))))
+
+       (when-let [opts (seq (for [[p {:keys [required type description]}] parameters
+                                  ;; pageToken is handled by the wrap-paging middleware
+                                  :when (and (not required) (not= p :pageToken))]
+                              (str (name p) " <" type "> " description)))]
          (str \newline \newline
-              "Optional parameters: " \newline
-              "  " (str/join ", " !optional-parameters)))
-       (when request
-         (str \newline \newline
-              ?request-sym ":" \newline
-              (if-let [s (summarize-schema request schemas)]
-                (str/trim-newline (with-out-str (pprint/pprint s)))
-                "any")))))
+              "optional:" \newline
+              (str/join \newline opts)))))
 
 (def request-sym
   (s/rewrite (m/or (m/pred nil? ?sym)
@@ -77,58 +86,65 @@
                    {:type (m/some (m/app symbol ?sym))})
              ?sym))
 
-(defn single-arity [{:as ?api :keys [baseUrl]} {:as ?method :keys [path httpMethod scopes request]} !required-parameters]
+;; TODO: location "query", location "path"
+;; TODO: parameterOrder seems useful!!!
+
+(defn required-path-params [parameters]
+  (into {} (for [[k {:keys [required location]}] parameters
+                 :when (and required (= location "path"))]
+             [k (symbol k)])))
+
+(defn required-query-params [parameters]
+  (into {} (for [[k {:keys [required location]}] parameters
+                 :when (and required (= location "query"))]
+             [k (symbol k)])))
+
+(defn single-arity [{:as ?api :keys [baseUrl]} {:as ?method :keys [path httpMethod scopes request parameters parameterOrder]}]
   (let [?method-sym (method-sym ?method)
         ?request-sym (request-sym request)
-        params (cond-> !required-parameters
+        params (cond-> (mapv symbol parameterOrder)
                        request (conj ?request-sym))]
     (list 'defn ?method-sym
-          (doc-string ?api ?method ?request-sym nil)
+          (doc-string ?api ?method ?request-sym)
           params
           (list 'client/api-request
                 (cond-> {:method            httpMethod
                          :uri-template      (str baseUrl path)
-                         :uri-template-args (zipmap (map keyword !required-parameters) !required-parameters)
+                         :uri-template-args (required-path-params parameters)
+                         :query-params      (required-query-params parameters)
                          :scopes            scopes}
                         request (conj [:body ?request-sym]))))))
 
 
-(defn multi-arity [{:as ?api :keys [baseUrl]} {:as ?method :keys [path httpMethod scopes request]} !required-parameters !optional-parameters]
+(defn multi-arity [{:as ?api :keys [baseUrl]} {:as ?method :keys [path httpMethod scopes request parameters parameterOrder]}]
   (let [?method-sym (method-sym ?method)
         ?request-sym (request-sym request)
-        params (cond-> !required-parameters
+        params (cond-> (mapv symbol parameterOrder)
                        request (conj ?request-sym))]
     (list 'defn ?method-sym
-          (doc-string ?api ?method ?request-sym !optional-parameters)
+          (doc-string ?api ?method ?request-sym)
           (list params (list* ?method-sym (conj params nil)))
           (list (conj params 'optional)
                 (list 'client/api-request
                       (cond-> {:method            httpMethod
                                :uri-template      (str baseUrl path)
-                               :uri-template-args (zipmap (map keyword !required-parameters) !required-parameters)
-                               :scopes            scopes
-                               :query-params      'optional}
+                               :uri-template-args (required-path-params parameters)
+                               :query-params      (list 'merge (required-query-params parameters) 'optional)
+                               :scopes            scopes}
                               request (conj [:body ?request-sym])))))))
 
 (def extract-method
   "Given an api definition, and an api method definition,
   produces a defn form."
   (s/rewrite
-    [{:baseUrl ?base-url
-      :schemas ?schemas
-      :as      ?api}
-     {:path        ?path
-      :parameters  (m/seqable (m/or [(m/app symbol !required-parameters) {:required true}]
-                                    [(m/app symbol !optional-parameters) {}]) ...)
-      :description ?description
-      :scopes      ?scopes
-      :httpMethod  ?httpMethod
-      :request     ?request
-      :as          ?method}]
+    [{:as ?api}
+     {:parameters (m/seqable (m/or [(m/app symbol !required-parameters) {:required true}]
+                                   [(m/app symbol !optional-parameters) {}]) ...)
+      :as         ?method}]
     ;;>
     ~(if (seq !optional-parameters)
-       (multi-arity ?api ?method !required-parameters !optional-parameters)
-       (single-arity ?api ?method !required-parameters))
+       (multi-arity ?api ?method)
+       (single-arity ?api ?method))
 
     ;;
     ?else ~(throw (ex-info "FAIL" {:input ?else}))))
@@ -147,6 +163,8 @@
        ~(str ?title \newline
              ?description \newline
              "See: " (raven/maybe-redirected ?documentationLink))
-       (:require [happy.oauth2.client ~:as client])) .
-     (m/app extract-method [?api !methods]) ...)
+       (:require [happy.oauth2.client ~:as client]))
+     ;; TODO: this might make exploring APIs nicer, but takes up too much space
+     #_(def api ?api)
+     . (m/app extract-method [?api !methods]) ...)
     ?else ~(throw (ex-info "FAIL" {:input ?else}))))

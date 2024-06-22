@@ -7,7 +7,9 @@
  :aliases
  {
   ;; REPL with `clojure -A:dev:test:build:doc`
+  ;; GENERATE happygapi2 with `clojure -M:dev`
   :dev      {:extra-paths ["dev"]
+             :main-opts   ["-m" "happy.gapi.lion"]
              :extra-deps  {meander/epsilon         {:mvn/version "0.0.650"}
                            ring/ring               {:mvn/version "1.12.2"}
                            org.slf4j/slf4j-nop     {:mvn/version "2.0.13"}
@@ -28,10 +30,12 @@
                            slipset/deps-deploy     {:mvn/version "0.2.2"}}}
 
   ;; LITERATE the documentation `clojure -M:doc`
-  :doc      {:extra-paths ["docs"]
+  :doc      {:extra-paths ["notebooks"]
              :main-opts   ["-m" "clay.main"]
-             :extra-desp  {org.scicloj/kindly {:mvn/version "4-alpha7"}
-                           org.scicloj/clay   {:mvn/version "2-beta11"}}}
+             :extra-deps  {org.scicloj/kindly                  {:mvn/version "4-alpha7"}
+                           org.scicloj/clay                    {:mvn/version "2-beta11"}
+                           ;; TODO: avoid circular dependencies
+                           io.github.timothypratley/happygapi2 {:mvn/version "0.1.0-alpha"}}}
 
   ;; Run TESTS with `clojure -M:dev:test`
   :test     {:extra-paths ["test"]

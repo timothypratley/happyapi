@@ -265,3 +265,10 @@ Probably not? Maybe worth discussion.
 * Recommend exceptions
   * Reason I avoided them in the past is info swallowing, but informative exceptions solve that
   * TODO: rationale why they are better
+
+
+TODO: requests more scopes than are really necessary :( I think you just need *any* of the scopes? not all?
+
+TODO: api key detection
+
+TODO: numbers should probably be coerced to numbers based on the json schema for responses.

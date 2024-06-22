@@ -35,27 +35,32 @@
            (fn [resp]
              (let [items (into items (get-in resp [:body :items]))
                    resp (assoc-in resp [:body :items] items)
-                   {:keys [nextPage]} resp]
-               (if nextPage
-                 (request-pages-async request (assoc-in args [:query-params :nextPage] nextPage) respond raise items)
+                   nextPageToken (get-in resp [:body :nextPageToken])]
+               (if nextPageToken
+                 (request-pages-async request (assoc-in args [:query-params :pageToken] nextPageToken) respond raise items)
                  (respond resp))))
            raise))
 
 (defn request-pages [request args]
   (loop [page nil
          items []]
-    (let [resp (request (if page
-                          (assoc-in args [:query-params :nextPage] page)
-                          args))
+    (let [args (if page
+                 (assoc-in args [:query-params :pageToken] page)
+                 args)
+          resp (request args)
           items (into items (get-in resp [:body :items]))
           resp (assoc-in resp [:body :items] items)
-          {:keys [nextPage]} resp]
-      (if nextPage
-        (recur nextPage items)
+          nextPageToken (get-in resp [:body :nextPageToken])]
+      (if nextPageToken
+        (if (= page nextPageToken)
+          (throw (ex-info "nextPageToken did not change while paging"
+                          {:id            ::invalid-nextPageToken
+                           :nextPageToken nextPageToken}))
+          (recur nextPageToken items))
         resp))))
 
-;; TODO: should there be a way to stop looping? Maybe http itself could be pausable?
-;; TODO: iteracts with wrap-deitemize ... badly
+;; TODO: should there be a way to monitor progress and perhaps stop looping?
+;; TODO: would it be interesting to provide a lazy iteration version? probably not, seems like a bad idea
 (defn wrap-paging
   "When fetching collections, will request all pages.
   This may take a long time.
@@ -144,30 +149,30 @@
 ;; TODO: what about retries? (note that most clients automatically retry some stuff)
 ;; just recommend another library (like again)?
 #_(defn try-n-times [f n]
-  (if (zero? n)
-    (f)
-    (try
+    (if (zero? n)
       (f)
-      (catch Throwable _
-        (if (retryable?)
-          (try-n-times f (dec n))
-          ...
-          )))))
+      (try
+        (f)
+        (catch Throwable _
+          (if (retryable?)
+            (try-n-times f (dec n))
+            ...
+            )))))
 
 #_(defn wrap-retry [request]
-  (fn request*
-    ([args]
-     (try-n-times #(request args) 3))
-    ([args respond raise]
-     (request args respond (fn [ex]
-                             (if (retryable?)
-                               ;; TODO: is *?
-                               (request* args respond raise)
-                               (raise)))))))
+    (fn request*
+      ([args]
+       (try-n-times #(request args) 3))
+      ([args respond raise]
+       (request args respond (fn [ex]
+                               (if (retryable?)
+                                 ;; TODO: is *?
+                                 (request* args respond raise)
+                                 (raise)))))))
 
 ;; TODO: paging should save progress? or is it ok with informative exceptions?
 
 ;; TODO: metering? Seeing as this is a pass through wrapper, just recommend that library right?!
 
 #_(defn wrap-throttle [request]
-  (pluggable/throttle-fn request 100 :second))
+    (pluggable/throttle-fn request 100 :second))

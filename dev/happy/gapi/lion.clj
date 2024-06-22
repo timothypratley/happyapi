@@ -85,9 +85,9 @@
   ([start]
    (.mkdirs beaver/out-dir)
    (let [apis (->> (vals monkey/apis)
-                 (sort-by :name)
-                 (map-indexed (fn [idx api]
-                                (assoc api :idx idx))))
+                   (sort-by :name)
+                   (map-indexed (fn [idx api]
+                                  (assoc api :idx idx))))
          remaining (cond->> apis
                             start (drop-while (comp (complement #{start}) :name)))]
      (run! fetch-and-write remaining))
@@ -107,8 +107,7 @@
   (write-one "datalineage")
   ;; TODO: poly is no more
   (write-all "poly")
-
-  )
+  (write-one "youtube"))
 
 
 (defn -main [& args]

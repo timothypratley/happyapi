@@ -29,13 +29,13 @@
              :extra-deps  {org.clojure/tools.build {:mvn/version "0.9.2"}
                            slipset/deps-deploy     {:mvn/version "0.2.2"}}}
 
-  ;; LITERATE the documentation `clojure -M:doc`
+  ;; LITERATE the documentation `clojure -X:dev:doc scicloj.clay.v2.api/make\!`
   :doc      {:extra-paths ["notebooks"]
-             :main-opts   ["-m" "clay.main"]
+             :main-opts   ["-m" "scicloj.clay.v2.api/make!"]
              :extra-deps  {org.scicloj/kindly                  {:mvn/version "4-alpha7"}
                            org.scicloj/clay                    {:mvn/version "2-beta11"}
-                           ;; TODO: avoid circular dependencies
-                           io.github.timothypratley/happygapi2 {:mvn/version "0.1.0-alpha"}}}
+                           ;; TODO: this seems a bit weird, given happygapi2 depends on this project?!?!
+                           io.github.timothypratley/happygapi2 {:mvn/version "0.1.4-alpha"}}}
 
   ;; Run TESTS with `clojure -M:dev:test`
   :test     {:extra-paths ["test"]

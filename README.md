@@ -10,6 +10,10 @@ Creates simple, handy and useful API clients.
 
 A unified approach for interacting with web APIs instead of relying on custom clients per API.
 
+## Status
+
+Alpha, seeking feedback.
+
 ## Features
 
 * OAuth2
@@ -60,16 +64,12 @@ This approach should work well with other discovery documents, hopefully AWS wil
 
 ## Usage
 
-Hopefully you'll find the generated libraries like [HappyGAPI](https://github.com/timothypratley/happygapi) useful and
-won't need to use HappyAPI directly.
+Hopefully you'll find the generated libraries like [HappyGAPI2](https://github.com/timothypratley/happygapi2) useful and won't need to use HappyAPI directly.
 
-If you prefer to use HappyAPI directly (perhaps you don't like generated code, or no generated library exists for the
-service),
+If you prefer to use HappyAPI directly (perhaps you don't like generated code, or no generated library exists for the service),
 add the dependency to your project file:
 
-
 [![Clojars Project](https://img.shields.io/clojars/v/io.github.timothypratley/happyapi.svg)](https://clojars.org/io.github.timothypratley/happyapi)
-
 
 ### Dependencies
 

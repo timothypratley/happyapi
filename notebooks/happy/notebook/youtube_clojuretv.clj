@@ -1,7 +1,7 @@
 (ns happy.notebook.youtube-clojuretv
   (:require [clojure.string :as str]
             [scicloj.kindly.v4.kind :as kind]
-            [happygapi.youtube :as youtube]))
+            [happygapi2.youtube :as youtube]))
 
 ;; # ClojureTV video views analysis
 
@@ -65,6 +65,7 @@
 (kind/vega-lite
   {:title "ClojureTV views per video"
    :data  {:values videos}
+   :width 400
    :layer [{:mark     {:type "point" :tooltip true}
             :encoding {:x       {:field "statistics.viewCount" :type "ordinal" :title "video" :axis {:labels false} :sort "-y"}
                        :y       {:field "statistics.viewCount" :type "quantitative" :title "views"}
@@ -79,6 +80,7 @@
 (kind/vega-lite
   {:title "ClojureTV log scale view quartiles"
    :data  {:values videos}
+   :width 400
    :layer [{:mark     {:type "point" :tooltip true}
             :encoding {:x       {:field "statistics.viewCount" :type "ordinal" :title "video" :axis {:labels false} :sort "-y"}
                        :y       {:field "statistics.viewCount" :type "quantitative" :title "views" :scale {:type "log"}}
@@ -109,10 +111,10 @@
                       {:keys [title description] {{:keys [url]} :default} :thumbnails} :snippet}]
   (kind/hiccup
     [:div {:style {:display             "grid"
-                   :gap                 15
-                   :grid-template-areas ["'t t t t t t'
-                                          'i i i d d d'
-                                          's s s d d d'"]}}
+                   :gap                 "15px"
+                   :grid-template-areas "'t t t t t t'
+                                         'i i i d d d'
+                                          's s s d d d'"}}
      [:div {:style {:grid-area "t"}} [:strong title]]
      [:div {:style {:grid-area "i"}} [:a {:href (str "https://youtube.com/watch?v=" id) :target "_blank"}
                                       [:img {:src url}]]]
@@ -125,21 +127,36 @@
 
 (defn video-table [videos]
   (kind/hiccup
-    [:table
-     [:thead [:tr [:th "Rank"] [:th "Title"] [:th "Views"] [:th "Likes"] [:th "Comments"] [:th "Video"]]]
+    [:table {:style {:width "100%"}}
+     [:thead [:tr
+              [:th {:style {:text-align "right"
+                            :padding    "10px"}} "Rank"]
+              [:th {:style {:padding "10px"}} "Title"]
+              [:th {:style {:text-align "right"
+                            :padding    "10px"}} "Views"]
+              [:th {:style {:text-align "right"
+                            :padding    "10px"}} "Likes"]
+              [:th {:style {:text-align "right"
+                            :padding    "10px"}} "Comments"]
+              [:th {:style {:padding "10px"}} "Video"]]]
      (into [:tbody]
            (map-indexed
              (fn [idx {:keys                                                [id]
                        {:keys [viewCount likeCount commentCount]}           :statistics
                        {:keys [title] {{:keys [url]} :default} :thumbnails} :snippet}]
                [:tr
-                [:td (inc idx)]
-                [:td title]
-                [:td viewCount]
-                [:td likeCount]
-                [:td commentCount]
-                [:td [:a {:href (str "https://youtube.com/watch?v=" id) :target "_blank"}
-                      [:img {:src url :height 50}]]]])
+                [:td {:align "right"
+                      :style {:padding "10px"}} (inc idx)]
+                [:td {:style {:padding "10px"}} title]
+                [:td {:align "right"
+                      :style {:padding "10px"}} viewCount]
+                [:td {:align "right"
+                      :style {:padding "10px"}} likeCount]
+                [:td {:align "right"
+                      :style {:padding "10px"}} commentCount]
+                [:td {:style {:padding "10px"}}
+                 [:a {:href (str "https://youtube.com/watch?v=" id) :target "_blank"}
+                  [:img {:src url :height 50}]]]])
              videos))]))
 
 ;; ### Most viewed
@@ -208,7 +225,7 @@
 
 (video-table (take 20 (reverse (sort-by (comp :commentCount :statistics) videos))))
 
-;; The first not Rich Hickey talk on this list is "Bruce Hauman - Developing ClojureScript With Figwheel",
+;; The first not by Rich Hickey talk on this list is "Bruce Hauman - Developing ClojureScript With Figwheel",
 ;; a fun and engaging talk that presents the wonderful powers of automatic code loading for interactive development.
 
 ;; ### Hidden gems
@@ -244,8 +261,9 @@
 ;; If you are interested in diving deeper with this dataset, or perhaps trying the same investigation for your favorite channel,
 ;; the good news is that you can adapt this notebook from the sourcecode.
 
-;; ## Accessing YouTube data with HappyGAPI
+;; ## Aside about accessing YouTube data with HappyGAPI2
 
+;; This article uses HappyGAPI2 to call the YouTube API.
 ;; I created HappyGAPI about 4 years ago because I wanted to update spreadsheets automatically.
 ;; At the time there weren't many (any?) good alternatives for using OAuth2 and consequently GAPI from Clojure.
 ;; It made my life easier.
@@ -257,10 +275,10 @@
 ;; 1. Untangle the OAuth2 client as a library usable in other APIs (not just Google)
 ;; 2. Pluggable with other http clients and json encoder/decoders
 ;; 3. Easier to use
-;;   * Better organization; one namespace per api, and required arguments as function parameters
-;;   * Don't require users to call `(auth!)`
-;;   * Automate multiple page result retrieval
-;;   * Better docstrings
+;; 3.1. Better organization; one namespace per api, and required arguments as function parameters
+;; 3.2. Don't require users to call `(auth!)`
+;; 3.3. Automate multiple page result retrieval
+;; 3.4. Better docstrings
 
 ;; I'm happy to say that the new design seems to work well.
 ;; But these are breaking changes.

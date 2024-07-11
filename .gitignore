@@ -1,5 +1,4 @@
-secret.json
-service.json
+*.json
 /tokens
 /target
 /classes

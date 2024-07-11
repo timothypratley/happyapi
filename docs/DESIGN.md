@@ -1,6 +1,6 @@
 # HappyAPI Design
 
-A function oriented, happy way to call APIs from Clojure/Script.
+A function oriented, happyapi way to call APIs from Clojure/Script.
 
 TODO: The ClojureScript part
 
@@ -78,7 +78,7 @@ Getting stuff out. Return or something else?
   Secure, **except** that it encourages users to store a plain text file containing credentials, which is risky.
   If those credentials are stolen,
   your account is compromised until password reset.
-  Not widely offered/used. Not an option for GAPI).
+  Not widely offered/used. Not an option for GAPI.
 * Secret token. Please put it in the header, query parameters are secure but can appear in server logs as plain text. Easy and common, but often lacks fine-grained permissions. Github tokens can be limited in certain ways. For GAPI, the token is only useful for public APIs. It won't give you access to your data. Popular because it's really just basic auth, but with the ability to create multiple tokens?
 * OAuth2 tokens. Enables 3rd party applications to be permitted access to user data on a per-user and per-scope basis. Necessary for many Google APIs. Requires you to have an "app". Probably confusing to most users who don't want to make an "app", just want their data.
   "Apps" have a secret token which is used to get access tokens. End users are redirected to Google to sign in and grant access, then redirected back to the "app" with the access token. Access tokens are end user specific and expire.
@@ -260,11 +260,15 @@ Probably not? Maybe worth discussion.
 
 * Control flow: use nil instead of exceptions (as much as is possible, but what about when it isn't?)
 
-* keep happygapi and happy in separate projects to avoid spam diffs
+* keep happygapi and happyapi in separate projects to avoid spam diffs
 
 * Recommend exceptions
   * Reason I avoided them in the past is info swallowing, but informative exceptions solve that
   * TODO: rationale why they are better
+
+* Pluggable dependencies sound great, but have some downsides:
+  * We'd like our dependencies to be stable, adding a dependency shouldn't change which implementation is used.
+  * Configuring a the specific dependencies seems to be required, but that means there is no default out of the box.
 
 
 TODO: requests more scopes than are really necessary :( I think you just need *any* of the scopes? not all?
@@ -272,3 +276,29 @@ TODO: requests more scopes than are really necessary :( I think you just need *a
 TODO: api key detection
 
 TODO: numbers should probably be coerced to numbers based on the json schema for responses.
+
+### Notes
+
+https://github.com/drone29a/clj-oauth
+https://github.com/sharetribe/aws-sig4
+
+;; question: how to control arg checking (if at all?), maybe leave that up to users?
+;; maybe follow malli convention (or spec)
+;; idea:
+#_(defn strict! []
+(alter-var-root #'api-request
+(fn [_prev]
+#_(wrap-check-args-or-something??))))
+
+
+We need a schema explorer experience - is this another case of summarize?
+
+test api-key client
+try twitter?
+
+request or handler?
+
+major providers are inconsistent.
+providing config for urls is useful, users just need to add their id/secret
+
+putting secrets in root, bad???

@@ -1,6 +1,6 @@
-(ns happyapi.google.monkey
+(ns happyapi.gen.google.monkey
   "Discovers Google API definitions."
-  (:require [happyapi.google.raven :as raven]))
+  (:require [happyapi.gen.google.raven :as raven]))
 
 (def discovery-url "https://www.googleapis.com/discovery/v1/apis?preferred=true")
 

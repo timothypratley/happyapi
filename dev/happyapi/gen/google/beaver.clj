@@ -1,8 +1,8 @@
-(ns happyapi.google.beaver
+(ns happyapi.gen.google.beaver
   "Builds code forms for calling the remote APIs."
   (:require [clojure.java.io :as io]
             [clojure.pprint :as pprint]
-            [happyapi.google.raven :as raven]
+            [happyapi.gen.google.raven :as raven]
             [clojure.string :as str]
             [meander.strategy.epsilon :as s]
             [meander.epsilon :as m]))

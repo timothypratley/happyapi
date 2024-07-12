@@ -7,7 +7,8 @@
   (and auth_uri token_uri client_id client_secret (or redirect_uri redirect_uris)))
 
 (defmulti endpoints identity)
-(defmethod endpoints :google []
+(defmethod endpoints :default [_] nil)
+(defmethod endpoints :google [_]
   {:auth_uri  "https://accounts.google.com/o/oauth2/auth"
    :token_uri "https://oauth2.googleapis.com/token"})
 (defmethod endpoints :github [_]
@@ -66,24 +67,26 @@
 (defn wrap-oauth2
   "Wraps a http-request function that uses keys user and scopes from args to authorize according to config."
   [request config]
-  (when-not (config-valid? config)
-    (throw (ex-info "Invalid config: missing required key"
-                    {:id     ::invalid-config
-                     :config config})))
-  (when-not (middleware/fn-or-var? request)
-    (throw (ex-info "request must be a function or var"
-                    {:id           ::request-must-be-a-function
-                     :request      request
-                     :request-type (type request)})))
-  (when-not (middleware/fn-or-var? (get-in config [:fns :query-string]))
-    (throw (ex-info "query-string must be provided in config :fns :query-string as a function or var"
-                    {:id     ::query-string-must-be-a-function
-                     :config config})))
-  (fn
-    ([args]
-     (oauth2 request args config))
-    ([args respond raise]
-     (oauth2-async request args config respond raise))))
+  (let [config (with-endpoints config)]
+    (when-not (config-valid? config)
+      ;; TODO: which one?
+      (throw (ex-info "Invalid config: missing required key"
+                      {:id     ::invalid-config
+                       :config config})))
+    (when-not (middleware/fn-or-var? request)
+      (throw (ex-info "request must be a function or var"
+                      {:id           ::request-must-be-a-function
+                       :request      request
+                       :request-type (type request)})))
+    (when-not (middleware/fn-or-var? (get-in config [:fns :query-string]))
+      (throw (ex-info "query-string must be provided in config :fns :query-string as a function or var"
+                      {:id     ::query-string-must-be-a-function
+                       :config config})))
+    (fn
+      ([args]
+       (oauth2 request args config))
+      ([args respond raise]
+       (oauth2-async request args config respond raise)))))
 
 (defn make-client
   "Given a config map

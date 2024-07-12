@@ -1,14 +1,15 @@
-(ns happyapi.google.raven
+(ns happyapi.gen.google.raven
   "Tries to figure out the urls for api, resource, and method documentation."
   (:require [clojure.string :as str]
+            [happyapi.deps :as deps]
             [happyapi.middleware :as middleware]
-            [happyapi.deps :as deps]))
+            [clj-http.client :as client]))
 
 (defonce pattern-cache& (atom {}))
 (defonce redirect-cache& (atom {}))
 (defonce dead-link-cache& (atom #{}))
 
-;; fitness is deprecated
+;; fitness api is deprecated
 
 (def override-docs
   {"policyanalyzer" ["https://www.google.com" "https://cloud.google.com/policy-intelligence/docs/reference/policyanalyzer/rest/"]})
@@ -19,13 +20,13 @@
 
 
 (def http-request
-  (-> deps/http-request
+  (-> client/request
       (middleware/wrap-informative-exceptions)
       (middleware/wrap-cookie-policy-standard)))
 
 (def json-request
   (-> http-request
-      (middleware/wrap-json)
+      (middleware/wrap-json {:fns (deps/require-dep :cheshire)})
       (middleware/wrap-extract-result)))
 
 (defn get-json [url]

@@ -1,8 +1,8 @@
-(ns happyapi.google.lion
+(ns happyapi.gen.google.lion
   "Writes to src/happygapi generated namespaces of function wrappers"
-  (:require [happyapi.google.beaver :as beaver]
-            [happyapi.google.monkey :as monkey]
-            [happyapi.google.raven :as raven]
+  (:require [happyapi.gen.google.beaver :as beaver]
+            [happyapi.gen.google.monkey :as monkey]
+            [happyapi.gen.google.raven :as raven]
             [clojure.java.io :as io]
             [clojure.pprint :as pprint]
             [clojure.string :as str]))

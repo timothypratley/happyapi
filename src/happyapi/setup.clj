@@ -43,8 +43,8 @@
 (find-config)
 
 (defn with-deps
-  "Selection of implementation functions for http and json.
-  If no deps requested, will use defaults `[:clj-http :cheshire]`."
+  "Selection of implementation functions for http and json,
+  based on either the :deps or :fns of the config."
   [{:as config :keys [deps fns]}]
   (if deps
     (update config :fns #(merge (deps/choose deps) %))

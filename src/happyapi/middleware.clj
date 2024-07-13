@@ -22,7 +22,9 @@
      (request (assoc args :cookie-policy :standard) respond raise))))
 
 (defn informative-exception [id ex args]
-  (ex-info (str "Failed " (some-> (:method args) (name) (str/upper-case) (str " ")) (:url args)
+  (ex-info (str "Failed " (or (some-> (:method args) (name) (str/upper-case))
+                              "no :method provided")
+                " " (or (:url args) "no :url provided")
                 " " (ex-message ex))
            {:id   id
             :args args}
@@ -120,7 +122,8 @@
   (cond->
     (fn
       ([args]
-       (let [args (maybe-update args :body encode)
+       (let [args (-> (maybe-update args :body encode)
+                      (assoc-in [:headers "Content-Type"] "application/json"))
              resp (request args)]
          (try
            (maybe-update resp :body decode)
@@ -134,7 +137,8 @@
                ;; errors often have non-json bodies, presumably users want to handle those if we got here
                resp)))))
       ([args respond raise]
-       (request (maybe-update args :body encode)
+       (request (-> (maybe-update args :body encode)
+                    (assoc-in [:headers "Content-Type"] "application/json"))
                 (fn [resp]
                   (try
                     (-> (maybe-update resp :body decode)

@@ -97,10 +97,11 @@ if they follow common conventions.
 (google/setup! {:client_id "XYZ"
                 :client_secret (System/getenv "GOOGLE_CLIENT_SECRET")
                 :deps [:clj-http :cheshire]})
-(google/api-request {:uri "https://youtube.googleapis.com/youtube/v3/channels"
-                     :query-params {:part "contentDetails,statistics"
+(google/api-request {:method       :get
+                     :url          "https://youtube.googleapis.com/youtube/v3/channels"
+                     :query-params {:part        "contentDetails,statistics"
                                     :forUsername "ClojureTV"}
-                     :scopes ["https://www.googleapis.com/auth/youtube.readonly"]})
+                     :scopes       ["https://www.googleapis.com/auth/youtube.readonly"]})
 ```
 
 The generated code has all the endpoint and parameter information built in and constructs a request like this through `api-request`.
@@ -120,7 +121,8 @@ See the docstring for `happyapi.setup/make-client` for more information about co
                    :client_secret (System/getenv "MY_CLIENT_SECRET")}}
     :my-provider))
 
-(api-request {:uri "https://my.provider/endpoint"
+(api-request {:method :get
+              :url "https://my.provider/endpoint"
               :query-params {:foo "bar"}})
 ```
 
@@ -188,7 +190,7 @@ There are two methods for obtaining a token:
 By default, HappyAPI tries to read configuration from the environment variable `HAPPYAPI_CONFIG`,
 then from a file `happyapi.edn`.
 
-### Credentials and Token Storage
+### Credentials and token storage
 
 `happyapi.oauth2-credentials` stores tokens on disk in the `tokens` directory.
 

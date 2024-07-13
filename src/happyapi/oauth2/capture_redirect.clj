@@ -66,15 +66,16 @@
     (.setStopTimeout server 1000)
     (.stop server)
 
-    (when-not (= (:state optional) state)
-      (throw (ex-info "Return state does not match redirect state"
-                      {:id            ::state-mismatch
-                       :optional      optional
-                       :return-params return-params})))
     (if code
-      ;; exchange the code with the provider for credentials
-      ;; (must have the same config as browse, the redirect_uri needs the correct port)
-      (oauth2/exchange-code request config code)
+      (do
+        (when-not (= (:state optional) state)
+          (throw (ex-info "Return state does not match redirect state"
+                          {:id            ::state-mismatch
+                           :optional      optional
+                           :return-params return-params})))
+        ;; exchange the code with the provider for credentials
+        ;; (must have the same config as browse, the redirect_uri needs the correct port)
+        (oauth2/exchange-code request config code))
       (throw (ex-info "Login timeout, no code received."
                       {:id ::login-timeout})))))
 

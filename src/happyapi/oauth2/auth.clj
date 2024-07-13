@@ -6,7 +6,8 @@
             [buddy.sign.jwt :as jwt]
             [buddy.core.keys :as keys]
             [happyapi.middleware :as middleware])
-  (:import (java.util Date)))
+  (:import (java.util Date)
+           (java.util Base64)))
 
 (set! *warn-on-reflection* true)
 
@@ -19,16 +20,20 @@
   For valid optional params, see https://developers.google.com/identity/protocols/oauth2/web-server#httprest_1,
   noting that `state` is strongly recommended."
   ([config scopes] (provider-login-url config scopes nil))
-  ([{:as config
-     :keys [auth_uri client_id redirect_uri redirect_uris]
+  ([{:as                    config
+     :keys                  [auth_uri client_id redirect_uri redirect_uris]
      {:keys [query-string]} :fns}
     scopes
     optional]
-   (let [params (merge {:client_id     client_id
-                        :nonce         (str (random-uuid))
-                        :response_type "code"
-                        :redirect_uri  (or redirect_uri (last redirect_uris))
-                        :scope         (str/join " " scopes)}
+   (let [params (merge {:client_id             client_id
+                        :nonce                 (str (random-uuid))
+                        :response_type         "code"
+                        :redirect_uri          (or redirect_uri (last redirect_uris))
+                        :scope                 (str/join " " scopes)
+                        ;; TODO: these are required by twitter (only?)
+                        :code_challenge        "hi"
+                        :code_challenge_method "plain"
+                        }
                        optional)]
      (str auth_uri "?" (query-string params)))))
 
@@ -48,6 +53,9 @@
   (assoc credentials
     :expires_at (Date. ^long (+ (* expires_in 1000) (System/currentTimeMillis)))))
 
+(defn base64 [^String to-encode]
+  (.encodeToString (Base64/getEncoder) (.getBytes to-encode)))
+
 (defn exchange-code
   "Step 5: Exchange authorization code for refresh and access tokens.
   When the user is redirected back to your app from Google with a short-lived code,
@@ -55,13 +63,18 @@
   [request
    {:as config :keys [token_uri client_id client_secret redirect_uri redirect_uris]}
    code]
-  (let [resp (request {:method      :post
-                       :url         token_uri
+  (let [resp (request {
+                       ;; TODO; twitter likes it like this??
+                       :headers {"Authorization" (str "Basic " (base64 (str client_id ":" client_secret)))}
+                       :method  :post
+                       :url     token_uri
                        :form-params {:client_id     client_id
                                      :client_secret client_secret
                                      :code          code
                                      :grant_type    "authorization_code"
-                                     :redirect_uri  (or redirect_uri (last redirect_uris))}})]
+                                     :redirect_uri  (or redirect_uri (last redirect_uris))
+                                     ;; TODO:
+                                     :code_verifier "hi"}})]
     (when (middleware/success? resp)
       (with-timestamp (:body resp)))))
 

@@ -15,8 +15,9 @@
   {:auth_uri  "https://github.com/login/oauth/authorize"
    :token_uri "https://github.com/login/oauth/access_token"})
 (defmethod endpoints :twitter [_]
-  {:auth_uri  "https://twitter.com/i/oauth2/authorize"
-   :token_uri "https://api.twitter.com/oauth2/token"})
+  {:auth_uri     "https://twitter.com/i/oauth2/authorize"
+   :token_uri    "https://api.twitter.com/2/oauth2/token"
+   :redirect_uri "https://localhost:8080/redirect"})
 
 (defn with-endpoints
   "The only configuration required is to know the provider (for endpoints),
@@ -24,8 +25,8 @@
   This helper adds the endpoints for a given provider."
   [{:as config :keys [provider]}]
   (if provider
-    (merge (endpoints provider)
-           {:redirect_uri "https://localhost/redirect"}
+    (merge {:redirect_uri "https://localhost/redirect"}
+           (endpoints provider)
            config)
     config))
 

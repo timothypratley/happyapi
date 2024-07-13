@@ -77,9 +77,9 @@
   (let [config (if (nil? config)
                  (find-config)
                  (as-map config))
-        {:keys [client_id apikey]} config
         config (-> (get config provider)
                    (assoc :provider provider))
+        {:keys [client_id apikey]} config
         config* (with-deps config)]
     (cond client_id (oauth2.client/make-client config*)
           apikey (apikey.client/make-client config*)

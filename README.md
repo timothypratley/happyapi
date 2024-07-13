@@ -2,6 +2,7 @@
 
 <img src="HappyAPI.svg" alt="HappyAPI logo" width="200" align="right"/>
 
+A Clojure library for OAuth2.
 A unified approach for interacting with web APIs instead of relying on custom clients per API.
 Creates simple, handy and useful API clients.
 

@@ -12,25 +12,26 @@
 (def *credentials-cache
   (atom nil))
 
-(defn read-credentials [user]
-  (or (get @*credentials-cache user)
-      (let [credentials-file (io/file "tokens" (str user ".edn"))]
+;; TODO: provider is required now...
+(defn read-credentials [provider user]
+  (or (get-in @*credentials-cache [provider user])
+      (let [credentials-file (io/file "tokens" provider (str user ".edn"))]
         (when (.exists credentials-file)
           (edn/read-string (slurp credentials-file))))))
 
-(defn delete-credentials [user]
-  (swap! *credentials-cache dissoc user)
-  (.delete (io/file (io/file "tokens")
+(defn delete-credentials [provider user]
+  (swap! *credentials-cache update provider dissoc user)
+  (.delete (io/file (io/file provider "tokens")
                     (str user ".edn"))))
 
-(defn write-credentials [user credentials]
-  (swap! *credentials-cache assoc user credentials)
-  (spit (io/file (doto (io/file "tokens") (.mkdirs))
+(defn write-credentials [provider user credentials]
+  (swap! *credentials-cache assoc-in [provider user] credentials)
+  (spit (io/file (doto (io/file provider "tokens") (.mkdirs))
                  (str user ".edn"))
         credentials))
 
-(defn save-credentials [user new-credentials]
-  (when (not= @*credentials-cache new-credentials)
+(defn save-credentials [provider user new-credentials]
+  (when (not= (get-in @*credentials-cache [provider user]) new-credentials)
     (if new-credentials
-      (write-credentials user new-credentials)
-      (delete-credentials user))))
+      (write-credentials provider user new-credentials)
+      (delete-credentials provider user))))

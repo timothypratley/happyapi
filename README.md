@@ -68,7 +68,6 @@ This approach should work well with other discovery documents, hopefully AWS wil
 
 ## Usage
 
-
 Hopefully you'll find the generated libraries like [HappyGAPI2](https://github.com/timothypratley/happygapi2) useful and won't need to use HappyAPI directly.
 
 If you prefer to use HappyAPI directly (perhaps you don't like generated code, or no generated library exists for the service provider),
@@ -80,7 +79,7 @@ add the dependency to your project file:
 
 ### Service providers
 
-Currently supported:
+Currently supported
 
 * Google
 * Amazon
@@ -92,11 +91,14 @@ if they follow common conventions.
 
 ### Service provider specific usage
 
+The generated code has endpoint and parameters to construct a request through `api-request`.
+You can make custom, non-generated `api-requests` directly by passing the required arguments.
+
 ```clojure
 (require '[happyapi.providers.google :as google])
-(google/setup! {:client_id "XYZ"
+(google/setup! {:client_id     "XYZ"
                 :client_secret (System/getenv "GOOGLE_CLIENT_SECRET")
-                :deps [:clj-http :cheshire]})
+                :deps          [:clj-http :cheshire]})
 (google/api-request {:method       :get
                      :url          "https://youtube.googleapis.com/youtube/v3/channels"
                      :query-params {:part        "contentDetails,statistics"
@@ -104,11 +106,29 @@ if they follow common conventions.
                      :scopes       ["https://www.googleapis.com/auth/youtube.readonly"]})
 ```
 
-The generated code has all the endpoint and parameter information built in and constructs a request like this through `api-request`.
+**Keep your client_secret secure. Do not add it directly in your code.**
+Looking it up from the environment is a common way to avoid leaking client_secret to source control.
 
-If `setup!` is not called, the first call to `api-request` will attempt to configure itself by looking for an environment variable `HAPPYAPI_CONFIG`,
-or a file `happyapi.edn`.
-See the docstring for `happyapi.setup/make-client` for more information about configuration.
+If `setup!` has not been called,
+the first call to `api-request` will attempt to configure itself.
+
+### Configuration
+
+When no configuration is provided,
+HappyAPI tries to read configuration from the environment variable `HAPPYAPI_CONFIG`,
+and then from a file `happyapi.edn`.
+
+```clojure
+{:google {:deps            [:clj-http :cheshire]  ;; see happyapi.deps for alternatives
+          :fns             {...}                  ;; if you prefer to provide your own dependencies
+          :client_id       "MY_ID"                ;; oauth2 client_id of your app
+          :client_secret   "MY_SECRET"            ;; oauth2 client_secret from your provider
+          :apikey          "MY_APIKEY"            ;; only when not using oauth2
+          :scopes          []                     ;; optional default scopes
+          :keywordize-keys false}}                ;; optional, defaults to true
+```
+
+**Keep your client_secret secure.** Add `happyapi.edn` to `.gitignore` to avoid adding it to source control.
 
 ### Custom service providers
 
@@ -134,14 +154,14 @@ and `happyapi.oauth2.middleware` for useful miscellaneous conveniences.
 
 ### Dependencies
 
-You need http and json dependencies present in your project to use HappyAPI.
+You need HTTP and JSON dependencies.
 HappyAPI avoids creating a direct dependency because there are many implementations to choose from.
 
 * http client (clj-http, clj-http.lite, httpkit)
 * json encoder/decoder (cheshire, jsonista, clojure.data.json, charred)
 * A web server to receive redirects (ring-jetty-adapter, httpkit<soon>)
 
-To choose your dependencies, pass `:deps [:httpkit :jsonista]`, or similar, as config to `setup/make-client`.
+To choose your dependencies, pass `:deps [:httpkit :jsonista]`, or similar, as config.
 
 **Configuration of either `:deps` or `:fns` is required.**
 
@@ -189,8 +209,15 @@ To participate in OAuth2 you need to fetch and store tokens.
 
 To create an app in the Google Console,
 follow [Setting up OAuth 2.0](https://support.google.com/googleapi/answer/6158849?hl=en).
-When setting up the app credentials, add http://localhost/redirect to the authorized redirect URIs,
+
+When setting up the app credentials, add http://localhost:PORT/redirect to the authorized redirect URIs,
 and add yourself as a test user.
+
+PORT may be omitted for port 80.
+Listening on port 80 may not be possible for users that do not have root permissions.
+If you specify port 0, a random port will be used.
+The only known provider that supports random ports is Google.
+The default `redirect_uri` for Google specifies port 0 for random port selection.
 
 There are two methods for obtaining a token:
 
@@ -203,9 +230,6 @@ There are two methods for obtaining a token:
   and download a `service.json` key file.
   **Do not add this file to source control, keep it secured.**
   This method is suitable for automated jobs.
-
-By default, HappyAPI tries to read configuration from the environment variable `HAPPYAPI_CONFIG`,
-then from a file `happyapi.edn`.
 
 ### Credentials and token storage
 

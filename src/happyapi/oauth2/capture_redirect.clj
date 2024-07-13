@@ -28,14 +28,31 @@
   Defaults access_type to offline,
   state to a random uuid which is checked when redirected back,
   and include_granted_scopes true."
-  [request {:as config :keys [redirect_uri redirect_uris]} scopes optional]
+  [request {:as config :keys [redirect_uri authorization_options]} scopes]
+  ;; TODO: can p be made accessible, stoppable?
   (let [p (promise)
-        uri (or redirect_uri (last redirect_uris))
-        [match protocol host _ port path] (re-find #"^(http://)(localhost|127.0.0.1)(:(\d+))?(/.*)?$" uri)
+        [match protocol host _ port path] (re-find #"^(http://)(localhost|127.0.0.1)(:(\d+))?(/.*)?$" redirect_uri)
         _ (when-not match
-            (throw (ex-info "redirect_uri should be http://localhost"
-                            {:id     ::bad-redirect-uri
-                             :config config})))
+            (throw (ex-info "redirect_uri should match http://localhost"
+                            {:id           ::bad-redirect-uri
+                             :redirect_uri redirect_uri
+                             :config       config})))
+
+        ;; port 80 is a privileged port that requires root permissions, which may be problematic for some users
+        ;; a random (or specified) port is a natural choice.
+
+        ;; Google allows the redirect_uri port to vary
+        ;; From RFC 8242: OAuth 2.0 for Native Apps:
+        ; The authorization server MUST allow any port to be specified at the
+        ; time of the request for loopback IP redirect URIs, to accommodate
+        ; clients that obtain an available ephemeral port from the operating
+        ; system at the time of the request.
+
+        ;; Other providers do not allow port to vary
+
+        ;; TODO: it might be better to require a port, and allow port to be 0 for randomization?
+
+        ;; TODO: is there some way to know when using Native App mode?
         port (if port
                (Integer/parseInt port)
                0)
@@ -49,13 +66,16 @@
                                 {:port port :join? false})
         port (get-port server)
         config (assoc config :redirect_uri (str protocol host ":" port path))
+        ;; Twitter supports and requires pkce challenge.
+        ;; Challenges are for the provider server checking, state is for client checking, we use the same value for both.
+        state-and-challenge (str (random-uuid))
+        {:keys [code_challenge_method]} authorization_options
         ;; access_type offline and prompt consent together result in a refresh token (that both are necessary is undocumented by Google afaik)
         ;; most web-apps wouldn't do this, it is intended for desktop apps, which is the anticipated usage of this namespace
-        optional (merge {:access_type            "offline"
-                         :prompt                 "consent"
-                         :state                  (str (random-uuid))
-                         :include_granted_scopes true}
-                        optional)
+        optional (merge authorization_options
+                        {:state state-and-challenge}
+                        (when code_challenge_method
+                          {:code_challenge state-and-challenge}))
         ;; send the user to the provider to authenticate and authorize.
         ;; this url includes the redirect_uri as a query param,
         ;; so we must provide port chosen by our local server
@@ -68,22 +88,21 @@
 
     (if code
       (do
-        (when-not (= (:state optional) state)
-          (throw (ex-info "Return state does not match redirect state"
-                          {:id            ::state-mismatch
+        (when-not (= state state-and-challenge)
+          (throw (ex-info "Redirected state does not match request"
+                          {:id            ::redirected-state-mismatch
                            :optional      optional
                            :return-params return-params})))
         ;; exchange the code with the provider for credentials
         ;; (must have the same config as browse, the redirect_uri needs the correct port)
-        (oauth2/exchange-code request config code))
+        (oauth2/exchange-code request config code (when code_challenge_method state-and-challenge)))
       (throw (ex-info "Login timeout, no code received."
                       {:id ::login-timeout})))))
 
 (defn update-credentials
   "Use credentials if valid, refresh if necessary, or get new credentials.
   For valid optional params, see https://developers.google.com/identity/protocols/oauth2/web-server#httprest_1"
-  ([request config credentials scopes] (update-credentials request config credentials scopes nil))
-  ([request config credentials scopes optional]
+  ([request config credentials scopes]
    ;; scopes can grow
    (let [scopes (set/union (oauth2/credential-scopes credentials) (set scopes))
          ;; for auth calls we will need the results to be keywordized.
@@ -100,4 +119,4 @@
                    (oauth2/has-scopes? credentials scopes)
                    (oauth2/refresh-credentials request config scopes credentials))
               ;; new credentials required
-              (fresh-credentials request config scopes optional))))))
+              (fresh-credentials request config scopes))))))

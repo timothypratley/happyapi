@@ -116,7 +116,7 @@
   "Converts the body of responses to a data structure.
   Pluggable json implementations resolved from dependencies, or can be passed as an argument.
   Keywordization defaults to true if not specified.
-  Keywordization can be disabled with :keywordize-keys false.\n
+  Keywordization can be disabled with :keywordize-keys false.
 
   Error responses don't throw exceptions when parsing fails.
   Success responses that fail to parse are rethrown with the response and request as context."

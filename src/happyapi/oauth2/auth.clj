@@ -21,19 +21,14 @@
   noting that `state` is strongly recommended."
   ([config scopes] (provider-login-url config scopes nil))
   ([{:as                    config
-     :keys                  [auth_uri client_id redirect_uri redirect_uris]
+     :keys                  [provider auth_uri client_id redirect_uri]
      {:keys [query-string]} :fns}
     scopes
     optional]
-   (let [params (merge {:client_id             client_id
-                        :nonce                 (str (random-uuid))
-                        :response_type         "code"
-                        :redirect_uri          (or redirect_uri (last redirect_uris))
-                        :scope                 (str/join " " scopes)
-                        ;; TODO: these are required by twitter (only?)
-                        :code_challenge        "hi"
-                        :code_challenge_method "plain"
-                        }
+   (let [params (merge {:client_id     client_id
+                        :response_type "code"
+                        :redirect_uri  redirect_uri
+                        :scope         (str/join " " scopes)}
                        optional)]
      (str auth_uri "?" (query-string params)))))
 
@@ -63,20 +58,20 @@
   When the user is redirected back to your app from Google with a short-lived code,
   exchange the code for a long-lived access token."
   [request
-   {:as config :keys [token_uri client_id client_secret redirect_uri redirect_uris]}
-   code]
+   {:as config :keys [token_uri client_id client_secret redirect_uri]}
+   code
+   code_verifier]
   (let [resp (request {
-                       ;; TODO; twitter likes it like this??
-                       :headers {"Authorization" (str "Basic " (base64 (str client_id ":" client_secret)))}
-                       :method  :post
-                       :url     token_uri
-                       :form-params {:client_id     client_id
-                                     :client_secret client_secret
-                                     :code          code
-                                     :grant_type    "authorization_code"
-                                     :redirect_uri  (or redirect_uri (last redirect_uris))
-                                     ;; TODO:
-                                     :code_verifier "hi"}})]
+                       ;; TODO; twitter likes it like this?? does body need client_secret then?
+                       :headers     {"Authorization" (str "Basic " (base64 (str client_id ":" client_secret)))}
+                       :method      :post
+                       :url         token_uri
+                       :form-params (cond-> {:client_id     client_id
+                                             :client_secret client_secret
+                                             :code          code
+                                             :grant_type    "authorization_code"
+                                             :redirect_uri  redirect_uri}
+                                            code_verifier (assoc :code_verifier code_verifier))})]
     (when (middleware/success? resp)
       (with-timestamp (:body resp)))))
 

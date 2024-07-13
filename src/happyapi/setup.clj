@@ -61,11 +61,13 @@
 
   If specified, `config` should be a map:
 
-      {:google {:deps          [:clj-http :cheshire]  ;; see hapyapi.deps for alternatives
-                :fns           {...}                  ;; only if you prefer to provide your own dependencies
-                :client_id     \"MY_ID\"              ;; oauth2 client_id of your app
-                :client_secret \"MY_SECRET\"          ;; oauth2 client_secret from your provider
-                :apikey        \"MY_API_KEY\"}}       ;; only when not using oauth2
+      {:google {:deps            [:clj-http :cheshire]  ;; see happyapi.deps for alternatives
+                :fns             {...}                  ;; if you prefer to provide your own dependencies
+                :client_id       \"MY_ID\"              ;; oauth2 client_id of your app
+                :client_secret   \"MY_SECRET\"          ;; oauth2 client_secret from your provider
+                :apikey          \"MY_API_KEY\"         ;; only when not using oauth2
+                :scopes          []                     ;; optional default scopes used when none present in requests
+                :keywordize-keys false}}                ;; optional, defaults to true
 
   `provider` should be the top level key to use (other configs may be present)."
   [config provider]

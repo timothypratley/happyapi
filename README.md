@@ -118,7 +118,8 @@ See the docstring for `happyapi.setup/make-client` for more information about co
 (def api-request
   (setup/make-client
     {:my-provider {:client_id "MY_CLIENT_ID"
-                   :client_secret (System/getenv "MY_CLIENT_SECRET")}}
+                   :client_secret (System/getenv "MY_CLIENT_SECRET")
+                   :deps [:clj-http :cheshire]}}
     :my-provider))
 
 (api-request {:method :get
@@ -142,7 +143,23 @@ HappyAPI avoids creating a direct dependency because there are many implementati
 
 To choose your dependencies, pass `:deps [:httpkit :jsonista]`, or similar, as config to `setup/make-client`.
 
-When unconfigured, HappyAPI will default to looking for clj-http and cheshire.
+**Configuration of either `:deps` or `:fns` is required.**
+
+If you wish, pass an explicit function or a var instead:
+
+```clojure
+:fns {:request my-http-request
+      :query-string my-query-string
+      :encode my-json-write
+      :decode my-json-parse}
+```
+
+Or a combination of both:
+```clojure
+:deps [:httpkit]
+:fns {:encode my-json-write
+      :decode my-json-parse}
+```
 
 See `happyapi.deps` namespace for more information about dependency resolution.
 

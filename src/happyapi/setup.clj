@@ -1,13 +1,10 @@
 (ns happyapi.setup
   (:require [clojure.edn :as edn]
             [clojure.java.io :as io]
-            [clojure.string :as str]
             [clojure.walk :as walk]
             [happyapi.apikey.client :as apikey.client]
             [happyapi.deps :as deps]
             [happyapi.oauth2.client :as oauth2.client]))
-
-(def default-deps [:clj-http :cheshire])
 
 (defn as-map
   "If a string, will coerce as edn.
@@ -48,15 +45,13 @@
 (defn with-deps
   "Selection of implementation functions for http and json.
   If no deps requested, will use defaults `[:clj-http :cheshire]`."
-  [{:as config :keys [deps]}]
-  (if (contains? config :fns)
-    ;; already has dependencies
-    config
-    (assoc config :fns (if deps
-                         ;; requested dependencies
-                         (deps/choose deps)
-                         ;; default dependencies
-                         (deps/choose default-deps)))))
+  [{:as config :keys [deps fns]}]
+  (if deps
+    (update config :fns #(merge (deps/choose deps) %))
+    (when-not fns
+      (throw (ex-info "Client configuration requires :deps like [:clj-http :cheshire] or :fns to be supplied"
+                      {:id     ::config-missing-deps
+                       :config config})))))
 
 (defn make-client
   "Returns a function that can make requests to an api.

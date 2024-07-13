@@ -7,6 +7,8 @@
 
 (set! *warn-on-reflection* true)
 
+;; TODO: Nope, this needs to be provider specific (at least!)
+
 (def *credentials-cache
   (atom nil))
 

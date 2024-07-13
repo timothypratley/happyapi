@@ -100,6 +100,18 @@
     ([args respond raise]
      (request args (comp respond keywordize-body) raise))))
 
+(defn enjsonize [args encode]
+  (-> (maybe-update args :body encode)
+      (update :headers merge {"Content-Type" "application/json"
+                              "Accept"       "application/json"})))
+
+(defn dejsonize [resp decode]
+  ;; TODO: nope! application/json; charset=utf-8 is fine
+  (if (str/includes? (get-in resp [:headers "Content-Type"]) "application/json")
+    (maybe-update resp :body decode)
+    resp))
+
+
 (defn wrap-json
   "Converts the body of responses to a data structure.
   Pluggable json implementations resolved from dependencies, or can be passed as an argument.
@@ -122,11 +134,10 @@
   (cond->
     (fn
       ([args]
-       (let [args (-> (maybe-update args :body encode)
-                      (assoc-in [:headers "Content-Type"] "application/json"))
+       (let [args (enjsonize args encode)
              resp (request args)]
          (try
-           (maybe-update resp :body decode)
+           (dejsonize resp decode)
            (catch Throwable ex
              (if (success? resp)
                (throw (ex-info "Failed to json decode the body of a successful response"
@@ -137,11 +148,10 @@
                ;; errors often have non-json bodies, presumably users want to handle those if we got here
                resp)))))
       ([args respond raise]
-       (request (-> (maybe-update args :body encode)
-                    (assoc-in [:headers "Content-Type"] "application/json"))
+       (request (-> (enjsonize args encode))
                 (fn [resp]
                   (try
-                    (-> (maybe-update resp :body decode)
+                    (-> (dejsonize resp decode)
                         (respond))
                     (catch Throwable ex
                       (if (success? resp)

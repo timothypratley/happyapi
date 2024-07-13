@@ -50,8 +50,10 @@
 (defn with-timestamp
   "The server won't give us the time of day, so let's check our clock."
   [{:as credentials :keys [expires_in]}]
-  (assoc credentials
-    :expires_at (Date. ^long (+ (* expires_in 1000) (System/currentTimeMillis)))))
+  (if expires_in
+    (assoc credentials
+      :expires_at (Date. ^long (+ (* expires_in 1000) (System/currentTimeMillis))))
+    credentials))
 
 (defn base64 [^String to-encode]
   (.encodeToString (Base64/getEncoder) (.getBytes to-encode)))
@@ -135,8 +137,9 @@
 
 (defn valid? [{:as credentials :keys [expires_at access_token]}]
   (boolean
-    (and expires_at access_token
-         (neg? (.compareTo (Date.) expires_at)))))
+    (and access_token
+         (or (not expires_at)
+             (neg? (.compareTo (Date.) expires_at))))))
 
 (defn refreshable? [{:as config :keys [private_key]} {:as credentials :keys [refresh_token]}]
   (boolean (or refresh_token private_key)))

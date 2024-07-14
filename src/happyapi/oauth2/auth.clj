@@ -61,17 +61,17 @@
    {:as config :keys [token_uri client_id client_secret redirect_uri]}
    code
    code_verifier]
-  (let [resp (request {
-                       ;; TODO; twitter likes it like this?? does body need client_secret then?
-                       :headers     {"Authorization" (str "Basic " (base64 (str client_id ":" client_secret)))}
-                       :method      :post
-                       :url         token_uri
-                       :form-params (cond-> {:client_id     client_id
-                                             :client_secret client_secret
-                                             :code          code
-                                             :grant_type    "authorization_code"
-                                             :redirect_uri  redirect_uri}
-                                            code_verifier (assoc :code_verifier code_verifier))})]
+  (let [resp (request {:method  :post
+                       :url     token_uri
+                       ;; Google documentation says client_id and client_secret should be parameters,
+                       ;; but accepts them in the Basic Auth header (undocumented).
+                       ;; Other providers require them as Basic Auth header.
+                       :headers {"Authorization" (str "Basic " (base64 (str client_id ":" client_secret)))}
+                       ;; this can be sent as form-params or json body
+                       :body    (cond-> {:code         code
+                                         :grant_type   "authorization_code"
+                                         :redirect_uri redirect_uri}
+                                        code_verifier (assoc :code_verifier code_verifier))})]
     (when (middleware/success? resp)
       (with-timestamp (:body resp)))))
 

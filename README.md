@@ -135,16 +135,18 @@ and then from a file `happyapi.edn`.
 When no port is specified (for example `:redirect_uri "http://localhost/redirect"`), HappyAPI listens on the default http port 80.
 
 Port 80 is a privileged port that requires root permissions, which may be problematic for some users.
-Google allows the `redirect_uri` port to vary.
+Google and GitHub allow the `redirect_uri` port to vary.
 Other providers do not.
 A random port is a natural choice.
 Configuring `:redirect_uri "http://localhost:0/redirect"` will listen on a random port.
-This is the default used for Google if not configured otherwise.
+This is the default used for Google and GitHub if not configured otherwise.
 
 You can choose a port if you'd like.
 If you want to listen on port 8080, configure `:redirect_uri "http://localhost:8080/redirect"`
-You need to update your provider settings to match.
-Most providers require an exact match between the provider side settings and client config,
+This is the default used for Twitter if not configured otherwise.
+
+You must update your provider settings to match either the default, or your own `redirect_uri`.
+Providers require an exact match between the provider side settings and client config,
 so please check this carefully if you get an error.
 
 ### Instrumentation, logging, and metrics

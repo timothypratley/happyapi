@@ -3,10 +3,12 @@
   If you are making a web app, implement a route in your app that captures the code parameter.
   If you use this namespace, add ring as a dependency in your project."
   (:require [clojure.java.browse :as browse]
+            [clojure.java.io :as io]
             [clojure.set :as set]
             [happyapi.middleware :as middleware]
             [happyapi.oauth2.auth :as oauth2]
-            [ring.middleware.params :as params]))
+            [ring.middleware.params :as params])
+  (:import (java.io FileInputStream)))
 
 (set! *warn-on-reflection* true)
 
@@ -17,6 +19,18 @@
 (defn browse-to-provider [config scopes optional]
   (-> (oauth2/provider-login-url config scopes optional)
       (browse/browse-url)))
+
+(defn make-redirect-handler [p]
+  (-> (fn redirect-handler [{:as req :keys [request-method uri params]}]
+        (case [request-method uri]
+          [:get "/favicon.ico"] {:body   (io/file (io/resource "favicon.ico"))
+                                 :status 200}
+          (if (get @(deliver p params) "code")
+            {:status 200
+             :body   "Code received, authentication successful."}
+            {:status 400
+             :body   "No code in response."})))
+      (params/wrap-params)))
 
 (defn fresh-credentials
   "Opens a browser to authenticate, waits for a redirect, and returns a code.
@@ -39,15 +53,8 @@
         port (if requested-port
                (Integer/parseInt requested-port)
                80)
-        http-redirect-handler (fn [request]
-                                (if (get @(deliver p (get request :params)) "code")
-                                  {:status 200
-                                   :body   "Code received, authentication successful."}
-                                  {:status 400
-                                   :body   "No code in response."}))
-        handler (params/wrap-params http-redirect-handler)
         {:keys [run-server]} fns
-        {:keys [port stop]} (run-server handler {:port port})
+        {:keys [port stop]} (run-server (make-redirect-handler p) {:port port})
         ;; The port may have changed when requesting a random port
         config (if requested-port
                  (assoc config :redirect_uri (str protocol host ":" port path))
@@ -70,7 +77,7 @@
         ;; wait for the user to get redirected to localhost with a code
         {:strs [code state] :as return-params} (deref p login-timeout nil)]
     ;; allow a bit of time to deliver the response before shutting down the server
-    (stop)
+    (Thread. (fn [] (Thread/sleep 1000) (stop)))
     (if code
       (do
         (when-not (= state state-and-challenge)

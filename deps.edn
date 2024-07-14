@@ -1,4 +1,4 @@
-{:paths ["src"]
+{:paths ["src" "resources"]
 
  :deps  {org.clojure/clojure   {:mvn/version "1.11.3"}
          buddy/buddy-sign      {:mvn/version "3.5.351"}

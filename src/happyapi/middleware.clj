@@ -168,10 +168,17 @@
     keywordize-keys (wrap-keywordize-keys)))
 
 ;; TODO: surely there are other cases to consider?
+(defn remove-redundant-data-labels [x]
+  (if (map? x)
+    (cond (contains? x :data) (recur (get x :data))
+          (contains? x "data") (recur (get x "data"))
+          (seq (get x :items)) (get x :items)
+          (seq (get x "items")) (get x "items")
+          :else x)
+    x))
+
 (defn extract-result [{:keys [body]}]
-  (cond (and (map? body) (seq (get body :items))) (get body :items)
-        (and (map? body) (seq (get body "items"))) (get body "items")
-        :else body))
+  (remove-redundant-data-labels body))
 
 (defn wrap-extract-result
   "When we call an API, we want the logical result of the call, not the map containing body, and status.

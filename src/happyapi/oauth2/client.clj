@@ -16,17 +16,20 @@
 (defmethod endpoints :google [_]
   {:auth_uri              "https://accounts.google.com/o/oauth2/auth"
    :token_uri             "https://oauth2.googleapis.com/token"
-   ;; port 0 indicates random port
+   ;; port 0 selects a random port
    :redirect_uri          "http://localhost:0/redirect"
    :authorization_options {:access_type            "offline"
                            :prompt                 "consent"
                            :include_granted_scopes true}})
 (defmethod endpoints :github [_]
-  {:auth_uri  "https://github.com/login/oauth/authorize"
-   :token_uri "https://github.com/login/oauth/access_token"})
+  {:auth_uri     "https://github.com/login/oauth/authorize"
+   :token_uri    "https://github.com/login/oauth/access_token"
+   ;; port 0 selects a random port
+   :redirect_uri "http://localhost:0/redirect"})
 (defmethod endpoints :twitter [_]
   {:auth_uri              "https://twitter.com/i/oauth2/authorize"
    :token_uri             "https://api.twitter.com/2/oauth2/token"
+   :redirect_uri          "http://localhost:8080/redirect"
    :authorization_options {:code_challenge_method "plain"}})
 
 (defn with-endpoints

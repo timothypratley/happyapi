@@ -15,19 +15,23 @@
                                                {:auth_uri     "TEST"
                                                 :client_id    "TEST"
                                                 :redirect_uri "http://localhost"}
-                                               []
-                                               {})))
+                                               [])))
     (is (= {:access_token "TOKEN"}
            (capture-redirect/fresh-credentials http/request
                                                {:auth_uri     "TEST"
                                                 :client_id    "TEST"
                                                 :redirect_uri "http://localhost:8080/redirect"}
-                                               []
-                                               {})))
+                                               [])))
     (is (thrown? Throwable
                  (capture-redirect/fresh-credentials http/request
                                                      {:auth_uri     "TEST"
                                                       :client_id    "TEST"
                                                       :redirect_uri "http://not.localhost"}
-                                                     []
-                                                     {})))))
+                                                     [])))))
+
+(deftest make-redirect-handler-test
+  (let [p (promise)]
+
+    (capture-redirect/make-redirect-handler p)
+    ()
+    ))

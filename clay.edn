@@ -1,1 +1,4 @@
-{}
+{:source-path ["notebooks/happyapi/notebook/youtube_clojuretv.clj"]
+ :favicon     "/favicon.ico"
+ :show        false
+ :format      [:quarto :html]}

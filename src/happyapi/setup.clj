@@ -53,6 +53,13 @@
                       {:id     ::config-missing-deps
                        :config config})))))
 
+(defn resolve-fns
+  [config]
+  (update config :fns (fn [fns]
+                        (into fns (for [[k f] fns
+                                        :when (qualified-symbol? f)]
+                                    [k (deps/resolve-fn f)])))))
+
 (defn make-client
   "Returns a function that can make requests to an api.
 
@@ -67,19 +74,25 @@
                 :client_secret   \"MY_SECRET\"          ;; oauth2 client_secret from your provider
                 :apikey          \"MY_API_KEY\"         ;; only when not using oauth2
                 :scopes          []                     ;; optional default scopes used when none present in requests
-                :keywordize-keys false}}                ;; optional, defaults to true
+                :keywordize-keys false                  ;; optional, defaults to true
+                :provider        :google}}              ;; optional, use another provider urls and settings
 
-  `provider` should be the top level key to use (other configs may be present)."
+  The `provider` argument is required and should match a top level key to use (other configs may be present)."
   [config provider]
+  (when-not provider
+    (throw (ex-info "Provider is required"
+                    {:id       ::provider-required
+                     :provider provider
+                     :config   config})))
   (let [config (if (nil? config)
                  (find-config)
                  (as-map config))
         config (-> (get config provider)
-                   (assoc :provider provider))
+                   (update :provider #(or % provider)))
         {:keys [client_id apikey]} config
-        config* (with-deps config)]
-    (cond client_id (oauth2.client/make-client config*)
-          apikey (apikey.client/make-client config*)
+        config-with-fns (-> (with-deps config) (resolve-fns))]
+    (cond client_id (oauth2.client/make-client config-with-fns)
+          apikey (apikey.client/make-client config-with-fns)
           :else (throw (ex-info "Missing config, expected `:client_id` or `:apikey`"
                                 {:id     ::missing-config
                                  :config config})))))

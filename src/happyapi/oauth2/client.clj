@@ -22,13 +22,11 @@
                            :prompt                 "consent"
                            :include_granted_scopes true}})
 (defmethod endpoints :github [_]
-  {:auth_uri     "https://github.com/login/oauth/authorize"
-   :token_uri    "https://github.com/login/oauth/access_token"
-   :redirect_uri "http://localhost:8080/redirect"})
+  {:auth_uri  "https://github.com/login/oauth/authorize"
+   :token_uri "https://github.com/login/oauth/access_token"})
 (defmethod endpoints :twitter [_]
   {:auth_uri              "https://twitter.com/i/oauth2/authorize"
    :token_uri             "https://api.twitter.com/2/oauth2/token"
-   :redirect_uri          "http://localhost:8080/redirect"
    :authorization_options {:code_challenge_method "plain"}})
 
 (defn with-endpoints
@@ -97,6 +95,12 @@
                         {:id           ::query-string-must-be-a-function
                          :query-string query-string
                          :config       config}))))
+    (let [run-server (get-in config [:fns :run-server])]
+      (when-not (middleware/fn-or-var? run-server)
+        (throw (ex-info "query-string must be provided in config :fns :query-string as a function or var"
+                        {:id         ::run-server-must-be-a-function
+                         :run-server run-server
+                         :config     config}))))
     (fn
       ([args]
        (oauth2 request args config))

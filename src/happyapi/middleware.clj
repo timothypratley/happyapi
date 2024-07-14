@@ -105,12 +105,14 @@
       (update :headers merge {"Content-Type" "application/json"
                               "Accept"       "application/json"})))
 
+(defn json? [resp]
+  (some->> (get-in resp [:headers :content-type])
+           (re-find #"^application/(.+\+)?json")))
+
 (defn dejsonize [resp decode]
-  ;; TODO: nope! application/json; charset=utf-8 is fine
-  (if (str/includes? (get-in resp [:headers "Content-Type"]) "application/json")
+  (if (json? resp)
     (maybe-update resp :body decode)
     resp))
-
 
 (defn wrap-json
   "Converts the body of responses to a data structure.

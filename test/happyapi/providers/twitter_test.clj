@@ -3,13 +3,13 @@
             [clojure.test :refer :all]
             [happyapi.providers.twitter :as twitter]))
 
-;; TODO: tokens are provider specific!
-
-
 (deftest api-request-test
-  (twitter/setup! (edn/read-string (slurp "happyapi.edn")))
+  (twitter/setup! (assoc-in (edn/read-string (slurp "happyapi.edn"))
+                            [:twitter :redirect_uri]
+                            "http://localhost:8080/redirect"))
   (twitter/api-request {:method :get
-                        :url    "https://api.twitter.com/2/users/me"})
+                        :url    "https://api.twitter.com/2/users/me"
+                        :scopes ["tweet.read" "tweet.write" "users.read"]})
   (twitter/api-request {:method :delete
                         :url    "https://api.twitter.com/2/tweets/1811986925798195513"
                         :scopes ["tweet.read" "tweet.write" "users.read"]})

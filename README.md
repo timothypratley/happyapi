@@ -98,7 +98,7 @@ You can make custom, non-generated `api-requests` directly by passing the requir
 (require '[happyapi.providers.google :as google])
 (google/setup! {:client_id     "XYZ"
                 :client_secret (System/getenv "GOOGLE_CLIENT_SECRET")
-                :deps          [:clj-http :cheshire]})
+                :deps          [:jetty :clj-http :cheshire]})
 (google/api-request {:method       :get
                      :url          "https://youtube.googleapis.com/youtube/v3/channels"
                      :query-params {:part        "contentDetails,statistics"
@@ -119,7 +119,7 @@ HappyAPI tries to read configuration from the environment variable `HAPPYAPI_CON
 and then from a file `happyapi.edn`.
 
 ```clojure
-{:google {:deps            [:clj-http :cheshire]  ;; see happyapi.deps for alternatives
+{:google {:deps            [:httpkit :cheshire]   ;; see happyapi.deps for alternatives
           :fns             {...}                  ;; if you prefer to provide your own dependencies
           :client_id       "MY_ID"                ;; oauth2 client_id of your app
           :client_secret   "MY_SECRET"            ;; oauth2 client_secret from your provider
@@ -130,6 +130,36 @@ and then from a file `happyapi.edn`.
 
 **Keep your client_secret secure.** Add `happyapi.edn` to `.gitignore` to avoid adding it to source control.
 
+### Redirect port
+
+When no port is specified (for example `:redirect_uri "http://localhost/redirect"`), HappyAPI listens on the default http port 80.
+
+Port 80 is a privileged port that requires root permissions, which may be problematic for some users.
+Google allows the `redirect_uri` port to vary.
+Other providers do not.
+A random port is a natural choice.
+Configuring `:redirect_uri "http://localhost:0/redirect"` will listen on a random port.
+This is the default used for Google if not configured otherwise.
+
+You can choose a port if you'd like.
+If you want to listen on port 8080, configure `:redirect_uri "http://localhost:8080/redirect"`
+You need to update your provider settings to match.
+Most providers require an exact match between the provider side settings and client config,
+so please check this carefully if you get an error.
+
+### Instrumentation, logging, and metrics
+
+A common desire is to log or count every http request for telemetry.
+This can be done by passing a wrapped `request` function, var, or qualified symbol in setup.
+Symbols will be resolved.
+
+```clojure
+(google/setup! {:client_id     "XYZ"
+                :client_secret (System/getenv "GOOGLE_CLIENT_SECRET")
+                :deps          [:httpkit :cheshire]
+                :fns           {:request my-wrapped-request-fn}})
+```
+
 ### Custom service providers
 
 ```clojure
@@ -139,7 +169,7 @@ and then from a file `happyapi.edn`.
   (setup/make-client
     {:my-provider {:client_id "MY_CLIENT_ID"
                    :client_secret (System/getenv "MY_CLIENT_SECRET")
-                   :deps [:clj-http :cheshire]}}
+                   :deps [:jetty :clj-http :cheshire]}}
     :my-provider))
 
 (api-request {:method :get
@@ -161,16 +191,20 @@ HappyAPI avoids creating a direct dependency because there are many implementati
 * json encoder/decoder (cheshire, jsonista, clojure.data.json, charred)
 * A web server to receive redirects (ring-jetty-adapter, httpkit<soon>)
 
-To choose your dependencies, pass `:deps [:httpkit :jsonista]`, or similar, as config.
+To choose your dependencies,
+configure `:deps [:httpkit :cheshire]`, or `:deps [:clj-http :jetty :charred]`,
+or whichever combo you want to use.
+
+Valid keys are `#{:cheshire :clj-http.lite :jetty :clj-http :data.json :httpkit :jsonista :charred}`
 
 **Configuration of either `:deps` or `:fns` is required.**
 
-If you wish, pass an explicit function or a var instead:
+If you wish, pass an explicit function, var, or qualified symbol instead:
 
 ```clojure
 :fns {:request my-http-request
-      :query-string my-query-string
-      :encode my-json-write
+      :query-string 'my-ns/my-query-string
+      :encode #'my-json-write
       :decode my-json-parse}
 ```
 
@@ -185,23 +219,22 @@ See `happyapi.deps` namespace for more information about dependency resolution.
 
 #### Choose a http client
 
+[![Clojars Project](https://img.shields.io/clojars/v/http-kit.svg)](https://clojars.org/http-kit)
 [![Clojars Project](https://img.shields.io/clojars/v/clj-http.svg)](https://clojars.org/clj-http)
 [![Clojars Project](https://img.shields.io/clojars/v/org.clj-commons/clj-http-lite.svg)](https://clojars.org/org.clj-commons/clj-http-lite)
-[![Clojars Project](https://img.shields.io/clojars/v/http-kit.svg)](https://clojars.org/http-kit)
 
 #### Choose a web server
 
+[![Clojars Project](https://img.shields.io/clojars/v/http-kit.svg)](https://clojars.org/http-kit)
 [![Clojars Project](https://img.shields.io/clojars/v/ring.svg)](https://clojars.org/ring)
-
-TODO: can we remove [ring](https://github.com/ring-clojure/ring) as a dependency?
-TODO: allow httpkit to be used as the server
+[![Clojars Project](https://img.shields.io/clojars/v/ring/ring-jetty-adapter.svg)](https://clojars.org/ring/ring-jetty-adapter)
 
 #### Choose a json encoder/decoder
 
 [![Clojars Project](https://img.shields.io/clojars/v/cheshire.svg)](https://clojars.org/cheshire)
+[![Clojars Project](https://img.shields.io/clojars/v/com.cnuernber/charred.svg)](https://clojars.org/com.cnuernber/charred)
 [![Clojars Project](https://img.shields.io/clojars/v/metosin/jsonista.svg)](https://clojars.org/metosin/jsonista)
 [org.clojure/data.json](https://github.com/clojure/data.json)
-[![Clojars Project](https://img.shields.io/clojars/v/com.cnuernber/charred.svg)](https://clojars.org/com.cnuernber/charred)
 
 ### Authorization
 

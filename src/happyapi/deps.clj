@@ -22,18 +22,11 @@
 (defmulti require-dep "Resolves a provider keyword to the functions it provides" identity)
 
 (defmethod require-dep :httpkit [_]
-  {:request      (when-let [request (resolve-fn 'org.httpkit.client/request)]
-                   (fn httpkit-request
-                     ([args] @(request args))
-                     ([args respond raise] (request args
-                                                    (fn [response]
-                                                      ;; httpkit doesn't raise, it just puts errors in the response
-                                                      (if (contains? response :error)
-                                                        (raise (ex-info "ERROR in response"
-                                                                        {:id   ::error-in-response
-                                                                         :resp response}))
-                                                        (respond response)))))))
-   :query-string (resolve-fn 'org.httpkit.client/query-string)})
+  {:request      (resolve-fn 'happyapi.deps.httpkit/request)
+   :query-string (resolve-fn 'org.httpkit.client/query-string)
+   :run-server   (resolve-fn 'happyapi.deps.httpkit/run-server)})
+(defmethod require-dep :jetty [_]
+  {:run-server (resolve-fn 'happyapi.deps.jetty/run-server)})
 (defmethod require-dep :clj-http [_]
   {:request      (resolve-fn 'clj-http.client/request)
    :query-string (resolve-fn 'clj-http.client/generate-query-string)})

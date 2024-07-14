@@ -8,10 +8,11 @@
 
 (defn setup!
   "Changes `api-request` to be a configured client.
-  config should contain `:client_id` and `:client_secret` for oauth2,
+  config is provider specific,
+  it should contain `:client_id` and `:client_secret` for oauth2,
   or `:apikey`.
-  config may be a map or json string, see config/make-client."
-  [config] (set-request! (setup/make-client config :google)))
+  See config/make-client for more options."
+  [config] (set-request! (setup/make-client (when config {:google config}) :google)))
 
 (defn api-request
   "A function to handle API requests.

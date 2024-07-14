@@ -6,14 +6,9 @@
             [clojure.set :as set]
             [happyapi.middleware :as middleware]
             [happyapi.oauth2.auth :as oauth2]
-            [ring.adapter.jetty :as jetty]
-            [ring.middleware.params :as params])
-  (:import (org.eclipse.jetty.server NetworkConnector Server)))
+            [ring.middleware.params :as params]))
 
 (set! *warn-on-reflection* true)
-
-(defn get-port [^Server server]
-  (-> server .getConnectors ^NetworkConnector first .getLocalPort))
 
 (def login-timeout
   "If the user doesn't log in after 2 minutes, stop waiting."
@@ -28,46 +23,38 @@
   Defaults access_type to offline,
   state to a random uuid which is checked when redirected back,
   and include_granted_scopes true."
-  [request {:as config :keys [redirect_uri authorization_options]} scopes]
-  ;; TODO: can p be made accessible, stoppable?
+  [request {:as config :keys [redirect_uri authorization_options fns]} scopes]
   (let [p (promise)
-        [match protocol host _ port path] (re-find #"^(http://)(localhost|127.0.0.1)(:(\d+))?(/.*)?$" redirect_uri)
+        [match protocol host _ requested-port path] (re-find #"^(http://)(localhost|127.0.0.1)(:(\d+))?(/.*)?$" redirect_uri)
         _ (when-not match
             (throw (ex-info "redirect_uri should match http://localhost"
                             {:id           ::bad-redirect-uri
                              :redirect_uri redirect_uri
                              :config       config})))
 
-        ;; port 80 is a privileged port that requires root permissions, which may be problematic for some users
-        ;; a random (or specified) port is a natural choice.
-
-        ;; Google allows the redirect_uri port to vary
-        ;; From RFC 8242: OAuth 2.0 for Native Apps:
-        ; The authorization server MUST allow any port to be specified at the
-        ; time of the request for loopback IP redirect URIs, to accommodate
-        ; clients that obtain an available ephemeral port from the operating
-        ; system at the time of the request.
-
-        ;; Other providers do not allow port to vary
-
-        ;; TODO: it might be better to require a port, and allow port to be 0 for randomization?
-
-        ;; TODO: is there some way to know when using Native App mode?
-        port (if port
-               (Integer/parseInt port)
-               0)
+        ;; Port 80 is a privileged port that requires root permissions, which may be problematic for some users.
+        ;; Google allows the redirect_uri port to vary, other providers do not.
+        ;; A random (or specified) port is a natural choice.
+        ;; Put port 0 in the redirect_uri to activate random port selection.
+        port (if requested-port
+               (Integer/parseInt requested-port)
+               80)
         http-redirect-handler (fn [request]
-                                {:status 200
-                                 :body   (if (get @(deliver p (get request :params)) "code")
-                                           "Code received, authentication successful."
-                                           "No code in response")})
-        ;; TODO: pluggable httpkit?
-        server (jetty/run-jetty (params/wrap-params http-redirect-handler)
-                                {:port port :join? false})
-        port (get-port server)
-        config (assoc config :redirect_uri (str protocol host ":" port path))
-        ;; Twitter supports and requires pkce challenge.
-        ;; Challenges are for the provider server checking, state is for client checking, we use the same value for both.
+                                (if (get @(deliver p (get request :params)) "code")
+                                  {:status 200
+                                   :body   "Code received, authentication successful."}
+                                  {:status 400
+                                   :body   "No code in response."}))
+        handler (params/wrap-params http-redirect-handler)
+        {:keys [run-server]} fns
+        {:keys [port stop]} (run-server handler {:port port})
+        ;; The port may have changed when requesting a random port
+        config (if requested-port
+                 (assoc config :redirect_uri (str protocol host ":" port path))
+                 config)
+        ;; Twitter requires a PKCE challenge.
+        ;; Challenges are for the provider server checking, state is for client checking.
+        ;; We use the same value for both state and challenge.
         state-and-challenge (str (random-uuid))
         {:keys [code_challenge_method]} authorization_options
         ;; access_type offline and prompt consent together result in a refresh token (that both are necessary is undocumented by Google afaik)
@@ -83,9 +70,7 @@
         ;; wait for the user to get redirected to localhost with a code
         {:strs [code state] :as return-params} (deref p login-timeout nil)]
     ;; allow a bit of time to deliver the response before shutting down the server
-    (.setStopTimeout server 1000)
-    (.stop server)
-
+    (stop)
     (if code
       (do
         (when-not (= state state-and-challenge)

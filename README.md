@@ -28,9 +28,8 @@ Alpha: seeking feedback.
 
 ## Generated libraries
 
-* [HappyGAPI](https://github.com/timothypratley/happygapi) for
+* [happyapi.google](https://github.com/timothypratley/happyapi.google) for
   calling [Google APIs](https://developers.google.com/apis-explorer); gsheets, drive, bigquery, youtube, and so on.
-* TODO: more
 
 ## Rationale
 
@@ -68,12 +67,8 @@ This approach should work well with other discovery documents, hopefully AWS wil
 
 ## Usage
 
-Hopefully you'll find the generated libraries like [HappyGAPI2](https://github.com/timothypratley/happygapi2) useful and won't need to use HappyAPI directly.
-
-If you prefer to use HappyAPI directly (perhaps you don't like generated code, or no generated library exists for the service provider),
-add the dependency to your project file:
-
 [![Clojars Project](https://img.shields.io/clojars/v/io.github.timothypratley/happyapi.svg)](https://clojars.org/io.github.timothypratley/happyapi)
+[![Clojars Project](https://img.shields.io/clojars/v/io.github.timothypratley/happyapi.google.svg)](https://clojars.org/io.github.timothypratley/happyapi.google)
 
 **Important: You'll also need `clj-http` and `cheshire`, or one of their alternatives, see [Dependencies](#dependencies) below for more details**
 
@@ -91,7 +86,14 @@ if they follow common conventions.
 
 ### Service provider specific usage
 
-The generated code has endpoint and parameters to construct a request through `api-request`.
+For Google APIs you can use the generated wrapper from the `happyapi.google` project.
+
+```clojure
+(require '[happyapi.google.youtube-v3 :as youtube])
+(youtube/channels-list "contentDetails,statistics" {:forUsername "ClojureTV"})
+```
+
+The generated wrapper has endpoint and parameters to construct a request through `happyapi.providers.google/api-request`.
 You can make custom, non-generated `api-requests` directly by passing the required arguments.
 
 ```clojure

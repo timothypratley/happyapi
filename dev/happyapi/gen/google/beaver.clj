@@ -163,7 +163,6 @@
        ~(str ?title \newline
              ?description \newline
              "See: " (raven/maybe-redirected ?documentationLink))
-       (:require [happyapi.providers.google ~:as client] [clojure.edn ~:as edn] [clojure.java.io ~:as io]))
-     (defn api [] (edn/read-string (slurp (io/resource ~(str "google/" ?name "_" ?version ".edn")))))
+       (:require [happyapi.providers.google ~:as client]))
      . (m/app extract-method [?api !methods]) ...)
     ?else ~(throw (ex-info "FAIL" {:input ?else}))))

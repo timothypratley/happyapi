@@ -53,8 +53,7 @@ HappyAPI generates functions (as code, not macros) for calling API endpoints,
 so that your editor can help you:
 
 1. Autocomplete; See all available resources and methods
-2. Help documentation; The function doc-strings contain a description, a link to online docs, and example inputs (TODO:
-   is this true?)
+2. Help documentation; The function doc-strings contain a description, a link to online docs, and example inputs
 3. Arity checking; Required parameters are function args
 4. Informative exceptions on failure
 

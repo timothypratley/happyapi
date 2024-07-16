@@ -30,7 +30,6 @@
             :args args}
            ex))
 
-;; TODO: when http clients throw, do they include the response?
 (defn wrap-informative-exceptions [request]
   (fn
     ([args]
@@ -43,6 +42,15 @@
               (fn [ex]
                 (raise (informative-exception ::request-failed-async ex args)))))))
 
+(defn paging-interrupted [ex items]
+  ;; items collected so far are added to the exception so that they may be retrieved.
+  (if (seq items)
+    (ex-info "Paging interrupted"
+             {:id    ::paging-interrupted
+              :items items}
+             ex)
+    ex))
+
 (defn request-pages-async [request args respond raise items]
   (request args
            (fn [resp]
@@ -52,7 +60,8 @@
                (if nextPageToken
                  (request-pages-async request (assoc-in args [:query-params :pageToken] nextPageToken) respond raise items)
                  (respond resp))))
-           raise))
+           (fn [ex]
+             (raise (paging-interrupted ex items)))))
 
 (defn request-pages [request args]
   (loop [page nil
@@ -60,15 +69,19 @@
     (let [args (if page
                  (assoc-in args [:query-params :pageToken] page)
                  args)
-          resp (request args)
+          resp (try
+                 (request args)
+                 (catch Throwable ex
+                   (throw (paging-interrupted ex items))))
           items (into items (get-in resp [:body "items"]))
           resp (assoc-in resp [:body "items"] items)
           nextPageToken (get-in resp [:body "nextPageToken"])]
       (if nextPageToken
         (if (= page nextPageToken)
-          (throw (ex-info "nextPageToken did not change while paging"
-                          {:id            ::invalid-nextPageToken
-                           :nextPageToken nextPageToken}))
+          (throw (paging-interrupted (ex-info "nextPageToken did not change while paging"
+                                              {:id            ::invalid-nextPageToken
+                                               :nextPageToken nextPageToken})
+                                     items))
           (recur nextPageToken items))
         resp))))
 

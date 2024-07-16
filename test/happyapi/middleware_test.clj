@@ -71,28 +71,36 @@
   (let [responses [[1 2 3]
                    [4 5 6]
                    [7 8 9]
-                   [10 11 12]]
+                   [10 11 12]
+                   [13 14 15]]
         counter (atom -1)
         request (-> (fn
                       ([args]
                        (let [c (swap! counter inc)]
                          {:status 200
                           :body   {"items"         (get responses c)
-                                   "nextPageToken" (when (= c 0)
-                                                     "page2")}}))
+                                   "nextPageToken" (case c
+                                                     0 "page2"
+                                                     4 "page6"
+                                                     5 (throw (ex-info "OH NO" {:id ::oh-no}))
+                                                     nil)}}))
                       ([args respond raise]
                        (let [c (swap! counter inc)]
                          (respond {:status 200
                                    :body   {"items"         (get responses c)
-                                            "nextPageToken" (when (= c 2)
-                                                              "page4")}}))))
+                                            "nextPageToken" (case c
+                                                              2 "page4"
+                                                              nil)}}))))
                     (middleware/wrap-paging)
                     (middleware/wrap-extract-result))]
     (is (= (request {}) [1 2 3 4 5 6]))
     (request {}
              (fn [resp]
                (is (= resp [7 8 9 10 11 12])))
-             raise)))
+             raise)
+    (is (= {:id :happyapi.middleware/paging-interrupted
+            :items [13 14 15]}
+           (try (request {}) (catch Throwable ex (ex-data ex)))))))
 
 (deftest wrap-informative-exceptions-test
   (let [request (-> (deps/choose [:clj-http :cheshire])

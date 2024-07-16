@@ -11,9 +11,9 @@
 
 (def list-apis (memoize list-apis'))
 
-(defonce apis (-> (list-apis)
-                  (->> (group-by :name))
-                  (update-vals first)))
+(def apis (-> (list-apis)
+              (->> (group-by #(get % "name")))
+              (update-vals first)))
 
 (comment
   (get apis "adexperiencereport"))

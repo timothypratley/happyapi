@@ -1,4 +1,4 @@
-(ns happyapinotebook.ocr
+(ns happyapi.notebook.ocr
   (:require [clojure.test :refer [deftest is]]
             [happyapi.oauth2.credentials :as credentials]
             [happygapi.vision :as vision]

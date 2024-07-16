@@ -34,10 +34,9 @@
   ;; LITERATE the documentation `clojure -X:dev:doc scicloj.clay.v2.api/make\!`
   :doc      {:extra-paths ["notebooks"]
              :main-opts   ["-m" "scicloj.clay.v2.api/make!"]
-             :extra-deps  {org.scicloj/kindly {:mvn/version "4-beta5"}
-                           org.scicloj/clay   {:mvn/version "2-beta12"}
-                           ;; TODO: this seems a bit weird, given happygapi2 depends on this project?!?!
-                           io.github.timothypratley/happygapi2 {:mvn/version "0.1.4-alpha"}}}
+             :extra-deps  {org.scicloj/kindly                       {:mvn/version "4-beta5"}
+                           org.scicloj/clay                         {:mvn/version "2-beta12"}
+                           io.github.timothypratley/happyapi.google {:local/root "../happyapi.google"}}}
 
   ;; Run TESTS with `clojure -M:dev:test`
   :test     {:extra-paths ["test"]
@@ -50,5 +49,5 @@
 
   ;; Update DEPENDENCIES with `clojure -M:outdated`
   :outdated {:deps      {com.github.liquidz/antq {:mvn/version "2.8.1201"}
-                         org.slf4j/slf4j-nop {:mvn/version "2.0.13"}}
+                         org.slf4j/slf4j-nop     {:mvn/version "2.0.13"}}
              :main-opts ["-m" "antq.core" ":check-clojure-tools" "true" ":upgrade" "true"]}}}

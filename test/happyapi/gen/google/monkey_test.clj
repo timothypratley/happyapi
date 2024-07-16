@@ -1,7 +1,7 @@
-(ns happyapi.google.monkey-test
+(ns happyapi.gen.google.monkey-test
   (:require [clojure.test :refer [deftest testing is]]
-            [happyapi.google.monkey :as monkey]
-            [happyapi.google.raven :as raven]))
+            [happyapi.gen.google.monkey :as monkey]
+            [happyapi.gen.google.raven :as raven]))
 
 (deftest fetch-test
   (let [api (raven/get-json "https://sheets.googleapis.com/$discovery/rest?version=v4")]

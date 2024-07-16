@@ -32,48 +32,6 @@
 (defn get-json [url]
   (json-request {:url url :method :get}))
 
-;; alternatively add to the stack
-#_(defn http-request2 [request]
-    (http/with-additional-middleware
-      [wrap-report-url-exceptions wrap-cookie-policy-standard]
-      (http/request request)))
-;; these are bad.
-;; rebuilds the stack every time (seems silly)
-;; also adjust a dynamic binding... which seems even more wrong
-;; behaviour differences
-
-;; IDEA: Instead they should provide a way to change the default!
-;; (http/wrap http/request http/default-middleware)
-;; is this just (apply comp http/default-middleware)
-;; returns a new thing (doesn't change the default).
-;; IDEA2: Change the default
-;; Alter request with a new stack of middleware. Setup root.
-;; It doesn't matter, and global is convenient.
-;; (http/set-middleware! http/default-middleware)
-;; -- alters http/request by calling http/wrap
-
-;; ring middleware set up our "thing"
-
-;; get a request
-;; call 1 of 10 other services, and they are all a bit different
-;;   * however you might want to handle exceptions the same (logging/metrics)
-;; how are they different?
-;;   * urls are definitely different
-;; (my-http {:method "get" :url "different"})
-
-
-;; when to use middleware
-;;;; want a reusable behavior
-;;;; when users may optionally want some behavior
-;;;; who wants to adjust the behavior, where is it known...
-;;;; if it is known at the call site, the value of middleware is dramatically reduced
-;;;; if you don't know, it has to be middleware? (all of our logging this way, all of our metrics, proxy)
-
-;; when to pass config to middleware
-;;;;
-
-;; when to just write the code
-
 (defn can-get? [url]
   (try
     (middleware/success? (http-request {:method :get
@@ -84,7 +42,7 @@
 (defn format-url [m pattern]
   (str/join \/ (for [expr pattern]
                  (if (keyword? expr)
-                   (get m expr)
+                   (get m (name expr))
                    expr))))
 
 (defn try-pattern!
@@ -185,13 +143,7 @@
       (try-pattern! m [:documentationLink "api" "reference" "rest" :version :path])
       (try-pattern! m [:documentationLink :version :dot-path])
       (try-pattern! m [:documentationLink-1 "reference" "rest" :version :dot-path])
-
-      (do (println "No doc path pattern detected (please suggest one):"
-                   (:name m)
-                   (:documentationLink m)
-                   (:dot-path m)
-                   (:documentationLink-1 m))
-          [:documentationLink])))
+      [:documentationLink]))
 
 (defn pattern-for
   "Returns the doc link pattern for an api, will update a cache if not found."
@@ -241,7 +193,7 @@
 (def maybe-redirected
   (memoize maybe-redirected'))
 
-(defn doc-link-maybe-override [{:keys [name documentationLink]}]
+(defn doc-link-maybe-override [{:strs [name documentationLink]}]
   (let [[prev override] (get override-docs name)]
     (if override
       (if (= prev documentationLink)
@@ -266,16 +218,16 @@
 (defn doc-link
   "Formats a direct link to resource or method documentation."
   [api method]
-  (let [method-id (:id method)
+  (let [method-id (get method "id")
         doc (-> (doc-link-maybe-override api)
                 (maybe-redirected)
                 (remove-trailing-slash))
         m (merge method
-                 (assoc api :documentationLink doc)
-                 {:path                (doc-path method-id)
+                 (assoc api "documentationLink" doc)
+                 {"path"                (doc-path method-id)
                   ;; TODO: path and dot-path can overlap, causing an incorrect match
-                  :dot-path            (doc-dot-path method-id)
-                  :documentationLink-1 (url-butlast doc)})
+                  "dot-path"            (doc-dot-path method-id)
+                  "documentationLink-1" (url-butlast doc)})
         pattern (pattern-for m)]
     (format-url m pattern)))
 

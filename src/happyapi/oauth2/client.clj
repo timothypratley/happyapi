@@ -125,7 +125,7 @@
   otherwise expects `auth_uri` and `token_uri`.
   `provider` is required to namespace tokens, but is not restricted to known providers.
   Dependencies are passed as functions in `fns`."
-  [{:as config {:keys [request]} :fns}]
+  [{:as config :keys [keywordize-keys] {:keys [request]} :fns}]
   (when-not (middleware/fn-or-var? request)
     (throw (ex-info "request must be a function or var"
                     {:id      ::request-must-be-a-function
@@ -138,4 +138,5 @@
       (wrap-oauth2 config)
       (middleware/wrap-uri-template)
       (middleware/wrap-paging)
-      (middleware/wrap-extract-result)))
+      (middleware/wrap-extract-result)
+      (middleware/wrap-keywordize-keys keywordize-keys)))

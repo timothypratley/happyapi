@@ -46,9 +46,9 @@
 (defn request-pages-async [request args respond raise items]
   (request args
            (fn [resp]
-             (let [items (into items (get-in resp [:body :items]))
-                   resp (assoc-in resp [:body :items] items)
-                   nextPageToken (get-in resp [:body :nextPageToken])]
+             (let [items (into items (get-in resp [:body "items"]))
+                   resp (assoc-in resp [:body "items"] items)
+                   nextPageToken (get-in resp [:body "nextPageToken"])]
                (if nextPageToken
                  (request-pages-async request (assoc-in args [:query-params :pageToken] nextPageToken) respond raise items)
                  (respond resp))))
@@ -61,9 +61,9 @@
                  (assoc-in args [:query-params :pageToken] page)
                  args)
           resp (request args)
-          items (into items (get-in resp [:body :items]))
-          resp (assoc-in resp [:body :items] items)
-          nextPageToken (get-in resp [:body :nextPageToken])]
+          items (into items (get-in resp [:body "items"]))
+          resp (assoc-in resp [:body "items"] items)
+          nextPageToken (get-in resp [:body "nextPageToken"])]
       (if nextPageToken
         (if (= page nextPageToken)
           (throw (ex-info "nextPageToken did not change while paging"
@@ -90,16 +90,6 @@
     (apply update args k f more)
     args))
 
-(defn keywordize-body [resp]
-  (maybe-update resp :body walk/keywordize-keys))
-
-(defn wrap-keywordize-keys [request]
-  (fn
-    ([args]
-     (keywordize-body (request args)))
-    ([args respond raise]
-     (request args (comp respond keywordize-body) raise))))
-
 (defn enjsonize [args encode]
   (-> (maybe-update args :body encode)
       (update :headers merge {"Content-Type" "application/json"
@@ -109,22 +99,23 @@
   (some->> (get-in resp [:headers :content-type])
            (re-find #"^application/(.+\+)?json")))
 
-(defn dejsonize [resp decode]
+(defn dejsonize [args resp decode keywordize-keys]
   (if (json? resp)
-    (maybe-update resp :body decode)
+    (maybe-update resp :body #(cond-> (decode %)
+                                      (and (not (false? (:keywordize-keys args)))
+                                           (or keywordize-keys (:keywordize-keys args)))
+                                      (walk/keywordize-keys)))
     resp))
 
 (defn wrap-json
   "Converts the body of responses to a data structure.
   Pluggable json implementations resolved from dependencies, or can be passed as an argument.
-  Keywordization defaults to true if not specified.
-  Keywordization can be disabled with :keywordize-keys false.
+  Keywordization can be enabled with :keywordize-keys true.
 
   Error responses don't throw exceptions when parsing fails.
   Success responses that fail to parse are rethrown with the response and request as context."
   [request {:as                     config
             :keys                   [keywordize-keys]
-            :or                     {keywordize-keys true}
             {:keys [encode decode]} :fns}]
   (when-not (and (fn-or-var? encode)
                  (fn-or-var? decode))
@@ -133,47 +124,43 @@
                      :encode encode
                      :decode decode
                      :config config})))
-  (cond->
-    (fn
-      ([args]
-       (let [args (enjsonize args encode)
-             resp (request args)]
-         (try
-           (dejsonize resp decode)
-           (catch Throwable ex
-             (if (success? resp)
-               (throw (ex-info "Failed to json decode the body of a successful response"
-                               {:id       ::parse-json-failed
-                                :response resp
-                                :args     args}
-                               ex))
-               ;; errors often have non-json bodies, presumably users want to handle those if we got here
-               resp)))))
-      ([args respond raise]
-       (request (-> (enjsonize args encode))
-                (fn [resp]
-                  (try
-                    (-> (dejsonize resp decode)
-                        (respond))
-                    (catch Throwable ex
-                      (if (success? resp)
-                        (raise (ex-info "Failed to json decode the body of a successful async response"
-                                        {:id       ::parse-json-failed-async
-                                         :response resp
-                                         :args     args}
-                                        ex))
-                        ;; errors often have non-json bodies, presumably users want to handle those if we got here
-                        (respond resp)))))
-                raise)))
-    keywordize-keys (wrap-keywordize-keys)))
+  (fn
+    ([args]
+     (let [args (enjsonize args encode)
+           resp (request args)]
+       (try
+         (dejsonize args resp decode keywordize-keys)
+         (catch Throwable ex
+           (if (success? resp)
+             (throw (ex-info "Failed to json decode the body of a successful response"
+                             {:id       ::parse-json-failed
+                              :response resp
+                              :args     args}
+                             ex))
+             ;; errors often have non-json bodies, presumably users want to handle those if we got here
+             resp)))))
+    ([args respond raise]
+     (request (-> (enjsonize args encode))
+              (fn [resp]
+                (try
+                  (-> (dejsonize args resp decode keywordize-keys)
+                      (respond))
+                  (catch Throwable ex
+                    (if (success? resp)
+                      (raise (ex-info "Failed to json decode the body of a successful async response"
+                                      {:id       ::parse-json-failed-async
+                                       :response resp
+                                       :args     args}
+                                      ex))
+                      ;; errors often have non-json bodies, presumably users want to handle those if we got here
+                      (respond resp)))))
+              raise))))
 
 ;; TODO: surely there are other cases to consider?
 (defn remove-redundant-data-labels [x]
   (if (map? x)
-    (cond (contains? x :data) (recur (get x :data))
-          (contains? x "data") (recur (get x "data"))
-          (seq (get x :items)) (get x :items)
-          (seq (get x "items")) (get x "items")
+    (cond (contains? x "data") (recur (get x "data"))
+          (seq (get x "items")) (mapv remove-redundant-data-labels (get x "items"))
           :else x)
     x))
 
@@ -193,6 +180,22 @@
      (request args
               (fn [resp]
                 (respond (extract-result resp)))
+              raise))))
+
+(defn maybe-keywordize-keys [args resp keywordize-keys]
+  (if (and (not (false? (:keywordize-keys args)))
+           (or keywordize-keys (:keywordize-keys args)))
+    (walk/keywordize-keys resp)
+    resp))
+
+(defn wrap-keywordize-keys [request keywordize-keys]
+  (fn
+    ([args]
+     (maybe-keywordize-keys args (request args) keywordize-keys))
+    ([args respond raise]
+     (request args
+              (fn [resp]
+                (respond (maybe-keywordize-keys args resp keywordize-keys)))
               raise))))
 
 (defn uri-from-template [{:as args :keys [uri-template uri-template-args]}]

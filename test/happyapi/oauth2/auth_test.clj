@@ -4,16 +4,20 @@
             [happyapi.middleware :as middleware]
             [happyapi.oauth2.auth :as auth]
             [happyapi.oauth2.capture-redirect :as capture-redirect]
+            [happyapi.oauth2.client :as client]
             [happyapi.oauth2.credentials :as credentials]
-            [happyapi.deps :as deps]))
+            [happyapi.deps :as deps]
+            [happyapi.setup :as setup]))
 
-;; To run the tests you need to download `secret.json` from the Google console.
-;; this is an annoying test because it revokes, forcing you to login in again.
+;; To run the tests you need a happyapi.edn file with secrets in it.
+;; This is a particularly annoying test because it revokes, forcing you to login in again.
 (deftest refresh-and-revoke-test
-  (let [{:as deps :keys [request]} (deps/choose [:clj-http :cheshire])
-        request (middleware/wrap-json request {:fns deps})
-        provider :google
-        config (-> (slurp "happyapi.edn") (edn/read-string) (get provider))
+  (let [provider :google
+        config (-> (slurp "happyapi.edn") (edn/read-string) (get provider)
+                   (assoc :provider :google)
+                   (client/with-endpoints)
+                   (setup/with-deps))
+        request (middleware/wrap-json (get-in config [:fns :request]) config)
         credentials (credentials/read-credentials provider "user")
         scopes ["https://www.googleapis.com/auth/userinfo.email"]
         credentials (capture-redirect/update-credentials request config credentials scopes)]

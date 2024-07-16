@@ -7,11 +7,11 @@
   (is (-> (twitter/api-request {:method :get
                                    :url    "https://api.twitter.com/2/users/me"
                                    :scopes ["tweet.read" "tweet.write" "users.read"]})
-          :username))
+          (get "username")))
   (is (-> (twitter/api-request {:method :delete
                                 :url    "https://api.twitter.com/2/tweets/1811986925798195513"
                                 :scopes ["tweet.read" "tweet.write" "users.read"]})
-          :deleted))
+          (get "deleted")))
   ;; let's not post every time I run the tests...
   #_(twitter/api-request {:method :post
                           :url    "https://api.twitter.com/2/tweets"

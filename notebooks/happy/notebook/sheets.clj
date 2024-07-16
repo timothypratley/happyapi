@@ -1,4 +1,4 @@
-(ns happyapinotebook.sheets
+(ns happyapi.notebook.sheets
   (:require [clojure.test :refer [deftest is testing]]
             [happygapi.sheets :as sheets]))
 

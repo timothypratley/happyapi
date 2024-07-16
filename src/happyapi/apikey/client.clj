@@ -10,7 +10,7 @@
 
   returns a wrapped request function."
   [{:as                     config
-    :keys                   [apikey]
+    :keys                   [apikey keywordize-keys]
     {:keys [request]} :fns}]
   (when-not (middleware/fn-or-var? request)
     (throw (ex-info "request must be a function or var"
@@ -24,4 +24,5 @@
       (middleware/wrap-apikey-auth apikey)
       (middleware/wrap-uri-template)
       (middleware/wrap-paging)
-      (middleware/wrap-extract-result)))
+      (middleware/wrap-extract-result)
+      (middleware/wrap-keywordize-keys keywordize-keys)))

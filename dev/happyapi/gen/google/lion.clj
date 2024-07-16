@@ -1,6 +1,7 @@
 (ns happyapi.gen.google.lion
   "Writes to src/happygapi generated namespaces of function wrappers"
-  (:require [happyapi.gen.google.beaver :as beaver]
+  (:require [clojure.edn :as edn]
+            [happyapi.gen.google.beaver :as beaver]
             [happyapi.gen.google.monkey :as monkey]
             [happyapi.gen.google.raven :as raven]
             [clojure.java.io :as io]
@@ -17,31 +18,28 @@
       (str/replace "\\n" "\n")))
 
 (defn ns-str [forms]
-  (str/join \newline
-            (map pprint-str forms)))
+  (str/join \newline (map pprint-str forms)))
 
-(defn write-api-ns [api]
-  (let [target (io/file beaver/out-dir (str (:name api) ".clj"))]
-    (println "Writing" (:name api) (:version api) (str target))
-    (->> (beaver/build-api-ns api)
-         (ns-str)
-         (spit target)))
-  ;; TODO: make these useful
-  #_(spit (io/file ".." "happygapi" "resources" (str (:name api) "_schema.edn"))
-          (pprint-str (:schemas api)))
-  :done)
-
-(defn fetch-and-write [{:keys [name version discoveryRestUrl idx]}]
+(defn fetch-and-write [{:strs [name version discoveryRestUrl idx]}]
   (try
-    (println (str "Fetching" (when idx
-                               (str " " idx " of " (count monkey/apis))))
-             name version discoveryRestUrl)
-    (-> (raven/get-json discoveryRestUrl)
-        (write-api-ns))
+    ;; if we have it already just use it.
+    (println (str "Building" (when idx (str " " idx " of " (count monkey/apis)))) name)
+    (let [target (io/file beaver/out-dir (str name "_" version ".clj"))
+          api-file (io/file beaver/resource-dir (str name "_" version ".edn"))
+          api (if (.exists api-file)
+                (edn/read-string (slurp api-file))
+                (doto (raven/get-json discoveryRestUrl)
+                  (->> (pr-str) (spit api-file))))]
+      (->> (beaver/build-api-ns api)
+           (ns-str)
+           (spit target))
+      (println "Wrote" (str target))
+      :done)
     (catch Exception ex
       (swap! discovery-failed& conj discoveryRestUrl)
       (println (ex-message ex))
-      (println "To retry/resume, use" (pr-str `(write-one ~name)) "or" (pr-str `(write-all ~name))))))
+      (println "To retry/resume, use" (pr-str `(write-one ~name)) "or" (pr-str `(write-all ~name)))
+      ex)))
 
 (comment
   (fetch-and-write {:discoveryRestUrl "https://spanner.googleapis.com/$discovery/rest?version=v1"}))
@@ -84,12 +82,13 @@
   ([] (write-all nil))
   ([start]
    (.mkdirs beaver/out-dir)
+   (.mkdirs beaver/resource-dir)
    (let [apis (->> (vals monkey/apis)
-                   (sort-by :name)
+                   (sort-by #(get % "name"))
                    (map-indexed (fn [idx api]
-                                  (assoc api :idx idx))))
+                                  (assoc api "idx" idx))))
          remaining (cond->> apis
-                            start (drop-while (comp (complement #{start}) :name)))]
+                            start (drop-while #(not= start (get % "name"))))]
      (run! fetch-and-write remaining))
    (report)
    :done))
@@ -108,7 +107,6 @@
   ;; TODO: poly is no more
   (write-all "poly")
   (write-one "youtube"))
-
 
 (defn -main [& args]
   (write-all))

@@ -4,6 +4,7 @@
 
 (deftest api-request-test
   (github/setup! nil)
-  (is (:email (github/api-request {:method :get
-                                   :url    "https://api.github.com/user"
-                                   :scopes ["user" "user:email"]}))))
+  (is (-> (github/api-request {:method :get
+                               :url    "https://api.github.com/user"
+                               :scopes ["user" "user:email"]})
+          (get "email"))))

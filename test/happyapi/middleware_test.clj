@@ -25,10 +25,10 @@
   (let [request (-> (fn
                       ([args]
                        {:status 200
-                        :body   {:items [1 2 3]}})
+                        :body   {"items" [1 2 3]}})
                       ([args respond raise]
                        (respond {:status 200
-                                 :body   {:items [4 5 6]}})))
+                                 :body   {"items" [4 5 6]}})))
                     (middleware/wrap-extract-result))]
     (is (= (request {}) [1 2 3]))
     (request {}
@@ -39,15 +39,17 @@
 (deftest wrap-json-test
   (let [request-stub (fn
                        ([args]
-                        {:status 200
-                         :body   "{\"json\": 1, \"edn\": 0}"})
+                        {:status  200
+                         :headers {:content-type "application/json"}
+                         :body    "{\"json\": 1, \"edn\": 0}"})
                        ([args respond raise]
-                        (respond {:status 200
-                                  :body   "{\"sync\": 1, \"async\": 0}"})))
+                        (respond {:status  200
+                                  :headers {:content-type "application/json"}
+                                  :body    "{\"sync\": 1, \"async\": 0}"})))
         json (deps/require-dep :cheshire)
         request (middleware/wrap-json request-stub {:fns json})
-        request-keywordized (middleware/wrap-json request-stub {:fns             json
-                                                                :keywordize-keys true})]
+        request-keywordized (-> (middleware/wrap-json request-stub {:fns json})
+                                (middleware/wrap-keywordize-keys true))]
     (is (= (:body (request {}))
            {"json" 1
             "edn"  0}))
@@ -75,15 +77,15 @@
                       ([args]
                        (let [c (swap! counter inc)]
                          {:status 200
-                          :body   {:items         (get responses c)
-                                   :nextPageToken (when (= c 0)
-                                                    "page2")}}))
+                          :body   {"items"         (get responses c)
+                                   "nextPageToken" (when (= c 0)
+                                                     "page2")}}))
                       ([args respond raise]
                        (let [c (swap! counter inc)]
                          (respond {:status 200
-                                   :body   {:items         (get responses c)
-                                            :nextPageToken (when (= c 2)
-                                                             "page4")}}))))
+                                   :body   {"items"         (get responses c)
+                                            "nextPageToken" (when (= c 2)
+                                                              "page4")}}))))
                     (middleware/wrap-paging)
                     (middleware/wrap-extract-result))]
     (is (= (request {}) [1 2 3 4 5 6]))

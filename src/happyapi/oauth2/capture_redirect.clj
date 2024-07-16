@@ -7,8 +7,7 @@
             [clojure.set :as set]
             [happyapi.middleware :as middleware]
             [happyapi.oauth2.auth :as oauth2]
-            [ring.middleware.params :as params])
-  (:import (java.io FileInputStream)))
+            [ring.middleware.params :as params]))
 
 (set! *warn-on-reflection* true)
 
@@ -76,8 +75,8 @@
         _ (browse-to-provider config scopes optional)
         ;; wait for the user to get redirected to localhost with a code
         {:strs [code state] :as return-params} (deref p login-timeout nil)]
-    ;; allow a bit of time to deliver the response before shutting down the server
-    (Thread. (fn [] (Thread/sleep 1000) (stop)))
+    ;; allow a bit of time to deliver the response, and favicon before shutting down the server
+    (.start (Thread. (fn [] (Thread/sleep 100) (stop))))
     (if code
       (do
         (when-not (= state state-and-challenge)
@@ -96,9 +95,7 @@
   For valid optional params, see https://developers.google.com/identity/protocols/oauth2/web-server#httprest_1"
   ([request config credentials scopes]
    ;; scopes can grow
-   (let [scopes (set/union (oauth2/credential-scopes credentials) (set scopes))
-         ;; for auth calls we will need the results to be keywordized.
-         request (middleware/wrap-keywordize-keys request)]
+   (let [scopes (set/union (oauth2/credential-scopes credentials) (set scopes))]
      ;; merge to retain refresh token
      (merge credentials
             (or
@@ -109,6 +106,6 @@
               ;; try to refresh existing credentials
               (and (oauth2/refreshable? config credentials)
                    (oauth2/has-scopes? credentials scopes)
-                   (oauth2/refresh-credentials request config scopes credentials))
+                   (oauth2/refresh-credentials (middleware/wrap-keywordize-keys request true) config scopes credentials))
               ;; new credentials required
-              (fresh-credentials request config scopes))))))
+              (fresh-credentials (middleware/wrap-keywordize-keys request true) config scopes))))))

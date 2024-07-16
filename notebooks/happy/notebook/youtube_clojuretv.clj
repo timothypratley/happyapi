@@ -1,7 +1,7 @@
-(ns happyapinotebook.youtube-clojuretv
+(ns happy.notebook.youtube-clojuretv
   (:require [clojure.string :as str]
             [scicloj.kindly.v4.kind :as kind]
-            [happygapi2.youtube :as youtube]))
+            [happyapi.google.youtube-v3 :as youtube]))
 
 ;; # ClojureTV video views analysis
 
@@ -22,25 +22,25 @@
 ;; First we need to find the channel that ClojureTV videos are published on.
 
 (defonce channels
-         (youtube/channels-list "contentDetails,statistics" {:forUsername "ClojureTV"}))
+  (youtube/channels-list "contentDetails,statistics" {:forUsername "ClojureTV"}))
 
 (def uploads-playlist-id
-  (-> channels first :contentDetails :relatedPlaylists :uploads))
+  (get-in (first channels) ["contentDetails" "relatedPlaylists" "uploads"]))
 
 (defonce playlist
-         (youtube/playlistItems-list "contentDetails,id" {:playlistId uploads-playlist-id}))
+  (youtube/playlistItems-list "contentDetails,id" {:playlistId uploads-playlist-id}))
 
 ;; The playlist contains videoIds which we can use to access video view/like statistics.
 
 (def video-ids
-  (mapv (comp :videoId :contentDetails) playlist))
+  (mapv #(get-in % ["contentDetails" "videoId"]) playlist))
 
 ;; Video details can be requested in batches of at most 50 due to the maximum item count per response page.
 
 (defonce videos-raw
-         (vec (mapcat (fn [batch]
-                        (youtube/videos-list "snippet,contentDetails,statistics" {:id (str/join "," batch)}))
-                      (partition-all 50 video-ids))))
+  (vec (mapcat (fn [batch]
+                 (youtube/videos-list "snippet,contentDetails,statistics" {:id (str/join "," batch)}))
+               (partition-all 50 video-ids))))
 
 ;; Let's check how many videos we got
 
@@ -54,7 +54,7 @@
 
 (def videos
   (mapv (fn [video]
-          (update video :statistics update-vals parse-long))
+          (update video "statistics" update-vals parse-long))
         videos-raw))
 
 ;; ## Distribution of views
@@ -106,9 +106,9 @@
   [:svg {:xmlns "http://www.w3.org/2000/svg" :width "1em" :height "1em" :viewBox "0 0 512 512"}
    [:path {:fill "currentColor" :d "M256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32m0 368c-26.7 0-53.1-4.1-78.4-12.1l-22.7-7.2l-19.5 13.8c-14.3 10.1-33.9 21.4-57.5 29c7.3-12.1 14.4-25.7 19.9-40.2l10.6-28.1l-20.6-21.8C69.7 314.1 48 282.2 48 240c0-88.2 93.3-160 208-160s208 71.8 208 160s-93.3 160-208 160"}]])
 
-(defn video-summary [{:keys                                                            [id]
-                      {:keys [viewCount likeCount commentCount]}                       :statistics
-                      {:keys [title description] {{:keys [url]} :default} :thumbnails} :snippet}]
+(defn video-summary [{:strs                                                              [id]
+                      {:strs [viewCount likeCount commentCount]}                         "statistics"
+                      {:strs [title description] {{:strs [url]} "default"} "thumbnails"} "snippet"}]
   (kind/hiccup
     [:div {:style {:display             "grid"
                    :gap                 "15px"
@@ -141,9 +141,9 @@
               [:th {:style {:padding "10px"}} "Video"]]]
      (into [:tbody]
            (map-indexed
-             (fn [idx {:keys                                                [id]
-                       {:keys [viewCount likeCount commentCount]}           :statistics
-                       {:keys [title] {{:keys [url]} :default} :thumbnails} :snippet}]
+             (fn [idx {:strs                                                  [id]
+                       {:strs [viewCount likeCount commentCount]}             "statistics"
+                       {:strs [title] {{:strs [url]} "default"} "thumbnails"} "snippet"}]
                [:tr
                 [:td {:align "right"
                       :style {:padding "10px"}} (inc idx)]
@@ -161,7 +161,7 @@
 
 ;; ### Most viewed
 
-(video-summary (last (sort-by (comp :viewCount :statistics) videos)))
+(video-summary (last (sort-by #(get-in % ["statistics" "viewCount"]) videos)))
 
 ;; The first thing that jumps out at us is that one talk received about 300k views.
 ;; It is the famous [Hammock Driven Development](https://www.youtube.com/watch?v=f84n5oFoZBc) talk by Rich Hickey.
@@ -177,7 +177,7 @@
 
 ;; ### Top 20 most viewed
 
-(video-table (take 20 (reverse (sort-by (comp :viewCount :statistics) videos))))
+(video-table (take 20 (reverse (sort-by #(get-in % ["statistics" "viewCount"]) videos))))
 
 ;; Many of the most viewed Clojure talks were keynotes delivered by heavy hitters Rich Hickey, Brian Goetz, and Guy Steele.
 ;; More interesting is that one talk sticks out as very different.
@@ -195,25 +195,25 @@
 ;; Likes are not available on all videos (for example the most viewed video has private likes).
 ;; The owner of the channel can see all likes (and dislikes), but we the public don't.
 
-(count (filter (comp :likeCount :statistics) videos))
+(count (filter #(get-in % ["statistics" "likeCount"]) videos))
 
 ;; Only about half the talks have likes visible, so we might be missing some well liked videos.
 
-(video-summary (last (sort-by (comp :likeCount :statistics) videos)))
+(video-summary (last (sort-by #(get-in % ["statistics" "likeCount"]) videos)))
 
 ;; "Every Clojure Talk Ever" comes in at #1 liked,
 ;; supporting the notion that people enjoy talks that go outside the box and embrace comedy.
 
 ;; ### Top 20 most liked
 
-(video-table (take 20 (reverse (sort-by (comp :likeCount :statistics) videos))))
+(video-table (take 20 (reverse (sort-by #(get-in % ["statistics" "likeCount"]) videos))))
 
 ;; There is a lot of overlap between viewed and liked.
 ;; At #5 "Code goes in, Art comes out - Tyler Hobbs" is another talk that goes outside the box to show beautiful art works.
 
 ;; ### Most discussed
 
-(video-summary (last (sort-by (comp :commentCount :statistics) videos)))
+(video-summary (last (sort-by #(get-in % ["statistics" "commentCount"]) videos)))
 
 ;; "Maybe Not" is a talk I had to watch 3 times to digest.
 ;; Type theory is the ultimate CompSci topic that people have strong thoughts on,
@@ -223,7 +223,7 @@
 
 ;; ### Top 20 most discussed
 
-(video-table (take 20 (reverse (sort-by (comp :commentCount :statistics) videos))))
+(video-table (take 20 (reverse (sort-by #(get-in % ["statistics" "commentCount"]) videos))))
 
 ;; The first not by Rich Hickey talk on this list is "Bruce Hauman - Developing ClojureScript With Figwheel",
 ;; a fun and engaging talk that presents the wonderful powers of automatic code loading for interactive development.
@@ -233,7 +233,7 @@
 ;; Talks that have a high like:view ratio may indicate they have interesting content.
 ;; Again, this only works for the 50% of videos that have likes visible.
 
-(defn like-ratio [{{:keys [likeCount viewCount]} :statistics}]
+(defn like-ratio [{{:strs [likeCount viewCount]} "statistics"}]
   (when likeCount
     (/ likeCount viewCount)))
 

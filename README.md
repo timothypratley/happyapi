@@ -125,7 +125,7 @@ and then from a file `happyapi.edn`.
           :client_secret   "MY_SECRET"            ;; oauth2 client_secret from your provider
           :apikey          "MY_APIKEY"            ;; only when not using oauth2
           :scopes          []                     ;; optional default scopes
-          :keywordize-keys false}}                ;; optional, defaults to true
+          :keywordize-keys true}}                 ;; optional
 ```
 
 **Keep your client_secret secure.** Add `happyapi.edn` to `.gitignore` to avoid adding it to source control.
@@ -191,11 +191,13 @@ HappyAPI avoids creating a direct dependency because there are many implementati
 
 * http client (clj-http, clj-http.lite, httpkit)
 * json encoder/decoder (cheshire, jsonista, clojure.data.json, charred)
-* A web server to receive redirects (ring-jetty-adapter, httpkit<soon>)
+* A web server to receive redirects (jetty, httpkit)
 
 To choose your dependencies,
 configure `:deps [:httpkit :cheshire]`, or `:deps [:clj-http :jetty :charred]`,
 or whichever combo you want to use.
+
+There are no defaults. If you can't decide which to use, then I suggest `[:httpkit :cheshire]`
 
 Valid keys are `#{:cheshire :clj-http.lite :jetty :clj-http :data.json :httpkit :jsonista :charred}`
 
@@ -276,6 +278,24 @@ If you want to use HappyAPI in a web app, you should instead store and fetch tok
 
 The `happyapi.oauth2.capture-redirect` namespace implements a listener to capture a code when the user is redirected from the oauth2 provider.
 Web applications should instead define a route to capture the code.
+
+### Keywordization
+
+While keywordization is common practise in Clojure,
+it can be problematic when receiving arbitrary data because not all keys make valid keywords.
+HappyAPI follows the convention of JSON defaults to use string keys instead of keywords.
+
+You can pass `keywordize-keys true` as configuration if you prefer keyword keys.
+You can also pass `keywordize-keys (true|false)` to individual requests.
+
+My recommendation is to avoid keywordization.
+When you run into a non-keywordizable key it can be a real headache.
+
+### Pagination
+
+HappyAPI retrieves all pages and join the results together.
+It also unwraps extraneous keys like `data` and `items`.
+It returns data, not responses.
 
 ### Retries
 

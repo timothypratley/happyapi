@@ -24,8 +24,9 @@
   (try
     ;; if we have it already just use it.
     (println (str "Building" (when idx (str " " idx " of " (count monkey/apis)))) name)
-    (let [target (io/file beaver/out-dir (str name "_" version ".clj"))
-          api-file (io/file beaver/resource-dir (str name "_" version ".edn"))
+    (let [filename (str name "_" (str/replace version "." "_"))
+          target (io/file beaver/out-dir (str filename ".clj"))
+          api-file (io/file beaver/resource-dir (str filename ".edn"))
           api (if (.exists api-file)
                 (edn/read-string (slurp api-file))
                 (doto (raven/get-json discoveryRestUrl)

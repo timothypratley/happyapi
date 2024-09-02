@@ -1,7 +1,6 @@
 (ns happyapi.oauth2.client-test
   (:require [clojure.edn :as edn]
             [clojure.test :refer [deftest is]]
-            [clojure.walk :as walk]
             [happyapi.oauth2.client :as client]
             [happyapi.deps :as deps]))
 

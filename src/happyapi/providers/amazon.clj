@@ -1,10 +1,10 @@
 (ns happyapi.providers.amazon
   (:require [happyapi.setup :as setup]))
 
-(declare api-request)
+(declare ^:dynamic *api-request*)
 
 (defn set-request! [client]
-  (alter-var-root #'api-request (constantly client)))
+  (alter-var-root #'*api-request* (constantly client)))
 
 (defn setup!
   "Changes `api-request` to be a configured client.
@@ -14,7 +14,7 @@
   See config/make-client for more options."
   [config] (set-request! (setup/make-client (when config {:amazon config}) :amazon)))
 
-(defn api-request
+(defn ^:dynamic *api-request*
   "A function to handle API requests.
   Can be configured with `setup!`.
   Will attempt to configure itself if not previously configured.
@@ -23,10 +23,10 @@
   will be present in the generated interface."
   ([args]
    (setup! nil)
-   (api-request args))
+   (*api-request* args))
   ([args respond raise]
    (try
      (setup! nil)
-     (api-request args respond raise)
+     (*api-request* args respond raise)
      (catch Throwable ex
        (raise ex)))))

@@ -14,7 +14,7 @@
   See config/make-client for more options."
   [config] (set-request! (setup/make-client (when config {:google config}) :google)))
 
-(defn *api-request*
+(defn ^:dynamic *api-request*
   "A function to handle API requests.
   Can be configured with `setup!`.
   Will attempt to configure itself if not previously configured.

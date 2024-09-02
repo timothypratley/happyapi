@@ -107,7 +107,7 @@
     (list 'defn ?method-sym
           (doc-string ?api ?method ?request-sym)
           params
-          (list 'client/api-request
+          (list 'client/*api-request*
                 (cond-> {:method            (keyword (str/lower-case httpMethod))
                          :uri-template      (str baseUrl path)
                          :uri-template-args (required-path-params parameters)
@@ -124,7 +124,7 @@
           (doc-string ?api ?method ?request-sym)
           (list params (list* ?method-sym (conj params nil)))
           (list (conj params 'optional)
-                (list 'client/api-request
+                (list 'client/*api-request*
                       (cond-> {:method            (keyword (str/lower-case httpMethod))
                                :uri-template      (str baseUrl path)
                                :uri-template-args (required-path-params parameters)
@@ -159,7 +159,7 @@
              "documentationLink" ?documentationLink
              "resources"         {& (m/seqable [_ %resource] ...)}
              :as                 ?api})
-    ((ns ~(symbol (str project-name \. ?name "-" ?version))
+    ((ns ~(symbol (str project-name \. ?name "-" (str/replace ?version "." "-")))
        ~(str ?title \newline
              ?description \newline
              "See: " (raven/maybe-redirected ?documentationLink))

@@ -92,18 +92,6 @@
                       {:id           ::request-must-be-a-function
                        :request      request
                        :request-type (type request)})))
-    (let [query-string (get-in config [:fns :query-string])]
-      (when-not (middleware/fn-or-var? query-string)
-        (throw (ex-info "query-string must be provided in config :fns :query-string as a function or var"
-                        {:id           ::query-string-must-be-a-function
-                         :query-string query-string
-                         :config       config}))))
-    (let [run-server (get-in config [:fns :run-server])]
-      (when-not (middleware/fn-or-var? run-server)
-        (throw (ex-info "query-string must be provided in config :fns :query-string as a function or var"
-                        {:id         ::run-server-must-be-a-function
-                         :run-server run-server
-                         :config     config}))))
     (fn
       ([args]
        (oauth2 request args config))

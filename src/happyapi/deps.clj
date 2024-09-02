@@ -22,11 +22,33 @@
 (defmulti require-dep "Resolves a provider keyword to the functions it provides" identity)
 
 (defmethod require-dep :httpkit [_]
-  {:request      (resolve-fn 'happyapi.deps.httpkit/request)
+  {:request      (let [httpkit-request (resolve-fn 'org.httpkit.client/request)]
+                   (fn request
+                     ([args] @(httpkit-request args))
+                     ([args respond raise]
+                      (httpkit-request args (fn callback [response]
+                                              ;; httpkit doesn't raise, it just puts errors in the response
+                                              (if (contains? response :error)
+                                                (raise (ex-info "ERROR in response"
+                                                                {:id   ::error-in-response
+                                                                 :resp response}))
+                                                (respond response)))))))
    :query-string (resolve-fn 'org.httpkit.client/query-string)
-   :run-server   (resolve-fn 'happyapi.deps.httpkit/run-server)})
+   :run-server   (let [run (resolve-fn 'org.httpkit.server/run-server)
+                       port (resolve-fn 'org.httpkit.server/server-port)
+                       stop! (resolve-fn 'org.httpkit.server/server-stop!)]
+                   (fn httpkit-run-server [handler config]
+                     (let [server (run handler (assoc config :legacy-return-value? false))]
+                       {:port (port server)
+                        :stop (fn [] (stop! server {:timeout 100}))})))})
 (defmethod require-dep :jetty [_]
-  {:run-server (resolve-fn 'happyapi.deps.jetty/run-server)})
+  {:run-server (let [run (resolve-fn 'ring.adapter.jetty/run-jetty)]
+                 (fn jetty-run-server [handler config]
+                   (let [server (run handler (assoc config :join? false))]
+                     (.setStopTimeout server 100)
+                     {:port (-> server .getConnectors first .getLocalPort)
+                      :stop (fn stop-jetty []
+                              (.stop server))})))})
 (defmethod require-dep :clj-http [_]
   {:request      (resolve-fn 'clj-http.client/request)
    :query-string (resolve-fn 'clj-http.client/generate-query-string)})

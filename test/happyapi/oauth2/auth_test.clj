@@ -6,7 +6,6 @@
             [happyapi.oauth2.capture-redirect :as capture-redirect]
             [happyapi.oauth2.client :as client]
             [happyapi.oauth2.credentials :as credentials]
-            [happyapi.deps :as deps]
             [happyapi.setup :as setup]))
 
 ;; To run the tests you need a happyapi.edn file with secrets in it.

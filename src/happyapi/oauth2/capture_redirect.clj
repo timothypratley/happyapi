@@ -75,8 +75,7 @@
         _ (browse-to-provider config scopes optional)
         ;; wait for the user to get redirected to localhost with a code
         {:strs [code state] :as return-params} (deref p login-timeout nil)]
-    ;; allow a bit of time to deliver the response, and favicon before shutting down the server
-    (.start (Thread. (fn [] (Thread/sleep 100) (stop))))
+    (stop)
     (if code
       (do
         (when-not (= state state-and-challenge)

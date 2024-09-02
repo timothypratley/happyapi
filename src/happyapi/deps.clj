@@ -34,17 +34,17 @@
                                                                  :resp response}))
                                                 (respond response)))))))
    :query-string (resolve-fn 'org.httpkit.client/query-string)
-   :run-server   (let [httpkit-run-server (resolve-fn 'org.httpkit.server/run-server)
-                       httpkit-server-port (resolve-fn 'org.httpkit.server/server-port)
-                       httpkit-server-stop! (resolve-fn 'org.httpkit.server/server-stop!)]
-                   (fn run-server [handler config]
-                     (let [server (httpkit-run-server handler (assoc config :legacy-return-value? false))]
-                       {:port (httpkit-server-port server)
-                        :stop (fn [] (httpkit-server-stop! server {:timeout 100}))})))})
+   :run-server   (let [run (resolve-fn 'org.httpkit.server/run-server)
+                       port (resolve-fn 'org.httpkit.server/server-port)
+                       stop! (resolve-fn 'org.httpkit.server/server-stop!)]
+                   (fn httpkit-run-server [handler config]
+                     (let [server (run handler (assoc config :legacy-return-value? false))]
+                       {:port (port server)
+                        :stop (fn [] (stop! server {:timeout 100}))})))})
 (defmethod require-dep :jetty [_]
-  {:run-server (let [jetty-run-jetty (resolve-fn 'ring.adapter.jetty/run-jetty)]
-                 (fn run-server [handler config]
-                   (let [server (jetty-run-jetty handler (assoc config :join? false))]
+  {:run-server (let [run (resolve-fn 'ring.adapter.jetty/run-jetty)]
+                 (fn jetty-run-server [handler config]
+                   (let [server (run handler (assoc config :join? false))]
                      (.setStopTimeout server 100)
                      {:port (-> server .getConnectors first .getLocalPort)
                       :stop (fn stop-jetty []

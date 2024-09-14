@@ -88,11 +88,12 @@ if they follow common conventions.
 For Google APIs you can use the generated wrapper from the `happyapi.google` project.
 
 ```clojure
+(require '[happyapi.providers.google :as google])
 (require '[happyapi.google.youtube-v3 :as youtube])
-(youtube/channels-list "contentDetails,statistics" {:forUsername "ClojureTV"})
+(google/*api-request* (youtube/channels-list "contentDetails,statistics" {:forUsername "ClojureTV"}))
 ```
 
-The generated wrapper has endpoint and parameters to construct a request through `happyapi.providers.google/api-request`.
+The generated wrapper constructs a request for `happyapi.providers.google/api-request`.
 You can make custom, non-generated `api-requests` directly by passing the required arguments.
 
 ```clojure
@@ -100,11 +101,11 @@ You can make custom, non-generated `api-requests` directly by passing the requir
 (google/setup! {:client_id     "XYZ"
                 :client_secret (System/getenv "GOOGLE_CLIENT_SECRET")
                 :deps          [:jetty :clj-http :cheshire]})
-(google/api-request {:method       :get
-                     :url          "https://youtube.googleapis.com/youtube/v3/channels"
-                     :query-params {:part        "contentDetails,statistics"
-                                    :forUsername "ClojureTV"}
-                     :scopes       ["https://www.googleapis.com/auth/youtube.readonly"]})
+(google/*api-request* {:method       :get
+                       :url          "https://youtube.googleapis.com/youtube/v3/channels"
+                       :query-params {:part        "contentDetails,statistics"
+                                      :forUsername "ClojureTV"}
+                       :scopes       ["https://www.googleapis.com/auth/youtube.readonly"]})
 ```
 
 **Keep your client_secret secure. Do not add it directly in your code.**

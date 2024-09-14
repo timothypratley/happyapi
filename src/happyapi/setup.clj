@@ -4,6 +4,7 @@
             [clojure.walk :as walk]
             [happyapi.apikey.client :as apikey.client]
             [happyapi.deps :as deps]
+            [happyapi.middleware :as middleware]
             [happyapi.oauth2.client :as oauth2.client]))
 
 (defn as-map
@@ -40,7 +41,6 @@
         (when (.exists f)
           (-> (slurp f)
               (read-edn :file))))))
-(find-config)
 
 (defn with-deps
   "Selection of implementation functions for http and json,
@@ -59,6 +59,36 @@
                         (into fns (for [[k f] fns
                                         :when (qualified-symbol? f)]
                                     [k (deps/resolve-fn f)])))))
+
+(defn prepare-config
+  "Prepares configuration by resolving dependencies.
+  Checks that the necessary configuration is present, throws an exception if not.
+  See docstring for make-client for typical configuration inputs."
+  [provider config]
+  (when-not provider
+    (throw (ex-info "Provider is required"
+                    {:id       ::provider-required
+                     :provider provider
+                     :config   config})))
+  (let [config (if (nil? config)
+                 (find-config)
+                 (as-map config))
+        config (-> (get config provider)
+                   (update :provider #(or % provider))
+                   (with-deps)
+                   (resolve-fns))
+        {:keys [client_id apikey request]} config]
+    (when-not (middleware/fn-or-var? request)
+      (throw (ex-info "request must be a function or var"
+                      {:id           ::request-must-be-a-function
+                       :request      request
+                       :request-type (type request)})))
+    (cond apikey config
+          client_id (-> (oauth2.client/with-endpoints config)
+                        (oauth2.client/check))
+          :else (throw (ex-info "Missing config, expected `:client_id` or `:apikey`"
+                                {:id     ::missing-config
+                                 :config config})))))
 
 (defn make-client
   "Returns a function that can make requests to an api.
@@ -79,20 +109,7 @@
 
   The `provider` argument is required and should match a top level key to use (other configs may be present)."
   [config provider]
-  (when-not provider
-    (throw (ex-info "Provider is required"
-                    {:id       ::provider-required
-                     :provider provider
-                     :config   config})))
-  (let [config (if (nil? config)
-                 (find-config)
-                 (as-map config))
-        config (-> (get config provider)
-                   (update :provider #(or % provider)))
-        {:keys [client_id apikey]} config
-        config-with-fns (-> (with-deps config) (resolve-fns))]
-    (cond client_id (oauth2.client/make-client config-with-fns)
-          apikey (apikey.client/make-client config-with-fns)
-          :else (throw (ex-info "Missing config, expected `:client_id` or `:apikey`"
-                                {:id     ::missing-config
-                                 :config config})))))
+  (let [config (prepare-config provider config)
+        {:keys [client_id apikey]} config]
+    (cond client_id (oauth2.client/make-client config)
+          apikey (apikey.client/make-client config))))

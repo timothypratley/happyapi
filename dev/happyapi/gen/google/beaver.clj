@@ -107,13 +107,12 @@
     (list 'defn ?method-sym
           (doc-string ?api ?method ?request-sym)
           params
-          (list 'client/*api-request*
-                (cond-> {:method            (keyword (str/lower-case httpMethod))
-                         :uri-template      (str baseUrl path)
-                         :uri-template-args (required-path-params parameters)
-                         :query-params      (required-query-params parameters)
-                         :scopes            scopes}
-                        request (conj [:body ?request-sym]))))))
+          (cond-> {:method            (keyword (str/lower-case httpMethod))
+                   :uri-template      (str baseUrl path)
+                   :uri-template-args (required-path-params parameters)
+                   :query-params      (required-query-params parameters)
+                   :scopes            scopes}
+                  request (conj [:body ?request-sym])))))
 
 (defn multi-arity [{:as ?api :strs [baseUrl]} {:as ?method :strs [path httpMethod scopes request parameters parameterOrder]}]
   (let [?method-sym (method-sym ?method)
@@ -124,13 +123,12 @@
           (doc-string ?api ?method ?request-sym)
           (list params (list* ?method-sym (conj params nil)))
           (list (conj params 'optional)
-                (list 'client/*api-request*
-                      (cond-> {:method            (keyword (str/lower-case httpMethod))
-                               :uri-template      (str baseUrl path)
-                               :uri-template-args (required-path-params parameters)
-                               :query-params      (list 'merge (required-query-params parameters) 'optional)
-                               :scopes            scopes}
-                              request (conj [:body ?request-sym])))))))
+                (cond-> {:method            (keyword (str/lower-case httpMethod))
+                         :uri-template      (str baseUrl path)
+                         :uri-template-args (required-path-params parameters)
+                         :query-params      (list 'merge (required-query-params parameters) 'optional)
+                         :scopes            scopes}
+                        request (conj [:body ?request-sym]))))))
 
 (def extract-method
   "Given an api definition, and an api method definition,
@@ -162,7 +160,6 @@
     ((ns ~(symbol (str project-name \. ?name "-" (str/replace ?version "." "-")))
        ~(str ?title \newline
              ?description \newline
-             "See: " (raven/maybe-redirected ?documentationLink))
-       (:require [happyapi.providers.google ~:as client]))
+             "See: " (raven/maybe-redirected ?documentationLink)))
      . (m/app extract-method [?api !methods]) ...)
     ?else ~(throw (ex-info "FAIL" {:input ?else}))))

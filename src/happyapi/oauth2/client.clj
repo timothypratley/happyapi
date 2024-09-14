@@ -78,6 +78,14 @@
                        :user   user
                        :scopes scopes})))))
 
+(defn check [config]
+  (when-let [ks (missing-config config)]
+    (throw (ex-info (str "Invalid oauth2 config: missing " (str/join "," ks))
+                    {:id      ::invalid-config
+                     :missing (vec ks)
+                     :config  config})))
+  config)
+
 (defn wrap-oauth2
   "Wraps a http-request function that uses keys user and scopes from args to authorize according to config."
   [request config]

@@ -77,7 +77,8 @@
                    (update :provider #(or % provider))
                    (with-deps)
                    (resolve-fns))
-        {:keys [client_id apikey request]} config]
+        {:keys [client_id apikey fns]} config
+        {:keys [request]} fns]
     (when-not (middleware/fn-or-var? request)
       (throw (ex-info "request must be a function or var"
                       {:id           ::request-must-be-a-function

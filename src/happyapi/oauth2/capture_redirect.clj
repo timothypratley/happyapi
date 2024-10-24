@@ -38,7 +38,7 @@
   and include_granted_scopes true."
   [request {:as config :keys [redirect_uri authorization_options fns]} scopes]
   (let [p (promise)
-        [match protocol host _ requested-port path] (re-find #"^(http://)(localhost|127.0.0.1)(:(\d+))?(/.*)?$" redirect_uri)
+        [match protocol host _ requested-port path] (re-find #"^(https?://)(localhost|127.0.0.1)(:(\d+))?(/.*)?$" redirect_uri)
         _ (when-not match
             (throw (ex-info "redirect_uri should match http://localhost"
                             {:id           ::bad-redirect-uri

@@ -67,6 +67,7 @@
                        ;; but accepts them in the Basic Auth header (undocumented).
                        ;; Other providers require them as Basic Auth header.
                        :headers         {"Authorization" (str "Basic " (base64 (str client_id ":" client_secret)))}
+                       ;; RFC 6749: form encoded params
                        :form-params     (cond-> {:code         code
                                                  :grant_type   "authorization_code"
                                                  :redirect_uri redirect_uri}

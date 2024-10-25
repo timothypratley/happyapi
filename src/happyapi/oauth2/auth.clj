@@ -67,8 +67,7 @@
                        ;; but accepts them in the Basic Auth header (undocumented).
                        ;; Other providers require them as Basic Auth header.
                        :headers         {"Authorization" (str "Basic " (base64 (str client_id ":" client_secret)))}
-                       ;; params can be sent as form-params or json body
-                       :body            (cond-> {:code         code
+                       :form-params     (cond-> {:code         code
                                                  :grant_type   "authorization_code"
                                                  :redirect_uri redirect_uri}
                                                 code_verifier (assoc :code_verifier code_verifier))
@@ -112,8 +111,7 @@
                                              {:id ::refresh-missing-token})))
           resp (request {:url             token_uri
                          :method          :post
-                         ;; may be form-params or json body
-                         :body            params
+                         :form-params     params
                          :keywordize-keys true})]
       (when (middleware/success? resp)
         (with-timestamp (:body resp))))

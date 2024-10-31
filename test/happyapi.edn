@@ -1,0 +1,3 @@
+{:test-provider {:auth_uri     "RESOURCE"
+                 :client_id    "RESOURCE"
+                 :redirect_uri "http://localhost"}}

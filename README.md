@@ -118,7 +118,7 @@ the first call to `api-request` will attempt to configure itself.
 
 When no configuration is provided,
 HappyAPI tries to read configuration from the environment variable `HAPPYAPI_CONFIG`,
-and then from a file `happyapi.edn`.
+then from a file `happyapi.edn`, and then from a resource `happyapi.edn`.
 
 ```clojure
 {:google {:deps            [:httpkit :cheshire]   ;; see happyapi.deps for alternatives

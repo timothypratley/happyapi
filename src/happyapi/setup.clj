@@ -30,17 +30,22 @@
                        :config s})))))
 
 ;; A standard way to search for config
-;; check environment variables, files, anything else?
+;; check environment variables, files, resources, anything else?
 ;; should the logic be provider specific?
 ;; IDEA: The redirect server can request the client_secret, allowing you to use a password manager.
 (defn find-config
-  "Looks for HAPPYAPI_CONFIG in the environment, then a file happyapi.edn"
+  "Looks for HAPPYAPI_CONFIG in the environment, then a file happyapi.edn,
+  then happyapi.edn resource, else nil"
   []
-  (or (some-> (System/getenv "HAPPYAPI_CONFIG") (read-edn :environment))
-      (let [f (io/file "happyapi.edn")]
-        (when (.exists f)
-          (-> (slurp f)
-              (read-edn :file))))))
+  (let [config-file-name "happyapi.edn"]
+    (or (some-> (System/getenv "HAPPYAPI_CONFIG") (read-edn :environment))
+        (let [f (io/file config-file-name)]
+          (when (.exists f)
+            (-> (slurp f)
+                (read-edn :file))))
+        (when-let [r (io/resource config-file-name)]
+          (-> (slurp r)
+              (read-edn :resource))))))
 
 (defn with-deps
   "Selection of implementation functions for http and json,

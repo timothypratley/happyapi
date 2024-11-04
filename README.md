@@ -307,6 +307,14 @@ HappyAPI leaves retries up to the consuming application. See the [`again`](https
 
 See `dev` directory for `happyapi.gen` namespaces.
 
+## Third Party Apps
+
+If you are implementing your own web service, you may find these useful:
+
+[Blog: What color is your auth?](https://www.kpassa.me/posts/happyapi-temporal/)
+
+[Youtube: What color is your auth?](https://www.youtube.com/watch?v=mmOh5fYkX7Q)
+
 ## Contributing
 
 Issues, pull requests, and suggestions are welcome.

@@ -53,7 +53,7 @@
         {:keys [access_token]} credentials]
     (credentials/save-credentials provider user credentials)
     (if access_token
-      (request (middleware/auth-header args access_token))
+      (request (middleware/apikey-param args access_token))
       (throw (ex-info (str "Failed to obtain credentials for " user)
                       {:id     ::failed-credentials
                        :user   user
@@ -72,7 +72,7 @@
         {:keys [access_token]} credentials]
     (credentials/save-credentials provider user credentials)
     (if access_token
-      (request (middleware/auth-header args access_token) respond raise)
+      (request (middleware/apikey-param args access_token) respond raise)
       (raise (ex-info (str "Async failed to obtain credentials for " user)
                       {:id     ::async-failed-credentials
                        :user   user

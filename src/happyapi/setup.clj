@@ -89,9 +89,9 @@
                       {:id           ::request-must-be-a-function
                        :request      request
                        :request-type (type request)})))
-    (cond apikey config
-          client_id (-> (oauth2.client/with-endpoints config)
+    (cond client_id (-> (oauth2.client/with-endpoints config)
                         (oauth2.client/check))
+          apikey config
           :else (throw (ex-info "Missing config, expected `:client_id` or `:apikey`"
                                 {:id     ::missing-config
                                  :config config})))))

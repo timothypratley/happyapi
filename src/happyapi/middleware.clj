@@ -229,15 +229,33 @@
 ;; TODO: paging should save progress? or is it ok with informative exceptions?
 ;; TODO: metering? Seeing as this is a pass through wrapper, just recommend that library right?!
 
-(defn auth-header
+(defn apikey-param
   "Given credentials, returns a header suitable for merging into a request."
+  [args apikey]
+  (assoc-in args [:query-params "key"] apikey))
+
+(defn bearer-header
   [args bearer]
-  (merge-with merge args {:headers {"Authorization" (str "Bearer " bearer)}}))
+  (assoc-in args [:headers "Authorization"] (str "Bearer " bearer)))
 
 (defn wrap-apikey-auth [request apikey]
   {:pre [(string? apikey)]}
   (fn
     ([args]
-     (request (auth-header args apikey)))
+     (request (apikey-param args apikey)))
     ([args respond raise]
-     (request (auth-header args apikey) respond raise))))
+     (request (apikey-param args apikey) respond raise))))
+
+(defn wrap-debug [request]
+  (fn
+    ([args]
+     (println "DEBUG request: " args)
+     (doto (request args)
+       (->> (println "DEBUG response:"))))
+    ([args response raise]
+     (println "DEBUG async request: " args)
+     (request args
+              (fn [resp]
+                (println "DEBUG async response: " resp)
+                (response resp))
+              raise))))

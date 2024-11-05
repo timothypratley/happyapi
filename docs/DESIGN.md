@@ -217,10 +217,12 @@ Providing config for urls is useful, users just need to add their id/secret.
 
 ## Future work
 
+Figure out a way to run tests (at least some of them) in CI.
+
 Make it ClojureScript compatible.
 
-Requests more scopes than are really necessary :( I think you just need *any* of the scopes? not all?
+Generated code currently requests more scopes than are really necessary :( I think you just need *any* of the scopes? not all?
 
-Numbers should probably be coerced to numbers based on the json schema for responses.
+Numbers should be coerced to numbers based on the json schema for responses.
 
 Can we provide secure options for secret and token storage?

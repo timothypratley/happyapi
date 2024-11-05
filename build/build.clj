@@ -3,7 +3,7 @@
             [deps-deploy.deps-deploy :as dd]))
 
 (def lib 'io.github.timothypratley/happyapi)
-(def version (format "0.1.%s-alpha" (b/git-count-revs nil)))
+(def version (format "1.0.%s-beta" (b/git-count-revs nil)))
 (def class-dir "target/classes")
 (def basis (b/create-basis {:project "deps.edn"}))
 (def jar-file (format "target/%s-%s.jar" (name lib) version))

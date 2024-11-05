@@ -319,6 +319,9 @@ If you are implementing your own web service, you may find these useful:
 
 Issues, pull requests, and suggestions are welcome.
 
+If you are looking for things to improve, see also [docs/DESIGN.md#future-work](docs/DESIGN.md#future-work)
+
+
 ## Testing
 
 To run the tests you need to download `secret.json` from the Google console and convert it to a `happyapi.edn` file.

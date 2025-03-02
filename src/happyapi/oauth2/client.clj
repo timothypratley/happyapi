@@ -53,7 +53,7 @@
         {:keys [access_token]} credentials]
     (credentials/save-credentials provider user credentials)
     (if access_token
-      (request (middleware/apikey-param args access_token))
+      (request (middleware/bearer-header args access_token))
       (throw (ex-info (str "Failed to obtain credentials for " user)
                       {:id     ::failed-credentials
                        :user   user

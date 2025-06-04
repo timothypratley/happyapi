@@ -1,6 +1,6 @@
-(ns happyapi.notebook.sheets
+(ns happy.notebook.sheets
   (:require [clojure.test :refer [deftest is testing]]
-            [happygapi.sheets :as sheets]))
+            [happyapi.google.sheets-v4 :as sheets]))
 
 (def spreadsheet-id "1NbGRyCRMoOT_MLhnubC5900JNwiQq_uqvdKwbqZOfyM")
 

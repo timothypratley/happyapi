@@ -46,12 +46,15 @@
   Will obtain fresh credentials prior to the request if necessary.
   See https://developers.google.com/identity/protocols/oauth2 for more information."
   [request args config]
-  (let [{:keys [provider]} config
+  (let [{:keys [provider fns]} config
+        {:keys [read-credentials
+                update-credentials
+                save-credentials]} fns
         {:keys [user scopes] :or {user "user" scopes (:scopes config)}} args
-        credentials (credentials/read-credentials provider user)
-        credentials (capture-redirect/update-credentials request config credentials scopes)
+        credentials (read-credentials provider user)
+        credentials (update-credentials request config credentials scopes)
         {:keys [access_token]} credentials]
-    (credentials/save-credentials provider user credentials)
+    (save-credentials provider user credentials)
     (if access_token
       (request (middleware/bearer-header args access_token))
       (throw (ex-info (str "Failed to obtain credentials for " user)
@@ -65,12 +68,15 @@
   This compromise allows for convenient usage, but means that calls may block while authorizing before
   the http request is made."
   [request args config respond raise]
-  (let [{:keys [provider]} config
+  (let [{:keys [provider fns]} config
+        {:keys [read-credentials
+                update-credentials
+                save-credentials]} fns
         {:keys [user scopes] :or {user "user" scopes (:scopes config)}} args
-        credentials (credentials/read-credentials provider user)
-        credentials (capture-redirect/update-credentials request config credentials scopes)
+        credentials (read-credentials provider user)
+        credentials (update-credentials request config credentials scopes)
         {:keys [access_token]} credentials]
-    (credentials/save-credentials provider user credentials)
+    (save-credentials provider user credentials)
     (if access_token
       (request (middleware/apikey-param args access_token) respond raise)
       (raise (ex-info (str "Async failed to obtain credentials for " user)
@@ -86,10 +92,19 @@
                      :config  config})))
   config)
 
+(defn with-credential-fns [config]
+  (update config :fns
+          (fn merge-left [fns]
+            (merge {:read-credentials   credentials/read-credentials
+                    :update-credentials capture-redirect/update-credentials
+                    :save-credentials   credentials/save-credentials}
+                   fns))))
+
 (defn wrap-oauth2
-  "Wraps a http-request function that uses keys user and scopes from args to authorize according to config."
+  "Wraps an http-request function that uses keys user and scopes from args to authorize according to config."
   [request config]
-  (let [config (with-endpoints config)]
+  (let [config (-> (with-endpoints config)
+                   (with-credential-fns))]
     (when-let [ks (missing-config config)]
       (throw (ex-info (str "Invalid config: missing " (str/join "," ks))
                       {:id      ::invalid-config

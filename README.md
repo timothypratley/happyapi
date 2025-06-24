@@ -7,16 +7,16 @@ A unified approach for interacting with web APIs instead of relying on custom cl
 Creates simple, handy and useful API clients.
 
 
-|        | Happy                                                                                                   |
-|--------|---------------------------------------------------------------------------------------------------------|
-| Simple | use and compose the parts you like, with a crystallized default for convenience                         |
-| Handy  | generates function signatures that are explorable in your IDE, bringing usage and documentation to hand |
-| Useful | a better way to call your favourite web service                                                         |
+|        | Happy                                                                   |
+|--------|-------------------------------------------------------------------------|
+| Simple | use and compose the parts you like                                      |
+| Handy  | generates function signatures, bringing usage and documentation to hand |
+| Useful | crystallized per provider for your favourite web service                |
 
 
 ## Status
 
-Alpha: seeking feedback.
+Beta: Should work, soon to make a release.
 
 ## Features
 
@@ -28,14 +28,15 @@ Alpha: seeking feedback.
 
 ## Generated libraries
 
-* [happyapi.google](https://github.com/timothypratley/happyapi.google) for
-  calling [Google APIs](https://developers.google.com/apis-explorer); gsheets, drive, bigquery, youtube, and so on.
+* [happyapi.google](https://github.com/timothypratley/happyapi.google)
+  for calling [Google APIs](https://developers.google.com/apis-explorer); 
+  gsheets, drive, bigquery, youtube, and so on.
 
 ## Rationale
 
 Large datasets and extensive functionality are available to us through web APIs,
 but calling these services is often a study in incidental complexity.
-Client libraries are over-specific ([death by specificity](https://www.youtube.com/watch?v=aSEQfqNYNAc) x 100).
+Client libraries are [over-specific](https://www.youtube.com/watch?v=aSEQfqNYNAc) ^2.
 We can do better with maps.
 
 Many interesting webservices need OAuth2 to access them.
@@ -181,11 +182,6 @@ Symbols will be resolved.
               :query-params {:foo "bar"}})
 ```
 
-HappyAPI is highly configurable.
-If you require further customization,
-you can also construct a stack of middleware using the `happyapi.oauth2.client` namespace for authentication,
-and `happyapi.oauth2.middleware` for useful miscellaneous conveniences.
-
 ### Dependencies
 
 You need HTTP and JSON dependencies.
@@ -199,7 +195,8 @@ To choose your dependencies,
 configure `:deps [:httpkit :cheshire]`, or `:deps [:clj-http :jetty :charred]`,
 or whichever combo you want to use.
 
-There are no defaults. If you can't decide which to use, then I suggest `[:httpkit :cheshire]`
+There are no defaults.
+If you can't decide which to use, then I suggest `[:httpkit :cheshire]`
 
 Valid keys are `#{:cheshire :clj-http.lite :jetty :clj-http :data.json :httpkit :jsonista :charred}`
 
@@ -281,6 +278,16 @@ If you want to use HappyAPI in a web app, you should instead store and fetch tok
 The `happyapi.oauth2.capture-redirect` namespace implements a listener to capture a code when the user is redirected from the oauth2 provider.
 Web applications should instead define a route to capture the code.
 
+To override credential management, configure `fns`:
+
+```
+{:fns {:read-credentials   credentials/read-credentials
+       :update-credentials capture-redirect/update-credentials
+       :save-credentials   credentials/save-credentials}}
+```
+
+Values should be either a fully qualified symbol, a var, or function.
+
 ### Keywordization
 
 While keywordization is common practise in Clojure,
@@ -303,7 +310,14 @@ It returns data, not responses.
 
 HappyAPI leaves retries up to the consuming application. See the [`again`](https://github.com/liwp/again) library.
 
-## Generating new wrappers
+### Composing middleware
+
+HappyAPI is highly configurable.
+If you require further customization,
+you can construct a stack of middleware using the `happyapi.oauth2.client` namespace for authentication,
+and `happyapi.oauth2.middleware` for useful miscellaneous conveniences.
+
+## Generating wrappers
 
 See `dev` directory for `happyapi.gen` namespaces.
 

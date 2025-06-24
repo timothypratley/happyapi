@@ -26,3 +26,8 @@
   (dd/deploy {:installer :remote
               :artifact  jar-file
               :pom-file  (b/pom-path {:lib lib :class-dir class-dir})}))
+
+(defn install [_]
+  (dd/deploy {:installer :local
+              :artifact  jar-file
+              :pom-file  (b/pom-path {:lib lib :class-dir class-dir})}))

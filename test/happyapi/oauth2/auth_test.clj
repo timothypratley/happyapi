@@ -31,3 +31,13 @@
           (is credentials)
           (is (middleware/success? (auth/revoke-token request config credentials)))
           (credentials/delete-credentials provider "user"))))))
+
+(deftest scopes-test
+  (is (= true (auth/has-some-scope? {:scope "a b c"}
+                                    ["d" "e" "a"])))
+  (is (= false (auth/has-some-scope? {:scope "a b c"}
+                                     ["d" "e" "f"])))
+  (is (= false (auth/has-some-scope? {}
+                                     ["d" "e" "f"])))
+  (is (= false (auth/has-some-scope? {:scope "a b c"}
+                                     []))))

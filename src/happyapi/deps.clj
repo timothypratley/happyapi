@@ -44,9 +44,9 @@
 (defmethod require-dep :jetty [_]
   {:run-server (let [run (resolve-fn 'ring.adapter.jetty/run-jetty)]
                  (fn jetty-run-server [handler config]
-                   (let [server (run handler (assoc config :join? false))]
+                   (let [server ^org.eclipse.jetty.server.Server (run handler (assoc config :join? false))]
                      (.setStopTimeout server 100)
-                     {:port (-> server .getConnectors first .getLocalPort)
+                     {:port (-> server .getConnectors ^org.eclipse.jetty.server.ServerConnector first .getLocalPort)
                       :stop (fn stop-jetty []
                               (.stop server))})))})
 (defmethod require-dep :clj-http [_]

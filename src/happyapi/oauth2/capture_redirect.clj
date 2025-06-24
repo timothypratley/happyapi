@@ -100,11 +100,11 @@
             (or
               ;; already have valid credentials
               (and (oauth2/valid? credentials)
-                   (oauth2/has-scopes? credentials scopes)
+                   (oauth2/has-some-scope? credentials scopes)
                    credentials)
               ;; try to refresh existing credentials
               (and (oauth2/refreshable? config credentials)
-                   (oauth2/has-scopes? credentials scopes)
+                   (oauth2/has-some-scope? credentials scopes)
                    (oauth2/refresh-credentials (middleware/wrap-keywordize-keys request true) config scopes credentials))
               ;; new credentials required
               (fresh-credentials (middleware/wrap-keywordize-keys request true) config scopes))))))

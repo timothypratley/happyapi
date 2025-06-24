@@ -145,8 +145,19 @@
   (boolean (or refresh_token private_key)))
 
 (defn credential-scopes [credentials]
-  (set (some-> (:scope credentials) (str/split #" "))))
+  (set (some-> credentials
+               :scope
+               (str/split #" "))))
 
-(defn has-scopes? [credentials scopes]
-  ;; TODO: scopes have a hierarchy
-  (set/subset? (set scopes) (credential-scopes credentials)))
+(defn has-some-scope?
+  "Test if any of the sufficient scopes is present in the token.
+
+  While scopes in APIs can have a hierarchy,
+  all sufficient scopes for an API need to be listed explicitly.
+
+  E.g. Google's discovery docs follow that rule and list all possible scopes.
+  whenever you see a https://www.googleapis.com/auth/spreadsheets.readonly scope,
+  the more powerful https://www.googleapis.com/auth/spreadsheets scope will be listed, too."
+  [credentials scopes]
+  (not (empty? (set/intersection (set scopes)
+                                 (credential-scopes credentials)))))

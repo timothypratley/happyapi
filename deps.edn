@@ -6,11 +6,12 @@
          ring/ring-core        {:mvn/version "1.12.2"}}
 
  :aliases
- {:provided {:extra-deps {clj-http/clj-http     {:mvn/version "3.13.0" :scope "provided" :optional "true"}
-                          http-kit/http-kit     {:mvn/version "2.8.0" :scope "provided" :optional "true"}
-                          cheshire/cheshire     {:mvn/version "5.13.0" :scope "provided" :optional "true"}
-                          org.clojure/data.json {:mvn/version "2.5.0" :scope "provided" :optional "true"}
-                          metosin/jsonista      {:mvn/version "0.3.9" :scope "provided" :optional "true"}}}
+ {:provided {:extra-deps {ring/ring-jetty-adapter {:mvn/version "1.15.1" :scope "provided" :optional "true"}
+                          clj-http/clj-http       {:mvn/version "3.13.0" :scope "provided" :optional "true"}
+                          http-kit/http-kit       {:mvn/version "2.8.0" :scope "provided" :optional "true"}
+                          cheshire/cheshire       {:mvn/version "5.13.0" :scope "provided" :optional "true"}
+                          org.clojure/data.json   {:mvn/version "2.5.0" :scope "provided" :optional "true"}
+                          metosin/jsonista        {:mvn/version "0.3.9" :scope "provided" :optional "true"}}}
 
   ;; REPL with `clojure -A:dev:test:build:doc`
   ;; GENERATE happyapi.google with `clojure -M:dev`

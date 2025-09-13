@@ -14,10 +14,6 @@ Creates simple, handy and useful API clients.
 | Useful | crystallized per provider for your favourite web service                |
 
 
-## Status
-
-Beta: Should work, soon to make a release.
-
 ## Features
 
 * OAuth2

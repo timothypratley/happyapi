@@ -25,18 +25,34 @@
                 :lib       lib
                 :version   version
                 :basis     basis
-                :src-dirs  ["src"]})
-  ;; To be used as a git dependency, a pom.xml must be present in root
-  (b/copy-file {:src "target/classes/META-INF/maven/io.github.timothypratley/happyapi/pom.xml"
-                :target "pom.xml"})
-  ;; Hahaha now your git is no longer clean because the pom.xml updated with the latest tag
-  ;; You'll need to revert the tag change when you deploy
+                :src-dirs  ["src"]
+                :scm {:url "https://github.com/timothypratley/happyapi"
+                      :connection "scm:git:git://github.com/timothypratley/happyapi.git"
+                      :developerConnection "scm:git:ssh://git@github.com/timothypratley/happyapi.git"
+                      :tag (str "v" version)}
+                :pom-data  [[:description "Middleware oriented oauth2 client for webservices"]
+                            [:licenses
+                             [:license
+                              [:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"]
+                              [:url "https://www.eclipse.org/legal/epl-2.0/"]]]
+                            (into [:dependencies
+                                   (for [[g a v] '[[clj-http clj-http "3.13.0"]
+                                                   [http-kit http-kit "2.8.0"]
+                                                   [cheshire cheshire "5.13.0"]
+                                                   [org.clojure data.json "2.5.0"]
+                                                   [metosin jsonista "0.3.9"]]]
+                                     [:dependency
+                                      [:groupId g]
+                                      [:artifactId a]
+                                      [:version v]
+                                      [:scope "provided"]])])]})
   (b/copy-dir {:src-dirs   ["src" "resources"]
                :target-dir class-dir})
   (b/jar {:class-dir class-dir
           :jar-file  jar-file}))
 
 (defn deploy [_]
+  (tag nil)
   (dd/deploy {:installer :remote
               :artifact  jar-file
               :pom-file  (b/pom-path {:lib lib :class-dir class-dir})}))

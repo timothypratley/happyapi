@@ -25,11 +25,12 @@
                            org.scicloj/kind-portal {:mvn/version "1-beta1"}
                            djblue/portal           {:mvn/version "0.56.0"}}}
 
-  ;; BUILD with `clojure -T:dev:build build/jar`
-  ;; DEPLOY with `clojure -T:dev:build build/deploy`
+  ;; BUILD with `clojure -T:build jar`
+  ;; DEPLOY with `clojure -T:build deploy`
   :build    {:extra-paths ["dev"]
-             :extra-deps  {org.clojure/tools.build {:mvn/version "0.9.2"}
-                           slipset/deps-deploy     {:mvn/version "0.2.2"}}}
+             :ns-default  build
+             :extra-deps  {io.github.clojure/tools.build {:mvn/version "0.10.10"}
+                           slipset/deps-deploy           {:mvn/version "0.2.2"}}}
 
   ;; LITERATE the documentation `clojure -X:dev:doc scicloj.clay.v2.api/make\!`
   :doc      {:extra-paths ["notebooks"]
@@ -46,6 +47,10 @@
   ;; FORMAT the code with `clojure -M:cljfmt`
   :cljfmt   {:main-opts  ["-m" "cljfmt.main"]
              :extra-deps {cljfmt/cljfmt {:mvn/version "0.9.2"}}}
+
+  :codox {:extra-deps {codox/codox {:mvn/version "0.10.8"}}
+          :exec-fn codox.main/generate-docs
+          :exec-args {:source-paths ["src"]}}
 
   ;; Update DEPENDENCIES with `clojure -M:outdated`
   :outdated {:deps      {com.github.liquidz/antq {:mvn/version "2.8.1201"}

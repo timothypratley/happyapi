@@ -1,4 +1,4 @@
-(ns ^:no-doc happyapi.deps
+(ns happyapi.deps
   "Presents an interface to performing http requests and json encoding/decoding.
   Allows easy selection of and migration between libraries that provide these features
   and avoids pulling in unnecessary dependencies.

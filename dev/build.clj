@@ -11,12 +11,26 @@
 (defn clean [_]
   (b/delete {:path "target"}))
 
+(defn tag [_]
+  (b/git-process {:git-args (str "tag -a v" version
+                                 " -m \"Release version " version "\"")})
+  (b/git-process {:git-args (str "git push origin" version)}))
+
 (defn jar [_]
+  ;; I think this extends the pom.xml in root,
+  ;; which I manually added the license to, and SCM details.
+  ;; License is required by Clojars.
+  ;; SCM is required by cljdocs
   (b/write-pom {:class-dir class-dir
                 :lib       lib
                 :version   version
                 :basis     basis
                 :src-dirs  ["src"]})
+  ;; To be used as a git dependency, a pom.xml must be present in root
+  (b/copy-file {:src "target/classes/META-INF/maven/io.github.timothypratley/happyapi/pom.xml"
+                :target "pom.xml"})
+  ;; Hahaha now your git is no longer clean because the pom.xml updated with the latest tag
+  ;; You'll need to revert the tag change when you deploy
   (b/copy-dir {:src-dirs   ["src" "resources"]
                :target-dir class-dir})
   (b/jar {:class-dir class-dir

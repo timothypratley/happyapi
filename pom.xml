@@ -17,6 +17,7 @@
     <url>https://github.com/timothypratley/happyapi</url>
     <connection>scm:git:git://github.com/timothypratley/happyapi.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/timothypratley/happyapi.git</developerConnection>
+    <tag>v1.0.149</tag>
   </scm>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -60,5 +61,11 @@
       <artifactId>buddy-sign</artifactId>
       <version>3.5.351</version>
     </dependency>
+    <dependency>
+      <groupId>ring</groupId>
+      <artifactId>ring-core</artifactId>
+      <version>1.12.2</version>
+    </dependency>
   </dependencies>
+  <version>1.0.149</version>
 </project>

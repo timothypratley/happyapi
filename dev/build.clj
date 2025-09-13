@@ -12,9 +12,9 @@
   (b/delete {:path "target"}))
 
 (defn tag [_]
-  (b/git-process {:git-args (str "tag -a v" version
-                                 " -m \"Release version " version "\"")})
-  (b/git-process {:git-args (str "git push origin" version)}))
+  (b/git-process {:git-args ["tag" "-a" (str "v" version)
+                             "-m" (str "Release version v" version)]})
+  (b/git-process {:git-args ["push" "origin" (str "v" version)]}))
 
 (defn jar [_]
   ;; I think this extends the pom.xml in root,
